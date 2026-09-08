@@ -1,313 +1,751 @@
-# 2009 Data Breach Investigations Report
+0011000000110011001100110011110000110000111111000011001100110000001100111100000000110000110000110011000000111111001100111100001100110000110000110011000011110011001100110011111100110011000011110011000011111100001100000011001100
+1100001100000000110000001100110011000011000011001100000011001100110000001111000011000011111111001100110011000000110011110000000011000000001100001100110000111100110000000011110011001100111111001100111100001100110000110000000011
+0011000011000011001100000011001100001111001100110011001111110011000000111111001100110011001100110011110011000011000000000011001100000000110000110011001111000011001111000011001100000000111100110000000011000011000000001100001100
+0000111100001100110000110000110000001100110011001111000011001100000011110000110000000011000011001100111100001100000011001100110000001100000011000011001111001100000011001100110011001111000011000011110011001100000011110000110011
+0000110000110000110000110011000000111100001100001111110000110000001111110011000000111100001100001111110000110011000011000011000000001100001100000011110000110000001111110011001100111100001100001100111100110011000011110011000000
+1111000011001100000000001100001111110000110000000011000011001100110011001100000011110000110011110011000011000011001100001100000011111100110000000011110011000000110011001100000011001100110000001100110011001100111111001100000000
+0011001100001100111100110000110000000011001100000000001100111100000000110000001100110011000000001100001100110011000000110011110011000011000011001100001100000000111100110011110011000011000011111111001100110011111100110000001111
+1100110011001100000011000000001100001100110000111100110011000000110011000000111111001100110011000000110000111100110011000011000011001100000000001100110011110000110011000000110000001100110000000000110011110000110011000000110000
+0011001100001100001100001100001100110011000011000011001111000011001100000011001100110011001100000011000011001111001100000000111100110000110011000011001100001100001100110000000000110011110000110011000011000000001100000011001100
+1100110000000000110011001111110011000011001111001100110011001100110000111111110011000000000011001100000011001100110000110011110011000011111100001100110011110000110011001100000011001100111100001100111100110000110000110000000011
+0011000011110011000011110011001100111100110000110000111111000011001100110000001100110011000000110000110000110011001100111100001100001100001100110000110011110011000011110011001100001111001100110011000011000011001111000011001100
+1100001111001100001111110000110011001100110011000011000011001100000000001100110000110011110011000000001100001100110000110000110000110011110011001100000011001100001111001100110011000011110011001100110000001100111100001100110000
+0000111100110000001111110011000000001111001100000000111100110011000011000011000011110000001100110000110000110011000011000011000011000011001100001100001100110011000011000011000000110011001100000011110000110000001111110011001111
+0000110011001100110000001100001100110000110011001100110011000000001100001100110011001100110011110000000011000011000000001100000011001100110011110000110011001100001111001100000011111100110000111100000011000000110011001100111100
+0011001100110000110000110011001111000011000011000000001100001100001100110011110000110011001111000000001100000011000000110000001100110011001111000011001100111100110000110000000011110011000011001100001100001100111100110011001111
+0000110011001100000011000011111111001100110000111100110000111111110011000011000011001100111100000000110000110011000011000000110011001100001100000000110000111111110011001111000000001100000011001100110011001111000011000011110011
+0011001100111111001100001100110000110000000011000011000011111100001100111100110000110000111100110011001100110000001100001100111100110011001111110011001111001100001100000011001100110000001111000011000011111111001100000011110000
+1100000000111100110000111111000011000000001100001100110011111100110000111111000011000000001111001100110011001100110011001111110011000011110011001100111100001100110000001111000011000011000011001100110011001100110011001111000011
+0000000011000011000011001111001100110011111100110000111111000011001100000000001100110011111100110011001100000011001111000011001100001111111100110000001100110011001111000011001100110000001100110011001100000011000011000011001100
+1100001100001100110000110000110011110000110011001100001100001100000000111100110000111100110011000011111100001100110011110000110000001111000011001100111100001100001111000000110011000011000011001100001111001100000000110000110000
+1111110000110011001100000011001100000000001100110011111100110011000000000011000000000011001100001111111100110000000011110011001111001100001100110000000000110000001100110011000011001111001100001100000000110000111100000011000000
+1111000011000000001111001100000011001100110000001100110011001100001100001100110000110000110011001111000011001100111111001100110011110000110011001100110011001111000011001100000000110000110011001111000011000011001100001100110000
+0000001100110011001100110011001111000011001100000000001100001111111100110000000000110011001111000011001100001111001100110000110000110011000011001111001100110000001100110011000000110011000011111100001100110000111100110011001111
+1100110011110011000011000000111111001100001100000000110011110011000011000011001111001100000011000000110000001111110011001111000011001100001111000000110000000000110011000000110011001100000011111100110011001111110011001100000000
+0011000011001111001100000011001100110011000011110011000000111111001100000000111100110011110000110011001111001100001100000011110000110011001111000011000011001100001100000011000000110000111100110011000000110011001100110000000000
+1100110000001100110000110011110011001100001111001100110000111100110000111100000011000011111100001100110011110000110011000011110011001100111100001100110000000000110011001100110011001100111100001100110011110000110011000011000011
+0011001111000011001111000011001100000011001100110011000011000011000011000000001100000011000000110011001100000011001100110011001100110011000000110011110000110011001111000011001100001111001100110011000000110011000000111111001100
+0000110011001100110011110000110011001111110011001100001100001100001111001100110011000000110011001100001111001100111100110000110000001111000011000011111100001100110000000000110000111111000011001100001100001100001100110000110000
+1100001100110000001111110011000000111111001100110011111100110000000000110011000011001100001100001111110000110000111111000011000011001100001100001111000000110000110011110011000011111111001100000011001100110011000000110011000011
+0000000011000011111100001100000011001100110011001100000011001100001100001100110000000000110011001100110011001100000011001100111100001100110000001100000011000000111100001100111100110000110011001111110011000000001111001100111100
+1100001100001100111100110011001111000011000011001100001100000011001100110011110000000011000011110000001100001111001100110000000011110011000011001111001100000000111100110011000011110011000011000011001100000011110000110011001100
+0000110000000011110011001100110000001100110000111100110011001100110011001100110000001100001111000000110000001100000011001100001100001100110000110000110000111100110011000011000011001100001100111100110011000000110011001100110000
+0011000011111100001100001100001100110000111111000011001100000000001100000011111100110011000011000011001100000000001100110000001100110011000000110011001111000000001100110000000000110011001100000011001111001100001100000011000000
+1100110000000000110000000000110011000011000011001100001111111100110011001100000011000000001111001100000011001100110011001100110011000000000011001100111100110000110000001111000011000000110011001100110011111100110000001100000011
+0011000000110011000011110000001100001111000000110011000000000011001111001100001100110000110000110000110000000011001111000000001100001111000000110011110000000011001100000011001100000011111100110011000011110011000011110000001100
+1100001100001100001100110000110011001100000011000000001100001100001111000000110011110011000011001100001100001100001100001100110011000011000011001100111100001100001100001100110011000011110011000011111100001100111100110000110000
+1100001100110011001111110011000011110000001100001111001100110011001111000011001111000011001100000000001100110000001100000011001100111100001100001111111100110000110000000011000000111100001100000011001100110011001111000011000011
+1111000011000000000011001100001100111100110000110011110011000000111111001100001111111100110011000011000011001100001100001100111100000000110011000011110011001111000011001100000011111100110011110000000011001100000000001100110011
+0011001100001111001100110011001111000011000000111111001100000000110000110000111111110011000011110011001100110000110000110000110011000011000011110000001100000000111100110011000011000011000000110011001100000011110000110000000011
+1100110000111100110011001100001100001100110000001100110011001111000011001111000000001100110011000000110000111100110011000011000011001100111100001100110000111100110011000011001100001100001100110000110011001111000011000011000000
+0011001111000000001100001111110000110000000011000011001100110000001100110000111100110011110011000011000011110011001100110011000000110000110011000011000000110011001100000011110000110000110011110011000000111100001100000011111100
+1100001100111100110011001100110011001100001100001100000011110000110000111100000011000011111100001100001100000000110011110000000011001100000000001100001100111100110000000011110011001100111111001100001111000000110000001100110011
+0011110000000011000011110011001100001100001100110011110000110011000011110000001100000011111100110011110000110011000011111100001100001111110000110011000011000011001100111111001100000000001100110000110011110011001100001111001100
+0000110011001100110011111100110011001100000011000011000000001100110000000000110000110011110011000000111111001100111100110000110000110011110011000011001111001100111100000000110000001111110011000000000011001100111100110000110000
+0011001100110000111100000011000011110000001100110011001100110011001100000011000000000011001100111100001100110000000011110011000011000011001100000011001100110000110011110011001100111111001100001100001100110011000011110011000011
+0000000011001100110011001100001111110000110000001100000011000011001111001100000011001100110000110011110011001100111111001100000000001100110011000011000011000000111111001100000000110000110011110000110011001111001100001100000011
+1100001100000011111100110000110011110011000000110011001100110000000000110000110011110011001100000011001100000011111100110011110011000011001111001100001100110000111100110011000011000011000011000011001100001111001100110000001111
+0000110000111100000011000000111111001100001100111100110000000000110011001100001100001100110011000000110011001100110011001100001100001100000000001100110000110000110011000011111100001100110000111100110000111111000011000000111111
+0011000000110011001100000011001100110011001100110011000011110011001100000011001100110011110000000011001100001100001100110011110000110000001100110011000000110011001100001111000000110011110011000011001111000000001100110011000000
+1100001100001100110011000011110011001100110011001100110011111100110011001111000011001111001100001100001100111100110000111111110011001111000011001100001111000000110011001100000011001100000000001100000000110000110000110000000011
+0011110011000011001100111111001100000011001100110000111111110011001100000011001100110011111100110000111111000011001111000000001100001111110000110011000000000011001111000000001100110000000000110000110011110011001100001111001100
+1100001111001100111100000000110000110011000011000011000000001100110000000000110000000000110011000011111100001100000000111100110011001111000011000000111100001100110000000000110011000011000011001111000011001100000000001100110000
+0011000000110011000011000011000011110000001100110000110000110000111111110011000000110011001100110011111100110000001100110011000000001100001100110000001100110000001100110011001100111111001100001100000000110011110011000011001100
+001100001100000011111100110000000000110011 285 MILLION RECORDS WERE COMPROMISED IN 2008. 00110011000000110011110011000011000000110000
+001100000011111100110011001100110011000000 00111100110000001100110011000011001111001100
+0011110000001100000011110000110011110000110011000011000000001100111100110000110000110011000011000011111100001100001111110000110011110011000011000011000011001100001100110000110011000011000011000000111111001100001111110000110011
+1100110000110011000011000011001100111100001100000000110000110000111111110011000000001111001100000000001100110011001100110011001111000011001100000011001100110011110011000011000000111111001100001100111100110011000000000011001100
+0011110011000011001100001100111100000000110000110011000011000011000011001100000000001100110011000011110011000011110011001100110011110000110000001111000011001100110000001100000011000000110011001111110011000000111100001100111100
+0000001100000000110000110000110000110011000000110000001100001100000000110011000000110011001111001100001100000011001100110011110000110011000011001111001100000011000000110011000011000011001100110000001100000011000000110011000011
+0000110000110000110011000011111111001100110000000000110011000000000011000011001111001100001100110000110011000011000011001100000000001100001100001100110011000011110011001100001111001100001100111100110000111100110011000000001111
+0011001111001100001100001100110000110000001111000011001111001100001100110011000000110000000011000011001100111100001100000000110000110000110011000011001100110011001100000011111100110000001100110011001111000011001100000000001100
+1100001111110000110000110011000011000011000011001100000011111100110000110011000011001100110000001100000011000000110000000011110011001100000000001100110011000000110011110011000011000000110000001100000011001100110000111111110011
+0000001111110011001100110011001100110011000000110000111100000011001111001100001100110000000000110000001100110011000011001111001100001100000000110011001100000011000011111100001100001100001100110000110000000011001100110000001100
+0000111111001100000011111100110011001100110011000011110011001100110011110000110000001111110011000000001100001100001111111100110000111100110011001100001100001100001100110000110000111100000011000000001111001100110000110000110000
+001100110011000000111100001100110000111100110011001111110011000000111100001100111100110000110000111111110011000000001111001100110000110000110000111111110011000011000000001100000011001100110000000000110011001100110011
+A study conducted by the Verizon Business RISK Team
+2009 Data Breach
+Investigations Report
 
-Organization: Verizon  
-Report Title: Data-Breach-Investigations-Report  
-Year: 2009  
+2009 Data Breach Investigations Report
+A study conducted by the Verizon Business RISK team.
+For additional updates and commentary, please visit http://securityblog.verizonbusiness.com.
+AuThoRS: TABle oF ConTenTS
+Wade H. Baker executive Summary ...............................................................2
+Alex Hutton Methodology .....................................................................4
+C. David Hylender State of Cybercrime, 2009..........................................................5
+Christopher Novak Results and Analysis ...............................................................6
+Christopher Porter Demographics .................................................................6
+Bryan Sartin Sources of Data Breaches .......................................................8
+Peter Tippett, M.D., Ph.D. Breach Size by Source.....................................................11
+J. Andrew Valentine external Breach Sources...................................................12
+Internal Breach Sources...................................................13
+partner Breach Sources ...................................................14
+ConTRIBuToRS: Threat and Attack Categories ..................................................14
+hacking and Intrusion ....................................................16
+Thijs Bosschert Malware..................................................................20
+Eric Brohm Misuse and Abuse ........................................................23
+Calvin Chang Deceit and Social Attacks .................................................24
+Ron Dormido physical Attacks...........................................................25
+K. Eric Gentry errors and omissions .....................................................26
+Mark Goudie Attack Difficulty ...............................................................27
+Ricky Ho Attack Targeting...............................................................29
+Stan S. Kang Compromised Assets ..........................................................30
+Wayne Lee Compromised Data............................................................32
+Jelle Niemantsverdriet unknown unknowns ..........................................................34
+David Ostertag Time Span of Breach events....................................................35
+Michael Rosen pre-Attack Research.......................................................36
+point of entry to Compromise.............................................36
+Enrico Telemaque
+Compromise to Discovery.................................................36
+Matthijs Van Der Wel
+Discovery to Containment ................................................37
+Ben Van Erck
+Discovery and Response.......................................................37
+Members of the RISK Team
+Discovery Methods .......................................................37
+ICSA Labs
+utilization of Detective Controls...........................................38
+Anti-Forensics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .40
+SpeCIAl ThAnKS To: payment Card Industry Data Security Standard .................................41
+Conclusions and Recommendations ..............................................44
+Janet Brumfield About the Verizon Business Investigative Response Team ..........................48
+Carl Grygiel
+Hunter Montgomery
+1
 
-A study conducted by the Verizon Business RISK Team  
+2009 Data Breach Investigations Report
+A study conducted by the Verizon Business RISK team
+Executive Summary
+2008 will likely be remembered as a tumultuous year for corporations and consumers alike. Fear, uncertainty, and doubt
+seized global financial markets; corporate giants toppled with alarming regularity; and many who previously lived in
+abundance found providing for just the essentials to be difficult. Among the headlines of economic woes came reports of
+some of the largest data breaches in history. These events served as a reminder that, in addition to our markets, the safety
+and security of our information could not be assumed either.
+The 2009 Data Breach Investigations Report (DBIR) covers this chaotic period in history from the viewpoint of our forensic
+investigators. The 90 confirmed breaches within our 2008 caseload encompass an astounding 285 million compromised
+records. These records have a compelling story to tell, and the pages of this report are dedicated to relaying it. As with last
+year, our goal is that the data and analysis presented in this report prove helpful to the planning and security efforts of our
+readers. Below are a few highlights from the report:
+Who is behind data breaches?
+74%
+resulted from external sources (+1%). Closely resembling the stats from our 2008 report, most
+data breaches continue to originate from external sources.
+20% Though still a third of our sample, breaches linked to
+were caused by insiders (+2%).
+business partners fell for the first time in years. The median
+32% size of breaches caused by insiders is still the highest but the
+implicated business partners (-7%). predominance of total records lost was attributed to
+outsiders. 91 percent of all compromised records were
+39%
+involved multiple parties (+9%). linked to organized criminal groups.
+How do breaches occur?
+67%
+In the more successful breaches, the attacker exploited some were aided by significant errors (<>).
+mistake committed by the victim, hacked into the network,
+and installed malware on a system to collect data. 98 percent 64% resulted from hacking (+5%).
+of all records breached included at least one of these
+attributes. unauthorized access via default credentials (usually 38%
+utilized malware (+7%).
+third-party remote access) and SQl injection (against web
+applications) were the top types of hacking. The percentage
+22%
+of customized malware used in these attacks more than involved privilege misuse (+7%).
+doubled in 2008. privilege misuse was fairly common, but not
+many breaches from physical attacks were observed in 2008. 9%
+occurred via physical attacks (+7%).
+2
 
-For additional updates and commentary, please visit [http://securityblog.verizonbusiness.com](http://securityblog.verizonbusiness.com).
+What commonalities exist?
+69%
+were discovered by a third party (-6%).
+only 17 percent of attacks were designated to be highly
+81% difficult, yet they accounted for 95 percent of the total records
+of victims were not payment Card Industry breached. So, while hackers prefer soft targets, they do seem to
+(pCI) compliant. know where best to apply the pressure when motivated. Most
+83% of these incidents do not require difficult or expensive
+of attacks were not highly difficult (<>).
+preventive controls; mistakes and oversight hinder security
+efforts more than a lack of resources. 81 percent of
+87%
+were considered avoidable through simple or organizations subject to pCI DSS had not been found
+intermediate controls (<>). compliant prior to the breach. nearly all records in 2008 were
+compromised from online assets. As with last year’s report, the
+99.9%
+of records were compromised from servers majority of breaches are discovered by a third party.
+and applications.
+Where should mitigation efforts be focused?
+Some will recognize three of these five recommendations as
+carryovers from our previous report. This is intentional. We
+simply could not convince ourselves to remove them just to
+avoid reiteration. In fact, a fresh look and further
+consideration is warranted.
+The best defense against data breaches is, in theory, quite
+simple—don’t retain data. Since that is not realistic for many 
+ensure essential controls are met.
+organizations, the next best thing is to retain only what is
+required for business or legal reasons, to know where it lives
+and flows, and to protect it diligently.
+The majority of breaches still occur because basic controls 
+Find, track, and assess data.
+were not in place or because those that were present were
+not consistently implemented across the organization. If
+obvious weaknesses are left exposed, chances are the attacker
+will exploit them. It is much less likely that they will expend 
+the time and effort if none are readily apparent. Collect and monitor event logs.
+As a specific extension of this, we felt it necessary to call out
+several tried and true controls based on our 2008 case data. A
+very large proportion of attackers gain access to enterprise 
+networks via default, shared, or stolen credentials. Audit user accounts and credentials.
+Furthermore, organizations seem to have little visibility into
+this problem. It’s certainly best to prevent such incidents in
+the first place, but a second line of defense is to review
+
+accounts for signs of abuse or anomalies. SQl injection was Test and review web applications.
+also an oft-used means of breaching corporate data last year.
+Secure development, code review, application testing, etc. are
+all considered beneficial in light of this finding.
+Whatever the sophistication and aggressiveness of attacks,
+the ability to detect a breach when it occurs is a huge
+stumbling block for most organizations. Whether the
+deficiency lies in technology or process, the result is the
+same—during the last five years, few victims discover their
+own breaches. Fewer still discover them in a timely manner.
+3
 
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [Methodology](#methodology)
-- [State of Cybercrime, 2009](#state-of-cybercrime-2009)
-- [Results and Analysis](#results-and-analysis)
-  - [Demographics](#demographics)
-  - [Sources of Data Breaches](#sources-of-data-breaches)
-  - [Breach Size by Source](#breach-size-by-source)
-  - [External Breach Sources](#external-breach-sources)
-  - [Internal Breach Sources](#internal-breach-sources)
-  - [Partner Breach Sources](#partner-breach-sources)
-- [Threat and Attack Categories](#threat-and-attack-categories)
-  - [Hacking and Intrusion](#hacking-and-intrusion)
-  - [Malware](#malware)
-  - [Misuse and Abuse](#misuse-and-abuse)
-  - [Deceit and Social Attacks](#deceit-and-social-attacks)
-  - [Physical Attacks](#physical-attacks)
-  - [Errors and Omissions](#errors-and-omissions)
-- [Attack Difficulty](#attack-difficulty)
-- [Attack Targeting](#attack-targeting)
-- [Compromised Assets](#compromised-assets)
-- [Compromised Data](#compromised-data)
-- [Unknown Unknowns](#unknown-unknowns)
-- [Time Span of Breach Events](#time-span-of-breach-events)
-  - [Pre-Attack Research](#pre-attack-research)
-  - [Point of Entry to Compromise](#point-of-entry-to-compromise)
-  - [Compromise to Discovery](#compromise-to-discovery)
-  - [Discovery to Containment](#discovery-to-containment)
-  - [Discovery and Response](#discovery-and-response)
-- [Discovery Methods](#discovery-methods)
-- [Utilization of Detective Controls](#utilization-of-detective-controls)
-- [Anti-Forensics](#anti-forensics)
-- [Payment Card Industry Data Security Standard](#payment-card-industry-data-security-standard)
-- [Conclusions and Recommendations](#conclusions-and-recommendations)
-- [About the Verizon Business Investigative Response Team](#about-the-verizon-business-investigative-response-team)
+Methodology
+The underlying methodology used in this report remains unchanged from the previous year. All results are based on firsthand
+evidence collected during data breach investigations conducted by Verizon Business from 2004 to 2008. The 2008 caseload is
+the primary analytical focus of the report, but the entire range of data is referenced extensively throughout. Though the
+Investigative Response (IR) team works a variety of engagements, only those involving a confirmed breach are included in this
+data set. To help ensure reliable and consistent input, all investigators use the same standardized tool to record case data and
+other relevant details. This information is then submitted to other members of the RISK team for further validation and analysis.
+Beyond this, there are a few notable differences and additions with respect to the 2009 Data Breach Investigations Report.
+Whereas the 2008 report reached back across four years of cases in one massive data collection effort, this data set was
+assembled periodically throughout the year. Investigators were able to enter information at the close of a case while it was
+still fresh in their minds. This shift from historic to ongoing collection allows for more detail on existing data points and opens
+the door to new areas of study. We hope these additions enhance the value and utility of this report to the research and
+practitioner communities.
+Most of the statistics presented in this report refer to the percentage of cases, the percentage of records breached, or simply
+the number of cases. The ”percentage of records” statistic is new this year and gives a sometimes different but always insightful
+view of the data. Because of the potentially misleading nature of assigning percentages to small samples, the raw number of
+cases is used anytime we discuss a subsample within the caseload. For instance, evidence of malware was found in 38
+percent of cases, and in the several pages dedicated to these attacks, all figures show integers. Captions and legends should
+aid proper interpretation.
+Whereas the 2008 report reached back across four years of
+cases in one massive data collection effort, this data set was
+assembled periodically throughout the year. This shift from
+historic to ongoing collection allows for more detail on existing
+data points and opens the door to new areas of study.
+We would like to reiterate that we make no claim that the findings of this report are representative of all data breaches in all
+organizations at all times. These statistics are based solely upon our caseload and any conclusions or inferences we make are
+drawn from this sample. Although we believe many of these results to be appropriate for generalization, bias undoubtedly
+exists. Even so, there is a wealth of information here and no shortage of valid and clear takeaways. As with any study, readers
+will ultimately decide which findings are applicable within their organization.
+Finally, it is important to note that Verizon Business is committed to maintaining the privacy and anonymity of Investigative
+Response clients. Once the investigator records and submits case metrics, this information is sanitized and the client’s name
+is removed from the records. The central repository of case data contains no information that would enable one to ascertain
+a client’s identity. Furthermore, the statistics within this report are always presented in aggregate; individual records are never
+the focus of analysis.
+4
 
----
+State of Cybercrime, 2009
+Before delving into the statistics and analysis presented in our 2009 report, we thought it a good idea to update the “Primer
+on Cybercrime” originally presented in the 2008 DBIR. This brief section attempts to put some context around the data and
+highlight important aspects of the continuing evolution of cybercrime around the world. One may doubt that the cybercrime
+market could change much over a single year, but one need only consider global financial markets in 2008 to realize that
+any market system can change and, at times, change swiftly. As the cybercrime market evolves, attackers, targets, and
+techniques do as well.
+The potential value of engaging in cybercrime would not exist without a market for stolen data. As with any legitimate
+market system, the unit value of goods and services fluctuates with supply and demand. Massive exposures of magnetic-
+stripe data in recent years (hundreds of millions in our caseload alone) have effectively flooded the information black market,
+saturating it with “dumps,” or credit card magnetic stripe sequences sufficient for counterfeit. This market saturation has
+driven the price down to a point where magnetic-stripe information is close to worthless. The value associated with selling
+stolen credit card data have dropped from between $10 and $16 per record in mid-2007 to less than $0.50 per record today.*
+As supply has increased and prices fallen, criminals have had to
+overhaul their processes and differentiate their products in order to
+As supply has maintain profitability. In 2008, this was accomplished by targeting
+points of data concentration or aggregation and acquiring more
+increased and prices
+valuable sets of consumer information. The big money is now in
+fallen, criminals have
+stealing personal identification number (PIN) information together
+had to overhaul their with associated credit and debit accounts. Thus, we saw an explosion
+of attacks targeting PIN data in the previous year. These PIN-based
+processes and
+attacks hit the consumer much harder than typical signature-based
+differentiate their counterfeit attacks. This is because PIN fraud typically leads to cash
+being withdrawn directly from the consumer’s account—whether it
+products in order to
+be a checking, savings, or brokerage account. Furthermore, PIN fraud
+maintain profitability.
+typically places a larger share of the burden upon the consumer to
+In 2008, this was prove that transactions are fraudulent. This makes the recovery of lost
+assets more difficult than with standard credit-fraud charges.
+accomplished by
+The higher value commanded by PIN data has spawned a cycle of
+targeting points of
+innovation in attack methodologies. Criminals have reengineered their
+data concentration processes and developed new tools—such as memory-scraping
+malware—to steal this valuable commodity. This has led to the
+or aggregation and
+successful execution of complex attack strategies previously thought
+acquiring more to be only theoretically possible. As a result, our 2008 caseload is
+reflective of these trends and includes more targeted, cutting edge,
+valuable sets of
+complex, and clever cybercrime attacks than seen in previous years..
+consumer information.
+*Figures based on data collected as part of Verizon Business underground intelligence operations.
+5
 
-**AUTHORS:**  
-Wade H. Baker  
-Alex Hutton  
-C. David Hylender  
-Christopher Novak  
-Christopher Porter  
-Bryan Sartin  
-Peter Tippett, M.D., Ph.D.  
-J. Andrew Valentine  
-
-**CONTRIBUTORS:**  
-Thijs Bosschert  
-Eric Brohm  
-Calvin Chang  
-Ron Dormido  
-K. Eric Gentry  
-Mark Goudie  
-Ricky Ho  
-Stan S. Kang  
-Wayne Lee  
-Jelle Niemantsverdriet  
-David Ostertag  
-Michael Rosen  
-Enrico Telemaque  
-Matthijs Van Der Wel  
-Ben Van Erck  
-Members of the RISK Team  
-ICSA Labs  
-
-**SPECIAL THANKS TO:**  
-Janet Brumfield  
-Carl Grygiel  
-Hunter Montgomery  
-
----
-
-## Executive Summary
-
-2008 will likely be remembered as a tumultuous year for corporations and consumers alike. Fear, uncertainty, and doubt seized global financial markets; corporate giants toppled with alarming regularity; and many who previously lived in abundance found providing for just the essentials to be difficult. Among the headlines of economic woes came reports of some of the largest data breaches in history. These events served as a reminder that, in addition to our markets, the safety and security of our information could not be assumed either.
-
-The 2009 Data Breach Investigations Report (DBIR) covers this chaotic period in history from the viewpoint of our forensic investigators. The 90 confirmed breaches within our 2008 caseload encompass an astounding 285 million compromised records. These records have a compelling story to tell, and the pages of this report are dedicated to relaying it. As with last year, our goal is that the data and analysis presented in this report prove helpful to the planning and security efforts of our readers. Below are a few highlights from the report:
-
-### Who is behind data breaches?
-- **74%** resulted from external sources (+1%). Closely resembling the stats from our 2008 report, most data breaches continue to originate from external sources.
-- **20%** were caused by insiders (+2%).
-- **32%** implicated business partners (-7%). Though still a third of our sample, breaches linked to business partners fell for the first time in years. The median size of breaches caused by insiders is still the highest, but the predominance of total records lost was attributed to outsiders. 91 percent of all compromised records were linked to organized criminal groups.
-- **39%** involved multiple parties (+9%).
-
-### How do breaches occur?
-- **67%** were aided by significant errors.
-- **64%** resulted from hacking (+5%). In the more successful breaches, the attacker exploited some mistake committed by the victim, hacked into the network, and installed malware on a system to collect data. 98 percent of all records breached included at least one of these attributes. Unauthorized access via default credentials (usually third-party remote access) and SQL injection (against web applications) were the top types of hacking. The percentage of customized malware used in these attacks more than doubled in 2008. Privilege misuse was fairly common, but not many breaches from physical attacks were observed in 2008.
-- **38%** utilized malware (+7%).
-- **22%** involved privilege misuse (+7%).
-- **9%** occurred via physical attacks (+7%).
-
-### What commonalities exist?
-- **69%** were discovered by a third party (-6%).
-- **81%** of victims were not Payment Card Industry (PCI) compliant. Only 17 percent of attacks were designated to be highly difficult, yet they accounted for 95 percent of the total records breached. So, while hackers prefer soft targets, they do seem to know where best to apply the pressure when motivated. Most of these incidents do not require difficult or expensive preventive controls; mistakes and oversight hinder security efforts more than a lack of resources. 81 percent of organizations subject to PCI DSS had not been found compliant prior to the breach. Nearly all records in 2008 were compromised from online assets. As with last year’s report, the majority of breaches are discovered by a third party.
-- **83%** of attacks were not highly difficult.
-- **87%** were considered avoidable through simple or intermediate controls.
-- **99.9%** of records were compromised from servers and applications.
-
-### Where should mitigation efforts be focused?
-
-Some will recognize three of these five recommendations as carryovers from our previous report. This is intentional. We simply could not convince ourselves to remove them just to avoid reiteration. In fact, a fresh look and further consideration is warranted.
-
-- **Ensure essential controls are met.** The best defense against data breaches is, in theory, quite simple—don’t retain data. Since that is not realistic for many organizations, the next best thing is to retain only what is required for business or legal reasons, to know where it lives and flows, and to protect it diligently.
-- **Find, track, and assess data.** The majority of breaches still occur because basic controls were not in place or because those that were present were not consistently implemented across the organization. If obvious weaknesses are left exposed, chances are the attacker will exploit them. It is much less likely that they will expend the time and effort if none are readily apparent.
-- **Collect and monitor event logs.** As a specific extension of this, we felt it necessary to call out several tried and true controls based on our 2008 case data. A very large proportion of attackers gain access to enterprise networks via default, shared, or stolen credentials.
-- **Audit user accounts and credentials.** Furthermore, organizations seem to have little visibility into this problem. It’s certainly best to prevent such incidents in the first place, but a second line of defense is to review accounts for signs of abuse or anomalies.
-- **Test and review web applications.** SQL injection was also an oft-used means of breaching corporate data last year. Secure development, code review, application testing, etc. are all considered beneficial in light of this finding. Whatever the sophistication and aggressiveness of attacks, the ability to detect a breach when it occurs is a huge stumbling block for most organizations. Whether the deficiency lies in technology or process, the result is the same—during the last five years, few victims discover their own breaches. Fewer still discover them in a timely manner.
-
----
-
-## Methodology
-
-The underlying methodology used in this report remains unchanged from the previous year. All results are based on firsthand evidence collected during data breach investigations conducted by Verizon Business from 2004 to 2008. The 2008 caseload is the primary analytical focus of the report, but the entire range of data is referenced extensively throughout. Though the Investigative Response (IR) team works a variety of engagements, only those involving a confirmed breach are included in this data set. To help ensure reliable and consistent input, all investigators use the same standardized tool to record case data and other relevant details. This information is then submitted to other members of the RISK team for further validation and analysis.
-
-Beyond this, there are a few notable differences and additions with respect to the 2009 Data Breach Investigations Report. Whereas the 2008 report reached back across four years of cases in one massive data collection effort, this data set was assembled periodically throughout the year. Investigators were able to enter information at the close of a case while it was still fresh in their minds. This shift from historic to ongoing collection allows for more detail on existing data points and opens the door to new areas of study. We hope these additions enhance the value and utility of this report to the research and practitioner communities.
-
-Most of the statistics presented in this report refer to the percentage of cases, the percentage of records breached, or simply the number of cases. The ”percentage of records” statistic is new this year and gives a sometimes different but always insightful view of the data. Because of the potentially misleading nature of assigning percentages to small samples, the raw number of cases is used anytime we discuss a subsample within the caseload. For instance, evidence of malware was found in 38 percent of cases, and in the several pages dedicated to these attacks, all figures show integers. Captions and legends should aid proper interpretation.
-
-> Whereas the 2008 report reached back across four years of cases in one massive data collection effort, this data set was assembled periodically throughout the year. This shift from historic to ongoing collection allows for more detail on existing data points and opens the door to new areas of study.
-
-We would like to reiterate that we make no claim that the findings of this report are representative of all data breaches in all organizations at all times. These statistics are based solely upon our caseload and any conclusions or inferences we make are drawn from this sample. Although we believe many of these results to be appropriate for generalization, bias undoubtedly exists. Even so, there is a wealth of information here and no shortage of valid and clear takeaways. As with any study, readers will ultimately decide which findings are applicable within their organization.
-
-Finally, it is important to note that Verizon Business is committed to maintaining the privacy and anonymity of Investigative Response clients. Once the investigator records and submits case metrics, this information is sanitized and the client’s name is removed from the records. The central repository of case data contains no information that would enable one to ascertain a client’s identity. Furthermore, the statistics within this report are always presented in aggregate; individual records are never the focus of analysis.
-
----
-
-## State of Cybercrime, 2009
-
-Before delving into the statistics and analysis presented in our 2009 report, we thought it a good idea to update the “Primer on Cybercrime” originally presented in the 2008 DBIR. This brief section attempts to put some context around the data and highlight important aspects of the continuing evolution of cybercrime around the world. One may doubt that the cybercrime market could change much over a single year, but one need only consider global financial markets in 2008 to realize that any market system can change and, at times, change swiftly. As the cybercrime market evolves, attackers, targets, and techniques do as well.
-
-The potential value of engaging in cybercrime would not exist without a market for stolen data. As with any legitimate market system, the unit value of goods and services fluctuates with supply and demand. Massive exposures of magnetic-stripe data in recent years (hundreds of millions in our caseload alone) have effectively flooded the information black market, saturating it with “dumps,” or credit card magnetic stripe sequences sufficient for counterfeit. This market saturation has driven the price down to a point where magnetic-stripe information is close to worthless. The value associated with selling stolen credit card data have dropped from between $10 and $16 per record in mid-2007 to less than $0.50 per record today.[^1]
-
-> As supply has increased and prices fallen, criminals have had to overhaul their processes and differentiate their products in order to maintain profitability. In 2008, this was accomplished by targeting points of data concentration or aggregation and acquiring more valuable sets of consumer information.
-
-As supply has increased and prices fallen, criminals have had to overhaul their processes and differentiate their products in order to maintain profitability. In 2008, this was accomplished by targeting points of data concentration or aggregation and acquiring more valuable sets of consumer information. The big money is now in stealing personal identification number (PIN) information together with associated credit and debit accounts. Thus, we saw an explosion of attacks targeting PIN data in the previous year. These PIN-based attacks hit the consumer much harder than typical signature-based counterfeit attacks. This is because PIN fraud typically leads to cash being withdrawn directly from the consumer’s account—whether it be a checking, savings, or brokerage account. Furthermore, PIN fraud typically places a larger share of the burden upon the consumer to prove that transactions are fraudulent. This makes the recovery of lost assets more difficult than with standard credit-fraud charges.
-
-The higher value commanded by PIN data has spawned a cycle of innovation in attack methodologies. Criminals have reengineered their processes and developed new tools—such as memory-scraping malware—to steal this valuable commodity. This has led to the successful execution of complex attack strategies previously thought to be only theoretically possible. As a result, our 2008 caseload is reflective of these trends and includes more targeted, cutting edge, complex, and clever cybercrime attacks than seen in previous years.
-
----
-
-## Results and Analysis
-
-The Verizon Business IR team worked well over 150 forensic engagements in 2008. Of those, 90 were data compromise investigations in which a breach was confirmed. A number of these investigations were quite extensive and lengthy; a fact which contributed to the lower-than-average number of cases worked this year. Though fewer, these 90 held their own; the total number of records breached across our 2008 caseload—more than 285 million—exceeded the combined total from 2004 to 2007.
-
-At the time of this writing, about a third of the breaches investigated by our team last year are publicly disclosed. More, especially those toward the end of the year, are likely to follow. Others will likely remain unknown to the world as they do not fall under any legal disclosure requirements.
-
-Roughly 20 percent of 2008 cases involved more than one breach. That is to say, multiple distinct entities or locations were individually compromised as part of a single case. Amazingly, nearly half of our caseload was comprised of different sets of interrelated incidents. Quite often the same individual(s) committed the attack. Other times, there was a shared connection (literally) between the victims and a common third party that experienced a breach. Still others were linked through some kind of common application, identical attack patterns, and the like.
-
+Results and Analysis
+The Verizon Business IR team worked well over 150 forensic engagements in 2008. Of those, 90 were data compromise
+investigations in which a breach was confirmed. A number of these investigations were quite extensive and lengthy; a fact
+which contributed to the lower-than-average number of cases worked this year. Though fewer, these 90 held their own; the
+total number of records breached across our 2008 caseload—more than 285 million—exceeded the combined total from
+2004 to 2007.
+At the time of this writing, about a third of the breaches investigated by our team last year are publicly disclosed. More,
+especially those toward the end of the year, are likely to follow. Others will likely remain unknown to the world as they do
+not fall under any legal disclosure requirements.
+Roughly 20 percent of 2008 cases involved more than one breach. That is to say, multiple distinct entities or locations were
+individually compromised as part of a single case. Amazingly, nearly half of our caseload was comprised of different sets of
+interrelated incidents. Quite often the same individual(s) committed the attack. Other times, there was a shared connection
+(literally) between the victims and a common third party that experienced a breach. Still others were linked through some
+kind of common application, identical attack patterns, and the like.
 These 90 cases along with those worked between 2004 and 2007 form the basis of all results and analysis within this report.
-
-### Demographics
-
-As with last year’s report, data breaches affected a wide array of organizations in 2008. These are categorized according to the industry groups presented in Figure 1. Claiming nearly a third of all breaches, retail continues to be the most frequently affected industry. Food and beverage establishments, second-most common in the 2004 to 2007 data set, dropped in both proportion (20 percent to 14 percent) and position (now third place) in 2008. The major gainer in 2008 was financial services, which doubled in terms of caseload percentage to 30 percent.
-
-The increase of data breaches in the financial sector is indicative of recent trends in cybercriminal activity highlighted in the “State of Cybercrime” section. As will be discussed throughout this report, financial services firms were singled out and fell victim to some very determined, very sophisticated, and—unfortunately—very successful attacks in 2008. This industry accounted for 93 percent of the over 285 million records compromised. This finding reflects a few very large breaches investigated by our IR team in the past year. Though few in number, they dominate all percentage of records statistics discussed throughout this report.
-
-![Figure 1. Industries represented by percent of breaches: Retail 31%, Financial Services 30%, Food and Beverage 14%, Manufacturing 6%, Business Services 6%, Hospitality 6%, Technology 3%, Other 4%]
-
-![Figure 2. Industries represented by percent of records: Financial Services 93%, Everyone else 7%]
-
-Beyond these top three industry groups, a smattering of others filled out the remaining quarter of cases. Manufacturing and business services (which includes a few media, marketing, consulting, and legal firms) and hospitality each accounted for 6 percent of the caseload. Technology firms, which made up 13 percent of our 2004 to 2007 cases, were comparatively less represented in 2008. We view this difference to be more reflective of our sample than a broader trend.
-
-The number of investigations handled by our IR team outside the United States rose to over one-third of our caseload in 2008. In addition to extensive investigations across the United States, many breaches hit organizations in Canada and Europe while casework demands continued to grow in Brazil, Indonesia, the Philippines, Japan, and Australia. As attackers continue to pursue soft targets internationally, concern in emerging economies will rise as well, especially with respect to consumer data.
-
-The distribution of organizational size looks very similar to the previous data set. Per Figure 3, data thieves seem to show no partiality between larger enterprises and smaller establishments. Though not always the case, criminals typically initiate attacks based on perceived value of the data and convenience rather than victim characteristics such as size.
-
-![Figure 3. Number of employees by percent of breaches: 1 to 10 (7%), 11 to 100 (26%), 101 to 1,000 (17%), 1,001 to 10,000 (27%), 10,001 to 100,000 (18%), Over 100,000 (6%)]
-
-One final point of interest deserves mention before concluding this section. A newly added line of inquiry for 2008 found that 13 percent of organizations in our caseload had recently been merged or acquired. It’s difficult to draw a conclusion from this statistic or assign any significance to it—yet the potential effect of such changes on the likelihood of suffering a breach is worth considering.
-
-Mergers and acquisitions bring together not only the people and products of once separate organizations but their technology environments as well. Integration rarely happens overnight or without a hitch. Technology standards are sometimes set aside for the sake of business expediency. This introduction of variance into the IT operating environment may serve to increase the risk of compromise. Furthermore, businesses preparing for sale may find reducing operating expenses—including cutbacks to IT and security spending—a convenient way to help the balance sheet at the time of sale. Finally, new ownership may alter (by mandate or by culture) the acquired organization’s tolerance for information risk.
-
-All this, of course, is speculation and cannot be proven or disproven (or even tested) without additional information. We added it to our case metrics with the idea that it might reveal something more substantial over time and we will continue to record and report it.
-
-### Sources of Data Breaches
-
-Similar to cases conducted in the physical realm, one of the primary objectives during a computer forensics investigation is to identify those responsible for the crime. Because perpetrators often return to the scene, knowing the source of a breach can be essential to its containment. At a high-level, security incidents originate from one or a combination of the following sources:
-
-- **External**: External threats originate from sources outside the organization. Examples include hackers, organized crime groups, and government entities, as well as environmental events such as weather and earthquakes. Typically, no trust or privilege is implied for external entities.
-- **Internal**: Internal threat sources are those originating from within the organization. This encompasses human assets—company executives, employees and interns—as well as other assets such as physical facilities and information systems. Most insiders are trusted to a certain degree and some, IT administrators in particular, have high levels of access and privilege.
-- **Partner**: Partners include any third party sharing a business relationship with the organization. This value chain of partners, vendors, suppliers, contractors, and customers is known as the extended enterprise. Information exchange is the lifeblood of the extended enterprise, and, for this reason, some level of trust and privilege is usually implied between business partners.
-
-> Results from 600 incidents over five years make a strong case against the long-abiding and deeply held belief that insiders are behind most breaches.
-
-![Figure 4. Sources of breaches by percent of breaches: External 74%, Internal 20%, Partner 32%]
-
-![Figure 5. Single vs. multiple breach sources by percent of breaches: Only External 43%, Multiple Sources 39%, Only Internal 11%, Only Partner 7%]
-
-If evidence reveals that any of these played a significant and active role in the breach, it is marked as a source. While there is some room for interpretation in “significant and active,” investigators do follow a set of consistent guidelines. For instance, an insider that deliberately steals proprietary information from their employer is clearly an “internal” breach. We also consider insiders partially responsible when their actions, though unintentional, either directly cause or contribute to the breach. Picking up malware while browsing that is later used by an external attacker to gain unauthorized access is an example of this. We do not consider it an internal source when an insider’s inaction (i.e., oversight, failure to follow-through on procedures, decision to not implement certain security measures, etc) allows or aids a breach. The distribution of breach sources in 2008 is presented in Figure 4. The results are quite similar to that of the 2004 to 2007 data set and continue to challenge some of the prevailing wisdom in the security community with regard to the origins of data breaches.
-
-Prior to further discussion of these results, it’s worth clarifying two points of potential confusion. First, it is no mistake that the values in Figure 4 sum to more than 100 percent, as many breaches involve multiple parties. Figure 5 above illustrates the distribution of breach sources to highlight this fact. Second, we want to be clear that these findings relate specifically to the occurance (or likelihood) of security breaches leading to data compromise within our caseload—not attacks, not impact, not general security incidents, and not risk. We observed some rather strong reactions to this finding after last year’s report, and it was apparent that at least some of the discussion had more to do with terminology than the actual results.
-
-The majority of data breaches continue to originate from sources outside the victim. In 2008 Verizon Business encountered nearly the same percentage (74 percent) of confirmed external breaches as our combined 2004 to 2007 caseload. Furthermore, this statistic remains remarkably consistent over the five-year period of this study. Based on these results, it seems unwise to downplay the threat posed by outsiders.
-
-![Figure 6. Breach sources over time by percent of breaches]
-
-Insiders, on the other hand, are behind the lowest proportion (20 percent) of breaches in our caseload for four years running. Figure 5 shows that only about half of these (11 percent of all breaches) were committed by an insider acting alone. The remainder of the breaches tied to insiders mostly involved employees as unwitting participants in the crime through errors and policy violations. It is true that these results are based upon our caseload—which is consumer data-heavy—and may not be reflective of all data breaches. Perhaps insiders are more apt to target other types of data such as intellectual property. It is also true that many insider crimes may never be detected, though one would think any breach causing material harm would eventually be noticed. It is also feasible they are more likely handled internally. At any rate, results from 600 incidents over five years make a strong case against the long-abiding and deeply held belief that insiders are behind most breaches.
-
-The number of breaches linked to business partners continues to land between external and internal sources but did drop 12 percent in 2008. Interpreting this decline is difficult as it is doubtful that huge strides were made in the effort to reduce partner-facing risk. It is more likely related to the lower proportion of food and beverage and retail cases within our 2008 caseload. Readers of last year’s supplemental report may remember that those two industries exhibited high percentages of partner-related breaches (particularly food and beverage at 70 percent or more). In contrast, this year’s results show that criminals appear to be directly targeting victims that offer a bigger payout. The “end around” maneuver via trusted partner infrastructure does not seem to be the vector of choice in these attacks. Nevertheless, breaches involving partners are still quite common and account for over one-third of cases if both confirmed and suspected cases are counted. Any other difference from past data that cannot be explained due to caseload composition is likely insignificant statistical variation.
-
-### Breach Size by Source
-
-![Figure 7. Median number of records compromised per event: Internal 100,000, External 37,847, Partner 27,000]
-
-Figure 7 shows the median[^2] number of records compromised per event for each threat source. As a reminder, we do not assert that the full consequences of a breach are limited to the number of records exposed; we use this statistic merely as a measurable indicator of the overall impact.
-
-Insider breaches (individually) continue to be much more damaging than those caused by other sources though the difference between them is not to the extent observed across our 2004 to 2007 caseload. One of the more interesting changes is that outsiders compromised more records per incident than partners. This shift is attributable to several very large breaches investigated in 2008 which were perpetrated by outsiders. A comparison of the median value provided at right (37,847) with the mean[^3] (5,651,067) gives an appreciation for the dramatic skew that exists within the data set with respect to the size of external breaches. This is one of several reasons why we use the median as the preferred measure of central tendency when analyzing these incidents. Figure 8 provides a striking view of the size and dominant nature of external breaches last year.
-
-![Figure 8. Total records compromised by source: Only External 266,788,000, Multiple Sources 15,796,000, Only Partner 1,509,000, Only Internal 1,330,000]
-
-At this point, those familiar with our pseudo risk calculation (likelihood x impact) and its result in the last report may suspect that it will yield a different outcome this year. That instinct would be correct. Case results from 2008 find that outsiders represent the greatest risk for data compromise, followed closely by insiders and then partners. This presents a pattern exactly opposite from what was depicted in our 2004 to 2007 data set. Does this mean that the fundamental nature of information risk experienced a profound metamorphosis last year? It is doubtful; keep in mind that risk is probabilistic and best understood over time with multiple measurements. Though few in number, several large breaches were enough to tip the scales in the direction of outsiders as the dominant source in 2008.
-
-Table 1. Pseudo risk calculation
-
-| Source | Likelihood | Impact (number of records) | Risk (pseudo) |
-| :--- | :--- | :--- | :--- |
-| External | 74% | 37,847 | 28,175 |
-| Internal | 20% | 100,000 | 20,000 |
-| Partner | 32% | 27,000 | 8,700 |
-
-### External Breach Sources
-
-The true geographic origin of an attack is difficult to pinpoint with certainty. This determination is predicated upon the source IP address, which is often unreliable for many reasons. Even so, additional validation is gained through common elements between cases, correlative fraud patterns, information provided by other Verizon Business departments, and collaboration with law enforcement agencies. The geographic distribution of external data breach sources is shown in Figure 9.
-
-Though in slightly different order, Eastern Europe, East Asia, and North America remain at the top of the list in 2008. In fact, these regions are even more dominant, accounting for 82 percent of all external attacks. By comparison, 59 percent of breaches between 2004 and 2007 originated from these regions. Eastern Asia (up 15 percent) and Eastern Europe (up 9 percent) are most responsible for the change.
-
-![Figure 9. Location of attacking IP(s) by number of breaches: East Europe 22, East Asia 18, North America 15, South America 6, South/Southeast Asia 3, West/South Europe 3, Middle East 1]
-
-> Though it’s tempting to pander to hype surrounding state-sponsored attacks from Asia, we find no evidence to support the position that governments are a significant agent of cybercrime. We do have a great deal of evidence that malicious activity from Eastern Europe is the work of organized crime.
-
-This is further seen from Figure 10 which categorizes external entities into familiar types rather than by region.
-
-![Figure 10. Categories of external breach sources by number of breaches: Not Traced to Specific Entity Other Than IP 43, Known Organized Crime 19, Known Individuals 6]
-
-That nearly two-thirds are “not traced to a specific entity other than IP” is the result of several factors. Sometimes we are unable to do so. Other times the victim decides it is not worth the additional time and expense. In most cases, the immediate need with respect to the IP address is in containing the breach rather than rooting out the entities responsible. In those instances when an attempt is made to trace the IP to a specific entity, we work with law enforcement personnel. As seen in the chart, the trail often leads to members of known organized crime outfits. What is not evident from Figure 10 is the astounding statistic that 91 percent of all compromised records in 2008 was attributed to organized criminal activity. On the brighter side, we are happy to report that these efforts with law enforcement led to arrests in at least 15 cases (and counting) in 2008.
-
-### Internal Breach Sources
-
-Several broad classifications of insiders are presented in Figure 11 along with the percentage of incidents attributed to each. 2008 results are similar to the 2004 to 2007 data set. End-users and IT administrators continue to be the culprits behind most breaches. This finding for IT administrators is not surprising; higher privileges afford greater opportunity and temptation for abuse. At the same time, the results for incidents perpetrated by end-users serve to remind us that internal breaches are not solely dependent on privileges or administrative credentials. Though our metrics do include options for part-time and temporary workers, our caseload included none.
-
-![Figure 11. Categories of internal breach sources by number of breaches: End-user 9, IT Admin. / Super-user 8, Senior Mgt. 2, Agent / Spy 0, No Specific Person Identified 2]
-
-Of all insider cases in 2008, investigators determined about two-thirds were the result of deliberate action and the rest were unintentional. While it’s tempting to infer that administrators acted more deliberately and maliciously than end-users and other employees, the evidence does not support this conclusion. The ratio was roughly equal between them. It is worth noting that both cases involving senior management were the result of deliberate action which was taken after the person was terminated. We also noticed several other breaches in the caseload were perpetrated by recently terminated employees. The majority was administrators, but a few cases involved end-users as well. With respect to breaches caused by recently terminated employees, the following two scenarios were observed:
-- Employee was terminated and his/her account was not disabled in a timely manner.
-- Employee was notified of termination but was allowed to “finish the day” unmonitored and with normal access/privileges.
-
-This obviously speaks to the need for termination plans that are timely and encompass all areas of access (decommissioning accounts, disabling privileges, escorting terminated employees, etc.).
-
-### Partner Breach Sources
-
-The majority of breaches involving a business partner was the result of third-party information assets and connections being compromised and used to attack the victim’s systems. This statistic increased substantially in 2008. (For the sake of reference, it was slightly over half of 2004 to 2007 cases.) In the large majority of cases, it was the lax security practices of the third party that allowed the attack. It should not come as a surprise that organizations frequently lack measures to provide visibility and accountability for partner-facing systems.
-
-![Figure 12. Categories of partner breach sources by number of breaches: Partner Asset or Connection 25, Remote IT Admin 6, No Specific Person Identified 1]
-
-Figure 12 also reminds us that not all data breaches within the extended enterprise are unintentional. Rising to a slightly higher proportion last year, six instances of deliberate malicious action by third-party remote administrators were observed. One of these individuals had been recently terminated.
-
-After last year’s report, we had many inquiries regarding the nature of the relationship between the victim (client) and the partner. We attempted to capture this information during 2008 investigations. This new information found that most of these breaches dealt with a partner who administered victim-side assets. For retail and food and beverage organizations, this was almost always a vendor supporting a point-of-sale (POS) system. We also noted several instances where the partner had user-level access to the victim’s systems or regularly exchanged data with the victim. Only one case involved a partner physically handling or transporting victim assets. Interestingly, our caseload included zero instances where the partner hosted the victim systems.
-
-> In the large majority of cases, it was the lax security practices of the third party that allowed the attack. It should not come as a surprise that organizations frequently lack measures to provide visibility and accountability for partner-facing systems.
-
----
-
-## Threat and Attack Categories
-
-Anyone responsible for safeguarding corporate information assets knows there are countless ways in which sensitive information will find its way into the wrong hands. Though sometimes one-dimensional, data breaches are more often the result of a series of intertwined and orchestrated events. Examining the frequencies and trends surrounding these scenarios is essential to protection efforts and is the purpose of this section.
-
-Though very specific attack details are noted during an investigation, all possibilities fit somewhere within the seven top-level threat categories listed in the figure below. Figure 13 records the prevalence of each as causing or contributing to data breaches investigated by Verizon Business in 2008 (black bars). Since most incidents involve events spanning several categories, the percentages sum to well over 100 percent. Also depicted is the percentage of total compromised records ascribed to each category (red bars).
-
-The results for 2008 cases look very similar to those of the 2004 to 2007 data set (see Figure 14 below for a time series chart of these results). The Deceit and Physical categories switched places, but all others remained in order. Furthermore, Hacking and Malware continue to dominate the caseload. Error is seldom the proximate cause of a breach, but it is very often a factor contributing to or enabling a successful attack. From Figure 13, one can deduce the stereotypical breach scenario: the attacker takes advantage of some mistake committed by the victim, hacks into the network, and installs malware on a system to collect data. As evidenced by the red bars in Figure 13, this is especially true for large breaches. The following sections provide a more in-depth examination of each threat category.
-
-![Figure 13. Threat categories by percent of breaches (black) and records (red): Hacking (64% cases / 94% records), Malware (38% cases / 90% records), Misuse (22% cases / 2% records), Deceit (12% cases / 6% records), Physical (9% cases / 2% records), Error (1% cases / 67% records - as factor), Environmental (0% cases / 0% records)]
-
-![Figure 14. Threat categories over time by percent of breaches]
-
-### Hacking and Intrusion
-
-In terms of malicious action against information systems, hacking is the leading cause of data breaches for the fifth year running. Since hacking is less subject to the constraints that limit other attack methods (i.e., physical proximity, human interactions, special privileges), this is not unexpected. Additionally, many tools are available to help automate and accelerate the attack process, which keeps the cost of attack relatively low for the criminal. Those familiar with attack classification methodologies will know that the library of hacking and intrusion techniques is quite extensive. For 2008, we expanded our IR case metrics to provide more detail around this prevalent and potent threat category. Figure 15 reveals the types of hacking observed by Verizon Business during breach investigations in the last year.
-
-From the chart, it is evident that many intrusions exploit the basic (mis)management of identity. Unauthorized access via default, shared, or stolen credentials constituted more than a third of the entire Hacking category and over half of all compromised records. It is particularly disconcerting that so many large breaches stem from the use of default and/or shared credentials, given the relative ease with which these attacks could be prevented. Readers may wonder why default and shared credentials are lumped together, as these categories seem to represent two different problems. The answer is that these issues were frequently found in tandem. We investigated an entire series of cases in which multiple organizations within the same industry all suffered breaches within a very short timeframe. It didn’t take long to figure out that each used the same third-party vendor to remotely manage their systems. Unfortunately, that vendor neglected to change the default username and password—and used the same credentials across multiple clients.
-
-Similarly disturbing are those breaches (and the high percentage of compromised records) traced to poor access control lists (ACLs). In more than a few cases, ACLs proved to be somewhat of a misnomer, leaving a wide-open door for the assailant to walk through unchallenged. Criminals will usually take the path of least resistance, and unfettered access fits that description quite well.
-
-When hackers are required to work to gain access, SQL injection appears to be the uncontested technique of choice. In 2008, this type of attack ranked second in prevalence (utilized in 16 breaches) and first in the amount of records compromised (79 percent of the aggregate 285 million). At its most basic level, SQL injection attacks exploit a failure to properly validate user input. This seems especially common with custom-developed applications and web front-ends. In the absence of third-party OS and platform-specific vulnerabilities, criminals are aware of and exploiting weaknesses in application development processes. SQL injection has been a part of the security industry consciousness for years now, and some may wonder at its continued prevalence. Fixing vulnerable applications, however, can be challenging, costly, and time consuming, all of which contribute to a rather large and persistent attack surface. On top of this, SQL injection attacks are growing notably more sophisticated, especially for data compromise scenarios. It is often used to gain deeper access into systems and plant malicious software. Also noteworthy relative to hacking techniques is the infrequency with which more commonly known hacking techniques, such as buffer overflows, exploitation of session variables, and privilege escalation, appear in our data set.
-
-![Figure 15. Types of hacking by number of breaches (black) and percent of records (red): Unauthorized Access via Default or Shared Credentials (17 / 53%), SQL Injection (16 / 79%), Improperly Constrained or Misconfigured ACLs (9 / 66%), Unauthorized Access via Stolen Credentials (7 / 0.1%), Authentication Bypass (5 / 0.1%), Brute-Force (4 / 7%), Privilege Escalation (4 / 0%), Exploitation of Session Variables (3 / 0%), Buffer Overflow (3 / 0%), Cross-Site Scripting (1 / 0%)]
-
-#### Vulnerability exploits
-2008 continued a downward trend in attacks that exploit patchable vulnerabilities versus those that exploit configuration weaknesses or functionality. Only six confirmed breaches resulted from an attack exploiting a patchable vulnerability. The word “patchable” here is chosen carefully since we find that vulnerability does not have the same meaning for...
-
----
-
-[^1]: Figures based on data collected as part of Verizon Business underground intelligence operations.
-[^2]: The middle value in an ascending set of numbers.
-[^3]: The average of a set of numbers.
-
----
-
-everyone
+Demographics
+As with last year’s report, data breaches affected a wide array of organizations in 2008. These are categorized according to the
+industry groups presented in Figure 1. Claiming nearly a third of all breaches, retail continues to be the most frequently
+affected industry. Food and beverage establishments, second-most common in the 2004 to 2007 data set, dropped in both
+proportion (20 percent to 14 percent) and position (now third place) in 2008. The major gainer in 2008 was financial services,
+which doubled in terms of caseload percentage to 30 percent.
+The increase of data breaches in the financial sector is indicative of recent trends in cybercriminal activity highlighted in the
+“State of Cybercrime” section. As will be discussed throughout this report, financial services firms were singled out and fell
+victim to some very determined, very sophisticated, and—unfortunately—very successful attacks in 2008. This industry
+accounted for 93 percent of the over 285 million records compromised. This finding reflects a few very large breaches
+Figure 1. Industries represented by percent of breaches
+31% 30% 14% 6% 6% 6% 3% 4%
+Retail Financial Food and Manufacturing Business hospitality Technology other
+Services Beverage Services
+Comments or questions on this section?
+Visit http://securityblog.verizonbusiness.com/category/2009dbir/,
+and look for the “Demographics” post.
+6
+
+investigated by our IR team in the past year. Though few in number,
+Figure 2. Industries represented by
+they dominate all percentage of records statistics discussed throughout
+percent of records
+this report.
+7% everyone else
+Beyond these top three industry groups, a smattering of others filled
+out the remaining quarter of cases. Manufacturing and business
+services (which includes a few media, marketing, consulting, and legal
+firms) and hospitality each accounted for 6 percent of the caseload.
+Technology firms, which made up 13 percent of our 2004 to 2007
+cases, were comparatively less represented in 2008. We view this
+difference to be more reflective of our sample than a broader trend.
+The number of investigations handled by our IR team outside the
+United States rose to over one-third of our caseload in 2008. In addition 93% Financial Services
+to extensive investigations across the United States, many breaches hit
+organizations in Canada and Europe while casework demands continued to grow in Brazil, Indonesia, the Philippines, Japan,
+and Australia. As attackers continue to pursue soft targets internationally, concern in emerging economies will rise as well,
+especially with respect to consumer data.
+The distribution of organizational size looks very similar to the previous data set. Per Figure 3, data thieves seem to show no
+partiality between larger enterprises and smaller establishments. Though not always the case, criminals typically initiate
+attacks based on perceived value of the data and convenience rather than victim characteristics such as size.
+One final point of interest deserves mention before concluding this section. A newly added line of inquiry for 2008 found that
+13 percent of organizations in our caseload had recently been merged or acquired. It’s difficult to draw a conclusion from this
+Figure 3. number of employees by percent of breaches
+over 100,000 6%
+10,001 to
+18%
+100,000
+1,001 to 10,000 27%
+101 to 1,000 17%
+11 to 100 26%
+1 to 10 7%
+7
+
+statistic or assign any significance to it—yet the potential effect of such changes on the likelihood of suffering a breach is
+worth considering.
+Mergers and acquisitions bring together not only the people and products of once separate organizations but their
+technology environments as well. Integration rarely happens overnight or without a hitch. Technology standards are
+sometimes set aside for the sake of business expediency. This introduction of variance into the IT operating environment may
+serve to increase the risk of compromise. Furthermore, businesses preparing for sale may find reducing operating expenses—
+including cutbacks to IT and security spending—a convenient way to help the balance sheet at the time of sale. Finally, new
+ownership may alter (by mandate or by culture) the acquired organization’s tolerance for information risk.
+All this, of course, is speculation and cannot be proven or disproven (or even tested) without additional information. We
+added it to our case metrics with the idea that it might reveal something more substantial over time and we will continue to
+record and report it.
+Sources of Data Breaches
+Similar to cases conducted in the physical realm, one of the primary objectives during a computer forensics investigation is to
+identify those responsible for the crime. Because perpetrators often return to the scene, knowing the source of a breach can be
+essential to its containment. At a high-level, security incidents originate from one or a combination of the following sources:
+External: External threats originate from sources outside the organization. Examples include hackers, organized crime
+groups, and government entities, as well as environmental events such as weather and earthquakes. Typically, no trust or
+privilege is implied for external entities.
+Internal: Internal threat sources are those originating from within the organization. This encompasses human assets—
+company executives, employees and interns—as well as other assets such as physical facilities and information systems. Most
+insiders are trusted to a certain degree and some, IT administrators in particular, have high levels of access and privilege.
+Partner: Partners include any third party sharing a business relationship with the organization. This value chain of partners,
+vendors, suppliers, contractors, and customers is known as the extended enterprise. Information exchange is the lifeblood of
+the extended enterprise, and, for this reason, some level of trust and privilege is usually implied between business partners.
+Results from 600 incidents over five years make a strong
+case against the long-abiding and deeply held belief
+that insiders are behind most breaches.
+Comments or questions on this section?
+Visit http://securityblog.verizonbusiness.com/category/2009dbir/,
+and look for the “Sources of Data Breaches” post.
+8
+
+Figure 4. Sources of breaches by percent of breaches If evidence reveals that any of these played a significant and
+active role in the breach, it is marked as a source. While there is
+some room for interpretation in “significant and active,”
+74% investigators do follow a set of consistent guidelines. For instance,
+an insider that deliberately steals proprietary information from
+their employer is clearly an “internal” breach. We also consider
+insiders partially responsible when their actions, though
+unintentional, either directly cause or contribute to the breach.
+Picking up malware while browsing that is later used by an
+32% external attacker to gain unauthorized access is an example of
+this. We do not consider it an internal source when an insider’s
+20% inaction (i.e., oversight, failure to follow-through on procedures,
+decision to not implement certain security measures, etc)
+allows or aids a breach. The distribution of breach sources in
+external Internal partner 2008 is presented in Figure 4. The results are quite similar to that
+Confirmed Suspected of the 2004 to 2007 data set and continue to challenge some of
+the prevailing wisdom in the security community with regard to
+the origins of data breaches.
+Prior to further discussion of these results, it’s worth clarifying two points of potential confusion. First, it is no mistake that the
+values in Figure 4 sum to more than 100 percent, as many breaches involve multiple parties. Figure 5 below illustrates the
+distribution of breach sources to highlight this fact. Second, we want to be clear that these findings relate specifically to the
+occurance (or likelihood) of security breaches leading to data compromise within our caseload—not attacks, not impact, not
+general security incidents, and not risk. We observed some rather strong reactions to this finding after last year’s report, and it
+was apparent that at least some of the discussion had more to do with terminology than the actual results.
+The majority of data breaches continue to originate
+from sources outside the victim. In 2008 Verizon Business Figure 5. Single vs. multiple breach sources
+by percent of breaches
+encountered nearly the same percentage (74 percent)
+of confirmed external breaches as our combined 2004
+to 2007 caseload. Furthermore, this statistic remains
+remarkably consistent over the five-year period of this
+study. Based on these results, it seems unwise to
+43% 39% 11% 7%
+downplay the threat posed by outsiders.
+only external Multiple Sources only Internal only partner
+9
+
+Figure 6. Breach sources over time by percent of breaches
+100%
+90%
+80% external
+70%
+60%
+50%
+40% partner
+30%
+20%
+Internal
+10%
+0%
+2004 2005 2006 2007 2008
+Insiders, on the other hand, are behind the lowest proportion (20 percent) of breaches in our caseload for four years
+running. Figure 5 shows that only about half of these (11 percent of all breaches) were committed by an insider acting
+alone. The remainder of the breaches tied to insiders mostly involved employees as unwitting participants in the crime
+through errors and policy violations. It is true that these results are based upon our caseload—which is consumer data-
+heavy—and may not be reflective of all data breaches. Perhaps insiders are more apt to target other types of data such as
+intellectual property. It is also true that many insider crimes may never be detected, though one would think any breach
+causing material harm would eventually be noticed. It is also feasible they are more likely handled internally. At any rate,
+results from 600 incidents over five years make a strong case against the long-abiding and deeply held belief that insiders
+are behind most breaches.
+The number of breaches linked to business partners continues to land between external and internal sources but did drop
+12 percent in 2008. Interpreting this decline is difficult as it is doubtful that huge strides were made in the effort to reduce
+partner-facing risk. It is more likely related to the lower proportion of food and beverage and retail cases within our 2008
+caseload. Readers of last year’s supplemental report may remember that those two industries exhibited high percentages of
+partner-related breaches (particularly food and beverage at 70 percent or more). In contrast, this year’s results show that
+criminals appear to be directly targeting victims that offer a bigger payout. The “end around” maneuver via trusted partner
+infrastructure does not seem to be the vector of choice in these attacks. Nevertheless, breaches involving partners are still
+quite common and account for over one-third of cases if both confirmed and suspected cases are counted. Any other
+difference from past data that cannot be explained due to caseload composition is likely insignificant statistical variation.
+10
+
+Breach Size by Source
+Figure 7. Median number of records compromised
+Figure 7 shows the median* number of records compromised
+per breach
+per event for each threat source. As a reminder, we do not
+100,000
+assert that the full consequences of a breach are limited to the
+number of records exposed; we use this statistic merely as a
+measurable indicator of the overall impact.
+Insider breaches (individually) continue to be much more
+damaging than those caused by other sources though the
+difference between them is not to the extent observed across
+37,847
+our 2004 to 2007 caseload. One of the more interesting changes
+27,000
+is that outsiders compromised more records per incident than
+partners. This shift is attributable to several very large breaches
+investigated in 2008 which were perpetrated by outsiders. A
+comparison of the median value provided at right (37,847) external Internal partner
+with the mean** (5,651,067) gives an appreciation for the
+dramatic skew that exists within the data set with respect to
+the size of external breaches. This is one of several reasons why we use the median as the preferred measure of central
+tendency when analyzing these incidents. Figure 8 provides a striking view of the size and dominant nature of external
+breaches last year.
+At this point, those familiar with our pseudo risk calculation (likelihood x impact) and its result in the last report may suspect
+that it will yield a different outcome this year. That instinct would be correct. Case results from 2008 find that outsiders
+represent the greatest risk for data compromise, followed closely by insiders and then partners. This presents a pattern
+exactly opposite from what was depicted in our 2004 to 2007 data set. Does this mean that the fundamental nature of
+information risk experienced a profound metamorphosis last year? It is doubtful; keep in mind that risk is probabilistic and
+best understood over time with multiple measurements. Though few in number, several large breaches were enough to tip
+the scales in the direction of outsiders as the dominant source in 2008.
+Figure 8. Total records compromised by source
+266,788,000 15,796,000 1,509,000 1,330,000
+only external Multiple Sources only partner only Internal
+*The middle value in an ascending set of numbers
+**The average of a set of numbers
+11
+
+Table 1. pseudo risk calculation
+Impact
+| Source   |     | Likelihood | (number of records) | Risk (pseudo) |
+| -------- | --- | ---------- | ------------------- | ------------- |
+| external |     | 74%        |      37,847         |       28,175  |
+| Internal |     | 20%        |     100,000         |       20,000  |
+| partner  |     | 32%        |      27,000         |        8,700  |
+External Breach Sources
+The true geographic origin of an attack is difficult to pinpoint with certainty. This determination is predicated upon the source
+IP address, which is often unreliable for many reasons. Even so, additional validation is gained through common elements
+between cases, correlative fraud patterns, information provided by other Verizon Business departments, and collaboration
+with law enforcement agencies. The geographic distribution of external data breach sources is shown in Figure 9.
+Though in slightly different order, Eastern Europe, East Asia, and North America remain at the top of the list in 2008. In fact,
+these regions are even more dominant, accounting for 82 percent of all external attacks. By comparison, 59 percent of breaches
+between 2004 and 2007 originated from these regions. Eastern Asia (up 15 percent) and Eastern Europe (up 9 percent) are
+most responsible for the change.
+| Though it’s tempting to pander to hype  |     |     |     |     |
+| --------------------------------------- | --- | --- | --- | --- |
+Figure 9. location of attacking Ip(s)  by number of breaches
+surrounding state-sponsored attacks from
+Asia, we find no evidence to support the
+position that governments are a significant
+east europe 22
+agent of cybercrime. We do have a great deal
+| of  evidence  | that  malicious  | activity  from  |     |     |
+| ------------- | ---------------- | --------------- | --- | --- |
+east Asia 18
+Eastern Europe is the work of organized
+crime. This is further seen from Figure 10
+north America 15
+| which  categorizes  | external  | entities  into  |     |     |
+| ------------------- | --------- | --------------- | --- | --- |
+familiar types rather than by region.
+|     |     |     | South America | 6   |
+| --- | --- | --- | ------------- | --- |
+That nearly two-thirds are “not traced to a
+specific entity other than IP” is the result of
+|     |     |     | South/Southeast Asia | 3   |
+| --- | --- | --- | -------------------- | --- |
+several factors. Sometimes we are unable to
+| do so. Other times the victim decides it is  |     |     | West/South europe | 3   |
+| -------------------------------------------- | --- | --- | ----------------- | --- |
+not worth the additional time and expense.
+In most cases, the immediate need with
+|     |     |     | Middle east | 1   |
+| --- | --- | --- | ----------- | --- |
+respect to the IP address is in containing
+the breach rather than rooting out the
+12
+
+entities responsible. In those instances when an attempt is
+made to trace the IP to a specific entity, we work with law Figure 10. Categories of external breach sources
+by number of breaches
+enforcement personnel. As seen in the chart, the trail often
+leads to members of known organized crime outfits. What
+43 19 6
+is not evident from Figure 10 is the astounding statistic
+that 91 percent of all compromised records in 2008 was
+attributed to organized criminal activity. On the brighter
+side, we are happy to report that these efforts with law
+not Traced to Known Known
+enforcement led to arrests in at least 15 cases (and Specific entity organized Individuals
+other Than Ip Crime
+counting) in 2008.
+Internal Breach Sources
+Several broad classifications of insiders are presented in Figure 11 along with the percentage of incidents attributed to each.
+2008 results are similar to the 2004 to 2007 data set. End-users and IT administrators continue to be the culprits behind most
+breaches. This finding for IT administrators is not surprising; higher privileges afford greater opportunity and temptation for
+abuse. At the same time, the results for incidents perpetrated by end-users serve to remind us that internal breaches are not
+solely dependent on privileges or administrative credentials. Though our metrics do include options for part-time and
+temporary workers, our caseload included none.
+Of all insider cases in 2008, investigators determined about two-thirds were the result of deliberate action and the rest were
+unintentional. While it’s tempting to infer that administrators acted more deliberately and maliciously than end-users and
+other employees, the evidence does not support this conclusion. The ratio was roughly equal between them. It is worth
+noting that both cases involving senior management were the result of deliberate action which was taken after the person
+was terminated. We also noticed several other breaches in the caseload were perpetrated by recently terminated employees.
+The majority was administrators, but a few cases involved end-users as well. With respect to breaches caused by recently
+terminated employees, the following two scenarios were observed:
+y Employee was terminated and his/her account was not disabled in a timely manner.
+y Employee was notified of termination but was allowed to “finish the day” unmonitored and with normal access/privileges.
+This obviously speaks to the need for termination plans that are timely and encompass all areas of access (decommissioning
+accounts, disabling privileges, escorting terminated employees, etc.).
+Figure 11. Categories of internal breach sources by number of breaches
+9 8 2 0 2
+no Specific
+end-user IT Admin. / Senior Mgt. Agent / Spy person
+Super-user Identified
+13
+
+Partner Breach Sources
+The majority of breaches involving a business partner was the result of third-party information assets and connections being
+compromised and used to attack the victim’s systems. This statistic increased substantially in 2008. (For the sake of reference, it
+was slightly over half of 2004 to 2007 cases.) In the large majority of cases, it was the lax security practices of the third party that
+allowed the attack. It should not come as a surprise that organizations
+frequently lack measures to provide visibility and accountability for
+Figure 12. Categories of partner breach
+sources by number of breaches partner-facing systems.
+Figure 12 also reminds us that not all data breaches within the
+25 6 1
+extended enterprise are unintentional. Rising to a slightly higher
+proportion last year, six instances of deliberate malicious action by
+third-party remote administrators were observed. One of these
+no individuals had been recently terminated.
+partner Asset or Remote IT Specific person
+Connection Admin. Identified After last year’s report, we had many inquiries regarding the nature of
+the relationship between the victim (client) and the partner. We
+attempted to capture this information during 2008 investigations. This
+new information found that most of these breaches dealt with a partner who administered victim-side assets. For retail and
+food and beverage organizations, this was almost always a vendor supporting a point-of-sale (POS) system. We also noted
+several instances where the partner had user-level access to the victim’s systems or regularly exchanged data with the victim.
+Only one case involved a partner physically handling or transporting victim assets. Interestingly, our caseload included zero
+instances where the partner hosted the victim systems.
+In the large majority of cases, it was the lax security practices of
+the third party that allowed the attack. It should not come as a
+surprise that organizations frequently lack measures to provide
+visibility and accountability for partner-facing systems.
+Threat and Attack Categories
+Anyone responsible for safeguarding corporate information assets knows there are countless ways in which sensitive
+information will find its way into the wrong hands. Though sometimes one-dimensional, data breaches are more often the
+result of a series of intertwined and orchestrated events. Examining the frequencies and trends surrounding these scenarios
+is essential to protection efforts and is the purpose of this section.
+Comments or questions on this section?
+Visit http://securityblog.verizonbusiness.com/category/2009dbir/,
+and look for the “Threat and Attack Categories” post.
+14
+
+Though very specific attack details are noted during an investigation, all possibilities fit somewhere within the seven top-
+level threat categories listed in the figure below. Figure 13 records the prevalence of each as causing or contributing to data
+breaches investigated by Verizon Business in 2008 (black bars). Since most incidents involve events spanning several
+categories, the percentages sum to well over 100 percent. Also depicted is the percentage of total compromised records
+ascribed to each category (red bars).
+The results for 2008 cases look very similar to those of the 2004 to 2007 data set (see Figure 14 below for a time series chart
+of these results). The Deceit and Physical categories switched places, but all others remained in order. Furthermore, Hacking
+and Malware continue to dominate the caseload. Error is seldom the proximate cause of a breach, but it is very often a factor
+contributing to or enabling a successful attack. From Figure 13, one can deduce the stereotypical breach scenario: the
+attacker takes advantage of some mistake committed by the victim, hacks into the network, and installs malware on a system
+to collect data. As evidenced by the red bars in Figure 13, this is especially true for large breaches. The following sections
+provide a more in-depth examination of each threat category.
+Figure 13. Threat categories by percent of breaches (black) and records (red)
+64%
+hacking
+94%
+38%
+Malware
+90%
+22%
+Misuse
+2%
+12%
+Deceit
+6%
+9%
+physical
+2%
+1% 67%
+error
+0%
+0%
+environmental % of Cases % of Records
+0%
+15
+
+Figure 14. Threat categories over time by percent of breaches
+100%
+90%
+hacking
+80%
+Malware
+70%
+Misuse
+60%
+50% Deceit
+40%
+physical
+30%
+error (Cause)
+20%
+environmental
+10%
+0% error (Factor)
+2004 2005 2006 2007 2008
+Hacking and Intrusion
+In terms of malicious action against information systems, hacking is the leading cause of data breaches for the fifth year
+running. Since hacking is less subject to the constraints that limit other attack methods (i.e., physical proximity, human
+interactions, special privileges), this is not unexpected. Additionally, many tools are available to help automate and accelerate
+the attack process, which keeps the cost of attack relatively low for the criminal. Those familiar with attack classification
+methodologies will know that the library of hacking and intrusion techniques is quite extensive. For 2008, we expanded our
+IR case metrics to provide more detail around this prevalent and potent threat category. Figure 15 reveals the types of
+hacking observed by Verizon Business during breach investigations in the last year.
+From the chart, it is evident that many intrusions exploit the basic (mis)management of identity. Unauthorized access via
+default, shared, or stolen credentials constituted more than a third of the entire Hacking category and over half of all
+compromised records. It is particularly disconcerting that so many large breaches stem from the use of default and/or shared
+credentials, given the relative ease with which these attacks could be prevented. Readers may wonder why default and
+shared credentials are lumped together, as these categories seem to represent two different problems. The answer is that
+these issues were frequently found in tandem. We investigated an entire series of cases in which multiple organizations
+within the same industry all suffered breaches within a very short timeframe. It didn’t take long to figure out that each used
+the same third-party vendor to remotely manage their systems. Unfortunately, that vendor neglected to change the default
+username and password—and used the same credentials across multiple clients.
+16
+
+Similarly disturbing are those breaches (and the high percentage of compromised records) traced to poor access control lists
+(ACLs). In more than a few cases, ACLs proved to be somewhat of a misnomer, leaving a wide-open door for the assailant to
+walk through unchallenged. Criminals will usually take the path of least resistance, and unfettered access fits that description
+quite well.
+When hackers are required to work to gain access, SQL injection appears to be the uncontested technique of choice. In 2008,
+this type of attack ranked second in prevalence (utilized in 16 breaches) and first in the amount of records compromised (79
+percent of the aggregate 285 million). At its most basic level, SQL injection attacks exploit a failure to properly validate user
+input. This seems especially common with custom-developed applications and web front-ends. In the absence of third-party
+OS and platform-specific vulnerabilities, criminals are aware of and exploiting weaknesses in application development
+processes. SQL injection has been a part of the security industry consciousness for years now, and some may wonder at its
+continued prevalence. Fixing vulnerable applications, however, can be challenging, costly, and time consuming, all of which
+contribute to a rather large and persistent attack surface. On top of this, SQL injection attacks are growing notably more
+sophisticated, especially for data compromise scenarios. It is often used to gain deeper access into systems and plant
+malicious software. Also noteworthy relative to hacking techniques is the infrequency with which more commonly known
+hacking techniques, such as buffer overflows, exploitation of session variables, and privilege escalation, appear in our data set.
+Figure 15. Types of hacking by number of breaches (black) and percent of records (red)
+unauthorized Access via Default or Shared
+17 / 53 %
+Credentials
+SQl Injection 16 / 79%
+Improperly Constrained or Misconfigured
+9 / 66%
+ACls
+unauthorized Access via Stolen
+7 / 0.1%
+Credentials
+Authentication Bypass 5 / 0.1%
+Brute-Force 4 / 7%
+privilege escalation 4 / 0%
+exploitation of Session Variables 3 / 0%
+Buffer overflow 3 / 0%
+Cross-Site Scripting 1 / 0%
+17
+
+Vulnerability exploits
+2008 continued a downward trend in attacks that exploit patchable vulnerabilities versus those that exploit configuration
+weaknesses or functionality. Only six confirmed breaches resulted from an attack exploiting a patchable vulnerability. The
+word “patchable” here is chosen carefully since we find that vulnerability does not have the same meaning for everyone
 within the security community. While programming errors and misconfigurations are vulnerabilities in the broader sense,
 lousy code can’t always be fixed through patching and the careless administration patch has yet to be released. Furthermore,
 many custom-developed or proprietary applications simply do not have
@@ -1414,4 +1852,4 @@ and services are trademarks and service marks or registered trademarks and servi
 llC or its affiliates in the united States and/or other countries. All other trademarks and service marks are the property
 50 of their respective owners.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-07", "model": "gemini-3.7-flash"} -->

@@ -1,471 +1,1066 @@
-# NIST Special Publication 800-170: Computer Security Division 2013 Annual Report
-
-## Table of Contents
-- [Welcome Letter](#welcome-letter)
-- [Computer Security Division (CSD) Management Team](#computer-security-division-csd-management-team)
-- [Computer Security Division Organization](#computer-security-division-organization)
-  - [Cryptographic Technology Group (CTG)](#cryptographic-technology-group-ctg)
-  - [Security Components and Mechanisms Group (SCMG)](#security-components-and-mechanisms-group-scmg)
-  - [Secure Systems and Applications Group (SSAG)](#secure-systems-and-applications-group-ssag)
-  - [Security Outreach and Integration Group (SOIG)](#security-outreach-and-integration-group-soig)
-  - [Security Testing, Validation, and Measurement Group (STVMG)](#security-testing-validation-and-measurement-group-stvmg)
-- [The Computer Security Division Implements the Federal Information Security Management Act](#the-computer-security-division-implements-the-federal-information-security-management-act)
-- [Program and Project Achievements for Fiscal Year 2013](#program-and-project-achievements-for-fiscal-year-2013)
-  - [NIST Responsibilities Under Executive Order 13636, “Improving Critical Infrastructure Cybersecurity”](#nist-responsibilities-under-executive-order-13636-improving-critical-infrastructure-cybersecurity)
-  - [Contributions to National and International Standards Development](#contributions-to-national-and-international-standards-development)
-  - [Identity Management Standards within INCITS B10 and ISO JTC1/SC 17](#identity-management-standards-within-incits-b10-and-iso-jtc1sc-17)
-  - [Federal Information Security Management Act (FISMA) Implementation Project](#federal-information-security-management-act-fisma-implementation-project)
-
----
-
-# NIST Special Publication 800-170
-## Computer Security Division
-### 2013 Annual Report
-
-**Patrick O’Reilly**, Editor  
-Computer Security Division  
-Information Technology Laboratory  
-National Institute of Standards and Technology  
-
-**Co-Editors:**  
-- Chris Johnson (G2, Inc.)  
-- Doug Rike (G2, Inc.)  
-- Greg Witte (G2, Inc.)  
-- Lorie Richards (Facilities Services Division, Creative and Printing Service)  
-
-This publication is available free of charge from [http://dx.doi.org/10.6028/NIST.SP.800-170](http://dx.doi.org/10.6028/NIST.SP.800-170)  
-**June 2014**  
-
-**U.S. Department of Commerce**  
-Penny S. Pritzker, Secretary  
-
-**National Institute of Standards and Technology**  
-Dr. Willie E. May, Under Secretary of Commerce for Standards and Technology and Acting Director  
-
-> **Disclaimer:** Any mention of commercial products is for information only; it does not imply NIST recommendation or endorsement, nor does it imply that the products mentioned are necessarily the best available for the purpose.  
-> National Institute of Standards and Technology Special Publication 800-170 Natl. Inst. Stand. Technol. Spec. Pub., 93 pages (June 2014) CODEN: NSPUE2  
-
-ii  
-Computer Security Division Annual Report - 2013  
-
----
-
-## Welcome Letter
-
-The Computer Security Division (CSD), a component of the Information Technology Laboratory at the National Institute of Standards and Technology (NIST) is responsible for developing standards, guidelines, tests, and metrics for protection of non-national security federal information systems. 
-
-NIST standards and guidelines are developed in an open and transparent manner that enlists broad industry and academia expertise from around the world. While developed for federal agency use, these resources are voluntarily adopted by other organizations because they are effective and accepted throughout the world.
-
-The need for cybersecurity standards and best practices that address interoperability, usability and privacy continues to be critical for the Nation. In Fiscal Year (FY) 2013, CSD continued to align its resources to enable greater development and application of practical, innovative security technologies and methodologies that enhance our ability to address current and future computer and information security challenges. Our foundational research and applied cybersecurity programs continue to advance in many areas including cryptography; identity and access management; cloud, virtualization, and mobile technologies; and advanced security testing and measurement.
-
-Strong partnerships with diverse stakeholders are vital to the success of our technical programs. In February 2013, the President issued Executive Order 13636 that directed NIST to work collaboratively with industry to develop a voluntary framework - based on existing standards, guidelines, and practices - to improve critical infrastructure cybersecurity practices. NIST held several workshops, meetings, webinars, and informal sessions to gather feedback with the goals of generating content for the framework and discuss several topics that help inform and guide NIST in this effort. In August 2013, we produced a discussion draft of the preliminary framework.
-
-Working closely with standards developing organizations, industry and interagency partners, we are evolving and expanding security automation capabilities to help organizations manage and measure the security of systems and technologies. Our cybersecurity awareness, training, and education programs also exemplify the importance of these partnerships by engaging with academic institutions, federal agencies, small and medium businesses and others to increase awareness and enhance the overall cybersecurity posture of the Nation.
-
-Active engagement with the diverse federal community continues to be critical to our success. This interaction is most prominent in our strengthened collaborations with the Department of Defense, the Intelligence Community, and the Committee on National Security Systems to establish a common foundation for information security across the federal government. Through this partnership, NIST released Special Publication (SP) 800-53 Revision 4, _Security and Privacy Controls for Federal Information Systems and Organizations_, in April 2013. This guideline provides organizations with state-of-the-practice security controls to fundamentally strengthen their systems and the environments in which those systems operate. SP 800-53 Revision 4 and other NIST standards and guidelines contribute to systems that are more resilient in the face of cyber attacks and other threats.
-
-Late in FY 2013, news reports about leaked classified documents caused concern from the cryptographic community about the security of NIST cryptographic standards and guidelines. Recognizing community concern regarding some specific standards, we reopened the public comment period for three Special Publications to give the public a second opportunity to view and comment on the documents. This initial step will be followed by a review of our cryptographic development process and NIST cryptographic standards and guidelines in FY 2014.
-
-For many years, CSD, in collaboration with our global partners across industry, academia, and government, has made great contributions to help secure the nation’s critical information and infrastructure. We look forward to furthering these relationships in FY 2014 as we lead the development and practical implementation of scalable and sustainable information security standards and practices in areas such as cyber-physical and industrial control systems, privacy engineering, security automation, and mobile technologies.
-
-To participate in any CSD research areas – whether current or future – or to learn more about our programs and activities, please visit [http://csrc.nist.gov](http://csrc.nist.gov).
-
-**Donna Dodson**  
-Chief, Computer Security Division  
-& Deputy Chief Cybersecurity Advisor  
-
-1  
-
----
-
-## Computer Security Division (CSD) Management Team
-
-- **Donna Dodson**  
-  Chief, Computer Security Division, Chief Cybersecurity Advisor, and Acting Executive Director, National Cybersecurity Center of Excellence
-- **Matthew Scholl**  
-  Acting Associate Director & Acting Deputy Chief, Computer Security Division and Cybersecurity Advisor Office, and Acting Associate Director of Operations, National Cybersecurity Center of Excellence
-
-### Group Managers
-- **Cryptographic Technology Group:** Dr. Lily Chen (Acting)
-- **Security Components and Mechanisms Group:** Mr. Mark (Lee) Badger
-- **Secure Systems and Applications Group:** Mr. David Ferraiolo
-- **Security Outreach and Integration Group:** Mr. Kevin Stine
-- **Security Testing, Validation, and Measurement Group:** Mr. Michael Cooper
-
-2  
-Computer Security Division Annual Report - 2013  
-
----
-
-## Computer Security Division Organization
-
-The Computer Security Division’s computer scientists, mathematicians, IT specialists, administrative staff and others support CSD’s mission and responsibilities through five groups that are described in the following sections:
-- Cryptographic Technology Group
-- Security Components and Mechanisms Group
-- Secure Systems and Applications Group
-- Security Outreach and Integration Group
-- Security Testing, Validation, and Measurement Group
-
-3  
-
-### Cryptographic Technology Group (CTG)
-
-**Mission Statement:**  
-Research, develop, engineer, and standardize cryptographic algorithms, methods, and protocols.
-
-**Overview:**  
-CTG’s work in the field of cryptography includes researching, analyzing, and standardizing cryptographic technology, such as hash algorithms, symmetric and asymmetric cryptographic techniques, key management, authentication, and random number generation. CTG’s goal is to identify and promote methods to enhance trust in communications, data, and storage through cryptographic technology, encouraging innovative development and helping technology users to manage risk.
-
-In Fiscal Year (FY) 2013, CTG continued to make an impact in the field of cryptography, both within and outside the Federal Government, by collaborating with national and international agencies, academic and research organizations, and standards bodies to develop interoperable security standards and guidelines. In addition, CTG worked with industry partners to promote the use of NIST-approved cryptographic methods.
-
-Federal agency collaborators include the National Security Agency (NSA), the Intelligence Advanced Research Projects Activity (IARPA), the National Telecommunications and Information Administration (NTIA), the National Strategy for Trusted Identities in Cyberspace (NSTIC), General Services Administration (GSA), the United States Postal Service (USPS), and the Election Assistance Commission (EAC).
-
-CTG also works closely with foreign government agencies, such as the Communications Security Establishment of Canada and Australia’s Defense Signals Agency and Centrelink. Additionally, CTG is active in national and international standards bodies, including the Accredited Standards Committee (ASC) X9 (financial industry standards), the International Organization for Standardization (ISO), the Institute of Electrical and Electronics Engineers (IEEE), the Internet Engineering Task Force (IETF), the American National Standards Institute (ANSI), and the Trusted Computing Group (TCG). Industry collaborators include Intel, Microsoft, and Cisco.
-
-Academic collaborators include Carnegie Mellon University, Yale University, University of Southern Denmark, the University of Milan, Malaga University, and the University of Lisbon. Research organizations include the Information-technology Promotion Agency (IPA)/Cryptography Research and Evaluation Committees (CRYPTREC) and the Ministry of Economy, Trade and Industry (METI) of Japan.
-
-**Group Manager (Acting):**  
-Dr. Lily Chen  
-(301) 975-6974  
-lily.chen@nist.gov  
-
----
-
-### Security Components and Mechanisms Group (SCMG)
-
-**Mission Statement:**  
-Research, develop, and standardize foundational security mechanisms, protocols, and services.
-
-**Overview:**  
-The SCMG’s security research focuses on the development and management of foundational building-block security mechanisms and techniques that can be integrated into a wide variety of mission-critical U.S. information systems. The group’s work spans the spectrum from near-term hardening and improvement to the design and analysis of next-generation, leap-ahead security capabilities. Computer security depends fundamentally on the level of trust for computer software and systems. This work, therefore, focuses strongly on assurance building activities ranging from the analysis of software configuration settings to advanced trust architectures to testing tools that surface flaws in software modules. This work also focuses significantly on increasing the applicability and effectiveness of automated techniques, wherever feasible.
-
-The SCMG conducts collaborative research with government, industry, and academia. Outputs of this research consist of prototype systems, software tools, demonstrations, NIST Special Publications (SP), NIST Interagency or Internal Reports (NISTIR), and conference and journal papers.
-
-SCMG works on a variety of topics, such as specifications for the automated exchange of security information between systems, computer security incident handling guidelines, formulation of high-assurance software configuration settings, hardware roots of trust for mobile devices, secure Basic Input Output System (BIOS) layers, combinatorial testing techniques, conformity assessment of software implementing biometric standards, and adoption of Internet Protocol Version 6 and Internet Protocol security extensions. SCMG collaborates extensively with government, academia, and the private sector.
-
-In FY 2013, collaborations have included Carnegie Mellon University (test development environment), Johns Hopkins Applied Physics Lab (practical application of combinatorial coverage measurement tool), North Carolina State University (access control policy testing), University of North Texas and University of Maryland-Baltimore County (test prioritization algorithms), University of Texas at Arlington (covering array generation algorithm), Mexico’s Centro Nacional de Metrología (constraints for testing coverage tool), National Aeronautics and Space Administration (NASA) (practical application for combinatorial coverage measurement), U.S. Air Force Test and Evaluation (a new event sequence testing method), the National Security Agency (secure software tool chain competition development), and the Department of Homeland Security (incident coordination).
-
-SCMG accomplishments include the Advanced Combinatorial Testing System (ACTS) software and documentation, the NIST BioCTS 2013 biometric conformance testing tool and test assertions, and a security log analysis tool.
-
-**Group Manager:**  
-Mr. Mark (Lee) Badger  
-(301) 975-3176  
-mark.badger@nist.gov  
-
----
-
-### Secure Systems and Applications Group (SSAG)
-
-**Mission Statement:**  
-Integrate and apply security technologies, standards, and guidelines for computing platforms and information systems.
-
-**Overview:**  
-SSAG’s security research focuses on the identification of emerging and high-priority technologies and on the development of security solutions that will enhance the security of U.S. critical information infrastructure. The group conducts research and development on behalf of government and industry from the earliest stages of technology development through proof-of-concept, reference and prototype implementations, and demonstrations. SSAG works to transfer new technologies to industry; to produce new standards and guidance for federal agencies and industry; and to develop tests, test methodologies, and assurance methods.
-
-SSAG investigates topics such as mobile device security, cloud computing and virtualization, identity management, access control and authorization management, and software assurance. SSAG research helps federal agencies meet information security requirements that might not be fully addressed by existing technology. The group collaborates extensively with government, academia, and private sector entities.
-
-Example successes from this work include tools for access control policy testing, new concepts in access control and policy enforcement, methods for achieving comprehensive policy enforcement and data interoperability across enterprise data services, and test methods for mobile device (smart phone) application security. For example, the SSAG Mobile Application Testing Portal (ATP) went operational for military use (known in the U.S. Army as PANTHR) and is in the process of transitioning to other federal agencies as open source. In support of the Federal Government’s cloud computing initiatives, SSAG led the NIST Security Working Group that published the *NIST Cloud Computing - Security Reference Architecture*. The SSAG also completed revision of Federal Information Processing Standard (FIPS) 201-2, *Personal Identity Verification (PIV) of Federal Employees and Contractors*, which was approved by the Secretary of Commerce and published in September of 2013.
-
-To improve access to new technologies, SSAG chaired, edited, and participated in the development of a wide variety of national and international security standards.
-
-**Group Manager:**  
-Mr. David Ferraiolo  
-(301) 975-3046  
-david.ferraiolo@nist.gov  
-
----
-
-### Security Outreach and Integration Group (SOIG)
-
-**Mission Statement:**  
-Develop, integrate, and promote the mission-specific application of information security standards, guidelines, best practices, and technologies.
-
-**Overview:**  
-The U.S. economy, citizens, and government rely on information technology (IT); so the protection of IT and information infrastructure is critical. SOIG leverages broad cybersecurity and risk management expertise to develop, integrate, and promote security standards, guidelines, tools, technologies, methodologies, tests, and measurements to address cybersecurity needs in many areas of national and international importance.
-
-The SOIG collaborates with stakeholders to address cybersecurity considerations in many diverse program areas, including the Information and Communications Technologies (ICT) supply chain, Smart Grid, Electronic Voting, Health Information Technology, and Cyber Physical and Industrial Control Systems. The group continues to increase its efforts to research, develop, and align cybersecurity standards, practices, and testing methods necessary to foster interoperable and secure public safety communications. In our Federal Information Security Management Act (FISMA) implementation program, the group produces standards and guidelines to help federal agencies build strong cybersecurity risk management programs.
-
-In each of these program areas, the group extends outreach to stakeholders across federal, state, and local governments; industry; academia; small businesses; and the public. The SOIG also leads several broad cybersecurity awareness, training, education, and outreach efforts, including the National Initiative for Cybersecurity Education (NICE), the Small- and Medium-Sized Business (SMB) outreach program, the Federal Computer Security Managers’ Forum, and the Federal Information Systems Security Educators’ Association (FISSEA).
-
-Key to the group’s success is the ability to interact with a broad constituency to ensure that SOIG’s program is consistent with national objectives related to or impacted by information security. Through open and transparent public engagement, collaboration, and cooperation, the group works to address critical cybersecurity challenges, enable greater U.S. industrial competitiveness, and facilitate practical implementation of scalable and sustainable information security standards and practices.
-
-**Group Manager:**  
-Mr. Kevin Stine  
-(301) 975-4483  
-kevin.stine@nist.gov  
-
----
-
-### Security Testing, Validation, and Measurement Group (STVMG)
-
-**Mission Statement:**  
-Advance information security testing, measurement science, and conformance.
-
-**Overview:**  
-Federal agencies, industry, and the public rely on cryptography for the protection of information and communications used in electronic commerce, critical infrastructure, and other application areas. The STVMG supports testing and validation of underlying cryptographic modules and cryptographic algorithms in consideration of established standards. These cryptographic modules and algorithms enable products and systems to provide security services, such as confidentiality, integrity, and authentication. Although cryptography provides security, poor designs or weak algorithms can render a product insecure and place highly sensitive information at risk. When protecting sensitive data, Federal Government agencies require a minimum level of assurance that cryptographic products meet established security requirements and use only tested and validated cryptographic modules.
-
-STVMG’s testing-focused activities include validating cryptographic algorithm implementations, cryptographic modules, and Security Content Automation Protocol (SCAP)-compliant products; developing test suites and test methods; providing implementation guidance and technical support to industry forums; and conducting education, training, and outreach programs.
-
-STVMG’s validation programs work together with independent Cryptographic and Security Testing laboratories that are accredited by the NIST National Voluntary Laboratory Accreditation Program (NVLAP). Based on the independent laboratory test report and test evidence, the Validation Program then validates the implementation under test. NIST publishes, through public websites, lists of validations awarded.
-
-**Group Manager:**  
-Mr. Michael Cooper  
-(301) 975-8077  
-michael.cooper@nist.gov  
-
----
-
-## The Computer Security Division Implements the Federal Information Security Management Act
-
-The E-Government Act, Public Law 107-347, passed by the 107th Congress and signed into law by the President in December 2002, recognized the importance of information security to the economic and national security interests of the United States. Title III of the E-Government Act, entitled the Federal Information Security Management Act (FISMA) of 2002, included duties and responsibilities for the National Institute of Standards and Technology, Information Technology Laboratory, Computer Security Division (CSD). In 2013, CSD addressed its assignments through the following activities:
-
-- **Issued two final Federal Information Processing Standards (FIPS):** FIPS 186-4, _Digital Signature Standard (DSS)_, which specifies a suite of algorithms that can be used to generate digital signatures, and FIPS 201-2, _Personal Identity Verification (PIV) of Federal Employees and Contractors_, which specifies the architecture and technical requirements for a common identification standard for Federal employees and contractors.
-
-- **Issued 25 draft and final NIST Special Publications (SP)** that provide management, operational, and technical security guidelines in areas such as personal identity verification, cryptographic key generation, cryptographic key management systems, random bit generators, transport layer security, mobile devices and mobile device forensics, hardware-rooted security in mobile devices, malware incident prevention and handling for desktops and laptops, industrial control systems security, e-authentication, security and privacy controls for federal information systems and organizations, patch management technologies, attribute based access control, and supply chain risk management practices.
-
-- **Issued 13 draft and final NIST Interagency or Internal Reports (NISTIR)** on a variety of topics, including cryptographic key management issues and challenges in cloud services, cybersecurity in cyber-physical systems, the SHA-3 cryptographic hash algorithm competition, combinatorial coverage measurement, credential reliability and revocation model for federated identities, security automation, reference certificate policy, trusted geolocation in the cloud, and a glossary of key information security terms.
-
-- **Performed research and conducted outreach** on standards, practices, and technologies to enable prompt and effective computer security incident handling and coordination.
-
-- **Continued the successful collaboration** with the Office of the Director of National Intelligence (ODNI), the Committee on National Security Systems (CNSS), and the Department of Defense (DOD) to establish a common foundation for information security across the Federal Government, including a structured, yet flexible approach for managing information security risk across an organization. In 2013, this collaboration produced updated guidelines for selecting and specifying security controls, and an updated catalog of security and privacy controls for federal information systems and organizations.
-
-- **Provided assistance to agencies and the private sector** through many outreach efforts associated with the Federal Information Systems Security Educators’ Association (FISSEA), the Federal Computer Security Managers’ Forum, the National Initiative for Cybersecurity Education (NICE), and the Small Business Information Security Corner.
-
-- **Conducted workshops, awareness briefings, and outreach** to CSD customers to ensure comprehension of standards and guidelines, to share ongoing and planned activities, and to aid in scoping guidelines in a collaborative, open, and transparent manner. CSD public workshops addressed a diverse range of information security and technology topics, including cloud and mobile technologies, voting systems security, cyber physical systems, improving trust in the online marketplace, safeguarding health information, attribute based access control, supply chain risk management, improving critical infrastructure cybersecurity, and broad computer security awareness, training, and education forums and events.
-
-- **Engaged with international standards bodies** in a variety of areas, including promoting broader international adoption of security automation specifications. Additionally, NIST continued to lead, in conjunction with the Government of Canada’s Communications Security Establishment, the Cryptographic Module Validation Program (CMVP). The Common Criteria Evaluation and Validation Scheme (CCEVS) and CMVP facilitate security testing of IT products usable by the Federal Government.
-
-- **Solicited recommendations** of the Information Security and Privacy Advisory Board (ISPAB) on draft standards and guidelines, and on information security and privacy issues.
-
-- **Produced the CSD 2013 annual report** and released it as a NIST SP. CSD annual reports from fiscal years 2003 through 2013 are available on the Computer Security Resource Center (CSRC) at [http://csrc.nist.gov/publications/PubsTC.html#Annual Reports](http://csrc.nist.gov/publications/PubsTC.html#Annual Reports).
-
-8  
-Computer Security Division Annual Report - 2013  
-
----
-
-## Program and Project Achievements for Fiscal Year 2013
-
-In FY 2013, CSD continued to research and develop guidance for a broad array of technical areas, including supply chain risk management; security analytics; cloud, mobile, and privacy-enhancing technologies; hardware-enabled security; and cyber-physical and embedded systems. The staff and guest researchers within CSD have collaborated with global partners from government, industry, and academia, making significant contributions to help secure critical information and infrastructure. The following sections describe CSD’s programs and project achievements that include extensive research and development for high-quality, cost-effective security and privacy mechanisms, standards, guidelines, tests, and metrics that address current and future computer and information security challenges.
-
-### NIST Responsibilities Under Executive Order 13636, “Improving Critical Infrastructure Cybersecurity”
-
-Recognizing that the national and economic security of the United States depends on the reliable functioning of critical infrastructure, the President issued Executive Order (EO) 13636, *Improving Critical Infrastructure Cybersecurity*, in February 2013. This Executive Order directed NIST to work with stakeholders to develop a voluntary framework – based on existing standards, guidelines, and practices − for reducing cybersecurity risks to critical infrastructure.
-
-The Cybersecurity Framework will provide a prioritized, flexible, repeatable, performance-based, and cost-effective approach, including information security measures and controls to help owners and operators of critical infrastructure and other interested entities to identify, assess, and manage cybersecurity-related risk while protecting business confidentiality, individual privacy, and civil liberties. To enable technical innovation and account for organizational differences, the Cybersecurity Framework will not prescribe particular technological solutions or specifications.
-
-In FY 2013, NIST worked with a diverse stakeholder community to develop the Framework through an open public process. This process included:
-- Issuing a Request for Information (RFI) in the Federal Register in February 2013
-- Conducting five open workshops to provide the public with additional opportunities to provide input. These workshops were hosted at the Department of Commerce in Washington, D.C. (April 2013), Carnegie Mellon University in Pittsburgh, Pennsylvania (May 2013), the University of California, San Diego (July 2013), the University of Texas at Dallas (September 2013), and the North Carolina State University in Raleigh, North Carolina (November 2013)
-- Preparing a Preliminary Cybersecurity Framework for official public review and comment
-
-In FY 2014, NIST will continue to conduct stakeholder outreach and will work collaboratively to further develop and issue the Cybersecurity Framework. NIST will initiate a 45-day public comment period on the Preliminary Cybersecurity Framework, review and adjudicate all public comments received, and issue a final Cybersecurity Framework (version 1.0) in February 2014 as specified in the Executive Order.
-
-[http://www.nist.gov/cyberframework](http://www.nist.gov/cyberframework)
-
-**Contacts:**  
-Mr. Kevin Stine  
-(301) 975-4483  
-kevin.stine@nist.gov  
-
-Mr. Adam Sedgewick  
-(301) 367-4678  
-adam.sedgewick@nist.gov  
-
----
-
-### Contributions to National and International Standards Development
-
-Figure 1 (below) shows many of the national and international Standards Developing Organizations (SDOs) involved in cybersecurity standardization. CSD participates in cybersecurity standards activities in many of these organizations, either in leadership positions or as editors and contributors. Many of CSD’s publications have been the basis for both national and international standards projects. This section discusses CSD standards activities in conjunction with InterNational Committee for Information Technology Standards (INCITS) Technical Committee Cyber Security 1 (CS1), where Dan Benigni serves as Chair and U.S. Head of Delegation to subcommittee SC 27, and Sal Francomacaro serves as CS1 Vice Chair.
-
-![Cybersecurity Standards Development Organizations (SDO) ecosystem diagram showing interactions between national and international bodies]
-
-*Figure 1: Cybersecurity Standards Development Organizations (SDOs)*
-
-11  
+Cybersecurity Framework
+Access
+Control
+Cloud Computing
+Policy Machine
+yhpargotpyrC
+Evaluation
+Standards
+Guidelines
+Security Practices
+Security Controls
+Critical Infrastructure
+Assets
+Verification
+Systems
+krowemarF
+tnemeganaM
+ksiR
+Biometrics
+tnemeganam
+ksir
+niahc
+ylppuS
+FIPS 140-2
+Validated
+Products
+List
+FISMA
+Mobile Devices
+Continuous Monitoring
+Authorization
+Assets
+EO
+13636
+Cybersecurity Framework
+Roadmap
+Computer
+Security
+Division
+2013 Annual Report
+NIST Special Publication 800-170
+Access
+Control
+Cloud Computing
+Policy Machine
+yhpargotpyrC
+Evaluation
+Guidelines
+Standards
+Security Controls
+Security Practices
+Critical Infrastructure
+Systems
+Assets
+Verification
+krowemarF
+tnemeganaM
+ksiR
+Biometrics
+tnemeganam
+ksir
+niahc
+ylppuS
+FIPS 140-2
+Validated
+Products
+List
+FISMA
+Authorization
+Mobile Devices
+Continuous Monitoring
+EO
+13636
+Assets Roadmap
+
+NIST Special Publication 800-170
+Computer
+Security
+Division
+2013 Annual Report
+Patrick O’Reilly, Editor
+Computer Security Division
+Information Technology Laboratory
+National Institute of Standards and Technology
+Co-Editors:
+Chris Johnson
+Doug Rike
+Greg Witte
+G2, Inc.
+Lorie Richards
+Facilities Services Division
+Creative and Printing Service
+This publication is available free of charge from
+http://dx.doi.org/10.6028/NIST.SP.800-170
+June 2014
+U.S. Department of Commerce
+Penny S. Pritzker, Secretary
+National Institute of Standards and Technology
+Dr. Willie E. May, Under Secretary of Commerce for Standards and Technology and Acting Director
+
+Disclaimer: Any mention of commercial products is for information only; it does not imply NIST recommendation
+or endorsement, nor does it imply that the products mentioned are necessarily the best available for the purpose.
+National Institute of Standards and Technology Special Publication 800-170 Natl. Inst. Stand. Technol. Spec.
+Pub., 93 pages (June 2014) CODEN: NSPUE2
+ii
+Computer Security Division Annual Report - 2013
+
+Table of Contents
+Welcome Letter ..................................................................1 Federal Information Systems Security Educators’
+Association (FISSEA) ...............................................................29
+Computer Security Division (CSD) Management Team .......2 Information Security and Privacy Advisory Board (ISPAB) .............30
+Small and Medium Size Business (SMB) Outreach ......................33
+Computer Security Division Organization ..........................3
+Cryptographic Technology ......................................................33
+The Computer Security Division Implements the Cryptographic Standards Program ............................................33
+Federal Information Security Management Act .................7
+Cryptographic Research ..........................................................36
+New Research Areas in Cryptographic Techniques for
+Program & Project Achievements for Fiscal Year 2013 .....9
+Emerging Applications .............................................................38
+NIST Responsibilities Under Executive Order 13636, Applied Cryptography ..............................................................40
+“Improving Critical Infrastructure Cybersecurity” ....................10
+Identity Management ..............................................................42
+Contributions to National and International Standards Personal Identity Verification (PIV) and FIPS 201
+Development ...........................................................................11 Revision Efforts ......................................................................42
+PIV Program Test Cards ...........................................................43
+Identity Management Standards within INCITS B10
+and ISO JTC1/SC 17 ................................................................14 NIST Personal Identity Verification Program (NPIVP) ....................43
+Federal Information Security Management Act (FISMA) Research in Emerging Technologies ........................................44
+Implementation Project ...........................................................14 Cloud Computing and Virtualization ...........................................44
+Mobile Device Security ............................................................46
+Biometric Standards and Associated Conformity Assessment
+Testing Tools ...........................................................................16
+Strengthening Internet Security ..............................................47
+Cybersecurity of Cyber-Physical Systems (CPS) .......................19 USGv6: A Technical Infrastructure to Assist IPv6 Adoption ............47
+Federal Cybersecurity Research & Development (R&D) ...........19 Access Control and Privilege Management ..............................48
+Access Control and Privilege Management Research ..................48
+Security Aspects of Electronic Voting ......................................20
+Conformance Verification for Access Control Policies ..................48
+Health Information Technology Security...................................20 Metrics for Evaluation of Access Control Systems
+(Real-Time Access Rule Fault Detection) ....................................49
+Supply Chain Risk Management (SCRM) for Information
+Attribute Based Access Control ................................................50
+and Communications Technology (ICT) ....................................21
+Advanced Security Testing and Measurements ........................51
+Nationwide Public Safety Broadband Network (NPSBN)
+Security ..................................................................................23 Security Automation and Continuous Monitoring .........................51
+Security Content Automation Protocol (SCAP) .............................52
+Smart Grid Cybersecurity ........................................................23
+Continuous Monitoring ............................................................54
+Cybersecurity Awareness, Training, Education, National Vulnerability Database (NVD)........................................55
+and Outreach ..........................................................................25
+Computer Security Incident Coordination ...................................56
+National Initiative for Cybersecurity Education (NICE) ..................25
+Incident Handling Automation ...................................................56
+Computer Security Division Publications ....................................26
+National Checklist Program (NCP) .............................................57
+Computer Security Resource Center (CSRC) ...............................27
+United States Government Configuration
+Federal Computer Security Program Managers’ Forum ................28 Baseline (USGCB) / FDCC Baselines ..........................................58
+iii
+
+Apple OS X Security Configuration ............................................59
+Validation Programs ................................................................59
+Security Content Automation Protocol (SCAP)
+Validation Program ..................................................................59
+Cryptographic Programs and Laboratory Accreditation ................60
+Automated Security Testing and Test Suite Development .............62
+ISO Standardization of Security Requirements for
+Cryptographic Modules ............................................................64
+Cryptographic System Validation ..............................................65
+Technical Security Metrics ......................................................65
+Security Risk Analysis of Enterprise
+Networks Using Attack Graphs .................................................65
+Algorithms for Intrusion Measurement .......................................66
+Automated Combinatorial Testing ..............................................67
+Hardware Roots of Trust ..........................................................67
+Honors & Awards ............................................................69
+FY 2013 Computer Security Division Publications ...........73
+NIST Technical Series Publications − FIPS, Special
+Publications, NISTIRs, and ITL Bulletins ...................................74
+Abstracts of NIST Technical Series Publications Released
+in FY 2013 ...............................................................................76
+Federal Information Processing Standards (FIPS) ........................76
+NIST Special Publications (SPs) ................................................77
+NIST Interagency Reports (NISTIRs) ...........................................81
+Additional Publications by CSD Authors ...................................84
+Journal Articles.......................................................................84
+Conference Papers..................................................................87
+Books and Book Sections .........................................................89
+White Papers ..........................................................................90
+Opportunities to Engage with CSD and NIST ....................91
+Acknowledgements .........................................................93
+iv
+Computer Security Division Annual Report - 2013
+
+Welcome Letter
+The Computer Security Division (CSD), a component of the Information Technology Laboratory at the National Institute of Standards and Technology
+(NIST) is responsible for developing standards, guidelines, tests, and metrics for protection of non-national security federal information systems.
+NIST standards and guidelines are developed in an open and transparent manner that enlists broad industry and academia expertise from around
+the world. While developed for federal agency use, these resources are voluntarily adopted by other organizations because they are effective and
+accepted throughout the world.
+The need for cybersecurity standards and best practices that address interoperability, usability and privacy continues to be critical for the Nation.
+In Fiscal Year (FY) 2013, CSD continued to align its resources to enable greater development and application of practical, innovative security
+technologies and methodologies that enhance our ability to address current and future computer and information security challenges. Our foundational
+research and applied cybersecurity programs continue to advance in many areas including cryptography; identity and access management; cloud,
+virtualization, and mobile technologies; and advanced security testing and measurement.
+Strong partnerships with diverse stakeholders are vital to the success of our technical programs. In February 2013, the President issued Executive
+Order 13636 that directed NIST to work collaboratively with industry to develop a voluntary framework - based on existing standards, guidelines, and
+practices - to improve critical infrastructure cybersecurity practices. NIST held several workshops, meetings, webinars, and informal sessions to
+gather feedback with the goals of generating content for the framework and discuss several topics that help inform and guide NIST in this effort. In
+August 2013, we produced a discussion draft of the preliminary framework.
+Working closely with standards developing organizations, industry and interagency partners, we are evolving and expanding security automation
+capabilities to help organizations manage and measure the security of systems and technologies. Our cybersecurity awareness, training, and
+education programs also exemplify the importance of these partnerships by engaging with academic institutions, federal agencies, small and medium
+businesses and others to increase awareness and enhance the overall cybersecurity posture of the Nation.
+Active engagement with the diverse federal community continues to be critical to our success. This interaction is most prominent in our strengthened
+collaborations with the Department of Defense, the Intelligence Community, and the Committee on National Security Systems to establish a common
+foundation for information security across the federal government. Through this partnership, NIST released Special Publication (SP) 800-53 Revision
+4, Security and Privacy Controls for Federal Information Systems and Organizations, in April 2013. This guideline provides organizations with state-of-
+the-practice security controls to fundamentally strengthen their systems and the environments in which those systems operate. SP 800-53 Revision
+4 and other NIST standards and guidelines contribute to systems that are more resilient in the face of cyber attacks and other threats.
+Late in FY 2013, news reports about leaked classified documents caused concern from the cryptographic community about the security of NIST
+cryptographic standards and guidelines. Recognizing community concern regarding some specific standards, we reopened the public comment period
+for three Special Publications to give the public a second opportunity to view and comment on the documents. This initial step will be followed by a
+review of our cryptographic development process and NIST cryptographic standards and guidelines in FY 2014.
+For many years, CSD, in collaboration with our global partners across industry, academia, and government,
+has made great contributions to help secure the nation’s critical information and infrastructure. We look forward
+to furthering these relationships in FY 2014 as we lead the development and practical implementation of
+scalable and sustainable information security standards and practices in areas such as cyber-physical and
+industrial control systems, privacy engineering, security automation, and mobile technologies.
+To participate in any CSD research areas – whether current or future – or to learn more about our programs
+and activities, please visit http://csrc.nist.gov.
+Donna Dodson
+Chief, Computer Security Division
+& Deputy Chief Cybersecurity Advisor
+1
+
+Computer Security Division (CSD)
+Management Team
+Donna Dodson Matthew Scholl
+Chief, Computer Security Division, Acting Associate Director & Acting Deputy Chief, Computer Security Division and
+Chief Cybersecurity Advisor, Cybersecurity Advisor Office, and Acting Acting Associate Director of Operations, National
+Executive Director, National Cybersecurity Center of Excellence Cybersecurity Center of Excellence
+GROUP MANAGERS
+Lily Chen David Ferraiolo
+(Acting Group Manager) Secure Systems and
+Cryptographic Technology Group Applications Group
+Mark (Lee) Badger
+Security Components and
+Mechanisms Group
+Kevin Stine Michael Cooper
+Security Outreach Security Testing, Validation
+and Integration Group and Measurement Group
+2
+Computer Security Division Annual Report - 2013
+
+Cybersecurity Framework
+Policy Machine
+Cloud Computing
+Standards
+yhpargotpyrC
+Risk Management Framework
+Biometrics
+Assets
+Security Practices
+Security Controls
+Verification
+tnemeganam
+ksir
+niahc
+ylppuS
+Authorization
+FISMA
+Validated Products List
+Mobile Devices
+Continuous Monitoring
+FIPS 140-2
+EO
+13636
+Roadmap
+Computer Security
+Division Organization
+The Computer Security Division’s computer scientists, mathematicians, IT specialists, administrative staff and others
+support CSD’s mission and responsibilities through five groups that are described in the following sections:
+• Cryptographic Technology Group
+• Security Components and Mechanisms Group
+• Secure Systems and Applications Group
+• Security Outreach and Integration Group
+• Security Testing, Validation, and Measurement Group
+3
+
+Cryptographic Technology Group (CTG) Security Components and Mechanisms Group
+(SCMG)
+Mission Statement:
+Research, develop, engineer, and standardize cryptographic Mission Statement:
+algorithms, methods, and protocols. Research, develop, and standardize foundational security
+mechanisms, protocols, and services.
+Overview:
+CTG’s work in the field of cryptography includes researching, Overview:
+analyzing, and standardizing cryptographic technology, such The SCMG’s security research focuses on the development
+as hash algorithms, symmetric and asymmetric cryptographic and management of foundational building-block security
+techniques, key management, authentication, and random mechanisms and techniques that can be integrated into a
+number generation. CTG’s goal is to identify and promote wide variety of mission-critical U.S. information systems. The
+methods to enhance trust in communications, data, and storage group’s work spans the spectrum from near-term hardening
+through cryptographic technology, encouraging innovative
+and improvement to the design and analysis of next-
+development and helping technology users to manage risk.
+generation, leap-ahead security capabilities. Computer security
+In Fiscal Year (FY) 2013, CTG continued to make an impact in depends fundamentally on the level of trust for computer
+the field of cryptography, both within and outside the Federal software and systems. This work, therefore, focuses strongly
+Government, by collaborating with national and international on assurance building activities ranging from the analysis of
+agencies, academic and research organizations, and standards software configuration settings to advanced trust architectures
+bodies to develop interoperable security standards and to testing tools that surface flaws in software modules. This
+guidelines. In addition, CTG worked with industry partners to work also focuses significantly on increasing the applicability
+promote the use of NIST-approved cryptographic methods. and effectiveness of automated techniques, wherever feasible.
+Federal agency collaborators include the National Security The SCMG conducts collaborative research with government,
+Agency (NSA), the Intelligence Advanced Research Projects industry, and academia. Outputs of this research consist of
+Activity (IARPA), the National Telecommunications and prototype systems, software tools, demonstrations, NIST
+Information Administration (NTIA), the National Strategy for Special Publications (SP), NIST Interagency or Internal Reports
+Trusted Identities in Cyberspace (NSTIC), General Services (NISTIR), and conference and journal papers.
+Administration (GSA), the United States Postal Service (USPS),
+SCMG works on a variety of topics, such as specifications
+and the Election Assistance Commission (EAC).
+for the automated exchange of security information between
+CTG also works closely with foreign government agencies, systems, computer security incident handling guidelines,
+such as the Communications Security Establishment of formulation of high-assurance software configuration settings,
+Canada and Australia’s Defense Signals Agency and Centrelink.
+hardware roots of trust for mobile devices, secure Basic
+Additionally, CTG is active in national and international standards
+Input Output System (BIOS) layers, combinatorial testing
+bodies, including the Accredited Standards Committee (ASC) X9
+techniques, conformity assessment of software implementing
+(financial industry standards), the International Organization for
+biometric standards, and adoption of Internet Protocol Version
+Standardization (ISO), the Institute of Electrical and Electronics
+6 and Internet Protocol security extensions. SCMG collaborates
+Engineers (IEEE), the Internet Engineering Task Force (IETF), the
+extensively with government, academia, and the private sector.
+American National Standards Institute (ANSI), and the Trusted
+Computing Group (TCG). Industry collaborators include Intel, In FY 2013, collaborations have included Carnegie Mellon
+Microsoft, and Cisco. University (test development environment), Johns Hopkins
+Applied Physics Lab (practical application of combinatorial
+Academic collaborators include Carnegie Mellon University,
+coverage measurement tool), North Carolina State University
+Yale University, University of Southern Denmark, the University
+(access control policy testing), University of North Texas and
+of Milan, Malaga University, and the University of Lisbon.
+University of Maryland-Baltimore County (test prioritization
+Research organizations include the Information-technology
+Promotion Agency (IPA)/Cryptography Research and Evaluation algorithms), University of Texas at Arlington (covering array
+Committees (CRYPTREC) and the Ministry of Economy, Trade generation algorithm), Mexico’s Centro Nacional de Metrología
+and Industry (METI) of Japan. (constraints for testing coverage tool), National Aeronautics
+and Space Administration (NASA) (practical application for
+combinatorial coverage measurement), U.S. Air Force Test and
+Group Manager (Acting):
+Evaluation (a new event sequence testing method), the National
+Dr. Lily Chen
+Security Agency (secure software tool chain competition
+(301) 975-6974
+development), and the Department of Homeland Security
+lily.chen@nist.gov
+(incident coordination).
+4
+Computer Security Division Annual Report - 2013
+
+SCMG accomplishments include the Advanced Combinatorial Employees and Contractors, which was approved by the
+Testing System (ACTS) software and documentation, the NIST Secretary of Commerce and published in September of 2013.
+BioCTS 2013 biometric conformance testing tool and test
+To improve access to new technologies, SSAG chaired,
+assertions, and a security log analysis tool.
+edited, and participated in the development of a wide variety of
+national and international security standards.
+Group Manager:
+Mr. Mark (Lee) Badger Group Manager:
+(301) 975-3176
+Mr. David Ferraiolo
+mark.badger@nist.gov
+(301) 975-3046
+david.ferraiolo@nist.gov
+Secure Systems and Applications
+Group (SSAG)
+Security Outreach and Integration Group (SOIG)
+Mission Statement:
+Mission Statement:
+Integrate and apply security technologies, standards, and
+Develop, integrate, and promote the mission-specific
+guidelines for computing platforms and information systems.
+application of information security standards, guidelines, best
+Overview: practices, and technologies.
+SSAG’s security research focuses on the identification of
+Overview:
+emerging and high-priority technologies and on the development
+The U.S. economy, citizens, and government rely on
+of security solutions that will enhance the security of U.S.
+information technology (IT); so the protection of IT and
+critical information infrastructure. The group conducts research
+information infrastructure is critical. SOIG leverages broad
+and development on behalf of government and industry from
+cybersecurity and risk management expertise to develop,
+the earliest stages of technology development through proof-
+integrate, and promote security standards, guidelines, tools,
+of-concept, reference and prototype implementations, and technologies, methodologies, tests, and measurements to
+demonstrations. SSAG works to transfer new technologies to address cybersecurity needs in many areas of national and
+industry; to produce new standards and guidance for federal international importance.
+agencies and industry; and to develop tests, test methodologies,
+The SOIG collaborates with stakeholders to address
+and assurance methods.
+cybersecurity considerations in many diverse program areas,
+SSAG investigates topics such as mobile device security, including the Information and Communications Technologies
+cloud computing and virtualization, identity management, (ICT) supply chain, Smart Grid, Electronic Voting, Health
+access control and authorization management, and software Information Technology, and Cyber Physical and Industrial
+assurance. SSAG research helps federal agencies meet Control Systems. The group continues to increase its efforts to
+information security requirements that might not be fully research, develop, and align cybersecurity standards, practices,
+addressed by existing technology. The group collaborates and testing methods necessary to foster interoperable and
+extensively with government, academia, and private sector secure public safety communications. In our Federal Information
+entities. Security Management Act (FISMA) implementation program,
+the group produces standards and guidelines to help federal
+Example successes from this work include tools for access
+agencies build strong cybersecurity risk management programs.
+control policy testing, new concepts in access control and
+In each of these program areas, the group extends outreach
+policy enforcement, methods for achieving comprehensive
+to stakeholders across federal, state, and local governments;
+policy enforcement and data interoperability across enterprise
+industry; academia; small businesses; and the public. The SOIG
+data services, and test methods for mobile device (smart phone)
+also leads several broad cybersecurity awareness, training,
+application security. For example, the SSAG Mobile Application
+education, and outreach efforts, including the National Initiative
+Testing Portal (ATP) went operational for military use (known in
+for Cybersecurity Education (NICE), the Small- and Medium-
+the U.S. Army as PANTHR) and is in the process of transitioning
+sized Business (SMB) outreach program, the Federal Computer
+to other federal agencies as open source. In support of the
+Security Managers’ Forum, and the Federal Information Systems
+Federal Government’s cloud computing initiatives, SSAG led
+Security Educators’ Association (FISSEA).
+the NIST Security Working Group that published the NIST Cloud
+Computing - Security Reference Architecture. The SSAG also Key to the group’s success is the ability to interact with a
+broad constituency to ensure that SOIG’s program is consistent
+completed revision of Federal Information Processing Standard
+with national objectives related to or impacted by information
+(FIPS) 201-2, Personal Identity Verification (PIV) of Federal
+5
+Introduction to CSD’s Five Groups
+
+security. Through open and transparent public engagement, STVMG’s validation programs work together with
+collaboration, and cooperation, the group works to address independent Cryptographic and Security Testing laboratories
+critical cybersecurity challenges, enable greater U.S. industrial that are accredited by the NIST National Voluntary Laboratory
+competitiveness, and facilitate practical implementation of Accreditation Program (NVLAP). Based on the independent
+scalable and sustainable information security standards and laboratory test report and test evidence, the Validation Program
+practices. then validates the implementation under test. NIST publishes,
+through public websites, lists of validations awarded.
+Group Manager:
+Group Manager:
+Mr. Kevin Stine
+(301) 975-4483 Mr. Michael Cooper
+kevin.stine@nist.gov (301) 975-8077
+michael.cooper@nist.gov
+Security Testing, Validation, and Measurement
+Group (STVMG)
+Mission Statement:
+Advance information security testing, measurement science,
+and conformance.
+Overview:
+Federal agencies, industry, and the public rely on cryptography
+for the protection of information and communications used
+in electronic commerce, critical infrastructure, and other
+application areas. The STVMG supports testing and validation
+of underlying cryptographic modules and cryptographic
+algorithms in consideration of established standards. These
+cryptographic modules and algorithms enable products and
+systems to provide security services, such as confidentiality,
+integrity, and authentication. Although cryptography provides
+security, poor designs or weak algorithms can render a product
+insecure and place highly sensitive information at risk. When
+protecting sensitive data, Federal Government agencies require
+a minimum level of assurance that cryptographic products meet
+established security requirements and use only tested and
+validated cryptographic modules.
+STVMG’s testing-focused activities include validating
+cryptographic algorithm implementations, cryptographic
+modules, and Security Content Automation Protocol (SCAP)-
+compliant products; developing test suites and test methods;
+providing implementation guidance and technical support
+to industry forums; and conducting education, training, and
+outreach programs.
+6
+Computer Security Division Annual Report - 2013
+
+Cybersecurity Framework
+Policy Machine
+Cloud Computing
+Standards
+yhpargotpyrC
+Risk Management Framework
+Biometrics
+Assets
+Security Practices
+Security Controls
+Verification
+tnemeganam
+ksir
+niahc
+ylppuS
+Authorization
+FISMA
+Validated Products List
+Mobile Devices
+Continuous Monitoring
+FIPS 140-2
+EO
+13636
+Roadmap
+The Computer Security
+Division Implements the
+Federal Information
+Security Management Act
+7
+
+The CSD Implements the Federal Information Committee on National Security Systems (CNSS),
+Security Management Act and the Department of Defense (DOD) to establish a
+common foundation for information security across
+The E-Government Act, Public Law 107-347, passed by the Federal Government, including a structured, yet
+the 107th Congress and signed into law by the President in flexible approach for managing information security
+December 2002, recognized the importance of information risk across an organization. In 2013, this collaboration
+security to the economic and national security interests of the produced updated guidelines for selecting and specifying
+United States. Title III of the E-Government Act, entitled the security controls, and an updated catalog of security
+Federal Information Security Management Act (FISMA) of 2002, and privacy controls for federal information systems and
+included duties and responsibilities for the National Institute of organizations.
+Standards and Technology, Information Technology Laboratory,
+Computer Security Division (CSD). In 2013, CSD addressed its  Provided assistance to agencies and the private
+assignments through the following activities: sector through many outreach efforts associated
+with the Federal Information Systems Security
+ Issued two final Federal Information Processing
+Educators’ Association (FISSEA), the Federal Computer
+Standards (FIPS): FIPS 186-4, Digital Signature Standard
+Security Managers’ Forum, the National Initiative for
+(DSS), which specifies a suite of algorithms that can
+Cybersecurity Education (NICE), and the Small Business
+be used to generate digital signatures, and FIPS 201-2,
+Information Security Corner.
+Personal Identity Verification (PIV) of Federal Employees
+and Contractors, which specifies the architecture and  Conducted workshops, awareness briefings, and
+technical requirements for a common identification outreach to CSD customers to ensure comprehension
+standard for Federal employees and contractors. of standards and guidelines, to share ongoing and
+planned activities, and to aid in scoping guidelines
+ Issued 25 draft and final NIST Special Publications (SP)
+in a collaborative, open, and transparent manner.
+that provide management, operational, and technical
+CSD public workshops addressed a diverse range of
+security guidelines in areas such as personal identity
+information security and technology topics, including
+verification, cryptographic key generation, cryptographic
+cloud and mobile technologies, voting systems security,
+key management systems, random bit generators,
+cyber physical systems, improving trust in the online
+transport layer security, mobile devices and mobile
+marketplace, safeguarding health information, attribute
+device forensics, hardware-rooted security in mobile
+based access control, supply chain risk management,
+devices, malware incident prevention and handling
+improving critical infrastructure cybersecurity, and broad
+for desktops and laptops, industrial control systems
+computer security awareness, training, and education
+security, e-authentication, security and privacy controls
+forums and events.
+for federal information systems and organizations,
+patch management technologies, attribute based access  Engaged with international standards bodies in a variety
+control, and supply chain risk management practices. of areas, including promoting broader international
+adoption of security automation specifications.
+ Issued 13 draft and final NIST Interagency or Internal
+Additionally, NIST continued to lead, in conjunction with
+Reports (NISTIR) on a variety of topics, including
+the Government of Canada’s Communications Security
+cryptographic key management issues and challenges in
+Establishment, the Cryptographic Module Validation
+cloud services, cybersecurity in cyber-physical systems,
+Program (CMVP). The Common Criteria Evaluation and
+the SHA-3 cryptographic hash algorithm competition,
+Validation Scheme (CCEVS) and CMVP facilitate security
+combinatorial coverage measurement, credential
+testing of IT products usable by the Federal Government.
+reliability and revocation model for federated identities,
+security automation, reference certificate policy,  Solicited recommendations of the Information Security
+trusted geolocation in the cloud, and a glossary of key and Privacy Advisory Board (ISPAB) on draft standards
+information security terms. and guidelines, and on information security and privacy
+issues.
+ Performed research and conducted outreach on
+standards, practices, and technologies to enable prompt  Produced the CSD 2013 annual report and released
+and effective computer security incident handling and it as a NIST SP. CSD annual reports from fiscal years
+coordination. 2003 through 2013 are available on the Computer
+Security Resource Center (CSRC) at http://csrc.nist.gov/
+ Continued the successful collaboration with the Office
+publications/PubsTC.html#Annual Reports.
+of the Director of National Intelligence (ODNI), the
+8
+Computer Security Division Annual Report - 2013
+
+Cybersecurity Framework
+Policy Machine
+Cloud Computing
+Standards
+yhpargotpyrC
+Risk Management Framework
+Biometrics
+Assets
+Security Practices
+Security Controls
+Verification
+tnemeganam
+ksir
+niahc
+ylppuS
+Authorization
+FISMA
+Validated Products List
+Mobile Devices
+Continuous Monitoring
+FIPS 140-2
+EO
+13636
+Roadmap
+Program and Project
+Achievements for
+Fiscal Year 2013
+9
+
+In FY 2013, CSD continued to research and develop guidance University of California, San Diego (July 2013), the
+for a broad array of technical areas, including supply chain University of Texas at Dallas (September 2013), and the
+risk management; security analytics; cloud, mobile, and North Carolina State University in Raleigh, North Carolina
+privacy-enhancing technologies; hardware-enabled security; (November 2013)
+and cyber-physical and embedded systems. The staff and
+ Preparing a Preliminary Cybersecurity Framework for
+guest researchers within CSD have collaborated with global
+official public review and comment
+partners from government, industry, and academia, making
+significant contributions to help secure critical information and
+In FY 2014, NIST will continue to conduct stakeholder outreach
+infrastructure. The following sections describe CSD’s programs
+and will work collaboratively to further develop and issue the
+and project achievements that include extensive research
+Cybersecurity Framework. NIST will initiate a 45-day public
+and development for high-quality, cost-effective security and
+comment period on the Preliminary Cybersecurity Framework,
+privacy mechanisms, standards, guidelines, tests, and metrics
+review and adjudicate all public comments received, and issue
+that address current and future computer and information
+a final Cybersecurity Framework (version 1.0) in February 2014
+security challenges.
+as specified in the Executive Order.
+NIST Responsibilities Under Executive Order
+http://www.nist.gov/cyberframework
+13636, “Improving Critical Infrastructure
+Cybersecurity”
+Contacts:
+Recognizing that the national and economic security of the Mr. Kevin Stine Mr. Adam Sedgewick
+United States depends on the reliable functioning of critical (301) 975-4483 (301) 367-4678
+kevin.stine@nist.gov adam.sedgewick@nist.gov
+infrastructure, the President issued Executive Order (EO)
+13636, Improving Critical Infrastructure Cybersecurity, in
+February 2013. This Executive Order directed NIST to work
+with stakeholders to develop a voluntary framework – based
+on existing standards, guidelines, and practices − for reducing
+cybersecurity risks to critical infrastructure.
+The Cybersecurity Framework will provide a prioritized,
+flexible, repeatable, performance-based, and cost-effective
+approach, including information security measures and controls
+to help owners and operators of critical infrastructure and other
+interested entities to identify, assess, and manage cybersecurity-
+related risk while protecting business confidentiality, individual
+privacy, and civil liberties. To enable technical innovation
+and account for organizational differences, the Cybersecurity
+Framework will not prescribe particular technological solutions
+or specifications.
+In FY 2013, NIST worked with a diverse stakeholder
+community to develop the Framework through an open public
+process. This process included:
+ Issuing a Request for Information (RFI) in the Federal
+Register in February 2013
+ Conducting five open workshops to provide the public
+with additional opportunities to provide input. These
+workshops were hosted at the Department of Commerce
+in Washington, D.C. (April 2013), Carnegie Mellon
+University in Pittsburgh, Pennsylvania (May 2013), the
+10
+Computer Security Division Annual Report - 2013
+
+Contributions to National and International The International Organization for Standardization (ISO)
+Standards Development
+The International Organization for Standardization (ISO) is a
+Figure 1 (below) shows many of the national and international network of the national standards institutes of 148 countries,
+Standards Developing Organizations (SDOs) involved in with the representation of one member per country. The scope
+cybersecurity standardization. CSD participates in cybersecurity of ISO covers standardization in all fields except electrical and
+standards activities in many of these organizations, either in electronic engineering standards, which are the responsibility
+leadership positions or as editors and contributors. Many of of the International Electrotechnical Commission (IEC).
+CSD’s publications have been the basis for both national and
+The IEC prepares and publishes international standards for
+international standards projects. This section discusses CSD
+all electrical, electronic, and related technologies, including
+standards activities in conjunction with InterNational Committee
+electronics, magnetics and electromagnetics, electroacoustics,
+for Information Technology Standards (INCITS) Technical
+multimedia, telecommunication, and energy production and
+Committee Cyber Security 1 (CS1), where Dan Benigni serves
+distribution, as well as associated general disciplines such
+as Chair and U.S. Head of Delegation to subcommittee SC 27,
+as terminology and symbols, electromagnetic compatibility,
+and Sal Francomacaro serves as CS1 Vice Chair.
+measurement and performance, dependability, design and
+development, safety, and the environment.
+Figure 1: Cybersecurity Standards Development Organizations (SDOs)
+11
 Program and Project Achievements for FY 2013
 
-#### The International Organization for Standardization (ISO)
-The International Organization for Standardization (ISO) is a network of the national standards institutes of 148 countries, with the representation of one member per country. The scope of ISO covers standardization in all fields except electrical and electronic engineering standards, which are the responsibility of the International Electrotechnical Commission (IEC).
-
-The IEC prepares and publishes international standards for all electrical, electronic, and related technologies, including electronics, magnetics and electromagnetics, electroacoustics, multimedia, telecommunication, and energy production and distribution, as well as associated general disciplines such as terminology and symbols, electromagnetic compatibility, measurement and performance, dependability, design and development, safety, and the environment.
-
-Joint Technical Committee 1 (JTC 1) was formed by ISO and IEC to be responsible for international standardization in the field of information technology. It develops, maintains, promotes, and facilitates IT standards required by global markets, meeting business and user requirements concerning:
-- Design and development of IT systems and tools
-- Performance and quality of IT products and systems
-- Security of IT systems and information
-- Portability of application programs
-- Interoperability of IT products and systems
-- Unified tools and environments
-- Harmonized IT vocabulary
-- User-friendly and ergonomically designed user interfaces
-
-JTC 1 consists of a number of subcommittees (SCs) and working groups that address specific technologies. SCs that produce standards relating to IT security include:
-- SC 06 − Telecommunications and Information Exchange Between Systems
-- SC 17 − Cards and Personal Identification
-- SC 27 − IT Security Techniques
-- SC 37 – Biometrics
-
+Joint Technical Committee 1 (JTC 1) was formed by ISO and adoption of international standards as national standards where
+IEC to be responsible for international standardization in the they meet the needs of the user community. ANSI is the sole
+field of information technology. It develops, maintains, promotes, U.S. representative and dues-paying member of the two major
+and facilitates IT standards required by global markets, meeting non-treaty international standards organizations, ISO and, via
+business and user requirements concerning: the United States National Committee (USNC), the IEC.
+ Design and development of IT systems and tools INCITS is accredited by ANSI and serves as the ANSI Technical
+Advisory Group (TAG) for ISO/IEC Joint Technical Committee 1.
+ Performance and quality of IT products and systems INCITS is sponsored by the Information Technology Industry
+(ITI) Council, a trade association representing the leading U.S.
+ Security of IT systems and information
+providers of information technology products and services.
+ Portability of application programs INCITS is organized into Technical Committees that focus
+on the creation of standards for different technology areas.
+ Interoperability of IT products and systems
+Technical committees that focus on IT security and IT security-
+related technologies or that may require separate security
+ Unified tools and environments
+standards include:
+ Harmonized IT vocabulary
+ B10 – Identification Cards and Related Devices
+ User-friendly and ergonomically designed user interfaces
+ CS1 – Cyber Security (Dan Benigni, NIST, Chair; Sal
+Francomacaro, NIST, Vice Chair; and Richard Kissel, NIST,
+JTC 1 consists of a number of subcommittees (SCs) and
+Principal voting member)
+working groups that address specific technologies. SCs that
+produce standards relating to IT security include:
+ E22 – Item Authentication
+ SC 06 − Telecommunications and Information Exchange
+ M1 – Biometrics (Fernando Podio, NIST, Chair)
+Between Systems
+ T3 – Open Distributed Processing (ODP)
+ SC 17 − Cards and Personal Identification
+ T6 – Radio Frequency Identification (RFID) Technology
+ SC 27 − IT Security Techniques
+ GIT1 – Governance of IT
+ SC 37 – Biometrics (Fernando Podio, NIST, Chair)
+ DAPS38 – Distributed Application Platforms and Services
 JTC 1 also has:
-- Technical Committee 68 – Financial Services
-  - SC 2 − Operations and Procedures including Security
-  - SC 4 – Securities
-  - SC 6 − Financial Transaction Cards, Related Media, and Operations
-- SC 7 – Software and Systems Engineering
+ Technical Committee 68 – Financial Services
+As a technical committee of INCITS, CS1 develops United
+States, national, ANSI-accredited standards in the area of
+ SC 2 − Operations and Procedures including Security
+cybersecurity. Its scope encompasses:
+ SC 4 – Securities
+ Management of information security and systems
+ SC 6 − Financial Transaction Cards, Related Media, and
+ Management of third-party information security service
+Operations
+providers
+ SC 7 – Software and Systems Engineering
+ Intrusion detection
+ Network security
+The American National Standards Institute (ANSI)
+ Cloud computing security
+ANSI is a private, nonprofit organization (501(c)(3)) that
+administers and coordinates the U.S. voluntary standardization
+ Supply chain risk management
+and conformity assessment system and facilitates the
+development of American National Standards (ANS) by  Incident handling
+accrediting the procedures of SDOs.
+ IT security evaluation and assurance
+ANSI promotes the use of U.S. standards internationally,
+advocates U.S. policy and technical positions in international  Security assessment of operational systems
+and regional standards organizations, and encourages the
+12
+Computer Security Division Annual Report - 2013
 
-#### The American National Standards Institute (ANSI)
-ANSI is a private, nonprofit organization (501(c)(3)) that administers and coordinates the U.S. voluntary standardization and conformity assessment system and facilitates the development of American National Standards (ANS) by accrediting the procedures of SDOs.
+ Security requirements for cryptographic modules standards into the international SC 27 standards development
+process. In its international efforts, CS1 responded to all calls
+ Protection profiles
+for U.S. contributions and/or voting positions on all international
+security standards projects in ISO/IEC JTC1 SC 27 in a
+ Role-based access control
+consistent, efficient, and timely manner.
+ Security checklists
+NIST contributes to many of CS1’s national and international
+ Security metrics IT security standards efforts through its membership on CS1,
+where Dan Benigni serves as the non-voting chair and Richard
+ Cryptographic and non-cryptographic techniques
+Kissel as the NIST Principal voting member. Internationally,
+and mechanisms, including confidentiality, entity
+there are over 100 published standards, and almost all have
+authentication, non-repudiation, key management, data
+been adopted as U.S. national standards. There are more than
+integrity, message authentication, hash functions, and
+80 current international standards projects. During FY 2013,
+digital signatures
+29 new standards were published in SC 27, and most of them
+have been recommended by CS1 for adoption as U.S. national
+ Future service and applications standards supporting
+standards.
+the implementation of control objectives and controls as
+defined in ISO 27001, in the areas of business continuity
+CSD Contributions to Cybersecurity
+and outsourcing
+Standardization in INCITS CS1
+ Identity management, including identity management
+framework, role-based access control, and single sign- CSD’s cybersecurity research also plays a direct role in the
+on Cybersecurity Standardization efforts of CS1 at the national
+level. Nationally during FY 2013:
+ Privacy technologies, including privacy framework,
+privacy reference architecture, privacy infrastructure,  The NIST Policy Machine research and development has
+anonymity and credentials, and specific privacy- resulted in three ongoing national standards projects
+enhancing technologies in CS1, each in the early stages of development. They
+include:
+The scope of CS1 explicitly excludes the areas of work on
+• INCITS 499-2013, “Next Generation Access Control
+cybersecurity standardization presently under way in INCITS
+–Functional Architecture (NGAC-FA)”, David Ferraiolo,
+B10, M1, T3, T10, and T11, as well as other standard groups,
+NIST, Editor, Published May 2013
+such as the Alliance for Telecommunications Industry Solutions
+(ATIS), the Institute of Electrical and Electronics Engineers, Inc. • “Next Generation Access Control – Generic
+(IEEE), the Internet Engineering Task Force (IETF), the Travel Operations & Abstract Data Structures (NGAC-
+Industry Association of America (TIAA), and the Accredited GOADS)”, Project Number: 2195-D, Serban Gavrila,
+Standards Committee (ASC) X9. The CS1 scope of work includes NIST, Editor (Planned Publication FY 2014)
+standardization in most of the same cybersecurity areas as are
+covered in the NIST CSD. • “Next Generation Access Control-Implementation
+Requirements, Protocols and API Definitions (NGAC-
+As the U.S. TAG to ISO/IEC JTC 1/SC 27, CS1 contributes to IRPADS)”, Project Number: 2193-D
+the SC 27 program of work on IT Security Techniques in terms of
+U.S. comments and contributions on SC 27 standards projects; Within CS1, liaisons are maintained with nearly 20
+votes on SC 27 standards documents at various stages of organizations, including:
+development; and nominates U.S. experts to work on various SC
+ ABA Federated Identity Management Legal (IdM Legal)
+27 projects as editors, coeditors, or in other SC 27 leadership
+Task Force
+positions. Currently, over a dozen CS1 members are serving
+as SC 27 document editors or coeditors on various standards  American Bar Association (ABA), section on Science and
+projects, including CSD staff Randy Easter and Richard Kissel. Technology
+All input from CS1 is processed through INCITS to ANSI,  Cloud Security Alliance
+then to SC 27. CS1 also serves as a conduit for getting U.S.-
+based new work item proposals and U.S.-developed national  Forum of Incident Response and Security Teams (FIRST)
+13
+Program and Project Achievements for FY 2013
 
-ANSI promotes the use of U.S. standards internationally, advocates U.S. policy and technical positions in international and regional standards organizations, and encourages the adoption of international standards as national standards where they meet the needs of the user community. ANSI is the sole U.S. representative and dues-paying member of the two major non-treaty international standards organizations, ISO and, via the United States National Committee (USNC), the IEC.
+ IEEE P1700 and P1619 Programming Interfaces), and ISO/IEC 24787 (Biometrics
+“Match On Card” Comparison).
+ INCITS T11, M1, GIT1, DAPS38, and PL22
+During FY 2013, INCITS 504 Parts 1, 2, and 4 were published
+ Internet Security Alliance and ISO/IEC 7816 Part 4 was published with significant changes
+added per NIST’s request. CSD provides contributions and
+ Kantara Initiative Identity Assurance Working Group
+feedback on many other INCITS B10 identity management
+(IAWG)
+standards projects.
+ Open Group During the FY 2014, the INCITS B10 committee, along with
+the active collaboration of CSD staff, plans to publish Part
+ SC 7 TAG 3 of INCITS 504 and contribute to the publication of several
+standards of the ISO/IEC 7816 family (all relevant to FIPS 201
+ Scientific Working Group on Digital Evidence (SWGDE)
+specifications). CSD staff will continue actively supporting
+ The Storage Networking Industry Association (SNIA) relevant ID management standard initiatives.
+CSD’s investment in these activities is motivated by new
+ Trusted Computing Group
+technical ideas that emerge from these standards. For example,
+INCITS 504 is an ID platform that leverages the FIPS 201
+Dan Benigni also serves as cybersecurity standards
+infrastructure to support a larger number of government and
+coordinator in CSD.
+enterprise initiatives. In particular, INCITS 504 aims to support
+initiatives such as the NSTIC. ISO/IEC 24727 aims to create
+Contact:
+an interoperability framework that increases the resilience
+Mr. Daniel Benigni
+and scalability of identity management solutions and fosters
+(301) 975-3279
+domestic and international interoperability.
+benigni@nist.gov
+Contact:
+Identity Management Standards within INCITS Mr. Salvatore Francomacaro
+B10 and ISO JTC1/SC 17 (301) 975-6414
+salvatore.francomacaro@nist.gov
+CSD supports identity management standardization activities
+through participation in national and international standards
+Federal Information Security Management Act
+bodies and organizations. CSD actively participates in the
+(FISMA) Implementation Project
+INCITS B10 committee, which is focused on interoperability of
+Identification Cards and Related Devices. CSD staff serves as
+Chair and Vice Chair of the B10.12 committee, which develops The FISMA Implementation Project focuses on:
+interoperable standards for Integrated Circuit Cards with  Developing a comprehensive series of standards
+Contacts. CSD staff also serves as the U.S. Head of delegation and guidelines to help federal agencies build strong
+to ISO/IEC JTC1 SC 17 Working Groups 4 and 11. cybersecurity programs, defend against increasingly
+In addition to chairing the B10.12 committee, CSD provides sophisticated cyber attacks, and demonstrate
+technical and editorial support in the development of national compliance to security requirements set forth in
+and international standards. Specifically, CSD staff serves as legislation, Executive Orders, Homeland Security
+the technical editor of ANSI 504-1, Generic Identity Command Directives, and Office of Management and Budget (OMB)
+Set (GICS). GICS enables PIV, PIV-Interoperable (PIV-I) and policies
+Common Access Card (CAC) card applications, and others, to
+ Building common understanding and reference guides
+be built from a single platform. GICS defines an open platform
+for organizations applying the NIST suite of standards
+where identity applications can be instantiated, deployed, and
+and guidelines that support the NIST Risk Management
+used in an interoperable way between the credential issuers
+Framework (RMF)
+and credential users. CSD staff also provides significant input
+to standards of major interest to U.S. government agencies and  Developing minimum criteria and guidelines for
+U.S. markets. CSD influences the development and revision of recognizing security assessment organization providers
+ISO/IEC 7816 (Identification Cards, Integrated Circuit Cards), as capable of assessing information systems consistent
+ISO/IEC 24727 (Identification Cards, Integrated Circuit Card with NIST standards and guidelines supporting the RMF
+14
+Computer Security Division Annual Report - 2013
 
-INCITS is accredited by ANSI and serves as the ANSI Technical Advisory Group (TAG) for ISO/IEC Joint Technical Committee 1. INCITS is sponsored by the Information Technology Industry (ITI) Council, a trade association representing the leading U.S. providers of information technology products and services. INCITS is organized into Technical Committees that focus on the creation of standards for different technology areas. Technical committees that focus on IT security and IT security-related technologies or that may require separate security standards include:
-- B10 – Identification Cards and Related Devices
-- CS1 – Cyber Security (Dan Benigni, NIST, Chair; Sal Francomacaro, NIST, Vice Chair; and Richard Kissel, NIST, Principal voting member)
-- E22 – Item Authentication
-- M1 – Biometrics (Fernando Podio, NIST, Chair)
-- T3 – Open Distributed Processing (ODP)
-- T6 – Radio Frequency Identification (RFID) Technology
-- GIT1 – Governance of IT
-- DAPS38 – Distributed Application Platforms and Services
+  Conducting FISMA outreach to public and private sector  In FY 2013, CSD worked on the following three initiatives:
+organizations
+1.  Risk Management and Risk Assessment Guidelines:
+Developed a comprehensive risk assessment guideline
+During 2013, CSD strengthened its collaboration with the
+examining the relationships among key risk factors,
+| Department  |     | of  Defense  | (DoD),  | the  | Intelligence  | Community,  |     |     |     |     |
+| ----------- | --- | ------------ | ------- | ---- | ------------- | ----------- | --- | --- | --- | --- |
+including threats, vulnerabilities, impact, and likelihood.
+and the Committee on National Security Systems (CNSS), in  Special Publication (SP) 800-53, Revision 4, Security
+partnership with the Joint Task Force Transformation Initiative,
+and Privacy Controls for Federal Information Systems
+which continues to develop key cybersecurity guidelines for
+and Organizations, provides a holistic approach
+| protecting  | federal  | information  |     | and  | information  | systems  | for  |     |     |     |
+| ----------- | -------- | ------------ | --- | ---- | ------------ | -------- | ---- | --- | --- | --- |
+to information security and risk management. The
+the Unified Information Security Framework. Previously, the
+publication provides organizations with security controls
+Joint Task Force developed common security guidance in the  necessary to appropriately strengthen their information
+critical areas of security controls for information systems and
+systems and the environments in which those systems
+organizations, security assessment procedures to demonstrate
+operate − contributing to systems that are resilient in
+security control effectiveness, security authorizations for risk
+the face of attacks and other threats. This “Build It Right”
+| acceptance  |     | decisions,  | and  | continuous  | monitoring  |     | activities  |     |     |     |
+| ----------- | --- | ----------- | ---- | ----------- | ----------- | --- | ----------- | --- | --- | --- |
+strategy combines with a variety of security controls
+to ensure that decision makers receive the most up-to-date  for “Continuous Monitoring” to give organizations near
+information on the security state of their information systems. In
+real-time information that is essential for senior leaders
+addition, CSD worked with the General Services Administration
+making ongoing risk-based decisions affecting their
+(GSA) Federal Risk and Authorization Management Program
+critical missions and business functions.
+(FedRAMP) to identify security assessment requirements, and
 
-As a technical committee of INCITS, CS1 develops United States, national, ANSI-accredited standards in the area of cybersecurity. Its scope encompasses:
-- Management of information security and systems
-- Management of third-party information security service providers
-- Intrusion detection
-- Network security
-- Cloud computing security
-- Supply chain risk management
-- Incident handling
-- IT security evaluation and assurance
-- Security assessment of operational systems
-- Security requirements for cryptographic modules
-- Protection profiles
-- Role-based access control
-- Security checklists
-- Security metrics
-- Cryptographic and non-cryptographic techniques and mechanisms, including confidentiality, entity authentication, non-repudiation, key management, data integrity, message authentication, hash functions, and digital signatures
-- Future service and applications standards supporting the implementation of control objectives and controls as defined in ISO 27001, in the areas of business continuity and outsourcing
-- Identity management, including identity management framework, role-based access control, and single sign-on
-- Privacy technologies, including privacy framework, privacy reference architecture, privacy infrastructure, anonymity and credentials, and specific privacy-enhancing technologies
+prototype  a  process  for  approving  Third-Party  Assessment  To take advantage of the expanded set of security and
+Organizations (3PAOs) that demonstrate capability in assessing
+privacy controls, and to give organizations greater
+| Cloud  | Service  | Providers  |     | (CSP)  | information  | systems  | for  |     |     |     |
+| ------ | -------- | ---------- | --- | ------ | ------------ | -------- | ---- | --- | --- | --- |
+flexibility and agility in defending their information
+conformance to NIST standards and guidelines.
+  systems, the revision introduces the concept of
+GENERIC RISK MODEL WITH KEY RISK FACTORS
+|     | Threat  |     |           |      | Threat  |     |          |               |         | Adverse |
+| --- | ------- | --- | --------- | ---- | ------- | --- | -------- | ------------- | ------- | ------- |
+|     |         |     | initiates |      |         |     | exploits | Vulnerability | causing |         |
+|     | Source  |     |           |      | Event   |     |          |               |         | Impact  |
+|     |         |     |           | with |         |     |   with   |               |   with  |         |
+|     |         |     |           |      |         |     |          |               |         |         |
+with Likelihood with Likelihood with Severity Degree with Risk
+Characteristics of Initiation Sequence  of Success In the context of as a combination of
+|     |     |     |     |     | of actions, activities,  |     |     |     |     | Impact and Likelihood |
+| --- | --- | --- | --- | --- | ------------------------ | --- | --- | --- | --- | --------------------- |
+(e.g., Capability, Intent, and
+|     |     |     |     |     | or scenarios |     |     | Predisposing |     |     |
+| --- | --- | --- | --- | --- | ------------ | --- | --- | ------------ | --- | --- |
+Targeting for Adversarial Threats)
+|     |     |     |     |     |     |     |     | Conditions |     | producing |
+| --- | --- | --- | --- | --- | --- | --- | --- | ---------- | --- | --------- |
 
-The scope of CS1 explicitly excludes the areas of work on cybersecurity standardization presently under way in INCITS B10, M1, T3, T10, and T11, as well as other standard groups, such as the Alliance for Telecommunications Industry Solutions (ATIS), the Institute of Electrical and Electronics Engineers, Inc. (IEEE), the Internet Engineering Task Force (IETF), the Travel Industry Association of America (TIAA), and the Accredited Standards Committee (ASC) X9. The CS1 scope of work includes standardization in most of the same cybersecurity areas as are covered in the NIST CSD.
+with
 
-As the U.S. TAG to ISO/IEC JTC 1/SC 27, CS1 contributes to the SC 27 program of work on IT Security Techniques in terms of U.S. comments and contributions on SC 27 standards projects; votes on SC 27 standards documents at various stages of development; and nominates U.S. experts to work on various SC 27 projects as editors, coeditors, or in other SC 27 leadership positions. Currently, over a dozen CS1 members are serving as SC 27 document editors or coeditors on various standards projects, including CSD staff Randy Easter and Richard Kissel. All input from CS1 is processed through INCITS to ANSI, then to SC 27. CS1 also serves as a conduit for getting U.S.-based new work item proposals and U.S.-developed national standards into the international SC 27 standards development process. In its international efforts, CS1 responded to all calls for U.S. contributions and/or voting positions on all international security standards projects in ISO/IEC JTC1 SC 27 in a consistent, efficient, and timely manner.
+Pervasiveness
+Security Controls
+Inputs from Risk Framing Step
+Planned / Implemented
+|     | (Risk Management Strategy or Approach) |     |     |     |     |     |     |     |     | ORGANIZATIONAL RISK |
+| --- | -------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | ------------------- |
+with
+To organizational operations (mission, functions,
+|     |     | Influencing and Potentially Modifying  |     |     |     |     |     | Effectiveness |     |     |
+| --- | --- | -------------------------------------- | --- | --- | --- | --- | --- | ------------- | --- | --- |
+image, reputation), organizational assets,
+Key Risk Factors  individuals, other organizations, and the Nation.
+|     |     |     |     |     | Figure 2: Generic Risk Model with Key Risk Factors |     |     |     |     |     |
+| --- | --- | --- | --- | --- | -------------------------------------------------- | --- | --- | --- | --- | --- |
+15
+Program and Project Achievements for FY 2013
+1
 
-NIST contributes to many of CS1’s national and international IT security standards efforts through its membership on CS1, where Dan Benigni serves as the non-voting chair and Richard Kissel as the NIST Principal voting member. Internationally, there are over 100 published standards, and almost all have been adopted as U.S. national standards. There are more than 80 current international standards projects. During FY 2013, 29 new standards were published in SC 27, and most of them have been recommended by CS1 for adoption as U.S. national standards.
-
-#### CSD Contributions to Cybersecurity Standardization in INCITS CS1
-CSD’s cybersecurity research also plays a direct role in the Cybersecurity Standardization efforts of CS1 at the national level. Nationally during FY 2013:
-
-- The NIST Policy Machine research and development has resulted in three ongoing national standards projects in CS1, each in the early stages of development. They include:
-  - **INCITS 499-2013**, “Next Generation Access Control –Functional Architecture (NGAC-FA)”, David Ferraiolo, NIST, Editor, Published May 2013
-  - “Next Generation Access Control – Generic Operations & Abstract Data Structures (NGAC-GOADS)”, Project Number: 2195-D, Serban Gavrila, NIST, Editor (Planned Publication FY 2014)
-  - “Next Generation Access Control-Implementation Requirements, Protocols and API Definitions (NGAC-IRPADS)”, Project Number: 2193-D
-
-Within CS1, liaisons are maintained with nearly 20 organizations, including:
-- ABA Federated Identity Management Legal (IdM Legal) Task Force
-- American Bar Association (ABA), section on Science and Technology
-- Cloud Security Alliance
-- Forum of Incident Response and Security Teams (FIRST)
-- IEEE P1700 and P1619
-- INCITS T11, M1, GIT1, DAPS38, and PL22
-- Internet Security Alliance
-- Kantara Initiative Identity Assurance Working Group (IAWG)
-- Open Group
-- SC 7 TAG 3
-- Scientific Working Group on Digital Evidence (SWGDE)
-- The Storage Networking Industry Association (SNIA)
-- Trusted Computing Group
-
-Dan Benigni also serves as cybersecurity standards coordinator in CSD.
-
-**Contact:**  
-Mr. Daniel Benigni  
-(301) 975-3279  
-benigni@nist.gov  
-
----
-
-### Identity Management Standards within INCITS B10 and ISO JTC1/SC 17
-
-CSD supports identity management standardization activities through participation in national and international standards bodies and organizations. CSD actively participates in the INCITS B10 committee, which is focused on interoperability of Identification Cards and Related Devices. CSD staff serves as Chair and Vice Chair of the B10.12 committee, which develops interoperable standards for Integrated Circuit Cards with Contacts. CSD staff also serves as the U.S. Head of delegation to ISO/IEC JTC1 SC 17 Working Groups 4 and 11.
-
-In addition to chairing the B10.12 committee, CSD provides technical and editorial support in the development of national and international standards. Specifically, CSD staff serves as the technical editor of ANSI 504-1, Generic Identity Set (GICS). GICS enables PIV, PIV-Interoperable (PIV-I) and Common Access Card (CAC) card applications, and others, to be built from a single platform. GICS defines an open platform where identity applications can be instantiated, deployed, and used in an interoperable way between the credential issuers and credential users. CSD staff also provides significant input to standards of major interest to U.S. government agencies and U.S. markets. CSD influences the development and revision of ISO/IEC 7816 (Identification Cards, Integrated Circuit Cards), ISO/IEC 24727 (Identification Cards, Integrated Circuit Card Programming Interfaces), and ISO/IEC 24787 (Biometrics “Match On Card” Comparison).
-
-During FY 2013, INCITS 504 Parts 1, 2, and 4 were published and ISO/IEC 7816 Part 4 was published with significant changes added per NIST’s request. CSD provides contributions and feedback on many other INCITS B10 identity management standards projects.
-
-During the FY 2014, the INCITS B10 committee, along with the active collaboration of CSD staff, plans to publish Part 3 of INCITS 504 and contribute to the publication of several standards of the ISO/IEC 7816 family (all relevant to FIPS 201 specifications). CSD staff will continue actively supporting relevant ID management standard initiatives.
-
-CSD’s investment in these activities is motivated by new technical ideas that emerge from these standards. For example, INCITS 504 is an ID platform that leverages the FIPS 201 infrastructure to support a larger number of government and enterprise initiatives. In particular, INCITS 504 aims to support initiatives such as the NSTIC. ISO/IEC 24727 aims to create an interoperability framework that increases the resilience and scalability of identity management solutions and fosters domestic and international interoperability.
-
-**Contact:**  
-Mr. Salvatore Francomacaro  
-(301) 975-6414  
-salvatore.francomacaro@nist.gov  
-
----
-
-### Federal Information Security Management Act (FISMA) Implementation Project
-
-The FISMA Implementation Project focuses on:
-- Developing a comprehensive series of standards and guidelines to help federal agencies build strong cybersecurity programs, defend against increasingly sophisticated cyber attacks, and demonstrate compliance to security requirements set forth in legislation, Executive Orders, Homeland Security Command Directives, and Office of Management and Budget (OMB) policies
-- Building common understanding and reference guides for organizations applying the NIST suite of standards and guidelines that support the NIST Risk Management Framework (RMF)
-- Developing minimum criteria and guidelines for recognizing security assessment organization providers as capable of assessing information systems consistent with NIST standards and guidelines supporting the RMF
-- Conducting FISMA outreach to public and private sector organizations
-
-During 2013, CSD strengthened its collaboration with the Department of Defense (DoD), the Intelligence Community, and the Committee on National Security Systems (CNSS), in partnership with the Joint Task Force Transformation Initiative, which continues to develop key cybersecurity guidelines for protecting federal information and information systems the Unified Information Security Framework. Previously, the Joint Task Force developed common security guidance in the critical areas of security controls for information systems and organizations, security assessment procedures to demonstrate security control effectiveness, security authorizations for risk acceptance decisions, and continuous monitoring activities to ensure that decision makers receive the most up-to-date information on the security state of their information systems. In addition, CSD worked with the General Services Administration (GSA) Federal Risk and Authorization Management Program (FedRAMP) to identify security assessment requirements, and prototype a process for approving Third-Party Assessment Organizations (3PAOs) that demonstrate capability in assessing conformance to NIST standards and guidelines.
-
-![Generic Risk Model with Key Risk Factors diagram showing relationships between Threat Sources, Threat Events, Vulnerabilities, Impacts, and Likelihoods]
-
-*Figure 2: Generic Risk Model with Key Risk Factors*
-
-In FY 2013, CSD worked on the following three initiatives:
-
-1. **Risk Management and Risk Assessment Guidelines:** Developed a comprehensive risk assessment guideline examining the relationships among key risk factors, including threats, vulnerabilities, impact, and likelihood. Special Publication (SP) 800-53, Revision 4, *Security and Privacy Controls for Federal Information Systems and Organizations*, provides a holistic approach to information security and risk management. The publication provides organizations with security controls necessary to appropriately strengthen their information systems and the environments in which those systems operate − contributing to systems that are resilient in the face of attacks and other threats. This “Build It Right” strategy combines with a variety of security controls for “Continuous Monitoring” to give organizations near real-time information that is essential for senior leaders making ongoing risk-based decisions affecting their critical missions and business functions.
-
-   To take advantage of the expanded set of security and privacy controls, and to give organizations greater flexibility and agility in defending their information systems, the revision introduces the concept of overlays. Overlays provide a structured approach to help organizations tailor security control baselines and develop specialized security plans for specific missions/business functions, environments of operation, and/or technologies. This specialization approach is important as the number of threat-driven controls and control enhancements in the catalog increases and organizations develop risk management strategies to address their specific protection needs within defined risk tolerances.
-
-2. **Criteria and Guidelines for Recognizing Security Assessment Provider Organizations:** CSD updated proficiency tests and technical requirements for evaluating FedRAMP 3PAO providers’ capability to conduct security assessment of cloud-based information systems for compliance with FISMA in accordance with FedRAMP and ISO/IEC 17020 Inspection Bodies requirements. Additionally, CSD provided input to GSA requirements (including orientation and training) for private sector accreditation body of FedRAMP 3PAOs that resulted in GSA FedRAMP Program Management Office (PMO) selecting one 3PAO private sector accreditation body.
-
-3. **FISMA Outreach Activity to Public and Private Sector Organizations:** CSD conducted cybersecurity outreach briefings and provided support to state and local governments as well as private sector organizations on topics of interest, such as effective implementation of the NIST Risk Management Framework. In addition, CSD conducted outreach activities with academic institutions, providing information on NIST’s security standards and guidelines, and exploring new areas of cybersecurity research and development.
-
-In FY 2013, CSD completed the following outreach activities:
-- Finalized SP 800-53, Revision 4
-- Collaborated with the ITL Software and Systems Division and the NIST Standards Coordination Office using the International Standard ISO/IEC 17020:2008, *Conformity Assessment – Requirements for the operation of various types of bodies performing inspection*, in support of GSA in establishing a process for qualifying 3PAOs to conduct security assessments of CSPs information systems consistent with GSA requirements based on NIST standards and guidelines
-
-In FY 2014, CSD intends to:
-- Finalize SP 800-53A, Revision 4, *Guide for Assessing the Security and Privacy Controls in Federal Information Systems and Organizations*
-- Finalize SP 800-60 Revision 2, *Guide for Mapping Types of Information and Information Systems to Security Categories*
-- Finalize SP 800-18 Revision 2, *Guide for Developing Security Plans for Federal Information Systems and Organizations*
-- Expand cybersecurity outreach to include additional state, local, and tribal governments, as well as private sector organizations and academic institutions
-- Continue to support federal agencies in effective implementation of the NIST Risk Management Framework.
-
-[http://csrc.nist.gov/sec-cert](http://csrc.nist.gov/sec-cert)
-
-**Contacts:**  
-Dr. Ron Ross  
-(301) 975-5390  
-ron.ross@nist.gov  
-
-Ms. Pat Toth  
-(301) 975-5140  
-patricia.toth@nist.gov  
-
-Mr. Arnold Johnson  
-(301) 975-3247  
-arnold.johnson@nist.gov  
-
-Ms. Kelley Dempsey  
-(301) 975-2827  
-kelley.dempsey@nist.gov  
-
-Ms. Peggy Himes  
-(301) 975-2489  
+overlays. Overlays provide a structured approach to 2, Guide for Developing Security Plans for Federal
+help organizations tailor security control baselines Information Systems and Organizations
+and develop specialized security plans for specific
+missions/business functions, environments of operation, In FY 2014, CSD intends to:
+and/or technologies. This specialization approach is
+ Finalize SP 800-53A, Revision 4, Guide for Assessing
+important as the number of threat-driven controls and
+the Security and Privacy Controls in Federal Information
+control enhancements in the catalog increases and
+Systems and Organizations
+organizations develop risk management strategies to
+address their specific protection needs within defined  Finalize SP 800-60 Revision 2, Guide for Mapping Types
+risk tolerances. of Information and Information Systems to Security
+Categories
+2. Criteria and Guidelines for Recognizing Security
+Assessment Provider Organizations: CSD updated  Finalize SP 800-18 Revision 2, Guide for Developing
+proficiency tests and technical requirements for Security Plans for Federal Information Systems and
+evaluating FedRAMP 3PAO providers’ capability to Organizations
+conduct security assessment of cloud-based information
+systems for compliance with FISMA in accordance  Expand cybersecurity outreach to include additional
+with FedRAMP and ISO/IEC 17020 Inspection Bodies state, local, and tribal governments, as well as private
+requirements. Additionally, CSD provided input to GSA sector organizations and academic institutions
+requirements (including orientation and training) for
+ Continue to support federal agencies in effective
+private sector accreditation body of FedRAMP 3PAOs that
+implementation of the NIST Risk Management
+resulted in GSA FedRAMP Program Management Office
+(PMO) selecting one 3PAO private sector accreditation Framework.
+body.
+http://csrc.nist.gov/sec-cert
+3. FISMA Outreach Activity to Public and Private Sector
+Organizations: CSD conducted cybersecurity outreach Contacts:
+briefings and provided support to state and local Dr. Ron Ross Ms. Pat Toth
+governments as well as private sector organizations on (301) 975-5390 (301) 975-5140
+topics of interest, such as effective implementation of ron.ross@nist.gov patricia.toth@nist.gov
+the NIST Risk Management Framework. In addition, CSD
+Mr. Arnold Johnson Ms. Kelley Dempsey
+conducted outreach activities with academic institutions,
+(301) 975-3247 (301) 975-2827
+providing information on NIST’s security standards and arnold.johnson@nist.gov kelley.dempsey@nist.gov
+guidelines, and exploring new areas of cybersecurity
+research and development. Ms. Peggy Himes
+(301) 975-2489
 peggy.himes@nist.gov
-
----
-
-est Architectures (CTA)
+In FY 2013, CSD completed the following outreach activities:
+ Finalized SP 800-53, Revision 4 Biometric Standards and Associated Conformity
+Assessment Testing Tools
+ Collaborated with the ITL Software and Systems Division
+and the NIST Standards Coordination Office using the The CSD staff responds to government, industry, and market
+International Standard ISO/IEC 17020:2008, Conformity requirements for open systems standards by:
+Assessment – Requirements for the operation of various
+ Accelerating development of formal biometric standards
+types of bodies performing inspection, in support of GSA
+in establishing a process for qualifying 3PAOs to conduct  Providing effective leadership and technical participation
+security assessments of CSPs information systems in the development of these standards
+consistent with GSA requirements based on NIST
+standards and guidelines  Developing Conformance Test Architectures (CTA)
 and Conformance Test Suites (CTS) designed to test
  Developed a preliminary draft of SP 800-53A, Revision 4,
 implementations of biometric standards
@@ -5705,4 +6300,4 @@ EO
 13636
 Assets Roadmap
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-07", "model": "gemini-3.7-flash"} -->
