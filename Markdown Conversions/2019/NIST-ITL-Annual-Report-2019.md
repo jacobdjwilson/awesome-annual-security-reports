@@ -1,467 +1,918 @@
-# NIST Special Publication 800-211: 2019 Annual Report, NIST/ITL Cybersecurity Program
+NIST SPECIAL PUBLICATION 800-211
+2019
+ANNUAL REPORT
+NIST/ITL CYBERSECURITY PROGRAM
 
-## Table of Contents
-- [Foreword](#foreword)
-- [Focus Area 1: Advancing Cybersecurity and Privacy Standards](#focus-area-1-advancing-cybersecurity-and-privacy-standards)
-- [Focus Area 2: Enhancing Risk Management](#focus-area-2-enhancing-risk-management)
-- [Focus Area 3: Strengthening Cryptographic Standards and Validation](#focus-area-3-strengthening-cryptographic-standards-and-validation)
-- [Focus Area 4: Advanced Cybersecurity Research & Applications Development](#focus-area-4-advanced-cybersecurity-research--applications-development)
-- [Focus Area 5: Improving Cybersecurity Awareness, Training, and Education and Workforce Development](#focus-area-5-improving-cybersecurity-awareness-training-and-education-and-workforce-development)
-- [Focus Area 6: Enhancing Identity and Access Management](#focus-area-6-enhancing-identity-and-access-management)
-- [Focus Area 7: Bolstering Communications and Infrastructure Protection](#focus-area-7-bolstering-communications-and-infrastructure-protection)
-- [Focus Area 8: Securing Emerging Technologies](#focus-area-8-securing-emerging-technologies)
-- [Focus Area 9: Advancing Security Test and Measurement Tools](#focus-area-9-advancing-security-test-and-measurement-tools)
-- [Conclusion](#conclusion)
-- [References](#references)
-- [Acronyms](#acronyms)
-- [Opportunities to Engage with the NIST Cybersecurity Program During FY 2020](#opportunities-to-engage-with-the-nist-cybersecurity-program-during-fy-2020)
+THIS PAGE IS INTENTIONALLY LEFT BLANK
+Front cover image credit: Shutterstock / Khakimullin Aleksandr
 
----
+NIST SPECIAL PUBLICATION 800-211
+ANNUAL REPORT 2019
+NIST/ITL CYBERSECURITY PROGRAM
+PATRICK O’REILLY, EDITOR KRISTINA RIGOPOULOS, EDITOR
+Computer Security Division Applied Cybersecurity Division
+Information Technology Laboratory Information Technology Laboratory
+CO-EDITORS:
+Larry Feldman
+Greg Witte
+Huntington Ingalls Industries
+Annapolis Junction, Maryland
+THIS PUBLICATION IS AVAILABLE FREE OF CHARGE FROM
+https://doi.org/10.6028/NIST.SP.800-211
+AUGUST 2020
+U.S. DEPARTMENT OF COMMERCE
+Wilbur L. Ross, Jr., Secretary
+NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY
+Walter Copan, NIST Director and Under Secretary of Commerce for Standards and Technology
 
-NIST SPECIAL PUBLICATION 800-211  
-2019  
-ANNUAL REPORT  
-NIST/ITL CYBERSECURITY PROGRAM  
+AUTHORITY
+This publication has been developed by NIST in accordance with its statutory
+responsibilities under the Federal Information Security Modernization Act (FISMA) of
+2014, 44 U.S.C. § 3551 et seq., Public Law (P.L.) 113-283. NIST is responsible for developing
+information security standards and guidelines, including minimum requirements for
+federal information systems, but such standards and guidelines shall not apply to
+national security systems without the express approval of appropriate federal officials
+exercising policy authority over such systems. This guideline is consistent with the
+requirements of the Office of Management and Budget (OMB) Circular A-130.
+Nothing in this publication should be taken to contradict the standards and guidelines
+made mandatory and binding on federal agencies by the Secretary of Commerce under
+statutory authority. Nor should these guidelines be interpreted as altering or superseding
+the existing authorities of the Secretary of Commerce, Director of the OMB, or any other
+federal official. This publication may be used by nongovernmental organizations on a
+voluntary basis and is not subject to copyright in the United States. Attribution would,
+however, be appreciated by NIST.
+National Institute of Standards and Technology Special Publication 800-211
+Natl. Inst. Stand. Technol. Spec. Publ. 800-211, 60 pages (August 2020)
+CODEN: NSPUE2
+This publication is available free of charge from:
+https://doi.org/10.6028/NIST.SP.800-211
+II
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-![Front cover image credit: Shutterstock / Khakimullin Aleksandr]
-
-NIST SPECIAL PUBLICATION 800-211  
-ANNUAL REPORT 2019  
-NIST/ITL CYBERSECURITY PROGRAM  
-PATRICK O’REILLY, EDITOR | KRISTINA RIGOPOULOS, EDITOR  
-Computer Security Division | Applied Cybersecurity Division  
-Information Technology Laboratory | Information Technology Laboratory  
-CO-EDITORS:  
-Larry Feldman  
-Greg Witte  
-Huntington Ingalls Industries  
-Annapolis Junction, Maryland  
-
-THIS PUBLICATION IS AVAILABLE FREE OF CHARGE FROM  
-[https://doi.org/10.6028/NIST.SP.800-211](https://doi.org/10.6028/NIST.SP.800-211)  
-AUGUST 2020  
-U.S. DEPARTMENT OF COMMERCE  
-Wilbur L. Ross, Jr., Secretary  
-NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY  
-Walter Copan, NIST Director and Under Secretary of Commerce for Standards and Technology  
-
-### AUTHORITY
-This publication has been developed by NIST in accordance with its statutory responsibilities under the Federal Information Security Modernization Act (FISMA) of 2014, 44 U.S.C. § 3551 et seq., Public Law (P.L.) 113-283. NIST is responsible for developing information security standards and guidelines, including minimum requirements for federal information systems, but such standards and guidelines shall not apply to national security systems without the express approval of appropriate federal officials exercising policy authority over such systems. This guideline is consistent with the requirements of the Office of Management and Budget (OMB) Circular A-130.
-
-Nothing in this publication should be taken to contradict the standards and guidelines made mandatory and binding on federal agencies by the Secretary of Commerce under statutory authority. Nor should these guidelines be interpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of the OMB, or any other federal official. This publication may be used by nongovernmental organizations on a voluntary basis and is not subject to copyright in the United States. Attribution would, however, be appreciated by NIST.
-
-National Institute of Standards and Technology Special Publication 800-211  
-Natl. Inst. Stand. Technol. Spec. Publ. 800-211, 60 pages (August 2020)  
-CODEN: NSPUE2  
-This publication is available free of charge from:  
-[https://doi.org/10.6028/NIST.SP.800-211](https://doi.org/10.6028/NIST.SP.800-211)  
-
-Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose.
-
-There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.
-
-Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at [https://csrc.nist.gov/publications](https://csrc.nist.gov/publications).
-
-Comments on this publication may be submitted to:  
-National Institute of Standards and Technology  
-Attn: Computer Security Division, Information Technology Laboratory  
-100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930  
-Email: `cybersecurity.annualreport@nist.gov`  
+Certain commercial entities, equipment, or materials may be identified in this
+document in order to describe an experimental procedure or concept adequately.
+Such identification is not intended to imply recommendation or endorsement
+by NIST, nor is it intended to imply that the entities, materials, or equipment are
+necessarily the best available for the purpose.
+There may be references in this publication to other publications currently under
+development by NIST in accordance with its assigned statutory responsibilities.
+The information in this publication, including concepts and methodologies, may
+be used by federal agencies even before the completion of such companion
+publications. Thus, until each publication is completed, current requirements,
+guidelines, and procedures, where they exist, remain operative. For planning and
+transition purposes, federal agencies may wish to closely follow the development
+of these new publications by NIST.
+Organizations are encouraged to review all draft publications during public
+comment periods and provide feedback to NIST. Many NIST cybersecurity
+publications, other than the ones noted above, are available at
+https://csrc.nist.gov/publications.
+Comments on this publication may be submitted to:
+National Institute of Standards and Technology
+Attn: Computer Security Division, Information Technology Laboratory
+100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930
+Email: cybersecurity.annualreport@nist.gov
 All comments are subject to release under the Freedom of Information Act (FOIA).
+III
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
----
+REPORTS ON COMPUTER SYSTEMS TECHNOLOGY
+The National Institute of Standards and Technology (NIST) Information Technology
+Laboratory (ITL) promotes the U.S. economy and public welfare by providing technical
+leadership for the Nation’s measurement and standards infrastructure. ITL develops tests,
+test methods, reference data, proof-of-concept implementations, and technical analyses
+to advance the development and productive use of information technology. ITL’s
+responsibilities include the development of management, administrative, technical, and
+physical standards and guidelines for the cost-effective security and privacy of national
+security-related information in federal information systems. The Special Publication
+800-series reports on ITL’s research, guidelines, and outreach efforts in information
+system security and its collaborative activities with industry, government, and academic
+organizations.
+ABSTRACT
+During Fiscal Year 2019 (FY 2019), from October 1, 2018 through September 30, 2019,
+the NIST Information Technology Laboratory (ITL) Cybersecurity and Privacy Program
+successfully responded to numerous challenges and opportunities in security and
+privacy. This annual report highlights the FY 2019 research agenda and activities for
+the ITL Cybersecurity and Privacy Program, including: the ongoing participation and
+development of international standards; the enhancement of privacy and security
+risk management models, including those for the protection of controlled unclassified
+information (CUI), systems engineering and cyber resiliency, supply chains, and
+mobile technologies; the continued advancement of cryptographic technologies,
+including updates to Federal Information Processing Standard (FIPS) Publication 140-3,
+Security Requirements for Cryptographic Modules, and preparation for post-quantum
+cryptographic methods; and improved infrastructure protection in areas such as zero
+trust architectures and advanced networking security. NIST maintained a strong focus
+on supporting small and medium-sized businesses (SMBs), including updates to the
+Small Business Cybersecurity Corner website to make resources easier to find and use,
+and drawing on contributed cybersecurity resources and feedback received from federal
+partners and the public.
+KEYWORDS
+annual report; Advanced Network Technologies Division; ANTD; Applied Cybersecurity
+Division; ACD; Computer Security Division; CSD; Cybersecurity; Cybersecurity Program;
+Federal Information Security Management Act; FISMA; privacy; program highlights;
+Information Access Division; IAD; information security; Information Technology
+Laboratory; ITL; program accomplishments; Software and Systems Division; SSD.
+IV
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-### REPORTS ON COMPUTER SYSTEMS TECHNOLOGY
-The National Institute of Standards and Technology (NIST) Information Technology Laboratory (ITL) promotes the U.S. economy and public welfare by providing technical leadership for the Nation’s measurement and standards infrastructure. ITL develops tests, test methods, reference data, proof-of-concept implementations, and technical analyses to advance the development and productive use of information technology. ITL’s responsibilities include the development of management, administrative, technical, and physical standards and guidelines for the cost-effective security and privacy of national security-related information in federal information systems. The Special Publication 800-series reports on ITL’s research, guidelines, and outreach efforts in information system security and its collaborative activities with industry, government, and academic organizations.
+TABLE OF CONTENTS
+Foreword . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+Focus Area 1: Advancing Cybersecurity and Privacy Standards . . . . . . . . . . . . . . 3
+Focus Area 2: Enhancing Risk Management . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Focus Area 3: Strengthening Cryptographic Standards and Validation . . . . . . . . . .13
+Focus Area 4: Advanced Cybersecurity Research & Applications Development . . . . .17
+Focus Area 5: Improving Cybersecurity Awareness, Training, and Education
+and Workforce Development . . . . . . . . . . . . . . . . . . . . . . . . . 20
+Focus Area 6: Enhancing Identity and Access Management . . . . . . . . . . . . . . . 24
+Focus Area 7: Bolstering Communications and Infrastructure Protection . . . . . . . 27
+Focus Area 8: Securing Emerging Technologies . . . . . . . . . . . . . . . . . . . . . . 34
+Focus Area 9: Advancing Security Test and Measurement Tools . . . . . . . . . . . . . 37
+Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+Acronyms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+Opportunities to Engage with the NIST Cybersecurity Program During FY 2020 . . 49
+V
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-### ABSTRACT
-During Fiscal Year 2019 (FY 2019), from October 1, 2018 through September 30, 2019, the NIST Information Technology Laboratory (ITL) Cybersecurity and Privacy Program successfully responded to numerous challenges and opportunities in security and privacy. This annual report highlights the FY 2019 research agenda and activities for the ITL Cybersecurity and Privacy Program, including: the ongoing participation and development of international standards; the enhancement of privacy and security risk management models, including those for the protection of controlled unclassified information (CUI), systems engineering and cyber resiliency, supply chains, and mobile technologies; the continued advancement of cryptographic technologies, including updates to Federal Information Processing Standard (FIPS) Publication 140-3, Security Requirements for Cryptographic Modules, and preparation for post-quantum cryptographic methods; and improved infrastructure protection in areas such as zero trust architectures and advanced networking security. NIST maintained a strong focus on supporting small and medium-sized businesses (SMBs), including updates to the Small Business Cybersecurity Corner website to make resources easier to find and use, and drawing on contributed cybersecurity resources and feedback received from federal partners and the public.
+THIS PAGE IS INTENTIONALLY LEFT BLANK
+VI
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-### KEYWORDS
- annual report; Advanced Network Technologies Division; ANTD; Applied Cybersecurity Division; ACD; Computer Security Division; CSD; Cybersecurity; Cybersecurity Program; Federal Information Security Management Act; FISMA; privacy; program highlights; Information Access Division; IAD; information security; Information Technology Laboratory; ITL; program accomplishments; Software and Systems Division; SSD.
+FOREWORD
+Last year’s annual report on cybersecurity noted that NIST is “picking up the pace” in
+advancing cybersecurity and privacy, and a look back at Fiscal Year 2019 proved that to
+be an understatement. The year witnessed a significant increase in the degree and kind
+of our collaborations to expand and improve the building blocks of cybersecurity.
+That greater collaboration helped us deal with the ever-quickening speed of
+technological changes that present one challenge after another in cybersecurity. By
+working closely with partners in the private sector, universities, and other agencies both
+in the United States and abroad, NIST made great progress in researching and providing
+practical methods to achieve improved security and privacy risk management, stronger
+cryptography, more secure communications, more reliable automation, and to better
+understand, advance, and utilize other foundational elements of cybersecurity.
+Helping organizations to better manage security and privacy risk, we updated the Risk
+Management Framework to even more fully support organizational security and privacy
+at all levels. Through a series of workshops and online forums, we brought industry
+and government together to create the NIST Privacy Framework: A Tool for Improving
+Privacy through Enterprise Risk Management. The NIST Cybersecurity Framework
+continues to gain users as companies and government organizations around the world
+have recognized the value of that model and are translating it, tailoring it to adapt to
+local needs, and using it to provide a common language for communicating about and
+achieving good cybersecurity risk management practices.
+The world of cryptography is getting larger and smaller at the same time. This report
+describes some of the notable accomplishments in NIST’s continuing quest with our
+collaborators to evaluate and standardize quantum-resistant public-key cryptographic
+algorithms. At the other end of the spectrum, we advanced lightweight cryptography
+to balance the security needs for circuits smaller than were even dreamed of just a few
+years ago.
+NIST’s work on secure software development and systems engineering reinforces the
+need to design and implement software and systems that are secure, resilient, and
+trustworthy from the start—a theme that runs throughout many of the resources we
+produced and updated in FY 2019 and describe in this report.
+Advances in new and emerging technologies and approaches like blockchain, artificial
+intelligence, 5th Generation (5G) communications, secure infrastructure, zero trust
+architecture, and the Internet of Things are enabling new and remarkable products. The
+accomplishments and activities in this report demonstrate how NIST continues to work
+with industry partners to ensure that evolving technologies are secure, reliable, and
+trustworthy—now and into the future.
+1
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
----
+The year marked a decade of progress by the NIST-managed National Initiative
+for Cybersecurity Education (NICE), to help the world address the human element
+of cybersecurity from the classroom to the workplace. Tackling the shortage of
+cybersecurity talent has become an even more urgent priority for NIST and its
+collaborators, with FY 2019 being an especially productive year.
+We kept our promise to pick up the pace, and we are excited to see what Fiscal Year
+2020 has in store. We invite you to learn more about these programs and to join us as we
+continue to build a better future on these foundations!
+Donna Dodson
+NIST Chief Cybersecurity Advisor
+2
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-## FOREWORD
-Last year’s annual report on cybersecurity noted that NIST is “picking up the pace” in advancing cybersecurity and privacy, and a look back at Fiscal Year 2019 proved that to be an understatement. The year witnessed a significant increase in the degree and kind of our collaborations to expand and improve the building blocks of cybersecurity.
+CREDIT: iStock / ipopba
+FOCUS AREA 1: ADVANCING CYBERSECURITY
+THIS PAGE IS INTENTIONALLY LEFT BLANK
+AND PRIVACY STANDARDS
+Leadership and Participation In Developing National and
+International Standards
+The standards community is built upon international collaboration. NIST leverages its
+foundational and applied research efforts along with its experience in leadership to
+contribute to the development of national and international standards. Today, these
+standards activities span cybersecurity, privacy, cryptography, and critical fields such as 5G
+mobile and cellular technologies, quantum information, and the Internet of Things (IoT).
+About 40 NIST staff members work with other agencies and industry to develop
+cybersecurity and privacy standards through voluntary consensus Standards
+Developing Organizations (SDOs). NIST’s standards strategy is captured in NIST
+Interagency Report (NISTIR) 8074, Cybersecurity Interagency Report on Strategic U.S.
+Government Engagement in International Standardization to Achieve U.S. Objectives for
+Cybersecurity.
+During FY 2019, NIST staff actively contributed to and held leadership positions in
+various SDOs, including the International Electrotechnical Commission (IEC), the Internet
+Engineering Task Force (IETF), and the International Organization for Standardization
+(ISO). The NIST staff actively participated in standards bodies to raise awareness and
+influence the development of privacy and cybersecurity standards, including efforts
+within the ISO/IEC joint technical committee (JTC) 1 Subcommittee (SC) 27, that aligned
+3
+with the principles of the NIST Cybersecurity Framework. NIST representatives also
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-That greater collaboration helped us deal with the ever-quickening speed of technological changes that present one challenge after another in cybersecurity. By working closely with partners in the private sector, universities, and other agencies both in the United States and abroad, NIST made great progress in researching and providing practical methods to achieve improved security and privacy risk management, stronger cryptography, more secure communications, more reliable automation, and to better understand, advance, and utilize other foundational elements of cybersecurity.
+FOCUS AREA 1
+participated in the ISO Project Committee (PC) 317, which focuses on developing ISO
+31700, Consumer protection: privacy by design for consumer goods and services. The
+NIST staff worked to promote the development and international use of the NIST Privacy
+Framework and its principles through engagement with several privacy standards
+activities from the Institute for Testing and Certification (ITC).
+NIST participation has also grown considerably in IoT standardization activities,
+including:
+• ISO JTC 1/SC 41, IoT architecture and vocabulary, IoT Interoperability, and IoT
+Applications;
+• ISO JTC 1/SC 27, IoT aspects of Security and Privacy; and
+• IETF, Software Updates for Internet of Things Security Area.
+NIST has been instrumental in promoting and participating in the development of a
+family of voluntary ISO/IEC standards that align with NIST’s cryptographic module
+validation standard and related specifications. NIST serves as the project editor for nine
+of those standards. Federal Information Processing Standard (FIPS) Publication 140-3,
+Security Requirements for Cryptographic Modules, points to ISO/IEC 19790, Security
+Requirements for Cryptographic Modules. [1] Testing for these requirements will be
+performed in accordance with ISO/IEC 24759, Test Requirements for Cryptographic
+Modules. This is an ongoing effort and will continue over the next several years to
+support a smooth transition path to those using FIPS 140-3 specifications.
+In FY 2020, the NIST staff will continue to lead and participate in cybersecurity and
+privacy standardization efforts with an increased focus on new and emerging areas, such
+as artificial intelligence (AI), quantum information, and IoT. NIST will continue to provide
+thoughtful leadership in many SDOs by actively participating in those organizations and
+contributing publications and papers.
+4
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-Helping organizations to better manage security and privacy risk, we updated the Risk Management Framework to even more fully support organizational security and privacy at all levels. Through a series of workshops and online forums, we brought industry and government together to create the NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management. The NIST Cybersecurity Framework continues to gain users as companies and government organizations around the world have recognized the value of that model and are translating it, tailoring it to adapt to local needs, and using it to provide a common language for communicating about and achieving good cybersecurity risk management practices.
+CREDIT: Shutterstock / bleakstar
+FOCUS AREA 2: ENHANCING RISK MANAGEMENT
+THIS PAGE IS INTENTIONALLY LEFT BLANK
+NIST has made significant progress during FY 2019 in advancing methods and guidelines
+for managing organizational risk related to cybersecurity, systems engineering, and
+privacy. While risk management has been a fundamental driver for organizations for as
+long as there has been information to protect, advances in technology increasingly call for
+a collaborative approach to engineering secure systems, securing systems managed by
+external partners, and applying risk management to an ever-evolving range of products.
+Notable achievements during FY 2019 included updates to several NIST endeavors that
+are described below.
+The Next-Generation Risk Management Framework
+The Risk Management Framework (RMF) is one of NIST’s most highly used products.
+Initially created for federal agencies, organizations around the globe use the RMF
+because it provides a structured and flexible process for managing security and privacy
+risk. The RMF includes processes for information security categorization; control
+selection, implementation, and assessment; system and common control authorizations;
+and continuous monitoring. It also includes activities to prepare organizations to execute
+the RMF at appropriate risk management levels.
+In FY 2019, NIST published SP 800-37, Revision 2, Risk Management Framework for
+Information Systems and Organizations: A System Life Cycle Approach for Security
+and Privacy [2]. SP 800-37, Rev. 2, represents the next-generation Risk Management
+Framework (RMF) for systems, organizations, and individuals. The updates include an 5
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-The world of cryptography is getting larger and smaller at the same time. This report describes some of the notable accomplishments in NIST’s continuing quest with our collaborators to evaluate and standardize quantum-resistant public-key cryptographic algorithms. At the other end of the spectrum, we advanced lightweight cryptography to balance the security needs for circuits smaller than were even dreamed of just a few years ago.
+FOCUS AREA 2
+initial alignment with the constructs in the NIST Cybersecurity Framework, the integration
+of privacy risk management processes, an alignment with system life-cycle security
+engineering processes, and the incorporation of supply chain risk management processes.
+This is the first NIST publication to include a full integration of privacy risk management
+into the existing information security risk management processes. The addition of a new
+Prepare step is one of the key changes to the RMF and was incorporated to achieve
+more effective, efficient, and cost-effective security and privacy risk management
+processes. The new step works in harmony with the Framework for Improving Critical
+Infrastructure Cybersecurity (commonly referred to as the NIST Cybersecurity
+Framework) and the NIST Privacy Framework [3] [4]. The use of these models together
+institutionalizes organization-level and system-level preparation by:
+• Facilitating communication across the organizational risk management levels;
+• Encouraging the organization-wide identification of common controls and the
+development of organizationally tailored control baselines;
+• Reducing the complexity of the IT infrastructure; and
+• Providing additional methods to identify, prioritize, and focus resources on high-
+value assets commensurate with risk.
+NIST has also continued to support public and private-sector outreach and products for
+the risk management community. For example, NIST hosted a well-attended webcast
+about the RMF updates and developed an online reference site for multiple electronic
+formats of the security and privacy controls from NIST SP 800-53, Security and Privacy
+Controls for Federal Information Systems and Organizations [5].
+Advancement of Privacy Engineering and Risk Management
+NIST made significant advances in guidance and models for managing privacy risks in
+FY 2019. These privacy risks can have direct adverse consequences at both the individual
+and societal levels, with follow-on effects on organizations’ brands, bottom lines, and
+future growth prospects. NIST is dedicated to supporting innovation that provides the
+benefits of information processing while simultaneously applying methods that help
+protect the privacy of individuals.
+While managing cybersecurity risk contributes to managing privacy risk, it is
+not sufficient. Cybersecurity and privacy have both unique and overlapping risk
+management needs, as illustrated by Figure 1: Cybersecurity and Privacy Risk. Having
+a general understanding of the different origins of cybersecurity and privacy risks is
+important for determining the most effective solutions to address the risks.
+6
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-NIST’s work on secure software development and systems engineering reinforces the need to design and implement software and systems that are secure, resilient, and trustworthy from the start—a theme that runs throughout many of the resources we produced and updated in FY 2019 and describe in this report.
+FOCUS AREA 2
+Cybersecurity Privacy
+Cybersecurity-
+Risks Risks
+related privacy
+IDENTIFY events
+IDENTIFY-P
+PROTECT PROTECT-P
+GOVERN-P
+DETECT DETECT
+CONTROL-P
+RESPOND RESPOND
+COMMUNICATE-P
+RECOVER RECOVER
+Figure 1: Cybersecurity and Privacy Risk
+FY 2019 was a busy and fruitful year of open collaboration with stakeholders from
+across government, academia, and industry who worked together to craft and hone
+tools, standards, and processes to better identify, prioritize, and manage privacy risks.
+NIST also collaborated on the creation of the NIST Privacy Framework: An Enterprise
+Risk Management Tool [4], which addresses the need to manage privacy issues across
+the U.S. and throughout the world, improve privacy protections, and better manage
+compliance with increasing global privacy requirements. The Privacy Framework—
+through a risk- and outcome-based approach—is flexible enough to address diverse
+privacy needs, enable more innovative and effective solutions that can lead to
+better outcomes for individuals and organizations, and stay current with technology
+trends such as AI and IoT. The Privacy Framework follows the structure of the NIST
+Cybersecurity Framework, facilitating the use of both frameworks together. Each
+framework component reinforces privacy risk management through the connection
+between business and mission drivers, organizational roles and responsibilities, and
+privacy protection activities. The Privacy Framework was developed from comments to
+public requests for information (RFI) and discussions during three public workshops,
+five webinars, and hundreds of direct interactions with stakeholders. A public draft was
+released at the end of FY 2019, and the subsequent final version was released in early
+FY 2020.
+While the Privacy Framework represents a great leap forward in the privacy risk
+management space, NIST also supported advancement in several areas of privacy
+engineering in FY 2019.
+• NIST guidance has sought to highlight the importance of security and privacy for
+all organizations and enterprises. Privacy aspects were subsequently integrated
+into many of NIST’s publications, such as SP 800-37, Revision 2, and NISTIR 8228,
+Considerations for Managing IoT Cybersecurity and Privacy Risks [6].
+7
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-Advances in new and emerging technologies and approaches like blockchain, artificial intelligence, 5th Generation (5G) communications, secure infrastructure, zero trust architecture, and the Internet of Things are enabling new and remarkable products. The accomplishments and activities in this report demonstrate how NIST continues to work with industry partners to ensure that evolving technologies are secure, reliable, and trustworthy—now and into the future.
+FOCUS AREA 2
+• NIST has driven change and standardization through leadership positions in many
+key organizations. The NIST staff fills leadership positions in key organizations,
+including membership in the Privacy Engineering Advisory Board for the
+International Association of Privacy Professionals (IAPP), co-chairmanship of
+the Interagency Working Group (IWG) for Privacy at the U.S. Networking and
+Information Technology Research and Development (NITRD), and working group
+chairmanship at ISO Technical Committee ISO/PC 317, Consumer protection:
+privacy by design for consumer goods and services. Through these and many
+other programs, NIST provides leadership and direction and helps drive application
+standards for important risk management focus areas.
+• NIST has fostered leadership and partnership through the Privacy Collaboration
+Space—an online venue open to the public where practitioners can discover,
+share, discuss, and improve upon open-source tools, solutions, and processes that
+support privacy engineering and risk management. Following the NIST tradition of
+open and transparent partnerships, the collaboration space was launched with an
+initial focus on:
+• De-identification: a technique or process applied to a dataset with the goal of
+preventing or limiting certain types of privacy risks to individuals, protected
+groups, and establishments while still allowing for the production of aggregate
+statistics. This focus area includes a broad scope of de-identification to allow for
+noise-introducing techniques, such as differential privacy, data masking, and the
+creation of synthetic datasets that are based on privacy-preserving models.
+• Privacy Risk Assessment: a process that helps organizations to analyze and
+assess privacy risks for individuals that arise from the processing of their data.
+This focus area includes risk models, risk assessment methodologies, and
+approaches to determining privacy risk factors. Through the new space, which
+is enabled by the Github repository, the community can contribute to privacy
+engineering in the form of tools, use cases, and feedback on existing entries.
+Advancing the Application of the NIST Cybersecurity Framework
+Having published the updated Cybersecurity Framework Version 1.1 in FY 2018,
+NIST continued to work with the risk management community to support outreach,
+application, and implementation. The NIST Cybersecurity Framework website has
+expanded to provide learning materials, success stories, and industry resources. Among
+those resources is NISTIR 8183, Cybersecurity Framework Manufacturing Profile [7]. Co-
+developed with NIST’s Engineering Laboratory (EL), this report applies the Cybersecurity
+Framework components to help describe specific cybersecurity activities and outcomes
+for the protection of the manufacturing system and its components, facility, and
+environment.
+Another advancement in the application of the Cybersecurity Framework is the
+8 implementation of an online catalog of informative references. In FY 2019, NIST launched
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-The year marked a decade of progress by the NIST-managed National Initiative for Cybersecurity Education (NICE), to help the world address the human element of cybersecurity from the classroom to the workplace. Tackling the shortage of cybersecurity talent has become an even more urgent priority for NIST and its collaborators, with FY 2019 being an especially productive year.
+FOCUS AREA 2
+the National Cybersecurity Online Informative References (OLIR) Program to facilitate
+subject matter experts in defining online informative references (OLIRs) between
+the cybersecurity elements of their documents and the cybersecurity elements of
+other documents, like the Cybersecurity Framework. The OLIR Program provides a
+standardized format for expressing OLIRs and a centralized location for accessing and
+comparing them. NISTIR 8278, National Cybersecurity OLIR Program: Guidelines for OLIR
+Users and Developers, describes the OLIR Program, explains what OLIRs are, how they
+can be beneficial, and how subject matter experts can contribute OLIRs [8].
+The Informative Reference catalog implements a federated model, where submitting
+parties develop and host their respective Informative References. NIST released NISTIR
+8204, Cybersecurity Framework OLIR Submissions: Specification for Completing
+the OLIR Template, which provides guidance to Informative Reference developers
+for completing and submitting OLIRs [9]. NIST analyzes the submitted OLIRs for
+correctness, works with submitters regarding any corrections, and hosts links to the
+public draft and final versions of the OLIRs.
+The OLIR Program integrates ongoing NIST projects that respond to administrative and
+legislative requirements. The OLIR Program can incorporate any authoritative documents,
+from national and international standards, guidelines, frameworks, and regulations to
+policies for individual organizations, sectors, or jurisdictions. By following this approach,
+cybersecurity document owners can use the OLIR Program as a mechanism for
+communicating with owners and users of other cybersecurity documents.
+Protecting Controlled Unclassified Information (CUI)
+Other risk management-focused NIST cybersecurity accomplishments in FY 2019
+included continued outreach and updates regarding recommendations for protecting
+the confidentiality of controlled, unclassified information (CUI) in nonfederal systems
+and organizations. A significant amount of federal CUI is entrusted to external entities.
+Safeguarding that CUI is of paramount importance and can directly affect the ability of
+federal agencies to successfully protect their information.
+In FY 2019, NIST partnered with the National Archives and Records Administration
+(NARA)—designated as the CUI Executive Agent by Executive Order 13556, Controlled
+Unclassified Information—on several publications:
+• Draft SP 800-171, Revision 2, Protecting Controlled Unclassified Information
+in Nonfederal Systems and Organizations, provides updates to Chapter One
+(Introduction), Chapter Two (The Fundamentals), Glossary, Acronyms, and
+References appendices [10].
+• Draft SP 800-171A, Assessing Security Requirements for Controlled Unclassified
+Information, which provides federal and nonfederal organizations with assessment
+procedures and a methodology that can be employed to conduct assessments of
+the CUI security requirements in SP 800-171, Revision 1 [11].
+9
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-We kept our promise to pick up the pace, and we are excited to see what Fiscal Year 2020 has in store. We invite you to learn more about these programs and to join us as we continue to build a better future on these foundations!
+FOCUS AREA 2
+• Draft SP 800-171B, Protecting Controlled Unclassified Information in Nonfederal
+Systems and Organizations: Enhanced Security Requirements for Critical Programs
+and High Value Assets, which provides enhanced security requirements that
+apply only to components of nonfederal systems that process, store, or transmit
+CUI or that provide protection for such components when the designated CUI is
+contained in a critical program or high-value asset [12]. The enhanced security
+requirements are only applicable to a nonfederal system or organization when
+mandated by a federal agency in a contract, grant, or other agreement.
+In October 2018, NIST coordinated with the Department of Defense (DoD) and NARA to
+host an informational workshop that provided an overview of CUI, updates about recent
+changes to CUI provisions in the Defense Federal Acquisition Regulations Supplement
+(DFARS), and NIST Special Publications 800-171 and 800-171A. This workshop featured
+panels of Federal Government representatives (who discussed expectations for
+evaluating evidence and implementing the CUI security requirements) and industry
+representatives (who shared best practices and lessons learned).
+Systems Security Engineering (SP 800-160, Volumes 1 & 2)
+In FY 2019, NIST continued to foster the engineering-driven perspective and actions
+necessary to develop more defensible and survivable systems, including the machine,
+physical, and human components that compose the systems and the capabilities and
+services delivered by those systems. The Systems Security Engineering (SSE) approach
+builds upon well-established international standards for systems and software and fuses
+systems security engineering methods, practices, and techniques. The objective is to
+address security issues from the perspective of stakeholder protection needs, concerns,
+and requirements using established engineering processes so that appropriate fidelity
+and rigor are addressed early on and in a sustainable manner throughout the life cycle
+of the system. NIST also published the first draft in a series of specialty publications
+that were developed to support the NIST SSE guideline. Volume 2 addresses cyber
+resiliency considerations for two important, yet distinct, communities of interest: 1) those
+conducting the new development of IT component products, systems, and services and
+2) those with legacy systems (having an installed base) currently carrying out day-to-
+day mission and business functions.
+An element of this focus on risk-based SSE included the publication of a new NIST
+Cybersecurity White Paper entitled, Mitigating the Risk of Software Vulnerabilities by
+Adopting a Secure Software Development Framework (SSDF) [13]. This white paper
+builds on a proven software development life cycle (SDLC) methodology for designing,
+creating, and maintaining software and encouraging the integration of specific secure
+software development practices. Benefits of SSDF include reducing the number of
+vulnerabilities in released software, mitigating the potential exploitation of undetected or
+unaddressed vulnerabilities, and addressing the root causes of vulnerabilities to prevent
+future recurrences.
+10
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-Donna Dodson  
-NIST Chief Cybersecurity Advisor  
-
----
-
-## FOCUS AREA 1: ADVANCING CYBERSECURITY AND PRIVACY STANDARDS
-
-![CREDIT: iStock / ipopba]
-
-### Leadership and Participation In Developing National and International Standards
-The standards community is built upon international collaboration. NIST leverages its foundational and applied research efforts along with its experience in leadership to contribute to the development of national and international standards. Today, these standards activities span cybersecurity, privacy, cryptography, and critical fields such as 5G mobile and cellular technologies, quantum information, and the Internet of Things (IoT).
-
-About 40 NIST staff members work with other agencies and industry to develop cybersecurity and privacy standards through voluntary consensus Standards Developing Organizations (SDOs). NIST’s standards strategy is captured in NIST Interagency Report (NISTIR) 8074, Cybersecurity Interagency Report on Strategic U.S. Government Engagement in International Standardization to Achieve U.S. Objectives for Cybersecurity.
-
-During FY 2019, NIST staff actively contributed to and held leadership positions in various SDOs, including the International Electrotechnical Commission (IEC), the Internet Engineering Task Force (IETF), and the International Organization for Standardization (ISO). The NIST staff actively participated in standards bodies to raise awareness and influence the development of privacy and cybersecurity standards, including efforts within the ISO/IEC joint technical committee (JTC) 1 Subcommittee (SC) 27, that aligned with the principles of the NIST Cybersecurity Framework. NIST representatives also participated in the ISO Project Committee (PC) 317, which focuses on developing ISO 31700, Consumer protection: privacy by design for consumer goods and services. The NIST staff worked to promote the development and international use of the NIST Privacy Framework and its principles through engagement with several privacy standards activities from the Institute for Testing and Certification (ITC).
-
-NIST participation has also grown considerably in IoT standardization activities, including:
-- ISO JTC 1/SC 41, IoT architecture and vocabulary, IoT Interoperability, and IoT Applications;
-- ISO JTC 1/SC 27, IoT aspects of Security and Privacy; and
-- IETF, Software Updates for Internet of Things Security Area.
-
-NIST has been instrumental in promoting and participating in the development of a family of voluntary ISO/IEC standards that align with NIST’s cryptographic module validation standard and related specifications. NIST serves as the project editor for nine of those standards. Federal Information Processing Standard (FIPS) Publication 140-3, Security Requirements for Cryptographic Modules, points to ISO/IEC 19790, Security Requirements for Cryptographic Modules. [1] Testing for these requirements will be performed in accordance with ISO/IEC 24759, Test Requirements for Cryptographic Modules. This is an ongoing effort and will continue over the next several years to support a smooth transition path to those using FIPS 140-3 specifications.
-
-In FY 2020, the NIST staff will continue to lead and participate in cybersecurity and privacy standardization efforts with an increased focus on new and emerging areas, such as artificial intelligence (AI), quantum information, and IoT. NIST will continue to provide thoughtful leadership in many SDOs by actively participating in those organizations and contributing publications and papers.
-
----
-
-## FOCUS AREA 2: ENHANCING RISK MANAGEMENT
-
-![CREDIT: Shutterstock / bleakstar]
-
-NIST has made significant progress during FY 2019 in advancing methods and guidelines for managing organizational risk related to cybersecurity, systems engineering, and privacy. While risk management has been a fundamental driver for organizations for as long as there has been information to protect, advances in technology increasingly call for a collaborative approach to engineering secure systems, securing systems managed by external partners, and applying risk management to an ever-evolving range of products.
-
-Notable achievements during FY 2019 included updates to several NIST endeavors that are described below.
-
-### The Next-Generation Risk Management Framework
-The Risk Management Framework (RMF) is one of NIST’s most highly used products. Initially created for federal agencies, organizations around the globe use the RMF because it provides a structured and flexible process for managing security and privacy risk. The RMF includes processes for information security categorization; control selection, implementation, and assessment; system and common control authorizations; and continuous monitoring. It also includes activities to prepare organizations to execute the RMF at appropriate risk management levels.
-
-In FY 2019, NIST published SP 800-37, Revision 2, Risk Management Framework for Information Systems and Organizations: A System Life Cycle Approach for Security and Privacy [2]. SP 800-37, Rev. 2, represents the next-generation Risk Management Framework (RMF) for systems, organizations, and individuals. The updates include an initial alignment with the constructs in the NIST Cybersecurity Framework, the integration of privacy risk management processes, an alignment with system life-cycle security engineering processes, and the incorporation of supply chain risk management processes. This is the first NIST publication to include a full integration of privacy risk management into the existing information security risk management processes. The addition of a new Prepare step is one of the key changes to the RMF and was incorporated to achieve more effective, efficient, and cost-effective security and privacy risk management processes. The new step works in harmony with the Framework for Improving Critical Infrastructure Cybersecurity (commonly referred to as the NIST Cybersecurity Framework) and the NIST Privacy Framework [3] [4]. The use of these models together institutionalizes organization-level and system-level preparation by:
-- Facilitating communication across the organizational risk management levels;
-- Encouraging the organization-wide identification of common controls and the development of organizationally tailored control baselines;
-- Reducing the complexity of the IT infrastructure; and
-- Providing additional methods to identify, prioritize, and focus resources on high-value assets commensurate with risk.
-
-NIST has also continued to support public and private-sector outreach and products for the risk management community. For example, NIST hosted a well-attended webcast about the RMF updates and developed an online reference site for multiple electronic formats of the security and privacy controls from NIST SP 800-53, Security and Privacy Controls for Federal Information Systems and Organizations [5].
-
-### Advancement of Privacy Engineering and Risk Management
-NIST made significant advances in guidance and models for managing privacy risks in FY 2019. These privacy risks can have direct adverse consequences at both the individual and societal levels, with follow-on effects on organizations’ brands, bottom lines, and future growth prospects. NIST is dedicated to supporting innovation that provides the benefits of information processing while simultaneously applying methods that help protect the privacy of individuals.
-
-While managing cybersecurity risk contributes to managing privacy risk, it is not sufficient. Cybersecurity and privacy have both unique and overlapping risk management needs, as illustrated by Figure 1: Cybersecurity and Privacy Risk. Having a general understanding of the different origins of cybersecurity and privacy risks is important for determining the most effective solutions to address the risks.
-
-```
-Cybersecurity                     Privacy
-Cybersecurity-                    Risks
-Risks                             related privacy
-                                  events
-IDENTIFY                          IDENTIFY-P
-PROTECT                           PROTECT-P / GOVERN-P / CONTROL-P
-DETECT                            DETECT
-RESPOND                           RESPOND / COMMUNICATE-P
-RECOVER                           RECOVER
-```
-_Figure 1: Cybersecurity and Privacy Risk_ [Image description: A comparative diagram illustrating the alignment and differences between the Cybersecurity Framework functions and Privacy Framework functions.]
-
-FY 2019 was a busy and fruitful year of open collaboration with stakeholders from across government, academia, and industry who worked together to craft and hone tools, standards, and processes to better identify, prioritize, and manage privacy risks. NIST also collaborated on the creation of the NIST Privacy Framework: An Enterprise Risk Management Tool [4], which addresses the need to manage privacy issues across the U.S. and throughout the world, improve privacy protections, and better manage compliance with increasing global privacy requirements. The Privacy Framework—through a risk- and outcome-based approach—is flexible enough to address diverse privacy needs, enable more innovative and effective solutions that can lead to better outcomes for individuals and organizations, and stay current with technology trends such as AI and IoT. The Privacy Framework follows the structure of the NIST Cybersecurity Framework, facilitating the use of both frameworks together. Each framework component reinforces privacy risk management through the connection between business and mission drivers, organizational roles and responsibilities, and privacy protection activities. The Privacy Framework was developed from comments to public requests for information (RFI) and discussions during three public workshops, five webinars, and hundreds of direct interactions with stakeholders. A public draft was released at the end of FY 2019, and the subsequent final version was released in early FY 2020.
-
-While the Privacy Framework represents a great leap forward in the privacy risk management space, NIST also supported advancement in several areas of privacy engineering in FY 2019.
-- NIST guidance has sought to highlight the importance of security and privacy for all organizations and enterprises. Privacy aspects were subsequently integrated into many of NIST’s publications, such as SP 800-37, Revision 2, and NISTIR 8228, Considerations for Managing IoT Cybersecurity and Privacy Risks [6].
-- NIST has driven change and standardization through leadership positions in many key organizations. The NIST staff fills leadership positions in key organizations, including membership in the Privacy Engineering Advisory Board for the International Association of Privacy Professionals (IAPP), co-chairmanship of the Interagency Working Group (IWG) for Privacy at the U.S. Networking and Information Technology Research and Development (NITRD), and working group chairmanship at ISO Technical Committee ISO/PC 317, Consumer protection: privacy by design for consumer goods and services. Through these and many other programs, NIST provides leadership and direction and helps drive application standards for important risk management focus areas.
-- NIST has fostered leadership and partnership through the Privacy Collaboration Space—an online venue open to the public where practitioners can discover, share, discuss, and improve upon open-source tools, solutions, and processes that support privacy engineering and risk management. Following the NIST tradition of open and transparent partnerships, the collaboration space was launched with an initial focus on:
-  - **De-identification**: a technique or process applied to a dataset with the goal of preventing or limiting certain types of privacy risks to individuals, protected groups, and establishments while still allowing for the production of aggregate statistics. This focus area includes a broad scope of de-identification to allow for noise-introducing techniques, such as differential privacy, data masking, and the creation of synthetic datasets that are based on privacy-preserving models.
-  - **Privacy Risk Assessment**: a process that helps organizations to analyze and assess privacy risks for individuals that arise from the processing of their data. This focus area includes risk models, risk assessment methodologies, and approaches to determining privacy risk factors. Through the new space, which is enabled by the Github repository, the community can contribute to privacy engineering in the form of tools, use cases, and feedback on existing entries.
-
-### Advancing the Application of the NIST Cybersecurity Framework
-Having published the updated Cybersecurity Framework Version 1.1 in FY 2018, NIST continued to work with the risk management community to support outreach, application, and implementation. The NIST Cybersecurity Framework website has expanded to provide learning materials, success stories, and industry resources. Among those resources is NISTIR 8183, Cybersecurity Framework Manufacturing Profile [7]. Co-developed with NIST’s Engineering Laboratory (EL), this report applies the Cybersecurity Framework components to help describe specific cybersecurity activities and outcomes for the protection of the manufacturing system and its components, facility, and environment.
-
-Another advancement in the application of the Cybersecurity Framework is the implementation of an online catalog of informative references. In FY 2019, NIST launched the National Cybersecurity Online Informative References (OLIR) Program to facilitate subject matter experts in defining online informative references (OLIRs) between the cybersecurity elements of their documents and the cybersecurity elements of other documents, like the Cybersecurity Framework. The OLIR Program provides a standardized format for expressing OLIRs and a centralized location for accessing and comparing them. NISTIR 8278, National Cybersecurity OLIR Program: Guidelines for OLIR Users and Developers, describes the OLIR Program, explains what OLIRs are, how they can be beneficial, and how subject matter experts can contribute OLIRs [8].
-
-The Informative Reference catalog implements a federated model, where submitting parties develop and host their respective Informative References. NIST released NISTIR 8204, Cybersecurity Framework OLIR Submissions: Specification for Completing the OLIR Template, which provides guidance to Informative Reference developers for completing and submitting OLIRs [9]. NIST analyzes the submitted OLIRs for correctness, works with submitters regarding any corrections, and hosts links to the public draft and final versions of the OLIRs.
-
-The OLIR Program integrates ongoing NIST projects that respond to administrative and legislative requirements. The OLIR Program can incorporate any authoritative documents, from national and international standards, guidelines, frameworks, and regulations to policies for individual organizations, sectors, or jurisdictions. By following this approach, cybersecurity document owners can use the OLIR Program as a mechanism for communicating with owners and users of other cybersecurity documents.
-
-### Protecting Controlled Unclassified Information (CUI)
-Other risk management-focused NIST cybersecurity accomplishments in FY 2019 included continued outreach and updates regarding recommendations for protecting the confidentiality of controlled, unclassified information (CUI) in nonfederal systems and organizations. A significant amount of federal CUI is entrusted to external entities. Safeguarding that CUI is of paramount importance and can directly affect the ability of federal agencies to successfully protect their information.
-
-In FY 2019, NIST partnered with the National Archives and Records Administration (NARA)—designated as the CUI Executive Agent by Executive Order 13556, Controlled Unclassified Information—on several publications:
-- Draft SP 800-171, Revision 2, Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations, provides updates to Chapter One (Introduction), Chapter Two (The Fundamentals), Glossary, Acronyms, and References appendices [10].
-- Draft SP 800-171A, Assessing Security Requirements for Controlled Unclassified Information, which provides federal and nonfederal organizations with assessment procedures and a methodology that can be employed to conduct assessments of the CUI security requirements in SP 800-171, Revision 1 [11].
-- Draft SP 800-171B, Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations: Enhanced Security Requirements for Critical Programs and High Value Assets, which provides enhanced security requirements that apply only to components of nonfederal systems that process, store, or transmit CUI or that provide protection for such components when the designated CUI is contained in a critical program or high-value asset [12]. The enhanced security requirements are only applicable to a nonfederal system or organization when mandated by a federal agency in a contract, grant, or other agreement.
-
-In October 2018, NIST coordinated with the Department of Defense (DoD) and NARA to host an informational workshop that provided an overview of CUI, updates about recent changes to CUI provisions in the Defense Federal Acquisition Regulations Supplement (DFARS), and NIST Special Publications 800-171 and 800-171A. This workshop featured panels of Federal Government representatives (who discussed expectations for evaluating evidence and implementing the CUI security requirements) and industry representatives (who shared best practices and lessons learned).
-
-### Systems Security Engineering (SP 800-160, Volumes 1 & 2)
-In FY 2019, NIST continued to foster the engineering-driven perspective and actions necessary to develop more defensible and survivable systems, including the machine, physical, and human components that compose the systems and the capabilities and services delivered by those systems. The Systems Security Engineering (SSE) approach builds upon well-established international standards for systems and software and fuses systems security engineering methods, practices, and techniques. The objective is to address security issues from the perspective of stakeholder protection needs, concerns, and requirements using established engineering processes so that appropriate fidelity and rigor are addressed early on and in a sustainable manner throughout the life cycle of the system. NIST also published the first draft in a series of specialty publications that were developed to support the NIST SSE guideline. Volume 2 addresses cyber resiliency considerations for two important, yet distinct, communities of interest: 1) those conducting the new development of IT component products, systems, and services and 2) those with legacy systems (having an installed base) currently carrying out day-to-day mission and business functions.
-
-An element of this focus on risk-based SSE included the publication of a new NIST Cybersecurity White Paper entitled, Mitigating the Risk of Software Vulnerabilities by Adopting a Secure Software Development Framework (SSDF) [13]. This white paper builds on a proven software development life cycle (SDLC) methodology for designing, creating, and maintaining software and encouraging the integration of specific secure software development practices. Benefits of SSDF include reducing the number of vulnerabilities in released software, mitigating the potential exploitation of undetected or unaddressed vulnerabilities, and addressing the root causes of vulnerabilities to prevent future recurrences.
-
-The white paper represents an example of the SSE project described above, fostering a subset of high-level practices that are based on established standards, guidance, and secure software development practice documents. These practices, collectively called a secure software development framework (SSDF), should be particularly helpful for the target audiences to achieve security software development objectives. Such a framework is advantageous because an organization in any sector or community, regardless of size or cybersecurity sophistication, can integrate the framework into any existing software development workflow and automated toolchain. It can be applied to typical IT infrastructures as well as more unique models, such as industrial control systems (ICS), cyber-physical systems (CPS), or IoT.
-
-### Cyber Supply Chain Risk Management (C-SCRM)
-Information and operational technology (IT/OT) rely on a complex, globally distributed and interconnected supply chain ecosystem to provide highly refined, cost-effective, and reusable solutions. This ecosystem is composed of various entities with multiple tiers of outsourcing, diverse distribution routes, assorted technologies, laws, policies, procedures, and practices—all of which interact to design, manufacture, distribute, deploy, use, maintain, and manage IT/OT products and services.
-
-Organizations are increasingly at risk of supply chain compromise, whether intentional or unintentional. Many beneficial factors (e.g., low-cost, interoperability, rapid innovation, and product variety) also increase the risk of a compromise to the cyber supply chain, which may result in risks to the end user. Managing cyber supply chain risks requires ensuring the integrity, security, quality, and resilience of the supply chain and its products and services. Cyber supply chain risks may include the insertion of counterfeits, unauthorized production, tampering, theft, and the insertion of malicious software and hardware as well as poor manufacturing and development practices in the cyber supply chain.
-
-An important NIST initiative is Cyber Supply Chain Risk Management (C-SCRM), the process of identifying, assessing, and mitigating the risks associated with the distributed and interconnected nature of IT/OT product and service supply chains. C-SCRM is integrated into Systems Security Engineering (described above) and covers the entire system life cycle (including design, development, distribution, deployment, acquisition, maintenance, and destruction) since supply chain threats and vulnerabilities may (intentionally or unintentionally) compromise an IT/OT product or service at any stage.
-
+FOCUS AREA 2
+The white paper represents an example of the SSE project described above, fostering
+a subset of high-level practices that are based on established standards, guidance, and
+secure software development practice documents. These practices, collectively called a
+secure software development framework (SSDF), should be particularly helpful for the
+target audiences to achieve security software development objectives. Such a framework
+is advantageous because an organization in any sector or community, regardless of
+size or cybersecurity sophistication, can integrate the framework into any existing
+software development workflow and automated toolchain. It can be applied to typical IT
+infrastructures as well as more unique models, such as industrial control systems (ICS),
+cyber-physical systems (CPS), or IoT.
+Cyber Supply Chain Risk Management (C-SCRM)
+Information and operational technology (IT/OT) rely on a complex, globally distributed
+and interconnected supply chain ecosystem to provide highly refined, cost-effective, and
+reusable solutions. This ecosystem is composed of various entities with multiple tiers of
+outsourcing, diverse distribution routes, assorted technologies, laws, policies, procedures,
+and practices—all of which interact to design, manufacture, distribute, deploy, use,
+maintain, and manage IT/OT products and services.
+Organizations are increasingly at risk of supply chain compromise, whether intentional or
+unintentional. Many beneficial factors (e.g., low-cost, interoperability, rapid innovation, and
+product variety) also increase the risk of a compromise to the cyber supply chain, which
+may result in risks to the end user. Managing cyber supply chain risks requires ensuring
+the integrity, security, quality, and resilience of the supply chain and its products and
+services. Cyber supply chain risks may include the insertion of counterfeits, unauthorized
+production, tampering, theft, and the insertion of malicious software and hardware as well
+as poor manufacturing and development practices in the cyber supply chain.
+An important NIST initiative is Cyber Supply Chain Risk Management (C-SCRM), the
+process of identifying, assessing, and mitigating the risks associated with the distributed
+and interconnected nature of IT/OT product and service supply chains. C-SCRM is
+integrated into Systems Security Engineering (described above) and covers the entire
+system life cycle (including design, development, distribution, deployment, acquisition,
+maintenance, and destruction) since supply chain threats and vulnerabilities may
+(intentionally or unintentionally) compromise an IT/OT product or service at any stage.
 SCRM work in FY 2019 included:
-- Development of the draft NISTIR 8272, Impact Analysis Tool for Interdependent Cyber Supply Chain Risks, which describes a prototype solution for filling the gap between an organization’s risk appetite and supply chain risk posture by providing a basic measurement of the potential impact of a cyber supply chain event [14]. This tool does not represent a complete supply chain risk management solution, but it is intended to be integrated into or used in concert with tools such as third-party management, enterprise resource planning, and supply chain management efforts.
-- Participation in the Federal Acquisition Security Council (created as a requirement of the U.S. Federal Acquisition Supply Chain Security Act of 2018). The council helps to develop policies and processes for agencies to use when purchasing technology products. It works closely with many federal entitities (such as the Department of Homeland Security’s National Risk Management Center) to support supply chain-related risks in acquisition of items such as: IT, including cloud computing services of all types; telecommunications equipment or telecommunications services; information processing; and IT hardware, systems, devices, software, or services that include embedded or incidental information technology.
-- Development of a draft NISTIR 8276, Key Practices in Cyber Supply Chain Risk Management: Observations from Industry, to provide a high-level summary of practices deemed by subject matter experts to be foundational to an effective cyber supply chain risk management program [15]. This work builds on the Roadmap for Improving Critical Infrastructure Cybersecurity, a companion document to the NIST Cybersecurity Framework. Since NIST has researched industry practices in cyber supply chain risk management (C-SCRM) through engagement with industry leaders, the group was able to identify some helpful practices. The NISTIR is based on an analysis of interviews with companies over several years (leading to the development of 24 case studies), prior NIST research in cyber supply chain risk management, and several standards and industry best practices documents.
+• Development of the draft NISTIR 8272, Impact Analysis Tool for Interdependent
+Cyber Supply Chain Risks, which describes a prototype solution for filling the gap
+between an organization’s risk appetite and supply chain risk posture by providing a
+basic measurement of the potential impact of a cyber supply chain event [14]. This
+tool does not represent a complete supply chain risk management solution, but it
+is intended to be integrated into or used in concert with tools such as third-party
+management, enterprise resource planning, and supply chain management efforts. 11
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
----
+FOCUS AREA 2
+• Participation in the Federal Acquisition Security Council (created as a requirement
+of the U.S. Federal Acquisition Supply Chain Security Act of 2018). The council
+helps to develop policies and processes for agencies to use when purchasing
+technology products. It works closely with many federal entitities (such as the
+Department of Homeland Security’s National Risk Management Center) to
+support supply chain-related risks in acquisition of items such as: IT, including
+cloud computing services of all types; telecommunications equipment or
+telecommunications services; information processing; and IT hardware, systems,
+devices, software, or services that include embedded or incidental information
+technology.
+• Development of a draft NISTIR 8276, Key Practices in Cyber Supply Chain Risk
+Management: Observations from Industry, to provide a high-level summary of
+practices deemed by subject matter experts to be foundational to an effective
+cyber supply chain risk management program [15]. This work builds on the
+Roadmap for Improving Critical Infrastructure Cybersecurity, a companion
+document to the NIST Cybersecurity Framework. Since NIST has researched
+industry practices in cyber supply chain risk management (C-SCRM) through
+engagement with industry leaders, the group was able to identify some helpful
+practices. The NISTIR is based on an analysis of interviews with companies over
+several years (leading to the development of 24 case studies), prior NIST research
+in cyber supply chain risk management, and several standards and industry best
+practices documents.
+12
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-## FOCUS AREA 3: STRENGTHENING CRYPTOGRAPHIC STANDARDS AND VALIDATION
+CREDIT: Shutterstock / faithie
+FOCUS AREA 3: STRENGTHENING CRYPTOGRAPHIC
+THIS PAGE IS INTENTIONALLY LEFT BLANK
+STANDARDS AND VALIDATION
+Network and data security are essential in today’s environment of increasingly open
+and interconnected systems, networks, and mobile devices. Cryptographic standards,
+algorithms, and methods for encryption, key establishment, and digital signatures
+provide a critical foundation for mobile device conversations, secure e-Commerce
+transactions, electronic lock access, and much more. Cryptography is a continually
+evolving field that drives research and innovation. The Data Encryption Standard (DES)
+was groundbreaking but today would fall far short of the necessary levels of protection.
+The accomplishments below demonstrate NIST’s continued dedication to the role it has
+fulfilled for nearly 50 years—leading public and private collaborations to foster continued
+improvement and reliability in cryptographic techniques and technology.
+Post-Quantum Cryptography (PQC)
+In recent years, there has been a substantial amount of research on quantum
+computers—machines that exploit quantum mechanical phenomena to solve
+mathematical problems that are difficult or intractable for conventional computers.
+When the capacity to build large-scale quantum computers exists, they will be able
+to break many of the public-key cryptosystems currently in use. This would seriously
+compromise the confidentiality and integrity of digital communications on the internet
+and elsewhere. The goal of post-quantum cryptography (also called quantum-resistant
+cryptography) is to develop cryptographic systems that are secure against both
+13
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-![CREDIT: Shutterstock / faithie]
+FOCUS AREA 3
+quantum and classical computers and can interoperate with existing communications
+protocols and networks.
+The question of when a large-scale quantum computer will be built is a complicated one.
+In the past, it was less clear that large quantum computers were a physical possibility,
+but many scientists now believe it to be merely a significant engineering challenge.
+Some engineers even predict that within the next 20 or so years, sufficiently large
+quantum computers will be built to break essentially all public key schemes currently
+in use. Historically, it has taken decades to deploy modern public-key cryptography
+infrastructure, so efforts to prepare information security systems that are resistant to
+quantum computing must begin now.
+NIST is in the process of soliciting, evaluating, and standardizing the needed quantum-
+resistant public-key cryptographic algorithms. The intent is for new public-key
+cryptography standards to specify one or more additional unclassified, publicly disclosed
+digital signature, public-key encryption, and key-establishment algorithms that are
+available worldwide and capable of protecting sensitive government information well
+into the foreseeable future, including after the advent of quantum computers.
+In FY 2019, NIST announced the result of its work to winnow the group of potential
+algorithms to 26. NIST mathematicians and computer scientists consider these
+algorithms to be the strongest candidates submitted to the Post-Quantum Cryptography
+Standardization project. The list includes 17 second-round candidates for public-key
+encryption and key-establishment algorithms as well as nine second-round candidates
+for digital signatures. (The complete list is available at https://csrc.nist.gov/news/2019/
+pqc-standardization-process-2nd-round-candidates and is described in NISTIR
+8240, Status Report on the First Round of the NIST Post-Quantum Cryptography
+Standardization Process [16].) This accomplishment represents several years of
+intensive research and industry collaboration. For the next year, NIST will work with the
+cryptographic community to focus on analyzing the performance of these algorithms to
+understand how they will perform in the real world.
+For several years, NIST has solicited public comments on draft minimum acceptability
+requirements, submission requirements, and evaluation criteria for candidate algorithms.
+The comments received are posted along with a summary of the changes made as
+a result of these comments. In FY 2019, submissions and comments continued and
+were shared with the cryptographic community. Additionally, NIST has participated in
+outreach events such as 2019 Second PQC Standardization Conference at the University
+of California, Santa Barbara.
+NIST extends its appreciation to all submitters and those providing public comments
+during the post-quantum algorithm evaluation process.
+14
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-Network and data security are essential in today’s environment of increasingly open and interconnected systems, networks, and mobile devices. Cryptographic standards, algorithms, and methods for encryption, key establishment, and digital signatures provide a critical foundation for mobile device conversations, secure e-Commerce transactions, electronic lock access, and much more. Cryptography is a continually evolving field that drives research and innovation. The Data Encryption Standard (DES) was groundbreaking but today would fall far short of the necessary levels of protection.
+FOCUS AREA 3
+Lightweight Cryptography
+Many elements of modern technology rely on cryptography to provide confidentiality
+and to ensure the integrity of information being exchanged. While many of today’s
+cryptographic methods are reliable, they require time and power that many devices
+(e.g. sensor networks, healthcare, distributed control systems, IoT, and cyber-
+physical systems) may not have available. The small and simple nature of the millions
+of electronic devices making up the IoT renders them unequipped to process the
+current cryptographic algorithms. To address this challenge, NIST is working with the
+cryptographic community to solicit, evaluate, and standardize lightweight cryptographic
+algorithms that are suitable for use in constrained environments where the requirements
+and performance of the current NIST cryptographic standards is not acceptable. NIST
+published a call for algorithms to be considered for lightweight cryptographic standards
+in FY 2019.
+In FY 2019, NIST also announced the publication of NISTIR 8268, Status Report on the
+First Round of the NIST Lightweight Cryptography Standardization Process [17]. This
+report described the application of a public, competition-like process to select one or
+more authenticated encryption and hashing schemes that are suitable for constrained
+environments. NIST received 57 candidate algorithms for consideration, of which 56
+were accepted as first-round candidates. NISTIR 8268 describes the evaluation criteria
+and selection process based on public feedback and an internal review of the candidates
+and provides the list of 32 candidate algorithms selected for the second round of the
+evaluation process. (See https://csrc.nist.gov/projects/lightweight-cryptography/
+round-2-candidates.) NIST continued public collaboration on the topic in its third
+gathering at the Lightweight Cryptography Workshop in Gaithersburg, MD, where the
+candidate algorithms, including their design strategies, implementations, performance,
+cryptanalysis, and target applications.
+Transition to FIPS 140-3
+In FY 2019, NIST continued to develop
+new tools and processes to support an
+ISO-based cryptographic module testing
+program as a validation authority while
+supporting the existing validation process.
+For more than a quarter century, NIST’s
+Federal Information Processing Standard
+(FIPS) 140 publication series has been
+used to coordinate the requirements and
+CREDIT: Shutterstock / Victor Moussa
+standards of cryptographic modules for
+use by U.S. agencies.
+On March 22, 2019, the Secretary of Commerce approved FIPS 140-3, Security
+Requirements for Cryptographic Modules. The update to FIPS 140 includes references
+15
+to two existing international standards: ISO/IEC 19790:2012, Information technology—
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-The accomplishments below demonstrate NIST’s continued dedication to the role it has fulfilled for nearly 50 years—leading public and private collaborations to foster continued improvement and reliability in cryptographic techniques and technology.
-
-### Post-Quantum Cryptography (PQC)
-In recent years, there has been a substantial amount of research on quantum computers—machines that exploit quantum mechanical phenomena to solve mathematical problems that are difficult or intractable for conventional computers. When the capacity to build large-scale quantum computers exists, they will be able to break many of the public-key cryptosystems currently in use. This would seriously compromise the confidentiality and integrity of digital communications on the internet and elsewhere. The goal of post-quantum cryptography (also called quantum-resistant cryptography) is to develop cryptographic systems that are secure against both quantum and classical computers and can interoperate with existing communications protocols and networks.
-
-The question of when a large-scale quantum computer will be built is a complicated one. In the past, it was less clear that large quantum computers were a physical possibility, but many scientists now believe it to be merely a significant engineering challenge. Some engineers even predict that within the next 20 or so years, sufficiently large quantum computers will be built to break essentially all public key schemes currently in use. Historically, it has taken decades to deploy modern public-key cryptography infrastructure, so efforts to prepare information security systems that are resistant to quantum computing must begin now.
-
-NIST is in the process of soliciting, evaluating, and standardizing the needed quantum-resistant public-key cryptographic algorithms. The intent is for new public-key cryptography standards to specify one or more additional unclassified, publicly disclosed digital signature, public-key encryption, and key-establishment algorithms that are available worldwide and capable of protecting sensitive government information well into the foreseeable future, including after the advent of quantum computers.
-
-In FY 2019, NIST announced the result of its work to winnow the group of potential algorithms to 26. NIST mathematicians and computer scientists consider these algorithms to be the strongest candidates submitted to the Post-Quantum Cryptography Standardization project. The list includes 17 second-round candidates for public-key encryption and key-establishment algorithms as well as nine second-round candidates for digital signatures. (The complete list is available at `https://csrc.nist.gov/news/2019/pqc-standardization-process-2nd-round-candidates` and is described in NISTIR 8240, Status Report on the First Round of the NIST Post-Quantum Cryptography Standardization Process [16].) This accomplishment represents several years of intensive research and industry collaboration. For the next year, NIST will work with the cryptographic community to focus on analyzing the performance of these algorithms to understand how they will perform in the real world.
-
-For several years, NIST has solicited public comments on draft minimum acceptability requirements, submission requirements, and evaluation criteria for candidate algorithms. The comments received are posted along with a summary of the changes made as a result of these comments. In FY 2019, submissions and comments continued and were shared with the cryptographic community. Additionally, NIST has participated in outreach events such as 2019 Second PQC Standardization Conference at the University of California, Santa Barbara.
-
-NIST extends its appreciation to all submitters and those providing public comments during the post-quantum algorithm evaluation process.
-
-### Lightweight Cryptography
-Many elements of modern technology rely on cryptography to provide confidentiality and to ensure the integrity of information being exchanged. While many of today’s cryptographic methods are reliable, they require time and power that many devices (e.g. sensor networks, healthcare, distributed control systems, IoT, and cyber-physical systems) may not have available. The small and simple nature of the millions of electronic devices making up the IoT renders them unequipped to process the current cryptographic algorithms. To address this challenge, NIST is working with the cryptographic community to solicit, evaluate, and standardize lightweight cryptographic algorithms that are suitable for use in constrained environments where the requirements and performance of the current NIST cryptographic standards is not acceptable. NIST published a call for algorithms to be considered for lightweight cryptographic standards in FY 2019.
-
-In FY 2019, NIST also announced the publication of NISTIR 8268, Status Report on the First Round of the NIST Lightweight Cryptography Standardization Process [17]. This report described the application of a public, competition-like process to select one or more authenticated encryption and hashing schemes that are suitable for constrained environments. NIST received 57 candidate algorithms for consideration, of which 56 were accepted as first-round candidates. NISTIR 8268 describes the evaluation criteria and selection process based on public feedback and an internal review of the candidates and provides the list of 32 candidate algorithms selected for the second round of the evaluation process. (See `https://csrc.nist.gov/projects/lightweight-cryptography/round-2-candidates`.) NIST continued public collaboration on the topic in its third gathering at the Lightweight Cryptography Workshop in Gaithersburg, MD, where the candidate algorithms, including their design strategies, implementations, performance, cryptanalysis, and target applications.
-
-### Transition to FIPS 140-3
-In FY 2019, NIST continued to develop new tools and processes to support an ISO-based cryptographic module testing program as a validation authority while supporting the existing validation process. For more than a quarter century, NIST’s Federal Information Processing Standard (FIPS) 140 publication series has been used to coordinate the requirements and standards of cryptographic modules for use by U.S. agencies.
-
-![CREDIT: Shutterstock / Victor Moussa]
-
-On March 22, 2019, the Secretary of Commerce approved FIPS 140-3, Security Requirements for Cryptographic Modules. The update to FIPS 140 includes references to two existing international standards: ISO/IEC 19790:2012, Information technology—Security techniques—Security requirements for cryptographic modules, and ISO/IEC 24759:2017, Information technology—Security techniques—Test requirements for cryptographic modules.
-
-In support of this update, NIST developed a series of draft NIST Special Publications (the SP 800-140x “subseries”) for public comment. They directly support FIPS 140-3 and its associated program, the Cryptographic Module Validation Program (CMVP):
-- Draft SP 800-140, FIPS 140-3 Derived Test Requirements (DTR)
-- Draft SP 800-140A, CMVP Documentation Requirements
-- Draft SP 800-140B, CMVP Security Policy Requirements
-- Draft SP 800-140C, CMVP Approved Security Functions
-- Draft SP 800-140D, CMVP Approved Sensitive Parameter Generation and Establishment Methods
-- Draft SP 800-140E, CMVP Approved Authentication Mechanisms
-- Draft SP 800-140F, CMVP Approved Non-Invasive Attack Mitigation Test Metrics
-
-NIST has determined a transition timeline for the implementation of the new standard, as described in Table 1: Timeline for Implementation of FIPS 140-3 Submissions.
-
+FOCUS AREA 3
+Security techniques—Security requirements for cryptographic modules, and ISO/
+IEC 24759:2017, Information technology—Security techniques—Test requirements for
+cryptographic modules.
+In support of this update, NIST developed a series of draft NIST Special Publications (the
+SP 800-140x “subseries”) for public comment. They directly support FIPS 140-3 and its
+associated program, the Cryptographic Module Validation Program (CMVP):
+• Draft SP 800-140, FIPS 140-3 Derived Test Requirements (DTR)
+• Draft SP 800-140A, CMVP Documentation Requirements
+• Draft SP 800-140B, CMVP Security Policy Requirements
+• Draft SP 800-140C, CMVP Approved Security Functions
+• Draft SP 800-140D, CMVP Approved Sensitive Parameter Generation and
+Establishment Methods
+• Draft SP 800-140E, CMVP Approved Authentication Mechanisms
+• Draft SP 800-140F, CMVP Approved Non-Invasive Attack Mitigation Test Metrics
+NIST has determined a transition timeline for the implementation of the new standard, as
+described in Table 1: Timeline for Implementation of FIPS 140-3 Submissions.
 Table 1: Timeline for Implementation of FIPS 140-3 Submissions
-| DATE | ACTIVITY |
-| :--- | :--- |
-| Mar 2019 | FIPS 140-3 Approved |
-| Sep 2019 | FIPS 140-3 Effective Date |
-| Oct 2019 | Drafts of SP 800-140x for public comment |
-| Mar 2020 | Publication of SP 800-140x documents<br>Implementation Guidance updates<br>Tester competency exam updated<br>Updated CMVP Program Management Manual |
-| Sep 2020 | CMVP accepts FIPS 140-3 submissions |
-| Sep 2021 | CMVP stops accepting FIPS 140-2 submissions for new validation certificates |
-| Sep 2026 | Remaining FIPS 140-2 certificates moved to the Historical List |
+DATE ACTIVITY
+Mar 2019 FIPS 140-3 Approved
+Sep 2019 FIPS 140-3 Effective Date
+Oct 2019 Drafts of SP 800-140x for public comment
+Mar 2020 Publication of SP 800-140x documents
+Implementation Guidance updates
+Tester competency exam updated
+Updated CMVP Program Management Manual
+Sep 2020 CMVP accepts FIPS 140-3 submissions
+Sep 2021 CMVP stops accepting FIPS 140-2 submissions for new
+validation certificates
+Sep 2026 Remaining FIPS 140-2 certificates moved to the Historical List
+16
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
----
+CREDIT: Shutterstock / Virrage Images
+FOCUS AREA 4: ADVANCED CYBERSECURITY
+THIS PAGE IS INTENTIONALLY LEFT BLANK
+RESEARCH & APPLICATIONS DEVELOPMENT
+NIST’s cybersecurity research and applications development activities include identifying
+emerging and high-priority technologies, developing security solutions that will have a
+high impact on the U.S. critical information infrastructure, and developing and showing
+how to manage foundational building-block security mechanisms and techniques that
+can be integrated into an organization’s mission-critical information systems.
+Enabling Forensic Analysis Using Hypervisor Vulnerabilities Data
+Virtualization drives much of today’s computing, and a basic component of that is the
+use of hypervisors—the software, firmware, or hardware that creates and runs many
+virtual machines. Because of the role that hypervisors play in critical technology such as
+cloud computing, they are often the target of attacks. To help address this need, NIST
+has developed a methodology to enable forensic analysis on attacks on hypervisors. Two
+open-source hypervisors—Xen and Kernel-based Virtual Machine (KVM)—were chosen as
+platforms to illustrate the methodology by analyzing the most recent vulnerability data
+from NIST’s National Vulnerability Database (NVD). The vulnerabilities were classified in
+terms of hypervisor functionality, attack type, and attack source. Based on the relative
+distribution of vulnerabilities in a hypervisor functionality, sample attacks were launched
+to exploit vulnerabilities in the target hypervisor functionality, and the associated system
+calls were logged. The gaps in evidence data that is required for fully detecting and
+reconstructing those attacks were identified, and techniques required to gather missing
+17
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-## FOCUS AREA 4: ADVANCED CYBERSECURITY RESEARCH & APPLICATIONS DEVELOPMENT
+FOCUS AREA 4
+evidence were incorporated during subsequent attack runs, essentially performing an
+iterative process.
+Cybersecurity Framework Smart Grid Profile
+In FY 2019, engineers from NIST’s EL and ITL developed an example Smart Grid
+implementation of a NIST Cybersecurity Framework Profile. The Smart Grid Profile
+applies risk management strategies from the Cybersecurity Framework to the smart
+grid and serves as a foundation for refinements to support new grid architectures. The
+Profile provides cybersecurity risk management guidance to power system owners and
+operators by prioritizing cybersecurity activities based on their effectiveness in helping
+achieve common high-level business objectives for the smart grid. The Profile also
+provides a list of considerations relevant to the challenges that power system owners
+and operators may experience as they implement these cybersecurity activities in
+infrastructures with high concentrations of distributed energy resources. The results were
+published in NIST Technical Note 2051, Cybersecurity Framework Smart Grid Profile [18].
+Security Aspects of Electronic Voting
+The Help America Vote Act of 2002 (HAVA)1 encourages the upgrading of voting
+equipment across the United States and has established the Election Assistance
+Commission (EAC)2 and the Technical Guidelines Development Committee (TGDC).3
+NIST chairs the TGDC and provides technical support related to human factors, security,
+and laboratory accreditation. In FY 2019, NIST developed the Voluntary Voting System
+Guidelines 2.0 (VVSG 2.0) for national-level voting system standards. VVSG 2.0 is a
+recommendation from the Technical Guidelines Development Committee (TGDC) to the
+Election Assistance Commission (EAC) for a voting system standard written to address
+the next generation of voting equipment.
+In FY 2019, NIST provided technical leadership to create an Election Profile of the
+Cybersecurity Framework in partnership with the Department of Homeland Security
+(DHS) and the private sector chair of the DHS Sector Coordinating Committee.
+The Election Profile will serve as a one-stop cybersecurity playbook that matches
+cybersecurity requirements with operational methodologies across all election
+processes, from voter registration through election reporting and auditing. The profile
+can be used by Secretaries of State and state and local election officials to identify
+and prioritize opportunities to improve their cybersecurity posture. NIST has provided
+training on the NIST Cybersecurity Framework and profile development and plans to
+hold future workshops to identify election processes and assets that need protection,
+1 Help America Vote Act of 2002 (HAVA), https://www.law.cornell.edu/wex/hava
+2 U.S. Election Assistance Commission, https://www.eac.gov/
+18 3 Technical Guidelines Development Committee, https://www.eac.gov/about/technical-guidelines-development-
+committee/
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-![CREDIT: Shutterstock / Virrage Images]
+FOCUS AREA 4
+threats from foreign control of technology vendors, available safeguards, techniques that
+can detect incidents, and methods to respond and recover.
+Secure Blockchain Technologies and Algorithms
+While many individuals recognize blockchain technology by its role in enabling
+cryptocurrency (a digital form of currency protected through cryptographic
+mechanisms), the technology has many applications and can be used to help protect
+information, enable identity management, and enable purchasing supply chain
+improvements. In FY 2019, NIST continued to discover and document ways in which
+the secure use of blockchain technology can enable new applications and capabilities.
+Publications that NIST developed as technical foundations to advance blockchain
+research and use included:
+• NISTIR 8202, Blockchain Technology Overview [19]
+• Smart Contract Federated Identity Management without Third-Party
+Authentication Services
+• Augmenting Fiat Currency with an Integrated Managed Cryptocurrency
+• Implementing a Protocol Native Managed Cryptocurrency
+• Draft Publication: A Taxonomic Approach to Understanding Emerging Blockchain
+Identity Management Systems
+The team also developed new hardware for a blockchain researcher workbench and an
+additional blockchain system for deployment. Areas that NIST continues to investigate in
+the blockchain technology area include:
+• Use of a taxonomy for blockchain systems for decentralized identity
+• Use of tokens on blockchain systems
+• Creation of tools to enable blockchain technology research
+• Use of blockchain technology to publicly generate trustworthy random numbers
+• Development of an architecture to enable the creation of managed
+cryptocurrencies that incorporate security features from consensus currencies
+• Application of a methodology for securely storing and monitoring the use of
+federally owned crypto-assets on existing cryptocurrency systems
+• Continued exploration of emerging topics and newly developed and released
+blockchain systems
+19
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-NIST’s cybersecurity research and applications development activities include identifying emerging and high-priority technologies, developing security solutions that will have a high impact on the U.S. critical information infrastructure, and developing and showing how to manage foundational building-block security mechanisms and techniques that can be integrated into an organization’s mission-critical information systems.
+CREDIT: iStock / alexsl
+FOCUS AREAT 5HI:S IPMAGPER ISO INVTEINNTGIO NCAYLLBY LEERFTS BELACNUKRITY
+AWARENESS, TRAINING, AND EDUCATION AND
+WORKFORCE DEVELOPMENT
+People are often the most underappreciated ingredient in the people, process, and
+technology formula that determines an organization’s readiness to understand and deal
+with cybersecurity challenges. This includes gaps in user and provider awareness about
+how to access cybersecurity guidelines and tools that apply to their own operations
+and environments along with a shortage of people who have the needed cybersecurity
+education, training, and experience.
+National Initiative for Cybersecurity Education (NICE)
+Led by NIST, NICE seeks to equip, promote, and
+energize a robust network of organizations that
+address cybersecurity education, training, and
+workforce development. In FY 2019, the NICE
+program celebrated its 10th anniversary. Efforts to
+achieve this goal include: 1) accelerating learning and
+skills development, 2) nurturing a diverse learning
+community, and 3) guiding career development and
+workforce planning to achieve each of the objectives
+identified in the NICE Cybersecurity Workforce
+20
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-### Enabling Forensic Analysis Using Hypervisor Vulnerabilities Data
-Virtualization drives much of today’s computing, and a basic component of that is the use of hypervisors—the software, firmware, or hardware that creates and runs many virtual machines. Because of the role that hypervisors play in critical technology such as cloud computing, they are often the target of attacks. To help address this need, NIST has developed a methodology to enable forensic analysis on attacks on hypervisors. Two open-source hypervisors—Xen and Kernel-based Virtual Machine (KVM)—were chosen as platforms to illustrate the methodology by analyzing the most recent vulnerability data from NIST’s National Vulnerability Database (NVD). The vulnerabilities were classified in terms of hypervisor functionality, attack type, and attack source. Based on the relative distribution of vulnerabilities in a hypervisor functionality, sample attacks were launched to exploit vulnerabilities in the target hypervisor functionality, and the associated system calls were logged. The gaps in evidence data that is required for fully detecting and reconstructing those attacks were identified, and techniques required to gather missing evidence were incorporated during subsequent attack runs, essentially performing an iterative process.
-
-### Cybersecurity Framework Smart Grid Profile
-In FY 2019, engineers from NIST’s EL and ITL developed an example Smart Grid implementation of a NIST Cybersecurity Framework Profile. The Smart Grid Profile applies risk management strategies from the Cybersecurity Framework to the smart grid and serves as a foundation for refinements to support new grid architectures. The Profile provides cybersecurity risk management guidance to power system owners and operators by prioritizing cybersecurity activities based on their effectiveness in helping achieve common high-level business objectives for the smart grid. The Profile also provides a list of considerations relevant to the challenges that power system owners and operators may experience as they implement these cybersecurity activities in infrastructures with high concentrations of distributed energy resources. The results were published in NIST Technical Note 2051, Cybersecurity Framework Smart Grid Profile [18].
-
-### Security Aspects of Electronic Voting
-The Help America Vote Act of 2002 (HAVA)[^1] encourages the upgrading of voting equipment across the United States and has established the Election Assistance Commission (EAC)[^2] and the Technical Guidelines Development Committee (TGDC)[^3]. NIST chairs the TGDC and provides technical support related to human factors, security, and laboratory accreditation. In FY 2019, NIST developed the Voluntary Voting System Guidelines 2.0 (VVSG 2.0) for national-level voting system standards. VVSG 2.0 is a recommendation from the Technical Guidelines Development Committee (TGDC) to the Election Assistance Commission (EAC) for a voting system standard written to address the next generation of voting equipment.
-
-In FY 2019, NIST provided technical leadership to create an Election Profile of the Cybersecurity Framework in partnership with the Department of Homeland Security (DHS) and the private sector chair of the DHS Sector Coordinating Committee. The Election Profile will serve as a one-stop cybersecurity playbook that matches cybersecurity requirements with operational methodologies across all election processes, from voter registration through election reporting and auditing. The profile can be used by Secretaries of State and state and local election officials to identify and prioritize opportunities to improve their cybersecurity posture. NIST has provided training on the NIST Cybersecurity Framework and profile development and plans to hold future workshops to identify election processes and assets that need protection, threats from foreign control of technology vendors, available safeguards, techniques that can detect incidents, and methods to respond and recover.
-
-### Secure Blockchain Technologies and Algorithms
-While many individuals recognize blockchain technology by its role in enabling cryptocurrency (a digital form of currency protected through cryptographic mechanisms), the technology has many applications and can be used to help protect information, enable identity management, and enable purchasing supply chain improvements. In FY 2019, NIST continued to discover and document ways in which the secure use of blockchain technology can enable new applications and capabilities. Publications that NIST developed as technical foundations to advance blockchain research and use included:
-- NISTIR 8202, Blockchain Technology Overview [19]
-- Smart Contract Federated Identity Management without Third-Party Authentication Services
-- Augmenting Fiat Currency with an Integrated Managed Cryptocurrency
-- Implementing a Protocol Native Managed Cryptocurrency
-- Draft Publication: A Taxonomic Approach to Understanding Emerging Blockchain Identity Management Systems
-
-The team also developed new hardware for a blockchain researcher workbench and an additional blockchain system for deployment. Areas that NIST continues to investigate in the blockchain technology area include:
-- Use of a taxonomy for blockchain systems for decentralized identity
-- Use of tokens on blockchain systems
-- Creation of tools to enable blockchain technology research
-- Use of blockchain technology to publicly generate trustworthy random numbers
-- Development of an architecture to enable the creation of managed cryptocurrencies that incorporate security features from consensus currencies
-- Application of a methodology for securely storing and monitoring the use of federally owned crypto-assets on existing cryptocurrency systems
-- Continued exploration of emerging topics and newly developed and released blockchain systems
-
----
-
-## FOCUS AREA 5: IMPROVING CYBERSECURITY AWARENESS, TRAINING, AND EDUCATION AND WORKFORCE DEVELOPMENT
-
-![CREDIT: iStock / alexsl]
-
-People are often the most underappreciated ingredient in the people, process, and technology formula that determines an organization’s readiness to understand and deal with cybersecurity challenges. This includes gaps in user and provider awareness about how to access cybersecurity guidelines and tools that apply to their own operations and environments along with a shortage of people who have the needed cybersecurity education, training, and experience.
-
-### National Initiative for Cybersecurity Education (NICE)
-Led by NIST, NICE seeks to equip, promote, and energize a robust network of organizations that address cybersecurity education, training, and workforce development. In FY 2019, the NICE program celebrated its 10th anniversary. Efforts to achieve this goal include: 1) accelerating learning and skills development, 2) nurturing a diverse learning community, and 3) guiding career development and workforce planning to achieve each of the objectives identified in the NICE Cybersecurity Workforce Framework (see `https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center`) [20].
-
+FOCUS AREA 5
+Framework (see https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-
+resource-center) [20].
 Some of the key accomplishments for NICE during FY 2019 include:
-- **Growth in the National Centers of Academic Excellence in Cybersecurity** – NIST and NICE support the National Centers of Academic Excellence (CAE) in Cybersecurity through a grant that funds the annual CAE Symposium held in conjunction with the annual NICE Conference and Expo. During FY 2019, the number of CAE institutions grew to 312, with 60 new CAE designations occurring during the NICE Conference and Expo. NICE also supports the CAE community through participation in and travel to the annual CAE Executive Leadership Forum. The National Security Agency and DHS co-lead the CAE Program.
-- **NICE Cybersecurity Workforce Framework Promotion and Alignment** – Executive Order (EO) 13870, America’s Cybersecurity Workforce, has continued to increase awareness about the NICE Framework and encouraging its adoption by government, industry, and academia [21]. The EO requires an extension of the NICE Framework to federal contractors that provide cybersecurity or IT services to the Federal Government and encourages voluntary adoption by nonfederal entities. NIST continues to learn about applications and uses of the NICE Framework across public and private sectors and expects to use that experience and feedback to improve the NICE Framework during FY 2020.
-- **Public Conferences** – The NICE team prepared for the 10th Annual NICE Conference and Expo and the 5th Annual NICE K12 Cybersecurity Education Conference. The broader NICE Conference will be held in Phoenix, Arizona in early FY 2020. The next NICE K12 Cybersecurity Education Conference, to be held in Garden Grove, California, will support school teachers, administrators, non-profit organizations, and others who mentor children and youth interested in cybersecurity as a career.
-- **International Engagement** – NICE convenes bi-monthly meetings of Five Eyes partner countries (Australia, Canada, New Zealand, the United Kingdom, and the United States) to learn about each country’s respective initiatives and challenges in cybersecurity education and workforce development. NICE also actively participates in a working group on Cyber Culture and Skills of the Global Forum for Cyber Expertise (GFCE). NICE staff presented on the topic of “Workforce Development Frameworks” at the GFCE Annual Meeting in Ethiopia. NICE also coordinated a four-day International Workshop on Cybersecurity Education and Workforce Development Capacity Building in Germany.
+• Growth in the National Centers of Academic Excellence in Cybersecurity –
+NIST and NICE support the National Centers of Academic Excellence (CAE) in
+Cybersecurity through a grant that funds the annual CAE Symposium held in
+conjunction with the annual NICE Conference and Expo. During FY 2019, the
+number of CAE institutions grew to 312, with 60 new CAE designations occurring
+during the NICE Conference and Expo. NICE also supports the CAE community
+through participation in and travel to the annual CAE Executive Leadership Forum.
+The National Security Agency and DHS co-lead the CAE Program.
+• NICE Cybersecurity Workforce Framework Promotion and Alignment – Executive
+Order (EO) 13870, America’s Cybersecurity Workforce, has continued to
+increase awareness about the NICE Framework and encouraging its adoption by
+government, industry, and academia [21]. The EO requires an extension of the NICE
+Framework to federal contractors that provide cybersecurity or IT services to the
+Federal Government and encourages voluntary adoption by nonfederal entities.
+NIST continues to learn about applications and uses of the NICE Framework across
+public and private sectors and expects to use that experience and feedback to
+improve the NICE Framework during FY 2020.
+• Public Conferences – The NICE team prepared for the 10th Annual NICE
+Conference and Expo and the 5th Annual NICE K12 Cybersecurity Education
+Conference. The broader NICE Conference will be held in Phoenix, Arizona in
+early FY 2020. The next NICE K12 Cybersecurity Education Conference, to be
+held in Garden Grove, California, will support school teachers, administrators,
+non-profit organizations, and others who mentor children and youth interested in
+cybersecurity as a career.
+• International Engagement – NICE convenes bi-monthly meetings of Five Eyes
+partner countries (Australia, Canada, New Zealand, the United Kingdom, and the
+United States) to learn about each country’s respective initiatives and challenges
+in cybersecurity education and workforce development. NICE also actively
+participates in a working group on Cyber Culture and Skills of the Global Forum
+for Cyber Expertise (GFCE). NICE staff presented on the topic of “Workforce
+Development Frameworks” at the GFCE Annual Meeting in Ethiopia. NICE also
+coordinated a four-day International Workshop on Cybersecurity Education and
+Workforce Development Capacity Building in Germany.
+21
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-### Increasing Awareness of Cybersecurity Resources
-A major element of NIST’s work in information security involves the publication of cybersecurity and privacy documents as well as engagement with public and private-sector communities. FY 2019 activities to increase and improve awareness included:
-- **The Computer Security Resource Center (CSRC)**, one of the most visited websites at NIST, provides a central resource for NIST cybersecurity and privacy publications, standards, and guidelines. The purpose of the CSRC is to encourage the broad sharing of information security tools and practices, provide a resource for information security standards and guidelines, and identify and link key security resources to support the industry. In FY 2019, the CSRC was updated to provide an enhanced search capability and a more consistent and modernized user interface.
-- **Cybersecurity for Small Businesses** supports the small and medium-sized businesses (SMBs) that represent approximately 95% of all businesses and are often considered to be the backbone of the U.S. economy.[^4] Typically faced with limited budgets, SMBs need practical resources that enable them to understand and cost-effectively address their cybersecurity risks. NIST has been working on behalf of SMBs for many years, together with interagency and industry partners and collaborators. The NIST Small Business Cybersecurity Act codified the Institute’s focus on small businesses. Specifically, the statute directed NIST to “disseminate clear and concise resources to help small business concerns identify, assess, manage, and reduce their cybersecurity risks.” In FY 2018, the NIST Small Business Outreach Program began updating the Small Business Cybersecurity Corner website to make resources easier to find and use (`https://www.nist.gov/itl/smallbusinesscyber`). In FY 2019, those training materials and accompanying resources have been expanded, based on cybersecurity resources and feedback received from NIST’s federal partners and the public.
-- **The Federal Computer Security Program Managers (FCSM) Forum** is an important component of improving cybersecurity awareness, training, and workforce development. FCSM is an informal NIST-sponsored group that promotes the sharing of system security information among U.S. federal, state, and higher education organizations. In FY 2019, FCSM conducted three half-day quarterly meetings and hosted a annual two-day off-site meeting to discuss current issues and items of interest with those responsible for protecting non-national security systems.
+FOCUS AREA 5
+Increasing Awareness of Cybersecurity Resources
+A major element of NIST’s work in information security involves the publication of
+cybersecurity and privacy documents as well as engagement with public and private-
+sector communities. FY 2019 activities to increase and improve awareness included:
+• The Computer Security Resource Center (CSRC), one of the most visited websites
+at NIST, provides a central resource for NIST cybersecurity and privacy publications,
+standards, and guidelines. The purpose of the CSRC is to encourage the broad
+sharing of information security tools and practices, provide a resource for
+information security standards and guidelines, and identify and link key security
+resources to support the industry. In FY 2019, the CSRC was updated to provide an
+enhanced search capability and a more consistent and modernized user interface.
+• Cybersecurity for Small Businesses supports the small and medium-sized
+businesses (SMBs) that represent approximately 95% of all businesses and are
+often considered to be the backbone of the U.S. economy.4 Typically faced with
+limited budgets, SMBs need practical resources that enable them to understand
+and cost-effectively address their cybersecurity risks. NIST has been working on
+behalf of SMBs for many years, together with interagency and industry partners
+and collaborators. The NIST Small Business Cybersecurity Act codified the
+Institute’s focus on small businesses. Specifically, the statute directed NIST to
+“disseminate clear and concise resources to help small business concerns identify,
+assess, manage, and reduce their cybersecurity risks.” In FY 2018, the NIST Small
+Business Outreach Program began updating the Small Business Cybersecurity
+Corner website to make resources easier to find and use (https://www.nist.gov/
+itl/smallbusinesscyber). In FY 2019, those training materials and accompanying
+resources have been expanded, based on cybersecurity resources and feedback
+received from NIST’s federal partners and the public.
+• The Federal Computer Security Program Managers (FCSM) Forum is an important
+component of improving cybersecurity awareness, training, and workforce
+development. FCSM is an informal NIST-sponsored group that promotes the sharing
+of system security information among U.S. federal, state, and higher education
+organizations. In FY 2019, FCSM conducted three half-day quarterly meetings and
+hosted a annual two-day off-site meeting to discuss current issues and items of
+interest with those responsible for protecting non-national security systems.
+4 The most recent data from the U.S. Census Bureau, Business Dynamics Statistics (BDS) Firm and Establishment
+22 Data Tables, shows that 95.52 % of “firms” have between 1 and 49 employees and could be considered by many
+to be SMBs.
+NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
-### Advancing Cybersecurity Usability
-ITL’s Visualization and Usability Group performs research to develop user-centered measurement and evaluation methods, guidelines, and standards by applying human factors, cognitive science, user-centered designs, and usability principles to improve interactions between humans and systems. In FY 2019, notable usability projects included:
-- **Human Factors in Smart Home Technologies** – NIST conducted a one-day workshop entitled “Human Factors in Smart Home Technologies.” Inspired by the team’s smart home research, the workshop addressed the human aspects of smart home technologies.
-
----
-
-## FOCUS AREA 6: ENHANCING IDENTITY AND ACCESS MANAGEMENT
-
-*(Content continues to follow full fidelity guidelines based on PDF structure if applicable, preserving all sections as provided in source text)*
-
----
-
-## FOCUS AREA 7: BOLSTERING COMMUNICATIONS AND INFRASTRUCTURE PROTECTION
-
-*(Content continues to follow full fidelity guidelines based on PDF structure if applicable, preserving all sections as provided in source text)*
-
----
-
-## FOCUS AREA 8: SECURING EMERGING TECHNOLOGIES
-
-*(Content continues to follow full fidelity guidelines based on PDF structure if applicable, preserving all sections as provided in source text)*
-
----
-
-## FOCUS AREA 9: ADVANCING SECURITY TEST AND MEASUREMENT TOOLS
-
-*(Content continues to follow full fidelity guidelines based on PDF structure if applicable, preserving all sections as provided in source text)*
-
----
-
-## CONCLUSION
-
-*(Content continues to follow full fidelity guidelines based on PDF structure if applicable, preserving all sections as provided in source text)*
-
----
-
-## REFERENCES
-1. International Organization for Standardization and International Electrotechnical Commission, Information technology — Security techniques — Security requirements for cryptographic modules, ISO/IEC 19790:2012.
-2. National Institute of Standards and Technology, Risk Management Framework for Information Systems and Organizations: A System Life Cycle Approach for Security and Privacy, NIST Special Publication (SP) 800-37, Rev. 2, December 2018.
-3. National Institute of Standards and Technology, Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1, April 2018.
-4. National Institute of Standards and Technology, NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management, Version 1.0, January 2020.
-5. National Institute of Standards and Technology, Security and Privacy Controls for Information Systems and Organizations, NIST Special Publication (SP) 800-53, Rev. 5 (Draft / Finalized subsequently).
-6. National Institute of Standards and Technology, Considerations for Managing IoT Cybersecurity and Privacy Risks, NISTIR 8228, August 2019.
-7. National Institute of Standards and Technology, Cybersecurity Framework Manufacturing Profile, NISTIR 8183, May 2018.
-8. National Institute of Standards and Technology, National Cybersecurity Online Informative References (OLIR) Program: Guidelines for OLIR Users and Developers, NISTIR 8278, 2019.
-9. National Institute of Standards and Technology, Cybersecurity Framework OLIR Submissions: Specification for Completing the OLIR Template, NISTIR 8204, 2019.
-10. National Institute of Standards and Technology, Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations, Draft SP 800-171, Rev. 2, June 2019.
-11. National Institute of Standards and Technology, Assessing Security Requirements for Controlled Unclassified Information, NIST SP 800-171A, June 2018.
-12. National Institute of Standards and Technology, Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations: Enhanced Security Requirements for Critical Programs and High Value Assets, Draft SP 800-171B, June 2019.
-13. National Institute of Standards and Technology, Mitigating the Risk of Software Vulnerabilities by Adopting a Secure Software Development Framework (SSDF), NIST Cybersecurity White Paper, June 2019.
-14. National Institute of Standards and Technology, Impact Analysis Tool for Interdependent Cyber Supply Chain Risks, Draft NISTIR 8272, 2019.
-15. National Institute of Standards and Technology, Key Practices in Cyber Supply Chain Risk Management: Observations from Industry, Draft NISTIR 8276, 2019.
-16. National Institute of Standards and Technology, Status Report on the First Round of the NIST Post-Quantum Cryptography Standardization Process, NISTIR 8240, January 2019.
-17. National Institute of Standards and Technology, Status Report on the First Round of the NIST Lightweight Cryptography Standardization Process, NISTIR 8268, 2019.
-18. National Institute of Standards and Technology, Cybersecurity Framework Smart Grid Profile, NIST Technical Note 2051, 2019.
-19. National Institute of Standards and Technology, Blockchain Technology Overview, NISTIR 8202, 2018.
-20. National Institute of Standards and Technology, NICE Cybersecurity Workforce Framework, Special Publication 800-181.
-21. Executive Office of the President, Executive Order 13870: America’s Cybersecurity Workforce, May 2, 2019.
-
----
-
-## ACRONYMS
-- **AI**: Artificial Intelligence
-- **ANTD**: Advanced Network Technologies Division
-- **CAE**: Centers of Academic Excellence
-- **CMVP**: Cryptographic Module Validation Program
-- **CPS**: Cyber-Physical Systems
-- **CSD**: Computer Security Division
-- **CSRC**: Computer Security Resource Center
-- **C-SCRM**: Cyber Supply Chain Risk Management
-- **CUI**: Controlled Unclassified Information
-- **DFARS**: Defense Federal Acquisition Regulations Supplement
-- **DHS**: Department of Homeland Security
-- **DoD**: Department of Defense
-- **EAC**: Election Assistance Commission
-- **EL**: Engineering Laboratory
-- **FCSM**: Federal Computer Security Program Managers
-- **FIPS**: Federal Information Processing Standard
-- **FISMA**: Federal Information Security Modernization Act
-- **FOIA**: Freedom of Information Act
-- **FY**: Fiscal Year
-- **GFCE**: Global Forum for Cyber Expertise
-- **HAVA**: Help America Vote Act
-- **IAD**: Information Access Division
-- **IAPP**: International Association of Privacy Professionals
-- **ICS**: Industrial Control Systems
-- **IEC**: International Electrotechnical Commission
-- **IETF**: Internet Engineering Task Force
-- **IoT**: Internet of Things
-- **ISO**: International Organization for Standardization
-- **IT**: Information Technology
-- **ITC**: Institute for Testing and Certification
-- **ITL**: Information Technology Laboratory
-- **IT/OT**: Information Technology / Operational Technology
-- **IWG**: Interagency Working Group
-- **JTC**: Joint Technical Committee
-- **KVM**: Kernel-based Virtual Machine
-- **NARA**: National Archives and Records Administration
-- **NICE**: National Initiative for Cybersecurity Education
-- **NIST**: National Institute of Standards and Technology
-- **NISTIR**: NIST Interagency Report
-- **NITRD**: Networking and Information Technology Research and Development
-- **NVD**: National Vulnerability Database
-- **OLIR**: Online Informative Reference
-- **OMB**: Office of Management and Budget
-- **PC**: Project Committee
-- **PQC**: Post-Quantum Cryptography
-- **RFI**: Request for Information
-- **RMF**: Risk Management Framework
-- **SC**: Subcommittee
-- **SDO**: Standards Developing Organization
-- **SDLC**: Software Development Life Cycle
-- **SMB**: Small and Medium-sized Business
-- **SP**: Special Publication
-- **SSDF**: Secure Software Development Framework
-- **SSE**: Systems Security Engineering
-- **TGDC**: Technical Guidelines Development Committee
-- **VVSG**: Voluntary Voting System Guidelines
-
----
-
-## Opportunities to Engage with the NIST Cybersecurity Program During FY 2020
-Organizations and individuals are encouraged to participate in NIST’s ongoing cybersecurity and privacy projects. Opportunities for engagement include:
-- Reviewing and providing comments on draft publications made available on the NIST Computer Security Resource Center (CSRC) website (`https://csrc.nist.gov/`).
-- Attending and participating in workshops, webinars, and public conferences hosted by NIST and the NICE program.
-- Contributing to open collaboration spaces, such as the Privacy Collaboration Space via GitHub.
-- Participating in standards development activities through relevant SDOs and technical committees.
-
-[^1]: Help America Vote Act of 2002 (HAVA), `https://www.law.cornell.edu/wex/hava`
-[^2]: U.S. Election Assistance Commission, `https://www.eac.gov/`
-[^3]: Technical Guidelines Development Committee, `https://www.eac.gov/about/technical-guidelines-development-committee/`
-[^4]: The most recent data from the U.S. Census Bureau, Business Dynamics Statistics (BDS) Firm and Establishment Data Tables, shows that 95.52 % of “firms” have between 1 and 49 employees and could be considered by many to be SMBs.
-
----
-
-e devices, including usability, user perceptions, and end-user privacy
+FOCUS AREA 5
+Advancing Cybersecurity Usability
+ITL’s Visualization and Usability Group performs research to develop user-centered
+measurement and evaluation methods, guidelines, and standards by applying human
+factors, cognitive science, user-centered designs, and usability principles to improve
+interactions between humans and systems. In FY 2019, notable usability projects included:
+• Human Factors in Smart Home Technologies – NIST conducted a one-day
+workshop entitled “Human Factors in Smart Home Technologies.” Inspired by
+the team’s smart home research, the workshop addressed the human aspects of
+smart home devices, including usability, user perceptions, and end-user privacy
 and security considerations. Invited speakers from industry, academia, and the
 government provided their perspectives via presentations and a moderated
 panel. The attendees also had the opportunity to influence NIST’s future research
@@ -1409,4 +1860,4 @@ NIST/ITL CYBERSECURITY PROGRAM ANNUAL REPORT | 2019
 
 THIS PAGE IS INTENTIONALLY LEFT BLANK
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-07", "model": "gemini-3.7-flash"} -->

@@ -3791,4 +3791,4 @@ verizon.com/enterprise
 © 2012 Verizon. All Rights Reserved. MC15244 03/12. The Verizon and Verizon Business names and logos and all other names, logos, and slogans identifying Verizon’s products and services are trademarks and service marks
 or registered trademarks and service marks of Verizon Trademark Services LLC or its affiliates in the United States and/or other countries. All other trademarks and service marks are the property of their respective owners.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-06", "model": "gemini-3.7-flash"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-07", "model": "gemini-3.7-flash"} -->
