@@ -134,8 +134,6 @@ jobs:
         id: converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
-          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
@@ -154,9 +152,16 @@ jobs:
             --output-json analysis.json \
             --artifacts-dir .github/artifacts
 
+      - name: Install Google Search dependencies
+        if: success()
+        run: python .github/scripts/install-task-dependencies.py --task google_search
+
       - name: Update README
         id: readme_update
         if: success()
+        env:
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           python .github/scripts/generate-refresh-pr.py \
             --analysis-file analysis.json \

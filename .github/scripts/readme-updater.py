@@ -29,6 +29,13 @@ from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
 import urllib.parse
 
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 
 # ==========================
 # GOOGLE SEARCH IMPORT
@@ -52,6 +59,21 @@ def _load_google_search_module() -> Optional[Any]:
     except Exception as e:
         print(f"WARNING: Could not load google-search.py: {e}")
         return None
+
+
+def _is_toplevel_domain(url: str) -> bool:
+    """Return True if the URL has an empty or trivially short path or is merely a locale root."""
+    if not url:
+        return True
+    try:
+        path = urllib.parse.urlparse(url).path.strip("/")
+        if len(path) < 3:
+            return True
+        if re.match(r"^[a-z]{2}(-[a-z]{2,4})?$", path.lower()):
+            return True
+        return False
+    except Exception:
+        return False
 
 
 # ==========================
@@ -98,6 +120,10 @@ class ConfigLoader:
         # google-search-config.json and is read by google-search.py directly.
         search = self.readme_config.get("org_url_search", {})
         self.search_mode: str = search.get("mode", "report_url")
+
+        # URL validation config
+        url_val = self.readme_config.get("url_validation", {})
+        self.disallow_bare_domains: bool = bool(url_val.get("disallow_bare_domains", True))
 
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         path = self.artifacts_dir / filename
@@ -499,8 +525,10 @@ class ReadmeUpdater:
             
             # If we are updating an existing entry, inject its exact URL into analysis
             # so _sanitize can use it for Phase 1 search and as a strong fallback.
-            if not analysis.get("organization_url"):
-                analysis["organization_url"] = existing_fields.get("org_url", "")
+            existing_org_url = existing_fields.get("org_url", "")
+            if not analysis.get("organization_url") or _is_toplevel_domain(analysis.get("organization_url", "")):
+                if existing_org_url and not _is_toplevel_domain(existing_org_url):
+                    analysis["organization_url"] = existing_org_url
 
         # Sanitize summary and resolve org URL before any further work
         self._sanitize(analysis)
@@ -612,7 +640,7 @@ class ReadmeUpdater:
              in google-search-config.json — nothing is hardcoded here.
           2. If google-search.py is unavailable or returns no results, keep any
              existing non-generic org URL already on the record.
-          3. Fall back to https://www.{slug}.com as last resort.
+          3. Fall back to https://www.{slug}.com/resources as last resort, avoiding bare domains.
         """
         # Summary cleanup (structural validation happens later in process_report)
         summary = analysis.get("summary", "")
@@ -622,10 +650,17 @@ class ReadmeUpdater:
 
         # Always attempt to find the specific report URL via google-search.py
         known_org_url = self.parser.find_org_url(analysis["organization"])
-        existing_url_for_search = analysis.get("organization_url") or known_org_url or ""
+        
+        # If analysis["organization_url"] is a bare domain, clear it so it doesn't block resolution
+        if _is_toplevel_domain(analysis.get("organization_url", "")):
+            analysis["organization_url"] = ""
+
+        # Use known_org_url if it is a specific page, else use whatever we have
+        valid_known_url = known_org_url if (known_org_url and not _is_toplevel_domain(known_org_url)) else ""
+        existing_url_for_search = analysis.get("organization_url") or valid_known_url or known_org_url or ""
         
         # Predictive URL Fallback: if we have an existing URL for a previous year, try swapping the year.
-        if existing_url_for_search:
+        if existing_url_for_search and not _is_toplevel_domain(existing_url_for_search):
             current_year_str = str(analysis.get("year", ""))
             match = re.search(r'(20\d{2})', existing_url_for_search)
             if match and match.group(1) != current_year_str:
@@ -668,25 +703,56 @@ class ReadmeUpdater:
                     mode          = self.config.search_mode,
                     existing_url  = existing_url_for_search,
                 )
-                if searched and "google.com/search" not in searched:
+                if searched and "google.com/search" not in searched and not _is_toplevel_domain(searched):
                     print(f"    ✓ Report URL from search: {searched}")
                     analysis["organization_url"] = searched
                     return
             except Exception as e:
                 print(f"    ⚠ google-search.py search_one() failed: {str(e)[:100]}")
 
-        # google-search.py unavailable or returned nothing — keep existing URL if real
-        org_url = analysis.get("organization_url") or known_org_url or ""
-        if org_url and "google.com/search" not in org_url:
-            print(f"    ⚠ Search unavailable; keeping existing URL: {org_url}")
-            analysis["organization_url"] = org_url
+        # google-search.py unavailable or returned nothing — keep existing specific URL if real
+        candidate_url = analysis.get("organization_url") or valid_known_url or ""
+        if candidate_url and "google.com/search" not in candidate_url and not _is_toplevel_domain(candidate_url):
+            print(f"    ✓ Using existing specific URL: {candidate_url}")
+            analysis["organization_url"] = candidate_url
             return
 
-        # Last-resort fallback: construct a plausible homepage only if we really have nothing
-        if not analysis.get("organization_url"):
-            slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
-            analysis["organization_url"] = f"https://www.{slug}.com"
-            print(f"    ⚠ No URL found; using fallback: {analysis['organization_url']}")
+        # Fallback search: try searching for organization's research / security reports landing page
+        if self.google_search_module is not None:
+            try:
+                print(f"    🔍 Searching for organization research landing page...")
+                org_searched = self.google_search_module.search_one(
+                    organization  = analysis["organization"],
+                    title         = "cybersecurity research reports",
+                    year          = str(analysis.get("year", "")),
+                    artifacts_dir = str(self._artifacts_dir),
+                    mode          = self.config.search_mode,
+                    existing_url  = existing_url_for_search,
+                )
+                if org_searched and "google.com/search" not in org_searched and not _is_toplevel_domain(org_searched):
+                    print(f"    ✓ Organization landing page from search: {org_searched}")
+                    analysis["organization_url"] = org_searched
+                    return
+            except Exception as e:
+                print(f"    ⚠ Fallback organization search failed: {str(e)[:100]}")
+
+        # If known_org_url exists and has path, keep it
+        if known_org_url and not _is_toplevel_domain(known_org_url):
+            print(f"    ⚠ Keeping known organization URL from previous report: {known_org_url}")
+            analysis["organization_url"] = known_org_url
+            return
+
+        # Last-resort fallback
+        slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
+        if self.config.disallow_bare_domains:
+            # AGENTS.md Rule 6: WebsiteURL must never be truncated to a bare top-level domain.
+            fallback_url = f"https://www.{slug}.com/resources"
+            print(f"    ⚠ AGENTS.md Rule 6 warning: No specific landing page found for '{analysis['organization']}'; defaulting to resources path: {fallback_url}")
+            analysis["organization_url"] = fallback_url
+        else:
+            fallback_url = f"https://www.{slug}.com"
+            print(f"    ⚠ No URL found; using bare fallback: {fallback_url}")
+            analysis["organization_url"] = fallback_url
 
     def _build_report_url(self, analysis: Dict[str, Any]) -> str:
         """pdf_path is already repo-relative; just percent-encode spaces."""

@@ -110,6 +110,9 @@ class ConfigLoader:
         self.skip_domains:   List[str] = list(mode_cfg.get("skip_domains", []))
         self.exclude_terms:  List[str] = list(mode_cfg.get("exclude_terms", []))
         self.financial_terms:List[str] = list(mode_cfg.get("financial_terms", []))
+        self.landing_page_indicators:  List[str] = list(mode_cfg.get("landing_page_indicators", []))
+        self.press_release_indicators: List[str] = list(mode_cfg.get("press_release_indicators", []))
+        self.blog_indicators:          List[str] = list(mode_cfg.get("blog_indicators", []))
 
         # Scoring weights
         scoring = mode_cfg.get("scoring", {})
@@ -118,6 +121,12 @@ class ConfigLoader:
         self.score_report_in_link:           int = int(scoring.get("report_in_link", 0))
         self.score_year_in_title:            int = int(scoring.get("year_in_title", 0))
         self.score_org_in_title:             int = int(scoring.get("org_in_title", 0))
+        self.score_landing_indicator_bonus:  int = int(scoring.get("landing_indicator_bonus", 0))
+        self.score_press_release_penalty:    int = int(scoring.get("press_release_penalty", 0))
+        self.score_blog_penalty:             int = int(scoring.get("blog_penalty", 0))
+        self.score_org_domain_match_bonus:   int = int(scoring.get("org_domain_match_bonus", 0))
+        self.score_off_domain_penalty:       int = int(scoring.get("off_domain_penalty", 0))
+        self.score_title_word_overlap_bonus: int = int(scoring.get("title_word_overlap_bonus", 0))
         self.score_short_path_penalty:       int = int(scoring.get("short_path_penalty", 0))
         self.score_short_path_threshold:     int = int(scoring.get("short_path_threshold", 3))
         self.score_toplevel_domain_penalty:  int = int(scoring.get("toplevel_domain_penalty", 0))
@@ -166,12 +175,19 @@ def _extract_full_host(url: str) -> str:
 
 def _is_toplevel_domain(url: str) -> bool:
     """
-    Return True if the URL has an empty or trivially short path — i.e. it
-    points to a site homepage rather than a specific report page.
+    Return True if the URL has an empty or trivially short path, or is merely a
+    language/locale root (e.g. /en-us, /en/) — i.e. it points to a site homepage
+    rather than a specific report page.
     """
+    if not url:
+        return True
     try:
         path = urllib.parse.urlparse(url).path.strip("/")
-        return len(path) < 3
+        if len(path) < 3:
+            return True
+        if re.match(r"^[a-z]{2}(-[a-z]{2,4})?$", path.lower()):
+            return True
+        return False
     except Exception:
         return False
 
@@ -296,9 +312,10 @@ class GoogleSearchClient:
         if year_str   and year_str   in title_txt:  score += cfg.score_year_in_title
         if org_lower  and org_lower  in title_txt:  score += cfg.score_org_in_title
 
-        # ── Path-based penalties ─────────────────────────────────────────
+        # ── Path-based penalties & indicators ────────────────────────────
         parsed = urllib.parse.urlparse(item.get("link", ""))
         path   = parsed.path.strip("/")
+        path_lower = f"/{path.lower()}/" if path else "/"
 
         if cfg.score_short_path_penalty:
             if len(path) < cfg.score_short_path_threshold:
@@ -308,11 +325,39 @@ class GoogleSearchClient:
         if cfg.score_toplevel_domain_penalty and not path:
             score += cfg.score_toplevel_domain_penalty  # negative
 
-        # ── Domain anchoring bonus ────────────────────────────────────────
+        # Landing page vs Press release vs Blog signals
+        if cfg.landing_page_indicators and cfg.score_landing_indicator_bonus:
+            if any(ind in path_lower for ind in cfg.landing_page_indicators):
+                score += cfg.score_landing_indicator_bonus
+
+        if cfg.press_release_indicators and cfg.score_press_release_penalty:
+            if any(ind in path_lower for ind in cfg.press_release_indicators):
+                score += cfg.score_press_release_penalty
+
+        if cfg.blog_indicators and cfg.score_blog_penalty:
+            if any(ind in path_lower for ind in cfg.blog_indicators):
+                score += cfg.score_blog_penalty
+
+        # ── Title word overlap in URL path ────────────────────────────────
+        title_raw = query_record.get("title", "")
+        if title_raw and cfg.score_title_word_overlap_bonus:
+            stop_words = {"the", "and", "for", "with", "from", "report", "annual", "security"}
+            title_tokens = [
+                re.sub(r"[^a-z0-9]", "", w.lower())
+                for w in title_raw.split()
+            ]
+            title_tokens = [t for t in title_tokens if len(t) >= 2 and t not in stop_words]
+            if title_tokens:
+                matched_tokens = sum(1 for t in title_tokens if t in path_lower)
+                if matched_tokens >= max(1, len(title_tokens) // 2):
+                    score += cfg.score_title_word_overlap_bonus
+
+        # ── Domain anchoring / matching bonus ────────────────────────────
         # Two-tier: exact subdomain match > registered-domain match.
-        # This is the primary defence against domain regression.
+        # When no existing host is known, reward matching official organization domain.
         result_host       = parsed.netloc.lower().lstrip("www.")
         result_reg_domain = _extract_registered_domain(item.get("link", ""))
+        org_slug          = re.sub(r"[^a-z0-9]", "", org_lower)
 
         if existing_host and cfg.score_existing_domain_match_bonus:
             if result_host == existing_host:
@@ -322,6 +367,14 @@ class GoogleSearchClient:
                   and cfg.score_existing_subdomain_match_bonus):
                 # Same registered domain, different subdomain
                 score += cfg.score_existing_subdomain_match_bonus
+            elif cfg.score_off_domain_penalty:
+                # Different domain when existing host was known
+                score += cfg.score_off_domain_penalty
+        elif org_slug and cfg.score_org_domain_match_bonus:
+            if org_slug in result_host or org_slug in result_reg_domain:
+                score += cfg.score_org_domain_match_bonus
+            elif cfg.score_off_domain_penalty:
+                score += cfg.score_off_domain_penalty
 
         return score
 
@@ -394,7 +447,11 @@ class GoogleSearchClient:
             (self._score_item(item, query_record, existing_host, existing_reg_domain), item)
             for item in items
         ]
-        scored.sort(key=lambda x: x[0], reverse=True)
+        # Sort by score descending, preferring non-bare-domains on ties
+        scored.sort(
+            key=lambda x: (x[0], not _is_toplevel_domain(x[1].get("link", ""))),
+            reverse=True,
+        )
         best_score, best_item = scored[0]
         return best_score, best_item if best_score >= 0 else None
 
@@ -511,19 +568,18 @@ class GoogleSearchClient:
                 result_url = best_item.get("link", "")
                 
                 # Check acceptance conditions immediately
-                if self._is_acceptable(best_score):
-                    if not (_is_toplevel_domain(result_url) and existing_url and not _is_toplevel_domain(existing_url)):
-                        print(f"  ✓ Phase 2 hit (score={best_score}): {result_url}")
-                        return {
-                            "id":      query_id,
-                            "status":  "success",
-                            "query":   broad_query,
-                            "url":     result_url,
-                            "title":   best_item.get("title",   ""),
-                            "snippet": best_item.get("snippet", ""),
-                            "score":   best_score,
-                            "reason":  "broad",
-                        }
+                if self._is_acceptable(best_score) and not _is_toplevel_domain(result_url):
+                    print(f"  ✓ Phase 2 hit (score={best_score}): {result_url}")
+                    return {
+                        "id":      query_id,
+                        "status":  "success",
+                        "query":   broad_query,
+                        "url":     result_url,
+                        "title":   best_item.get("title",   ""),
+                        "snippet": best_item.get("snippet", ""),
+                        "score":   best_score,
+                        "reason":  "broad",
+                    }
             
             print(f"  ⊘ Template failed to yield acceptable result (best score={best_score})")
             time.sleep(self.config.rate_limit_sleep)
@@ -535,10 +591,10 @@ class GoogleSearchClient:
             return base_result
             
         result_url = best_overall_item.get("link", "")
-        if _is_toplevel_domain(result_url) and existing_url and not _is_toplevel_domain(existing_url):
-            print(f"  ⊘ Broad search best result is bare homepage — keeping existing URL")
+        if _is_toplevel_domain(result_url):
+            print(f"  ⊘ Broad search best result is bare homepage — rejecting")
             base_result["status"] = "no_results"
-            base_result["reason"] = "Best result was bare homepage; existing specific URL preferred"
+            base_result["reason"] = "Best result was bare homepage; landing page required"
             return base_result
             
         if not self._is_acceptable(best_overall_score):
