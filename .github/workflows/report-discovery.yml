@@ -34,6 +34,7 @@ jobs:
     permissions:
       contents: read
       issues: write
+      actions: write
     runs-on: ubuntu-latest
 
     steps:

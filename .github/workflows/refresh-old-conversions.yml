@@ -28,6 +28,7 @@ env:
 
 permissions:
   contents: read
+  actions: write
 
 jobs:
   identify-stale-files:
@@ -98,7 +99,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      actions: read
+      actions: write
     needs: identify-stale-files
     if: needs.identify-stale-files.outputs.has_files == 'true'
     runs-on: ubuntu-latest
@@ -172,6 +173,7 @@ jobs:
           title: "${{ steps.readme_update.outputs.pr_title }}"
           body-path: refresh_pr_body.md
           branch: ${{ steps.readme_update.outputs.branch_name }}
+          base: ${{ github.base_ref || github.ref_name }}
           delete-branch: true
           add-paths: |
             README.md
