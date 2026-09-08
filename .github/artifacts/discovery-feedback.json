@@ -2,10 +2,10 @@
   "schema_version": "2.0",
   "last_updated": "2026-09-07T17:41:05.041540Z",
   "last_learner_run": "2026-09-07T17:41:05.041540Z",
-  "total_feedback_events": 8,
+  "total_feedback_events": 9,
   "outcome_counts": {
     "true_positive": 2,
-    "false_positive": 1,
+    "false_positive": 2,
     "duplicate": 2,
     "mismatch": 3
   },
@@ -132,6 +132,16 @@
       "org": "Gurucul",
       "url": "https://cogility.com/wp-content/uploads/2026/03/Insider_Risk_Decay_IEEE_pre_publication_Greitzer.pdf",
       "outcome": "duplicate",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-08T00:35:22.457205Z",
+      "issue_number": 1774,
+      "issue_title": "[Report Discovery] LookingGlass 2026 \u2014 Threat Hunting Report",
+      "org": "LookingGlass",
+      "url": "https://www.cybersecurity-insiders.com/research-library/",
+      "outcome": "false_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
