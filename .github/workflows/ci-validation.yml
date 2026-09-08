@@ -7,16 +7,14 @@ on:
       - development
     paths:
       - '.github/**'
-      - '*.md'
-      - '*.json'
+      - 'AGENTS.md'
   pull_request:
     branches:
       - main
       - development
     paths:
       - '.github/**'
-      - '*.md'
-      - '*.json'
+      - 'AGENTS.md'
   workflow_dispatch:
 
 permissions:

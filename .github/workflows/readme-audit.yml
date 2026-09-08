@@ -11,6 +11,7 @@ env:
 permissions:
   contents: read
   issues: write
+  actions: write
 
 jobs:
   audit-readme:
