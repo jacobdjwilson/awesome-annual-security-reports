@@ -351,6 +351,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      actions: read
     runs-on: ubuntu-latest
     needs: [discover-and-scan, virus-total-scan, convert-pdf-to-markdown, analyze-reports]
     if: |
