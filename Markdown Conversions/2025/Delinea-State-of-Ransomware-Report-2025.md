@@ -1,5 +1,9 @@
 # 2025 State of Ransomware Report: Adapting with Agility to a Fast-Changing Threat Landscape
 
+Organization: Delinea  
+Report Title: State-of-Ransomware-Report  
+Year: 2025  
+
 ## Table of Contents
 - [Executive Summary](#executive-summary)
 - [Key Finding 1: Ransomware breaches continue to spiral even as fewer victims pay](#key-finding-1-ransomware-breaches-continue-to-spiral-even-as-fewer-victims-pay)
@@ -12,7 +16,9 @@
 
 ## Executive Summary
 
-The ransomware landscape is shifting again as attackers use AI to launch more sophisticated attacks, pushing organizations to adapt quickly and strengthen their defenses. Adversaries are tapping a vast cyber crime underground to trade the latest hacking tools and tips, upskilling their campaigns with deepfake-driven social engineering, intelligent detection evasion, and automated target selection. Increasingly, their primary vector for initial access is compromised credentials.
+The ransomware landscape is shifting again as attackers use AI to launch more sophisticated attacks, pushing organizations to adapt quickly and strengthen their defenses.
+
+Adversaries are tapping a vast cyber crime underground to trade the latest hacking tools and tips, upskilling their campaigns with deepfake-driven social engineering, intelligent detection evasion, and automated target selection. Increasingly, their primary vector for initial access is compromised credentials.
 
 To understand what’s really happening behind the headlines, Delinea turned to those on the frontlines: IT and security leaders who work tirelessly to safeguard their organizations. This year’s study captures insights from over 1,000 security professionals across multiple regions, offering a broader perspective on the state of cybersecurity. The message is clear: ransomware attacks are increasing, even as ransom payments fall, and business disruption can last for weeks. What’s more, extortion now accounts for over half of ransomware attacks. These network defenders are adopting AI, but that alone is no guarantee of success.
 
@@ -45,35 +51,43 @@ In this report you will learn how threat actors are growing more aggressive and 
 
 Successful ransomware attacks have continued to increase. More than two-thirds of respondents experienced ransomware breaches in the last year, with U.S. breaches increasing by about a third. What’s more, over a quarter of respondents were victimized more than once. Whatever organizations are doing, it is not enough to push back against the rising tide of digital extortion.
 
-![Chart showing 69% of organizations were breached, 27% breached more than once, and U.S. breaches increasing from 53% to 71%]
+**Most firms experienced a breach in the last year**  
+*Q: Has your company been the victim of a ransomware attack in the last 12 months?*
+
+- **69%** of organizations were breached by ransomware actors
+- **27%** of firms were breached more than once
+- **71%** U.S. breaches increased from 53% in 2023
 
 In the U.S., the largest organizations experienced the biggest increase in breaches. Large enterprises are singled out as “big game” and targeted with sophisticated “hands-on-keyboard” attacks for big payouts. But smaller firms are not immune. Smaller firms are often seen as easy prey for simpler, commodity campaigns.
 
-![Chart showing U.S. Enterprise breaches at 68%, Mid-sized at 74%, and Small at 40%]
+**U.S. ransomware attacks surged last year**  
+*Q: Has your company been the victim of a ransomware attack in the last 12 months?*
+- **U.S. Enterprise (500+ employees):** 68% vs 22% in 2023
+- **U.S. Mid-sized (50-500 employees):** 74% vs 62% in 2023
+- **U.S. Small (1-49 employees):** 40% vs 10% in 2023
 
 Which industries are seeing the biggest threat increase? According to Delinea’s survey, the U.S. IT and Telecom industry experienced 65% more attacks last year than in the prior year. While retail, catering and leisure had 57% more attacks. Healthcare organizations also remain a popular target, with one in two reporting attacks last year. While no two organizations are the same, these sectors share various high-level characteristics—notably, their low tolerance for outages and/or the large volumes of sensitive data they hold on customers and employees.
 
-### Which industries are hit the hardest?
-
-According to the Delinea Labs research team in their “Cybersecurity and the AI Threat Landscape” report, technology, manufacturing and healthcare were amongst the most targeted industries last year. These industries were probably selected for their low tolerance for outages and therefore higher likelihood to pay. Healthcare, in particular, was vulnerable due to the sensitive nature of patient data, with breaches exposing critical information and endangering lives.
-
-*Source: Delinea Labs, “Cybersecurity and the AI Threat Landscape”, January 2025*
+> ### Which industries are hit the hardest?
+> According to the Delinea Labs research team in their “Cybersecurity and the AI Threat Landscape” report, technology, manufacturing and healthcare were amongst the most targeted industries last year. These industries were probably selected for their low tolerance for outages and therefore higher likelihood to pay. Healthcare, in particular, was vulnerable due to the sensitive nature of patient data, with breaches exposing critical information and endangering lives.
+> 
+> *Source: Delinea Labs, “Cybersecurity and the AI Threat Landscape”, January 2025*
 
 The big question is why does the number of successful ransomware attacks continue to increase? Here are a few key factors:
 
 - **Credential theft is rampant.** According to the 2025 Verizon Data Breach Investigations Report, the use of stolen credentials appeared in almost a third (32%) of breaches last year. These stolen username/password combos provide an easy way for adversaries to waltz past traditional defenses and into corporate networks.
-- **Ransomware-as-a-service (RaaS) has proliferated.** The 2025 Delinea Labs Report Cybersecurity and the AI Threat Landscape, reports that RaaS has become more widespread, opening up the field of sophisticated attacks to less skilled actors. RaaS often targets sectors like technology, manufacturing, and construction.
+- **Ransomware-as-a-service (RaaS) has proliferated.** The 2025 Delinea Labs Report *Cybersecurity and the AI Threat Landscape*, reports that RaaS has become more widespread, opening up the field of sophisticated attacks to less skilled actors. RaaS often targets sectors like technology, manufacturing, and construction.
 - **Initial access brokers (IABs) are on the rise.** Delinea Labs believes that IABs—specialized threat actors focused on compromising victims—are further contributing to the growth in ransomware attacks. Some IAB sites even allow potential buyers to test whether compromised credentials work before purchasing. Privileged account credentials are particularly prized—especially those that can provide access to corporate identity systems like Active Directory, which store the “keys to the kingdom.”
 
 ### Ransomware groups are resilient shape-shifters
 
 Delinea research reveals the top five ransomware groups accounted for 36% of the 5,700 incidents assessed in the last year. It notes how fluid and resilient the cyber crime underground is, with groups typically rebranding to escape scrutiny and persisting even despite law enforcement action. According to the Delinea Labs Report, the top five groups by activity are:
 
-- **RansomHub**: A rebranded version of Knight focused on extortion primarily via data theft is a major RaaS group.
-- **LockBit**: A notorious and prolific RaaS group since 2019, which uses sophisticated encryption techniques. It persists in a reduced capacity, despite arrests and takedowns.
-- **Play**: Active since 2022, it uses intermittent encryption as part of its double extortion tactics, which speeds up the scrambling of victims’ files.
-- **Akira**: An aggressive group which appeared in 2023 and is affiliated with the defunct Conti group.
-- **Hunters International**: Another RaaS group, notable for its sophisticated malware and believed to be an offshoot of the dismantled Hive ransomware group.
+- **RansomHub:** A rebranded version of Knight focused on extortion primarily via data theft is a major RaaS group.
+- **LockBit:** A notorious and prolific RaaS group since 2019, which uses sophisticated encryption techniques. It persists in a reduced capacity, despite arrests and takedowns.
+- **Play:** Active since 2022, it uses intermittent encryption as part of its double extortion tactics, which speeds up the scrambling of victims’ files.
+- **Akira:** An aggressive group which appeared in 2023 and is affiliated with the defunct Conti group.
+- **Hunters International:** Another RaaS group, notable for its sophisticated malware and believed to be an offshoot of the dismantled Hive ransomware group.
 
 ### Most ransomware today includes data theft extortion
 
@@ -87,7 +101,15 @@ Over half of those surveyed said they went against the advice of law enforcement
 
 Paying the ransom doesn’t always bring the desired results. About one in four respondents who paid a ransom said they didn’t get all their data back, rising to one in three in the UK. Even if they do, it’s likely that their adversaries will still try to monetize that data.
 
-![Chart showing 57% of organizations paid, 60% of U.S. organizations paid, 54% of UK organizations paid, and 26% did not get data back]
+**Paying ransom doesn’t guarantee data recovery**  
+*Q: If your company has been the victim of a ransomware attack in the last 12 months, did your company pay the ransom? If your company paid the ransom, did you successfully recover the data?*
+
+- **57%** of organizations paid ransomware (vs. 76% in 2023)
+- **60%** of U.S. organizations paid ransomware
+- **54%** of UK organizations paid ransomware
+- **26%** of organizations that paid a ransom did not get their data back (35% in the UK; 18% in the U.S.)
+
+As long as there are security gaps to probe, victims willing to pay, and regimes prepared to shelter criminal activity, the threat will continue. With AI giving adversaries a fresh advantage, your network defenders must urgently reevaluate their ransomware strategy.
 
 ---
 
@@ -97,7 +119,12 @@ Paying the ransom doesn’t always bring the desired results. About one in four 
 
 Organizations continue to be hit hard by ransomware attacks. We found that nearly half of victims took up to a week (one to six days) to recover from a ransomware breach. Three-quarters of respondents say it took them up to two weeks. Few were able to recover in under 24 hours. And it’s likely that, in those cases, threat actors were discovered quickly, before they had a chance to steal data or encrypt systems.
 
-![Chart showing 46% took up to a week, 75% took up to two weeks, and 18% recovered within 24 hours]
+**Recovery time is slow**  
+*Q: If your company was targeted by ransomware, how long did it take to fully recover the operations?*
+
+- **46%** of victims took up to a week to recover from a ransomware breach (50% of UK firms and 42% of U.S. firms)
+- **75%** of victims took up to two weeks to recover
+- **18%** Only 18% of victims recovered within 24 hours
 
 Many organizations are not so fortunate. There are multiple stages of incident response and recovery to work through. These start with isolating affected systems and determining the scope of the attack. Then fully removing any malware and rebuilding systems. Next, you must notify any relevant parties. In some cases, it may also be useful to open a dialog with the threat actors. Finally, restore encrypted data from backup. This all takes time and money.
 
@@ -105,27 +132,52 @@ Although our study reveals that less than 1% of organizations are still recoveri
 
 Similarly, recent ransomware attacks on UK retailers Marks & Spencer and Co-op significantly disrupted operations, impacting services and supply chains. In the case of some organizations, a serious ransomware breach can even become an existential threat. Kettering-based KNP Logistics Group was forced into administration following a ransomware attack in June 2023, with the loss of 730 jobs.
 
+According to a UK government study, organizations breached by ransomware could face:
+- Reduced profit margins
+- Missed business opportunities
+- Extra IT costs
+- Reputational impact
+- Loss of confidence in senior management
+- Psychological and physical impact on staff of extra stress and anxiety
+
 If your organization doesn’t have a robust Business Continuity and Disaster Recovery (BCDR) program, including a well-designed and rehearsed incident response plan, it may struggle. Practicing worst-case scenarios is essential to ensure each stakeholder knows their role, and any unseen issues are identified. It could be something as basic as deciding in what order to restore data from backups. IT teams should not assume that, just because everything is backed up to the cloud, this will be straightforward.
 
-Privileged Access Management (PAM) could help to reduce recovery time and costs by limiting lateral movement of threat actors in the first place. If they have a smaller environment in which to operate and cause damage, it’s likely that less data will be taken.
+Privileged Access Management (PAM) could help significantly to reduce recovery time and costs by limiting lateral movement of threat actors in the first place. If they have a smaller environment in which to operate and cause damage, it’s likely that less data will be taken.
 
 ### Executives are rightly concerned
 
 Given the potential impact of ransomware on their organization, it’s not surprising that we found nine out of ten decision-makers expressed concern at the threat. And their concern is rising. More than half of the U.S. executives are now very concerned, compared to just over a quarter in 2023. The biggest increase came from some of the largest companies. That aligns both with the rising number of victims from these sized companies and the potential financial and reputational impact of a serious breach.
 
-![Chart showing 90% of executives are concerned, 52% of U.S. firms are very concerned, and specific revenue-based concern metrics]
+**Executive leaders are increasingly concerned**  
+*Q: Which statement below best describes your board and executive leadership team’s concerns about ransomware targeting your organization?*
+
+- **90%** of executives/boards are concerned with the threat of ransomware
+- **52%** of U.S. firms are very concerned (vs. 26% in 2023)
+- **60%** $250MM-$499MM revenue U.S. firms: 60% are very concerned (vs. 9% in 2023)
+- **52%** $500MM+ revenue U.S. firms: 52% are very concerned (vs. 21% in 2023)
 
 These concerns may be translating into relatively high levels of cyber insurance coverage. On average, four in five firms report having cyber insurance. With larger firms more likely to be insured. Although the smallest companies have the lowest rates of coverage, they should consider it as a useful part of a holistic security posture.
 
-![Chart showing insurance coverage rates by company size]
+**Larger firms are more likely to have cyber insurance**  
+*Q: Does your company have cyber insurance that includes coverage for ransomware attacks?*
+
+- **85%** firms that have cyber insurance coverage
+- **91%** firms with $250-$499MM revenue
+- **65%** firms with under $10MM revenue
 
 An insurance policy can help to mitigate financial risk stemming from an incident. But increasingly, insurers also demand best practice security measures as a prerequisite of coverage, which can help to improve corporate security posture. Some also offer support, and resources for preventative security and incident response, which may be useful for smaller policyholders.
+
+Over the course of a year. As long as you design your response plan pragmatically, include stakeholders across the business, and regularly practice, it should help streamline ransomware recovery efforts.
 
 However, a more effective strategy is to focus on prevention—because once data has been stolen, it will most likely be monetized by threat actors.
 
 ### Anti-ransomware tactics are not bearing fruit
 
-The top four preventative measures taken by respondents last year are:
+So exactly how are executives acting on their growing ransomware concerns?
+
+The number of respondents with incident response plans in place is 90% on average, which is reassuringly high even if the figure hasn’t moved much from the previous year. It’s also notable that the smallest companies (with fewer than 50 employees) recorded the most significant increase in incident response: from 60% to 79%.
+
+**The top four preventative measures taken by respondents last year are:**
 1. Regularly update systems and software
 2. Back up critical data
 3. Enforce password best practices
@@ -133,17 +185,30 @@ The top four preventative measures taken by respondents last year are:
 
 In the U.S., there was a major leap in the adoption of these best practices compared to the prior year.
 
-![Chart showing U.S. preventive measures: Regular updates 78%, Backups 73%, Password best practices 69%, Application control 57%]
+**U.S. steps up preventive measures**  
+*Q: What, if any, steps have you taken to prevent a ransomware attack? (Select all that apply)*
+- **Regular updates:** 78% (U.S. 78% vs. 52% in 2023)
+- **Backups:** 73% (U.S. 71% vs. 50% in 2023)
+- **Password best practices:** 69% (U.S. 68% vs. 48% in 2023)
+- **Implement application control:** 57% (U.S. 60% vs. 46% in 2023)
 
 Yet as useful as cyber-hygiene best practices like this are, one glance at the ransomware victim numbers at the top of this report show they are clearly not working. Part of the reason is the sheer size of the corporate attack surface. This has exploded over recent years thanks to remote working, investments in cloud assets, Internet of Things (IoT) endpoints, homegrown cloud-native applications, and the rise of agentic AI.
 
+What this means in practice is that your adversaries have a large target to aim at, with many potential vectors for attack. Pre-packaged, service-based offerings help to lower the barriers to entry. IABs offer easy access to corporate networks and cloud accounts. And there’s a ready-made market on which they can sell stolen data.
+
 ### Least privilege is woefully under-deployed
 
-Another reason ransomware actors are thriving is the relative lack of attention organizations are paying to identity. About one in three respondents claim to have adopted a least privilege posture. Least privilege is the best practice security principle that stipulates users and machines only receive permissions essential for completing their tasks, and no more.
+Another reason ransomware actors are thriving is the relative lack of attention organizations are paying to identity. About one in three respondents claim to have adopted a least privilege posture.
 
-![Chart showing 34% of respondents have adopted least privilege]
+Least privilege is the best practice security principle that stipulates users and machines only receive permissions essential for completing their tasks, and no more.
 
-Why is it important? In a ransomware context, least privilege helps to reduce the attack surface and the blast radius of attacks by:
+**Few firms adopt principle of least privilege**  
+*Q: What, if any, steps have you taken to prevent a ransomware attack? (Select all that apply)*
+- **34%** of respondents have adopted the principle of least privilege
+- **37%** of U.S. firms
+- **30%** of UK firms
+
+**Why is it important?** In a ransomware context, least privilege helps to reduce the attack surface and the blast radius of attacks by:
 - Preventing users from installing potentially unauthorized/insecure applications, which could enable initial access for threat actors.
 - Blocking avenues for lateral movement, by restricting what users, accounts, applications and services can access.
 - Restricting access for potentially risky third-party suppliers.
@@ -172,18 +237,28 @@ The challenge for your organization is that this could not only increase the vol
 
 The good news is that 90% of corporate IT security teams we spoke to are leveraging AI to keep pace with their adversaries. They are doing so in three main ways:
 
-1. **In the Security Operations Center (SOC)**: SOC teams sit on the front line against incoming cyber threats including ransomware. They are often under pressure and under-staffed, struggling with skills gaps and alert overload. This is where AI can provide a much needed helping hand: by triaging and enriching events with additional data and then routing to the right analyst so they can make better-informed decisions.
-2. **To analyze Indicators of Compromise (IoCs)**: AI is great at analyzing large volumes of data and looking for patterns that human eyes might miss—and doing so on a 24/7/365 basis. To this end, it’s perfect for helping sift through IoCs—often in a SOC environment.
-3. **Phishing prevention**: You can train AI algorithms to analyze emails for suspicious writing styles that doesn’t match the author, or unusual behavior like messages sent at the wrong time of day or with unusual content.
+#### 1. In the Security Operations Center (SOC)
+SOC teams sit on the front line against incoming cyber threats including ransomware. They are often under pressure and under-staffed, struggling with skills gaps and alert overload. This is where AI can provide a much needed helping hand: by triaging and enriching events with additional data and then routing to the right analyst so they can make better-informed decisions. More advanced models may be able to perform Tier-3 analyst work by reviewing threat data and providing recommendations on how to proceed. Agentic AI can autonomously perform threat hunting to surface useful information on possible malicious activity inside the network.
 
-![Chart showing 64% use AI in SOC, 62% to analyze IoCs, and 51% for phishing prevention]
+#### 2. To analyze Indicators of Compromise (IoCs)
+AI is great at analyzing large volumes of data and looking for patterns that human eyes might miss—and doing so on a 24/7/365 basis. To this end, it’s perfect for helping sift through IoCs—often in a SOC environment. An AI could be programmed to collect a wide variety of IoCs from different internal and external sources. It’s all about freeing up human experts to focus on more valuable security operations tasks, by handing them actionable information. This can accelerate threat detection and response.
+
+#### 3. Phishing prevention
+You can train AI algorithms to analyze emails for suspicious writing styles that doesn’t match the author, or unusual behavior like messages sent at the wrong time of day or with unusual content. AI can analyze links, attachments and images, including QR codes. It can even help to create realistic simulation exercises for staff training, as well as monitoring employee responses.
+
+**3 ways IT security is using AI**  
+*Q: How is your organization using AI today to protect against ransomware attacks? (Select all that apply)*
+- **64%** In the Security Operations Center
+- **62%** To analyze Indicators of Compromise
+- **51%** Phishing prevention
 
 ### Other AI use cases
 
 In addition to these uses, the technology is also making its way into IAM and PAM tools, with impressive results. This includes:
-- **Automating routine tasks**: Automating account provisioning, user access reviews, role modelling and other tasks that are time consuming and prone to human error if done manually.
-- **Session auditing**: Using AI to monitor sessions and flag security issues such as overprivileged identities or unexpected privileged behavior.
-- **Intelligent authorization for ransomware defense**: The agentic AI defines and optimizes authorization policies and automatically applies them. This means users don’t need to create or remember passwords, and IT teams don’t need to set permissions or track policy changes.
+
+- **Automating routine tasks:** Automating account provisioning, user access reviews, role modelling and other tasks that are time consuming and prone to human error if done manually—especially in large organizations.
+- **Session auditing:** Using AI to monitor sessions and flag security issues such as overprivileged identities or unexpected privileged behavior. It provides teams with a more efficient approach, compared to time-consuming manual log reviews.
+- **Intelligent authorization for ransomware defense:** The agentic AI defines and optimizes authorization policies and automatically applies them. This means users don’t need to create or remember passwords, and IT teams don’t need to set permissions or track policy changes. This kind of AI-driven authorization will become increasingly critical for ransomware prevention as threat volumes, attack surfaces, cybersecurity skills gaps and the complexity of environments increase.
 
 ---
 
@@ -197,6 +272,10 @@ Layered defenses are important. They should include effective training and aware
 
 Take time when assessing vendors. Choose a trusted name that offers AI-enhanced capabilities like session monitoring and intelligent authorization. This will help to minimize friction, enhance resilience and optimize ransomware defense—while lighting a pathway to zero trust.
 
+It’s the peace of mind you need to build your business and harness the power of your people, without compromising on security.
+
+Learn more about how a robust Identity Security strategy can help combat ransomware at Delinea.com.
+
 ---
 
 ## Securing identities at every interaction
@@ -205,4 +284,4 @@ Delinea is a pioneer in securing human and machine identities through intelligen
 
 © Delinea RR2025-WP-0525-EN
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-02", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-09", "model": "gemini-3.5-flash-lite"} -->
