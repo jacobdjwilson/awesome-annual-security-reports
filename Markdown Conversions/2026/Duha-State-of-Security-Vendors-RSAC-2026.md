@@ -1,16 +1,14 @@
 # State of Security Vendors: RSAC 2026
 
-**Organization:** Duha  
-**Report Title:** State-of-Security-Vendors-RSAC  
-**Year:** 2026  
-**Author:** Andy Ellis  
-
-© 2026 Duha
+Organization: Duha  
+Report Title: State-of-Security-Vendors-RSAC  
+Year: 2026  
+Author: Andy Ellis  
 
 ## Table of Contents
+- [Methodology](#methodology)
 - [Key Takeaways](#key-takeaways)
 - [Notable and Niche Keywords](#notable-and-niche-keywords)
-- [Methodology](#methodology)
 - [Consuming this Analysis](#consuming-this-analysis)
 - [Booth Overview](#booth-overview)
   - [The Rise of AI and Agents](#the-rise-of-ai-and-agents)
@@ -20,45 +18,14 @@
 - [Memorable Taglines](#memorable-taglines)
 - [Booth Awards (totally biased)](#booth-awards-totally-biased)
 - [Category Breakdown](#category-breakdown)
-  - [All In One](#all-in-one)
-  - [Applications](#applications)
-  - [Data](#data)
-  - [Enablement](#enablement)
-  - [Governance](#governance)
-  - [Humans](#humans)
-  - [Identity](#identity)
-  - [Networks](#networks)
-  - [OT](#ot)
-  - [SaaS](#saas)
-  - [Operations](#operations)
-  - [Success](#success)
-  - [Intelligence](#intelligence)
-  - [Workforce](#workforce)
-- [About Us](#about-us)
 
-## Key Takeaways
-
-The 607 observed security vendors, as expected, talked a lot of AI on their booths. 37% of booths mentioned it! A mere 9% mentioned Platform, and Enterprise was down at 4%. Almost 8% of exhibitors had booths that a security practitioner couldn’t tell what the vendor did, unless they already knew the vendor.
-
-The spaces that vendors (and their VCs) clearly think need more solutions? Software Security, Identity, and Security Operations have the most exhibitors by far. If you’re in one of these spaces, you have a lot of competition, and everyone seems to be trying hard to confuse the buyers with extremely differentiated messaging.
-
-## Notable and Niche Keywords
-
-- Deepfake (4 exhibitors). Another 4 had it in their blurbs, but not in their booths.
-- Quantum/PQC (12 exhibitors).
-- Non-human (4 exhibitors). This category eaten by AI.
-- Platform (53 exhibitors).
-- Resilience (19 exhibitors).
-- Zero Trust (14 exhibitors).
-
-The show floor behaves more like a town center “Halloween a few days early” than it does a place to learn. Trick-or-treaters abound, and the booth designs indicate more interest in scanning badges than in educating the market.
+---
 
 ## Methodology
 
 This report is built based on observations made, in person, looking at each of 607 exhibitor booths on the RSAC 2026 show floor. Taking about eleven hours across three days, each booth was observed, with major visible taglines, branding, and important keywords recorded via dictation on an iPhone directly into a spreadsheet. That spreadsheet had been prepopulated with the exhibitor list (pulled down via an agent scraping the RSAC website).
 
 Each booth was quickly assessed in real-time to answer three very specific questions:
-
 - Was the booth strongly themed?
 - Did I understand what the company did, based on the booth alone?
 - How did the company handle the Oxford comma?
@@ -66,6 +33,22 @@ Each booth was quickly assessed in real-time to answer three very specific quest
 I then tried to determine whether my impression of what the company did matched the summary they had provided to the RSAC website, to assess what broad market space they were in. Sometimes, I ended up more confused: the booth designer clearly thought the company was in a different space than whoever wrote their copy.
 
 What I didn’t collect? The taglines from all the non-exhibitors, whether they had space near Moscone, or were just wrapping buildings. But it felt like there were a lot more vendors who didn’t bother even getting a booth at RSAC, but still had a large presence. To all of you that had lounges and food around RSAC: thank you.
+
+## Key Takeaways
+
+The 607 observed security vendors, as expected, talked a lot of AI on their booths. 37% of booths mentioned it! A mere 9% mentioned Platform, and Enterprise was down at 4%. Almost 8% of exhibitors had booths that a security practitioner couldn’t tell what the vendor did, unless they already knew the vendor.
+
+The spaces that vendors (and their VCs) clearly think need more solutions? Software Security, Identity, and Security Operations have the most exhibitors by far. If you’re in one of these spaces, you have a lot of competition, and everyone seems to be trying very hard to confuse the buyers with extremely differentiated messaging.
+
+## Notable and Niche Keywords
+- **Deepfake** (4 exhibitors). Another 4 had it in their blurbs, but not in their booths.
+- **Quantum/PQC** (12 exhibitors).
+- **Non-human** (4 exhibitors). This category eaten by AI.
+- **Platform** (53 exhibitors).
+- **Resilience** (19 exhibitors).
+- **Zero Trust** (14 exhibitors).
+
+The show floor behaves more like a town center "Halloween a few days early" than it does a place to learn. Trick-or-treaters abound, and the booth designs indicate more interest in scanning badges than in educating the market.
 
 ## Consuming this Analysis
 
@@ -97,12 +80,11 @@ Where I did have booth staff approach me, I’d tell them what I was doing. A fe
 
 ## Design Spectacles
 
-Many booths have a mild theme running through the booth. Thirty vendors, however, focused more on the booth’s theme than on the product they’re selling. Sometimes it’s a play on the company’s name (Alice brought a wonderland, Sumologic a dojo, and Legion a castle), other times it’s integrated into the message (AirMDR with a Clue theme supporting investigations, Mesh’s forest highlight hidden exposures (“you can’t see the trees”), or Cyberark’s forest for the Identity Hero).
+Many booths have a mild theme running through the booth. Thirty vendors, however, focused more on the booth’s theme than on the product they’re selling. Sometimes it’s a play on the company’s name (Alice brought a wonderland, Sumologic a dojo, and Legion a castle), other times it’s integrated into the message (AirMDR with a Clue theme supporting investigations, Mesh’s forest highlight hidden exposures (“you can’t see the forest for the trees”), or Cyberark’s Identity Hero).
 
 Unfortunately, most of the over-the top design spectacles seemed to rely on an attendee already knowing what a vendor does.
 
 ## Memorable Taglines
-
 - **Dragos**: Safeguarding civilization
 - **Gambit**: Come for the drinks, stay for the proof.
 - **Act Security**: Untangle your cloud spaghetti
@@ -110,17 +92,18 @@ Unfortunately, most of the over-the top design spectacles seemed to rely on an a
 - **Insside**: Make compliance great again (entertainingly, a Spanish company)
 
 ## Booth Awards (totally biased)
-
 - **Favorite**: Ubiquiti (I’m a customer, I like the open design and ability to see products, and I got an actual technical answer to an esoteric problem).
 - **Favorite Theme Execution**: Reco, with Attack of the AI Sprawl Movie Set (including giving you an AI trading card).
 - **Cleverest**: Aikido’s second booth (a few sheets of plywood with the message “We spent all our money on the other booth” scrawled on it).
+
+---
 
 ## Category Breakdown
 
 You might look at that chart above and find some surprising things. There isn’t an AI category, for instance. Other names might be confusing. Some of these have subtotals for broken down subcategories and some don’t, depending on how I initially captured them. The guiding principle for this categorization is based on the environment that the solution targets. Each space has a handful of reference vendors in the space, selected mostly because I think I know what they do.
 
 ### All In One (44)
-The All-in-One category is for vendors that are basically “outsource a big chunk of your security to us”, either as a managed service (12), as a comprehensive platform (22), or by providing consulting services (10). While arguably, consulting could be attached to the Enablement category instead, it lives here because this is more about delivering your own security rather than your own product. Example exhibitors: AhnLab, ESET, ManageEngine, Seceon, Sophos.
+The All-in-One category is for vendors that are basically "outsource a big chunk of your security to us", either as a managed service (12), as a comprehensive platform (22), or by providing consulting services (10). While arguably, consulting could be attached to the Enablement category instead, it lives here because this is more about delivering your own security rather than your own product. Example exhibitors: AhnLab, ESET, ManageEngine, Seceon, Sophos.
 
 ### Applications (98)
 The clearly largest category, Applications covers not only traditional AppSec (87), but also AI Safety (11) tools. AppSec itself is already a fairly wide category, including software supply chain, application testing, runtime security, and some web delivery/browser layer security vendors. Example exhibitors: AIBound, Cycode, Fastly, Github, HackerOne, Miggo, Minimus, Snyk, Veracode.
@@ -146,11 +129,11 @@ A triple space, Networks includes traditional NDR capabilities, as well as SASE,
 ### OT (10)
 There are a small handful of exhibitors focused directly on the OT, ICS, and IoT worlds. Example exhibitors: Dragos, OPSWAT.
 
-### SaaS (19)
-Judging by their booths, almost none of the SaaS Security vendors want to be associated with the term anymore, as AI is the new hotness. But since “Are you consuming it via SaaS?” is a big differentiator for AI solutions, rather than rolling SaaS into an “Agentic Services” category, all the AI SaaS Security platforms get rolled into here. We could call this “Third Party Ecosystem Security”, but let’s not confuse it with TPRM. There is also a close adjacency to Identity. Example vendors: Barndoor, Reco, Valence, Vorlon.
-
 ### Operations (61)
 Whether you’re providing a data pipeline, a SIEM (18), Security Operations/Automation (36), or Detection Engineering And Threat Hunting (7, just so I could have the acronym DEATH on a subcategory), Operations comes in third with the most exhibitors. Example exhibitors: AirMDR, Dropzone, Embed, Exabeam, Extrahop, Gurucul, Swimlane.
+
+### SaaS (19)
+Judging by their booths, almost none of the SaaS Security vendors want to be associated with the term anymore, as AI is the new hotness. But since “Are you consuming it via SaaS?” is a big differentiator for AI solutions, rather than rolling SaaS into an “Agentic Services” category, all the AI SaaS Security platforms get rolled into here. We could call this “Third Party Ecosystem Security”, but let’s not confuse it with TPRM. There is also a close adjacency to Identity. Example vendors: Barndoor, Reco, Valence, Vorlon.
 
 ### Success (45)
 In addition to the long-running CTEM (27) and CSPM (9) spaces, there are a growing number of exhibitors directly focused on helping security teams just configure the controls that they’ve already paid for to achieve Security Success (9). Example exhibitors: Axonius, Nagomi, Native, Orca, PsyberCog Labs, Tenable, Wiz.
@@ -161,8 +144,10 @@ Threat Intelligence comprises the bulk of this category, with a few offensive se
 ### Workforce (13)
 The handful of companies that provide education and training for security professionals landed in this category. Example exhibitors: CIS, CSA, EWF, Fair Institute, ISC2, SANS.
 
+---
+
 ## About Us
 
 Duha is a boutique consultancy that provides a spark of genius at the intersection of cybersecurity, leadership, product, and messaging, led by legendary CISO Andy Ellis. Duha advises CISOs, CMOs, CROs, and other executives on improving themselves and their teams. Interested in engaging Andy for a workshop on Cultivating CISOs for your SDRs and field marketers, a conversation about your messaging, or with a leadership keynote for your next event? Contact andy@duha.co.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-10", "model": "gemini-3.5-flash-lite"} -->
