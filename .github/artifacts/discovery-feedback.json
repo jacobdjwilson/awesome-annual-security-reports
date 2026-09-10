@@ -2,10 +2,10 @@
   "schema_version": "2.0",
   "last_updated": "2026-09-07T17:41:05.041540Z",
   "last_learner_run": "2026-09-07T17:41:05.041540Z",
-  "total_feedback_events": 10,
+  "total_feedback_events": 11,
   "outcome_counts": {
     "true_positive": 2,
-    "false_positive": 3,
+    "false_positive": 4,
     "duplicate": 2,
     "mismatch": 3
   },
@@ -151,6 +151,16 @@
       "issue_title": "[Report Discovery] Code42 2026 \u2014 Insider Landscape Report",
       "org": "Code42",
       "url": "https://www.cybersecurity-insiders.com/research-library/",
+      "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-10T01:38:15.581257Z",
+      "issue_number": 1782,
+      "issue_title": "[Report Discovery] Trustwave 2026 \u2014 Email Threat Report",
+      "org": "Trustwave",
+      "url": "https://www.enisa.europa.eu/sites/default/files/publications/Health%20Threat%20Landscape.pdf",
       "outcome": "false_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
