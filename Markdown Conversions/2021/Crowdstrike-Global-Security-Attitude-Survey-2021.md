@@ -1,15 +1,17 @@
-# 2021 CrowdStrike Global Security Attitude Survey
+2021
+
+CrowdStrike Global
+Security Attitude Survey
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Key Findings](#key-findings)
-- [Section 1: Organizations Are Facing a Crisis of Trust in Microsoft and Other Legacy IT Vendors as Software Supply Chain Attacks Show No Signs of Slowing Down](#section-1)
-- [Section 2: Ransomware Remains a Persistent Threat, with Costs and Extortion Fees on the Rise](#section-2)
-- [Section 3: Organizations Are Moving in the Wrong Direction When It Comes to Detection and Response Time](#section-3)
+- [Section 1: Organizations Are Facing a Crisis of Trust in Microsoft and Other Legacy IT Vendors as Software Supply Chain Attacks Show No Signs of Slowing Down](#section-1-organizations-are-facing-a-crisis-of-trust-in-microsoft-and-other-legacy-it-vendors-as-software-supply-chain-attacks-show-no-signs-of-slowing-down)
+- [Section 2: Ransomware Remains a Persistent Threat, with Costs and Extortion Fees on the Rise](#section-2-ransomware-remains-a-persistent-threat-with-costs-and-extortion-fees-on-the-rise)
+- [Section 3: Organizations Are Moving in the Wrong Direction When It Comes to Detection and Response Time](#section-3-organizations-are-moving-in-the-wrong-direction-when-it-comes-to-detection-and-response-time)
 - [CrowdStrike Perspective](#crowdstrike-perspective)
 - [Methodology](#methodology)
-
----
 
 ## Introduction
 
@@ -29,29 +31,34 @@ Security teams have been swimming upstream since long before the pandemic, thoug
 
 Taking all of these different elements working against organizations into account, clearly the time is now for security teams to take the necessary steps to reduce their chances of being the next victim of opportunistic cybercriminals and well-equipped state-sponsored adversaries. Transforming security infrastructure is imperative if businesses hope to avoid the financial and reputational harm caused by a successful cyberattack. The businesses that embrace cloud-first, modern technologies such as endpoint detection and response (EDR), extended detection and response (XDR), Zero Trust, and human-empowered managed threat hunting and intelligence will be the ones able to solve the fundamental challenges to thrive in the heightened threat environment. As adversaries advance their tradecraft to bypass legacy security solutions and exploit trusted technologies, the combination of world-class technology combined with expert threat hunters is mandatory to detect and prevent today’s sophisticated threats.
 
----
-
 ## Key Findings
 
 - **63%** of respondents admit that their organization is losing trust in suppliers, such as Microsoft, due to frequent security incidents
 - **Only 36%** have vetted all new and existing suppliers for security purposes in the last 12 months
 - **84%** believe that software supply chain attacks could become one of the biggest cyber threats to organizations like theirs within the next three years
 - **45%** of respondents’ organizations experienced at least one software supply chain attack in the last 12 months, compared to 32% in 2018
-- The average ransom payment increased by 63% in 2021 to $1.79 million (USD), compared to $1.10 million (USD) in 2020. CrowdStrike Intelligence has observed the average ransom demand from attackers is $6 million. While attackers aren’t getting quite the amounts they are seeking, they are still earning massive payouts. CrowdStrike attributes this to companies understanding both the threat and their exposure, and their ability to negotiate with attackers.
+
+The average ransom payment increased by **63%** in 2021 to **$1.79 million (USD)**, compared to **$1.10 million (USD)** in 2020. CrowdStrike Intelligence has observed the average ransom demand from attackers is **$6 million**. While attackers aren’t getting quite the amounts they are seeking, they are still earning massive payouts. CrowdStrike attributes this to companies understanding both the threat and their exposure, and their ability to negotiate with attackers.
+
 - **96%** of those who paid the initial ransom also had to pay extortion fees
 - **66%** of respondents’ organizations suffered at least one ransomware attack in the past 12 months
 - **57%** of those hit by ransomware didn’t have a comprehensive strategy in place to coordinate their response
-- **On top of detection time**: it’s estimated that organizations would need 11 hours to triage, investigate and understand an incident, and 16 hours to contain and remediate, on average
-- **On average**: respondents estimate that it would take their organization 146 hours to detect a cybersecurity incident, compared to 117 hours in 2020, and 120 hours in 2019
-- **69%** have suffered a cybersecurity incident as a direct result of teams working remotely
 
----
+On top of detection time, it’s estimated that organizations would need **11 hours** to triage, investigate and understand an incident, and **16 hours** to contain and remediate, on average.
+
+On average, respondents estimate that it would take their organization **146 hours** to detect a cybersecurity incident, compared to **117 hours** in 2020, and **120 hours** in 2019.
+
+- **69%** have suffered a cybersecurity incident as a direct result of teams working remotely
 
 ## Section 1: Organizations Are Facing a Crisis of Trust in Microsoft and Other Legacy IT Vendors as Software Supply Chain Attacks Show No Signs of Slowing Down
 
 Software supply chain attacks have become more prolific, with the Sunburst and Kaseya attacks being among the most headline-grabbing in recent years. The escalation in software supply chain attacks is supported by the fact that 77% of respondents report that their organization has experienced this type of attack in the past, increasing from 66% in 2018. Additionally, 45% of respondents reported that their organization suffered from a software supply chain attack in the last 12 months rising from 32% in 2018.
 
-![Figure 1: Has your organization ever experienced a software supply chain attack? Bar chart showing breakdown of responses for 2021 vs 2018.]
+![Bar chart showing survey results for software supply chain attack experiences in 2021 and 2018]
+
+Figure 1: Has your organization ever experienced a software supply chain attack?
+
+**63%** of respondents say their organization is facing a crisis of trust in legacy IT vendors, such as Microsoft, due to frequent security incidents
 
 For cybercriminals, the beauty of software supply chain attacks is that while the initial objective of infiltrating a single company remains the same, their chances of impacting hundreds if not thousands of other businesses are significantly higher due to what their primary target specializes in.
 
@@ -73,7 +80,7 @@ But, it is also important that individual companies do their due diligence when 
 
 Today’s threat environment and the supply chain attack vector highlights the need for organizations around the world to transform their security and adopt a Zero Trust architecture in order to protect their digital assets, identities and core infrastructure as threat actors are well resourced and are becoming more sophisticated. Organizations at all levels of the supply chain must work together to ensure they don’t collectively become the next victims of the cybercriminals executing these attacks.
 
----
+**84%** of those surveyed believe that software supply chain attacks have the potential to become one of the biggest cyber threats to organizations like theirs within the next three years
 
 ## Section 2: Ransomware Remains a Persistent Threat, with Costs and Extortion Fees on the Rise
 
@@ -85,7 +92,9 @@ An alternative theory could be that IT security teams are becoming more adept at
 
 In short, the answer is a resounding “no,” and it actually appears as though organizations are finding it increasingly difficult to defend against ransomware compared to 12 months ago. Almost two-thirds (66%) of those surveyed admit that their organization has suffered from a ransomware attack in the last 12 months – a notable rise on the 56% saying the same in 2020. What’s more concerning is the fact that 33% have suffered multiple attacks in the past 12 months, compared to 24% last year.
 
-![Figure 2: Has your organization suffered from a ransomware attack in the past 12 months? Bar chart showing frequency of attacks.]
+![Bar chart showing survey results for ransomware attacks in the past 12 months]
+
+Figure 2: Has your organization suffered from a ransomware attack in the past 12 months (whether you actually paid the ransom or not)?
 
 Whether the ransom is paid or not, these attacks are a drain on resources, and can have significant negative impacts for brand reputation, as well as personal impacts on the employees charged with fighting off a seemingly never-ending barrage of attacks. And this is without even mentioning the possible consequences for the career of an employee who makes a mistake that leads to a successful ransomware breach.
 
@@ -111,15 +120,15 @@ Clearly, organizations must address cybersecurity awareness issues within their 
 
 But the problems will not be solved by improving the workforce alone, it is also critical that organizations augment their security infrastructure so that they have access to more accurate and helpful threat intelligence, which is currently a problem for 37% of respondents’ organizations.
 
-![Figure 3: Which of the following barriers exist in your organization when it comes to establishing a better security posture against ransomware attacks? Bar chart showing percentages of barriers.]
+![Bar chart showing barriers to establishing a better security posture against ransomware attacks]
+
+Figure 3: Which of the following barriers exist in your organization when it comes to establishing a better security posture against ransomware attacks? (n = 2,200, omitting some answers)
 
 Ransomware isn’t going anywhere, and if anything, it’s on the rise. Cybercriminals have had great success when targeting organizations during a period of upheaval over the last couple of years. And while IT teams continue to reinvent the way in which their organization operates, there will likely be ample opportunity for these criminals to continue exploiting any vulnerabilities when using ransomware as their weapon of choice.
 
 This means that businesses around the globe must be extra vigilant in their defense against this threat, and in their response efforts should the worst happen. There are plenty of areas to be addressed internally that could enhance their preventative efforts, while implementing a comprehensive recovery strategy would also be advisable.
 
 Many have paid ransoms in recent times, but with personal consequences for employees, along with financial and reputational ramifications for the organization, it’s evident that more needs to be done to limit the damage a ransomware breach can do.
-
----
 
 ## Section 3: Organizations Are Moving in the Wrong Direction When It Comes to Detection and Response Time
 
@@ -129,7 +138,9 @@ Despite the rising difficulty of defending against these attack vectors, the thr
 
 Alarmingly, before many organizations even realize that they have experienced an intrusion, the malicious actor could have been on their network for slightly over six full days. In fact, CrowdStrike’s Falcon OverWatch™ threat hunting team reported that eCrime threat actors are able to move laterally across an organization’s network in an average of 92 minutes. Recent attacks have shown that many breaches involve more than just malware. Attackers are increasingly attempting to accomplish their objectives without using malware, exploiting the proliferation of vulnerabilities, and abusing systemic weaknesses in identity architecture to get on the system and then moving laterally. This makes it more difficult for legacy and next-generation malware products to be effective because they are not focused on breach prevention. Companies must embrace a holistic, platform approach to security – one that employs both automation and the human element of managed threat hunting – to fight off these pervasive threats.
 
-![Figure 4: Showing the average time in hours that respondents estimate it would take their organization to detect a cybersecurity incursion/incident. Bar chart comparing 2021, 2020, and 2019.]
+![Bar chart showing average time in hours to detect a cybersecurity incursion/incident]
+
+Figure 4: Showing the average time in hours that respondents estimate it would take their organization to detect a cybersecurity incursion/incident
 
 But, upon detection of the threat there is still plenty of work to be done before the business can once again consider itself secure. According to respondents, it would take their organization an average of 11 hours to triage, investigate and understand a cybersecurity incident, and 16 hours to contain and remediate it. In total this means that, on average, from start to finish there are 174 hours – more than seven days – for the intruder to achieve their objective.
 
@@ -147,9 +158,9 @@ Until they have achieved this objective, they will most probably continue to exp
 
 In a world where the prevalence and pervasiveness of a wide range of cyberattacks is only trending in one direction, organizations cannot allow this problem to linger. Acting slowly here will cause them a huge amount of financial and reputational pain, which is not something that they can afford as their recovery from the pandemic continues.
 
-![Figure 5: What is preventing your organization from detecting, triaging, investigating, understanding, containing, and remediating cybersecurity incursions/incidents faster? Bar chart showing percentages of barriers.]
+![Bar chart showing what is preventing organizations from detecting, triaging, investigating, understanding, containing, and remediating cybersecurity incursions/incidents faster]
 
----
+Figure 5: What is preventing your organization from detecting, triaging, investigating, understanding, containing, and remediating cybersecurity incursions/incidents faster? (n = 2,200, some answers omitted)
 
 ## CrowdStrike Perspective
 
@@ -165,8 +176,6 @@ CrowdStrike is recognized as a leader by major industry analysts, including Gart
 
 It’s imperative for security leaders to invest in modern security architecture, or risk becoming another cyber statistic. CrowdStrike remains committed to partnering with organizations around the globe to understand the challenges security teams face today, and to delivering trusted solutions needed to stay ahead of the adversary in the future.
 
----
-
 ## Methodology
 
 CrowdStrike commissioned independent technology market research specialist Vanson Bourne to undertake the quantitative research upon which this white paper is based. A total of 2,200 senior IT decision makers and IT security professionals were interviewed during September, October and November 2021, with representation across the US, EMEA and APAC regions.
@@ -175,9 +184,9 @@ All respondents had to be from organizations with 100 or more employees and are 
 
 Online and telephone interviews were conducted using a rigorous multi-level screening process to ensure that only suitable candidates were given the opportunity to participate. Unless otherwise indicated the results discussed are based on the total sample.
 
-![Figure 6: Showing respondent country (n = 2,200). Bar chart showing distribution of respondents by country.]
+![Bar chart showing respondent country breakdown]
 
----
+Figure 6: Showing respondent country (n = 2,200)
 
 CrowdStrike Holdings, Inc. (Nasdaq: CRWD), a global cybersecurity leader, is redefining security for the cloud era with an endpoint and workload protection platform built from the ground up to stop breaches. The CrowdStrike Falcon® platform’s single lightweight-agent architecture leverages cloud-scale artificial intelligence (AI) and offers real-time protection and visibility across the enterprise, preventing attacks on endpoints and workloads on or off the network. Powered by the proprietary CrowdStrike Threat Graph®, CrowdStrike Falcon captures trillions of high-fidelity signals per day in real time from across the globe, fueling one of the world’s most advanced data platforms for security.
 
@@ -197,4 +206,4 @@ For more information, visit [www.vansonbourne.com](http://www.vansonbourne.com)
 
 © 2021 CrowdStrike, Inc. All rights reserved. CrowdStrike, the falcon logo, CrowdStrike Falcon and CrowdStrike Threat Graph are marks owned by CrowdStrike, Inc. and registered with the United States Patent and Trademark Office, and in other countries. CrowdStrike owns other trademarks and service marks, and may use the brands of third parties to identify their products and services.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-10", "model": "gemini-3.5-flash-lite"} -->
