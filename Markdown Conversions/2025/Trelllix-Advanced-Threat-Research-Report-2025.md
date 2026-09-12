@@ -1,17 +1,19 @@
 # Advanced-Threat-Research-Report
 
+Presented by
+
+THE CYBERTHREAT REPORT
+
+October 2025
+Executive Summary
+
 ## Table of Contents
-- [Executive Summary](#executive-summary)
 - [Methodology](#methodology)
 - [A Look into the Evolving APT Landscape](#a-look-into-the-evolving-apt-landscape)
 - [Ransomware’s New Dominance and Emerging Threats](#ransomwares-new-dominance-and-emerging-threats)
 - [Cybercriminals’ Use of AI-Powered Malware](#cybercriminals-use-of-ai-powered-malware)
 - [Complex Attack Chains and Exploitation of Vulnerabilities](#complex-attack-chains-and-exploitation-of-vulnerabilities)
 - [Conclusion](#conclusion)
-
----
-
-## Executive Summary
 
 Between April and September 2025, the global cyber threat landscape experienced an intense escalation, marked by rising activity, shifting motivations, and an evolving cast of adversaries. This period saw APTs increasingly used as an extension of state power, new players emerged in ransomware, a notable increase in AI adoption by criminals, and attacks exploiting vulnerabilities in the software supply chain.
 
@@ -33,7 +35,17 @@ Key findings:
 - **Global actor dominance**: The landscape is led by sophisticated, nation-state groups, primarily North Korean-affiliated Lazarus (17.8%), with Chinese and Russian-affiliated groups maintaining a consistent operational tempo.
 - **DRPK’s “malware-less” infiltration**: North Korea’s new infiltration technique embeds operatives directly within organizations as legitimately hired IT workers.
 
-![Top 10 affected countries chart]
+**TOP 10 AFFECTED COUNTRIES:**
+- Türkiye (33.1%)
+- United States (23.9%)
+- Germany (5.5%)
+- South Korea (4.8%)
+- Canada (4.1%)
+- Saudi Arabia (2.0%)
+- Indonesia (1.9%)
+- United Kingdom (1.9%)
+- Croatia (1.6%)
+- Other (23.1%)
 
 **CISO TIPS:**
 - Treat APT defense as a strategic imperative. Embed resilience by design, strengthen cross-sector collaboration, and conduct regular threat simulations.
@@ -45,8 +57,20 @@ During the past six months, Trellix ARC observed 3,280 ransomware victim posts, 
 
 In April 2025, RansomHub collapsed due to intergang conflict and coordinated law enforcement efforts. However, its affiliates fueled the rise of new groups such as Qilin and Dragon Force. The resilience of the affiliate economy demonstrates that defenders should use takedowns as windows of opportunity to harden controls.
 
-![Top 5 most targeted sectors chart]
-![Top 6 most targeted countries chart]
+**TOP 5 MOST TARGETED SECTORS (APRIL - SEPTEMBER, 2025)**
+- Industrials (36.57%)
+- Consumer Services (19.81%)
+- Financials (9.82%)
+- Healthcare (8.88%)
+- Technology (8.67%)
+
+**TOP 6 MOST TARGETED COUNTRIES (APRIL - SEPTEMBER, 2025)**
+- United States (55.46%)
+- Canada (5.14%)
+- United Kingdom (4.53%)
+- Germany (4.36%)
+- Italy (2.16%)
+- Spain (2.16%)
 
 **CISO TIPS:**
 - Prioritize detection of intrusion patterns over actor-specific signatures, monitor living-off-the-land tooling (PowerShell, PsExec, net), and prepare for rapid actor turnover and rebranding.
@@ -79,7 +103,7 @@ Key takeaways from the vulnerability environment include:
 
 **CISO TIPS:**
 - Shift from traditional patching approaches to threat-intelligence-driven vulnerability management.
-- Implement threat intelligence-driven “vulnerability contextualization” frameworks that transform raw CVE data into actionable risk intelligence.
+- Implement threat intelligence-driven "vulnerability contextualization" frameworks that transform raw CVE data into actionable risk intelligence.
 
 ## Conclusion
 
@@ -97,10 +121,12 @@ By embracing this adaptive security posture, organizations can shift from a reac
 
 ---
 
-This document and the information continued herein describes computer security research for educational purposes only and the convenience of Trellix customers. Trellix conducts research in accordance with its Vulnerability Reasonable Disclosure Policy | Trellix. Any attempt to recreate part or all of the activities described is solely at the user’s risk, and neither Trellix nor its affiliates will bear any responsibility or liability.
+This document and the information continued herein describes computer security research for educational purposes only and the convenience of Trellix customers. Trellix conducts research in accordance with its Vulnerability Reasonable Disclosure Policy[^1]. Any attempt to recreate part or all of the activities described is solely at the user’s risk, and neither Trellix nor its affiliates will bear any responsibility or liability.
 
 Trellix is a trademark or registered trademark of Musarubra US LLC or its affiliates in the US and other countries. Other names and brands may be claimed as the property of others.
 
 Copyright © 2025 Musarubra US LLC
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "gemini-3.1-flash-lite-preview"} -->
+[^1]: Trellix Vulnerability Reasonable Disclosure Policy
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-11", "model": "gemini-3.5-flash-lite"} -->
