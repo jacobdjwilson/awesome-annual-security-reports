@@ -1,8 +1,6 @@
-# The 2026 AI SOC Leadership Report
+# THE 2026 AI SOC LEADERSHIP REPORT
 
-**Organization**: Torq  
-**Report Title**: AI-SOC-Leadership-Report  
-**Year**: 2026
+What 450 Security Leaders Reveal About AI’s Real Impact on Security Operations
 
 ## Table of Contents
 - [Executive Foreword](#executive-foreword)
@@ -15,7 +13,7 @@
   - [The Barriers to AI Expansion](#the-barriers-to-ai-expansion)
   - [The Path to the AI SOC](#the-path-to-the-ai-soc)
 - [Concluding Thoughts](#concluding-thoughts)
-- [Demographics & Methodology](#demographics-methodology)
+- [Demographics & Methodology](#demographics--methodology)
 - [About Torq](#about-torq)
 
 ---
@@ -34,8 +32,12 @@ The findings in this report reflect what we hear every day from the CISOs and SO
 
 That’s exactly what we’re building at Torq. But this report isn’t about us — it’s about the state of the industry as told by the people living it. I hope the data challenges some assumptions, validates some instincts, and helps security leaders make the case for what their SOC should look like next.
 
-**Ofer Smadari**  
+Ofer Smadari  
 Co-Founder & CEO, Torq
+
+_See the AI SOC in action: torq.io/demo | 3_
+
+---
 
 ## Introduction
 
@@ -49,80 +51,91 @@ The answer, as this report shows, is somewhere in between — and the gap betwee
 
 Security leaders know this. They can describe the ideal AI SOC with remarkable consistency: unified, transparent, adaptive, and built to let teams decide where AI acts autonomously and where humans stay in the loop. Most just haven’t gotten there yet. The intent is mature. The architecture isn’t.
 
-### WHAT THIS REPORT COVERS
+### What This Report Covers
 
 Sapio Research on behalf of Torq surveyed 450 CISOs and security leaders at enterprise organizations with 1,000+ employees to examine the state of AI in security operations… not the aspirational version, but the operational reality.
 
-Where is AI actually being used across the alert lifecycle?
-
-Where are teams confident, and where are they holding back?
-
-What’s working, what’s creating friction, and what would it take for security leaders to trust AI enough to let it run?
+- **Where is AI actually being used across the alert lifecycle?**
+- **Where are teams confident, and where are they holding back?**
+- **What’s working, what’s creating friction, and what would it take for security leaders to trust AI enough to let it run?**
 
 The findings are organized around five themes that surfaced consistently across geographies, company sizes, and seniority levels — from tool fragmentation and barriers to trust, to the evolution of the analyst role and the demand for a fundamentally different platform.
 
 This report maps where the industry stands today, where security leaders want to go, and what’s standing in the way.
 
+_See the AI SOC in action: torq.io/demo | 4_
+
+---
+
 ## Key Takeaways
 
-### Key Takeaways
-
-#### 01 AI IS EVERYWHERE IN THE SOC — BUT UNIFIED NOWHERE
-
-**7** AI solutions per SOC on average  
-**80%** rely on fragmented point tools
+### 01
+#### AI IS EVERYWHERE IN THE SOC — BUT UNIFIED NOWHERE
+- **7 AI solutions per SOC on average**
+- **80% rely on fragmented point tools**
 
 Teams are running 7 AI tools on average, but 80% depend on disconnected point solutions. 85% say they’d prefer consolidation. Adoption has outpaced architecture.
 
-#### 02 AI IS CARRYING THE LOAD; ANALYSTS ARE MAKING THE CALLS
-
-**72%** are comfortable with fully autonomous AI on medium-severity and below  
-**9 in 10** say they need explainability to go further
+### 02
+#### AI IS CARRYING THE LOAD; ANALYSTS ARE MAKING THE CALLS
+- **72% are comfortable with fully autonomous AI on medium-severity and below**
+- **9 in 10 say they need explainability to go further**
 
 Nearly three-quarters of teams are already letting AI carry the weight on the alerts that dominate SOC volume. Analysts aren’t being replaced; they’re being freed up for the work that actually needs them. To go further, 90% say they need to see how AI reaches its decisions before they can trust it.
 
-#### 03 THE ANALYST ROLE IS EVOLVING
-
-**8.6** hours/week on AI oversight  
-**9 in 10** say AI has positively impacted SOC workload
+### 03
+#### THE ANALYST ROLE IS EVOLVING
+- **8.6 hours/week on AI oversight**
+- **9 in 10 say AI has positively impacted SOC workload**
 
 Those oversight hours aren’t busywork — they signal a shift from execution to judgment. AI handles the processing; analysts make the calls that matter.
 
-#### 04 TRUST IS THE CEILING ON AI EXPANSION
-
-**92%** cite at least one factor that reduces their trust in AI within the SOC  
-**46%** say transparency would change that
+### 04
+#### TRUST IS THE CEILING ON AI EXPANSION
+- **92% cite at least one factor that reduces their trust in AI within the SOC**
+- **46% say transparency would change that**
 
 Only 8% of security leaders have zero concerns about AI trust. The rest point to data privacy, false negatives, and black-box decisions — and say the #1 thing that would unlock more AI is simply being able to see how it reaches its conclusions.
 
-#### 05 THE MARKET KNOWS WHAT IT WANTS
-
-**85%** would prefer a unified AI SOC platform over multiple point solutions  
-**92%** want AI that learns and adapts
+### 05
+#### THE MARKET KNOWS WHAT IT WANTS
+- **85% would prefer a unified AI SOC platform over multiple point solutions**
+- **92% want AI that learns and adapts**
 
 Unified. Explainable. Adaptive. The desired end state of the AI SOC is consistent across every seniority level, company size, and geography.
 
-## Research Findings
+_See the AI SOC in action: torq.io/demo | 6_
 
-### Research Findings
+---
+
+## Research Findings
 
 ### The AI Adoption Landscape
 
 #### EVERYONE HAS AI. NOT EVERYONE HAS A STRATEGY.
 
-Where AI Stands Today
+##### Where AI Stands Today
 
 Nearly 4 in 5 organizations (79%) have adopted AI within their security operations, and more than a third (37%) have embedded it widely across tools and processes. The UK leads in broad deployment at 48%, while other markets show strong but less uniform penetration.
 
-- 79% use AI in at least one SOC function
-- 37% have built it into SOC workflows
-- 48% have adopted AI widely
+- **79%** use AI in at least one SOC function
+- **54%** have built it into SOC workflows
+- **37%** have adopted AI widely
 
 But adoption alone tells us very little about effectiveness. What matters is what kind of AI organizations are running, how it’s architected, and whether it plays well with the rest of the stack.
 
 Generative AI (76%) and LLMs (73%) remain the most widely deployed, but more advanced approaches are gaining traction: 56% are using agentic AI, and nearly half are running custom AI agents (49%) or vendor-built agents (45%).
 
-![Chart showing AI Types in Use Across the SOC, including Generative AI (79%), LLMs (73%), Agentic AI (56%), Custom AI Agents (49%), Vendor AI Agents (45%), and Custom LLMs (33%).](AI_TYPES_IN_USE_ACROSS_THE_SOC)
+_See the AI SOC in action: torq.io/demo | 8_
+
+#### AI TYPES IN USE ACROSS THE SOC
+
+- **76%** Gen AI
+- **73%** LLMs
+- **56%** Agentic
+- **49%** Custom AI Agents
+- **45%** Vendor AI Agents
+- **33%** Custom LLMs
 
 This layering is significant. Many of the challenges that surface later in this report — excessive oversight, unreliable outputs, limited trust in automated actions — stem from organizations that are still primarily relying on Gen AI and LLMs alone.
 
@@ -130,13 +143,22 @@ These are powerful capabilities, but they represent first-generation AI in the S
 
 #### Geographic Insight
 
+- **UK**: 63% Agentic | 25% Custom AI Agents | 74% Vendor AI Agents
+- **France**: 53% Agentic | 45% Custom AI Agents | 42% Vendor AI Agents
+- **Germany**: *(Data point metrics distributed regionally in text)*
+- **U.S.**: *(Data point metrics distributed regionally in text)*
+
 Regional divergence goes beyond Gen AI vs. LLMs. The UK leads in agentic AI adoption (63%), while the U.S. — despite being the largest market — is the most conservative on advanced AI approaches, trailing on agentic AI (53%), custom agents (45%), and vendor agents (42%). Germany stands out with the highest vendor AI agent adoption by far (74%), while France takes the opposite approach, favoring custom-built agents at just 25%. A platform that only supports one AI strategy doesn’t work when markets are moving in different directions.
 
 #### The Platform Landscape
 
-Almost half of the respondents believe that AI-native platforms built from the ground up deliver better AI SOC outcomes than traditional SOAR with AI features bolted on. This preference weakens among smaller SOC teams (≤15 members), where 30% still default to traditional SOAR, suggesting that resource constraints drive platform conservatism. Smaller teams buy what’s familiar because they don’t have the bandwidth to migrate.
+Almost half of the respondents believe that AI-native platforms built from the ground up deliver better AI SOC outcomes than traditional SOAR with AI features bolted on. This preference weakens among smaller SOC teams ($\le 15$ members), where 30% still default to traditional SOAR, suggesting that resource constraints drive platform conservatism. Smaller teams buy what’s familiar because they don’t have the bandwidth to migrate.
 
 The organizations that need to unify their security tools the most are the least likely to pursue it. The answer isn’t a rip-and-replace; it’s a platform that integrates with what they already have and lets them consolidate at their own pace.
+
+_See the AI SOC in action: torq.io/demo | 9_
+
+---
 
 ### AI Across the Alert Lifecycle
 
@@ -144,24 +166,37 @@ The organizations that need to unify their security tools the most are the least
 
 Of those who have adopted AI within the SOC, almost all use AI for at least one SecOps use case. But the gap between where they’re confident and where they’ve actually deployed reveals a critical story about platform readiness.
 
-![Chart showing Use Case Adoption vs. Confidence. Use cases include Vulnerability Management (56% using AI, 91% confident), Threat Hunting (56% using AI, 94% confident), Case Management (54% using AI, 95% confident), Reducing False Positives (51% using AI, 97% confident), Investigation / Enrichment (46% using AI, 93% confident), Remediation (37% using AI, 95% confident), Containment (37% using AI, 92% confident), and Triage (prioritization) (35% using AI, 97% confident).](Use_Case_Adoption_vs_Confidence)
+#### Use Case Adoption vs. Confidence
+
+| Use Case | Using AI | Confident in AI |
+| :--- | :--- | :--- |
+| **Vulnerability Management** | 56% | 91% |
+| **Threat Hunting** | 56% | 94% |
+| **Case Management** | 54% | 95% |
+| **Reducing False Positives** | 51% | 97% |
+| **Investigation / Enrichment** | 46% | 93% |
+| **Remediation** | 37% | 95% |
+| **Containment** | 37% | 92% |
+| **Triage (prioritization)** | 35% | 97% |
 
 It’s no coincidence that vulnerability management (VM) and threat hunting top the use case list (both 56%). VM has been synonymous with operational pain for over a decade — exploitation is increasingly automated while patching remains manual, creating a window of exposure tailor-made for AI. Threat hunting faces a different pressure: the talent pool is scarce and expensive, and AI extends the reach of a limited bench.
 
 The bottom of the list is just as telling: remediation (37%), containment (37%), and triage at just 35%. These are where a wrong call has immediate consequences — and where confidence and usage diverge most sharply. Meanwhile, confidence is near-universal. The numbers stay above 91% across every use case.
 
-**97%** of security leaders believe AI can handle triage — the highest-volume function in the SOC, but only 35% are actually using it to do so. Why? Teams are comfortable letting AI discover and analyze. They’re cautious about letting it act.
+> **97% of security leaders believe AI can handle triage** — the highest-volume function in the SOC, but only 35% are actually using it to do so. Why? Teams are comfortable letting AI discover and analyze. They’re cautious about letting it act.
 
 Most tools today offer a binary: AI runs or human runs. What teams need is a dial. Autonomy calibrated to severity, confidence, and business context. Low-severity, high-confidence? AI handles it end-to-end. High-severity, critical system? AI does the legwork, humans make the call.
+
+_See the AI SOC in action: torq.io/demo | 10_
 
 #### AUTONOMY COMFORT LEVELS
 
 When it comes to letting AI act independently, most organizations proceed with caution. The data shows a clear severity threshold beyond which human involvement becomes non-negotiable.
 
-- **20%** Critical / High & below (Highest risk threshold)
-- **72%** Medium & below (Where most draw the line)
-- **93%** Low & below (Conservative threshold)
-- **97%** Any level (Including info-only)
+- **20%** Critical / High & below — _Highest risk threshold_
+- **72%** Medium & below — _Where most draw the line_
+- **93%** Low & below — _Conservative threshold_
+- **97%** Any level — _Including info-only_
 
 97% of security leaders are comfortable with some level of fully autonomous AI. Only 3% want human approval on every action. For the rest, the question is where they draw the line.
 
@@ -175,16 +210,20 @@ The barrier isn’t trust, experience, or appetite. It’s the absence of platfo
 
 The solution isn’t convincing leaders to let go. It’s giving them platforms where autonomy is adjustable — calibrated to severity, confidence, and context — so decisions are based on actual risk, not organizational reflex.
 
+_See the AI SOC in action: torq.io/demo | 11_
+
+---
+
 ### The Evolving Role of the SOC Analyst
 
 #### AI ISN’T REPLACING ANALYSTS. IT’S PROMOTING THEM.
 
-**8.6** hours per week is the time that analysts spend on human oversight of AI-powered outputs.
+> **8.6 hours per week** is the time that analysts spend on human oversight of AI-powered outputs.
 
 On the surface, this can look like a problem: nearly a full workday consumed by checking the AI’s work? Not quite. The data tells a more nuanced story.
 
-- **9 in 10** leaders say AI has positively impacted SOC workload
-- **9 in 10** leaders say AI has reduced stress and burnout
+- **9 in 10 leaders** say AI has positively impacted SOC workload
+- **9 in 10 leaders** say AI has reduced stress and burnout
 
 What’s actually happening? Before AI, analysts were the execution layer — processing alerts, enriching data, running playbooks. AI has taken over much of that. The 8.6 hours represent a new judgment layer: validating decisions, providing context, and making calls that require institutional knowledge and human intuition.
 
@@ -192,9 +231,13 @@ But it only works if the platform makes judgment efficient. Hours spent digging 
 
 The best platforms won’t eliminate AI oversight; they’ll make it effortless. Transparent reasoning so analysts validate in seconds. Adjustable autonomy so teams reduce oversight where AI has proven itself: a feedback loop where overrides improve AI over time.
 
+_See the AI SOC in action: torq.io/demo | 12_
+
 #### AI OVERSIGHT HOURS SCALE WITH TEAM SIZE
 
-![Chart showing AI Oversight Hours Scale with Team Size: SOC teams of 15 or fewer spend 7.7 hours, SOC teams of 16 to 35 spend 8.5 hours, and SOC teams of 35 or more spend 9.4 hours.](AI_OVERSIGHT_HOURS_SCALE_WITH_TEAM_SIZE)
+- **7.7 hrs** — SOC teams of 15 or fewer
+- **8.5 hrs** — SOC teams of 16 to 35
+- **9.4 hrs** — SOC teams of 35 or more
 
 Larger teams spend more hours on oversight — likely due to more complex AI systems and a larger tool stack. This reinforces the idea that oversight isn’t a failure; it’s a function of how deeply AI is embedded in operations.
 
@@ -204,9 +247,19 @@ The question for organizations isn’t “how do we reduce oversight hours?” I
 
 Respondents were clear about what would make daily SOC work easier: anything that improves quality of life. And when asked about the expected benefits of agentic AI in SecOps, the same theme came out on top — suggesting strong alignment between pain points and promise.
 
-![Chart showing Top Improvements to Daily SOC Life: 1. Work-life balance and flexible scheduling, 2. Fewer repetitive or manual tasks, 3. Workload distribution and prioritization.](Top_Improvements_to_Daily_SOC_Life)
+##### Top Improvements to Daily SOC Life
+1. Work-life balance and flexible scheduling
+2. Fewer repetitive or manual tasks
+3. Workload distribution and prioritization
 
-![Chart showing Top Expected Benefits of AI in the SOC: 1. Improved quality of life and reduced burnout, 2. Greater SOC capacity — alert disposition and remediation within SLA, 3. Reduction in mean-time-to-respond (MTTR).](Top_Expected_Benefits_of_AI_in_the_SOC)
+##### Top Expected Benefits of AI in the SOC
+1. Improved quality of life and reduced burnout
+2. Greater SOC capacity — alert disposition and remediation within SLA
+3. Reduction in mean-time-to-respond (MTTR)
+
+_See the AI SOC in action: torq.io/demo | 13_
+
+---
 
 ### The Barriers to AI Expansion
 
@@ -214,13 +267,24 @@ Respondents were clear about what would make daily SOC work easier: anything tha
 
 Despite high confidence in AI’s capabilities, 92% of security leaders say factors are actively eroding their trust in AI use in the SOC. And the barriers are not about whether AI works; they’re about visibility, control, and governance.
 
-![Chart showing What’s Reducing Trust (Top 5 Concerns): 1. Data privacy (32%), 2. Risk of false negatives or missed threats (29%), 3. Risk of false positives, 4. Loss of control over AI-driven decisions or actions, 5. Requires too much manual human oversight.](Whats_Reducing_Trust)
+#### What’s Reducing Trust (Top 5 Concerns)
+1. Data privacy
+2. Risk of false negatives or missed threats
+3. Data governance
+4. Risk of false positives
+5. Loss of control over AI-driven decisions or actions
 
-![Chart showing What Would Build Confidence: 1. Full transparency into AI decision-making (46%), 2. Strong data privacy protections (41%), 3. Data governance, 4. Regulatory compliance certifications, 5. Human-in-the-loop controls.](What_Would_Build_Confidence)
+#### What Would Build Confidence
+- **46%** Full transparency into AI decision-making
+- **41%** Strong data privacy protections
+- **32%** Regulatory compliance certifications
+- **29%** Human-in-the-loop controls
 
 Each trust barrier directly translates into operational drag: more manual oversight, reduced autonomy, and limited data access. And the #1 confidence booster isn’t more features or more AI — it’s transparency. 90% say explainable AI decisions are important for a true AI SOC.
 
 The through-line is clear. Privacy concerns go away when the platform governs what data AI sees. False-negative fears resolve when the platform explains why it dismissed an alert. Black-box anxiety is alleviated by AI that shows its work.
+
+_See the AI SOC in action: torq.io/demo | 14_
 
 #### FUNCTIONAL CAPABILITY GAPS
 
@@ -232,33 +296,35 @@ These are connected — when tools operate in silos, analysts oversee AI on a pe
 Teams need oversight policies that match reality: full autonomy for high-frequency, low-risk alerts; human-in-the-loop for novel or critical incidents; and the ability to dial up or down as confidence grows.
 
 #### Seniority Lens: Top Concern by Level
+- **C-Level**: False Negatives *(Are threats slipping through?)*
+- **VP / Head of Dept + Sr. Managers**: Data Privacy *(How is AI handling sensitive information?)*
+- **Director**: AI Tools Underdelivering *(Are AI tools failing to deliver measurable impact?)*
 
-![Chart showing Top Concern by Seniority Level: C-Level's top concern is False Negatives (Are threats slipping through?), VP / Head of Dept + Sr. Managers' top concern is Data Privacy (How is AI handling sensitive information?), and Director's top concern is AI Tools Underdelivering (Are AI tools failing to deliver measurable impact?). Other top concerns were black-box AI (Why can’t we see how decisions are made?) and loss of control (Who’s actually running the SOC?).](Seniority_Lens_Top_Concern_by_Level)
-
-A well-designed AI SOC addresses all of these concerns simultaneously because they’re features of the same architecture.
+Other top concerns were black-box AI (*Why can’t we see how decisions are made?*) and loss of control (*Who’s actually running the SOC?*) A well-designed AI SOC addresses all of these concerns simultaneously because they’re features of the same architecture.
 
 #### Challenges by SOC Function
 
-**Alert Triage**  
-9 in 10 report challenges using AI due to:
-- Skills/training gaps (34%)
-- Too much human review (34%)
-- Unreliable conclusions (31%)
+##### Alert Triage (9 in 10 report challenges using AI due to:)
+- **34%** Skills/training gaps
+- **34%** Manual enrichment required
+- **31%** Too much human review
 
-**Investigation & Case Management**  
-9 in 10 report challenges using AI due to:
-- Manual enrichment required (32%)
-- High false positives (31%)
-- Skills/training gaps (29%)
+##### Investigation & Case Management (9 in 10 report challenges using AI due to:)
+- **32%** High false positives
+- **31%** Unreliable conclusions
+- **29%** Skills/training gaps
 
 For response actions, almost all organizations report challenges. One-third cite limited trust in automated responses — the direct consequence of opaque reasoning and the inability to set contextual boundaries.
 
 #### Team Size Dynamics
-
 - **44%** Small teams (less than 15) say false positives reduce trust in AI
 - **28%** Large teams (35+) say false positives reduce trust in AI
 
 This perception gap is less about trust and more about capacity. Lean teams can’t absorb the friction of false positives — making adjustable autonomy not a nice-to-have, but how they stay operational.
+
+_See the AI SOC in action: torq.io/demo | 15_
+
+---
 
 ### The Path to the AI SOC
 
@@ -276,35 +342,40 @@ The answer isn’t a rip-and-replace. SIEMs, EDRs, ITDR, CNAPP — they solve re
 
 What 85% of security leaders want isn’t one tool that does everything. It’s one platform that connects to everything, sees across the full stack, and turns fragmented signals into unified context, reasoning, and action.
 
-#### WHAT A TRUE AI SOC WOULD RESOLVE
+_See the AI SOC in action: torq.io/demo | 16_
 
-![Chart showing what a true AI SOC would resolve: Trust in AI recommendations and actions (53%) and Complexity of managing multiple point solutions (48%).](WHAT_A_TRUE_AI_SOC_WOULD_RESOLVE)
+#### WHAT A TRUE AI SOC WOULD RESOLVE
+- **53%** Trust in AI recommendations and actions
+- **48%** Complexity of managing multiple point solutions
 
 Teams believe unification would increase their trust in AI because AI operating across the full incident context produces better-informed conclusions, easier-to-verify reasoning, and higher-confidence recommendations.
 
 #### What Matters Most in a True AI SOC
-
-![Chart showing what matters most in a true AI SOC: Continuous learning & adaptation to attack patterns (92%), Explainable AI decisions (90%), End-to-end SecOps: triage to remediation (89%), Autonomous response actions (e.g., containment, remediation) (89%), Full platform integration (86%).](What_Matters_Most_in_a_True_AI_SOC)
+- **92%** Continuous learning & adaptation to attack patterns
+- **90%** Explainable AI decisions
+- **89%** End-to-end SecOps: triage to remediation
+- **89%** Autonomous response actions (e.g., containment, remediation)
+- **86%** Full platform integration
 
 Security leaders are looking for a platform that covers the full alert lifecycle in a single integrated flow, explains its decisions, learns and adapts, integrates with the existing stack, and lets teams set the terms of AI’s involvement based on risk tolerance, operational context, and evolving confidence.
 
 #### Automation Appetite
-
-- **51%** of daily tasks automated
-- **48%** want more than half of tasks automated
+- **51%** want more than half of daily tasks automated *(Combined metric tracking)*
+- **48%** have deployed AI widely and have high automation ambitions
 
 Organizations with higher automation ambitions are also more likely to have deployed AI widely (48%) — suggesting that those who’ve invested deeply understand both the potential and the current limitations.
 
 #### Looking Ahead: Expansion Plans (Next 12 Months)
-
 - **40%** Plan to expand AI in cloud security
 - **28%** Plan to expand in incident response automation
 
 The organizations that move from fragmented tools to unified, AI-native platforms will be the ones that unlock the efficiency, trust, and autonomy the rest of the industry is still chasing.
 
-## Concluding Thoughts
+_See the AI SOC in action: torq.io/demo | 17_
 
-### Concluding Thoughts
+---
+
+## Concluding Thoughts
 
 ### 3 GAPS HOLDING AI IN THE SOC BACK
 
@@ -313,16 +384,17 @@ The SOC has crossed the AI adoption threshold. With 94% of organizations using A
 Three points emerged repeatedly across the data, and how organizations resolve them will determine whether AI becomes the force multiplier the SOC needs or another layer of complexity it has to manage.
 
 #### CONFIDENCE VS. CONTROL
-
 Leaders are confident in AI across every major use case — but most won’t let it act autonomously beyond medium-severity incidents. The barrier isn’t capability skepticism; it’s the absence of platforms that let teams calibrate autonomy to context. Organizations don’t want all-or-nothing automation. They want to decide where AI works independently and where humans stay in the loop — and adjust those boundaries as conditions change.
 
 #### ADOPTION VS. ARCHITECTURE
-
 AI adoption is near-universal, but it’s landed as a patchwork of disconnected tools. 80% of SOCs are managing multiple point solutions. As a result, operational complexity that offsets the efficiency gains AI was supposed to deliver. 85% want a unified platform — the industry has diagnosed the problem, but most haven’t solved it.
 
 #### EXECUTION VS. JUDGMENT
-
 The 8.6 hours analysts spend weekly on AI oversight isn’t a failure metric; it’s a signal that the analyst role is evolving. As AI handles more of the execution, analysts are shifting to judgment, validation, and strategic decision-making. But this shift only works if the platform supports it — with explainability, transparency, and the ability to dial oversight up or down.
+
+_See the AI SOC in action: torq.io/demo | 19_
+
+---
 
 ### THE MARKET KNOWS WHAT IT WANTS
 
@@ -342,39 +414,61 @@ We don’t pretend to have solved all of this. No one has. But the gap between w
 
 The organizations that get there first — moving from patchwork to platform, from opaque to explainable, from fixed automation to adjustable control — will be the ones that unlock what AI in the SOC was always supposed to deliver.
 
-## APPENDIX
+_See the AI SOC in action: torq.io/demo | 20_
+
+---
+
+## Appendix
 
 ### Demographics & Methodology
 
 This research was conducted by Sapio Research on behalf of Torq. The survey captured responses from more than 450 CISOs, security leaders, and senior security decision-makers across 4 countries.
 
-![Chart showing Respondent Seniority: 27% Executive or C-level, 15% VP or Head of department, 32% Directors, 27% Senior managers.](Respondent_Seniority)
+#### Respondent Seniority
+- **27%** Executive or C-level
+- **15%** VP or Head of department
+- **32%** Directors
+- **27%** Senior managers
 
-![Chart showing Organization Size: 34% 1,000 to 4,999 employees, 31% 5,000 to 9,999 employees, 16% 10,000 to 19,999 employees, 20% 20,000+ employees.](Organization_Size)
+#### Organization Size
+- **34%** 1,000 to 4,999
+- **31%** 5,000 to 9,999
+- **16%** 10,000 to 19,999
+- **20%** 20,000+
 
-![Chart showing Top Industries: 20% IT / Software, 18% Banking / Finance, 13% Manufacturing.](Top_Industries)
+#### Top Industries
+- **20%** IT / Software
+- **18%** Banking / Finance
+- **13%** Manufacturing
 
-![Chart showing Respondents by Country: 250 from the US, 100 from the UK, 50 from France, 50 from Germany.](Respondents_by_Country)
+#### Respondents by Country
+- **250** *(Country 1)*
+- **100** *(Country 2)*
+- **50** *(Country 3)*
+- **50** *(Country 4)*
 
-## SEE THE AI SOC IN ACTION
+_See the AI SOC in action: torq.io/demo | 21_
 
-[Get a Demo](https://torq.io/demo)
+---
+
+## About Torq
+
+### See the AI SOC in Action
+Get a Demo
 
 ### About Sapio Research
-
 Sapio Research is a Certified B Corp™ full-service B2B and tech market research agency that helps businesses grow thanks to high quality, efficient and honest research solutions. Their team of expert researchers deliver valuable insights to support their clients understand their audience, build powerful brands, and cut through the noise with compelling data-driven content.
 
 For more information, visit [sapioresearch.com](https://sapioresearch.com).
 
 ### About Torq
-
 Torq is the enterprise AI SOC platform transforming how enterprises manage risk. Using adaptive agentic reasoning and automation, Torq identifies, prioritizes, and remediates critical threats at machine speed, slashing MTTI and MTTR while amplifying productivity. Global leaders like PepsiCo, Procter & Gamble, Siemens, Telefónica, and Virgin Atlantic trust Torq to power the next generation of AI-driven security operations.
 
 For more information, visit [torq.io](https://torq.io).
 
-Americas HQ  
+### Americas HQ
 205 Detroit Street  
 Denver, CO, 80206  
-[torq.io](https://torq.io)
+torq.io
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-15", "model": "gemini-3.5-flash-lite"} -->
