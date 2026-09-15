@@ -1,18 +1,17 @@
-# The State of Open Source Security Vulnerabilities
-## Annual Report 2021
+# The State of Open Source Security Vulnerabilities Annual Report 2021
+
+Organization: Mend  
+Report Title: State-of-Open-Source-Vulnerabilities  
+Year: 2021  
 
 ## Table of Contents
-- [Introduction](#introduction)
 - [The Number of Open Source Vulnerabilities Continues to Rise](#the-number-of-open-source-vulnerabilities-continues-to-rise)
-- [The Open Source Development and Security Communities: More Active Than Ever](#the-open-source-development-and-security-communities-more-active-than-ever)
 - [Most Common CWEs in Open Source Components](#most-common-cwes-in-open-source-components)
 - [Open Source Vulnerabilities: Severity Breakdown](#open-source-vulnerabilities-severity-breakdown)
 - [Final Thoughts](#final-thoughts)
 - [About Mend](#about-mend)
 
 ---
-
-## Introduction
 
 2020 presented us all with a set of challenges no one could have expected. The pandemic initially raised a lot of uncertainty in the software development industry. Companies pivoted to remote work practically overnight and faced a series of issues encompassing everything from application security to employee well-being.
 
@@ -24,11 +23,11 @@ In this report, we analyzed Mend’s open source vulnerabilities database to gai
 
 According to the Mend database, aggregated from the NVD, dozens of security advisories, peer-reviewed vulnerability databases, and popular open source issue trackers, the number of published open source software vulnerabilities in 2020 rose once again, by over 50%.
 
-![Open Source Vulnerabilities per Year: 2009-2020 chart showing a steady increase from 700 in 2009 to 9658 in 2020]
+![Open Source Vulnerabilities per Year: 2009-2020 chart showing growth from 700 in 2009 to 9658 in 2020]
 
-## The Open Source Development and Security Communities: More Active Than Ever
+### The Open Source Development and Security Communities: More Active Than Ever
 
-There are a few possible explanations to the sharp increase in the number of known open source vulnerabilities in 2020.
+There are a few possible explanations to the sharp increase in the number of known open source vulnerabilities in 2020. 
 
 First is increased activity in the open source community. While no one was sure how shifting to remote work would effect developers, it appears that in the first months of the pandemic open source developers were working harder than ever. GitHub reported a sharp increase in open source project creation in March and April 2020. This rise in activity most probably extended to more open source security research.
 
@@ -38,37 +37,70 @@ In addition to the many hands on deck, automation also explains the high number 
 
 In some cases, researchers found multiple CVEs where a common problem affected many projects. Sometimes a single CVE was applied to many projects but other times it was correct for them to each have their own CVE.
 
+*The state of open source vulnerabilities 2021 annual report • 3*
+
 ## Most Common CWEs in Open Source Components
 
 As AppSec continues to shift left into the design and development phases and responsibility over security is shared with developers, secure coding practices and tools become an important part of the DevSecOps pipeline.
 
 In order to gain insights on secure coding with open source components, we decided to dive deep into the data on the most common CWEs in vulnerable open source components detected in 2020.
 
-![Chart showing top CWEs from 2015 to 2020]
+### Open Source Vulnerabilities in 2020: Top CWEs
+
+| 2015 | 2016 | 2017 | 2018 | 2019 | 2020 |
+| --- | --- | --- | --- | --- | --- |
+| CWE-79 XSS | CWE-119 Buffer Overflow | CWE-119 Buffer Overflow | CWE-79 XSS | CWE-79 XSS | CWE-79 XSS |
+| CWE-119 Buffer Overflow | CWE-264 Permissions, Privileges, and Access Controls | CWE-79 XSS | CWE-190 Integer Overflow | CWE-20 Improper Input Validation | CWE-787 Out-of-bounds Write |
+| CWE-264 Permissions, Privileges, and Access Controls | CWE-20 Improper Input Validation | CWE-125 Out-of-bounds Read | CWE-119 Buffer Overflow | CWE-125 Out-of-bounds Read | CWE-125 Out-of-bounds Read |
+| CWE-200 Information Exposure | CWE-200 Information Exposure | CWE-200 Information Exposure | CWE-20 Improper Input Validation | CWE-325 CSRF | CWE-20 Improper Input Validation |
+| CWE-20 Improper Input Validation | CWE-79 XSS | CWE-20 Improper Input Validation | CWE-125 Out-of-bounds Read | [Blank] | CWE-200 Information Exposure |
 
 While CWE-79 (Cross-site scripting) has been at the top of the list for the past few years, CWE-787 is a new arrival to the top five. It might seem like CWE-787 came out of nowhere, but it’s actually a descendent of the common CWE-119 (Buffer overflow), which saw a decrease this year. We can also see that CWE-125, another child of CWE-119, is also a prominent issue.
 
 It appears there was an effort to map CVEs directly to weaknesses like CWE-787 and CWE-125 instead of categories like CWE-119. This included a large remapping effort of over 10,000 CVE entries. Improper Input Validation and Information Exposure are other examples of categories that are being remapped into the more precise weaknesses.
 
-**Top 10 CWEs in 2020:**
-1. CWE-79: XSS
-2. CWE-787: Out-of-bounds Write
-3. CWE-125: Out-of-bounds Read
-4. CWE-20: Improper Input Validation
-5. CWE-200: Information Exposure
-6. CWE-416: Use After Free
-7. CWE-89: SQL Injection
-8. CWE-22: Path Traversal
-9. CWE-352: CSRF
-10. CWE-190: Integer Overflow
+### Top CWEs List (2020)
+1. **CWE-79**: XSS
+2. **CWE-787**: Out-of-bounds Write
+3. **CWE-125**: Out-of-bounds Read
+4. **CWE-20**: Improper Input Validation
+5. **CWE-200**: Information Exposure
+6. **CWE-416**: Use After Free
+7. **CWE-89**: SQL Injection
+8. **CWE-22**: Path Traversal
+9. **CWE-352**: CSRF
+10. **CWE-190**: Integer Overflow
+
+*The state of open source vulnerabilities 2021 annual report • 4*
 
 Continuing our research into secure coding, we also looked at some of the top programming languages, including how many and what type of open source security vulnerabilities were disclosed per language.
 
-![Chart showing Top CWEs per Programming Language 2020]
+### Top CWEs per Programming Language 2020:
+- **CWE-79**: XSS
+- **CWE-862**: Missing Authorization
+- **CWE-502**: Deserialization of Untrusted Data
+- **CWE-79**: XSS
+- **CWE-20**: Improper Input Validation
+- **CWE-787**: Out-of-bounds Write
+- **CWE-79**: XSS
+- **CWE-89**: SQL Injection
+- **CWE-352**: Cross-Site Request Forgery
+- **CWE-79**: XSS
+- **CWE-20**: Improper Input Validation
+- **CWE-200**: Information Exposure
+- **CWE-200**: Information Exposure
+- **CWE-79**: XSS
+- **CWE-863**: Improper Input Validation
+- **CWE-787**: Out-of-bounds Write
+- **CWE-125**: Out-of-bounds Read
+- **CWE-476**: NULL Pointer Dereference
+- **CWE-732**: Incorrect Permission Assignment for Critical Resource
+- **CWE-200**: Information Exposure
+- **CWE-20**: Improper Input Validation
 
 We checked which CWEs were most prominent in some of the most popular programming languages. Cross-site scripting (CWE-79) continues to dominate in most of the programming languages that we looked at, especially those used for web development. Another reason for how common XSS issues are is that they are very easy to detect using automated tools. We also see that many of the newly discovered CWE-787 Out-of-bounds write vulnerabilities were discovered in C.
 
-![Chart comparing Vulnerabilities in Top Programming Languages: 2020 vs. 2019]
+![Vulnerabilities in Top Programming Languages: 2020 vs. 2019 chart]
 
 The increase in Buffer overflow related issues is one of the reasons that C saw so many new vulnerabilities in 2020.
 
@@ -78,19 +110,23 @@ Go, on the other hand, is gaining popularity along with increased security resea
 
 Go is a relatively young language, and the rising number of vulnerabilities discovered in Go might also be because many of the Go projects are written from scratch, rather that using open source libraries and components that have been under the security microscope for years.
 
+*The state of open source vulnerabilities 2021 annual report • 6*
+
 ## Open Source Vulnerabilities: Severity Breakdown
 
 Addressing the sharp rise in the number of open source vulnerabilities published this year is a major challenge for software development organizations. As security debt continues to rise for most, it’s important to find a way to prioritize vulnerabilities remediation. One parameter that many organizations look to when attempting to decide what to remediate first is the vulnerabilities’ severity score.
 
 We checked the breakdown of open source vulnerabilities’ severity scores to see if this is an effective technique.
 
-![Pie chart showing Severity Breakdown: Critical 15%, High 38%, Medium 45%, Low 3%]
+![Open Source Vulnerabilities in 2020: Severity Breakdown chart showing Critical: 15%, High: 38%, Medium: 45%, Low: 3%]
 
 The fact that over 50% of new open source security vulnerabilities are rated high or critical doesn’t help security and development teams that rely on severity scores when considering which issues to address first.
 
 Fixing all issues, or even “only” high and critical issues, is an unrealistic plan for teams that want to keep up with the rapid pace of development.
 
 Organizations need to leverage prioritization and remediation tools that target the vulnerabilities that will most impact their systems and business if they want to manage their security debt wisely.
+
+*The state of open source vulnerabilities 2021 annual report • 7*
 
 ## Final Thoughts
 
@@ -102,6 +138,8 @@ The sharp increase in the overall number of open source vulnerabilities publishe
 
 Mend, formerly known as WhiteSource, effortlessly secures what developers create. Mend uniquely removes the burden of application security, allowing development teams to deliver quality, secure code, faster. With a proven track record of successfully meeting complex and large-scale application security needs, the world’s most demanding software developers rely on Mend. The company has more than 1,000 customers, including 25 percent of the Fortune 100, and manages Renovate, the open-source automated dependency update project.
 
-For more information, visit [www.mend.io](http://www.mend.io), the Mend blog, and Mend on LinkedIn and Twitter.
+For more information, visit [www.mend.io](www.mend.io), the Mend blog, and Mend on LinkedIn and Twitter.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "gemini-3.1-flash-lite-preview"} -->
+*The state of open source vulnerabilities 2021 annual report • 8*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-15", "model": "gemini-3.5-flash-lite"} -->
