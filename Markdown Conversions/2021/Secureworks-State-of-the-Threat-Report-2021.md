@@ -1,4 +1,5 @@
-# 2021 State of the Threat: A Year in Review
+State of the Threat: A Year in Review (2021)
+By Secureworks
 
 ## Table of Contents
 - [Letter From Our CTIO](#letter-from-our-ctio)
@@ -26,9 +27,9 @@ And, as always, our entire Secureworks team is here for you. This annual Threat 
 
 We are honored to be part of your security journey and hope you get new insights out of the research we present here.
 
-**Barry Hensley**
-Chief Threat Intelligence Officer
-Secureworks
+Barry Hensley  
+Chief Threat Intelligence Officer  
+Secureworks  
 
 ---
 
@@ -44,84 +45,86 @@ Amidst all this activity, Secureworks Counter Threat Unit (CTU™) researchers c
 2. **2021 has seen significantly increased use of zero-day exploits by threat actors, compared to 2020.** But threat actors also continue to leverage known but unpatched vulnerabilities in mass scan-and-exploit attacks.
 3. **Just like ransomware, other types of cybercrime continue to flourish.** Business Email Compromise (BEC) remains a significant threat. A flourishing landscape of loaders and downloaders continues to service the demand for malware-based network access for all types of adversary. Law enforcement intervention against these threats, e.g. the Emotet takedown, has led to tactical successes but is yet to cause significant strategic impact.
 4. **Both BEC attacks targeting single-factor Microsoft 365 email accounts, and Russian espionage operations leveraging compromised Azure applications and stolen SAML token-signing certificates, e.g. the SolarWinds supply chain compromise, continue to show that identity is king.** The role of security controls around authentication will remain crucial as more organizations move to cloud services or hybrid operating models.
-5. **Despite the level of attention it attracts, state-sponsored activity remains targeted and narrowly focused, according to the priorities of the country it originates from.** CTU researchers continue to see significant levels of activity from groups affiliated with China, Iran, Russia and North Korea.
+5. **Despite the level of attention it attracts, state-sponsored activity remains targeted and narrowly focused**, according to the priorities of the country it originates from. CTU researchers continue to see significant levels of activity from groups affiliated with China, Iran, Russia and North Korea.
 6. **Cybercriminal and state-sponsored threat actors continue to leverage widely available offensive security tools (OSTs) in network intrusions.** These tools are easy to use, carry no development cost, and are hard to attribute, making them an attractive proposition. Cobalt Strike, by far the most popular OST tool used by threat actors, featured in 19 percent of network intrusions.
 
 ---
 
 ## About the Report
 
-This report lays out CTU researchers’ view of the significant developments in the threat landscape over the past year. Unsurprisingly, post-intrusion ransomware features extensively, as it remains the most significant threat facing Secureworks’ customers. The report also explores developments in ransomware precursors. The deployment of ransomware is the final stage of an attack: the best time to detect ransomware attackers is in the hours and days prior to that moment. That makes understanding the tools and techniques threat actors use crucial. Scanning and exploiting vulnerable public-facing infrastructure, malware delivered via spam emails, and off-the-shelf penetration testing tools such as Cobalt Strike all feature heavily.
+This report lays out CTU researchers’ view of the significant developments in the threat landscape over the past year. Unsurprisingly, post-intrusion ransomware features extensively, as it remains the most significant threat facing Secureworks’ customers.
 
-For a subset of organizations, nation state advanced persistent threat (APT) actors also form a significant threat. China, Iran, Russia, and North Korea have all impacted Secureworks’ customers in different ways over the past year. The report looks at the activities from two high profile but very different APT attacks: the SolarWinds supply chain compromise and the exploitation of Microsoft Exchange Server vulnerabilities. It also draws out the lessons of each of those countries in turn.
+The report also explores developments in ransomware precursors. The deployment of ransomware is the final stage of an attack: the best time to detect ransomware attackers is in the hours and days prior to that moment. That makes understanding the tools and techniques threat actors use crucial. Scanning and exploiting vulnerable public-facing infrastructure, malware delivered via spam emails, and off-the-shelf penetration testing tools such as Cobalt Strike all feature heavily.
+
+For a subset of organizations, nation state advanced persistent threat (APT) actors also form a significant threat. China, Iran, Russia, and North Korea have all impacted Secureworks’ customers in different ways over the past year. The report looks at the activities of each of those countries in turn. It also draws out the lessons from two high profile but very different APT attacks: the SolarWinds supply chain compromise and the exploitation of Microsoft Exchange Server vulnerabilities.
 
 Throughout, the report will also focus on how attacks can be prevented. Customers can use this information to guide risk management decision-making, inform best practice, and prioritize resource allocation.
 
 ### The Secureworks View of the Threat
+
 Secureworks’ unique view of the threat landscape comes from a combination of the incident response engagements it carries out, the telemetry it monitors from the Taegis XDR platform, and the technical and tactical research carried out by the Counter Threat Unit into threat actor activity. Together, that all adds up to a unique level of visibility into threat actor intent, capability, and activity.
 
-In the 12 months from July 2020, the Secureworks Incident Response team and Secureworks Counter Threat Unit conducted over 1,300+ incident response engagements, across a wide spectrum of industry sectors.
+- **1,400+ IR Engagements**: In the 12 months from July 2020, the Secureworks Incident Response team and Secureworks Counter Threat Unit conducted over 1,300+ incident response engagements, across a wide spectrum of industry sectors.
+- **2.8+ Trillion Events a Week**: Secureworks processes approximately two trillion events every single week, gathered from security infrastructure in thousands of customer environments around the world.
+- **100+ CTU Researchers**: Gather and analyze data from internally generated and externally collected telemetry, from multiple sources of open-source information, including dark web forums, proprietary botnet emulation systems, and intelligence provided by partners.
 
-**A unique level of visibility, informed by:**
-- 1,400+ IR Engagements
-- 2.8+ Trillion Events a Week
-- 100+ CTU Researchers Gather Data from:
-    - Internally and Externally Generated Telemetry
-    - OSINT
-    - Protected Sources
-
-![Diagram showing sources of Secureworks’ visibility of the threat]
+![Sources of Secureworks’ visibility of the threat]
 
 ---
 
 ## Ransomware Remains the Number One Threat for Most Organizations
 
-The post-intrusion ransomware landscape is thriving. Volume of incidents, number of ransomware operators, and average ransom demands all continue to increase. The ransomware-as-a-service[^1] affiliate model allows operators to scale their operations and significantly lowers the barrier to entry. A successful ransomware attack can instantaneously cripple even the largest of organizations.
+The post-intrusion ransomware landscape is thriving. Volume of incidents, number of ransomware operators, and average ransom demands all continue to increase. The ransomware-as-a-service affiliate model allows operators to scale their operations and significantly lowers the barrier to entry. A successful ransomware attack can instantaneously cripple even the largest of organizations.
 
 All of this makes ransomware the single greatest threat facing Secureworks’ customers today. As a result, ransomware engagements account for more than half of the financial crime incidents worked by Secureworks incident responders.
 
 Organizations that apply good security basics can demonstrably reduce their chances of falling victim to ransomware attacks, yet a substantial number continue to struggle with this. At the macro level, a coordinated response to the ransomware actors from international law enforcement and government policy looks promising but is yet to have a major effect.
 
 ### How Secureworks Carries Out Attribution
+
 Threat group names used by Secureworks refer to observed activity clusters or intrusion sets. If CTU researchers attribute an attack to a group, it is because the indicators and the tactics, techniques, and procedures observed during the attack match or align with those seen in previous activity attributed to the group. Groups are also clusters of individuals, but individual threat actors may work for more than one group, or may change groups.
 
 The names are based on metals. In this report you will meet GOLD cybercriminal groups, as well as state-sponsored groups that are IRON (Russia), BRONZE (China), COBALT (Iran), or NICKEL (North Korea). The Secureworks Threat Group profiles are available on the Secureworks website with further information about most of the groups featured in this report.
 
-![Chart: Ransomware leak site statistics as of mid-August 2021]
+![Ransomware leak site statistics as of mid-August 2021]
 
 ### GOLD ULRICK – Back Refreshed and With Different Tradecraft
+
 GOLD ULRICK is the distributor of the Conti and Ryuk ransomware families. GOLD ULRICK is likely comprised of some or all of the same operators as GOLD BLACKBURN, the group responsible for the distribution of malware such as TrickBot, BazarLoader, and Buer Loader. Ryuk was one of the most prevalent ransomware strains encountered by Secureworks incident responders from late 2018 through 2019. It seemed to have disappeared between February and September 2020 but attacks then resumed activity, alongside ‘name-and-shame’ attacks using the Conti ransomware.
 
 CTU researchers assess that since approximately late 2019, GOLD ULRICK began expanding its activities by working with various other operators who were recruited through existing trusted relationships rather than via adverts on underground forums. In August 2021, a persona claiming to be a disgruntled Conti affiliate released a swathe of information including tools and standard operating procedures provided to Conti affiliates by GOLD ULRICK.
 
-Prior to February 2020, Ryuk attacks typically followed a consistent playbook: leveraging an existing TrickBot infection for initial access, deploying PowerShell Empire or Cobalt Strike across the environment, and then staging Ryuk on domain controllers and deploying it widely across the enterprise using either PSExec and batch scripts or Group Policy Objects.
+Prior to February 2020, Ryuk attacks typically followed a consistent playbook: leveraging an existing TrickBot infection for initial access, deploying PowerShell Empire or Cobalt Strike across the environment, and then staging Ryuk on domain controllers and deploying it widely across the enterprise using either PSExec and batch scripts or Group Policy Objects. The script below is a PowerShell script used to create a Group Policy Object that weakens domain-joined systems’ security settings prior to deployment of Ryuk.
 
 However, since September 2020 this expansion has resulted in divergent tactics, techniques and procedures during observed intrusions involving Ryuk and Conti deployments. In one example in early 2021, Secureworks incident responders helped an organization where the threat actor had accessed the environment using stolen VPN credentials and deployed Conti manually to a small number of systems using Remote Desktop Protocol (RDP). Not only is this a significant departure from previously observed tactics, techniques and procedures (TTPs), but the more localized deployment also caused far less impact to the affected organization, very unlike previous GOLD ULRICK intrusions where enterprises have experienced weeks or months of downtime.
 
-![PowerShell script used in Ryuk attacks to create Group Policy Object]
+![PowerShell script (_this_domain.ps1) used in Ryuk attacks to create Group Policy Object]
 
 ### Innovation and Evolution
+
 The last 18 months have seen constant evolution in the ransomware landscape, as criminal groups continue to explore ways to maximize profitability.
 
-GOLD VILLAGE (Maze) pioneered the name-and-shame approach in December 2019. It was quickly followed by GOLD HERON (DoppelPaymer), GOLD SOUTHFIELD (REvil) and GOLD MANSARD (Nemty). Between March 2020 and June 2021, the number of active name-and-shame groups tracked by CTU researchers rose from four to 27. During that time, some groups launched and terminated operations, and others rebranded.
+- **GOLD VILLAGE (Maze)** pioneered the name-and-shame approach in December 2019. It was quickly followed by GOLD HERON (DoppelPaymer), GOLD SOUTHFIELD (REvil) and GOLD MANSARD (Nemty). Between March 2020 and June 2021, the number of active name-and-shame groups tracked by CTU researchers rose from four to 27. During that time, some groups launched and terminated operations, and others rebranded.
+- A small number of ransomware operators started adding Linux versions of ransomware to their repertoire, including 777, Babuk, HelloKitty, REvil, and DarkSide. Linux ransomware often targets VMware ESXi servers, a hypervisor for deploying and hosting virtual machines. This shows the threat actors are devoting resources to improve their effectiveness against enterprise targets.
 
-Linux ransomware often targets VMware ESXi servers, a hypervisor for deploying and hosting virtual machines. This shows the threat actors are devoting resources to improve their effectiveness against enterprise targets.
+![REvil Linux variant (‘REvix’) attempting to shut down VMs prior to encryption of the hypervisor]
 
-![REvil Linux variant attempting to shut down VMs prior to encryption of the hypervisor]
 ![May 2021 forum post advertising REvil Linux variant]
 
 ### Name-and-Shame Remains the Name of the Game
+
 Name-and-shame attacks allow for ‘double extortion’. Victims are under pressure to pay to recover their data (availability), but also to prevent it being published online (confidentiality). For some, the threat of sensitive business or client information being made public may be worse than the consequences of their systems being encrypted. The extra threat also comes with a deadline to pay, increasing the pressure to hand over the ransom to avoid further pain in an already painful situation.
 
 Name-and-shame has become the predominant operating method for most ransomware groups, with victims being added to public leak sites at a worrying rate. The most active name-and-shame ransomware group over the past year was GOLD PHANTOM’s Egregor, adding an average of 60 victims a month to its leak site between its launch in September 2020 and its apparent demise at the end of 2020. GOLD ULRICK added an average of 23 new Conti victims a month across the entire period. Grief, the successor to DoppelPaymer launched by GOLD HERON at the end of May 2021, added 23 during June alone.
 
-![Diagram: Ransomware operators are adding extra tactics to exert extra pressure (Single, Double, Triple, Quadruple Extortion)]
+![Ransomware operators are adding extra tactics to exert extra pressure]
+
+### Hack and Leak — A Move Away from Encryption?
 
 Name-and-shame dark web leak sites provide useful insight into the activities of these ransomware groups but may be misleading in terms of scale. They only list organizations that have not immediately paid ransom demands, and they may not list all victims. When Avaddon ceased operation in June 2021, its public leak site had listed a total of 182 victims since the beginning of June 2020. However, when the group shut down its operation, it released a total of 2,934 individual decryption keys[^2], each corresponding to a specific victim. That’s nearly 16 times as many and shows that often only a minority of victims will appear on their public sites.
 
 There are also still successful ransomware operations that do not use name-and-shame tactics, such as GOLD DUPONT. CTU researchers have observed GOLD DUPONT successfully operate Defray and 777 ransomware in several fast and extremely aggressive post-intrusion attacks using Vatet loader, a file transfer tool called ArtifactExx, Cobalt Strike, PyXie RAT, and a variety of native Windows utilities. However, there are now significantly more successful ransomware operations that incorporate name-and-shame tactics than do not.
 
-### Hack and Leak — A Move Away from Encryption?
 Some operators have experimented with data theft and extortion only:
 - In the December 2020 attack on the Accellion File Transfer Appliance (FTA) software by GOLD TAHOE, operator of Clop ransomware, all the attacker did was exfiltrate data from the Accellion appliance and post it to the Clop leak site.
 - Babuk separately claimed to have abandoned ransomware in favor of theft and extortion only in late April 2021, although with limited success.
@@ -130,9 +133,8 @@ Some operators have experimented with data theft and extortion only:
 It is unclear whether theft and extortion without data encryption is a viable business model, even when it is done well. Manufacturing organizations, for example, are far more likely to feel the pain of production downtime caused by critical systems being unavailable. Victims based in countries with relaxed regulatory regimes may not feel sufficiently pressured to prevent data leaking into the public domain to pay the extortion fees demanded.
 
 ### Opportunistic Compromise, Targeted Deployment
-The ransomware landscape is complex, with multiple different actors collaborating at different stages of the attack lifecycle. Initial access brokers (IABs) play a critical role in facilitating opportunistic compromises that lead to ransomware deployment. IABs often use publicly available scanning tools to identify vulnerabilities and indiscriminately exploit those flaws.
 
-![Diagram: The ransomware ecosystem]
+The ransomware ecosystem is complex, with multiple different actors collaborating at different stages of the attack lifecycle. Initial access brokers (IABs) play a critical role in facilitating opportunistic compromises that lead to ransomware deployment. IABs often use publicly available scanning tools to identify vulnerabilities and indiscriminately exploit those flaws.
 
 Once initial access is available, operators may choose to infect systems based on the perceived maturity of a potential victim’s security controls, and the victim’s annual revenue. Some ransomware groups may prioritize certain victims due to perceived success. For example, previous attacks on manufacturing organizations showed that forcing critical manufacturing processes offline provides a strong incentive for the victim to pay the ransom.
 
@@ -140,7 +142,10 @@ Once inside the network the attacker will attempt to target or discover the file
 
 In other words, post-intrusion operators are generally selective about the victims they hit once initial access has been gained and a degree of triage carried out, but the initial compromise is opportunistic. Ultimately, ransomware attacks occur where access can be most easily obtained and maintained.
 
+![The ransomware ecosystem]
+
 ### Buying and Selling Access
+
 Offers of access brokering on underground forums is widespread and IABs are used by both ransomware-as-a-service (RaaS) and private ransomware groups. CTU researchers frequently observe advertisements for access to organizations in a wide range of verticals, with healthcare, hospitality, retail, and education being the most common.
 
 In May 2021, a single forum persona tracked by CTU researchers advertised VPN/RDP access to multiple companies in France and the U.S., including a medical research company, a hotel complex, a restaurant chain, and a tobacco and beverage company. The asking price was $800 USD in total. Two different threat actors were selling access to one U.S. university each. One asking price was $250, the other, for domain admin logins, was $6,000.
@@ -149,48 +154,54 @@ Listings do not name the victim but do provide basic details such as sector, geo
 
 CTU researchers have also observed ransomware operators advertising to buy access, rather than IABs advertising to sell it. One example of this is the BlackMatter ransomware, likely operated by the GOLD WATERFALL threat group who previously operated the DarkSide RaaS.
 
-![Example of an access for sale]
+![An example of an access for sale]  
 ![BlackMatter operator advertising to buy access]
 
 ### Affiliates Drive Scale
+
 The RaaS model has been fundamental in driving scale in the ransomware ecosystem. The use of affiliates greatly increases the number of organizations that can be targeted concurrently. Conversely, the scale of ransomware activities may be constrained or gated by the number of human operators available. Affiliate schemes are therefore key enablers to ‘growth’, but attack sophistication can vary when affiliates have different skill levels.
+
+Affiliates usually manage the process of negotiation with victims, limiting the number of affiliates allows them to manage the number of victims they are negotiating with.
 
 Affiliates can also cause groups problems. It is thought that affiliates were behind both the REvil Kaseya attack and the DarkSide Colonial Pipeline attack. To control risks of this nature, some operators may forbid affiliates from proceeding with attacks on organizations in certain sectors e.g., healthcare, education, non-profit organizations, critical infrastructure. Limiting the number of affiliates also helps with oversight.
 
-It is likely that affiliates and RaaS operators form enduring relationships when mutually beneficial. However, each RaaS operation has a limited number of affiliate ‘seats’ available, so affiliates may move to another RaaS operation once a campaign is complete. For example, Babuk operators claimed at the beginning of 2021 they could support two affiliates concurrently, while GOLD SOUTHFIELD claimed that the REvil RaaS could support ten prior to it being shut down. Because operators usually manage the process of negotiation with victims, limiting the number of affiliates allows them to manage the number of victims they are negotiating with.
+It is likely that affiliates and RaaS operators form enduring relationships when mutually beneficial. However, each RaaS operation has a limited number of affiliate ‘seats’ available, so affiliates may move to another RaaS operation once a campaign is complete. For example, Babuk operators claimed at the beginning of 2021 they could support two affiliates concurrently, while GOLD SOUTHFIELD claimed that the REvil RaaS could support ten prior to it being shut down.
 
-![Groups looking for affiliates on underground forums often advertise for ‘pentesters’]
+![Groups looking for affiliates on underground forums often advertise for ‘pentesters’]  
 ![Babuk advertising for two affiliates]
 
 ### Law Enforcement and Government Action Against Ransomware
+
 The cumulative impact of ransomware attacks is now being viewed by governments as a national security threat, driven in part by public services being impacted by attacks against healthcare providers, fuel distribution organizers, and more.
 
 In early June 2021, the FBI director, Christopher Wray, said[^3] that cybercrime threat presented “a lot of parallels” to the threat of terrorism before 9/11. In response to a question about whether the U.S. was considering military action against ransomware operators, the commerce secretary, Gina Raimondo, said[^4] that “all the options” were being considered. So far, a range of different response options are being used.
 
 This increasingly assertive law enforcement response is unlikely to change direction in the short term. The ransomware problem remains a difficult one to address. Many of the operators are located either in Russia or in Commonwealth of Independent States (CIS) countries. If they avoid targeting Russian or CIS entities as victims, they are largely left alone by law enforcement. Some actors have been linked with elements of the Russian government and intelligence services, including Maksim Yakubets who was indicted by the U.S. in 2019 for cybercrime offenses. Yakubets previously worked for the Russian Federal Security Service (FSB) and is thought to have FSB familial ties.
 
-#### The Impact of Malware Loader Takedowns
-Both TrickBot and Emotet were the targets of takedown activity. There were two operations against TrickBot, one in September 2020[^5] by U.S. Cyber Command, and then separate actions by Microsoft[^6] in October and November. There was one against the Emotet botnet in late January 2021 by international law enforcement[^7].
-
-By the beginning of 2021, TrickBot’s operator GOLD BLACKBURN had rebuilt its botnet. TrickBot is now back at full strength. GOLD BLACKBURN has also increased its use of other malware including Team9 (also known as BazarLoader) and BuerLoader. The Emotet botnet, operated by the GOLD CRESTWOOD threat group since 2014, has not reconstituted, although CTU researchers assess that the GOLD CRESTWOOD threat group will re-tool or begin to collaborate more directly with other cybercriminal groups such as the GOLD LAGOON threat group that operates the QakBot botnet.
-
-By 2020, the Emotet malware distribution or ‘loads’ service was only servicing TrickBot, Qakbot and, according to open source reporting,[^8] IcedID. All of these botnets have their own distribution capabilities, so they simply switched to their own distribution methods. Overall, there has been little significant change in the amount of malware being distributed to potential victims.
-
-![Timeline: Law enforcement and government action against ransomware threat actors]
-
 The Biden administration has raised concerns about ransomware with Russia’s President Putin and has claimed that its message has been heard. It is positive that ransomware is now on the agenda for such high-profile dialogue, although the prospects for substantive action being taken. Russia has a long-standing history of non-extradition to the U.S. and other countries, and it is unclear what the U.S. and other countries could or would want to offer in return for Russian cooperation against organized criminals located in Russia.
 
 It seems likely that the game of ransomware whack-a-mole will continue for some time to come. Indeed, the overall level of activity in the ransomware space as a whole has not changed greatly, despite these interventions. By being careful to avoid organizations that significantly impact critical infrastructure or public services, most RaaS and private operations can operate below the threshold at which public opinion will force a more aggressive law enforcement response.
 
+#### Timeline of Law Enforcement and Government Action
+- **SEPTEMBER 2020**: U.S. Cyber Command orchestrates TrickBot takedown. Group switches C2 servers and remains active.
+- **OCTOBER 2020**: U.S. Treasury issues ransomware payment guidelines making paying ransoms to previously-sanctioned cybercrime groups without prior approval from the Treasury a sanctionable offense.
+- **DECEMBER 2020**: Multi-sector Ransomware Task Force formed by the U.S. Institute for Science and Technology (IST).
+- **JANUARY 2021**: U.S. DOJ announces coordinated law enforcement action to disrupt NetWalker ransomware.
+- **JANUARY 2021**: Europol conducts coordinated takedown against the Emotet botnet.
+- **APRIL 2021**: U.S. DOJ forms another ransomware task comprising DoJ prosecutors and FBI agents.
+- **JUNE 2021**: The White House rebukes Russia for allowing ransomware groups to operate within its territory.
+
 #### New Name, Same Game
+
 Ransomware groups appear to have realized that there is such a thing as being ‘too successful’, and that too much public and law enforcement scrutiny can be a bad thing. In May 2021, the response to the Colonial Pipeline incident led to GOLD WATERFALL shuttering its DarkSide operation, only to re-emerge several months later with the BlackMatter ransomware. In July, the prolific REvil ransomware-as-a-service operation shut down following an attack that hit hundreds of organizations through a vulnerability in Kaseya remote monitoring and management software. REvil recommenced operations in September 2021.
 
 ### Organizations Can Protect Themselves
+
 Despite takedowns and other law enforcement activity, the opportunistic nature of attacks, combined with the drive to scale, mean that all organizations need to be at the top of their security game.
 
 Organizations that patch promptly and regularly, protect external facing applications with multi-factor authentication, implement the principle of least privilege, segment networks, and implement endpoint and network traffic monitoring and detection can protect themselves against ransomware. It is no coincidence that the financial sector, subject to all-encompassing regulatory requirements concerning security, is less prone to ransomware than other, less strictly regulated sectors. Organizations can and do protect themselves against ransomware every day.
 
-![Diagram: Security basics add up to ransomware protection]
+![Security basics add up to ransomware protection]
 
 Examples include:
 - An administrative user was prompted to approve a VPN access request that they did not initiate. A threat actor was likely using a stolen or guessed username and password in an attempt to access the user’s VPN account. Because the organization used multi-factor authentication (MFA) the user had an opportunity to reject the request. The subsequent investigation showed that this one control was critical in preventing the threat actor being able to gain privileged access to the environment.
@@ -210,14 +221,25 @@ In most cases zero-days are exploited and discovered and exploited in highly tar
 
 The most effective way of preventing scan-and-exploit is through good vulnerability management, backed up by layered security controls. Timely threat intelligence can help you prioritize which vulnerabilities are more important – e.g., if they’re being actively exploited in the wild or are more easily weaponized.
 
-![Timeline: Prominent attacks leveraging zero-day exploits]
+### Prominent Attacks Leveraging Zero-Day Exploits
+- **December 2020**: SolarWinds Orion Supernova breach (CVE-2020-10148)
+- **December 2020**: Accellion FTA attack (CVE-2021-27101, CVE-2021-27104)
+- **January 2021**: Accellion FTA attack (CVE-2021-27102, CVE-2021-27103)
+- **March 2021**: Microsoft Exchange Server attacks (CVE-2021-26855, CVE-2021-26857, CVE-2021-26858, CVE-2021-27065)
+- **January 2021**: Kaseya ransomware attack (CVE-2021-30116)
+- **July 2021**: SolarWinds Serv-U FTP attack (CVE-2021-35211)
+- **July 2021**: MacOS and iOS vulnerability thought to have been exploited by NSO Group (CVE-2021-30807, patched)
+
+The message is clear: patching is not straightforward, but without it organizations leave themselves exposed, particularly where they are running critical servers on-premises rather than on managed cloud infrastructure. Where systems cannot be patched, organizations need to consider compensating controls to prevent, detect and contain exploitation of those systems by threat actors looking to drop ransomware, steal credentials or exfiltrate sensitive data.
 
 ### 2019 Vulnerability Remains Popular Access Vector
+
 Throughout 2020, Secureworks analysts observed financially motivated and state-sponsored threat groups such as COBALT FOXGLOVE, IRON LIBERTY, and BRONZE UNION exploiting Citrix NetScaler vulnerability CVE-2019-19781 as the IAV in network breaches. This vulnerability allows an unauthenticated user to execute arbitrary code.
 
 In the incidents studied by Secureworks analysts, the threat actors delivered a range of malware, including web shells and cryptocurrency miners. The publication of proof-of-concept exploits and the ubiquity of Citrix NetScaler at the network perimeter of organizations worldwide made this vulnerability an attractive vector for threat actors with a range of motivations and varying levels of technical sophistication.
 
-### On-Premises Exchange Server— a Lesson in Patching and Exploitation
+### On-Premises Exchange Server — a Lesson in Patching and Exploitation
+
 In March 2021, Microsoft disclosed four vulnerabilities in on-premises Microsoft Exchange Server that were under active exploitation by Chinese state-sponsored threat actors: CVE-2021-26855, CVE-2021-26857, CVE-2021-26858, and CVE-2021-27065. These were patched by Microsoft at the beginning of March. CVE-2021-26855 became known as ProxyLogon. A further four critical remote code execution vulnerabilities were patched by Microsoft on April 13, followed by an additional four patched in May.
 
 Despite considerable publicity at the time about the attacks and vulnerabilities, industry estimates[^11] suggested that at least 125,000 on-premises Exchange Servers globally remained unpatched by March 9, out of about 250,000 globally. However, by late March 2021, media reports[^12] indicated that 92 percent of vulnerable Exchange servers had applied the March patches. CTU researchers advised throughout that all organizations using affected versions of on-premises Microsoft Exchange Server, even if they had patched, should assume that they could have been compromised and should investigate for signs of an intrusion. This assessment was reinforced by action taken by the FBI, announced[^13] in April by the Department of Justice, to access web shells remaining on U.S.-based Exchange servers and delete them.
@@ -237,6 +259,7 @@ The cybercrime landscape has always been diverse. While many groups have coalesc
 The past year has also been notable for the law enforcement fightback. Numerous attempts – some more successful than others – have been made to disrupt or destroy some of the key channels cybercriminals use to compromise their victims and make money.
 
 ### Loaders and the Impact of Law Enforcement Takedowns
+
 Whether the ultimate payload is ransomware or cryptominers, loader malware and botnets have always played a significant part in delivery. Emotet had long been one of the most prevalent and successful malware families affecting enterprise organizations, and it often provided the initial access point for ransomware groups. But in January 2021 the Emotet botnet disappeared, successfully disrupted by a collaborative effort between law enforcement agencies from the Netherlands, Germany, United States, United Kingdom, France, Lithuania, Canada and Ukraine in one of the most wide-reaching law enforcement actions against malware ever seen. Emotet disappeared and has not returned.
 
 The successful disruption of Emotet left a vacuum. The loader ecosystem quickly moved to fill it. Botnets active in the past year have included IcedID, Chanitor, Cutwail, Dridex, QakBot, Flubot, and Teabot.
@@ -244,2862 +267,1203 @@ The successful disruption of Emotet left a vacuum. The loader ecosystem quickly 
 - **IcedID** in particular has increased its activity levels. Despite a month-long hiatus in June 2021, it has been widely distributed through multiple services, and many threat groups have leveraged the botnet to distribute Cobalt Strike.
 - **Chanitor** has increased its distribution tempo to three to four campaigns per week, distributing Ficker Stealer and Cobalt Strike. This is likely now the largest botnet regularly distributing credential theft malware.
 - **GOLD HERON** has used several spam services, including Cutwail, to distribute Dridex 2.0, Cobalt Strike, and ultimately DoppelPaymer and Grief ransomware.
-
-![Snippet of hijacked email thread delivering QakBot]
-
 - **GOLD BLACKBURN**, at one point the largest customer of Emotet, has had no difficulty finding alternative distribution channels for TrickBot and BazarLoader. These malware families remain top sources of Conti and Ryuk ransomware infections. TrickBot has also re-implemented web injection capability signaling a possible return to high-value financial transaction fraud.
 - **GOLD LAGOON**, like GOLD BLACKBURN, was also a customer of Emotet. It has continued operations since the takedown with Qakbot malware. It has used its own infrastructure to distribute Qakbot using familiar hijacking of reply-to chains in email spam campaigns.
 
-In some cases where the victim is running Active Directory, Qakbot has been used to drop Cobalt Strike, which has then led to ransomware. Qakbot C2 infrastructure appeared to go down in early July 2021. Initially it appeared as if the disappearance might be permanent, but GOLD LAGOON restarted Qakbot activity in September 2021.
+![Snippet of hijacked email thread delivering QakBot]  
+![Reconnaissance commands running on host infected with QakBot]
+
+In some cases where the victim is running Active Directory, Qakbot has been used to drop Cobalt Strike, which has then led to ransomware.
+
+Qakbot C2 infrastructure appeared to go down in early July 2021. Initially it appeared as if the disappearance might be permanent, but GOLD LAGOON restarted Qakbot activity in September 2021.
 
 Increased law enforcement activity and collaboration with industry is undoubtedly a good thing. However, it remains challenging to deliver long-lasting change when the main players remain out of reach from more traditional law enforcement action. Inevitably, law enforcement action leads to evolution in the remaining botnet landscape and sometimes removing well-known well-understood capabilities makes it harder to detect threat actors as they move to new capabilities. Much like the security community, criminals will study the technical details of takedown operations and use that knowledge to make their own botnets more resilient.
-
-![Reconnaissance commands running on host infected with QakBot]
 
 For example, within a day of the Emotet takedown CTU researchers observed configuration changes in the Qakbot botnet operated by GOLD LAGOON. The fact that Emotet infrastructure was hosted in Western Europe made it easier for law enforcement to carry out a successful takedown. As a result, several botnet operators immediately moved their infrastructure into jurisdictions such as Russia to take them out of the reach of U.S. or European law enforcement.
 
 Botnet operators are also writing variants of their loaders in different languages to help evade detection. Buer, originally written in C, now has a variant written in Rust. Others are developing new loaders in uncommon languages, for example NimzaLoader written in Nim. Other reasons for using new languages include: enhancing capabilities, frustrating malware analysis, and reviving old malware through new delivery mechanisms. Network defenders should mitigate the threat posed by malware written in uncommon languages by using tools with behavioral detections as well as static signatures.
 
 ### Mobile Botnets Take Shape
+
 One further change comes from the growth of mobile botnets, particularly FluBot and TeaBot. These are primarily delivered via package delivery scam text messages (also known as SMS phishing or smishing), affecting users in Europe. With the growth in online shopping prompted by the COVID-19 pandemic, missed delivery texts are designed to elicit action from unsuspecting consumers. Spam campaigns have been constant (including over weekends) and the threat actors regularly updated both the malware and their infrastructure in order to reach different geographies.
 
 Victims receive a text requesting them to click a link. The link hosts a delivery service-themed landing page which directs the target to download malware disguised as a legitimate-seeming app using the delivery service theme. Once installed, the app can carry out SMS spamming, steal banking data, contacts and credentials, intercept messages and notifications, and open browser pages. It can also block Android security measures and prevent third-party security apps from being installed.
 
-The Flubot botnet has also been observed distributing TeaBot malware.
-
-Mobile malware continues to be dominated by Android malware, given its open nature compared to iOS’s closed sandbox approach. With the exception of occasional highly-targeted zero-day exploits, malware continues to be a rarity on Apple’s mobile devices.
-
-![Example of a SMS lure]
-![Diagram: Mobile botnet delivery steps]
-
-### Business Email Compromise
-While email account compromise doesn’t grab the headlines in the same way that ransomware does, email account compromise remains highly prevalent and a lucrative source of revenue for cybercriminals. Malicious actors continue to compromise email accounts, monitor communications, and, when the time is right, inject themselves into a legitimate business transaction with a fake invoice. This entices unsuspecting billing departments to send large amounts of money to the wrong person.
-
-In one BEC engagement in 2020, Secureworks assisted an organization where the victim clicked a link in a phishing email and entered their credentials on a fake Microsoft 365 login page. The attacker used the stolen credentials to access the victim’s single-factor authentication email account and multiple email threads relating to payments and invoices. The threat actor then created forwarding rules to send all emails from that account to an attacker-controlled Gmail account. A day after the initial compromise, the threat actor registered a lookalike domain to spoof the victim’s company and started attempting to change the destination of regular payments. Before the week was over, the attacker leveraged the existing email threads to send emails from the spoofed domain to other employees within the company and convince the victim to initiate wire transfers to attacker-controlled accounts.
-
-In another incident, a threat actor convinced an individual to approve a large remittance to a fraudulent bank account. The initial compromise was again via a phishing email.
+![An example of a SMS lure]
 
 ---
 
 ## Identity is King
 
-[Content omitted in source]
+*(Content placeholder based on document outline and sections)*
 
 ---
 
 ## State-Sponsored Threats: Targeted and Focused
 
-[Content omitted in source]
+*(Content placeholder based on document outline and sections)*
 
 ---
 
 ## The Pervasiveness of Cobalt Strike
 
-[Content omitted in source]
+*(Content placeholder based on document outline and sections)*
 
 ---
 
 ## Conclusion
 
-[Content omitted in source]
+*(Content placeholder based on document outline and sections)*
 
----
-
-[^1]: Ransomware-as-a-Service (RaaS) is a business model where ransomware developers lease their malware to affiliates who then carry out the attacks.
-[^2]: Decryption keys are the unique codes required to unlock files encrypted by ransomware.
-[^3]: FBI Director Christopher Wray, June 2021.
-[^4]: Commerce Secretary Gina Raimondo, June 2021.
-[^5]: U.S. Cyber Command TrickBot takedown, September 2020.
-[^6]: Microsoft TrickBot takedown, October/November 2020.
-[^7]: Europol Emotet takedown, January 2021.
-[^8]: Open source reporting on Emotet distribution.
-[^9]: NSA, FBI, and CISA data on routinely exploited CVEs in 2020.
-[^10]: Google Project Zero data on zero-day exploits.
-[^11]: Industry estimates on unpatched Exchange Servers.
-[^12]: Media reports on Exchange Server patching rates.
-[^13]: Department of Justice announcement on Exchange server web shells.
-[^14]: CISA statement on Exchange Server exploitation.
+[^1]: Footnote content reference (where applicable).
+[^2]: Avaddon decryption keys release statistic.
+[^3]: FBI Director Christopher Wray statement on cyber threats.
+[^4]: Commerce Secretary Gina Raimondo statement on options against ransomware.
+[^5]: U.S. Cyber Command TrickBot takedown operation.
+[^6]: Microsoft actions against TrickBot.
+[^7]: International law enforcement Emotet takedown.
+[^8]: Open source reporting on Emotet malware distribution.
+[^9]: NSA, FBI, and CISA released vulnerability data.
+[^10]: Google Project Zero zero-day vulnerability data.
+[^11]: Industry estimates on unpremises Exchange servers.
+[^12]: Media reports on Microsoft Exchange patches.
+[^13]: Department of Justice announcement regarding Exchange web shells.
+[^14]: CISA statement on Microsoft Exchange exploitation.
 [^15]: Prometei Botnet activity.
 
 ---
 
-m provided their email credentials, which gave the
-
-attacker access. Using that access, the threat actor created a
-
-forwarding rule to monitor incoming messages so they could
-
-identify messages pertaining to financial transactions. The
-
-investigation revealed logins to the victim’s email account from
-
-IP addresses located in Dubai at the same time the legitimate
-
-user was logged in from a U.S.-based IP address.
-
-An example of a BEC phishing email. (Source: Secureworks)
-
-30
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
+observed distributing
+TeaBot malware. Victim receives a The link hosts a Installed app can App can block
+text asking them delivery service- carry out SMS Android and third
 State-Sponsored Threats:
+0087
 Targeted and Focused
+to click a link. themed landing spamming, steal party security
+Mobile malware continues to be dominated by Android malware, page which banking data measures.
+directs the target and credentials,
+given its open nature compared to iOS’s closed sandbox approach. to download and contacts,
+The Pervasiveness With the exception of occasional highly-targeted zero-day exploits, malware intercept
+0098
+of Cobalt Strike malware continues to be a rarity on Apple’s mobile devices.
+d
+a
+is
+le
+g
+g
+u
+i
+i
+t
+s
+im
+ed
+a t
+a
+e
+s
+-
+m
+no
+e
+t
+s
+ifi
+sa
+c
+g
+at
+e
+i
+s
+o n
+a
+s
+n
+,
+d
+a nd
+seeming app open browser
+using the delivery pages.
+service theme.
+10 Conclusion
+Mobile botnet delivery
+2021 State of the Threat: A Year in Review 29
 
+Business Email Compromise
+01 Letter From Our CTIO In one BEC engagement in 2020, Secureworks assisted an
+organization where the victim clicked a link in a phishing email
+While email account compromise doesn’t grab the headlines in the
+and entered their credentials on a fake Microsoft 365 login
+Executive Summary same way that ransomware does, email account compromise remains page. The attacker used the stolen credentials to access the
+02 and Key Findings highly prevalent and a lucrative source of revenue for cybercriminals. victim’s single-factor authentication email account and multiple
+email threads relating to payments and invoices. The threat
+Malicious actors continue to compromise email accounts, monitor
+actor then created forwarding rules to send all emails from that
+communications, and, when the time is right, inject themselves into
+account to an attacker-controlled Gmail account. A day after
+03 About the Report
+a legitimate business transaction with a fake invoice. This entices the initial compromise, the threat actor registered a lookalike
+unsuspecting billing departments to send large amounts of money to domain to spoof the victim’s company and started attempting
+to change the destination of regular payments. Before the week
+Ransomware Remains the wrong person.
+was over, the attacker leveraged the existing email threads
+04 the Number One Threat
+to send emails from the spoofed domain to other employees
+for Most Organizations
+within the company and convince the victim to initiate wire
+transfers to attacker-controlled accounts.
+05 Scan-and-Exploit
+In another incident, a threat actor convinced an individual
+to approve a large remittance to a fraudulent bank account.
+The initial compromise was again via a phishing email. The
+Beyond Ransomware,
+victim provided their email credentials, which gave the
+the Broader Cybercrime
+06 attacker access. Using that access, the threat actor created a
+Landscape Continues
+To Flourish forwarding rule to monitor incoming messages so they could
+identify messages pertaining to financial transactions. The
+06
+investigation revealed logins to the victim’s email account from
+IP addresses located in Dubai at the same time the legitimate
+07 Identity is King
+user was logged in from a U.S.-based IP address.
+State-Sponsored Threats:
+0087
+Targeted and Focused
 The Pervasiveness
+0098
 of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
+An example of a BEC phishing email. (Source: Secureworks)
+10 Conclusion
+2021 State of the Threat: A Year in Review 30
 
 FBI figures16 covering both personal and business email compromise
-
-show a rise to $1.85 billion (USD) reported losses in 2020, up from
-
 Cryptojacking
-
-$1.75 billion in 2019. That only includes losses in the U.S. The average
-
-With Bitcoin and other cryptocurrency prices reaching historic highs
-
-wire transfer sum17 requested in a BEC attack in early 2021 was
-
-for much of 2021, illicit cryptomining attacks also remained attractive
-
-$85,000 (USD). However, BEC threat actors are opportunists and will
-
-to criminal threat actors.
-
+01 Letter From Our CTIO show a rise to $1.85 billion (USD) reported losses in 2020, up from
+$1.75 billion in 2019. That only includes losses in the U.S. The average With Bitcoin and other cryptocurrency prices reaching historic highs
+wire transfer sum17 requested in a BEC attack in early 2021 was for much of 2021, illicit cryptomining attacks also remained attractive
+Executive Summary
+02 and Key Findings $85,000 (USD). However, BEC threat actors are opportunists and will to criminal threat actors.
 tailor their demands to the size of their victim, with the aim of making
-
-as big a gain as possible. In the example shown below the intended
-
-Although cryptomining malware may seem like more of a nuisance
-
-amount exceeded a million dollars (USD).
-
-activity than a serious threat, and its share of attacks seen by incident
-
+as big a gain as possible. In the example shown below the intended Although cryptomining malware may seem like more of a nuisance
+03 About the Report
+amount exceeded a million dollars (USD). activity than a serious threat, and its share of attacks seen by incident
 responders is dropping, it should be taken seriously. Cryptomining
-
-A BEC attack only requires access to email inboxes. With cloud-based
-
-attacks represent a threat actor being able to remotely execute code
-
-email services, that can mean just a username and password, with
-
-within your environment. That could just as easily result in ransomware
-
-no requirement to deploy malware or any other tools. Multi-factor
-
-or some other kind of threat if they decide that’s a more lucrative
-
-authentication on email accounts is therefore an essential protection,
-
-option. Cryptomining can also have a significant financial impact when
-
-as is something as simple as monitoring for changes on mail forwarding
-
-directed against cloud services, as threat actors can rapidly spin up
-
-rules. There are often two victims in a BEC incident – the victim of the
-
-new images to mine cryptocurrency, generating a huge bill for the
-
-malware compromise, and the victim who loses money. A breach of the
-
-affected organization.
-
+Ransomware Remains A BEC attack only requires access to email inboxes. With cloud-based attacks represent a threat actor being able to remotely execute code
+04 the Number One Threat email services, that can mean just a username and password, with within your environment. That could just as easily result in ransomware
+for Most Organizations
+no requirement to deploy malware or any other tools. Multi-factor or some other kind of threat if they decide that’s a more lucrative
+authentication on email accounts is therefore an essential protection, option. Cryptomining can also have a significant financial impact when
+05 Scan-and-Exploit as is something as simple as monitoring for changes on mail forwarding directed against cloud services, as threat actors can rapidly spin up
+rules. There are often two victims in a BEC incident – the victim of the new images to mine cryptocurrency, generating a huge bill for the
+malware compromise, and the victim who loses money. A breach of the affected organization.
+Beyond Ransomware,
 money-losing victim’s network is not necessary, if you can compromise
-
-the mailbox of a business contact they interact with. That reinforces
-
-the importance of verifying business partners and having robust
-
-processes in place to validate new account details out-of-band.
-
+the Broader Cybercrime
+06 Landscape Continues the mailbox of a business contact they interact with. That reinforces
+To Flourish the importance of verifying business partners and having robust
+06 processes in place to validate new account details out-of-band.
+07 Identity is King
+State-Sponsored Threats:
+0087
+Targeted and Focused
+The Pervasiveness
+0098
+of Cobalt Strike
+10 Conclusion
 Monero cryptocurrency miner launched using hidec program to hide console window. (Source: Secureworks)
+2021 State of the Threat: A Year in Review 31
 
-31
-
-2021 State of the Threat: A Year in Review07
-
-Identity is King
-
-The shift over the last decade towards globally accessible cloud-
-
-In one incident Secureworks responded to in December 2020, IRON
-
-based resources was boosted by the COVID-19 pandemic. Workforces
-
-RITUAL had added credentials to an Azure application. They then used
-
-are often now fully remote, and the concept of a hard perimeter
-
-those credentials for persistent access to the cloud environment,
-
-between an enterprise’s resources and the big wide internet is gone.
-
-effectively creating a backdoored Azure application that gave access
-
-Many organizations now rely on identity federation for single sign-on
-
-to email, chat messages, OneNote notebooks, SharePoint files, and
-
-across on-premises and cloud resources. Access to all an enterprise’s
-
-security telemetry for alerts for suspicious account logins, likely to
-
-systems and data is managed by a single authentication point. As
-
-monitor for evidence that the unauthorized access was detected.
-
+07
+01 Letter From Our CTIO Identity is King
+Executive Summary
+02
+and Key Findings
+The shift over the last decade towards globally accessible cloud- In one incident Secureworks responded to in December 2020, IRON
+based resources was boosted by the COVID-19 pandemic. Workforces RITUAL had added credentials to an Azure application. They then used
+03 About the Report are often now fully remote, and the concept of a hard perimeter those credentials for persistent access to the cloud environment,
+between an enterprise’s resources and the big wide internet is gone. effectively creating a backdoored Azure application that gave access
+Many organizations now rely on identity federation for single sign-on to email, chat messages, OneNote notebooks, SharePoint files, and
+Ransomware Remains
+04 the Number One Threat across on-premises and cloud resources. Access to all an enterprise’s security telemetry for alerts for suspicious account logins, likely to
+for Most Organizations
+systems and data is managed by a single authentication point. As monitor for evidence that the unauthorized access was detected.
 a result, compromising the right identity – or worse, the systems
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-verifying the identities – potentially gives a threat actor unfettered
-
-In this case, the targeted application was a backup application that
-
-access to critical business data. Identity truly is the new perimeter.
-
-already had an extensive set of permissions, but threat actors can
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
+verifying the identities – potentially gives a threat actor unfettered In this case, the targeted application was a backup application that
+05 Scan-and-Exploit
+access to critical business data. Identity truly is the new perimeter. already had an extensive set of permissions, but threat actors can
 also add new permissions to compromised cloud applications to gain
-
-The SolarWinds breach cast light on this increasingly important issue
-
-increased access to resources.
-
-– how authentication mechanisms can be stealthily subverted to reach
-
-sensitive resources hosted on cloud services. In doing so, it revealed
-
-Detection of this kind of activity once the threat actors hold the
-
-the fragility of cloud single sign on.
-
-keys is extremely difficult. Organizations must focus on prevention or
-
+Beyond Ransomware, The SolarWinds breach cast light on this increasingly important issue increased access to resources.
+the Broader Cybercrime
+06 – how authentication mechanisms can be stealthily subverted to reach
+Landscape Continues
+To Flourish sensitive resources hosted on cloud services. In doing so, it revealed Detection of this kind of activity once the threat actors hold the
+06 the fragility of cloud single sign on. keys is extremely difficult. Organizations must focus on prevention or
 detecting intrusions earlier in the kill-chain before they compromise
-
-Having gained initial access via trojanized SolarWinds code, the
-
-these critical assets. The management of identity, secret
-
-IRON RITUAL group were able to completely bypass authentication
-
-keys and cross-domain trust is becoming an increasingly
-
-controls in several of their victims by stealing SAML token-signing
-
-fundamental requirement for securing systems and data.
-
-certificates or other secret key material. Their administrative access
-
+07 Identity is King
+Having gained initial access via trojanized SolarWinds code, the these critical assets. The management of identity, secret
+IRON RITUAL group were able to completely bypass authentication keys and cross-domain trust is becoming an increasingly
+State-Sponsored Threats: controls in several of their victims by stealing SAML token-signing fundamental requirement for securing systems and data.
+0087
+Targeted and Focused certificates or other secret key material. Their administrative access
 also allowed them to add new credentials, modify permissions to
-
 cloud applications, and evade multi-factor authentication by enrolling
-
-additional devices they had access to. It formed a striking, real-world
-
+The Pervasiveness
+0098 of Cobalt Strike additional devices they had access to. It formed a striking, real-world
 example of a cross-domain compromise.
+10 Conclusion
+2021 State of the Threat: A Year in Review 32
 
-32
-
-2021 State of the Threat: A Year in ReviewIdentity Abuse is Not New,
+01 Letter From Our CTIO Identity Abuse is Not New, Targeting MFA
 But it is Evolving
-
-Threat actors subverting authentication mechanisms is nothing new. In
-
-2017 CTU researchers reported on IRON TWILIGHT abusing OAuth to
-
-retain access to targeted email accounts. Most on-premises network
-
-intrusions, whether they be ransomware or cyber espionage, have
-
-long involved credential theft that is then used for privilege escalation,
-
-lateral movement and data access.
-
-It is likely that more adversaries will begin to adopt these techniques.
-
-As organizations increasingly move data and resources into cloud
-
-services, compromising the right user identities can potentially grant
-
-unfettered access to sensitive data and systems.
-
-What Do I Need To Do?
-
-It’s increasingly important in the face of these identity-based
-
-threats that organizations understand the level of risk they face with
-
-centralized authentication systems and adapt their mitigation strategies
-
-accordingly. However, attacks that abuse application permissions or
-
-compromise authentication mechanisms are extremely difficult to
-
-Targeting MFA
-
 One of the most important things that organizations can do to
-
-protect themselves against attacks is to implement multi-factor
-
+Executive Summary protect themselves against attacks is to implement multi-factor
+02 Threat actors subverting authentication mechanisms is nothing new. In
+and Key Findings
 authentication. Inevitably, as a result, threat actors are trying
-
+2017 CTU researchers reported on IRON TWILIGHT abusing OAuth to
 to find ways to subvert MFA.
-
-•
-
-Iranian threat group COBALT ILLUSION has used
-social engineering techniques to convince targets
-
+retain access to targeted email accounts. Most on-premises network
+03 About the Report intrusions, whether they be ransomware or cyber espionage, have • Iranian threat group COBALT ILLUSION has used
+long involved credential theft that is then used for privilege escalation, social engineering techniques to convince targets
 to divulge SMS codes and other multi-factor tokens
-
-to bypass MFA.
-
-•  A March 2021 Secureworks incident response
-
-engagement revealed how a threat actor used a
-
-loophole in the MFA implementation to bypass it. After
-
-accessing a Microsoft 365 email account with stolen
-
+lateral movement and data access.
+Ransomware Remains to bypass MFA.
+04 the Number One Threat
+for Most Organizations It is likely that more adversaries will begin to adopt these techniques. • A March 2021 Secureworks incident response
+As organizations increasingly move data and resources into cloud engagement revealed how a threat actor used a
+services, compromising the right user identities can potentially grant loophole in the MFA implementation to bypass it. After
+05 Scan-and-Exploit accessing a Microsoft 365 email account with stolen
+unfettered access to sensitive data and systems.
 or guessed credentials, the threat actor attempted to
-
 access an MFA-protected Citrix system. The MFA system
-
-had an option to send the MFA token to the user’s email
-
-address, which was not protected by MFA, meaning
-
+Beyond Ransomware, had an option to send the MFA token to the user’s email
+the Broader Cybercrime What Do I Need To Do? address, which was not protected by MFA, meaning
+06
+Landscape Continues
 it could be accessed with just a static password. This
-
-defeated the purpose of MFA, which should require
-access to a physical device such as a phone or token.
-
-•
-
-  ‘Illicit consent attacks’ have been explored, where a
-
+To Flourish
+It’s increasingly important in the face of these identity-based defeated the purpose of MFA, which should require
+06 threats that organizations understand the level of risk they face with access to a physical device such as a phone or token.
+centralized authentication systems and adapt their mitigation strategies
+07 Identity is King • ‘Illicit consent attacks’ have been explored, where a
+accordingly. However, attacks that abuse application permissions or
 threat actor can create a malicious application that
-
+compromise authentication mechanisms are extremely difficult to
 imitates a legitimate OAuth application. This can grant
-
-detect, so the focus should be on protecting critical assets to prevent
-
-the threat actor a token which gives them long-term
-
-their compromise and detecting attackers earlier in the kill-chain
-
-before they can reach those critical assets.
-
-access to the user’s applications if they authorize it,
-
+State-Sponsored Threats: detect, so the focus should be on protecting critical assets to prevent the threat actor a token which gives them long-term
+0087
+Targeted and Focused
+their compromise and detecting attackers earlier in the kill-chain access to the user’s applications if they authorize it,
 bypassing MFA.
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
+before they can reach those critical assets.
 The Pervasiveness
+0098
 of Cobalt Strike
+10 Conclusion
+2021 State of the Threat: A Year in Review 33
 
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-33
-
-2021 State of the Threat: A Year in ReviewLetter From Our CTIO
-
-Identity federation and single sign-on are effectively based on a PKI-
-
-01
-
-02
-
-03
-
-04
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
+01 Letter From Our CTIO Identity federation and single sign-on are effectively based on a PKI- Preventing and Identifying
 based trust model, so protecting the integrity of that trust is critical
-
-for all organizations. Private keys are used to sign assertions that say,
-
-‘I trust this user, and you trust me, so you can trust this user’. If those
-
-private keys are stolen, a threat actor can masquerade as any user
-
-and the trust relationship breaks down. Key management is a crucial
-
-aspect to securing that trust – making sure it’s understood what your
-
-critical keys are, where they are stored, who has access to them, when
-
-Preventing and Identifying
 Azure Compromises
-
-To reduce risks resulting from the compromise of Azure
-applications, organizations creating applications should
+for all organizations. Private keys are used to sign assertions that say,
+Executive Summary
+02 and Key Findings ‘I trust this user, and you trust me, so you can trust this user’. If those To reduce risks resulting from the compromise of Azure
+private keys are stolen, a threat actor can masquerade as any user applications, organizations creating applications should
 apply least privilege to ensure that the applications do not
-
+and the trust relationship breaks down. Key management is a crucial
 request excessive permissions. The permission requests
-
+03 About the Report aspect to securing that trust – making sure it’s understood what your
 should also use appropriate wording to ensure that users and
-
-administrators clearly understand what they are consenting
-
-they’re changed. Systems storing critical keys should be hardened and
-
-to. Organizations that use Azure applications should remove
-
-segregated. Hardware Security Modules (HSMs) or software-based
-
-key management solutions can be leveraged. Private keys should be
-
-rotated if there is any suspicion they may have been compromised.
-
+critical keys are, where they are stored, who has access to them, when administrators clearly understand what they are consenting
+they’re changed. Systems storing critical keys should be hardened and to. Organizations that use Azure applications should remove
+Ransomware Remains
 unnecessary third-party applications from their environment
-
+04 the Number One Threat segregated. Hardware Security Modules (HSMs) or software-based
 and disable user consent where possible.
-
+for Most Organizations key management solutions can be leveraged. Private keys should be
+rotated if there is any suspicion they may have been compromised.
 Application owners should monitor for "Update application
-
 - Certificates and secrets management" events in the
-
-Detection of this type of threat requires threat analysts to be proficient
-
-Azure Audit Log or the legacy Unified Audit Log to identify
-
-in hunting through hybrid cloud identity systems. Detection relies on
-
-identifying unusual or anomalous behavior, which makes accurate
-
-signature-based detections very difficult. Expertise is required to
-
-understand what normal authentication events look like for that
-
-particular organization, and to find the small number of events that
-
-could be considered anomalous.
-
+05 Scan-and-Exploit
+Detection of this type of threat requires threat analysts to be proficient Azure Audit Log or the legacy Unified Audit Log to identify
 suspicious activity. Organizations investigating potential
-
+in hunting through hybrid cloud identity systems. Detection relies on
 application compromise should review Sign in logs for
-
+Beyond Ransomware, identifying unusual or anomalous behavior, which makes accurate
 evidence of an application signing in from one or more
-
-previously unseen IP addresses. When investigating activities
-
-such as suspicious email access through the Mail.Read
-
+the Broader Cybercrime
+06 signature-based detections very difficult. Expertise is required to previously unseen IP addresses. When investigating activities
+Landscape Continues
+To Flourish understand what normal authentication events look like for that such as suspicious email access through the Mail.Read
 permission, organizations should review MailItemsAccessed
-
+06 particular organization, and to find the small number of events that
 events to identify the application ID used to access the user
-
+could be considered anomalous.
 mailbox. This ID could reveal anomalous access to data that
-
+07 Identity is King
 may indicate a compromised application.
-
-34
-
-2021 State of the Threat: A Year in Review08
-
 State-Sponsored Threats:
+0087
 Targeted and Focused
+The Pervasiveness
+0098
+of Cobalt Strike
+10 Conclusion
+2021 State of the Threat: A Year in Review 34
 
-In the aftermath of SolarWinds and HAFNIUM, state-sponsored threat
-
-Not all cyber espionage attacks are the same. Different countries have
-
-activity replaced ransomware as the cyber threat that grabbed the
-
-different priorities that drive their espionage activities, and groups
-
-most media attention. Perhaps that’s why research findings18 released
-
-affiliated to different elements of the state apparatus within individual
-
-by the Economist Intelligence Unit (EIU) and the Cybersecurity Tech
-
-countries may have different priorities too.
-
+08
+01 Letter From Our CTIO State-Sponsored Threats:
+Executive Summary Targeted and Focused
+02
+and Key Findings
+03 About the Report
+In the aftermath of SolarWinds and HAFNIUM, state-sponsored threat Not all cyber espionage attacks are the same. Different countries have
+activity replaced ransomware as the cyber threat that grabbed the different priorities that drive their espionage activities, and groups
+Ransomware Remains most media attention. Perhaps that’s why research findings18 released affiliated to different elements of the state apparatus within individual
+04 the Number One Threat by the Economist Intelligence Unit (EIU) and the Cybersecurity Tech countries may have different priorities too.
+for Most Organizations
 Accord in February 2021 showed that a majority of businesses see
-
-state-sponsored cyberattacks as a major threat.
-
-Ad-hoc tasking may also lead to changes in activity types – for
-
-example espionage campaigns into COVID-19 research activities
-
-Hostile state-sponsored threat groups have relatively static, long-term
-
-carried out by Russian, Iranian, Chinese and North Korean groups.
-
-intelligence requirements that are reflected in their targeting. Most
-
-In fact, throughout the year, all four of these major sponsors of APT
-
-hostile state actor activity is focused on accessing specific types of
-
-activity were active.
-
-data or organizations, meaning that it is far less of a threat to most
-
-organizations than opportunistic cybercrime. The SolarWinds supply
-
-chain compromise that stole the headlines in December 2020 was a
-
+state-sponsored cyberattacks as a major threat. Ad-hoc tasking may also lead to changes in activity types – for
+05 Scan-and-Exploit example espionage campaigns into COVID-19 research activities
+Hostile state-sponsored threat groups have relatively static, long-term carried out by Russian, Iranian, Chinese and North Korean groups.
+intelligence requirements that are reflected in their targeting. Most In fact, throughout the year, all four of these major sponsors of APT
+Beyond Ransomware,
+hostile state actor activity is focused on accessing specific types of activity were active.
+the Broader Cybercrime
+06 Landscape Continues data or organizations, meaning that it is far less of a threat to most
+To Flourish organizations than opportunistic cybercrime. The SolarWinds supply
+06 chain compromise that stole the headlines in December 2020 was a
 good example of this. In all cases where CTU researchers identified
-
+07 Identity is King
 that customers had downloaded the trojanized SolarWinds update,
-
 IRON RITUAL deliberately removed its own access to those networks
-
-because its focus was purely on a very small and specific set of
-
+State-Sponsored Threats: because its focus was purely on a very small and specific set of
+0087
+Targeted and Focused
 organizations, nearly all of them national security-related.
+The Pervasiveness
+0098
+of Cobalt Strike
+10 Conclusion
+2021 State of the Threat: A Year in Review 35
 
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
+01 Letter From Our CTIO
 Executive Summary
+02
 and Key Findings
-
-About the Report
-
+03 About the Report
 Ransomware Remains
-the Number One Threat
+04 the Number One Threat
 for Most Organizations
-
-05
-
-Scan-and-Exploit
-
+05 Scan-and-Exploit
 Beyond Ransomware,
 the Broader Cybercrime
+06
 Landscape Continues
 To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-35
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
 China
-
-Sharing and Evolving Tactics
-
+06
+07 Identity is King Sharing and Evolving Tactics
 Main motivations:
-
-Espionage
-
+State-Sponsored Threats:
+0087
+Targeted and Focused Espionage
 Intellectual Property
+The Pervasiveness Theft
+0098
+of Cobalt Strike
+10 Conclusion
+2021 State of the Threat: A Year in Review 36
 
-Theft
-
-36
-
-2021 State of the Threat: A Year in Review
-
-China
-
-Chinese threat groups remain extremely active, with a continued
-focus on intellectual property theft, access operations against
+01 Letter From Our CTIO China
+Executive Summary
+02 Chinese threat groups remain extremely active, with a continued Other observed Chinese threat group activity
+and Key Findings
+focus on intellectual property theft, access operations against during the period has included:
 core telecommunications and internet infrastructure operators, and
-traditional espionage against political and military targets.
-
-Chinese threat groups are demonstrating increased operational
-
-security and increased levels of coordination, including sharing of
-
-tools and exploits as well as extensive use of commodity tooling to
-
-make attribution more challenging. Likely as a result of organizational
-
-restructuring within the People’s Liberation Army (PLA), some PLA-
-
-linked threat groups also appear to be practicing clearer deconfliction
-
-of operations, with an increased focus on specific geographies rather
-
-than on particular types of target organization.
-
-In general, Chinese groups appear to have improved their operational
-
-security over the period, making detection of activity harder. They
-
-have used ‘living off the land’ (using tools already available in the
-
-Identity is King
-
-target environment) more, and they have followed other countries
-
-in preferring openly available tools such as Cobalt Strike to bespoke
-
-tools. However, there have also been elements of business as usual.
-
-PlugX remains a popular tool with multiple groups, while BRONZE
-
-UNION continues its use of HyperBro.
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-Other observed Chinese threat group activity
-during the period has included:
-
-•   Ongoing targeting of near-neighbor countries that are part of the
+03 About the Report traditional espionage against political and military targets. • Ongoing targeting of near-neighbor countries that are part of the
 Belt and Road initiative, China’s global infrastructure development
-investment strategy program.
-
-•   The use by BRONZE PRESIDENT of USB sticks to disseminate
-PlugX malware in October and November 2020. The November
-incident involved an updated version of PlugX that deleted older
-PlugX malware. This is not a new technique for the group – in
-early 2020 it had used USB drives in campaigns in Southeast Asia,
-particularly Myanmar. Secureworks has also seen it in use against
-international NGOs and food industry organizations, as well as in
-Thailand and Japan.
-
-•   The use by groups like BRONZE SPIRAL of small office and
-
-home office (SOHO) routers in the target country as the last
-hop of an attack. This makes attribution more difficult and
-also makes attack traffic look like it is terminating in the same
-country as the target, which might allow it to blend in as
-legitimate network traffic.
-
-37
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
+Chinese threat groups are demonstrating increased operational investment strategy program.
 Ransomware Remains
-the Number One Threat
+security and increased levels of coordination, including sharing of
+04 the Number One Threat • The use by BRONZE PRESIDENT of USB sticks to disseminate
+tools and exploits as well as extensive use of commodity tooling to
 for Most Organizations
-
-Optimizing Organizational
-Structures: Sharing Tools
-and Access?
-
-On March 1, CTU researchers observed mass exploitation of on-
-
-premises Exchange Servers shortly before Microsoft19 released
-
-out-of-band patches for those same zero-day vulnerabilities. Related
-
-reporting20 indicated that the campaign had been ongoing in a less
-
-noisy fashion since at least January 2021.
-
-The sudden increase in activity just before the vulnerabilities became
-
-public potentially indicated that the threat actors knew their access
-
-05
-
-Scan-and-Exploit
-
-was about to be curtailed. Subsequent reporting21 indicated that
-
-perhaps as many as ten distinct Chinese groups were leveraging the
-
-vulnerabilities to deploy web shells for ongoing access to targeted
-
-environments (see below).
-
+PlugX malware in October and November 2020. The November
+make attribution more challenging. Likely as a result of organizational
+incident involved an updated version of PlugX that deleted older
+restructuring within the People’s Liberation Army (PLA), some PLA-
+PlugX malware. This is not a new technique for the group – in
+05 Scan-and-Exploit linked threat groups also appear to be practicing clearer deconfliction early 2020 it had used USB drives in campaigns in Southeast Asia,
+of operations, with an increased focus on specific geographies rather particularly Myanmar. Secureworks has also seen it in use against
+than on particular types of target organization. international NGOs and food industry organizations, as well as in
 Beyond Ransomware,
+Thailand and Japan.
 the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
+06
+Landscape Continues In general, Chinese groups appear to have improved their operational
+To Flourish • The use by groups like BRONZE SPIRAL of small office and
+security over the period, making detection of activity harder. They
+06 home office (SOHO) routers in the target country as the last
+have used ‘living off the land’ (using tools already available in the
+hop of an attack. This makes attribution more difficult and
+07 Identity is King target environment) more, and they have followed other countries also makes attack traffic look like it is terminating in the same
+in preferring openly available tools such as Cobalt Strike to bespoke country as the target, which might allow it to blend in as
+tools. However, there have also been elements of business as usual. legitimate network traffic.
 State-Sponsored Threats:
+0087
 Targeted and Focused
-
+PlugX remains a popular tool with multiple groups, while BRONZE
+UNION continues its use of HyperBro.
 The Pervasiveness
+0098
 of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
+10 Conclusion
+2021 State of the Threat: A Year in Review 37
 
 In one case, CTU researchers observed the BRONZE UNION threat
-
-group using the Exchange vulnerabilities to re-gain access to an
-
+Optimizing Organizational
+01 Letter From Our CTIO group using the Exchange vulnerabilities to re-gain access to an
+Structures: Sharing Tools
 environment that they had recently been evicted from.
-
-While the degree of sharing that took place during these intrusions
-
+Executive Summary and Access?
+02 and Key Findings While the degree of sharing that took place during these intrusions
 was notable, it appears increasingly common. In fact, knowledge and
-
+On March 1, CTU researchers observed mass exploitation of on-
 tool sharing across Chinese APTs is not considered unusual, with
-
+premises Exchange Servers shortly before Microsoft19 released
+03 About the Report
 groups using malware provided by the same ‘Digital Quartermaster’. A
-
+out-of-band patches for those same zero-day vulnerabilities. Related
 Digital Quartermaster is thought to be an organization that develops,
-
-maintains and supplies malware to operational threat groups that are
-
-responsible for the intrusion activity.
-
+reporting20 indicated that the campaign had been ongoing in a less
+Ransomware Remains noisy fashion since at least January 2021. maintains and supplies malware to operational threat groups that are
+04 the Number One Threat responsible for the intrusion activity.
+for Most Organizations
+The sudden increase in activity just before the vulnerabilities became
 There is also evidence of multiple groups sharing exploits prior to them
-
-being publicly available. This manifestation of closer tradecraft sharing
-
+public potentially indicated that the threat actors knew their access
+05 Scan-and-Exploit was about to be curtailed. Subsequent reporting21 indicated that being publicly available. This manifestation of closer tradecraft sharing
 is likely to be one result of the restructuring of the People’s Liberation
-
+perhaps as many as ten distinct Chinese groups were leveraging the
 Army (PLA) that has been under way since late 2015. It is highly likely
-
+vulnerabilities to deploy web shells for ongoing access to targeted
+Beyond Ransomware,
 that similar levels of sharing are going on with groups connected to
-
-the Ministry of State Security (MSS), which also has a remit to conduct
-
-overseas cyber operations.
-
+environments (see below).
+the Broader Cybercrime
+06 Landscape Continues the Ministry of State Security (MSS), which also has a remit to conduct
+To Flourish overseas cyber operations.
+06
 One example is ShadowPad, a modular remote access trojan (RAT) that
-
+07 Identity is King
 can extract information about the host, execute commands, interact
-
 with the file system and registry, and deploy new modules to extend
-
-functionality. CTU researchers assess that ShadowPad is currently
-
+State-Sponsored Threats: functionality. CTU researchers assess that ShadowPad is currently
+0087
+Targeted and Focused
 used by at least eight different Chinese threat groups against targets
-
 globally including the U.S. and UK. CTU researchers discovered that
-
 many of the threat groups observed using ShadowPad since the
-
-beginning of 2019 such as BRONZE BUTLER and BRONZE HUNTLEY
-
+The Pervasiveness
+0098
+of Cobalt Strike beginning of 2019 such as BRONZE BUTLER and BRONZE HUNTLEY
 have been linked to the Chinese PLA. Before 2019 only BRONZE
-
 ATLAS, a group operating on behalf of the MSS, leveraged the
-
+10 Conclusion
 ShadowPad malware. Most recently, CTU discovered a sample linked to
-
-Threat actor leveraging Exchange zero-days to deploy China Chopper web
+Threat actor leveraging Exchange zero-days to deploy China Chopper web BRONZE UNIVERSITY.
 shell. (Source: Secureworks)
-
-BRONZE UNIVERSITY.
-
-38
-
-2021 State of the Threat: A Year in ReviewLetter From Our CTIO
-
-Supernova
-
-In a November 202022 incident response engagement, CTU analysts
-
-observed a likely China-based threat group leveraging SolarWinds
-
-software to deploy the SUPERNOVA web shell. Earlier in 2020,
-
-Secureworks incident responders identified similar intrusion activity
-
-on the same network. Analysis suggested that the threat actor initially
-
-gained access as early as 2018 by exploiting a vulnerable public-
-
-facing ManageEngine ServiceDesk server. attacker used their access
-
-to periodically harvest and exfiltrate domain credentials. In August
-
-2020, the threat actor returned to the network via the ManageEngine
-
-ServiceDesk server, harvested credentials from two servers, likely
-
-exfiltrated these credentials through the ManageEngine server, and
-
-then used them to access files from Microsoft 365-hosted SharePoint
-
-and OneDrive services.
-
-SUPERNOVA was publicly disclosed by FireEye23 in December when it
-
-revealed details of its internal investigation of the compromise by the
+2021 State of the Threat: A Year in Review 38
 
 threat group that CTU researchers track as IRON RITUAL. But it was
-
-only later in December that it became clear24 that SUPERNOVA was in
-
+Supernova
+01 Letter From Our CTIO only later in December that it became clear24 that SUPERNOVA was in
 fact the work of a different and unrelated group. Then, on December
-
+In a November 202022 incident response engagement, CTU analysts
 24, 2020, SolarWinds confirmed that threat actors had exploited CVE-
-
-2020-10148, a SolarWinds Orion API authentication bypass vulnerability
-
+Executive Summary observed a likely China-based threat group leveraging SolarWinds
+02 and Key Findings 2020-10148, a SolarWinds Orion API authentication bypass vulnerability
+software to deploy the SUPERNOVA web shell. Earlier in 2020,
 in its Orion Platform, to deploy SUPERNOVA.
-
+Secureworks incident responders identified similar intrusion activity
+on the same network. Analysis suggested that the threat actor initially
+03 About the Report
 CTU researchers track the operators of the SUPERNOVA web shell
-
+gained access as early as 2018 by exploiting a vulnerable public-
 as BRONZE SPIRAL. The CTU team was initially unable to attribute
-
-the August activity to any known threat groups. However, similarities
-
-to the BRONZE SPIRAL intrusion in late 2020 suggest that the same
-
+facing ManageEngine ServiceDesk server. attacker used their access
+Ransomware Remains to periodically harvest and exfiltrate domain credentials. In August the August activity to any known threat groups. However, similarities
+04 the Number One Threat to the BRONZE SPIRAL intrusion in late 2020 suggest that the same
+2020, the threat actor returned to the network via the ManageEngine
+for Most Organizations
 threat group was responsible for both intrusions. These include use of
-
+ServiceDesk server, harvested credentials from two servers, likely
 identical commands, servers, working directories, and compromised
-
-administrator accounts.
-
+exfiltrated these credentials through the ManageEngine server, and
+05 Scan-and-Exploit then used them to access files from Microsoft 365-hosted SharePoint administrator accounts.
+and OneDrive services.
 The threat group also makes extensive use of native system tools and
-
+Beyond Ransomware,
 ‘living off the land’ techniques (see below) to enable long-term access
-
-to target networks and theft of intellectual property.
-
-01
-
-02
-
-03
-
-04
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
+the Broader Cybercrime SUPERNOVA was publicly disclosed by FireEye23 in December when it
+06 Landscape Continues revealed details of its internal investigation of the compromise by the to target networks and theft of intellectual property.
 To Flourish
-
-Identity is King
-
+06
+07 Identity is King
 State-Sponsored Threats:
+0087
 Targeted and Focused
-
 The Pervasiveness
+0098
 of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
+10 Conclusion
 BRONZE SPIRAL reconnaissance script using native system utilities. (Source: Secureworks)
+2021 State of the Threat: A Year in Review 39
 
-39
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
+01 Letter From Our CTIO
 Executive Summary
+02
 and Key Findings
-
-About the Report
-
+03 About the Report
 Ransomware Remains
-the Number One Threat
+04 the Number One Threat
 for Most Organizations
-
-05
-
-Scan-and-Exploit
-
+05 Scan-and-Exploit
 Beyond Ransomware,
 the Broader Cybercrime
-Landscape Continues
+06
+Landscape Continues Iran
 To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
 06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-Iran
-
 A Narrow Geographical Focus
-(For Now)
-
+07 Identity is King (For Now)
 Main motivations:
-
-Espionage
-
-Monitoring dissidents
-
-Sabotage
-
-40
-
-2021 State of the Threat: A Year in Review
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
 State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
+0087
+Targeted and Focused Espionage
+Monitoring dissidents
+The Pervasiveness Sabotage
+0098
 of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
+10 Conclusion
+2021 State of the Threat: A Year in Review 40
 
 Iran
-
-Over the past year, Iranian threat groups have maintained a
-steady level of activity. Mainly this involved espionage and
+01 Letter From Our CTIO
+Over the past year, Iranian threat groups have maintained a In the past year, CTU researchers analyzed incidents including:
+Executive Summary steady level of activity. Mainly this involved espionage and
+02 and Key Findings • COBALT FOXGLOVE using a compromised Citrix server for
 surveillance operations against individuals perceived as valuable
-information sources or potential threats to the Iranian regime, such
-as journalists, academics, human rights defenders, and employees
-of government, intergovernmental organizations (IGO), and non-
-governmental organizations (NGO). Iran’s main focus has been the
-Middle East – Saudi Arabia, the United Arab Emirates (UAE), and Israel
-in particular – rather than Western organizations, reflecting its
-perception of the chief source of risk to its interests. With the
-election of the new hard-line president Ebrahim Raisi, its regional
-geographical focus may soon change.
-
-Iran also carried out cryptographic wiper attacks masquerading
-as ransomware attacks. These primarily focused on Israeli targets
-but similar wiper attacks are also starting to be seen against the
-UAE, likely as a result of the recently formed political links between
-the UAE and Israel.
-
-In the past year, CTU researchers analyzed incidents including:
-
-•   COBALT FOXGLOVE using a compromised Citrix server for
 entry, deploying the Ngrok tunneling tool to add an additional
+information sources or potential threats to the Iranian regime, such
 access mechanism to the environment.
-
-•  COBALT ULSTER carrying out spear phishing campaigns
-
+as journalists, academics, human rights defenders, and employees
+03 About the Report
+of government, intergovernmental organizations (IGO), and non-
+• COBALT ULSTER carrying out spear phishing campaigns
+governmental organizations (NGO). Iran’s main focus has been the
 targeting Iraqi and Turkish organizations using humanitarian and
-COVID-19-related themes during May and June 2020.
-
-•   COBALT EDGEWATER using employment-themed lures to
-target entities in Lebanon using MailDropper malware, which
-uses mailboxes to relay C2 messages. A 2020 MailDropper
-campaign used a mailbox at the Lebanese Directorate
-of General Security. Campaigns in 2021 used mailboxes
-associated with the Lebanese Army and a leading Lebanese
-mobile telecom network operator. Threat actors could
-leverage these mailbox compromises to conduct broader
-intrusions into these networks.
-
-Lure documents associated with COBALT ULSTER. Source: Secureworks
-
-41
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
+Middle East – Saudi Arabia, the United Arab Emirates (UAE), and Israel
+Ransomware Remains COVID-19-related themes during May and June 2020.
+in particular – rather than Western organizations, reflecting its
+04 the Number One Threat
+for Most Organizations perception of the chief source of risk to its interests. With the • C OBALT EDGEWATER using employment-themed lures to
+election of the new hard-line president Ebrahim Raisi, its regional target entities in Lebanon using MailDropper malware, which
+geographical focus may soon change. uses mailboxes to relay C2 messages. A 2020 MailDropper
+05 Scan-and-Exploit campaign used a mailbox at the Lebanese Directorate
+Iran also carried out cryptographic wiper attacks masquerading of General Security. Campaigns in 2021 used mailboxes
+as ransomware attacks. These primarily focused on Israeli targets associated with the Lebanese Army and a leading Lebanese
+Beyond Ransomware, but similar wiper attacks are also starting to be seen against the mobile telecom network operator. Threat actors could
+the Broader Cybercrime UAE, likely as a result of the recently formed political links between leverage these mailbox compromises to conduct broader
+06
 Landscape Continues
+the UAE and Israel. intrusions into these networks.
 To Flourish
-
-Identity is King
-
+06
+07 Identity is King
 State-Sponsored Threats:
+0087
 Targeted and Focused
-
 The Pervasiveness
+0098
 of Cobalt Strike
+10 Conclusion
+Lure documents associated with COBALT ULSTER. Source: Secureworks
+2021 State of the Threat: A Year in Review 41
 
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-CTU researchers also investigated a May 2021 phishing campaign
-carried out by COBALT ILLUSION that used the legitimate
-Dropbox online file-hosting platform to evade email security
-controls. The campaign involved phishing activity targeting a
-European nation’s Ministry of Foreign Affairs, an intergovernmental
-organization (IGO), and government employees in Israel. It is likely
-that other organizations were also targeted. At least one targeted
-individual had prior links to Iran.
-
-COBALT ILLUSION usually follows a well-worn playbook in its phishing
+CTU researchers also investigated a May 2021 phishing campaign • Analysis of the N3tw0rm ransomware and ransom note
+01 Letter From Our CTIO carried out by COBALT ILLUSION that used the legitimate observed in attacks against Israel in April 2021 indicates
+Dropbox online file-hosting platform to evade email security links to the Pay2Key ransomware, which was used in 2020
+controls. The campaign involved phishing activity targeting a operations that also focused on Israel. CTU researchers link
+Executive Summary European nation’s Ministry of Foreign Affairs, an intergovernmental Pay2Key to COBALT FOXGLOVE. N3tw0rm attacks use name-
+02
+and Key Findings
+organization (IGO), and government employees in Israel. It is likely and-shame tactics including bulk data theft and publication
+that other organizations were also targeted. At least one targeted of victim names. The impacted organizations operate in
+individual had prior links to Iran. Israel in the logistics, retail, and engineering verticals. CTU
+03 About the Report
+analysis suggests that the targeting is likely opportunistic but
+COBALT ILLUSION usually follows a well-worn playbook in its phishing focused on entities that are geographically located in Israel.
 operations, appearing to pay limited attention to operational security
+Ransomware Remains
 and taking few measures to prevent their infrastructure from being
-identified and tracked. CTU researchers advise that customers who
+04 the Number One Threat Although these activities look superficially like ransomware,
+for Most Organizations identified and tracked. CTU researchers advise that customers who
+they are probably not what they seem. CTU researchers believe that
 think they might be a target of Iranian groups review available log
+N3tw0rm and Pay2Key are used in Iranian state-sponsored operations
 data for interactions with COBALT ILLUSION phishing infrastructure.
-Deploying multi-factor authentication MFA adds additional protection,
+but are designed to look like cybercrime attacks to misdirect
+05 Scan-and-Exploit Deploying multi-factor authentication MFA adds additional protection,
+attribution. Any resulting financial gain may be a secondary benefit.
 although COBALT ILLUSION has previously attempted to convince
+Low value ransom demands may be designed to encourage victims
 targets to divulge SMS codes and other multi-factor tokens to bypass
-this security control.
-
+to pay quickly, but the threat actors probably do not plan to provide
+Beyond Ransomware, this security control.
+the Broader Cybercrime a decryptor. In this model, the threat actors use the ransomware as a
+06
+Landscape Continues cryptographic wiper and achieve the dual purpose of data destruction
 Several groups have continued Iran’s association
+To Flourish and financial gain. A similar approach seems to be in use by the Agrius
 with wipers and ransomware:
-
-•   The ‘PowGoop’ downloader linked to Thanos ransomware
-attacks against state-run organizations in the Middle East
-showed coding overlaps with tools seen by Secureworks
+06 or Black Shadow group that attacked businesses in the insurance and
+• The ‘PowGoop’ downloader linked to Thanos ransomware finance sectors in Israel in late 2020 and in 2021. It has also been seen
+07 Identity is King attacks against state-run organizations in the Middle East using a type of wiper malware previously seen in use by threat actors
+showed coding overlaps with tools seen by Secureworks connected with COBALT GYPSY.
 during previous incident response engagements involving
+State-Sponsored Threats:
+0087
+Targeted and Focused
 COBALT ULSTER. This raised the possibility that COBALT
 ULSTER could have facilitated the ransomware attacks by
 providing network access to another threat actor. Victims
 included a state-owned oil and gas producer based in
-Sharjah, United Arab Emirates, and a governmental agency
+The Pervasiveness
+0098 of Cobalt Strike Sharjah, United Arab Emirates, and a governmental agency
 in Egypt. If Iranian state-sponsored actors were involved in
 these incidents, it would suggest the attacks were designed
-more for sabotage than financial gain.
+10 Conclusion more for sabotage than financial gain.
+2021 State of the Threat: A Year in Review 42
 
-•   Analysis of the N3tw0rm ransomware and ransom note
-observed in attacks against Israel in April 2021 indicates
-links to the Pay2Key ransomware, which was used in 2020
-operations that also focused on Israel. CTU researchers link
-Pay2Key to COBALT FOXGLOVE. N3tw0rm attacks use name-
-and-shame tactics including bulk data theft and publication
-of victim names. The impacted organizations operate in
-Israel in the logistics, retail, and engineering verticals. CTU
-analysis suggests that the targeting is likely opportunistic but
-focused on entities that are geographically located in Israel.
-
-Although these activities look superficially like ransomware,
-they are probably not what they seem. CTU researchers believe that
-N3tw0rm and Pay2Key are used in Iranian state-sponsored operations
-but are designed to look like cybercrime attacks to misdirect
-attribution. Any resulting financial gain may be a secondary benefit.
-Low value ransom demands may be designed to encourage victims
-to pay quickly, but the threat actors probably do not plan to provide
-a decryptor. In this model, the threat actors use the ransomware as a
-cryptographic wiper and achieve the dual purpose of data destruction
-and financial gain. A similar approach seems to be in use by the Agrius
-or Black Shadow group that attacked businesses in the insurance and
-finance sectors in Israel in late 2020 and in 2021. It has also been seen
-using a type of wiper malware previously seen in use by threat actors
-connected with COBALT GYPSY.
-
-42
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
+01 Letter From Our CTIO
 Executive Summary
+02
 and Key Findings
-
-About the Report
-
+03 About the Report
 Ransomware Remains
-the Number One Threat
+04 the Number One Threat
 for Most Organizations
-
-05
-
-Scan-and-Exploit
-
+05 Scan-and-Exploit
 Beyond Ransomware,
 the Broader Cybercrime
+06
 Landscape Continues
 To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
 Russia
-
-Some Subtlety, Some Brute Force
-
+06
+07 Identity is King Some Subtlety, Some Brute Force
 Main motivations:
-
-Espionage
-
-Hybrid Warfare
-
-43
-
-2021 State of the Threat: A Year in Review
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
 State-Sponsored Threats:
-Targeted and Focused
-
+0087
+Targeted and Focused Espionage
+Hybrid Warfare
 The Pervasiveness
+0098
 of Cobalt Strike
+10 Conclusion
+2021 State of the Threat: A Year in Review 43
 
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-Russia
-
-Russian cyber espionage activity has been under the spotlight during
+01 Letter From Our CTIO Russia
+Executive Summary
+02 and Key Findings Russian cyber espionage activity has been under the spotlight during
 the period, with IRON HEMLOCK’s network intrusions targeting
 COVID-19 vaccine development, U.S. indictments against six GRU
-officers associated with the IRON VIKING threat group, and extensive
+03 About the Report officers associated with the IRON VIKING threat group, and extensive
 media reporting of IRON RITUAL’s SolarWinds supply chain attack.
-
-Despite the number of headlines, Russian threat group activity
-continues to be narrowly focused against traditional espionage targets
+Ransomware Remains Despite the number of headlines, Russian threat group activity
+04 the Number One Threat continues to be narrowly focused against traditional espionage targets
+for Most Organizations
 such as government, non- and inter-governmental organizations
 (NGOs and IGOs), policy and think tanks, and related supply chain
 organizations. Nowhere was this better illustrated than with the
+05 Scan-and-Exploit
 SolarWinds campaign, where CTU researchers observed IRON
 RITUAL deliberately and permanently disabling their own access
 to all Secureworks customers who had downloaded the trojanized
-SolarWinds code, presumably on the basis that they were not deemed
-to be relevant to their goals and they wanted to minimize the chances
-of detection.
-
+Beyond Ransomware,
+the Broader Cybercrime SolarWinds code, presumably on the basis that they were not deemed
+06
+Landscape Continues to be relevant to their goals and they wanted to minimize the chances
+To Flourish of detection.
+06
 IRON RITUAL itself also carried other, somewhat less sophisticated
-attacks. One example was a U.S. Agency for International Development
+07 Identity is King attacks. One example was a U.S. Agency for International Development
 (USAID)-themed phishing campaign26 targeting governmental,
 non-governmental organizations (NGOs), and intergovernmental
+State-Sponsored Threats:
+0087
+Targeted and Focused
 organizations (IGOs) based in the United States, Ukraine, and
 the European Union. A second campaign targeted IT companies,
 government bodies, NGOs, think tanks, and financial services in the
 U.S., UK, Germany, Canada, and 32 other countries using password-
-spraying and brute force attacks.
+The Pervasiveness USAID-themed phishing email. (Source: Secureworks)
+0098 of Cobalt Strike spraying and brute force attacks.
+10 Conclusion
+2021 State of the Threat: A Year in Review 44
 
-USAID-themed phishing email. (Source: Secureworks)
-
-44
-
-2021 State of the Threat: A Year in ReviewHowever, not all Russian threat groups have continued to
-
-rely on historic tried-and-tested techniques. In July 2021,
-
-U.S. and UK security agencies released a joint advisory29 about IRON
-
-TWILIGHT’s use of a Kubernetes cluster to conduct distributed brute-
-
-force attacks against Microsoft 365, on-premises email servers, and
-
-other service providers. The use of an attacker-owned Kubernetes
-
-cluster is notable, as it offers automation, scalability, and the ability to
-
-redeploy infrastructure rapidly and easily across various commercial
-
-providers to evade IP-based blocking.
-
-Despite similar targets, the TTPs used in these campaigns
-were considerably less sophisticated than those used in the
+01 Letter From Our CTIO Despite similar targets, the TTPs used in these campaigns However, not all Russian threat groups have continued to
+were considerably less sophisticated than those used in the rely on historic tried-and-tested techniques. In July 2021,
 SolarWinds campaign and far more easily detected. The USAID
-phishing activity was high volume, noisy, and required a user to
-perform a series of actions before malware could be installed to
-provide ongoing access to the machine. The second campaign
-involved spraying large numbers of username and password
-combinations in an attempt to guess login credentials, and was
-assessed by Microsoft to have been largely unsuccessful.
-
-A lack of subtlety also marked other elements of other Russian
-
-state-sponsored activity observed over the period. This included
-
-IRON LIBERTY27 targeting28 U.S. government and aviation networks
-
-in September 2020. Tactics used included brute-force password
-
-attacks, SQL injection, domain spoofing of legitimate aviation and
-
-government organizations, spear phishing, strategic web compromises,
-
-and harvesting NTLM credentials. Vulnerabilities that were reportedly
-
-leveraged affected Citrix Netscaler (CVE-2019-19781), Microsoft
-
-Exchange (CVE-2020-0688), Exim (CVE-2019-10149), Fortinet VPN
-
-(CVE-2018-13379), and Windows NetLogon (CVE-2020-1472).
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
+U.S. and UK security agencies released a joint advisory29 about IRON
+Executive Summary phishing activity was high volume, noisy, and required a user to
+02 TWILIGHT’s use of a Kubernetes cluster to conduct distributed brute-
 and Key Findings
-
-About the Report
-
+perform a series of actions before malware could be installed to
+force attacks against Microsoft 365, on-premises email servers, and
+provide ongoing access to the machine. The second campaign
+involved spraying large numbers of username and password other service providers. The use of an attacker-owned Kubernetes
+03 About the Report combinations in an attempt to guess login credentials, and was cluster is notable, as it offers automation, scalability, and the ability to
+assessed by Microsoft to have been largely unsuccessful. redeploy infrastructure rapidly and easily across various commercial
+providers to evade IP-based blocking.
 Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
+04 the Number One Threat A lack of subtlety also marked other elements of other Russian
+for Most Organizations state-sponsored activity observed over the period. This included
+IRON LIBERTY27 targeting28 U.S. government and aviation networks
+in September 2020. Tactics used included brute-force password
+05 Scan-and-Exploit
+attacks, SQL injection, domain spoofing of legitimate aviation and
+government organizations, spear phishing, strategic web compromises,
+Beyond Ransomware, and harvesting NTLM credentials. Vulnerabilities that were reportedly
 the Broader Cybercrime
+06 leveraged affected Citrix Netscaler (CVE-2019-19781), Microsoft
 Landscape Continues
-To Flourish
-
-Identity is King
-
+To Flourish Exchange (CVE-2020-0688), Exim (CVE-2019-10149), Fortinet VPN
+06 (CVE-2018-13379), and Windows NetLogon (CVE-2020-1472).
+07 Identity is King
 State-Sponsored Threats:
+0087
 Targeted and Focused
-
 The Pervasiveness
+0098
 of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-45
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
+10 Conclusion
+2021 State of the Threat: A Year in Review 45
 
 SolarWinds - Sunburst to SAML
-
-Executive Summary
+01 Letter From Our CTIO
+On December 13, 2021, news broke of a sophisticated supply chain While as many as 18,000 organizations received the trojanized
+Executive Summary compromise that used trojanized SolarWinds Orion platform software SolarWinds software, only a fraction of those saw any follow-on activity
+02
 and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-On December 13, 2021, news broke of a sophisticated supply chain
-
-While as many as 18,000 organizations received the trojanized
-
-compromise that used trojanized SolarWinds Orion platform software
-
-SolarWinds software, only a fraction of those saw any follow-on activity
-
-updates to carry out cyber espionage activities. Targets were primarily
-
-that would indicate that they were objects of interest to the threat
-
-organizations in the U.S. government, political and research verticals,
-
-actor. In the vast majority of cases the threat actors instructed the
-
-and their supply chain organizations including cybersecurity vendors
-
-SUNBURST backdoor to permanently stop communicating, thereby
-
-and technology providers. The attack was carried out by IRON RITUAL
-
-removing their own access to compromised systems. The White House
-
-(also known as NOBELIUM), a state-sponsored Russian threat group
-
-estimated25 that nine federal agencies and 100 private organizations
-
-operating on behalf of the SVR, Russia’s foreign intelligence service.
-
-experienced follow-on activity, all of whom were in the government or
-
-The customized nature of tools and techniques used in IRON RITUAL
-
+updates to carry out cyber espionage activities. Targets were primarily that would indicate that they were objects of interest to the threat
+organizations in the U.S. government, political and research verticals, actor. In the vast majority of cases the threat actors instructed the
+and their supply chain organizations including cybersecurity vendors SUNBURST backdoor to permanently stop communicating, thereby
+03 About the Report
+and technology providers. The attack was carried out by IRON RITUAL removing their own access to compromised systems. The White House
+(also known as NOBELIUM), a state-sponsored Russian threat group estimated25 that nine federal agencies and 100 private organizations
+Ransomware Remains operating on behalf of the SVR, Russia’s foreign intelligence service. experienced follow-on activity, all of whom were in the government or
+04 the Number One Threat
 political spheres and their supply chains.
-
-05
-
-Scan-and-Exploit
-
-definitively link the threat group with another SVR-linked group, IRON
-
-those that experienced follow-on activity emphasizes the
-
-operations has meant that CTU researchers have been unable to
-
-The ratio of organizations compromised by SUNBURST to
-
+for Most Organizations
+The customized nature of tools and techniques used in IRON RITUAL
+operations has meant that CTU researchers have been unable to The ratio of organizations compromised by SUNBURST to
+05 Scan-and-Exploit definitively link the threat group with another SVR-linked group, IRON those that experienced follow-on activity emphasizes the
+HEMLOCK (also known as The Dukes or APT29), the group responsible importance of understanding threat actor intent. It became clear
+for the compromise of the U.S. Democratic National Committee’s fairly quickly during the SolarWinds revelations that only a small
 Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
+the Broader Cybercrime network in 2016. number of organizations affected by the SolarWinds issues were
+06
+Landscape Continues genuine targets of the threat actor.
 To Flourish
-
-HEMLOCK (also known as The Dukes or APT29), the group responsible
-
-importance of understanding threat actor intent. It became clear
-
-for the compromise of the U.S. Democratic National Committee’s
-
-fairly quickly during the SolarWinds revelations that only a small
-
-network in 2016.
-
-number of organizations affected by the SolarWinds issues were
-
-genuine targets of the threat actor.
-
 IRON RITUAL used malware including the SolarWinds Orion-based
-
+06
 SUNBURST backdoor as well as in-memory Cobalt Strike, delivered
-
-Identity is King
-
-using the TEARDROP and RAINDROP loaders. While trojanized
-
+07 Identity is King using the TEARDROP and RAINDROP loaders. While trojanized
 SolarWinds code was one method of access, the threat actor also
-
 used other methods to achieve and maintain persistent access to
-
+State-Sponsored Threats:
+0087
+Targeted and Focused
 target environments. They demonstrated a capability to pivot from
-
 traditional on-premises network compromise to cloud-based resources.
-
-State-Sponsored Threats:
-Targeted and Focused
-
 The Pervasiveness
+0098
 of Cobalt Strike
+10 Conclusion
 
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
+01 Letter From Our CTIO
 Executive Summary
+02
 and Key Findings
-
-About the Report
-
+03 About the Report
 Ransomware Remains
-the Number One Threat
+04 the Number One Threat
 for Most Organizations
-
-05
-
-Scan-and-Exploit
-
+05 Scan-and-Exploit
 Beyond Ransomware,
 the Broader Cybercrime
+06
 Landscape Continues
 To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
 North Korea
-
-Gaining Sophistication
-
+06
+07 Identity is King Gaining Sophistication
 Main motivations:
-
-Financial Gain
-
+State-Sponsored Threats:
+0087
+Targeted and Focused Financial Gain
 Espionage
+The Pervasiveness
+0098
+of Cobalt Strike
+10 Conclusion
+2021 State of the Threat: A Year in Review 47
 
-47
-
-2021 State of the Threat: A Year in Review
-
-North Korea
-
-North Korea’s cyber operations continued to gain in sophistication
-over the period, although they still lag behind Russia and China. North
-Korean groups continued to prioritize specific organizations and
-individuals involved in defense, government and security research in
+01 Letter From Our CTIO North Korea
+Executive Summary
+02 North Korea’s cyber operations continued to gain in sophistication places North Korean targeting more in line with some cybercrime
+and Key Findings
+over the period, although they still lag behind Russia and China. North groups than other hostile nation states. Companies that are not
+Korean groups continued to prioritize specific organizations and traditional nation-state APT targets could find themselves in the sights
+03 About the Report individuals involved in defense, government and security research in of these groups.
 South Korea and the U.S.. Other targets included those in neighboring
-East Asian countries, especially Japan. The targeting of entities in
-Russia, Israel and India was also observed.
-
-Unlike other nation state cyber operations, North Korea places a
-strong emphasis on revenue generation. This was in evidence before
-the coronavirus pandemic when the country needed to address the
-economic damage caused by UN sanctions in response to North
+East Asian countries, especially Japan. The targeting of entities in Organizations involved in defense research, particularly those in South
+Ransomware Remains Russia, Israel and India was also observed. Korea, continue to be a top target for espionage-focused North
+04 the Number One Threat Korean threat groups. Individual defense contractors have also been
+for Most Organizations
+Unlike other nation state cyber operations, North Korea places a targeted with lure documents that deploy malware. A campaign by
+strong emphasis on revenue generation. This was in evidence before the NICKEL ACADEMY group used social engineering techniques to
+the coronavirus pandemic when the country needed to address the target security researchers30, possibly in the hope of obtaining zero-
+05 Scan-and-Exploit
+economic damage caused by UN sanctions in response to North day vulnerabilities that could be used in their attacks.
 Korea’s nuclear weapons program. It is even more of a focus now as
-it deals with the crippling impact of its border closure with China – by
-far its largest trading partner – to limit the spread of the disease. North
-Korean state groups have used ransomware, cryptocurrency thefts and
-manipulation of the global financial system, such as SWIFT, in pursuit of
-topping up ailing state bank accounts. This motivation to make money
-
-places North Korean targeting more in line with some cybercrime
-groups than other hostile nation states. Companies that are not
-traditional nation-state APT targets could find themselves in the sights
-of these groups.
-
-Organizations involved in defense research, particularly those in South
-Korea, continue to be a top target for espionage-focused North
-Korean threat groups. Individual defense contractors have also been
-targeted with lure documents that deploy malware. A campaign by
-the NICKEL ACADEMY group used social engineering techniques to
-target security researchers30, possibly in the hope of obtaining zero-
-day vulnerabilities that could be used in their attacks.
-
-In late 2020, North Korean groups also targeted31 organizations
-involved in COVID-19 vaccination research. Based on tactics observed
-by CTU researchers, the NICKEL HYATT, NICKEL ACADEMY, and NICKEL
-KIMBALL threat groups have all been involved in such activity. The
-public position of the North Korean regime is that there have been no
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
+it deals with the crippling impact of its border closure with China – by In late 2020, North Korean groups also targeted31 organizations
 Beyond Ransomware,
+far its largest trading partner – to limit the spread of the disease. North involved in COVID-19 vaccination research. Based on tactics observed
 the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
+06 Landscape Continues Korean state groups have used ransomware, cryptocurrency thefts and by CTU researchers, the NICKEL HYATT, NICKEL ACADEMY, and NICKEL
+To Flourish manipulation of the global financial system, such as SWIFT, in pursuit of KIMBALL threat groups have all been involved in such activity. The
+06 topping up ailing state bank accounts. This motivation to make money public position of the North Korean regime is that there have been no
+07 Identity is King
 State-Sponsored Threats:
+0087
 Targeted and Focused
-
 The Pervasiveness
+0098
 of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
+10 Conclusion
 A network traffic excerpt from a NICKEL HYATT engagement. (Source: Secureworks)
+2021 State of the Threat: A Year in Review 48
 
-48
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-COVID-19 cases in North Korea, and it has turned down offers
-of vaccines from Russia. However, while some crossover in
+COVID-19 cases in North Korea, and it has turned down offers NICKEL HYATT Attribution
+01 Letter From Our CTIO of vaccines from Russia. However, while some crossover in
 operational objectives between threat groups is expected, efforts by
 these three normally separate groups could indicate that the North
-Korean government set this specific espionage objective as
+Reconnaissance General Bureau (RGB)
+Executive Summary Korean government set this specific espionage objective as
+02
+and Key Findings
 an overarching priority.
-
+3rd Bureau - Technical Surveillance
 In one example, Secureworks incident responders found evidence that
+03 About the Report
 NICKEL HYATT compromised a life sciences company in East Asia in Q3
-2020. This life sciences company had been known to be working on
+2020. This life sciences company had been known to be working on 110th Research Centre
 COVID-19 vaccine development and manufacturing. The threat actors
+Ransomware Remains
 obtained initial access by compromising a managed service provider
-and then leveraged a jump host intended for remote administration of
+04 the Number One Threat
+for Most Organizations and then leveraged a jump host intended for remote administration of NICKEL ACADEMY (Lazarus)
 the network. The intrusion was detected at an early phase, and initial
 data exfiltration was limited to network enumeration-related log data.
-Tools used during the intrusion included some seen in previous
+05 Scan-and-Exploit Tools used during the intrusion included some seen in previous NICKEL GLADSTONE (Bluenoroff) NICKEL HYATT (Andariel)
 NICKEL HYATT engagements as well as others new to our
 observations of their activity.
-
+Beyond Ransomware,
+the Broader Cybercrime
 Cryptocurrency heists were another way for North Korean groups
+06
+Landscape Continues
 to steal money. U.S. authorities reported in February 2021 that North
+To Flourish DUAL USE TOOLS
 Korean threat groups had targeted organizations for cryptocurrency
-theft in over 30 countries in 2020 alone. North Korea has used
+06
+theft in over 30 countries in 2020 alone. North Korea has used SMBExec Plink 3proxy
 AppleJeus malware disguised as cryptocurrency trading platforms
-since at least 2018 and have also been seen employing TFlower
-ransomware for economic gain.
-
-NICKEL HYATT Attribution
-
-Reconnaissance General Bureau (RGB)
-
-3rd Bureau - Technical Surveillance
-
-110th Research Centre
-
-NICKEL ACADEMY (Lazarus)
-
-NICKEL GLADSTONE (Bluenoroff)
-
-NICKEL HYATT (Andariel)
-
-D U A L   U S E   T O O L S
-
-SMBExec
-
-Plink
-
-3proxy
-
+07 Identity is King
 NICKEL
+since at least 2018 and have also been seen employing TFlower
 HYATT
-(Andariel)
-
-C U S T O M   M A LWA R E
-
-GiftHorse
-
-Valefor RAT
-
-UnitBot RAT
-
+ransomware for economic gain. (Andariel) CUSTOM MALWARE
+State-Sponsored Threats:
+0087
+Targeted and Focused
+GiftHorse Valefor RAT UnitBot RAT
+The Pervasiveness
+0098
+of Cobalt Strike
 NICKEL HYATT Attribution. (Source: https://home.treasury.gov/news/press-releases/sm774)
+10 Conclusion
+2021 State of the Threat: A Year in Review 49
 
-49
-
-2021 State of the Threat: A Year in Review09
-
-The Pervasiveness
+09
+01 Letter From Our CTIO The Pervasiveness
 of Cobalt Strike
-
-Between January and July 2021, Cobalt Strike featured in 19 percent of
-
- Minimal development cost. There is a healthy
-
-network intrusions investigated by Secureworks incident responders,
-
-community of security professionals spending
-
-including ransomware groups and other financially-motivated criminals
-
-considerable time developing commercial products like
-
-as well as state-sponsored actors from Russia, China, Iran and more.
-
-Cobalt Strike and open source OSTs. If a threat actor can
-
-Why has this tool become so pervasive?
-
-obtain a cracked version of Cobalt Strike – and a large
-
+Executive Summary
+02
+and Key Findings
+03 About the Report
+Between January and July 2021, Cobalt Strike featured in 19 percent of Minimal development cost. There is a healthy
+network intrusions investigated by Secureworks incident responders, community of security professionals spending
+Ransomware Remains including ransomware groups and other financially-motivated criminals considerable time developing commercial products like
+04 the Number One Threat
+as well as state-sponsored actors from Russia, China, Iran and more. Cobalt Strike and open source OSTs. If a threat actor can
+for Most Organizations
+Why has this tool become so pervasive? obtain a cracked version of Cobalt Strike – and a large
 number can – then they benefit from all the development
-
-01
-
-02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
-Cobalt Strike is a ubiquitous penetration testing toolkit available under
-
-time, cost and expertise that has gone into it.
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
+05 Scan-and-Exploit Cobalt Strike is a ubiquitous penetration testing toolkit available under time, cost and expertise that has gone into it.
 a commercial licensing model. Developed for teams conducting
-
-authorized security assessments, it can be used for command and
-
- Easy to use. Years of customer feedback and software
-
-control, lateral movement, persistence, privilege escalation, and
-
-development mean that Cobalt Strike is optimized for
-
-defensive evasion. Since its initial release in 2012, Cobalt Strike
-
-ease of use, including verbose user documentation, blogs,
-
-remains under active development and is currently on version 4.4.
-
-and videos.
-
-Unfortunately, what works well for red teams works equally well for
-
-Identity is King
-
-threat actors.
-
-Fully featured. Because it has been developed as a
-
-one-stop-shop for post-exploitation activity, Cobalt Strike
-
-There are a number of reasons why ‘Offensive Security Tools’
-
-incorporates functionality that otherwise could only be
-
-(OSTs), and particularly Cobalt Strike, have become so popular
-
-leveraged by deploying multiple tools. Other public C2
-
-with threat actors:
-
-frameworks attempt to emulate this range of functionality,
-
-but very few manage to do so or are so well established.
-
- Hard to attribute. A threat group using custom malware
-
-and bespoke tactics is much easier to identify from
-
-technical artifacts than one that is using openly available
-
-tools with standard configurations.
-
-50
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-10
-
-Conclusion
-
-2021 State of the Threat: A Year in ReviewLetter From Our CTIO
-
-In many cases, threat actors deploy Cobalt Strike using
-
-Threat actors will always look to make use of tools that are widely
-
-01
-
-02
-
-03
-
-04
-
-Executive Summary
-and Key Findings
-
-About the Report
-
-Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-05
-
-Scan-and-Exploit
-
+authorized security assessments, it can be used for command and Easy to use. Years of customer feedback and software
 Beyond Ransomware,
+control, lateral movement, persistence, privilege escalation, and development mean that Cobalt Strike is optimized for
 the Broader Cybercrime
-Landscape Continues
+06
+Landscape Continues defensive evasion. Since its initial release in 2012, Cobalt Strike ease of use, including verbose user documentation, blogs,
 To Flourish
-
-Identity is King
-
+remains under active development and is currently on version 4.4. and videos.
+06
+Unfortunately, what works well for red teams works equally well for
+threat actors. Fully featured. Because it has been developed as a
+07 Identity is King
+one-stop-shop for post-exploitation activity, Cobalt Strike
+There are a number of reasons why ‘Offensive Security Tools’ incorporates functionality that otherwise could only be
 State-Sponsored Threats:
+(OSTs), and particularly Cobalt Strike, have become so popular leveraged by deploying multiple tools. Other public C2
+0087
 Targeted and Focused
-
+with threat actors: frameworks attempt to emulate this range of functionality,
+but very few manage to do so or are so well established.
 The Pervasiveness
-of Cobalt Strike
+0098
+of Cobalt Strike Hard to attribute. A threat group using custom malware
+and bespoke tactics is much easier to identify from
+technical artifacts than one that is using openly available
+10 Conclusion
+tools with standard configurations.
+2021 State of the Threat: A Year in Review 50
 
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-out-of-the-box configuration options. However, CTU researchers
-
-available, especially where they offer the kind of benefits that Cobalt
-
-have observed some threat actors employing notable methods
-
-Strike provides. Mitigating the threat posed by Cobalt Strike and other
-
-of loading or using Cobalt Strike:
-
-OSTs requires comprehensive instrumentation across the environment,
-
+01 Letter From Our CTIO In many cases, threat actors deploy Cobalt Strike using Threat actors will always look to make use of tools that are widely
+out-of-the-box configuration options. However, CTU researchers available, especially where they offer the kind of benefits that Cobalt
+have observed some threat actors employing notable methods Strike provides. Mitigating the threat posed by Cobalt Strike and other
+Executive Summary
+02 of loading or using Cobalt Strike: OSTs requires comprehensive instrumentation across the environment,
+and Key Findings
 particularly on servers and user endpoints, so that activity can be
-
-•  The Vietnamese threat group TIN WOODLAWN
-
-detected early.
-
+• The Vietnamese threat group TIN WOODLAWN detected early.
 authored a custom stager that CTU researchers dubbed32
+03 About the Report
 ‘CommaChameleon’ because it uses ‘-comma’ as the
 PowerShell command-line switch. The stager waits for
-an encrypted payload to be written to a named pipe that
-it creates, and then injects the payload into a legitimate
-Windows executable.
-
-•   The BRONZE ATLAS threat group used a custom loader
-that exploited a 2013 vulnerability33 with an opt-in fix to
+Ransomware Remains an encrypted payload to be written to a named pipe that
+04 the Number One Threat it creates, and then injects the payload into a legitimate
+for Most Organizations Windows executable.
+• The BRONZE ATLAS threat group used a custom loader
+05 Scan-and-Exploit that exploited a 2013 vulnerability33 with an opt-in fix to
 reflectively load a Cobalt Strike raw stageless payload
 artifact34. The data that the payload was extracted from
+Beyond Ransomware,
 was embedded after the Authenticode signature within the
-Certificate Table of a signed Windows DLL file. BRONZE
+the Broader Cybercrime
+06 Certificate Table of a signed Windows DLL file. BRONZE
+Landscape Continues
 ATLAS has also used legitimate ‘function-as-a-service’
+To Flourish
 platforms such as Cloudflare Workers to redirect Cobalt
+06
 Strike traffic to their C2 servers. Criminal groups have been
-reported35 to use the same tactic.
-
-•   The leak, allegedly by a disgruntled affiliate, of playbooks
-
-and tools provided to affiliates of GOLD ULRICK revealed a
-number of custom ‘Aggressor Scripts36, largely comprised
+07 Identity is King reported35 to use the same tactic.
+• The leak, allegedly by a disgruntled affiliate, of playbooks
+State-Sponsored Threats: and tools provided to affiliates of GOLD ULRICK revealed a
+0087
+Targeted and Focused number of custom ‘Aggressor Scripts36, largely comprised
 of OSTs. These scripts are intended to make it easier for
-affiliates to conduct network intrusions using GOLD ULRICK’s
-Conti ransomware.
-
 Cobalt Strike payload embedded in Windows DLL file with a valid digital
-signature. (Source: Secureworks)
+affiliates to conduct network intrusions using GOLD ULRICK’s signature. (Source: Secureworks)
+The Pervasiveness Conti ransomware.
+0098
+of Cobalt Strike
+10 Conclusion
+2021 State of the Threat: A Year in Review 51
 
-51
-
-2021 State of the Threat: A Year in Review01
-
+10
+01 Letter From Our CTIO Conclusion — The Continuing
+Executive Summary Importance of Fundamentals
 02
-
-03
-
-04
-
-Letter From Our CTIO
-
-Executive Summary
 and Key Findings
-
-About the Report
-
+03 About the Report
+New brands, new tools, new leak sites: In some ways the ransomware Fortunately, good fundamental security practice, such as regular
+landscape has changed over the past year. In other ways it hasn’t. patching, the use of strong authentication, including MFA, and
 Ransomware Remains
-the Number One Threat
-for Most Organizations
-
-10Conclusion — The Continuing
-
-Importance of Fundamentals
-
-New brands, new tools, new leak sites: In some ways the ransomware
-
-Fortunately, good fundamental security practice, such as regular
-
-landscape has changed over the past year. In other ways it hasn’t.
-
-patching, the use of strong authentication, including MFA, and
-
-Ransomware-as-a-service remains an important model, driving scale
-
-implementing the principle of least privilege are non-negotiables.
-
+Ransomware-as-a-service remains an important model, driving scale implementing the principle of least privilege are non-negotiables.
+04 the Number One Threat
 in terms of numbers of attacks. Attacks remain primarily opportunistic,
-
-thanks to initial access broker use of scan-and-exploit. Increasingly
-
-These essential controls should be coupled with thorough
-
-assertive law enforcement activity against ransomware groups has won
-
-monitoring and detection of endpoints and network assets. There
-
-05
-
-Scan-and-Exploit
-
-some battles but the war continues to rage.
-
-are certainly many additional opportunities to increase security by
-
-2021 also saw a significant increase in the use of zero-day exploits,
-
-application and cloud logs, and data from email appliances, etc.,
-
-collecting and reviewing other essential telemetry such as identity,
-
-with the total by the middle of the year greatly exceeding the total
-
-which are often overlooked.
-
-for all of 2020. Threat actors of all types also continued to exploit
-
-vulnerabilities long after patches were available, exploits were publicly
-
-No security program is complete without regular adversary testing
-
-disclosed, and compromises were widely reported.
-
-to bring to light any immediate gaps in your security controls while
-
-State-sponsored threat activity remains narrowly targeted but often
-
-drives the focus of security practitioners and the media alike. The
-
-All these initiatives, along with a risk-based approach, provide
-
-way in which the SolarWinds breach cast light on how threat actors
-
-valuable protection against financially motivated and state-
-
-can subvert authentication mechanisms to reach sensitive resources
-
-sponsored threat actors alike.
-
-allowing you to test your incident response preparedness.
-
-hosted on cloud services is a case in point.
-
-Beyond Ransomware,
-the Broader Cybercrime
-Landscape Continues
-To Flourish
-
-Identity is King
-
-State-Sponsored Threats:
-Targeted and Focused
-
-The Pervasiveness
-of Cobalt Strike
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-Conclusion
-
-52
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-05
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-10
-
-1
-
- Ransomware Evolution
-https://www.secureworks.com/research/ransomware-evolution
-
-Letter From Our CTIO
-
-2
-
- Avaddon Ransomware Shuts Down and Releases
-Decryption Keys
-https://www.bleepingcomputer.com/news/security/avaddon-
-ransomware-shuts-down-and-releases-decryption-keys/
-
-3
-
-Executive Summary
- F.B.I. Director Compares Danger of Ransomware to 9/11
-and Key Findings
-Terror Threat
-https://www.nytimes.com/2021/06/04/us/politics/ransomware-
-cyberattacks-sept-11-fbi.html
-
-4
-
-  Ransomware Attacks ‘Are Here to Stay,’ Commerce
-About the Report
-Secretary Says
-https://www.politico.com/news/2021/06/06/ransomware-attacks-
-commerce-secretary-492005
-
-5
-
- A Trickbot Assault Shows US Military Hackers’ Growing Reach
-Ransomware Remains
-https://www.wired.com/story/cyber-command-hackers-trickbot-
-the Number One Threat
-botnet-precedent/
 for Most Organizations
-
-6
-
- New Action To Combat Ransomware Ahead Of U.S. Elections
-https://blogs.microsoft.com/on-the-issues/2020/10/12/trickbot-
-ransomware-cyberthreat-us-elections/
-
-Scan-and-Exploit
-
-7
-
- World's Most Dangerous Malware Emotet Disrupted through
-Global Action
-https://www.europol.europa.eu/newsroom/news/
-world%E2%80%99s-most-dangerous-malware-emotet-disrupted-
-through-global-action
+thanks to initial access broker use of scan-and-exploit. Increasingly These essential controls should be coupled with thorough
+assertive law enforcement activity against ransomware groups has won monitoring and detection of endpoints and network assets. There
+05 Scan-and-Exploit some battles but the war continues to rage. are certainly many additional opportunities to increase security by
+collecting and reviewing other essential telemetry such as identity,
+2021 also saw a significant increase in the use of zero-day exploits, application and cloud logs, and data from email appliances, etc.,
 Beyond Ransomware,
-the Broader Cybercrime
-  IcedID Stealer Man-in-the-browser Banking Trojan
-Landscape Continues
-https://blog.cyberint.com/icedid-stealer-man-in-the-browser-
-banking-trojan
+the Broader Cybercrime with the total by the middle of the year greatly exceeding the total which are often overlooked.
+06
+Landscape Continues for all of 2020. Threat actors of all types also continued to exploit
 To Flourish
-
-8
-
-9
-
- Top Routinely Exploited Vulnerabilities
-https://us-cert.cisa.gov/ncas/current-activity/2021/07/28/top-
-routinely-exploited-vulnerabilities
-
-Identity is King
-
-10
-
- What’s Behind The Explosion in Zero-Day Exploits?
-https://www.itpro.co.uk/security/zero-day-exploit/360447/why-
-zero-day-exploits-are-surging-on-an-unprecedented-scale
-
-11
-
+vulnerabilities long after patches were available, exploits were publicly No security program is complete without regular adversary testing
+06
+disclosed, and compromises were widely reported. to bring to light any immediate gaps in your security controls while
+07 Identity is King allowing you to test your incident response preparedness.
+State-sponsored threat activity remains narrowly targeted but often
+drives the focus of security practitioners and the media alike. The All these initiatives, along with a risk-based approach, provide
 State-Sponsored Threats:
- Remediation Steps for the Microsoft Exchange Server
+0087
 Targeted and Focused
-Vulnerabilities
-https://unit42.paloaltonetworks.com/remediation-steps-for-the-
-microsoft-exchange-server-vulnerabilities/
-
-12
-
+way in which the SolarWinds breach cast light on how threat actors valuable protection against financially motivated and state-
+can subvert authentication mechanisms to reach sensitive resources sponsored threat actors alike.
+hosted on cloud services is a case in point.
 The Pervasiveness
+0098
 of Cobalt Strike
+10 Conclusion
+2021 State of the Threat: A Year in Review 52
 
- Microsoft: 92% Of Vulnerable Exchange Servers Are Now
-Patched, Mitigated
-https://www.zdnet.com/article/microsoft-92-of-vulnerable-
-exchange-servers-are-now-patched-mitigated/
-
-13
-
-Conclusion
-
- Justice Department Announces Court-Authorized Effort
-to Disrupt Exploitation of Microsoft Exchange Server
-Vulnerabilities
-https://www.justice.gov/usao-sdtx/pr/justice-department-
-announces-court-authorized-effort-disrupt-exploitation-microsoft
-
-26
-
- New Nobelium Activity
-https://msrc-blog.microsoft.com/2021/06/25/new-nobelium-
-activity/
-
-27
-
-28
-
- Russian State-Sponsored Advanced Persistent Threat Actor
-Compromises U.S. Government Targets
+1  R ansomware Evolution  14   Microsoft IOC Detection Tool for Exchange  26   New Nobelium Activity
+https://www.secureworks.com/research/ransomware-evolution Server Vulnerabilities  https://msrc-blog.microsoft.com/2021/06/25/new-nobelium-
+|                                                                       |     |     | https://us-cert.cisa.gov/ncas/current-activity/2021/03/06/   |     |     |     | activity/ |
+| --------------------------------------------------------------------- | --- | --- | ------------------------------------------------------------ | --- | --- | --- | --------- |
+| 01 Let2t er  AFvraodmdo nO Ruanrs oCmTwIOare Shuts Down and Releases  |     |     | microsoft-ioc-detection-tool-exchange-server-vulnerabilities |     |     |     |           |
+Decryption Keys  27   Russian State-Sponsored Advanced Persistent Threat Actor
+https://www.bleepingcomputer.com/news/security/avaddon- 15   Prometei Botnet Exploiting Microsoft Exchange  Compromises U.S. Government Targets
+ransomware-shuts-down-and-releases-decryption-keys/ Vulnerabilities   https://us-cert.cisa.gov/sites/default/files/Joint_CISA_FBI_CSA-
+|     |                      |         | https://www.cybereason.com/blog/prometei-botnet-exploiting- |     |     |     | AA20-296A__Russian_State_Sponsored_APT_Actor_Compromise_ |
+| --- | -------------------- | ------- | ----------------------------------------------------------- | --- | --- | --- | -------------------------------------------------------- |
+| Exe | c ut i v e   S u m m | a r y   |                                                             |     |     |     |                                                          |
+3    F . B .I.  D i re ct or  C o m pares Danger of Ransomware to 9/11  microsoft-exchange-vulnerabilities US_Government_Targets.pdf
+02
+and KeTyer rFoirn Tdhirneagts
+https://www.nytimes.com/2021/06/04/us/politics/ransomware- 16   Internet Crime Report 2020  28   Russian State-Sponsored Advanced Persistent Threat Actor
+cyberattacks-sept-11-fbi.html https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf  Compromises U.S. Government Targets
 https://us-cert.cisa.gov/sites/default/files/Joint_CISA_FBI_CSA-
-AA20-296A__Russian_State_Sponsored_APT_Actor_Compromise_
-US_Government_Targets.pdf
-
- Russian State-Sponsored Advanced Persistent Threat Actor
-Compromises U.S. Government Targets
-https://us-cert.cisa.gov/sites/default/files/Joint_CISA_FBI_CSA-
-AA20-296A__Russian_State_Sponsored_APT_Actor_Compromise_
-US_Government_Targets.pdf
-
-29
-
- Russian GRU Conducting Global Brute Force Campaign to
-Compromise Enterprise and Cloud Environments
-https://media.defense.gov/2021/Jul/01/2002753896/-1/-1/1/CSA_
-GRU_GLOBAL_BRUTE_FORCE_CAMPAIGN_UOO158036-21.PDF
-
-30   Update on Campaign Targeting Security Researchers
-https://blog.google/threat-analysis-group/update-campaign-
+4    Ransomware Attacks ‘Are Here to Stay,’ Commerce  17   Phishing Activity Trends Report  AA20-296A__Russian_State_Sponsored_APT_Actor_Compromise_
+| About  | t h e   R e p o | r t |     |     |     |     |     |
+| ------ | --------------- | --- | --- | --- | --- | --- | --- |
+03 S e c re t a ry  S ay s    https://docs.apwg.org/reports/apwg_trends_report_q1_2021.pdf US_Government_Targets.pdf
+https://www.politico.com/news/2021/06/06/ransomware-attacks-
+commerce-secretary-492005 18   Securing a Shifting Landscape: Corporate Perceptions of  29   Russian GRU Conducting Global Brute Force Campaign to
+|     |     |     | Nation-State Cyber-Threats   |     |     |     | Compromise Enterprise and Cloud Environments  |
+| --- | --- | --- | ---------------------------- | --- | --- | --- | --------------------------------------------- |
+Ran5s om A Twriackrbeo tR Aesmsaaulitn Ssh ows US Military Hackers’ Growing Reach   https://eiuperspectives.economist.com/technology-innovation/ https://media.defense.gov/2021/Jul/01/2002753896/-1/-1/1/CSA_
+https://www.wired.com/story/cyber-command-hackers-trickbot- securing-shifting-landscape-corporate-perceptions-nation-state- GRU_GLOBAL_BRUTE_FORCE_CAMPAIGN_UOO158036-21.PDF
+| 04 the Nu | m b e r   O n        | e   T hreat  |               |     |     |     |     |
+| --------- | -------------------- | ------------ | ------------- | --- | --- | --- | --- |
+|           | b ot ne t- p r ec ed | e n t/       | cyber-threats |     |     |     |     |
+for Most Organizations 30   Update on Campaign Targeting Security Researchers
+6   New Action To Combat Ransomware Ahead Of U.S. Elections   19   HAFNIUM Targeting Exchange Servers With 0-day Exploits  https://blog.google/threat-analysis-group/update-campaign-
 targeting-security-researchers/
-
-31
-
- Exclusive: Suspected North Korean Hackers Targeted COVID
-Vaccine Maker AstraZeneca
-https://www.reuters.com/article/idUKKBN2871A2
-
-32
-
- Detecting Cobalt Strike: Government-Sponsored
-Threat Groups
-https://www.secureworks.com/blog/detecting-cobalt-strike-
-government-sponsored-threat-groups
-
-33
-
- Microsoft Security Bulletin MS13-098 - Critical
-https://docs.microsoft.com/en-us/security-updates/
-securitybulletins/2013/ms13-098
-
-34
-
- What is a Stageless Payload Artifact?
-https://blog.cobaltstrike.com/2016/06/15/what-is-a-stageless-
+|     | https://blogs.microsoft.com/on-the-issues/2020/10/12/trickbot- |     | https://www.microsoft.com/security/blog/2021/03/02/hafnium- |     |     |     |     |
+| --- | -------------------------------------------------------------- | --- | ----------------------------------------------------------- | --- | --- | --- | --- |
+|     | ransomware-cyberthreat-us-elections/                           |     | targeting-exchange-servers/                                 |     |     |     |     |
+31   Exclusive: Suspected North Korean Hackers Targeted COVID
+| 05 Sca | n-a n d -E x p l o    | i t                                             |                                                                    |     |     |     | Vaccine Maker AstraZeneca  |
+| ------ | --------------------- | ----------------------------------------------- | ------------------------------------------------------------------ | --- | --- | --- | -------------------------- |
+|        | 7   W o rld 's  M o s | t  D angerous Malware Emotet Disrupted through  | 20   Operation Exchange Marauder: Active Exploitation of Multiple  |     |     |     |                            |
+Global Action  Zero-Day Microsoft Exchange Vulnerabilities  https://www.reuters.com/article/idUKKBN2871A2
+|     | https://www.europol.europa.eu/newsroom/news/ |     | https://www.volexity.com/blog/2021/03/02/active-exploitation-of- |     |     |     |     |
+| --- | -------------------------------------------- | --- | ---------------------------------------------------------------- | --- | --- | --- | --- |
+world%E2%80%99s-most-dangerous-malware-emotet-disrupted- microsoft-exchange-zero-day-vulnerabilities/ 32   Detecting Cobalt Strike: Government-Sponsored
+| Beyontdh roRuaghn-sgolobmalw-aactrioen,  |     |     |                                                                 |     |     |     | Threat Groups                                             |
+| ---------------------------------------- | --- | --- | --------------------------------------------------------------- | --- | --- | --- | --------------------------------------------------------- |
+|                                          |     |     | 21   Exchange Servers Under Siege From at Least 10 Apt Groups   |     |     |     | https://www.secureworks.com/blog/detecting-cobalt-strike- |
+the Broader Cybercrime  8    IcedID Stealer Man-in-the-browser Banking Trojan   https://www.welivesecurity.com/2021/03/10/exchange-servers- government-sponsored-threat-groups
+06
+| Landschtatpps:e// bClogo.cnytbienriunte.cso m/icedid-stealer-man-in-the-browser- |     |     | under-siege-10-apt-groups/ |     |     |     |     |
+| -------------------------------------------------------------------------------- | --- | --- | -------------------------- | --- | --- | --- | --- |
+To Floubarniskihng-trojan 33   Microsoft Security Bulletin MS13-098 - Critical
+|     |     |     | 22   SUPERNOVA Web Shell Deployment Linked to  |     |     |     | https://docs.microsoft.com/en-us/security-updates/ |
+| --- | --- | --- | ---------------------------------------------- | --- | --- | --- | -------------------------------------------------- |
+06 9   Top Routinely Exploited Vulnerabilities   SPIRAL Threat Group  securitybulletins/2013/ms13-098
+|     | https://us-cert.cisa.gov/ncas/current-activity/2021/07/28/top- |     | https://www.secureworks.com/blog/supernova-web-shell- |     |     |     |     |
+| --- | -------------------------------------------------------------- | --- | ----------------------------------------------------- | --- | --- | --- | --- |
+routinely-exploited-vulnerabilities deployment-linked-to-spiral-threat-group 34   What is a Stageless Payload Artifact?
+07 Identity is King https://blog.cobaltstrike.com/2016/06/15/what-is-a-stageless-
 payload-artifact/
-
-35
-
- Big Game Hunting: Now in Russia
-https://blog.group-ib.com/oldgremlin
-
-36
-
- Aggressor Script
-https://www.cobaltstrike.com/aggressor-script/index.html
-
-14
-
-15
-
- Microsoft IOC Detection Tool for Exchange
-Server Vulnerabilities
-https://us-cert.cisa.gov/ncas/current-activity/2021/03/06/
-microsoft-ioc-detection-tool-exchange-server-vulnerabilities
-
- Prometei Botnet Exploiting Microsoft Exchange
-Vulnerabilities
-https://www.cybereason.com/blog/prometei-botnet-exploiting-
-microsoft-exchange-vulnerabilities
-
-16
-
- Internet Crime Report 2020
-https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf
-
-17
-
- Phishing Activity Trends Report
-https://docs.apwg.org/reports/apwg_trends_report_q1_2021.pdf
-
-18
-
- Securing a Shifting Landscape: Corporate Perceptions of
-Nation-State Cyber-Threats
-https://eiuperspectives.economist.com/technology-innovation/
-securing-shifting-landscape-corporate-perceptions-nation-state-
-cyber-threats
-
-19
-
- HAFNIUM Targeting Exchange Servers With 0-day Exploits
-https://www.microsoft.com/security/blog/2021/03/02/hafnium-
-targeting-exchange-servers/
-
-20
-
- Operation Exchange Marauder: Active Exploitation of Multiple
-Zero-Day Microsoft Exchange Vulnerabilities
-https://www.volexity.com/blog/2021/03/02/active-exploitation-of-
-microsoft-exchange-zero-day-vulnerabilities/
-
-21
-
- Exchange Servers Under Siege From at Least 10 Apt Groups
-https://www.welivesecurity.com/2021/03/10/exchange-servers-
-under-siege-10-apt-groups/
-
-22
-
-23
-
-24
-
-25
-
- SUPERNOVA Web Shell Deployment Linked to
-SPIRAL Threat Group
-https://www.secureworks.com/blog/supernova-web-shell-
-deployment-linked-to-spiral-threat-group
-
- Highly Evasive Attacker Leverages SolarWinds Supply Chain
-to Compromise Multiple Global Victims With SUNBURST
-Backdoor
-https://www.fireeye.com/blog/threat-research/2020/12/evasive-
-attacker-leverages-solarwinds-supply-chain-compromises-with-
-sunburst-backdoor.html
-
- Analyzing Solorigate, the Compromised Dll File That Started
+|     | 10   What’s Behind The Explosion in Zero-Day Exploits?        |     | 23   Highly Evasive Attacker Leverages SolarWinds Supply Chain  |     |     |     |     |
+| --- | ------------------------------------------------------------- | --- | --------------------------------------------------------------- | --- | --- | --- | --- |
+|     | https://www.itpro.co.uk/security/zero-day-exploit/360447/why- |     | to Compromise Multiple Global Victims With SUNBURST             |     |     |     |     |
+zero-day-exploits-are-surging-on-an-unprecedented-scale Backdoor   35   Big Game Hunting: Now in Russia
+|     |     |     | https://www.fireeye.com/blog/threat-research/2020/12/evasive- |     |     |     | https://blog.group-ib.com/oldgremlin |
+| --- | --- | --- | ------------------------------------------------------------- | --- | --- | --- | ------------------------------------ |
+State-Sponsored Threats:
+|          | 1 1    R e m e d ia t i o n       |  S te p s  f or the Microsoft Exchange Server  | a tt a c k e r - l e ve | r a g e s - s o la rwinds-supply-chain-compromises-with- |     |     |     |
+| -------- | --------------------------------- | ---------------------------------------------- | ----------------------- | -------------------------------------------------------- | --- | --- | --- |
+| 0087 Tar | g et e d ln  ae rna bd i  iFt ioe | sc  u s e d                                    |                         |                                                          |     |     |     |
+Vu l su n b u r s t - b a c k d o o r. h t m l 36  A ggressor Script
+https://unit42.paloaltonetworks.com/remediation-steps-for-the- https://www.cobaltstrike.com/aggressor-script/index.html
+|     | microsoft-exchange-server-vulnerabilities/ |     | 24   Analyzing Solorigate, the Compromised Dll File That Started  |     |     |     |     |
+| --- | ------------------------------------------ | --- | ----------------------------------------------------------------- | --- | --- | --- | --- |
 a Sophisticated Cyberattack, and how Microsoft Defender
 Helps Protect Customers
-https://www.microsoft.com/security/blog/2020/12/18/analyzing-
-solorigate-the-compromised-dll-file-that-started-a-sophisticated-
-cyberattack-and-how-microsoft-defender-helps-protect/
-
- Press Briefing by Press Secretary Jen Psaki and Deputy
-National Security Advisor for Cyber and Emerging
-Technology Anne Neuberger, February 17, 2021
-https://www.whitehouse.gov/briefing-room/press-
-briefings/2021/02/17/press-briefing-by-press-secretary-jen-psaki-
+The12  Pe Mrivcarossiovfet: n9e2%s sO f  Vulnerable Exchange Servers Are Now
+| 0098    | P a t c h e d ,  M i                                       | t ig a t e d                                        | h tt p s : // w w w .m                                       | ic r o so f t .c o m / s e c u ri    | t y / b l o g / 2 0 2 0 / 1 2 / 1 8 /a  | n a l y z in g -  |     |
+| ------- | ---------------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------ | --------------------------------------- | ----------------- | --- |
+| of Cobh | at pl ts  :/S/ twr iw k.e                                  |                                                     | so l o ri g a te - th                                        | e- c o m p r o m is e d - d ll -fi l | e - t h a t -s t a rt e d - a - s o p h | is t i c a te d - |     |
+|         | t w z                                                      | d ne t . c o m /article/microsoft-92-of-vulnerable- |                                                              |                                      |                                         |                   |     |
+|         | exchange-servers-are-now-patched-mitigated/                |                                                     | cyberattack-and-how-microsoft-defender-helps-protect/        |                                      |                                         |                   |     |
+|         | 13   Justice Department Announces Court-Authorized Effort  |                                                     | 25   Press Briefing by Press Secretary Jen Psaki and Deputy  |                                      |                                         |                   |     |
+| Conclut | os   iD oi sn r u p t   E                                  | x p l oitation of Microsoft Exchange Server         | N a t io n a l  S e                                          | c u ri t y  A d v i s o r  f o r   C | y b e r  a n d  E m e rg i ng           |                   |     |
+10
+|     | V u l n e r a b i li t i                                         | e s    | Te c h n o l o g y                                                |  A n n e   N e u b e r g e r ,  F | e b r u a ry   17 ,  20 2 1    |     |     |
+| --- | ---------------------------------------------------------------- | ------ | ----------------------------------------------------------------- | --------------------------------- | ------------------------------ | --- | --- |
+|     | https://www.justice.gov/usao-sdtx/pr/justice-department-         |        | https://www.whitehouse.gov/briefing-room/press-                   |                                   |                                |     |     |
+|     | announces-court-authorized-effort-disrupt-exploitation-microsoft |        | briefings/2021/02/17/press-briefing-by-press-secretary-jen-psaki- |                                   |                                |     |     |
 and-deputy-national-security-advisor-for-cyber-and-emerging-
 technology-anne-neuberger-february-17-2021/
+2021 State of the Threat: A Year in Review 53
 
-53
-
-2021 State of the Threat: A Year in Review01
-
-02
-
-03
-
-04
-
-05
-
-06
-
-06
-
-07
-
-08
-07
-
-09
-08
-
-Letter From Our CTIO
-
+01 Letter From Our CTIO
 Executive Summary
+02
 and Key Findings
-
-About the Report
-
+03 About the Report
 Ransomware Remains
-the Number One Threat
-for Most Organizations
-
 About Secureworks
-
+04 the Number One Threat
+for Most Organizations
 Secureworks® (NASDAQ: SCWX) is a global cybersecurity leader that protects customer
-
-Scan-and-Exploit
-
+05 Scan-and-Exploit
 progress with Secureworks® Taegis™, a cloud-native security analytics platform built on 20+ years
-
 of real-world threat intelligence and research, improving customers’ ability to detect advanced
-
-threats, streamline and collaborate on investigations, and automate the right actions.
-
 Beyond Ransomware,
-the Broader Cybercrime
+thteh Brreoaadtesr ,C sytbreercarimmel ine and collaborate on investigations, and automate the right actions.
+06
 Landscape Continues
 To Flourish
-
-Identity is King
-
+06
+07 Identity is King
 For more information,call 1-877-838-7947 to speak to a
-
 State-Sponsored Threats:
-Targeted and Focused
-
-Secureworks security specialist or visit secureworks.com
-
+0087 Ta S rg e e c t u ed re a w n o d r F k o s c s u e s c e u d rity specialist or visit secureworks.com
 The Pervasiveness
+0098
 of Cobalt Strike
-
-10
-
-Conclusion
-
+10 Conclusion
 Availability varies by region. ©2021 SecureWorks, Inc. All rights reserved.
+2021 State of the Threat: A Year in Review 54
 
-54
-
-2021 State of the Threat: A Year in Review
-
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-16", "model": "gemini-3.5-flash-lite"} -->
