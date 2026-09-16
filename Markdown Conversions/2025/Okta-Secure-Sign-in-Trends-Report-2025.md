@@ -1,29 +1,41 @@
 # The Secure Sign-in Trends Report 2025
 
-An inside look at MFA adoption and the authenticators that influence it
+### An inside look at MFA adoption and the authenticators that influence it
 
-Fei Liu
-Principal Emerging Technology Researcher
+**Fei Liu**  
+*Principal Emerging Technology Researcher*  
 
-0 9 D E C E M B E R 2 0 2 5
+09 DECEMBER 2025
+
+---
 
 ## Table of Contents
-- [User MFA adoption continues to climb](#user-mfa-adoption-continues-to-climb)
-- [AMER leads in MFA adoption rate, APAC posts the highest growth](#amer-leads-in-mfa-adoption-rate-apac-posts-the-highest-growth)
-- [Tech tops MFA user adoption rates, retail posts the highest MFA growth](#tech-tops-mfa-user-adoption-rates-retail-posts-the-highest-mfa-growth)
-- [Smaller organizations show higher adoption rates](#smaller-organizations-show-higher-adoption-rates)
-- [Passwords reign, but phishing-resistant authenticators gain ground](#passwords-reign-but-phishing-resistant-authenticators-gain-ground)
-- [Security versus user experience is a false choice](#security-versus-user-experience-is-a-false-choice)
-- [Policy, proof, and the new security baseline](#policy-proof-and-the-new-security-baseline)
-- [5 tips to improve your authentication strategy](#5-tips-to-improve-your-authentication-strategy)
-- [Methodology: About the data](#methodology-about-the-data)
-- [About the author](#about-the-author)
+- [Executive Summary](#executive-summary)
+- [Key Findings](#key-findings)
+- [User MFA Adoption Continues to Climb](#user-mfa-adoption-continues-to-climb)
+- [AMER Leads in MFA Adoption Rate, APAC Posts the Highest Growth](#amer-leads-in-mfa-adoption-rate-apac-posts-the-highest-growth)
+- [Tech Tops MFA User Adoption Rates, Retail Posts the Highest MFA Growth](#tech-tops-mfa-user-adoption-rates-retail-posts-the-highest-mfa-growth)
+- [Smaller Organizations Show Higher Adoption Rates](#smaller-organizations-show-higher-adoption-rates)
+- [Passwords Reign, but Phishing-Resistant Authenticators Gain Ground](#passwords-reign-but-phishing-resistant-authenticators-gain-ground)
+- [Security Versus User Experience Is a False Choice](#security-versus-user-experience-is-a-false-choice)
+- [Policy, Proof, and the New Security Baseline](#policy-proof-and-the-new-security-baseline)
+- [5 Tips to Improve Your Authentication Strategy](#5-tips-to-improve-your-authentication-strategy)
+- [Methodology: About the Data](#methodology-about-the-data)
+- [About the Author](#about-the-author)
+
+---
+
+## Executive Summary
 
 The enterprise security landscape is characterized by two contrasting trends, according to Okta’s annual study of billions of anonymized authentications. Organizations are maintaining the steady adoption of traditional defenses while rapidly shifting toward advanced security standards.
 
 The analysis reveals that while overall multi-factor authentication (MFA) adoption within the workforce context (employees accessing apps and tools) has reached 70%, organizations are also making a critical shift: The adoption of phishing-resistant, passwordless authentication has grown by 63%, rising from 8.6% to 14.0% in one year.
 
 The findings also show that these phishing-resistant methods are demonstrably faster and more user-friendly than less secure authenticators, upending the idea that security comes at the expense of user experience.
+
+---
+
+## Key Findings
 
 Key findings include:
 
@@ -33,21 +45,21 @@ Key findings include:
 - The technology sector leads MFA adoption (87%), while retail saw the biggest growth (up 9 percentage points).
 - The Asia Pacific region saw the strongest year-over-year growth, with its MFA adoption rate increasing 7 percentage points (from 61% to 68%).
 
-(Note: All data and conclusions in the report are based on analysis of anonymized Okta Workforce Identity data and workforce use cases unless otherwise noted. See the methodology at the end of this article for more information.)
+*(Note: All data and conclusions in the report are based on analysis of anonymized Okta Workforce Identity data and workforce use cases unless otherwise noted. See the methodology at the end of this article for more information.)*
 
-<a id="user-mfa-adoption-continues-to-climb"></a>
-## User MFA adoption continues to climb
+---
 
-![Chart showing monthly user-level MFA adoption rates for Okta Workforce Identity customers]
+## User MFA Adoption Continues to Climb
 
-The data reflects monthly user-level MFA adoption rates exclusively for Okta Workforce Identity customers, who use the platform to secure access for their employees, contractors, and partners. Data from Okta Customer Identity, customer-facing use cases, and regulated environments is excluded.
+![Chart illustrating monthly user-level MFA adoption rates from October 2019 to January 2025 exclusively for Okta Workforce Identity customers, demonstrating a steady upward climb reaching 70% of users. Data from Okta Customer Identity, customer-facing use cases, and regulated environments is excluded.]
 
 Overall, MFA adoption reached 70% of users as of January 2025, reflecting a mostly steady annual increase since 2020. This upward trend in adoption suggests organizations are increasingly recognizing the need for additional authentication security.
 
-<a id="amer-leads-in-mfa-adoption-rate-apac-posts-the-highest-growth"></a>
-## AMER leads in MFA adoption rate, APAC posts the highest growth
+---
 
-![Chart showing MFA user adoption rates in AMER, APAC, and EMEA]
+## AMER Leads in MFA Adoption Rate, APAC Posts the Highest Growth
+
+![Chart depicting MFA user adoption rates broken down across North, Central, and South America (AMER); Asia-Pacific (APAC); and Europe, Middle East, and Africa (EMEA) over the past three years.]
 
 We observed consistent rates of MFA adoption growth over the last three years across the three regions studied: North, Central, and South America (AMER); Asia-Pacific (APAC); Europe, Middle East, and Africa (EMEA).
 
@@ -55,34 +67,36 @@ APAC saw the strongest year-over-year growth: Its adoption rate increased 7 perc
 
 This regional growth likely reflects a stronger regulatory focus and rising security awareness across the APAC region, where governments and enterprises are accelerating digital transformation initiatives that emphasize identity protection and modern authentication.
 
-<a id="tech-tops-mfa-user-adoption-rates-retail-posts-the-highest-mfa-growth"></a>
-## Tech tops MFA user adoption rates, retail posts the highest MFA growth
+---
 
-![Chart showing MFA user adoption rates across industries]
+## Tech Tops MFA User Adoption Rates, Retail Posts the Highest MFA Growth
+
+![Bar chart displaying MFA user adoption rates across various industries listed in descending order by adoption rate, led by technology and trailing with transportation and warehousing.]
 
 MFA adoption rates are relatively consistent across industries, with the majority falling within the 60% to 80% adoption range. Outliers include transportation and warehousing (42%) and retail (52%) at the low end of adoption and technology at the high end (87%).
 
 The industries with the largest rate of MFA growth year over year included:
-
-- Retail: from 43% to 52%
-- Arts, entertainment, and recreation: from 63% to 68%
-- Healthcare and pharmaceuticals: from 70% to 74%
+- **Retail:** from 43% to 52%
+- **Arts, entertainment, and recreation:** from 63% to 68%
+- **Healthcare and pharmaceuticals:** from 70% to 74%
 
 The retail sector experienced the largest growth of all industries, rising 9 percentage points year over year. It was also one of three industries targeted by cybercriminal group Scattered Spider (a.k.a. Scatter Swine, Muddled Libra) in early 2025. We expect further MFA adoption by the retail sector in the wake of these events.
 
-<a id="smaller-organizations-show-higher-adoption-rates"></a>
-## Smaller organizations show higher adoption rates
+---
 
-![Chart showing MFA user adoption rates across organizations of different sizes]
+## Smaller Organizations Show Higher Adoption Rates
+
+![Chart comparing MFA user adoption rates across organizations segmented by employee count, highlighting an inverse correlation between organization size and MFA adoption rates.]
 
 When we view MFA adoption by organization size, we continue to observe an inverse correlation between the number of employees and the rate of MFA adoption: The larger the organization, the lower the adoption rate.
 
-That said, we observed higher MFA adoption rates since 2024 in organizations with 1,250 to 3,999 employees (from 74% to 77%) and 4,000 to 1,9999 employees (from 67% to 71%). This growth suggests that the tide might be turning, especially as large organizations increasingly adopt centralized identity management platforms.
+That said, we observed higher MFA adoption rates since 2024 in organizations with 1,250 to 3,999 employees (from 74% to 77%) and 4,000 to 19,999 employees (from 67% to 71%). This growth suggests that the tide might be turning, especially as large organizations increasingly adopt centralized identity management platforms.
 
-<a id="passwords-reign-but-phishing-resistant-authenticators-gain-ground"></a>
-## Passwords reign, but phishing-resistant authenticators gain ground
+---
 
-![Chart showing user adoption rates for authenticators available with Okta Workforce Identity]
+## Passwords Reign, but Phishing-Resistant Authenticators Gain Ground
+
+![Chart showing individual user adoption rates for authenticators available with Okta Workforce Identity, indicating passwords remain highest, followed by various factors where total sum exceeds 100% due to multi-authenticator usage.]
 
 While passwords continue to have the highest adoption rate by a wide margin, we see more secure forms of authentication making promising gains.
 
@@ -94,12 +108,13 @@ Adoption of FastPass — which uses public key cryptography to offer a secure, p
 
 Usage of low-assurance SMS fell from 17.5% to 15.3%, and overall password usage decreased from 95.1% to 93.0% of users.
 
-![Chart showing MFA user adoption rates for FastPass, WebAuthn, and Smart Card combined]
+![Chart showing combined MFA user adoption rates for FastPass, WebAuthn, and Smart Card combined from 8.6% to 14.0%, counting each user only once even if multiple phishing-resistant authenticators are utilized.]
 
-<a id="security-versus-user-experience-is-a-false-choice"></a>
-## Security versus user experience is a false choice
+---
 
-![Matrix showing authenticator usability, security, and adoption]
+## Security Versus User Experience Is a False Choice
+
+![Bubble matrix mapping authenticator usability versus security scores across password, email, hardware token, push, security question, SMS, soft token, voice, FastPass, and WebAuthn as of January 2025. Bubble size reflects authenticator adoption rate on a scale of 0% to 100%.]
 
 "Security introduces friction" is no longer a foregone conclusion. Analysis of authentication data contradicts this outdated industry assumption by showing that phishing-resistant methods can be more secure and more user-friendly.
 
@@ -115,8 +130,9 @@ Authenticators such as FIDO2 WebAuthn and FastPass perform well by combining mul
 
 Users are starting to take note, with some ditching the password altogether. Our study found that in January 2025, 7% of users did not use a password for any sign-ins, validating that enterprise-scale password elimination is achievable today. While the number may seem small, it demonstrates exciting potential: Passwordless for enterprises is possible now.
 
-<a id="policy-proof-and-the-new-security-baseline"></a>
-## Policy, proof, and the new security baseline
+---
+
+## Policy, Proof, and the New Security Baseline
 
 Our findings confirm that the industry has passed the point of treating MFA as an optional enhancement. It is critical for businesses to stay secure. Given the success rate of social engineering and phishing campaigns, the accelerated adoption of phishing-resistant authentication methods is a necessary market response.
 
@@ -126,19 +142,21 @@ Policy can be a powerful driver of change. For example, Okta's mandatory MFA pol
 
 Phishing-resistant authentication is secure, user-friendly, and demonstrably achievable. It is critical for protecting organizations against today's threats while reducing user friction.
 
-<a id="5-tips-to-improve-your-authentication-strategy"></a>
-## 5 tips to improve your authentication strategy
+---
+
+## 5 Tips to Improve Your Authentication Strategy
 
 To successfully navigate this security transformation, leaders must transition from discussing best practices to mandating new standards. Organizations should focus on these requirements:
 
-- **Prioritize phishing resistance**: Mandate phishing-resistant MFA for all sensitive access, while eliminating low-assurance methods (like SMS) from all sign-on policies.
-- **Elevate MFA as a risk metric**: Treat the adoption of MFA, particularly phishing-resistant MFA, as a C-suite and board-level risk metric, enabling visibility and accountability for organizational security posture.
-- **Adopt a Zero Trust framework**: Shift access control to a per-session, least-privilege basis, dynamically evaluating the user, the device's posture, and the network context at the moment of access and throughout the session.
-- **Secure the full user lifecycle**: Apply phishing-resistant authentication methods to user enrollment and account recovery flows to prevent attackers from using these entry points for account takeover.
-- **Plan for password minimization**: Develop a clear, long-term strategic plan to phase out the reliance on passwords as a primary factor across the enterprise.
+1. **Prioritize phishing resistance:** Mandate phishing-resistant MFA for all sensitive access, while eliminating low-assurance methods (like SMS) from all sign-on policies.
+2. **Elevate MFA as a risk metric:** Treat the adoption of MFA, particularly phishing-resistant MFA, as a C-suite and board-level risk metric, enabling visibility and accountability for organizational security posture.
+3. **Adopt a Zero Trust framework:** Shift access control to a per-session, least-privilege basis, dynamically evaluating the user, the device's posture, and the network context at the moment of access and throughout the session.
+4. **Secure the full user lifecycle:** Apply phishing-resistant authentication methods to user enrollment and account recovery flows to prevent attackers from using these entry points for account takeover.
+5. **Plan for password minimization:** Develop a clear, long-term strategic plan to phase out the reliance on passwords as a primary factor across the enterprise.
 
-<a id="methodology-about-the-data"></a>
-## Methodology: About the data
+---
+
+## Methodology: About the Data
 
 The study is based on data from Okta Workforce Identity as of January 2025, with the exception of the MFA user adoption rate over time, which extends from October 2019 to January 2025.
 
@@ -152,12 +170,17 @@ All user adoption rate metrics are determined by the percentage of users who sig
 
 Unless otherwise noted, this analysis focuses exclusively on Okta Workforce Identity data and workforce use cases. It does not include Okta Customer Identity data.
 
-<a id="about-the-author"></a>
-## About the author
+---
 
-**Fei Liu**
-Principal Emerging Technology Researcher
+## About the Author
+
+**Fei Liu**  
+*Principal Emerging Technology Researcher*
 
 Fei Liu is an emerging technology researcher, currently working with Okta CEO Todd McKinnon. Fei uses her research and technical skills to help Todd stay apprised of relevant technology trends and developments. Prior to joining Okta, she held various research and strategy roles at Huawei and IBM. Over the years, her research interests have spanned from semiconductors to identity, through to security. She holds a Ph.D. in electrical engineering from the University of California, Los Angeles, an MBA from New York University, and a B.S. in electronic engineering from Tsinghua University.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "gemini-3.1-flash-lite-preview"} -->
+---
+
+**SHARE**
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-15", "model": "gemini-3.8-flash"} -->
