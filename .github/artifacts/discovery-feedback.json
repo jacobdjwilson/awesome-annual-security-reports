@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "last_updated": "2026-09-14T18:01:01.474105Z",
-  "last_learner_run": "2026-09-14T18:01:01.474105Z",
+  "last_updated": "2026-09-21T18:07:48.231295Z",
+  "last_learner_run": "2026-09-21T18:07:48.231295Z",
   "total_feedback_events": 12,
   "outcome_counts": {
     "true_positive": 2,
@@ -43,8 +43,8 @@
     "score_threshold_delta": 0,
     "validation_threshold": 0.75,
     "gemini_rejection_patterns": [],
-    "summary": "No triage outcomes, false positives, or closure comments were provided in the dataset. Consequently, no scoring adjustments, blocklists, or pattern modifications are necessary at this time.",
-    "last_gemini_analysis": "2026-09-14T18:01:01.474105Z"
+    "summary": "No triage outcomes, false positives, or closure comments were provided in the dataset. Consequently, no heuristic scoring adjustments, blocklist additions, or threshold modifications are recommended at this time.",
+    "last_gemini_analysis": "2026-09-21T18:07:48.231295Z"
   },
   "overrides": {
     "domain_blocklist": [],
