@@ -2,11 +2,11 @@
   "schema_version": "2.0",
   "last_updated": "2026-09-21T18:07:48.231295Z",
   "last_learner_run": "2026-09-21T18:07:48.231295Z",
-  "total_feedback_events": 12,
+  "total_feedback_events": 14,
   "outcome_counts": {
     "true_positive": 2,
     "false_positive": 5,
-    "duplicate": 2,
+    "duplicate": 4,
     "mismatch": 3
   },
   "triage_log": [],
@@ -172,6 +172,26 @@
       "org": "ENEA",
       "url": "https://cyberdefenseawards.com/global-infosec-awards-for-2026-winners-by-category/",
       "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-28T13:17:38.693205Z",
+      "issue_number": 1810,
+      "issue_title": "[Report Discovery] SANS 2026 \u2014 cyber threat intelligence survey",
+      "org": "SANS",
+      "url": "https://cf-assets.www.cloudflare.com/slt3lc6tev37/3cSPNEMGs9ayabiOocz06I/19bf4edac8cc1bd8a002b3129280cc40/2026_Cloudflare_Security_Signals_Report.pdf",
+      "outcome": "duplicate",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-28T13:23:18.999186Z",
+      "issue_number": 1806,
+      "issue_title": "[Report Discovery] Dragos 2026 \u2014 Year In Review Report",
+      "org": "Dragos",
+      "url": "https://www.enisa.europa.eu/sites/default/files/publications/ENISA%20Threat%20Landscape%202023.pdf",
+      "outcome": "duplicate",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
