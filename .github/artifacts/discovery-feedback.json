@@ -2,11 +2,11 @@
   "schema_version": "2.0",
   "last_updated": "2026-09-28T19:33:06.245957Z",
   "last_learner_run": "2026-09-28T19:33:06.245957Z",
-  "total_feedback_events": 14,
+  "total_feedback_events": 15,
   "outcome_counts": {
     "true_positive": 2,
     "false_positive": 5,
-    "duplicate": 4,
+    "duplicate": 5,
     "mismatch": 3
   },
   "triage_log": [],
@@ -191,6 +191,16 @@
       "issue_title": "[Report Discovery] Dragos 2026 \u2014 Year In Review Report",
       "org": "Dragos",
       "url": "https://www.enisa.europa.eu/sites/default/files/publications/ENISA%20Threat%20Landscape%202023.pdf",
+      "outcome": "duplicate",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-10-01T14:17:22.153904Z",
+      "issue_number": 1822,
+      "issue_title": "[Report Discovery] Hypr 2026 \u2014 State of Passwordless Security",
+      "org": "Hypr",
+      "url": "https://www.vestnik-sviazy.ru/upload/iblock/d16/d16e622f151d562cb6761a1100b14a84.pdf",
       "outcome": "duplicate",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
