@@ -2,9 +2,9 @@
   "schema_version": "2.0",
   "last_updated": "2026-09-28T19:33:06.245957Z",
   "last_learner_run": "2026-09-28T19:33:06.245957Z",
-  "total_feedback_events": 15,
+  "total_feedback_events": 16,
   "outcome_counts": {
-    "true_positive": 2,
+    "true_positive": 3,
     "false_positive": 5,
     "duplicate": 5,
     "mismatch": 3
@@ -202,6 +202,16 @@
       "org": "Hypr",
       "url": "https://www.vestnik-sviazy.ru/upload/iblock/d16/d16e622f151d562cb6761a1100b14a84.pdf",
       "outcome": "duplicate",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-10-01T18:22:46.394199Z",
+      "issue_number": 1819,
+      "issue_title": "[Report Discovery] Cisco 2026 \u2014 Data Privacy Benchmark Study",
+      "org": "Cisco",
+      "url": "https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/03/CSA_whitepaper_AI-security-governance-ownership-crisis-shadow-AI-systemic-risk-v1-csa-styled.pdf",
+      "outcome": "true_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
