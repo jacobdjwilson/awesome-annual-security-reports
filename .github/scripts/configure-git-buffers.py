@@ -31,6 +31,7 @@ def main() -> int:
         ("http.postBuffer", "524288000"),
         ("http.lowSpeedLimit", "0"),
         ("http.lowSpeedTime", "300"),
+        ("http.version", "HTTP/1.1"),
     ]
 
     for key, val in settings:

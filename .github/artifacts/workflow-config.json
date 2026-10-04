@@ -62,7 +62,8 @@
         "poppler-utils",
         "tesseract-ocr",
         "libtesseract-dev",
-        "libleptonica-dev"
+        "libleptonica-dev",
+        "ghostscript"
       ],
       "python_packages": [
         "markitdown[pdf,ocr]",
@@ -76,15 +77,18 @@
       "min_text_length": 100,
       "max_pdf_chars": 500000,
       "max_polish_input_chars": 60000,
-      "max_fallback_pdf_size_mb": 20,
+      "max_fallback_pdf_size_mb": 100,
+      "compress_threshold_mb": 30,
+      "_compression_comment": "PDFs exceeding compress_threshold_mb are downsampled via Ghostscript before fallback upload to Gemini File API to reduce latency and token usage.",
       "prompt_path": ".github/ai-prompts/pdf-to-markdown-prompt.md",
       "fallback_extraction_prompt_path": ".github/ai-prompts/pdf-fallback-extraction-prompt.md",
       "refresh_batch_limit": 10,
       "quota_retry_delays_seconds": {
-        "1": 14400,
-        "2": 28800
+        "1": 300,
+        "2": 900
       },
-      "max_quota_retry_attempts": 3
+      "max_quota_retry_attempts": 3,
+      "_quota_retry_comment": "Short backoff cooldowns (5m, 15m) for transient rate limits to prevent runner hangs or exceeding job ceilings. Caps total retries at 3."
     },
     "pull_request": {
       "branch_prefix": "security-reports-update-",
