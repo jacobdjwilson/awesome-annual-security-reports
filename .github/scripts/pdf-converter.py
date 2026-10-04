@@ -24,6 +24,9 @@ import json
 import hashlib
 import argparse
 import time
+import shutil
+import subprocess
+import tempfile
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime
@@ -143,7 +146,8 @@ class ConfigLoader:
         self.min_text_length:        int = conv.get("min_text_length",         100)
         self.max_pdf_chars:          int = conv.get("max_pdf_chars",       500_000)
         self.max_polish_input_chars: int = conv.get("max_polish_input_chars", 60_000)
-        self.max_fallback_pdf_size_mb: int = conv.get("max_fallback_pdf_size_mb", 20)
+        self.max_fallback_pdf_size_mb: int = conv.get("max_fallback_pdf_size_mb", 100)
+        self.compress_threshold_mb:    int = conv.get("compress_threshold_mb", 30)
         self.conversion_prompt_path: str = conv.get(
             "prompt_path", self.DEFAULT_CONVERSION_PROMPT_PATH
         )
@@ -230,6 +234,71 @@ def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str
 
     print("WARNING: No AI models available — proceeding with markitdown only")
     return False, None
+
+
+def compress_pdf_with_ghostscript(pdf_path: str, threshold_mb: int = 30) -> Tuple[str, bool]:
+    """
+    Downsamples a large PDF using Ghostscript (/ebook, 150 DPI) to reduce upload latency
+    and token consumption if its size exceeds threshold_mb.
+    Returns: (effective_pdf_path, is_temporary)
+    If Ghostscript is not available or compression fails/does not reduce size,
+    returns the original pdf_path and False.
+    """
+    path_obj = Path(pdf_path)
+    if not path_obj.exists():
+        return pdf_path, False
+
+    file_size_mb = path_obj.stat().st_size / (1024 * 1024)
+    if file_size_mb <= threshold_mb:
+        return pdf_path, False
+
+    gs_bin = shutil.which("gs") or shutil.which("gswin64c") or shutil.which("gswin32c")
+    if not gs_bin:
+        print(f"  ⚠ Ghostscript not found in PATH — skipping downsampling for {file_size_mb:.1f}MB PDF")
+        return pdf_path, False
+
+    tmp_file = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
+    tmp_path = tmp_file.name
+    tmp_file.close()
+
+    try:
+        print(f"  → Downsampling {file_size_mb:.1f}MB PDF via Ghostscript (threshold: {threshold_mb}MB)...")
+        cmd = [
+            gs_bin,
+            "-sDEVICE=pdfwrite",
+            "-dCompatibilityLevel=1.4",
+            "-dPDFSETTINGS=/ebook",
+            "-dNOPAUSE",
+            "-dQUIET",
+            "-dBATCH",
+            f"-sOutputFile={tmp_path}",
+            str(pdf_path),
+        ]
+        res = subprocess.run(cmd, capture_output=True, text=True)
+        if res.returncode != 0:
+            print(f"  ⚠ Ghostscript failed (code {res.returncode}): {res.stderr[:120]}")
+            if Path(tmp_path).exists():
+                Path(tmp_path).unlink(missing_ok=True)
+            return pdf_path, False
+
+        new_size_mb = Path(tmp_path).stat().st_size / (1024 * 1024)
+        if new_size_mb < file_size_mb and Path(tmp_path).stat().st_size > 0:
+            print(f"  ✓ Ghostscript compressed PDF: {file_size_mb:.1f}MB → {new_size_mb:.1f}MB")
+            return tmp_path, True
+        else:
+            print(f"  ℹ Compressed PDF ({new_size_mb:.1f}MB) not smaller than original ({file_size_mb:.1f}MB)")
+            if Path(tmp_path).exists():
+                Path(tmp_path).unlink(missing_ok=True)
+            return pdf_path, False
+
+    except Exception as e:
+        print(f"  ⚠ Ghostscript downsampling error: {str(e)[:120]}")
+        if Path(tmp_path).exists():
+            try:
+                Path(tmp_path).unlink(missing_ok=True)
+            except Exception:
+                pass
+        return pdf_path, False
 
 
 # ====================
@@ -433,93 +502,107 @@ class MarkdownPolisher:
             print(f"  ! PDF too large for fallback ({file_size_mb:.1f}MB > {self.config.max_fallback_pdf_size_mb}MB)")
             return None, None
 
+        upload_path, is_temp = compress_pdf_with_ghostscript(pdf_path, self.config.compress_threshold_mb)
+
         ladder = [self.config.primary_model, self.config.secondary_model, self.config.tertiary_model]
         eligible_models = [m for m in filter(None, ladder) if self.config.get_model_rank(m) > min_rank]
         if not eligible_models:
             print(f"  ⊘ No AI models in fallback ladder exceed required minimum rank {min_rank} for direct extraction")
+            if is_temp and Path(upload_path).exists():
+                try:
+                    Path(upload_path).unlink(missing_ok=True)
+                except Exception:
+                    pass
             return None, None
 
         fallback_prompt = self._load_prompt(self.config.fallback_prompt_path).strip()
         prompt = f"{fallback_prompt}\n\nOrganization: {org}\nReport Title: {title}\nYear: {year}\n"
         
-        for model_name in eligible_models:
-            print(f"  → Uploading PDF to Gemini API ({model_name})...")
-            try:
-                if USE_NEW_SDK:
-                    file_obj = self.client.files.upload(file=str(pdf_path))
-                    
-                    while file_obj.state.name == "PROCESSING":
-                        print("  ! Waiting for file processing...")
-                        time.sleep(2)
-                        file_obj = self.client.files.get(name=file_obj.name)
+        try:
+            for model_name in eligible_models:
+                print(f"  → Uploading PDF to Gemini API ({model_name})...")
+                try:
+                    if USE_NEW_SDK:
+                        file_obj = self.client.files.upload(file=str(upload_path))
                         
-                    if file_obj.state.name == "FAILED":
-                        print("  ! File processing failed on Gemini.")
-                        continue
+                        while file_obj.state.name == "PROCESSING":
+                            print("  ! Waiting for file processing...")
+                            time.sleep(2)
+                            file_obj = self.client.files.get(name=file_obj.name)
+                            
+                        if file_obj.state.name == "FAILED":
+                            print("  ! File processing failed on Gemini.")
+                            continue
+                            
+                        response = self.client.models.generate_content(
+                            model=model_name,
+                            contents=[file_obj, prompt],
+                            config=types.GenerateContentConfig(
+                                temperature=self._temperature,
+                                top_p=self._top_p,
+                                top_k=self._top_k,
+                                max_output_tokens=self._max_out_tokens,
+                            ),
+                        )
+                        self.client.files.delete(name=file_obj.name)
                         
-                    response = self.client.models.generate_content(
-                        model=model_name,
-                        contents=[file_obj, prompt],
-                        config=types.GenerateContentConfig(
-                            temperature=self._temperature,
-                            top_p=self._top_p,
-                            top_k=self._top_k,
-                            max_output_tokens=self._max_out_tokens,
-                        ),
-                    )
-                    self.client.files.delete(name=file_obj.name)
-                    
-                else:
-                    file_obj = genai.upload_file(path=str(pdf_path))
-                    
-                    while file_obj.state.name == "PROCESSING":
-                        print("  ! Waiting for file processing...")
-                        time.sleep(2)
-                        file_obj = genai.get_file(file_obj.name)
+                    else:
+                        file_obj = genai.upload_file(path=str(upload_path))
                         
-                    if file_obj.state.name == "FAILED":
-                        print("  ! File processing failed on Gemini.")
-                        continue
-                        
-                    model = genai.GenerativeModel(model_name)
-                    response = model.generate_content(
-                        [file_obj, prompt],
-                        generation_config={
-                            "temperature":       self._temperature,
-                            "top_p":             self._top_p,
-                            "top_k":             self._top_k,
-                            "max_output_tokens": self._max_out_tokens,
-                        },
-                    )
-                    genai.delete_file(file_obj.name)
+                        while file_obj.state.name == "PROCESSING":
+                            print("  ! Waiting for file processing...")
+                            time.sleep(2)
+                            file_obj = genai.get_file(file_obj.name)
+                            
+                        if file_obj.state.name == "FAILED":
+                            print("  ! File processing failed on Gemini.")
+                            continue
+                            
+                        model = genai.GenerativeModel(model_name)
+                        response = model.generate_content(
+                            [file_obj, prompt],
+                            generation_config={
+                                "temperature":       self._temperature,
+                                "top_p":             self._top_p,
+                                "top_k":             self._top_k,
+                                "max_output_tokens": self._max_out_tokens,
+                            },
+                        )
+                        genai.delete_file(file_obj.name)
 
-                text = response.text.strip() if response.text else ""
-                if not text:
+                    text = response.text.strip() if response.text else ""
+                    if not text:
+                        continue
+
+                    if text.startswith("```markdown"):
+                        text = text[len("```markdown"):].lstrip()
+                    if text.startswith("```"):
+                        text = text[3:].lstrip()
+                    if text.endswith("```"):
+                        text = text[:-3].rstrip()
+                    
+                    self._active_model = model_name
+                    return text.strip(), model_name
+
+                except Exception as e:
+                    print(f"  ! Model {model_name} extraction error: {str(e)[:120]}")
+                    try:
+                        if 'file_obj' in locals() and hasattr(file_obj, 'name'):
+                            if USE_NEW_SDK:
+                                self.client.files.delete(name=file_obj.name)
+                            else:
+                                genai.delete_file(file_obj.name)
+                    except Exception:
+                        pass
                     continue
 
-                if text.startswith("```markdown"):
-                    text = text[len("```markdown"):].lstrip()
-                if text.startswith("```"):
-                    text = text[3:].lstrip()
-                if text.endswith("```"):
-                    text = text[:-3].rstrip()
-                
-                self._active_model = model_name
-                return text.strip(), model_name
-
-            except Exception as e:
-                print(f"  ! Model {model_name} extraction error: {str(e)[:120]}")
+            return None, None
+        finally:
+            if is_temp and Path(upload_path).exists():
                 try:
-                    if 'file_obj' in locals() and hasattr(file_obj, 'name'):
-                        if USE_NEW_SDK:
-                            self.client.files.delete(name=file_obj.name)
-                        else:
-                            genai.delete_file(file_obj.name)
+                    Path(upload_path).unlink(missing_ok=True)
                 except Exception:
                     pass
-                continue
-
-        return None, None
 
 
 # ====================
@@ -788,6 +871,7 @@ def main():
     parser.add_argument("--force-reconvert", action="store_true", help="Bypass cache and force reconversion of all PDFs")
     parser.add_argument("--smart-reconvert", action="store_true", help="Reconvert only if a newer AI model is available or current Markdown is bad")
     parser.add_argument("--exit-zero-on-quota", action="store_true", help="Exit 0 when quota is exhausted to prevent workflow step failure while signaling retry")
+    parser.add_argument("--exit-zero-on-failure", action="store_true", help="Exit 0 even if one or more conversions fail to allow downstream steps to summarize gracefully")
     
     args = parser.parse_args()
 
@@ -935,6 +1019,8 @@ def main():
         if args.exit_zero_on_quota:
             return 0
         return EXIT_QUOTA_EXHAUSTED
+    if args.exit_zero_on_failure:
+        return 0
     return 0 if successful > 0 else 1
 
 

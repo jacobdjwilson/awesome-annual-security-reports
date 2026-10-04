@@ -139,7 +139,8 @@ jobs:
             --file-list files_to_process.txt \
             --output-json conversions.json \
             --artifacts-dir .github/artifacts \
-            --smart-reconvert
+            --smart-reconvert \
+            --exit-zero-on-failure
 
       - name: Run report analyzer
         id: analyzer
@@ -167,6 +168,10 @@ jobs:
             --analysis-file analysis.json \
             --file-count "${{ needs.identify-stale-files.outputs.file_count }}" \
             --days-old "${{ github.event.inputs.days_old || '90' }}"
+
+      - name: Configure Git buffers
+        if: steps.readme_update.outputs.changes_detected == 'true'
+        run: python .github/scripts/configure-git-buffers.py
 
       - name: Create PR
         id: create_pr

@@ -237,7 +237,7 @@ jobs:
         id: converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python .github/scripts/pdf-converter.py --file-list files_to_process.txt --exit-zero-on-quota
+        run: python .github/scripts/pdf-converter.py --file-list files_to_process.txt --exit-zero-on-quota --exit-zero-on-failure
 
       - name: Upload conversions
         if: always()
@@ -407,6 +407,10 @@ jobs:
           --conv-fail "${{ needs.convert-pdf-to-markdown.outputs.failed_count }}"
           --vt-skipped "${{ needs.virus-total-scan.outputs.scan_skipped }}"
 
+      - name: Configure Git buffers
+        if: steps.readme_update.outputs.readme_updated == 'true'
+        run: python .github/scripts/configure-git-buffers.py
+
       - name: Create Pull Request
         id: create_pr
         if: steps.readme_update.outputs.readme_updated == 'true'
@@ -453,6 +457,7 @@ jobs:
   # ============================================================
   retry-on-quota:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     needs: [discover-and-scan, convert-pdf-to-markdown, analyze-reports]
     if: |
       always() &&
