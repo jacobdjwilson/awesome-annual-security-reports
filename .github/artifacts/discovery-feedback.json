@@ -2,12 +2,12 @@
   "schema_version": "2.0",
   "last_updated": "2026-09-28T19:33:06.245957Z",
   "last_learner_run": "2026-09-28T19:33:06.245957Z",
-  "total_feedback_events": 16,
+  "total_feedback_events": 17,
   "outcome_counts": {
     "true_positive": 3,
     "false_positive": 5,
     "duplicate": 5,
-    "mismatch": 3
+    "mismatch": 4
   },
   "triage_log": [],
   "url_fingerprints": {
@@ -212,6 +212,16 @@
       "org": "Cisco",
       "url": "https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/03/CSA_whitepaper_AI-security-governance-ownership-crisis-shadow-AI-systemic-risk-v1-csa-styled.pdf",
       "outcome": "true_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-10-05T00:21:51.962473Z",
+      "issue_number": 1824,
+      "issue_title": "[Report Discovery] Rapid7 2026 \u2014 Vulnerability Intelligence Report",
+      "org": "Rapid7",
+      "url": "https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/05/ai-exploit-before-patch-structural-defense-gap-v1-csa-styled.pdf",
+      "outcome": "mismatch",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
