@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
-  "last_updated": "2026-09-28T19:33:06.245957Z",
-  "last_learner_run": "2026-09-28T19:33:06.245957Z",
-  "total_feedback_events": 17,
+  "last_updated": "2026-10-05T20:36:56.468160Z",
+  "last_learner_run": "2026-10-05T20:36:56.468160Z",
+  "total_feedback_events": 18,
   "outcome_counts": {
     "true_positive": 3,
-    "false_positive": 5,
+    "false_positive": 6,
     "duplicate": 5,
     "mismatch": 4
   },
@@ -43,8 +43,8 @@
     "score_threshold_delta": 0,
     "validation_threshold": 0.75,
     "gemini_rejection_patterns": [],
-    "summary": "No triage outcomes, false positives, or closure comments were provided in the current dataset. Consequently, no scoring adjustments, blocklists, or pattern modifications are necessary at this time.",
-    "last_gemini_analysis": "2026-09-28T19:33:06.245957Z"
+    "summary": "No triage outcomes, false positives, or closure comments were provided in the dataset. Consequently, no scoring adjustments, blocklists, or threshold modifications are recommended at this time.",
+    "last_gemini_analysis": "2026-10-05T20:36:56.468160Z"
   },
   "overrides": {
     "domain_blocklist": [],
@@ -222,6 +222,16 @@
       "org": "Rapid7",
       "url": "https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/05/ai-exploit-before-patch-structural-defense-gap-v1-csa-styled.pdf",
       "outcome": "mismatch",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-10-05T00:34:33.813316Z",
+      "issue_number": 1816,
+      "issue_title": "[Report Discovery] Cyberreason 2026 \u2014 Ransomware The True Cost to Business",
+      "org": "Cyberreason",
+      "url": "https://www.cyfirma.com/research/tracking-ransomware-aug-2026/",
+      "outcome": "false_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
