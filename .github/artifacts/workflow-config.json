@@ -191,9 +191,27 @@
       "tracking_cache_file": "vt-scanned.json",
       "unseen_output_file": "unseen_pdfs_to_submit.txt",
       "unseen_output_json": "unseen_pdfs_to_submit.json",
-      "comment": "VirusTotal configuration with 24-hour cache TTL policy, rate limiting, and daily upload limits.",
+      "enable_pdf_triage": true,
+      "suspicious_pdf_tags": [
+        "/JavaScript",
+        "/JS",
+        "/Launch",
+        "/EmbeddedFiles",
+        "/OpenAction"
+      ],
+      "enable_clamav": true,
+      "enable_malwarebazaar": true,
+      "malwarebazaar_api_url": "https://mb-api.abuse.ch/api/v1/",
+      "enable_circl_hashlookup": true,
+      "circl_hashlookup_url": "https://hashlookup.circl.lu/lookup/sha256",
+      "comment": "Multi-tier security scan configuration combining local structural PDF triage, ClamAV antivirus, Abuse.ch MalwareBazaar & CIRCL Hashlookup intelligence, and VirusTotal v3 opportunistic querying with strict daily upload quota management.",
+      "system_packages": [
+        "clamav",
+        "clamav-daemon"
+      ],
       "python_packages": [
-        "requests"
+        "requests",
+        "pypdf"
       ]
     },
     "ingest": {

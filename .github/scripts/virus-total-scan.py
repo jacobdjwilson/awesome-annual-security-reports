@@ -1,7 +1,9 @@
 """
 Operational Purpose:
-    Scans PDF files against the VirusTotal v3 API (via file upload or opportunistic SHA-256 hash lookup),
-    evaluating detection stats, enforcing a 24-hour cache freshness policy, and progressing daily submissions.
+    Executes multi-tiered defense-in-depth security inspection of PDF files across 5 tiers:
+    local hash caching, structural PDF triage (dangerous tags/actions), local ClamAV
+    antivirus scanning, free community threat intel (MalwareBazaar & CIRCL Hashlookup),
+    and opportunistic VirusTotal v3 lookups with strict daily upload quota management.
 
 Required Environment Variables:
     VIRUS_TOTAL_API_KEY (optional): VirusTotal v3 API key.
@@ -21,15 +23,19 @@ JSON Artifact Dependencies:
 
 import os
 import sys
+import re
 import time
 import json
+import shutil
 import hashlib
 import argparse
 import datetime
+import subprocess
 from pathlib import Path
-from typing import Dict, Any, Optional, List
 
 import requests
+
+from typing import Dict, Any, Optional, List, Tuple
 
 if hasattr(sys.stdout, "reconfigure"):
     try:
@@ -40,7 +46,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 
 class ConfigLoader:
-    """Loads VirusTotal configuration strictly from workflow-config.json with fail-fast validation."""
+    """Loads security scanning configuration strictly from workflow-config.json with fail-fast validation."""
 
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         cfg_path = Path(artifacts_dir) / "workflow-config.json"
@@ -70,24 +76,38 @@ class ConfigLoader:
             "tracking_cache_file",
             "unseen_output_file",
             "unseen_output_json",
+            "enable_pdf_triage",
+            "suspicious_pdf_tags",
+            "enable_clamav",
+            "enable_malwarebazaar",
+            "malwarebazaar_api_url",
+            "enable_circl_hashlookup",
+            "circl_hashlookup_url",
         ]
         for key in required_keys:
             if key not in vt:
                 raise KeyError(f"Missing required key '{key}' in 'workflow.virustotal' of '{cfg_path}'.")
 
-        self.api_base_url:              str  = str(vt["api_base_url"])
-        self.user_agent:                str  = str(vt["user_agent"])
-        self.large_file_threshold_mb:   int  = int(vt["large_file_threshold_mb"])
-        self.poll_attempts:             int  = int(vt["poll_attempts"])
-        self.poll_backoff_base_seconds: int  = int(vt["poll_backoff_base_seconds"])
-        self.rate_limit_sleep_seconds:  int  = int(vt["rate_limit_sleep_seconds"])
-        self.skip_on_schedule:          bool = bool(vt["skip_on_schedule"])
-        self.skip_on_push:              bool = bool(vt["skip_on_push"])
-        self.cache_ttl_hours:           int  = int(vt["cache_ttl_hours"])
-        self.daily_scan_max_lookups:    int  = int(vt["daily_scan_max_lookups"])
-        self.tracking_cache_file:       str  = str(vt["tracking_cache_file"])
-        self.unseen_output_file:        str  = str(vt["unseen_output_file"])
-        self.unseen_output_json:        str  = str(vt["unseen_output_json"])
+        self.api_base_url:              str       = str(vt["api_base_url"])
+        self.user_agent:                str       = str(vt["user_agent"])
+        self.large_file_threshold_mb:   int       = int(vt["large_file_threshold_mb"])
+        self.poll_attempts:             int       = int(vt["poll_attempts"])
+        self.poll_backoff_base_seconds: int       = int(vt["poll_backoff_base_seconds"])
+        self.rate_limit_sleep_seconds:  int       = int(vt["rate_limit_sleep_seconds"])
+        self.skip_on_schedule:          bool      = bool(vt["skip_on_schedule"])
+        self.skip_on_push:              bool      = bool(vt["skip_on_push"])
+        self.cache_ttl_hours:           int       = int(vt["cache_ttl_hours"])
+        self.daily_scan_max_lookups:    int       = int(vt["daily_scan_max_lookups"])
+        self.tracking_cache_file:       str       = str(vt["tracking_cache_file"])
+        self.unseen_output_file:        str       = str(vt["unseen_output_file"])
+        self.unseen_output_json:        str       = str(vt["unseen_output_json"])
+        self.enable_pdf_triage:         bool      = bool(vt["enable_pdf_triage"])
+        self.suspicious_pdf_tags:       List[str] = [str(t) for t in vt["suspicious_pdf_tags"]]
+        self.enable_clamav:             bool      = bool(vt["enable_clamav"])
+        self.enable_malwarebazaar:      bool      = bool(vt["enable_malwarebazaar"])
+        self.malwarebazaar_api_url:     str       = str(vt["malwarebazaar_api_url"])
+        self.enable_circl_hashlookup:   bool      = bool(vt["enable_circl_hashlookup"])
+        self.circl_hashlookup_url:      str       = str(vt["circl_hashlookup_url"])
 
     def should_skip(self, scan_mode: str, manual_skip: bool) -> Optional[str]:
         if manual_skip:
@@ -128,6 +148,113 @@ def is_cache_fresh(entry: Optional[Dict[str, Any]], ttl_hours: int) -> bool:
         return -300 <= age_seconds < (ttl_hours * 3600)
     except Exception:
         return False
+
+
+def check_pdf_structure(file_path: str, suspicious_tags: List[str]) -> Tuple[bool, List[str]]:
+    """
+    Tier 1: Inspects raw PDF syntax and object dictionary keys for dangerous triggers (/Launch, /JavaScript, etc.).
+    Returns (is_suspicious, detected_tags).
+    """
+    findings: List[str] = []
+    try:
+        with open(file_path, "rb") as f:
+            content = f.read()
+            for tag in suspicious_tags:
+                tag_bytes = tag.encode("ascii", errors="ignore")
+                # Look for /Tag followed by standard PDF delimiters (whitespace, /, [, <, (, >, %)
+                if re.search(re.escape(tag_bytes) + rb"[\s\/\[\<\(\>\%]", content):
+                    findings.append(tag)
+    except Exception as e:
+        print(f"  Warning: PDF byte scan error on {file_path}: {e}")
+
+    try:
+        from pypdf import PdfReader
+        reader = PdfReader(file_path)
+        trailer = getattr(reader, "trailer", {}) or {}
+        root = trailer.get("/Root")
+        if root and hasattr(root, "get_object"):
+            root_obj = root.get_object()
+            if "/OpenAction" in root_obj and "/OpenAction" not in findings and "/OpenAction" in suspicious_tags:
+                findings.append("/OpenAction")
+            if "/AA" in root_obj and "/AA" not in findings and "/AA" in suspicious_tags:
+                findings.append("/AA")
+    except Exception:
+        pass
+
+    return len(findings) > 0, findings
+
+
+def check_clamav(file_path: str) -> Tuple[bool, Optional[str]]:
+    """
+    Tier 2: Executes ClamAV (clamscan) if installed in the local environment.
+    Returns (is_infected, virus_name). Gracefully passes if clamscan binary is absent.
+    """
+    clamscan_bin = shutil.which("clamscan")
+    if not clamscan_bin:
+        return False, None
+
+    try:
+        cmd = [clamscan_bin, "--no-summary", file_path]
+        proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=60)
+        if proc.returncode == 1:
+            match = re.search(rf"{re.escape(os.path.basename(file_path))}:\s*(.+)\s+FOUND", proc.stdout)
+            virus_name = match.group(1).strip() if match else "Infected (ClamAV)"
+            return True, virus_name
+        return False, None
+    except Exception as e:
+        print(f"  Warning: ClamAV execution error on {file_path}: {e}")
+        return False, None
+
+
+def check_malwarebazaar(file_hash: str, api_url: str, user_agent: str) -> Optional[Dict[str, Any]]:
+    """
+    Tier 3A: Queries MalwareBazaar API for known malware hash matches.
+    """
+    try:
+        resp = requests.post(
+            api_url,
+            data={"query": "get_info", "hash": file_hash},
+            headers={"User-Agent": user_agent},
+            timeout=15,
+        )
+        if resp.status_code == 200:
+            data = resp.json()
+            status = data.get("query_status")
+            if status == "ok":
+                entries = data.get("data", [{}])
+                info = entries[0] if isinstance(entries, list) and entries else {}
+                return {
+                    "is_malicious": True,
+                    "signature": info.get("signature", "Unknown Malware"),
+                    "threat_type": info.get("threat_type", "Malware"),
+                }
+            elif status == "hash_not_found":
+                return {"is_malicious": False}
+    except Exception as e:
+        print(f"  Warning: MalwareBazaar query error for {file_hash}: {e}")
+    return None
+
+
+def check_circl_hashlookup(file_hash: str, base_url: str, user_agent: str) -> Optional[Dict[str, Any]]:
+    """
+    Tier 3B: Queries CIRCL Hashlookup API to determine if hash is known in benign distribution sets.
+    """
+    try:
+        url = f"{base_url.rstrip('/')}/{file_hash}"
+        resp = requests.get(url, headers={"User-Agent": user_agent, "Accept": "application/json"}, timeout=15)
+        if resp.status_code == 200:
+            data = resp.json()
+            trust = data.get("hashlookup:trust", 50)
+            return {
+                "known": True,
+                "trust": trust,
+                "file_name": data.get("FileName", ""),
+            }
+        elif resp.status_code == 404:
+            return {"known": False}
+    except Exception as e:
+        print(f"  Warning: CIRCL Hashlookup query error for {file_hash}: {e}")
+    return None
 
 
 def scan_file_opportunistic(
@@ -419,6 +546,20 @@ def daily_scan_mode(files_list: List[str], api_key: str, cfg: ConfigLoader, arti
         if unseen_candidates:
             target_hash, target_info = unseen_candidates[0]
             target_path = target_info["file"]
+
+            # Pre-upload local verification checks (Tier 1 & Tier 2)
+            if cfg.enable_pdf_triage:
+                is_susp, tags = check_pdf_structure(target_path, cfg.suspicious_pdf_tags)
+                if any(t in ("/Launch", "/EmbeddedFiles") for t in tags):
+                    print(f"::error file={target_path}::Local triage blocked daily upload of high-risk PDF: {', '.join(tags)}")
+                    return 1
+
+            if cfg.enable_clamav:
+                is_infected, virus_name = check_clamav(target_path)
+                if is_infected:
+                    print(f"::error file={target_path}::ClamAV blocked daily upload of infected file: {virus_name}")
+                    return 1
+
             print(f"\nUploading 1 unscanned file to VirusTotal (daily limit = 1): {target_path}")
             time.sleep(cfg.rate_limit_sleep_seconds)
             analysis_id = upload_file(target_path, api_key, cfg)
@@ -461,7 +602,7 @@ def daily_scan_mode(files_list: List[str], api_key: str, cfg: ConfigLoader, arti
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="VirusTotal file scanner")
+    ap = argparse.ArgumentParser(description="Multi-tier PDF security and VirusTotal scanner")
     ap.add_argument("files_list", help="Path to file containing PDF paths to scan (one per line)")
     ap.add_argument("--scan-mode", default="", help="Pipeline scan mode")
     ap.add_argument("--manual-skip", action="store_true", help="Set when skip_virus_scan is true")
@@ -471,7 +612,7 @@ def main() -> int:
     args = ap.parse_args()
 
     print(f"\n{'='*70}")
-    print("VirusTotal Scanner")
+    print("Multi-Tier PDF Security & VirusTotal Scanner")
     print(f"{'='*70}\n")
 
     try:
@@ -482,7 +623,7 @@ def main() -> int:
 
     api_key = os.environ.get("VIRUS_TOTAL_API_KEY", "")
     if not api_key:
-        print("WARNING: VIRUS_TOTAL_API_KEY not set. Will use passive hash fallback for all files.")
+        print("WARNING: VIRUS_TOTAL_API_KEY not set. Will use local triage, ClamAV, and community intelligence.")
 
     if not os.path.exists(args.files_list):
         print(f"ERROR: files_list not found: {args.files_list}")
@@ -521,7 +662,7 @@ def main() -> int:
                 f.write("scan_passed=true\n")
         return 0
 
-    print(f"✓ {len(files_to_scan)} file(s) to scan (Opportunistic Mode)\n")
+    print(f"✓ {len(files_to_scan)} file(s) queued for inspection (Multi-Tier Opportunistic Mode)\n")
 
     tracking_file = Path(args.artifacts_dir) / cfg.tracking_cache_file
     tracking_data: Dict[str, Any] = {}
@@ -547,11 +688,11 @@ def main() -> int:
         fhash = calculate_file_hash(file_path)
         cached_entry = tracking_data.get(fhash)
 
-        # Check 24-hour cache freshness policy
+        # Tier 0: Check 24-hour cache freshness policy
         if is_cache_fresh(cached_entry, cfg.cache_ttl_hours):
             cache_hits += 1
             verdict = cached_entry.get("verdict", "Clean")
-            print(f"  ⚡ Using cached VirusTotal result (< {cfg.cache_ttl_hours}h old): {verdict} — {cached_entry.get('report_url', '')}")
+            print(f"  ⚡ Tier 0: Using cached security result (< {cfg.cache_ttl_hours}h old): {verdict} — {cached_entry.get('report_url', '')}")
             res = {
                 "status": "cached",
                 "file": os.path.basename(file_path),
@@ -565,16 +706,71 @@ def main() -> int:
             results.append(res)
             if verdict == "Malicious":
                 malicious += 1
-                print(f"::error file={file_path}::VirusTotal: Malicious file detected in cache!")
+                print(f"::error file={file_path}::Security Scan: Malicious file detected in cache!")
             continue
 
-        # Not fresh in cache -> query API
+        # Tier 1: Local PDF Structure Triage
+        if cfg.enable_pdf_triage:
+            is_susp, tags = check_pdf_structure(file_path, cfg.suspicious_pdf_tags)
+            if is_susp:
+                print(f"  ⚠️ Tier 1 Warning: Suspicious PDF syntax tags found: {', '.join(tags)}")
+                if any(t in ("/Launch", "/EmbeddedFiles") for t in tags):
+                    print(f"::error file={file_path}::High-risk PDF tag detected: {', '.join(tags)}")
+                    results.append({
+                        "status": "failed",
+                        "file": os.path.basename(file_path),
+                        "verdict": "Malicious",
+                        "reason": f"High-risk PDF tags detected: {', '.join(tags)}",
+                        "sha256": fhash,
+                    })
+                    malicious += 1
+                    continue
+
+        # Tier 2: Local ClamAV Antivirus
+        if cfg.enable_clamav:
+            is_infected, virus_name = check_clamav(file_path)
+            if is_infected:
+                print(f"  ❌ Tier 2 Detection: ClamAV detected virus: {virus_name}")
+                print(f"::error file={file_path}::ClamAV detected virus: {virus_name}")
+                results.append({
+                    "status": "failed",
+                    "file": os.path.basename(file_path),
+                    "verdict": "Malicious",
+                    "reason": f"ClamAV detection: {virus_name}",
+                    "sha256": fhash,
+                })
+                malicious += 1
+                continue
+
+        # Tier 3: Free Community Threat Intelligence
+        if cfg.enable_malwarebazaar:
+            mb_res = check_malwarebazaar(fhash, cfg.malwarebazaar_api_url, cfg.user_agent)
+            if mb_res and mb_res.get("is_malicious"):
+                sig = mb_res.get("signature", "Malware")
+                print(f"  ❌ Tier 3 Detection: MalwareBazaar flagged known malware: {sig}")
+                print(f"::error file={file_path}::MalwareBazaar detection: {sig}")
+                results.append({
+                    "status": "failed",
+                    "file": os.path.basename(file_path),
+                    "verdict": "Malicious",
+                    "reason": f"MalwareBazaar detection: {sig}",
+                    "sha256": fhash,
+                })
+                malicious += 1
+                continue
+
+        if cfg.enable_circl_hashlookup:
+            circl_res = check_circl_hashlookup(fhash, cfg.circl_hashlookup_url, cfg.user_agent)
+            if circl_res and circl_res.get("known"):
+                print(f"  ℹ Tier 3 Info: CIRCL Hashlookup verified known file (Trust: {circl_res.get('trust')}%)")
+
+        # Tier 4: Opportunistic VirusTotal Lookup
         result = scan_file_opportunistic(file_path, api_key, cfg, fhash=fhash)
         results.append(result)
 
         if result["status"] == "success":
             verdict = result["verdict"]
-            print(f"  ✓ {verdict} — {result['report_url']}")
+            print(f"  ✓ Tier 4 VT: {verdict} — {result['report_url']}")
             tracking_data[fhash] = {
                 "status": "completed",
                 "file": file_path,
@@ -591,7 +787,7 @@ def main() -> int:
                 malicious += 1
                 print(f"::error file={file_path}::VirusTotal: Malicious file detected!")
         elif result.get("http_code") == 404:
-            print(f"  ⊘ File unseen by VirusTotal (404) -> Enqueued for daily submission: {result['report_url']}")
+            print(f"  ⊘ Tier 4 VT: File unseen by VirusTotal (404) -> Enqueued for daily submission: {result['report_url']}")
             tracking_data[fhash] = {
                 "status": "unseen",
                 "file": file_path,
@@ -600,9 +796,9 @@ def main() -> int:
             }
             cache_updated = True
         elif result["status"] == "fallback":
-            print(f"  ⊘ Passive Fallback: {result['reason']} — {result['report_url']}")
+            print(f"  ⊘ Tier 4 VT Fallback: {result['reason']} — {result['report_url']}")
         else:
-            print(f"  ✗ Failed: {result.get('reason')}")
+            print(f"  ✗ Tier 4 VT: {result.get('reason')}")
 
         if api_key and i < len(files_to_scan) - 1:
             time.sleep(cfg.rate_limit_sleep_seconds)
