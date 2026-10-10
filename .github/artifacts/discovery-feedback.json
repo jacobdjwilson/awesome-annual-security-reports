@@ -2,11 +2,11 @@
   "schema_version": "2.0",
   "last_updated": "2026-10-05T20:36:56.468160Z",
   "last_learner_run": "2026-10-05T20:36:56.468160Z",
-  "total_feedback_events": 18,
+  "total_feedback_events": 19,
   "outcome_counts": {
     "true_positive": 3,
     "false_positive": 6,
-    "duplicate": 5,
+    "duplicate": 6,
     "mismatch": 4
   },
   "triage_log": [],
@@ -232,6 +232,16 @@
       "org": "Cyberreason",
       "url": "https://www.cyfirma.com/research/tracking-ransomware-aug-2026/",
       "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-10-07T01:56:49.566608Z",
+      "issue_number": 1839,
+      "issue_title": "[Report Discovery] Proofpoint 2026 \u2014 Threat Report Q4",
+      "org": "Proofpoint",
+      "url": "https://www.enisa.europa.eu/sites/default/files/publications/ENISA%20Threat%20Landscape%202023.pdf",
+      "outcome": "duplicate",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }

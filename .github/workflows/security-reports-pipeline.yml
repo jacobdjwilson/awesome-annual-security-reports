@@ -159,7 +159,7 @@ jobs:
           name: file-lists
 
       - name: Install dependencies
-        run: python .github/scripts/install-task-dependencies.py --task virustotal
+        run: python .github/scripts/install-task-dependencies.py --task virustotal --system
 
       - name: Cache VirusTotal Tracking
         uses: actions/cache@v4
