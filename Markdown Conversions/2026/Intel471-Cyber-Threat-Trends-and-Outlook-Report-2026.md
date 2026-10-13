@@ -1,30 +1,46 @@
-# 2026 CYBER THREAT TRENDS & OUTLOOK
+# Intel 471: 2026 Cyber Threat Trends & Outlook
 
 ## Table of Contents
 - [Foreword](#foreword)
-- [Contents](#contents)
 - [Key Takeaways](#key-takeaways)
 - [Introduction](#introduction)
 - [Headlines of 2025](#headlines-of-2025)
-- [SP1D3R HUNTERS Gang Sparks Chaos](#sp1d3r-hunters-gang-sparks-chaos)
-- [Artificial Intelligence Remains Influential, Not Revolutionary](#artificial-intelligence-remains-influential-not-revolutionary)
-- [Law Enforcement Action Impacts Multiple Forums and Leads to Fragmentation of English-speaking Underground](#law-enforcement-action-impacts-multiple-forums-and-leads-to-fragmentation-of-english-speaking-underground)
+  - [SP1D3R HUNTERS Gang Sparks Chaos](#sp1d3r-hunters-gang-sparks-chaos)
+  - [Artificial Intelligence Remains Influential, Not Revolutionary](#artificial-intelligence-remains-influential-not-revolutionary)
+  - [Law Enforcement Action Impacts Multiple Forums and Leads to Fragmentation of English-speaking Underground](#law-enforcement-action-impacts-multiple-forums-and-leads-to-fragmentation-of-english-speaking-underground)
 - [Extortion](#extortion)
-- [Statistics — Victim Numbers Reach Historic Highs](#statistics--victim-numbers-reach-historic-highs)
-- [Group in Focus: Qilin](#group-in-focus-qilin)
-- [Evolution of Tactics, Techniques and Procedures](#evolution-of-tactics-techniques-and-procedures)
-- [Leaks, Breaches and Takeovers](#leaks-breaches-and-takeovers)
-- [Supply Chain Attacks](#supply-chain-attacks)
+  - [Summary](#summary)
+  - [Looking Ahead](#looking-ahead)
+  - [Statistics — Victim Numbers Reach Historic Highs](#statistics--victim-numbers-reach-historic-highs)
+  - [Group in Focus: Qilin](#group-in-focus-qilin)
+  - [Evolution of Tactics, Techniques and Procedures](#evolution-of-tactics-techniques-and-procedures)
+    - [Actors Offer Data Analysis Services to Facilitate Extortion Operations](#actors-offer-data-analysis-services-to-facilitate-extortion-operations)
+  - [Leaks, Breaches and Takeovers](#leaks-breaches-and-takeovers)
+  - [Supply Chain Attacks](#supply-chain-attacks)
+  - [Outlook](#outlook)
 - [Access Offers](#access-offers)
-- [Statistics — Activity Remains Consistent](#statistics--activity-remains-consistent)
-- [Initial Access Brokers](#initial-access-brokers)
-- [Tactics, Techniques and Procedures Observed](#tactics-techniques-and-procedures-observed)
+  - [Summary](#summary-1)
+  - [Looking Ahead](#looking-ahead-1)
+  - [Statistics — Activity Remains Consistent](#statistics--activity-remains-consistent)
+  - [Initial Access Brokers](#initial-access-brokers)
+    - [Top Actor — \*Black](#top-actor--black)
+    - [Top Actor — \*Gold](#top-actor--gold)
+  - [Initial Access Brokers, Ransomware and Extortion Groups](#initial-access-brokers-ransomware-and-extortion-groups)
+  - [Tactics, Techniques and Procedures Observed](#tactics-techniques-and-procedures-observed)
+  - [Outlook](#outlook-1)
 - [Malware Updates and Developments](#malware-updates-and-developments)
-- [Technical Malware Overview](#technical-malware-overview)
-- [Campaigns Trends](#campaigns-trends)
-- [Vulnerabilities](#vulnerabilities)
-- [Hacktivism](#hacktivism)
-- [Predictions for 2026](#predictions-for-2026)
+  - [Summary](#summary-2)
+  - [Looking Ahead](#looking-ahead-2)
+  - [Technical Malware Overview](#technical-malware-overview)
+  - [Downloader Malware Metrics](#downloader-malware-metrics)
+  - [Malware Downloaded Metrics](#malware-downloaded-metrics)
+  - [Mobile Malware Metrics](#mobile-malware-metrics)
+  - [Notable Malware Additions, Updates and Takedown Announcements](#notable-malware-additions-updates-and-takedown-announcements)
+  - [Campaigns Trends](#campaigns-trends)
+    - [Node Package Manager Supply Chain Attack](#node-package-manager-supply-chain-attack)
+      - [Shai-Hulud](#shai-hulud)
+      - [Shai-Hulud: The Second Coming](#shai-hulud-the-second-coming)
+    - [ClickFix Proliferation](#clickfix-proliferation)
 
 ---
 
@@ -40,14 +56,14 @@ This reality has implications for every organization. Prevention remains essenti
 
 Intel 471 acts as your eyes and ears beyond the wire. We surface emerging threats sooner, clarify which exposures matter most in your environment and help you build lasting resilience. We hope this report equips you to make meaningful decisions with confidence in the year ahead.
 
-Michael DeBolt,
-President and Chief Intelligence officer
+**Michael DeBolt**,  
+President and Chief Intelligence Officer  
 
 ---
 
 ## Key Takeaways
 
-The report that follows is a redacted version of one released to Intel 471 customers on Dec. 23, 2025. It draws on information collected January 1 – December 15, 2025. For full access, including links to related reporting on Verity471, Intel 471’s cyber intelligence platform and sensitive source-derived details, contact us at sales@intel471.com.
+The report that follows is a redacted version of one released to Intel 471 customers on Dec. 23, 2025. It draws on information collected January 1 – December 15, 2025. For full access, including links to related reporting on Verity471, Intel 471’s cyber intelligence platform and sensitive source-derived details, contact us at `sales@intel471.com`.
 
 - The use of artificial intelligence (AI) currently functions more as an efficiency upgrade rather than the core vehicle of operations for profit-driven criminal groups.
 - The DarkForums cybercrime forum emerged as the primary choice for English-speaking threat actors in 2025.
@@ -58,7 +74,7 @@ The report that follows is a redacted version of one released to Intel 471 custo
 - In 2025, our Vulnerability Intelligence team reported over 500 vulnerabilities, 238 of which were observed in active exploitation campaigns and more than 80% of these either were weaponized or productized.
 - In 2025, we tracked more than 700 responses from hacktivist groups in the cybercrime underground, of which more than 80% were commentary and distributed denial-of-service (DDoS) attacks — evenly distributed at about 40% each.
 
-Please note that an asterisk adjacent to an actor’s handle indicates that that handle has been redacted for operational security reasons.
+_Please note that an asterisk adjacent to an actor’s handle indicates that that handle has been redacted for operational security reasons._
 
 ---
 
@@ -72,103 +88,116 @@ Even so, the year’s defining narrative was the surge in supply chain vulnerabi
 
 ## Headlines of 2025
 
-![A timeline of key cyber security incidents across 2025.]
+![Figure 1: A timeline of key cyber security incidents across 2025.]
 
 ---
 
-## SP1D3R HUNTERS Gang Sparks Chaos
+### SP1D3R HUNTERS Gang Sparks Chaos
 
 The English-speaking Com aka TheCom broad online ecosystem remains a major hub for prominent adversaries. A key development in 2025 was the emergence of the SP1D3R HUNTERS aka SCATTERED LAPSUS$ HUNTERS, SLH, SLSH threat group. The group quickly gained media attention for its aggressive tactics, which included threatening employees of breached organizations as well as anyone who publicly investigated its members. The group evolved into a prolific generator of breach claims, many of which lacked sufficient evidence to be substantiated while others were easily disproven.
 
 Beyond the unverifiable and recycled claims, SLSH was involved in notable breaches. Group members allegedly were in contact with actors involved in breaches impacting the Salesloft and Gainsight platforms — both of which integrate with the U.S.-based technology company Salesforce Inc. — and were directly engaged in multiple social-engineering campaigns that targeted Salesforce customers. Group members demonstrated exploitation capabilities and conducted multiple intrusions that targeted vulnerable SAP NetWeaver and Oracle E-Business Suite (EBS) instances, subsequently leaking the exploit code publicly. The actors also sought to recruit access brokers, insiders and other actors that could collaborate in coordinated crowdsourced extortion campaigns in which participants would send templated extortion emails to lists of targets from breached organizations. Intel 471 successfully identified several of these campaigns in their early stages, with some intrusions becoming public weeks after our initial detection.
 
-![The image depicts a link analysis of SP1D3R HUNTERS members and other identified personas created Oct. 27, 2025.]
+![Figure 2: The image depicts a link analysis of SP1D3R HUNTERS members and other identified personas created Oct. 27, 2025.]
 
 The diversity in the group with multiple members conversing at the same time led to a chaotic environment with thousands of messages that included random topics, offensive language, tasteless memes and evidence of breached organizations. More than 41 different personas were identified posting messages to SP1D3R HUNTERS’ Telegram channels and groups with about seven identified as core members. Some of these members are reputable actors such as Rey — a former HellCat group member whose real-life identity was unveiled as the Jordanian individual Saif Al-Din Khader — and the actor unc6395 who was responsible for several threats posted toward cyber threat researchers. The actor unc639’s interactions on Telegram provided valuable insights into the actor’s bitcoin blockchain activity, enabling the identification of several leads regarding how unc6395 moved funds, acquired infrastructure and laundered money.
 
 ---
 
-## Artificial Intelligence Remains Influential, Not Revolutionary
+### Artificial Intelligence Remains Influential, Not Revolutionary
 
 In 2025, generative AI and large language models (LLMs) continued to be among the most prominent topics of interest within the cybersecurity industry and the underground. Threat actors are adopting LLMs, but this usage is far from the extent often implied in news headlines. In August 2025, we detailed how generative AI tools have improved the quality of phishing schemes, business email compromise (BEC) lures and voice phishing (vishing) scripts.[^1] However, they currently function more as an efficiency upgrade than the core vehicle of operations for profit-driven criminal groups. Although there is limited evidence of AI-driven tools circulating in underground markets, from time to time we do spot offers that claim to integrate AI.
 
 One of the most recent tools to explicitly advertise AI usage is the InboxPrime AI spamming tool the actor Mr_Pentium offered.[^2] The actor allegedly integrated a third-party AI model via an application programming interface (API), allowing the tool to create custom email texts and check crafted emails for potential spam triggers against real spam lists. For example, the integrated AI checks for keywords, suspicious links and unusual hypertext markup language (HTML) formatting and then advises the user on how to improve a message to bypass security measures. Such an implementation boosts efficiency and significantly improves the quality of phishing emails, which often previously were recognizable due to awkward phrasing, spelling errors and obvious copy-and-paste templates. Threat actors can use AI to generate fluent, multilingual and contextually relevant content across various formats — including text, voice, video and images — within seconds.
 
-![The image depicts a screenshot of the InboxPrime AI tool interface captured from a demonstration video the actor Mr_Pentium provided Oct. 30, 2025.]
-
 In addition to phishing, our earlier research has shown AI is proving beneficial for disinformation and influence operations. Actors involved in propaganda — whether state-sponsored or ideologically driven — do not require real-time perfection. Instead, they need scalability, linguistic reach and a sense of plausible authenticity. Generative text, voice-overs and imagery meet these requirements at minimal cost, allowing small teams to flood channels with culturally tailored narratives, deepfake commentary and convincing videos that previously required professional-grade studios. Since the measure of impact is resonance rather than direct monetization, minor inaccuracies or a higher risk of detection are acceptable trade-offs, making AI a natural accelerator for misinformation campaigns.
 
-"AI malware" remains a largely speculative topic. One vendor report defined AI malware as "malicious or offensive software whose core development or runtime behavior is dependent on generative AI or LLMs."[^3] Despite the numerous types of "AI malware" described over the past few years, we have not encountered any widely used malware family, such as loaders or information stealers, that depends on generative AI or LLMs to run. Those presented as featuring "AI malware" are predominantly either proof-of-concept (PoC) artifacts or simply built with the assistance of LLMs. That said, we cannot rule out the possibility that we will see practical examples of fully AI-dependent malware in the future.
+![Figure 2: The image depicts a screenshot of the InboxPrime AI tool interface captured from a demonstration video the actor Mr_Pentium provided Oct. 30, 2025.]
+
+“AI malware” remains a largely speculative topic. One vendor report defined AI malware as “malicious or offensive software whose core development or runtime behavior is dependent on generative AI or LLMs.”[^3] Despite the numerous types of “AI malware” described over the past few years, we have not encountered any widely used malware family, such as loaders or information stealers, that depends on generative AI or LLMs to run. Those presented as featuring “AI malware” are predominantly either proof-of-concept (PoC) artifacts or simply built with the assistance of LLMs. That said, we cannot rule out the possibility that we will see practical examples of fully AI-dependent malware in the future.
 
 However, in both malware and phishing tooling, as long as existing methods work and deliver the expected results, threat actors are unlikely to abandon them for approaches that introduce additional dependencies and development overhead. Training or fine-tuning a private AI model requires considerable time, expertise and resources, and therefore is unlikely to be a first priority for financially motivated actors who want to start making money as soon as possible with readily available products. For this reason, most of the more advanced experimentation with AI so far has been attributed to nation-state actors who tend to invest heavily in research and possess the necessary financial and human resources.[^3] Looking further ahead, we are likely to see selective escalation rather than mass adoption. We expect more deepfake-enabled impersonation calls targeting executives and AI-voiced fraud against high-value targets, alongside a surge in synthetic media during elections, geopolitical flash points and social justice debates.
 
 ---
 
-## Law Enforcement Action Impacts Multiple Forums and Leads to Fragmentation of English-speaking Underground
+### Law Enforcement Action Impacts Multiple Forums and Leads to Fragmentation of English-speaking Underground
 
-2025 was marked by coordinated international law enforcement efforts severely disrupting primarily English-speaking cybercrime forums (see: Figure 3). In January 2025, Operation Talent — led by German authorities in collaboration with numerous international agencies — seized the domains of the Cracked and Nulled forums, as well as the Sellix payment platform and StarkRDP hosting service. This action resulted in arrests, property searches and the seizure of substantial assets, permanently shutting down the Nulled forum, although Cracked reemerged under a new domain in April 2025.[^4],[^5]
+2025 was marked by coordinated international law enforcement efforts severely disrupting primarily English-speaking cybercrime forums (see: Figure 3). In January 2025, Operation Talent — led by German authorities in collaboration with numerous international agencies — seized the domains of the Cracked and Nulled forums, as well as the Sellix payment platform and StarkRDP hosting service. This action resulted in arrests, property searches and the seizure of substantial assets, permanently shutting down the Nulled forum, although Cracked reemerged under a new domain in April 2025.[^4] [^5]
 
-Forum disruptions continued throughout the year, with the BreachForums and XSS cybercrime forums suffering periods of instability and the arrests of high-profile operators including the actors IntelBroker, ShinyHunters, Hollow, Noct and Depressed, as well as the XSS forum administrator toha aka admin. The BreachForums cybercrime forum eventually closed for good in August 2025, while the XSS forum regained stability the same month and continued operation moving forward. The repeated seizures and arrests caused immense fragmentation in the English-speaking cybercrime community, with users constantly migrating between short-lived successor and clone sites. The DarkForums cybercrime forum emerged as the clear benefactor, however other forums such as BreachStars, Cracked and DarkNetArmy saw an increase in activity, as well as the launch of the new Rehubcom forum.[^6],[^7],[^8]
+Forum disruptions continued throughout the year, with the BreachForums and XSS cybercrime forums suffering periods of instability and the arrests of high-profile operators including the actors IntelBroker, ShinyHunters, Hollow, Noct and Depressed, as well as the XSS forum administrator toha aka admin. The BreachForums cybercrime forum eventually closed for good in August 2025, while the XSS forum regained stability the same month and continued operation moving forward. The repeated seizures and arrests caused immense fragmentation in the English-speaking cybercrime community, with users constantly migrating between short-lived successor and clone sites. The DarkForums cybercrime forum emerged as the clear benefactor, however other forums such as BreachStars, Cracked and DarkNetArmy saw an increase in activity, as well as the launch of the new Rehubcom forum.[^6] [^7] [^8]
 
 Moving forward, the DarkForums cybercrime forum likely will continue to be the choice for former BreachForums members. While we cannot rule out a potential relaunch of BreachForums under new ownership and perhaps a new name, any such event likely would be met with heavy skepticism and thus fail to dethrone DarkForums. Additionally, we anticipate law enforcement action against prominent cybercriminal infrastructure will continue, and more long-standing forums such as DarkNetArmy and Leakbase could offer English-speaking actors a safe haven should DarkForums suffer any significant disruption.
 
-![The images depict the amount of posts we observed on each forum per month in 2025.]
+![Figure 3: The images depict the amount of posts we observed on each forum per month in 2025 .]
 
 ---
 
 ## Extortion
 
-The reporting metrics for this section were sourced from Intel 471 Breach Alerts and Information Reports and are not representative of all extortion instances possibly claimed across the underground.
+> The reporting metrics for this section were sourced from Intel 471 Breach Alerts and Information Reports and are not representative of all extortion instances possibly claimed across the underground.\*
 
-![The image depicts top extortion statistics for 2025.]
+![Figure 4: The image depicts top extortion statistics for 2025.]
 
 ### Summary
+
 The Qilin ransomware-as-a-service (RaaS) program was the leading force in the extortion market in 2025, claiming about 18% of all victims. It boosted its program with enhanced tooling and the employment of new sophisticated extortion techniques, including a data analysis audit. Additionally, several RaaS programs including the prominent Black Basta, LockBit and RansomHub groups suffered operational disruption from February 2025 to August 2025, seemingly caused by fellow cybercriminals. This year also was marked by several major supply chain attacks, including CLOP’s attacks on Cleo Harmony managed file transfer (MFT) software-as-a-service (SaaS) and Oracle EBS instances, the compromise of CRM provider Salesloft Inc. and Qilin’s “Korean Leak” campaign targeting South Korea-based financial institutions.
 
 ### Looking Ahead
+
 - The Qilin extortion group remains among the most active groups in 2026.
 - Extortion groups likely will diversify their services with data analysis and audit functionality, substantially boosting their overall profitability.
 
 ---
 
-## Statistics — Victim Numbers Reach Historic Highs
+### Statistics — Victim Numbers Reach Historic Highs
 
-![The image depicts an Intel 471-generated graph detailing extortion statistics for 2025.]
+![Figure 5: The image depicts an Intel 471-generated graph detailing extortion statistics for 2025.]
 
 We reported over 6,800 extortion breach events in 2025, an increase of about 63% compared to the previous year, continuing an upward trend that began in 2022. Throughout 2025, the first quarter saw the highest number of breaches reported, totaling over 2,000. As of Dec. 15, 2025, the number of breaches in the fourth quarter was over 1,800, which already puts it ahead of the second and third quarters with over 1,300 and 1,500 breaches, respectively. Extortion activity first peaked in February with over 800 reported breaches, which likely was driven by CLOP’s Cleo Harmony campaign. Victim numbers peaked once again in October with over 800 reported breaches, which coincided with the Qilin group’s increased activity and CLOP’s second supply chain attack targeting Oracle EBS instances.
 
 ---
 
-## Group in Focus: Qilin
+### Group in Focus: Qilin
 
 The Qilin extortion group continues to prove itself a dominant force in the RaaS market. Since its appearance in mid-2022, the RaaS program has continuously evolved, updating its tools and affiliate compensation structures. From mid-February 2025 to mid-May 2025, an operator of the Qilin RaaS affiliate program, the actor Haise, announced major updates to the program.[^9] In June 2025, the group further updated its victim extortion tactics and introduced a “legal department” whose function is to analyze stolen documents for incriminating evidence. The gang also significantly expanded its extortion capabilities by establishing a dedicated, multilingual “call center” operating in at least seven languages. This center contacts both victim organizations and their customers, indicating a strategic shift toward a broader, international target base.[^10]
 
 In 2025, the gang was responsible for about 18% of all breaches, leaving its direct competitors — Akira, CLOP and Play — far behind. From claiming only one victim in January 2025, Qilin’s victim count peaked to an astonishing 212 reported breaches in October 2025. More than 80% of Qilin’s victims were entities with low or undisclosed revenues, which suggests the group prioritizes targets that may be easy to attack but likely will pay a minimal ransom. The group’s rise in prominence coincided with the demise of the RansomHub RaaS in April 2025 when Haise developed a greater presence on the RAMP forum and was observed actively recruiting new affiliates to the Qilin RaaS. This further demonstrates the group’s appealing cooperation terms and high reputation among other extortion groups.[^11]
 
-![The image depicts an Intel 471-generated graph of the Qilin group’s extortion activity from January 2025 to December 2025.]
+![Figure 6: The image depicts an Intel 471-generated graph of the Qilin group’s extortion activity from January 2025 to December 2025.]
 
 ---
 
-## Evolution of Tactics, Techniques and Procedures
+### Evolution of Tactics, Techniques and Procedures
 
-### Actors Offer Data Analysis Services to Facilitate Extortion Operations
-In the second quarter of 2025, we reported at least two actors, *Green and *Pink, offered to provide negotiations and data audit and analysis services to facilitate extortion operations. The actor *Green’s offer allegedly included scanning the targeted company’s data, pinpointing weaknesses and developing a “presentation” for the victim, while *Pink marketed services to extortion gangs, ransomware groups and individual operators, focusing on analyzing stolen data and conducting negotiations. The actor boasted using advanced techniques gleaned from data analysis and processing courses.[^12],[^13]
+#### Actors Offer Data Analysis Services to Facilitate Extortion Operations
+
+In the second quarter of 2025, we reported at least two actors, \*Green and \*Pink, offered to provide negotiations and data audit and analysis services to facilitate extortion operations. The actor \*Green’s offer allegedly included scanning the targeted company’s data, pinpointing weaknesses and developing a “presentation” for the victim, while \*Pink marketed services to extortion gangs, ransomware groups and individual operators, focusing on analyzing stolen data and conducting negotiations. The actor boasted using advanced techniques gleaned from data analysis and processing courses.[^12] [^13]
 
 The requirement for increased pressure tactics likely will become more important going forward given new legislation to combat cyber extortion. In May 2025, the Australian government introduced new reporting obligations under the Cyber Security Act 2024, which require mandatory ransomware and cyber extortion payment reporting.[^14] Additionally, in September 2025, the U.K. government approved a new legislative strategy aimed at discouraging companies from making ransomware payments and enhancing incident reporting.[^15] As violations of these regulations can lead to penalties or legal proceedings, companies likely will be reluctant to accept ransomware groups’ terms and make payments. Ransomware groups therefore will be forced to actively reconsider their victim extortion procedures.
 
 ---
 
-## Leaks, Breaches and Takeovers
+### Leaks, Breaches and Takeovers
 
 Ransomware and extortion attacks have fundamentally reshaped the threat landscape, serving as a hub where diverse cybercrime specialists monetize network compromises. This competitive extortion ecosystem operates without respect or trust. We observed multiple ransomware and data extortion groups betrayed by affiliates or disrupted by competitors or unknown cybercriminals from February 2025 to August 2025 (See Figure 7).[^16]
 
 Profit-sharing in extortion operations often causes internal and external conflicts, as the lure of financial gain overrides loyalty. This cutthroat environment means reputation is secondary to personal enrichment, leading team members to betray cohorts, jeopardizing operations, exposing data or compromising infrastructure. While disruption can be temporary, it might lead to a group’s seizure, which competitors exploit. Demonstrating resilience and power against rivals attracts new affiliates. Conversely, setbacks such as arrests, leaks or internal conflicts make a group vulnerable to competitors recruiting members or taking over systems.
 
-![The image depicts the timeline of ransomware and data extortion group compromises in 2025.]
+![Figure 7: The image depicts the timeline of ransomware and data extortion group compromises in 2025 .]
+
+**Timeline Summary of Group Disruptions in 2025:**
+- **Mid-Feb 2025**: Internal Matrix team chat logs for the Black Basta ransomware group were leaked.
+- **March 2025**: The DragonForce gang allegedly compromised the BlackLock data-leak site and exposed a list of web server user accounts.
+- **April 2, 2025**: The DragonForce gang allegedly compromised and took over the RansomHub RaaS program.
+- **April 7, 2025**: An unknown hacker defaced the Everest data extortion group’s data leak blog and replaced its content with the note _“Don’t do crime CRIME IS BAD xoxo from Prague.”_
+- **April 9, 2025**: The actor \*Orange leaked conversation logs allegedly from the J ransomware group’s RocketChat communication platform, exposing the gang's alleged tactics, techniques and procedures (TTPs).
+- **May 7, 2025**: An unknown hacker compromised the LockBit ransomware group’s data leak blog, replaced its content with the note _“Don’t do crime CRIME IS BAD xoxo from Prague”_ and exposed LockBit’s data about affiliates, bitcoin wallet addresses, ransomware builds and victim chatrooms.
+- **July 2025**: The operator of the RansomedVC data leak site exposed alleged insider details about the Medusa ransomware group and leaked a list of alleged affiliates of the gang and screenshots of alleged internal communications of group members.
+- **August 2025**: An unknown hacker defaced the RansomedVC ransomware group’s data leak blog and replaced its content with the note _“Don’t do crime CRIME IS BAD xoxo from Prague.”_
 
 ---
 
-## Supply Chain Attacks
+### Supply Chain Attacks
 
 Supply chain attacks are highly favored by extortion groups due to their superior efficiency, scalability and profitability compared to directly targeting individual organizations. This strategy involves compromising a single entity, such as a vendor, software provider or managed service provider (MSP), to gain access to a multitude of downstream victims. This approach leverages established trust, allowing attackers to bypass robust defenses and achieve a much greater impact with significantly less effort.
 
@@ -178,136 +207,233 @@ In August 2025, one of the year’s most notable supply chain campaigns occurred
 
 In September 2025, the Qilin group launched a “Korean Leak” campaign primarily targeting South Korean financial institutions. The gang allegedly impacted at least 20 South Korea-based companies, exposing sensitive information including corporate and financial information as well as employee personal data.[^19] The group reportedly executed the attacks by initially compromising a single upstream MSP. Open source reports indicate more than 20 asset management firms were breached via a common information technology (IT) service provider that supported their internal systems.[^20]
 
+> **THE DEMONSTRABLE SUCCESS OF SEVERAL HIGH-PROFILE SUPPLY CHAIN ATTACKS PROVIDES A POWERFUL EXAMPLE FOR OTHER RANSOMWARE AND DATA EXTORTION GROUPS.**
+
+---
+
 ### Outlook
+
 We expect extortion to remain the top threat in 2026, which is evident by this year’s significant increase of breaches compared to 2024. The demonstrable success of several high-profile supply chain attacks conducted by the CLOP and Qilin gangs provides a powerful example and likely will influence the strategic focus of other ransomware and data extortion groups. The Qilin RaaS program likely will continue to dominate the extortion market, enhancing its offerings and actively recruiting new affiliates. Finally, the shift in legislation regarding extortion payments likely will reduce companies’ willingness to pay ransoms. Therefore, ransomware and data extortion groups likely will reconsider their victim pressure strategies and add new services to their programs.
 
 ---
 
 ## Access Offers
 
-The reporting metrics for this section were sourced from Intel 471 Breach Alerts, Information Reports and auction offers made on the Exploit forum.
+> The reporting metrics for this section were sourced from Intel 471 Breach Alerts, Information Reports and auction offers made on the Exploit forum.\*\*
 
-![The image depicts top access offer statistics for 2025.]
+![Figure 8: The image depicts top access offer statistics for 2025.]
 
 ### Summary
-The year 2025 ends with a decrease of about 27% in the total access offers compared to 2024, characterized by a lack of substantial bulk offers. The most prominent actors *Black, *White, *Gold, Pirat-Networks and samy01 demonstrated their relevance in the access market and accounted for about 40% of all offers. Living off the land binaries (LOLBins) such as nltest and the PowerShell utility constantly were observed in intrusions that involved access brokers to generate proof of compromise for potential customers.
+
+The year 2025 ends with a decrease of about 27% in the total access offers compared to 2024, characterized by a lack of substantial bulk offers. The most prominent actors \*Black, \*White, \*Gold, Pirat-Networks and samy01 demonstrated their relevance in the access market and accounted for about 40% of all offers. Living off the land binaries (LOLBins) such as `nltest` and the PowerShell utility constantly were observed in intrusions that involved access brokers to generate proof of compromise for potential customers.
 
 ### Looking Ahead
+
 - The access market will remain volatile, characterized by occasional bulk offers and the emergence of new actors, as well as increased professionalization as specified offers become more tailored to potential customers.
 - Credential-based intrusions are likely to remain the dominant access vector, while remote access portals will continue to present attractive entry points.
 
 ---
 
-## Statistics — Activity Remains Consistent
+### Statistics — Activity Remains Consistent
 
-![The image depicts the sectors, industries and countries most impacted by all access offers in 2025.]
+![Figure 9: The image depicts the sectors, industries and countries most impacted by all access offers in 2025.]
 
 In 2025, we observed and reported over 3,200 claims from IABs offering to sell unauthorized access to corporate networks or systems, marking a decrease of about 27% compared to 2024. The decrease in numbers was expected, as the figures in 2024 were inflated due to bulk access offers originating from supply chain attacks that impacted service providers such as Cprime and Snowflake. Several bulk offers also were observed in 2025 but the lack of substantial evidence was the decisive factor in not including them in the statistics. Looking at the data without considering these specific cases allows us to see that the numbers remained steady throughout the period, with the total number of offers consistently ranging from about 200 to 300 in several months of 2025.
 
 ---
 
-## Initial Access Brokers
+### Initial Access Brokers
 
-![The image depicts the top five actors for both specified and wholesale access offers and statistics for the preferred initial access vector and targeted technology categories observed in 2025.]
+![Figure 10: The image depicts the top five actors for both specified and wholesale access offers and statistics for the preferred initial access vector and targeted technology categories observed in 2025.]
 
-In 2025, we identified offers from over 360 unique access brokers, over 290 of whom were new and first observed during the year. The actors *Black and *White were the most relevant in terms of wholesale offers, while *Gold and *Silver were the most prominent for specified offers, with *Bronze holding a notable position across both access types. Together, these five actors represented about 40% of all access offers in 2025. Credential-based attacks accounted for about 49% of all techniques actors used to gain initial access to systems and corporate networks, while remote access portals and remote desktop protocol (RDP)-based technologies were the preferred entry points for breaches, each accounting for about 34%.
+In 2025, we identified offers from over 360 unique access brokers, over 290 of whom were new and first observed during the year. The actors \*Black and \*White were the most relevant in terms of wholesale offers, while \*Gold and \*Silver were the most prominent for specified offers, with \*Bronze holding a notable position across both access types. Together, these five actors represented about 40% of all access offers in 2025. Credential-based attacks accounted for about 49% of all techniques actors used to gain initial access to systems and corporate networks, while remote access portals and remote desktop protocol (RDP)-based technologies were the preferred entry points for breaches, each accounting for about 34%.
+
+#### Top Actor — \*Black
+
+![Figure 11: The image depicts an Intel 471-generated graph of the actor *Black’s Diamond Model profile Dec. 15, 2025.]
+
+In 2025, \*Black was responsible for the highest number of wholesale access offers with almost 300. The actor first appeared on the XSS forum in August 2021 but maintained a low profile on the board. Consequently, much of our insight into \*Black’s activity originates from underground source engagement. Forum interactions indicated the actor was a member of the Red’n Team software development group and allegedly is technically experienced with a variety of malicious products, including account-checking tools, bots, brute-forcing utilities, parsers, payload-injection tools, phishing frameworks, plug-in installers and scanners. This diverse experience was reflected in the methods used to gain initial access to corporate environments, which typically started with mass scanning of specific IP ranges or countries to identify potentially exposed remote access services. This was followed by brute-force attacks, the direct use of legitimate credentials and the exploitation of vulnerabilities.[^21]
+
+#### Top Actor — \*Gold
+
+![Figure 12: The image depicts an Intel 471-generated graph of the actor *Gold’s Diamond Model profile Aug. 31, 2025.]
+
+In 2025, \*Gold was responsible for the highest number of specified access offers with over 70 observed. Unlike the low-profile posture of \*Black, \*Gold’s cadence and forum activity increased significantly, leading the actor to become one of the most impactful access brokers in operation in 2025. The actor’s primary method to obtain initial access to victims was via brute-force attacks with support of tools the actors \*Purple and \*Grey developed. In 2025, \*Gold targeted remote access technologies such as Cisco, Fortinet, Palo Alto, SonicWall and Watchguard, as well as Microsoft RDWeb. The actor’s advertisement strategy indicated a strong understanding of victim entities, providing detailed information about internal users, endpoint protection software used and the authorization level of compromised accounts. Forum interactions suggested this strategy was successful and garnered attention from high-profile customers such as \*Yellow — one of the most relevant access buyers in the underground market — and representatives of the Inc. aka INC and Sarcoma RaaS programs.[^22]
 
 ---
 
-## Tactics, Techniques and Procedures Observed
+### Initial Access Brokers, Ransomware and Extortion Groups
+
+In 2025, we started to identify potential correlations between IAB offerings and victims later claimed by ransomware or data extortion groups. These correlations are preliminary and circumstantial, as they rely on observations from two distinct points in the intrusion lifecycle:
+
+- The early stages, when an access offer becomes available on underground markets.
+- The final stage, when a victim is publicly listed on a data-leak site (DLS).
+
+In some instances, we obtain partial visibility into the actors who purchased the access, which provides additional context and strengthens the analytical linkage. However, this visibility is inconsistent and not guaranteed. As such, our assessments are based on a combination of observable facts such as the identification of victim organizations, temporal proximity where we consider a reasonable timeline of about 90 days between an access offer and a victim being claimed publicly, and reasonable analytical assumptions rather than definitive attribution. These correlations therefore should be interpreted as hypotheses informed by available evidence, not as confirmed causal relationships. In these conditions, the top five actors with the most correlations were \*Silver, \*Maroon, \*Olive, \*Gold and \*Black. Together, they had possible correlations to 29 different ransomware and extortion groups (See Figure 12).
+
+![Figure 12: The image depicts a Sankey diagram illustrating the correlation between the top five IABs and victims that ransomware or data extortion gangs claimed in 2025.]
+
+---
+
+### Tactics, Techniques and Procedures Observed
+
+> **ACCESS BROKERS TEND TO RELY ON A RECURRING SET OF TOOLS TO DEMONSTRATE PROOF OF COMPROMISE**
 
 In 2025, we conducted an in-depth analysis to identify the most common techniques and procedures used by access brokers, drawing on insights gathered from our sources’ engagements with actors in the underground. We observed access brokers tend to rely on a recurring set of tools to demonstrate proof of compromise. From a defender’s perspective, understanding the adversary behavior and their tools of preference can serve as early indicators of intrusion activity.
 
-One of the anticipated findings was the prevalence of LOLBins, which are legitimate operating system (OS) utilities that adversaries repurpose to perform reconnaissance, escalate privileges or facilitate lateral movement. Among these, the most frequently observed procedure involved the execution of nltest, a native Windows command-line utility used by system administrators to query domain controllers (DCs) and domain trust relationships.[^23]
+One of the anticipated findings was the prevalence of LOLBins, which are legitimate operating system (OS) utilities that adversaries repurpose to perform reconnaissance, escalate privileges or facilitate lateral movement. Among these, the most frequently observed procedure involved the execution of `nltest`, a native Windows command-line utility used by system administrators to query domain controllers (DCs) and domain trust relationships.[^23]
 
-The most commonly observed nltest commands included:
-- `nltest /dclist:`
-- `nltest /dclist:<VICTIM_DOMAIN>`
-- `nltest /domain_trusts`
-- `nltest /trusted_domains`
-- `nltest /domain_trusts /server:<VICTIM_SERVER>`
+The most commonly observed `nltest` commands included:
+```cmd
+nltest /dclist:
+nltest /dclist:<VICTIM_DOMAIN>
+nltest /domain_trusts
+nltest /trusted_domains
+nltest /domain_trusts /server:<VICTIM_SERVER>
+```
 
 A second frequently observed technique involved the use of PowerShell to enumerate the total number of computer objects within an Active Directory (AD) environment. This behavior surfaced repeatedly in actor engagements and was featured prominently in numerous access offer threads on Russian-language forums where actors advertised their products to demonstrate the value of the target.
 
 ---
 
-## Malware Updates and Developments
+### Outlook
 
-The malware landscape is an ever-changing environment where metrics vary greatly based on several factors.
+Moving into 2026, we anticipate the volume of access offers will remain volatile, characterized by occasional bulk offers and the emergence of new actors, as well as increased professionalization as specified offers become more tailored to potential customers. This access market environment was anticipated and confirmed in our last annual report, and was evident especially in the number of new access brokers appearing in 2025, which accounted for about 81% of the total. Credential-based intrusions, which accounted for nearly half of all initial access techniques in 2025, are likely to remain the dominant vector, driven by the scalability of credential theft and persistent weaknesses in remote authentication systems. Remote access portals and RDP technologies, each responsible for roughly a third of observed breaches, will continue to present attractive entry points for actors leveraging misconfigurations, weak credentials and inconsistent multifactor authentication (MFA) enforcement.
 
-![The image depicts top malware statistics for 2025.]
-
-### Summary
-In 2025, malware tactics underwent a significant transformation, with a notable shift toward high-volume social-engineering techniques exemplified by ClickFix. This innovative approach allowed attackers to gain traction in macOS environments by reducing delivery friction and turning execution into a user-driven action. Concurrently, authorities successfully disrupted two major information-stealer operations — Lumma and Rhadamanthys — reshaping the threat landscape and compelling affiliates and buyers to pivot toward other malware families such as Vidar and Stealc. Additionally, defenders continued to confront persistent challenges stemming from software supply chain compromises, as evidenced by multiple incidents involving node package manager (npm) that disrupted common development workflows.
-
-### Looking Ahead
-- ClickFix is expected to maintain its popularity, sustaining high demand for “traffic.”
-- We anticipate an increase in supply chain attacks characterized by worm-like automation. These attacks likely will target developer workflows and continuous integration (CI) and continuous delivery (CD) pathways, where execution may occur before standard security checks. This trend will make dependency integrity and identity/credential hygiene more critical than ever.
+Additionally, we are preparing for overall improvements in access offer collection in 2026. New insights are anticipated regarding the correlation between access brokers and ransomware and extortion groups, as we identified traceable patterns in the Exploit automated escrow service that allowed us to pinpoint two entities involved in a deal. Simultaneously, we are enhancing our access offer collection capabilities to broaden the scope of technologies and reclassify these offers based on their relevance.
 
 ---
 
-## Technical Malware Overview
+## Malware Updates and Developments
 
-![The image depicts the number of payloads collected and identified through emulation, the number of malware families collected and the amount of families pushing further payloads in 2025.]
+> The malware landscape is an ever-changing environment where metrics vary greatly based on several factors.\*\*\*
+
+![Figure 15: The image depicts top malware statistics for 2025.]
+
+### Summary
+
+In 2025, malware tactics underwent a significant transformation, with a notable shift toward high-volume social-engineering techniques exemplified by ClickFix. This innovative approach allowed attackers to gain traction in macOS environments by reducing delivery friction and turning execution into a user-driven action. Concurrently, authorities successfully disrupted two major information-stealer operations — Lumma and Rhadamanthys — reshaping the threat landscape and compelling affiliates and buyers to pivot toward other malware families such as Vidar and Stealc. Additionally, defenders continued to confront persistent challenges stemming from software supply chain compromises, as evidenced by multiple incidents involving node package manager (npm) that disrupted common development workflows.
+
+### Looking Ahead
+
+- ClickFix is expected to maintain its popularity, sustaining high demand for “traffic.”
+- We anticipate an increase in supply chain attacks characterized by worm-like automation. These attacks likely will target developer workflows and continuous integration (CI) and continuous delivery (CD) pathways, where execution may occur before standard security checks. This trend will make dependency integrity and identity/credential hygiene more critical than ever.
+
+> **MALWARE TACTICS UNDERWENT A TRANSFORMATION, WITH A SHIFT TOWARD HIGH-VOLUME SOCIAL-ENGINEERING TECHNIQUES**
+
+---
+
+### Technical Malware Overview
+
+![Figure 16: The image depicts the number of payloads collected and identified through emulation, the number of malware families collected and the amount of families pushing further payloads in 2025.]
 
 The impact of multiple takedowns, as well as the proliferation of techniques such as ClickFix and malicious advertising (malvertising), contributed to a decline in pay-per-install (PPI) metrics. Both ClickFix and malvertising operate at the traffic layer, focusing on clicks and conversions rather than installs, and therefore cannot be monitored through malware emulation like PPI can.
 
 ---
 
-## Campaigns Trends
+### Downloader Malware Metrics
 
-### Node Package Manager Supply Chain Attack
+![Figure 17: The image depicts the most active downloader malware variants and their percentage of the total monitored in 2025.]
+
+The most popular malware families used as first-stage loaders this year can be seen in the graphic above, many of which are dispersed by install services. Tracking these malware families allows us to quickly collect and identify new or updated malware builds that malware operators pay these install services to disseminate. The most popular tools this quarter supporting the aforementioned install services in descending order were the Amadey, Lumma, Stealc_v2 and Offerloader strains.
+
+---
+
+### Malware Downloaded Metrics
+
+![Figure 18: The image depicts the most frequently downloaded malware variants and their percentage of the total monitored in 2025.]
+
+Threat actors also continue to leverage loading malware to deliver additional malware payloads, which typically are designed to have an impact on the victim. Information stealers likely feature prominently due to an increasing demand for malware logs and the access credentials derived from them. The most downloaded information-stealer malware in descending order were the Lumma, Stealc and Vidar strains.
+
+---
+
+### Mobile Malware Metrics
+
+From April 1, 2025, to Dec. 1, 2025, our systems identified over 8,400 new observations spanning over 60 distinct mobile malware families. The most prevalent families were SpyNote, Antidot and AhMyth. SpyNote remained dominant with over 4,000 detections — 47.4% of the total — indicating sustained, widespread deployment corroborated by recent open source reporting. Antidot and AhMyth accounted for 8.0% and 7.2% of detections, respectively. Other notable families included Coper at 4.6%, AndroRat at 3.3% and ShellRat at 2.8%.
+
+![Figure 19: The image depicts a graphic of the most prevalent mobile malware families in 2025.]
+
+---
+
+### Notable Malware Additions, Updates and Takedown Announcements
+
+| Date | Update |
+| :--- | :--- |
+| **Jan. 7, 2025** | Intel 471 Malware Intelligence analysts observed samples of a new Android remote access trojan (RAT) dubbed CyberRat.[^24] |
+| **Jan. 21, 2025** | Intel 471 Malware Intelligence analysts observed a sample of a new Android banking trojan tracked internally as MeteorBot.[^24] |
+| **Feb. 27, 2025** | Acreed aka ACR_stealer was added to the Russian Market, a well-established platform used widely by Russian-speaking cybercriminals and other threat actors.[^25] |
+| **March 4, 2025** | Intel 471 Malware Intelligence analysts detected a sample of an Android banking trojan later dubbed TsarBot.[^26] |
+| **April 2, 2025** | The release of Stealc version 2.0 was announced on the XSS forum.[^26] |
+| **April 3, 2025** | The Rhadamanthys information stealer was added to the Russian Market.[^26] |
+| **May 22, 2025** | The European Union Agency for Law Enforcement Cooperation (Europol) announced a coordinated action targeting infrastructure supporting the Lumma information-stealing malware.[^27] |
+| **May 23, 2025** | Europol announced a coordinated action targeting infrastructure used by the Bumblebee, Lactrodectus, Qakbot aka QBot, Hijackloader, DanaBot, Trickbot and Warmcookie botnets.[^27] |
+| **June 2025** | A fork of the GorillaBot botnet emerged under the name ReaperStress, closely replicating the original GorillaBot website.[^28] |
+| **July 15, 2025** | A major update to the SmokeLoader malware was announced.[^28] |
+| **September 2025** | Rhadamanthys version 0.9.2 was released, featuring a “Lumma-like” message box, portable network graphic (PNG)-based stage delivery, configurable injection targets, camouflaged command-and-control (C2) URLs and a new Lua stealer plug-in along with auxiliary modules.[^29] |
+| **Oct. 6, 2025** | The release of Vidar version 2.0 was announced.[^30] |
+| **Nov. 13, 2025** | Europol announced the results of a joint operation by law enforcement agencies of several countries against the Rhadamanthys malware-as-a-service (MaaS), VenomRAT and the Elysium botnet environment.[^31] |
+
+---
+
+### Campaigns Trends
+
+#### Node Package Manager Supply Chain Attack
+
 In 2025, a series of npm supply chain compromises were identified, referred to collectively as Shai-Hulud. These campaigns were characterized by their worm-like propagation and involved large-scale package trojanization coupled with credential theft.
 
-#### Shai-Hulud
-The initial campaign began Sept. 15, 2025, during which the popular package @ctrl/tinycolor was compromised, along with more than 40 other npm packages. Within days, the scope of the attack expanded rapidly. By Sept. 18, 2025, the number of compromised packages exceeded 650. The attack is believed to have originated from a phishing campaign that specifically targeted the account of an npm package maintainer. A phishing email disguised as a security alert from npm tricked the developer into revealing their login credentials. Attackers then used this information to access the npm account and deploy a malicious payload that functions as a worm, initiating a multistage attack sequence.[^32]
+##### Shai-Hulud
+The initial campaign began Sept. 15, 2025, during which the popular package `@ctrl/tinycolor` was compromised, along with more than 40 other npm packages. Within days, the scope of the attack expanded rapidly. By Sept. 18, 2025, the number of compromised packages exceeded 650. The attack is believed to have originated from a phishing campaign that specifically targeted the account of an npm package maintainer. A phishing email disguised as a security alert from npm tricked the developer into revealing their login credentials. Attackers then used this information to access the npm account and deploy a malicious payload that functions as a worm, initiating a multistage attack sequence.[^32]
 
-#### Shai-Hulud: The Second Coming
+##### Shai-Hulud: The Second Coming
 A second major wave of attacks was detected Nov. 24, 2025, impacting popular packages from AsyncAPI, PostHog, Postman and Zapier, among others. Unlike the first wave, attackers infiltrated automated development pipelines, such as CI/CD systems, by exploiting compromised automation and publishing tokens. This allowed them to discreetly modify workflows and release trojanized package versions across multiple organizations. At its peak, the breach affected about 26,000 GitHub repositories. The worm harvested credentials from major cloud platforms, including Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure and npm, employing stolen tokens to republish infected packages and deploy malicious GitHub Actions runners on affected systems.
 
 This wave exhibited a destructive fallback behavior. If the malware failed to maintain authenticated access to both GitHub and npm during execution, it resorted to destructive actions, deleting and overwriting all user files within the home directory. This represents a significant escalation in impact compared to the first variant.[^33]
 
-### ClickFix Proliferation
+#### ClickFix Proliferation
+
 In 2025, ClickFix became the malware proliferation method of choice and was leveraged for countless campaigns. The social-engineering delivery technique relies on user-driven execution and operates primarily at the traffic and conversion layer. Attackers use malvertising, search engine optimization (SEO) poisoning, compromised sites and fake landing pages to direct victims into a guided “fix” flow. In this flow, victims are instructed to copy, paste and run a command under the pretense of troubleshooting, verification or enabling content.
 
 ClickFix campaigns typically follow a consistent pattern:
-- Traffic acquisition — Victims are lured through malvertising, redirect chains, compromised websites, look-alike domains.
+
+- **Traffic acquisition** — Victims are lured through malvertising, redirect chains, compromised websites, look-alike doma
 
 ---
 
-[^1]: Reference to Intel 471 internal research, August 2025.
-[^2]: Reference to underground forum activity, October 2025.
-[^3]: Reference to external vendor threat report, 2025.
-[^4]: German Federal Criminal Police Office (BKA) press release, January 2025.
-[^5]: International law enforcement coordination report, April 2025.
-[^6]: BreachForums closure announcement, August 2025.
-[^7]: XSS forum status update, August 2025.
-[^8]: DarkForums activity analysis, 2025.
-[^9]: Qilin RaaS affiliate program update, February 2025.
-[^10]: Qilin extortion tactic analysis, June 2025.
-[^11]: RAMP forum recruitment analysis, April 2025.
-[^12]: Intel 471 Breach Alert, Q2 2025.
-[^13]: Underground actor service advertisement, Q2 2025.
-[^14]: Australian Cyber Security Act 2024 documentation.
-[^15]: U.K. government legislative strategy, September 2025.
-[^16]: Intel 471 internal incident tracking, 2025.
-[^17]: CLOP campaign analysis, 2025.
-[^18]: Salesloft breach investigation, 2025.
-[^19]: Qilin "Korean Leak" campaign report, September 2025.
-[^20]: Open source reporting on South Korean financial breaches, 2025.
-[^21]: *Black actor profile, December 2025.
-[^22]: *Gold actor profile, August 2025.
-[^23]: Microsoft documentation on `nltest` utility.
-[^24]: Intel 471 Malware Intelligence report, January 2025.
-[^25]: Russian Market update, February 2025.
-[^26]: Intel 471 Malware Intelligence report, March/April 2025.
-[^27]: Europol press release, May 2025.
-[^28]: Malware development tracking, June/July 2025.
-[^29]: Rhadamanthys version 0.9.2 release analysis, September 2025.
-[^30]: Vidar version 2.0 release announcement, October 2025.
-[^31]: Europol press release, November 2025.
-[^32]: Shai-Hulud campaign analysis, September 2025.
-[^33]: Shai-Hulud second wave analysis, November 2025.
+## Footnotes
+
+[^1]: Intel 471 research and reporting on generative AI tools and social engineering enhancements, August 2025.
+[^2]: Underground forum listing for InboxPrime AI spamming tool by actor Mr_Pentium, October 2025.
+[^3]: External vendor threat report definition and nation-state threat intelligence reporting on AI-assisted malware development.
+[^4]: International law enforcement Operation Talent press releases and seizure notifications, January 2025.
+[^5]: Intel 471 tracking of Cracked forum migration and reemergence, April 2025.
+[^6]: Verity471 intelligence reports on BreachForums closures and administrator arrests, August 2025.
+[^7]: Intel 471 reporting on XSS forum downtime, operational recovery, and administrator transitions, August 2025.
+[^8]: Underground community forum tracking across DarkForums, BreachStars, DarkNetArmy, and Rehubcom.
+[^9]: Haise announcements and Qilin RaaS program update notices on RAMP and Exploit forums, February–May 2025.
+[^10]: Intel 471 analysis of Qilin group infrastructure, dedicated call centers, and negotiation tactics, June 2025.
+[^11]: Actor engagement and forum observation regarding RansomHub demise and Qilin affiliate recruitment, April 2025.
+[^12]: Underground forum offering by actor *Green regarding corporate data analysis and victim presentation services, Q2 2025.
+[^13]: Underground forum offering by actor *Pink regarding data audit and negotiation services, Q2 2025.
+[^14]: Australian Cyber Security Act 2024 mandatory ransomware reporting provisions, enacted May 2025.
+[^15]: United Kingdom legislative policy on ransomware payments and mandatory reporting, September 2025.
+[^16]: Verity471 breach alerts and underground intelligence tracking extortion group leaks, defacements, and compromises, February–August 2025.
+[^17]: Intel 471 telemetry and incident response data on CLOP campaigns targeting Cleo Harmony and Oracle EBS instances, 2024–2025.
+[^18]: Industry outreach and Intel 471 tracking of Salesloft / Drift integration compromise and SP1D3R HUNTERS activity, August 2025.
+[^19]: Breach reports and threat intelligence on Qilin "Korean Leak" campaign, September 2025.
+[^20]: Open-source reporting on South Korean MSP compromise impacting financial asset management entities, September 2025.
+[^21]: Underground source reporting and profile assessment on actor *Black, Intel 471 Cybercrime Intelligence, December 2025.
+[^22]: Underground source reporting and profile assessment on actor *Gold, Intel 471 Cybercrime Intelligence, August 2025.
+[^23]: Verity471 source engagements and actor TTP analysis regarding LOLBin and native Windows reconnaissance tool usage, 2025.
+[^24]: Intel 471 Malware Intelligence analyst reports on Android threats CyberRat and MeteorBot, January 2025.
+[^25]: Threat reporting on Acreed (ACR_stealer) release on Russian Market, February 2025.
+[^26]: Intel 471 Malware Intelligence reporting on TsarBot, Stealc v2.0 release, and Rhadamanthys marketplace availability, March–April 2025.
+[^27]: Europol press releases regarding multinational infrastructure takedowns targeting Lumma and loader/botnet ecosystems, May 2025.
+[^28]: Threat intelligence monitoring of ReaperStress botnet and SmokeLoader updates, June–July 2025.
+[^29]: Malware analysis report on Rhadamanthys version 0.9.2, September 2025.
+[^30]: Intel 471 Malware Intelligence tracking on Vidar version 2.0 release, October 2025.
+[^31]: Europol coordinated action report on Rhadamanthys MaaS, VenomRAT, and Elysium botnet disruptions, November 2025.
+[^32]: Incident investigation and software supply chain analysis of Shai-Hulud npm worm campaign, September 2025.
+[^33]: Incident analysis of Shai-Hulud: The Second Coming CI/CD pipeline supply chain compromise, November 2025.
 
 ---
 
@@ -1427,4 +1553,4 @@ permission of Intel 471, Inc.
 
 © Intel 471 Inc. All rights reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-18", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-10-13", "model": "gemini-3.7-flash"} -->
