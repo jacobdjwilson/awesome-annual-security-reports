@@ -1,6 +1,6 @@
 # TRACKING RANSOMWARE : AUG 2026
 
-**Organization:** Cyfirman  
+**Organization:** Cyfirma  
 **Report Title:** Tracking-Ransomware  
 **Year:** 2026  
 **Published On:** 2026-09-07  

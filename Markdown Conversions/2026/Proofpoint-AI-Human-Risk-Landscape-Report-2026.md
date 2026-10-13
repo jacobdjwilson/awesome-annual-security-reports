@@ -1,4 +1,4 @@
-Organization: Proopoint
+Organization: Proofpoint
 Report Title:  AI-Human-Risk-Landscape-Report
 Year:          2026
 
