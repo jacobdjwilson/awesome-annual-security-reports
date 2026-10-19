@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "last_updated": "2026-10-12T21:11:31.597806Z",
-  "last_learner_run": "2026-10-12T21:11:31.597806Z",
+  "last_updated": "2026-10-19T18:38:27.092949Z",
+  "last_learner_run": "2026-10-19T18:38:27.092949Z",
   "total_feedback_events": 19,
   "outcome_counts": {
     "true_positive": 3,
@@ -44,7 +44,7 @@
     "validation_threshold": 0.75,
     "gemini_rejection_patterns": [],
     "summary": "No triage outcomes, false positives, or closure comments were provided in the current dataset. As a result, no scoring adjustments or blocklist additions are necessary at this time.",
-    "last_gemini_analysis": "2026-10-12T21:11:31.597806Z"
+    "last_gemini_analysis": "2026-10-19T18:38:27.092949Z"
   },
   "overrides": {
     "domain_blocklist": [],
