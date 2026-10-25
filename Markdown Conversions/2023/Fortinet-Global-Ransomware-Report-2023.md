@@ -1,3 +1,5 @@
+REPORT
+
 # The 2023 Global Ransomware Report
 
 ## Table of Contents
@@ -13,11 +15,9 @@
 
 Fortinet recently surveyed 569 cybersecurity leaders and decision-makers from organizations of all sizes and industries around the globe to understand their perspectives on ransomware, how it has impacted their organizations, and what strategies they have in place to mitigate a potential attack. In this year’s survey, more than 80% of respondents say they are “very” or “extremely” concerned about the threat of ransomware, yet a similar number (78%) of organizations surveyed also believe they are “very” or “extremely” prepared to thwart a breach. Despite those concerns and feelings of preparedness, half of the organizations surveyed still fell victim to ransomware last year.
 
-Of the organizations that experienced a ransomware incident, 71% said they paid at least a portion of the demanded ransom, even though 72% indicated they
+Of the organizations that experienced a ransomware incident, 71% said they paid at least a portion of the demanded ransom, even though 72% indicated they detected the incident within hours (often within minutes). And while nearly all respondents had cyber insurance, this didn’t guarantee that all costs would be covered, or data restored. In fact, only 35% of those affected by ransomware recovered all their data after the incident.
 
 > While 78% of organizations believe they are “very” or “extremely” prepared to mitigate an attack, 50% still fell victim to ransomware last year.
-
-detected the incident within hours (often within minutes). And while nearly all respondents had cyber insurance, this didn’t guarantee that all costs would be covered, or data restored. In fact, only 35% of those affected by ransomware recovered all their data after the incident.
 
 It’s not all bad news, though. In fact, despite economic uncertainty, nearly all leaders surveyed (91%) expect increased security budgets in the coming year to invest in technologies and services that further safeguard their networks from a potential ransomware attack. In general, security leaders’ top priority is to implement advanced technologies such as artificial intelligence (AI) and machine learning (ML) that enable faster threat detection, followed by central monitoring to speed response. And specifically, Internet-of-Things (IoT) security and next-generation firewalls (NGFWs) topped the list of areas and products that leaders planned to invest in, with the greatest increase in plans to implement endpoint detection and response (EDR) and secure email gateway (SEG) solutions. This is a promising plan, as phishing emails were the number one method respondents reported ransomware actors used to gain entry. And of course, the endpoint is the ultimate destination of ransomware.
 
@@ -97,4 +97,12 @@ Ransomware isn’t slowing anytime soon. However, security leaders can take nume
 [^2]: “1H 2022 FortiGuard Labs Global Threat Landscape Report,” Fortinet, August 17, 2022.
 [^3]: “How We Can Help You: Common Scams and Crimes,” FBI.gov.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "gemini-3.1-flash-lite-preview"} -->
+---
+
+April 20, 2023 2:41 PM
+
+REPORT | The 2023 Global Ransomware Report
+
+Copyright © 2023 Fortinet, Inc. All rights reserved. Fortinet®, FortiGate®, FortiCare® and FortiGuard®, and certain other marks are registered trademarks of Fortinet, Inc., and other Fortinet names herein may also be registered and/or common law trademarks of Fortinet. All other product or company names may be trademarks of their respective owners. Performance and other metrics contained herein were attained in internal lab tests under ideal conditions, and actual performance and other results may vary. Network variables, different network environments and other conditions may affect performance results. Nothing herein represents any binding commitment by Fortinet, and Fortinet disclaims all warranties, whether express or implied, except to the extent Fortinet enters a binding written contract, signed by Fortinet’s General Counsel, with a purchaser that expressly warrants that the identified product will perform according to certain expressly-identified performance metrics and, in such event, only the specific performance metrics expressly identified in such binding written contract shall be binding on Fortinet. For absolute clarity, any such warranty will be limited to performance in the same ideal conditions as in Fortinet’s internal lab tests. Fortinet disclaims in full any covenants, representations, and guarantees pursuant hereto, whether express or implied. Fortinet reserves the right to change, modify, transfer, or otherwise revise this publication without notice, and the most current version of the publication shall be applicable. www.fortinet.com 2051666-0-0-EN
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-10-21", "model": "gemini-3.5-flash-lite"} -->
