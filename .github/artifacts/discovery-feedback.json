@@ -2,10 +2,10 @@
   "schema_version": "2.0",
   "last_updated": "2026-10-19T18:38:27.092949Z",
   "last_learner_run": "2026-10-19T18:38:27.092949Z",
-  "total_feedback_events": 19,
+  "total_feedback_events": 20,
   "outcome_counts": {
     "true_positive": 3,
-    "false_positive": 6,
+    "false_positive": 7,
     "duplicate": 6,
     "mismatch": 4
   },
@@ -242,6 +242,16 @@
       "org": "Proofpoint",
       "url": "https://www.enisa.europa.eu/sites/default/files/publications/ENISA%20Threat%20Landscape%202023.pdf",
       "outcome": "duplicate",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-10-26T13:23:23.321301Z",
+      "issue_number": 1865,
+      "issue_title": "[Report Discovery] Orca 2026 \u2014 State of Public Cloud Security Report",
+      "org": "Orca",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1155/acis/6730072",
+      "outcome": "false_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
