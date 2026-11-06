@@ -2,10 +2,10 @@
   "schema_version": "2.0",
   "last_updated": "2026-11-02T21:38:40.268571Z",
   "last_learner_run": "2026-11-02T21:38:40.268571Z",
-  "total_feedback_events": 22,
+  "total_feedback_events": 23,
   "outcome_counts": {
     "true_positive": 3,
-    "false_positive": 9,
+    "false_positive": 10,
     "duplicate": 6,
     "mismatch": 4
   },
@@ -271,6 +271,16 @@
       "issue_title": "[Report Discovery] Descope 2026 \u2014 State of Customer Identity Report",
       "org": "Descope",
       "url": "https://www.globenewswire.com/news-release/2026/10/08/3377313/0/en/descope-named-multifactor-solution-of-the-year-in-2026-cybersecurity-breakthrough-awards-program.html",
+      "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-11-06T14:18:10.957120Z",
+      "issue_number": 1876,
+      "issue_title": "[Report Discovery] WatchGuard 2026 \u2014 Threat Report",
+      "org": "WatchGuard",
+      "url": "https://kuzstu-nf.ru/wp-content/uploads/2026/06/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA-%D0%92%D1%81%D0%B5%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_15-%D0%BC%D0%B0%D1%8F-2026-%D0%B3_%D0%98%D0%A2%D0%9E%D0%93.-2.pdf",
       "outcome": "false_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
