@@ -2,10 +2,10 @@
   "schema_version": "2.0",
   "last_updated": "2026-11-02T21:38:40.268571Z",
   "last_learner_run": "2026-11-02T21:38:40.268571Z",
-  "total_feedback_events": 21,
+  "total_feedback_events": 22,
   "outcome_counts": {
     "true_positive": 3,
-    "false_positive": 8,
+    "false_positive": 9,
     "duplicate": 6,
     "mismatch": 4
   },
@@ -261,6 +261,16 @@
       "issue_title": "[Report Discovery] NCTech 2026 \u2014 State of Cybersecurity",
       "org": "NCTech",
       "url": "https://www.nctech.org/events/event/2026/cybersecurity-q1.html",
+      "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-11-06T13:53:52.780620Z",
+      "issue_number": 1880,
+      "issue_title": "[Report Discovery] Descope 2026 \u2014 State of Customer Identity Report",
+      "org": "Descope",
+      "url": "https://www.globenewswire.com/news-release/2026/10/08/3377313/0/en/descope-named-multifactor-solution-of-the-year-in-2026-cybersecurity-breakthrough-awards-program.html",
       "outcome": "false_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
