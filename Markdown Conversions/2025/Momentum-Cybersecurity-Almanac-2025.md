@@ -1,11 +1,68 @@
-# Cybersecurity Almanac 2025
+# Cybersecurity Almanac: 2025 Cybersecurity M&A and Capital Markets Report
+
+**A Record $119B in Strategic Activity Across Acquisitions, IPOs & Financings; Strategic Buyers’ Domination; and an Emerging Two-Tier Market**
+
+_January 2026_  
+**Momentum Cyber**
+
+---
+
+### In This Report…
+- Annual cybersecurity M&A deal value and volume over the last decade
+- Quarterly cybersecurity M&A deal value and volume with YoY change
+- Monthly cybersecurity M&A deal value and volume with YoY change
+- Transaction volume and value based on target company subsector
+- Cybersecurity SaaS vs. Non-SaaS analysis on a yearly basis
+- CYBERscape 4.0 – a comprehensive revamp of the cyber landscape taxonomy
+- Analysis on the size of deals, time to exit, and capital raised for M&A deals in 2025
+- Most active strategic buyers and investors since 2019
+- Most active buyers in 2025 and what kinds of companies they are acquiring
+- Winners vs. underperformers, unicorns crowned and exited since 2019, an Israel M&A spotlight, and much more…
+
+### Did You Know…
+- **In 2025, $96B deployed across 400 M&A transactions** – both the highest marks ever
+- **Deal value was up 270% in 2025**, while deal volume was up 22%
+- **Q1 2025 marked the largest pure play cybersecurity M&A deal of all time** for $32B
+- **Q2 2025 witnessed the highest quarterly transaction activity on record** with 109 deals
+- **Q3 2025 witnessed the largest M&A deal volume ever** with a total value of $44.2B
+- **Cloud-native / SaaS deals accounted for 59% of the volume** and 97% of M&A capital deployed
+- **Strategics are back and retook the M&A mantle from Private Equity**, accounting for 92% of disclosed M&A value and 59% of deal count
+
+### The Authors
+- **Eric McAlpine**, Founder & CEO
+- **Vilyam Yegikyan**, Chief of Staff
+- **Jake M. Pollock**, Head of Research
+
+---
 
 ## Table of Contents
 - [I. Foreword](#i-foreword)
+  - [Cybersecurity Themes Entering 2026](#cybersecurity-themes-entering-2026)
+  - [Guardians of the Machine Age](#guardians-of-the-machine-age)
 - [II. Executive Summary](#ii-executive-summary)
+  - [A Snapshot of 2025](#a-snapshot-of-2025)
+  - [2025 Cybersecurity Activity By The Numbers…](#2025-cybersecurity-activity-by-the-numbers)
+  - [M&A Activity by Sector](#ma-activity-by-sector)
+  - [Financing Activity by Sector](#financing-activity-by-sector)
+  - [Selected Key Strategic Activity](#selected-key-strategic-activity)
 - [III. 2025 Highlights](#iii-2025-highlights)
+  - [Total Deal Activity Over the Last Decade](#total-deal-activity-over-the-last-decade)
+  - [Total Deal Activity Over the Last 24 Quarters](#total-deal-activity-over-the-last-24-quarters)
+  - [Strategic M&A Activity](#strategic-ma-activity)
+  - [Private Equity M&A Activity](#private-equity-ma-activity)
+  - [Early-Stage Activity (Seed & Series A)](#early-stage-activity-seed--series-a)
+  - [Growth Stage Activity (Series B)](#growth-stage-activity-series-b)
+  - [Later Stage Activity (Series C+)](#later-stage-activity-series-c)
 - [IV. CYBERscape 4.0](#iv-cyberscape-40)
-- [V. M&A Activity](#v-ma-activity)
+  - [Why Did We Revamp the CYBERscape? Highlights](#why-did-we-revamp-the-cyberscape-highlights)
+  - [CYBERscape 3.0 vs. CYBERscape 4.0 Taxonomy](#cyberscape-30-vs-cyberscape-40-taxonomy)
+- [V. M&A Activity in Cybersecurity](#v-ma-activity-in-cybersecurity)
+  - [Annual Cybersecurity M&A Deal Value and Volume](#annual-cybersecurity-ma-deal-value-and-volume)
+  - [Cybersecurity Funding Exceeds Pre-COVID Levels](#cybersecurity-funding-exceeds-pre-covid-levels)
+  - [Monthly Cybersecurity M&A Deal Value and Volume](#monthly-cybersecurity-ma-deal-value-and-volume)
+  - [M&A Deal Spotlight (Q1 & Q2)](#ma-deal-spotlight-q1--q2)
+  - [M&A Deal Spotlight (Q3 & Q4)](#ma-deal-spotlight-q3--q4)
+  - [Cybersecurity M&A Transactions Based on Company Segment](#cybersecurity-ma-transactions-based-on-company-segment)
 - [VI. Financing Activity](#vi-financing-activity)
 - [VII. Public Markets](#vii-public-markets)
 - [VIII. About Momentum Cyber](#viii-about-momentum-cyber)
@@ -16,106 +73,785 @@
 # I. Foreword
 
 ## Cybersecurity Themes Entering 2026
+_A collaboration with IT-Harvest on how AI is driving the future of cybersecurity_
 
-Cybersecurity has always evolved in response to inflection points: the commercialization of the internet, the rise of cloud computing, the proliferation of mobile devices, and the industrialization of cybercrime. Each shift expanded the digital attack surface and demanded new defensive paradigms. None, however, has arrived with the speed, scale, and economic force of artificial intelligence.
-
-The launch of ChatGPT in late 2022 marked more than a product release — it triggered the fastest technology adoption cycle in history and inaugurated what can only be described as the Machine Age. In less than three years, generative AI moved from research labs into every enterprise workflow, compressing decades of technological diffusion into months. The result has been a profound asymmetry: unprecedented productivity gains on one side, and an equally unprecedented expansion of systemic risk on the other.
-
-Cybersecurity now sits at the fulcrum of this transformation. AI is not merely another tool attackers can abuse; it is a force multiplier that automates reconnaissance, accelerates exploit development, enables convincing social engineering at scale, and introduces entirely new attack vectors — from prompt injection and model poisoning to autonomous, agent-driven attacks operating at machine speed. At the same time, enterprises are rushing to embed AI into mission-critical systems long before governance, security, and regulatory frameworks have fully matured.
+### Introduction
+Cybersecurity is entering its fastest and most consequential period of change. Artificial intelligence has moved from an emerging technology to a foundational layer of enterprise operations, simultaneously amplifying attacker capabilities and forcing a fundamental rethink of how security is designed, governed, and executed.
 
 For nearly two decades, IT-Harvest has been one of the industry’s most trusted sources of independent cybersecurity intelligence. Under the leadership of Richard Stiennon — author, speaker, and former Gartner VP — the firm has consistently provided data-driven insight into how new technologies reshape security markets and operating models.
 
 Momentum Cyber is honored to collaborate with Richard and the IT-Harvest team on this year’s report. His foreword captures the defining reality of the current cycle: the rapid emergence of AI security as the fastest-forming sub-sector in cybersecurity history, driven by the collision of enterprise AI adoption, automated threats, and immature governance frameworks.
 
-> “We are entering an era in which security can no longer be reactive, episodic, or human-paced. The guardians of this age will be those who understand that securing AI is not a niche problem — it is the central challenge of the digital economy.”
+That perspective sets the stage for this analysis. Building on that foundation, this report examines how AI is reshaping both offense and defense, how capital and consolidation are flowing through the cybersecurity ecosystem, and why securing AI systems has become a board-level imperative.
 
-In January 2025, I wrote that “By the end of 2025 there will be a noticeable impact on SOCs at large organizations and MDR companies as they deploy AI agents instead of people.” I was wrong. During 2025, AI Security as a category exploded. When I wrote that there were a handful of SOC Automation vendors talking about 100% alert triage and automated case handling. As in everything AI related, time scales are compressed. By April there were 86 vendors in the AI Security Category. Entering 2026, there are over 330!
+Cybersecurity has always evolved in response to inflection points: the commercialization of the internet, the rise of cloud computing, the proliferation of mobile devices, and the industrialization of cybercrime. Each shift expanded the digital attack surface and demanded new defensive paradigms. None, however, has arrived with the speed, scale, and economic force of artificial intelligence.
+
+The launch of ChatGPT in late 2022 marked more than a product release — it triggered the fastest technology adoption cycle in history and inaugurated what can only be described as the **Machine Age**. In less than three years, generative AI moved from research labs into every enterprise workflow, compressing decades of technological diffusion into months. The result has been a profound asymmetry: unprecedented productivity gains on one side, and an equally unprecedented expansion of systemic risk on the other.
+
+Cybersecurity now sits at the fulcrum of this transformation. AI is not merely another tool attackers can abuse; it is a force multiplier that automates reconnaissance, accelerates exploit development, enables convincing social engineering at scale, and introduces entirely new attack vectors — from prompt injection and model poisoning to autonomous, agent-driven attacks operating at machine speed. At the same time, enterprises are rushing to embed AI into mission-critical systems long before governance, security, and regulatory frameworks have fully matured.
+
+---
+
+## Guardians of the Machine Age
+
+> “In January 2025, I wrote that ‘By the end of 2025 there will be a noticeable impact on SOCs at large organizations and MDR companies as they deploy AI agents instead of people.’ I was wrong. During 2025, AI Security as a category exploded. When I wrote that there were a handful of SOC Automation vendors talking about 100% alert triage and automated case handling. As in everything AI related, time scales are compressed. By April there were 86 vendors in the AI Security Category. Entering 2026, there are over 330!”
+> 
+> — **Richard Stiennon**, Chief Research Analyst, IT-Harvest  
+> _Author of Guardians of the Machine Age (Releasing February 14th, 2026)_
+
+We are entering an era in which security can no longer be reactive, episodic, or human-paced. The guardians of this age will be those who understand that securing AI is not a niche problem — it is the central challenge of the digital economy.
+
+This tension has catalyzed the fastest emergence of a new cybersecurity sub-industry ever recorded. In just three years, 330+ AI-security vendors have been founded, billions of dollars have been invested, and strategic acquisitions by incumbent security leaders have begun to reshape the market. What once would have taken decades — from the transistor to the microprocessor, from the internet to cloud security — has unfolded in a fraction of that time. The velocity itself is now a defining risk factor.
+
+Yet this moment is not defined solely by threat. As history shows, every technological leap produces its guardians. A new class of cybersecurity companies is emerging to secure models, govern AI behavior, protect data in use, enforce guardrails on autonomous systems, and align enterprise AI adoption with regulatory regimes such as the EU AI Act, NIST’s AI Risk Management Framework, and ISO 42001. These companies are not defending endpoints or networks alone; they are defending decision-making systems, intellectual capital, and trust itself.
 
 This annual report is Momentum Cyber’s perspective on that transformation. Drawing on deep market intelligence and foundational research, we examine how AI is reshaping both offense and defense, how capital and consolidation are flowing through the cybersecurity ecosystem, and why AI security and governance have moved from experimental concerns to board-level imperatives. More importantly, we explore what comes next: a future where cybersecurity must operate at machine speed, with automated defenses confronting automated threats.
-
-— **Richard Stiennon**, Chief Research Analyst, IT-Harvest
 
 ---
 
 # II. Executive Summary
 
 ## A Snapshot of 2025
-Market activity and strategic maneuvering reached new heights in 2025.
+**Market activity and strategic maneuvering reaches new heights**
 
-- **$96.0B** Total M&A Deal Value
-- **400** M&A Deals
-- **820** Financing Deals
-- **10+** New Cybersecurity Unicorns
-- **70** Capital Raises ≥ $50M
+### Summary Metrics
+- **$117M**: Median 2025 Deal Value
+- **$96.0B**: Total Disclosed M&A Deal Value
+- **$20.7B**: Total Financing Volume
+- **400**: M&A Deals Completed
+- **820**: Total Financing Deals Completed
+- **8**: $1B+ M&A Deals
+- **10+**: New Cybersecurity Unicorns
+- **70**: Capital Raises ≥ $50M
+- **165**: Private Equity Deals Completed in 2025
 
-### 2025 Cybersecurity Activity By The Numbers
-- **M&A Activity**: 400 M&A deals in 2025 marked the most active year ever. Total volume of $96B showed a record year, with mega deals like Google’s $32B acquisition of Wiz and Palo Alto’s $25B acquisition of CyberArk leading the way.
-- **Financing Activity**: Total financing value increased 52% in 2025 from $13.6B to $20.7B.
-- **Public Market Activity**: High growth cyber increased 10%, while low growth stocks declined 7%. Top performers included Cloudflare (83%), CrowdStrike (37%), and Zscaler (25%).
+### 8 Billion-Dollar Plus Deals Completed
+1. **Google** acquires **Wiz** — **$32.0B**
+2. **Palo Alto Networks** acquires **CyberArk** — **$25.0B**
+3. **HPE** acquires **Juniper Networks** — **$16.0B**
+4. **ServiceNow** acquires **Armis** — **$7.7B**
+5. **Francisco Partners** acquires **Jamf** — **$2.5B**
+6. **Veeam** (TPG-backed) acquires **Securiti** — **$1.7B**
+7. **Proofpoint** (Thoma Bravo-backed) acquires **Hornetsecurity** — **$1.0B**
+8. **ServiceNow** acquires **Veza** — **$1.0B**
+
+### Sector Highlights
+- **Most Active Sector in M&A**: **Security Services** with 126 Deals
+- **Most Active Sector in Financing**: **AI Security** with 144 Raises
+
+### Select Capital Raises ≥ $50M
+- $700M
+- $540M
+- $500M
+- $435M
+- $426M
+- $359M
+- $356M
+- $350M
+- $340M
+- $300M
+
+### Public Markets Performance
+- **High Growth Cyber**: +10%
+- **Low Growth Cyber**: -7%
+- **HACK Index**: +6%
+- **Top Public Performers**:
+  - **Cloudflare (NET)**: +83%
+  - **CrowdStrike (CRWD)**: +37%
+  - **Zscaler (ZS)**: +25%
+
+---
+
+## 2025 Cybersecurity Activity By The Numbers…
+**Market activity and strategic maneuvering reaches new heights**
+
+### M&A Activity
+- **400 M&A deals in 2025** marked the most active year ever.
+- **Total volume of $96B** showed a record year, with mega deals like Google’s $32B acquisition of Wiz and Palo Alto’s $25B acquisition of CyberArk leading the way.
+- **Year-over-Year (YoY) Growth**:
+  - YoY M&A deal value growth: **+270%**
+  - YoY M&A deal volume growth: **+22%**
+- **Quarterly Breakdown**:
+  - **Q1 2025**: $34.7B across 103 deals
+  - **Q2 2025**: $3.6B across 109 deals *(highest quarterly transaction count on record)*
+  - **Q3 2025**: $44.2B across 94 deals *(highest quarterly M&A value ever)*
+  - **Q4 2025**: $13.7B across 94 deals
+- **Large-Scale Deals**:
+  - **8** deals worth **$1B+**
+  - **38** deals worth over **$100M**
+- **Sponsor vs. Strategic Share**:
+  - **165** M&A deals completed by Private Equity firms and portfolio companies
+  - **92%** of disclosed M&A capital deployed by Strategics[^1]
+
+[^1]: Disclosed deal values only.
+
+### Financing Activity
+- Activity was high in 1H ’25 and remained strong in Q3 and Q4 with **820 deals in 2025**.
+- **Quarterly Financing Breakdown**:
+  - **Q1 2025**: $2.7B across 211 deals
+  - **Q2 2025**: $9.0B across 210 deals
+  - **Q3 2025**: $2.6B across 199 deals
+  - **Q4 2025**: $6.4B across 200 deals
+- **Total Financing Value**: Increased **52%** in 2025 from $13.6B to **$20.7B**.
+- **Key Categories**:
+  - **144** AI Security financings
+  - **70** capital raises ≥ $50M
+
+### Public Market Activity
+- High growth cyber increased, in line with the Nasdaq and S&P 500 this year, while low growth cyber declined over the past 12 months. Most indexes saw a rough last 6 weeks of the year.
+- **High growth security stocks** were especially strong in 2025, increasing **10%**, while **low growth stocks** declined **7%**, bucking the trend of broader market patterns.
+- **Top performers across Cybersecurity in 2025**:
+  - **Cloudflare**: +83%
+  - **CrowdStrike**: +37%
+  - **Zscaler**: +25%
+
+---
+
+## M&A Activity by Sector
+**Human-led Security Services companies remain the most active M&A category while AI Security enters the M&A arena**
+
+| Rank | Sector | M&A Deal Activity Count |
+| :---: | :--- | :---: |
+| 1 | **Security Services** | 126 |
+| 2 | **Risk & Compliance** | 63 |
+| 3 | **Identity & Access Management (IAM)** | 40 |
+| 4 | **Digital Channel Security** | 40 |
+| 5 | **Security Operations** | 38 |
+| 6 | **Data Security** | 29 |
+| 7 | **Network Security** | 18 |
+| 8 | **Application Security** | 13 |
+| 9 | **Cloud Security** | 10 |
+| 10 | **AI Security** | 10 |
+| 11 | **IoT / OT Security** | 9 |
+| 12 | **Endpoint Security** | 4 |
+
+---
+
+## Financing Activity by Sector
+**AI Security has quickly taken the mantle from Risk & Compliance as the most financed sector in 2025**
+
+| Rank | Sector | Financing Deal Count |
+| :---: | :--- | :---: |
+| 1 | **AI Security** | 144 |
+| 2 | **Risk & Compliance** | 137 |
+| 3 | **Digital Channel Security** | 98 |
+| 4 | **Security Operations** | 95 |
+| 5 | **Data Security** | 87 |
+| 6 | **Identity & Access Management (IAM)** | 64 |
+| 7 | **Application Security** | 61 |
+| 8 | **Security Services** | 45 |
+| 9 | **Network Security** | 41 |
+| 10 | **IoT / OT Security** | 20 |
+| 11 | **Cloud Security** | 15 |
+| 12 | **Endpoint Security** | 13 |
+
+---
+
+## Selected Key Strategic Activity
+**Noteworthy transactions announced in 2025**
+
+### Selected Acquisition Activity
+| Date | Target | Acquirer | Implied Enterprise Value ($M) |
+| :--- | :--- | :--- | :--- |
+| **03/18** | Wiz | Google | $32,000M |
+| **07/30** | CyberArk | Palo Alto Networks | $25,000M |
+| **12/23** | Armis | ServiceNow | $7,750M |
+| **10/29** | Jamf | Francisco Partners | $2,500M |
+| **10/21** | Securiti | Veeam | $1,725M |
+| **05/15** | Hornetsecurity | Proofpoint | $1,000M |
+| **10/21** | Veza | ServiceNow | $1,000M |
+| **05/27** | Red Canary | Zscaler | $675M |
+| **04/09** | Protect AI | Palo Alto Networks | $700M |
+| **04/09** | Radiant Logic | PE-backed | $500M |
+| **03/06** | Run:ai / OT Target | Armis | $335M |
+| **03/06** | IDnow | Acquirer | $300M |
+| **05/23** | Target | Acquirer | $300M |
+| **09/16** | Target | Check Point | $300M |
+| **10/21** | Fletch / Target | Acquirer | $290M |
+| **08/04** | AI Security Target | Singularity / SentinelOne | $275M |
+| **09/17** | AIDR Target | Acquirer | $260M |
+| **09/08** | Target | Acquirer | $225M |
+| **03/03** | Target | Jamf | $215M |
+| **09/11** | Target | Acquirer | $180M |
+| **02/12** | Zilla Security | CyberArk | $165M |
+
+### Selected Financing Activity
+| Date | Company | Amount Raised ($M) | Funding Stage |
+| :--- | :--- | :--- | :--- |
+| **12/09** | Company | $700M | Series B |
+| **06/11** | Company | $540M | Series E |
+| **03/31** | Company | $500M | PE Growth |
+| **10/27** | Company | $426M | Series C |
+| **06/30** | Company | $359M | Series G |
+| **04/23** | Company | $356M | Series D |
+| **09/03** | Company | $340M | Series E |
+| **09/01** | Company | $300M | PE Growth |
+| **10/23** | Company | $280M | Later Stage VC |
+| **03/26** | Company | $250M | Series E |
+| **10/28** | Company | $150M | Series C |
+| **07/23** | Company | $150M | Series D |
+| **10/06** | Company | $143M | Series B |
+| **03/24** | Company | $140M | Series G |
+| **12/04** | Company | $130M | Series A |
+| **02/28** | Company | $108M | Series D |
+| **07/31** | Company | $100M | Series B |
+| **06/10** | Company | $100M | Series D |
+| **04/02** | Company | $100M | Series D |
+| **02/17** | Company | $100M | Series B |
 
 ---
 
 # III. 2025 Highlights
 
 ## Total Deal Activity Over the Last Decade
-Strategic activity in 2025 made a massive comeback after 3 years of successive declines. 2025 saw the highest deal volume in history driven by increased M&A.
+**Strategic activity in 2025 made a massive comeback after 3 years of successive declines**
 
-![Chart showing annual deal volume from 2016 to 2025, highlighting the $96B total in 2025.]
+> **Key Trend**: Highest deal volume in history driven by increased M&A (+195% total strategic deal volume rebound from 2024 to 2025).
+
+![Chart showing annual cybersecurity deal volume (in billions) from 2016 through 2025, segmented by IPOs, Financings, and M&A transactions. Total deal volume peaked at $119B in 2025 compared to $40B in 2024, $44B in 2023, $73B in 2022, and $113B in 2021.]
+
+### Annual Strategic Deal Volume Breakdown ($B)
+| Year | M&A ($B) | Financing ($B) | IPOs ($B) | Total Strategic Activity ($B) |
+| :---: | :---: | :---: | :---: | :---: |
+| **2016** | $26 | $5 | $0 | **$31** |
+| **2017** | $26 | $6 | $1 | **$33** |
+| **2018** | $19 | $9 | $7 | **$35** |
+| **2019** | $32 | $11 | $1 | **$44** |
+| **2020** | $21 | $13 | $2 | **$36** |
+| **2021** | $83 | $28 | $2 | **$113** |
+| **2022** | $52 | $21 | $0 | **$73** |
+| **2023** | $32 | $11 | $1 | **$44** |
+| **2024** | $26 | $14 | $0 | **$40** |
+| **2025** | **$96** | **$21** | **$2** | **$119** |
+
+---
+
+## Total Deal Activity Over the Last 24 Quarters
+**Strategic activity in 2025 made a massive comeback after 3 years of successive steady declines**
+
+![Chart showing quarterly deal volume across 24 quarters from Q1 2020 to Q4 2025, tracking cycles: Post-COVID / ZIRP boom, 2022-2023 contraction, and the 2025 Age of the Mega Deal highlighted by Google/Wiz ($32B), Palo Alto/CyberArk ($25B), HPE/Juniper ($16B), and ServiceNow/Armis ($7.7B).]
+
+### Quarterly Volume Summary ($B)
+- **2020**: Ranged from $6B to $13B per quarter.
+- **2021**: Reached highs of $24B (Q1), $25B (Q2), $27B (Q3), and $37B (Q4).
+- **2022**: Peaked at $40B in Q1, tapering down to $8B-$13B across Q2-Q4.
+- **2023**: Lowest quarterly activity, hovering between $8B and $17B.
+- **2024**: Continued low strategic deployment ($9B - $12B per quarter).
+- **2025 ("The Age of the Mega Deal")**:
+  - **Q1 2025**: **$38B** (M&A: $34.7B, Financing: $2.7B, IPOs: $1B) — _Includes Google / Wiz ($32B)_
+  - **Q2 2025**: **$13B** (M&A: $3.6B, Financing: $9.0B)
+  - **Q3 2025**: **$48B** (M&A: $44.2B, Financing: $2.6B, IPOs: $1B) — _Includes Palo Alto / CyberArk ($25B) and HPE / Juniper Networks ($16B)_
+  - **Q4 2025**: **$20B** (M&A: $13.7B, Financing: $6.4B) — _Includes ServiceNow / Armis ($7.7B)_
+
+---
+
+## Strategic M&A Activity
+**Strategic related M&A highlights in 2025**
+
+Strategic acquirers targeted companies specializing in **Security Services** by a wide margin as "human-led" still dominates the emerging AI-native platforms; while **Cloud Security** (Wiz) and **IAM** (CyberArk) saw the highest deal value.
+
+### Strategic M&A Deal Count by Sector (Top 5)
+1. **Security Services**: 61 deals
+2. **Risk & Compliance**: 39 deals
+3. **Identity & Access Management (IAM)**: 26 deals
+4. **Security Operations**: 26 deals
+5. **Digital Channel Security**: 23 deals
+
+### Strategic M&A Deal Value by Sector (Top 5 Disclosed)
+1. **Cloud Security**: $32,000M
+2. **IAM**: $25,480M
+3. **Network Security**: $16,580M
+4. **IoT / OT Security**: $7,850M
+5. **Security Services**: $2,213M
+
+### Strategic Deal Activity Trends (2019 - 2025)
+| Year | Strategic Deal Count | Strategic Deal Value ($B) |
+| :---: | :---: | :---: |
+| **2019** | 142 | $25.2 |
+| **2020** | 112 | $9.2 |
+| **2021** | 171 | $37.0 |
+| **2022** | 161 | $16.9 |
+| **2023** | 159 | $10.6 |
+| **2024** | 162 | $35.8 |
+| **2025** | **235** | **$88.4** |
+
+### Geographic Breakdown (Strategic M&A)
+- **By Deal Count**:
+  - North America: 49%
+  - Europe: 30%
+  - Asia: 9%
+  - Middle East: 6%
+  - Latin America: 3%
+  - Oceania: 3%
+- **By Deal Value**:
+  - North America: 65%
+  - Middle East: 32%
+  - Europe: 1%
+  - Asia / Other: 2%
+
+---
+
+## Private Equity M&A Activity
+**Private Equity related M&A activity in 2025**
+
+Private Equity firms and their portfolio companies targeted **Security Services, MSSPs, Risk & Compliance, IAM, and Data Security** vendors in 2025; while the most deployed capital went to **Endpoint Security** (Jamf, Cybereason).
+
+### PE M&A Deal Count by Sector (Top 5)
+1. **Security Services**: 64 deals
+2. **Risk & Compliance**: 24 deals
+3. **Digital Channel Security**: 18 deals
+4. **Identity & Access Management (IAM)**: 14 deals
+5. **Security Operations**: 12 deals
+
+### PE M&A Deal Value by Sector (Top 5 Disclosed)
+1. **Endpoint Security**: $2,500M
+2. **Data Security**: $1,921M
+3. **Digital Channel Security**: $1,106M
+4. **IAM**: $905M
+5. **Security Services**: $747M
+
+### PE Deal Activity Trends (2019 - 2025)
+| Year | PE Deal Count | PE Deal Value ($B) |
+| :---: | :---: | :---: |
+| **2019** | 51 | $6.7 |
+| **2020** | 65 | $11.4 |
+| **2021** | 117 | $45.7 |
+| **2022** | 131 | $34.6 |
+| **2023** | 112 | $9.8 |
+| **2024** | 144 | $15.1 |
+| **2025** | **165** | **$7.6** |
+
+### Geographic Breakdown (Private Equity M&A)
+- **By Deal Count**:
+  - North America: 53%
+  - Europe: 42%
+  - Asia: 2%
+  - Latin America: 1%
+  - Oceania / Other: 2%
+- **By Deal Value**:
+  - North America: 69%
+  - Europe: 31%
+
+---
+
+## Early-Stage Activity (Seed & Series A)
+**Early-stage investing activity in 2025**
+
+Early-stage **AI Security** companies, along with **Risk & Compliance** companies, saw the most deal volume this year, while North American companies had the most capital infused.
+
+### Early-Stage Deal Count by Sector (Top 5)
+1. **AI Security**: 126 deals
+2. **Risk & Compliance**: 90 deals
+3. **Security Operations**: 67 deals
+4. **Digital Channel Security**: 59 deals
+5. **Data Security**: 59 deals
+
+### Early-Stage Deal Value by Sector (Top 5 Disclosed)
+1. **AI Security**: $1,165M
+2. **Security Operations**: $381M
+3. **Application Security**: $338M
+4. **Digital Channel Security**: $275M
+5. **Risk & Compliance**: $264M
+
+### Early-Stage Deal Activity Trends (2019 - 2025)
+| Year | Early-Stage Deal Count | Capital Deployed ($B) |
+| :---: | :---: | :---: |
+| **2019** | 446 | $2.4 |
+| **2020** | 515 | $2.4 |
+| **2021** | 628 | $4.0 |
+| **2022** | 696 | $4.1 |
+| **2023** | 656 | $3.0 |
+| **2024** | 619 | $2.6 |
+| **2025** | **562** | **$3.4** |
+
+### Geographic Breakdown (Seed & Series A)
+- **By Deal Count**:
+  - North America: 53%
+  - Europe: 27%
+  - Asia: 10%
+  - Middle East: 8%
+  - Latin America / Africa / Oceania: 2%
+- **By Deal Value**:
+  - North America: 70%
+  - Europe: 14%
+  - Middle East: 12%
+  - Asia: 3%
+  - Other: 1%
+
+---
+
+## Growth Stage Activity (Series B)
+**Growth stage investing activity in 2025**
+
+**Risk & Compliance** companies recorded the most Series B rounds and the second most capital raised, trailing only **AI Security**. The U.S., Israel, and Europe saw the most Series B activity.
+
+### Series B Deal Count by Sector (Top 5)
+1. **Risk & Compliance**: 11 deals
+2. **Security Operations**: 9 deals
+3. **Digital Channel Security**: 8 deals
+4. **Network Security**: 6 deals
+5. **Application Security**: 5 deals
+
+### Series B Deal Value by Sector (Top 5 Disclosed)
+1. **IAM**: $838M
+2. **Security Operations**: $402M
+3. **Risk & Compliance**: $393M
+4. **AI Security**: $391M
+5. **Digital Channel Security**: $342M
+
+### Series B Deal Activity Trends (2019 - 2025)
+| Year | Series B Deal Count | Capital Deployed ($B) |
+| :---: | :---: | :---: |
+| **2019** | 63 | $1.4 |
+| **2020** | 92 | $3.2 |
+| **2021** | 120 | $3.9 |
+| **2022** | 81 | $3.4 |
+| **2023** | 56 | $2.7 |
+| **2024** | 56 | $1.7 |
+| **2025** | **56** | **$1.6** |
+
+### Geographic Breakdown (Series B)
+- **By Deal Count**:
+  - North America: 50%
+  - Europe: 25%
+  - Middle East: 16%
+  - Asia: 9%
+- **By Deal Value**:
+  - North America: 53%
+  - Europe: 33%
+  - Middle East: 12%
+  - Asia / Other: 2%
+
+---
+
+## Later Stage Activity (Series C+)
+**Later stage investing activity in 2025**
+
+Later Stage financing deals were dominated by North America, seeing **80% of Series C+ capital deployed** in 2025, led by Risk & Compliance and Data Security companies.
+
+### Series C+ Deal Count by Sector (Top 5)
+1. **Risk & Compliance**: 32 deals
+2. **Digital Channel Security**: 26 deals
+3. **Data Security**: 22 deals
+4. **IAM**: 15 deals
+5. **Security Operations**: 14 deals
+
+### Series C+ Deal Value by Sector (Top 5 Disclosed)
+1. **Digital Channel Security**: $892M
+2. **Risk & Compliance**: $756M
+3. **Application Security**: $697M
+4. **AI Security**: $678M
+5. **IoT / OT Security**: $636M
+
+### Series C+ Deal Activity Trends (2019 - 2025)
+| Year | Series C+ Deal Count | Capital Deployed ($B) |
+| :---: | :---: | :---: |
+| **2019** | 129 | $5.0 |
+| **2020** | 145 | $6.0 |
+| **2021** | 204 | $16.7 |
+| **2022** | 200 | $9.0 |
+| **2023** | 177 | $7.1 |
+| **2024** | 163 | $4.7 |
+| **2025** | **160** | **$5.9** |
+
+### Geographic Breakdown (Series C+)
+- **By Deal Count**:
+  - North America: 59%
+  - Europe: 23%
+  - Asia: 10%
+  - Middle East: 5%
+  - Other: 3%
+- **By Deal Value**:
+  - North America: 80%
+  - Europe: 11%
+  - Asia: 8%
+  - Other: 1%
 
 ---
 
 # IV. CYBERscape 4.0
 
-## Introducing CYBERscape 4.0: A More Useful & Clearer View of the New Cybersecurity Landscape
-Momentum Cyber is proud to re-release the most trusted and comprehensive cybersecurity landscape ever created – CYBERscape 4.0.
+## Why Did We Revamp the CYBERscape? Highlights
+**Introducing CYBERscape 4.0: A More Useful & Clearer View of the New Cybersecurity Landscape**
 
-**Highlights:**
-- 1,562 total cybersecurity companies.
-- 1,000 unique cybersecurity companies.
-- 12 core, thoughtfully consolidated sectors.
-- 62 subsectors.
-- New and improved AI Security segment.
+Momentum Cyber is proud to re-release the most trusted and comprehensive cybersecurity landscape ever created – **CYBERscape 4.0**.
+
+After three years, we didn’t just update it. We rebuilt it. Because the industry didn’t need another convoluted, alphabet-soup taxonomy. It needed clarity.
+
+For years, large analyst firms have pushed out endless new categories and terminology, often creating noise rather than insight. Decision makers we speak with are exhausted by sector sprawl. CYBERscape 4.0 is our answer: a streamlined, intuitive framework built for operators, investors, and strategists who make decisions.
+
+Despite its scale, CYBERscape 4.0 is remarkably easy to digest. It helps users quickly wrap their heads around a constantly shifting landscape while surfacing the emerging companies reshaping the future of security. Plus, this is our first update since the advent of AI.
+
+Built through significant contributions across our team, CYBERscape 4.0 showcases not only the breadth of the cybersecurity market, but the depth of innovation happening within it. The result: a powerful, decision-ready map of the cybersecurity ecosystem.
+
+### CYBERscape 4.0 Highlights
+- **1,562** total cybersecurity companies mapped
+- **1,000** unique cybersecurity companies
+- **12** core, thoughtfully consolidated sectors
+- **62** detailed subsectors
+- **New and improved AI Security segment**
+- A clean, simplified taxonomy making it easier than ever to navigate an industry moving at unprecedented speed
 
 ---
 
-# V. M&A Activity
+## CYBERscape 3.0 vs. CYBERscape 4.0 Taxonomy
+
+![Comparison diagram contrasting CYBERscape 3.0 (18 Sectors / 47 Subsectors / 1,099 Total Companies / 803 Unique Companies) with CYBERscape 4.0 (12 Sectors / 62 Subsectors / 1,562 Total Companies / 1,000 Unique Companies).]
+
+### Comparison Overview
+- **CYBERscape 3.0**: 18 Sectors | 47 Subsectors | 1,099 Total Companies | 803 Unique Companies
+- **CYBERscape 4.0**: 12 Sectors | 62 Subsectors | 1,562 Total Companies | 1,000 Unique Companies
+
+### CYBERscape 4.0 Sectors and Breakdown
+1. **AI Security (404 companies)**:
+   - AI Quality & Evaluation
+   - Application & Platform Security
+   - Model Consumption Security
+   - Runtime Control & Interface Security
+   - AI Security-as-a-Service & Training
+   - Counter-AI & Threat Protection
+   - Data Security & Observability
+   - Discovery & Protection
+   - Identity Model Security
+   - Security Automation & Operations
+2. **Network Security (158 companies)**:
+   - Advanced Threat Protection
+   - DDoS Protection
+   - Deception
+   - NAC
+   - DNS Security
+   - Network Analysis & Forensics
+   - ICS + OT Protection
+   - Network Firewall
+   - SASE
+   - SDN
+3. **Risk & Compliance (138 companies)**:
+   - Risk Quantification
+   - GRC
+   - Pen Testing & Breach Simulation
+   - Risk Assessment & Visibility
+   - Security Awareness & Training
+   - Cyber Insurance
+   - Digital Risk Management
+4. **Application Security (130 companies)**:
+   - DevSecOps
+   - WAF & Application Security
+   - Application Security Testing
+   - API Security
+5. **Digital Channel Security (164 companies)**:
+   - Web Security
+   - Mobile Security
+   - Messaging Security
+   - Fraud & Transaction Security
+6. **Identity & Access Management (87 companies)**:
+   - IDaaS
+   - Authentication
+   - Consumer Identity
+   - Identity Governance
+   - Privileged Access Management (PAM)
+7. **Security Operations (122 companies)**:
+   - SIEM
+   - Security Incident Response
+   - Security Analytics
+   - Threat Intelligence
+8. **Security Services (109 companies)**:
+   - Traditional MSSP
+   - Advanced MSS & MDR
+   - Security Consulting & Advisory
+9. **Endpoint Security (82 companies)**:
+   - Endpoint Detection & Response (EDR)
+   - Endpoint Prevention
+10. **Data Security (75 companies)**:
+    - DLP (Data Loss Prevention)
+    - Data Centric Security
+    - Data Privacy
+    - Encryption
+11. **Cloud Security (51 companies)**:
+    - CASB
+    - Infrastructure Security
+    - Container Security
+12. **IoT / OT (42 companies)**:
+    - Automotive
+    - Connected Home
+    - IoT Devices
+
+> “Momentum’s CYBERscape 4.0 is a ground-up rebuild reflecting how cybersecurity has changed since the advent of AI. With new AI security companies emerging every day, we built this for the cyber community to bring clarity to a rapidly evolving market. We are excited for your input as it continues to grow.”
+
+---
+
+# V. M&A Activity in Cybersecurity
 
 ## Annual Cybersecurity M&A Deal Value and Volume
-2025 was another record-shattering year for Cybersecurity M&A. 2025 saw $96B spent across 400 transactions, highlighted by several mega deals. Deal value was up 270% in 2025, while deal volume was up 22%.
+**2025 was another record-shattering year for Cybersecurity M&A**
 
-### Mega Deals are Back
-With 8 $1B+ disclosed deals worth a whopping $87.2B, 2025 saw some of the largest cybersecurity deals ever. These 8 were:
-1. Google / Wiz ($32B)
-2. Palo Alto / CyberArk ($25B)
-3. HPE / Juniper Networks ($16B)
-4. ServiceNow / Armis ($7.7B)
-5. Francisco Partners / Jamf ($2.5B)
-6. TPG-backed Veeam / Securiti ($1.7B)
-7. ServiceNow / Veza ($1.0B)
-8. Thoma-backed Proofpoint / Hornetsecurity ($1.0B)
+- **2025 in Review**: 2025 saw **$96B** spent across **400 transactions**, highlighted by several mega deals. Deal value was up **270%** in 2025, while deal volume was up **22%**.
+- **Larger Deals**: Going from $26B in 2024 to just under $100B in 2025 is a significant jump, thanks to several massive deals, like Wiz / Google, CyberArk take-private by Palo Alto Networks, and more.
+- **Sponsor Dynamics**: Deal volume increased 22% as PE firms built larger cybersecurity portfolios (such as Hornetsecurity being acquired by Proofpoint) alongside strategic acquirers dramatically increasing their footprint.
+
+![Historical bar and line chart of Yearly Cybersecurity M&A Activity from 2019 to 2025 showing the COVID era, Post-COVID / ZIRP peak, Market Consolidation, and the 2025 record rebound.]
+
+### Historical Yearly Cybersecurity M&A Activity (2019 - 2025)
+| Year | Deal Count (Volume) | Disclosed Deal Value ($B) |
+| :---: | :---: | :---: |
+| **2019** | 193 | $31.9 |
+| **2020** | 177 | $20.6 |
+| **2021** | 292 | $82.6 |
+| **2022** | 277 | $51.5 |
+| **2023** | 276 | $48.0 |
+| **2024** | 329 | $25.9 |
+| **2025** | **400** | **$96.1** |
+
+---
+
+## Cybersecurity Funding Exceeds Pre-COVID Levels
+**Q2 2025 witnessed the highest amount of capital deployed since 2021**
+
+![Quarterly Cybersecurity Financings chart tracking capital deployed in billions and deal count from Q1 2019 through Q4 2025, highlighting capital deployed YoY growth and volume YoY growth.]
+
+### Quarterly Financing Trends (2024 - 2025)
+| Quarter | Capital Deployed ($B) | Number of Financings | Capital Deployed YoY Growth (%) | Deal Count YoY Growth (%) |
+| :---: | :---: | :---: | :---: | :---: |
+| **Q1 2024** | $3.0 | 227 | (14%) | 43% |
+| **Q2 2024** | $4.0 | 218 | 116% | 30% |
+| **Q3 2024** | $2.6 | 213 | (19%) | 12% |
+| **Q4 2024** | $4.0 | 208 | 55% | (27%) |
+| **Q1 2025** | $2.7 | 211 | (11%) | (36%) |
+| **Q2 2025** | $9.0 | 210 | 125% | (24%) |
+| **Q3 2025** | $2.6 | 199 | (0%) | (4%) |
+| **Q4 2025** | $6.4 | 200 | 60% | (8%) |
+
+---
+
+## Monthly Cybersecurity M&A Deal Value and Volume
+**Three extremely large M&A deals bolster the value for 2025, while deal volume was up in almost every month in 2025**
+
+- **Increased Volume**: In 2025, M&A activity increased YoY across 8 of 12 months. Deal velocity increased as buyers looked to consolidate fragmented cybersecurity submarkets.
+- **Mega Deals are Back**: With **8 $1B+ disclosed deals** worth a staggering **$87.2B**, 2025 produced unprecedented transaction sizes:
+  - **March 2025**: Google / Wiz ($32B)
+  - **July 2025**: Palo Alto Networks / CyberArk ($25B), HPE / Juniper Networks ($16B)
+  - **December 2025**: ServiceNow / Armis ($7.7B)
+  - **October 2025**: Francisco Partners / Jamf ($2.5B), TPG-backed Veeam / Securiti ($1.7B)
+  - **May 2025**: Thoma Bravo-backed Proofpoint / Hornetsecurity ($1.0B)
+  - **December 2025**: ServiceNow / Veza ($1.0B)
+
+### Monthly Deal Activity: 2024 vs. 2025
+| Month | 2024 Volume (Deals) | 2024 Value ($M) | 2025 Volume (Deals) | 2025 Value ($M) |
+| :--- | :---: | :---: | :---: | :---: |
+| **January** | 24 | $1,700 | 28 | $972 |
+| **February** | 28 | $630 | 37 | $609 |
+| **March** | 25 | $5,839 | 32 | $33,094 |
+| **April** | 30 | $716 | 34 | $1,461 |
+| **May** | 23 | $475 | 39 | $2,084 |
+| **June** | 23 | $2,684 | 42 | $23 |
+| **July** | 27 | $5,928 | 38 | $41,618 |
+| **August** | 29 | $547 | 33 | $1,336 |
+| **September** | 27 | $647 | 32 | $1,221 |
+| **October** | 35 | $3,662 | 37 | $4,651 |
+| **November** | 30 | $139 | 23 | $252 |
+| **December** | 28 | $2,978 | 25 | $8,759 |
+
+---
+
+## M&A Deal Spotlight (Q1 & Q2)
+**Select, transformative M&A transactions from 2025**
+
+| Date | Target | Acquirer | Implied EV ($M) | Sector | Impact & Strategic Rationale |
+| :---: | :--- | :--- | :---: | :--- | :--- |
+| **03/31** | Undisclosed | Glasswall | ND | Data Security | Empowers Glasswall to turbocharge its zero-trust file protection capabilities. |
+| **03/18** | Wiz | Google | $32,000 | Cloud Security | Positions Google to reshape cloud security through the largest cybersecurity acquisition ever. |
+| **03/17** | Cyral | Varonis | ND | Data Security | Adds Cyral’s database activity monitoring to Varonis’ data security platform. |
+| **03/06** | Run:ai / OT Co. | Armis | $335 | Network Security | Expands Armis’s leadership in OT and cyber-physical security. |
+| **03/06** | IDnow | Acquirer | $300 | IAM | Scales IDnow into Europe’s leading AI-powered identity-verification platform. |
+| **03/03** | Target | Jamf | $215 | IAM | Strengthens Jamf’s platform by expanding its reach in education and healthcare sectors. |
+| **02/12** | Zilla Security | CyberArk | $165 | IAM | Integrates Zilla’s cloud-native IGA into CyberArk’s identity security platform. |
+| **02/11** | Trust/Comp Co. | Drata | ND | Risk & Compliance | Integrates trust and compliance automation into Drata’s platform in a mostly stock deal. |
+| **02/07** | Vulcan Cyber | Tenable | $150 | Risk & Compliance | Bolsters Tenable by integrating Vulcan Cyber’s exposure management technology. |
+| **02/03** | Financial Co. | Napier | ND | Digital Channel Security | Accelerates Napier’s AI-powered financial crime compliance platform. |
+| **06/24** | Agentic Co. | Snyk | ND | AI Security | Adds agentic-AI threat research and runtime detection to Snyk’s developer platform. |
+| **06/19** | PRIM'X | Acquirer | ND | Data Security | Scales PRIM’X’s encryption and data-sovereignty offerings to new geographies and verticals. |
+| **06/02** | Fletch | F5 | ND | Security Operations | Integrates Fletch’s agentic AI into F5’s ADSP to turn threat intelligence into automated actions. |
+| **05/29** | AI Exposure Co. | Tenable | $105 | AI Security | Extends Tenable with AI-attack-surface protection, giving organizations proactive governance. |
+| **05/27** | Red Canary | Zscaler | $675 | Security Services | Fuses Red Canary’s AI threat intelligence with Zscaler’s massive Zero Trust data fabric. |
+| **05/15** | Hornetsecurity | Proofpoint | $1,000 | Digital Channel Security | Bold move by PE-backed Proofpoint to spend $1B on email-centric Hornetsecurity. |
+| **05/13** | Orca Target | Orca Security | ND | Security Operations | Transforms Orca from a visibility-first CNAPP into an intelligent, self-healing platform. |
+| **04/22** | Addingwell | Didomi | $81 | Data Security | Combines Addingwell’s server-side tagging with Didomi’s consent and data-governance platform. |
+| **04/09** | Protect AI | Palo Alto Networks | $700 | Security Operations | Bolsters Palo Alto’s AI-driven threat detection by integrating Protect AI’s advanced detection. |
+| **04/09** | Radiant Logic | PE Sponsor | $500 | IAM | Enables Radiant Logic to accelerate product innovation and global enterprise expansion. |
+
+---
+
+## M&A Deal Spotlight (Q3 & Q4)
+**Select, transformative M&A transactions from 2025**
+
+| Date | Target | Acquirer | Implied EV ($M) | Sector | Impact & Strategic Rationale |
+| :---: | :--- | :--- | :---: | :--- | :--- |
+| **09/17** | AIDR Platform | Acquirer | $260 | Application Security | Creates the industry’s first AI Detection and Response (AIDR), securing data and enterprise models. |
+| **09/16** | AI Stack Co. | Check Point | $300 | AI Security | Gives Check Point one of the first full-lifecycle AI security and governance stacks. |
+| **09/11** | Guardrail Co. | Acquirer | $180 | Risk & Compliance | Enables large enterprises to deploy AI with real-time guardrails for risk and compliance. |
+| **08/26** | Access Target | Acquirer | $100 | IAM | Expands access controls to sensitive enterprise resources like databases, Kubernetes, and cloud APIs. |
+| **08/21** | Savvy Security | SailPoint | ND | Security Operations | Integrates Savvy’s technology into SailPoint to deliver unmatched identity and application visibility. |
+| **08/04** | AI Security Co. | SentinelOne | $275 | AI Security | Closes a key gap in AI adoption risk and reinforces SentinelOne's AI-native Singularity platform. |
+| **07/30** | CyberArk | Palo Alto Networks | $25,000 | IAM | Solidifies privileged identity security as a foundational pillar in Palo Alto Networks' long-term vision. |
+| **07/29** | Clinical IoT Co. | Acquirer | $100+ | IoT | Gives hospitals and healthcare networks unified visibility and control over connected clinical environments. |
+| **07/21** | Decryption Co. | Darktrace | ND | Network Security | Closes Darktrace’s encrypted-traffic blind spots by integrating in-line decryption and deep visibility. |
+| **07/17** | Vendor Risk Co. | Vanta | ND | Risk & Compliance | Accelerates Vanta’s vendor risk management, embedding continuous monitoring and automated remediation. |
+| **12/23** | Armis | ServiceNow | $7,750 | IoT / OT | Expands ServiceNow’s cyber-exposure management across IT, OT, and enterprise-connected devices. |
+| **12/02** | Veza | ServiceNow | $1,000 | IAM | Extends ServiceNow’s security portfolio with AI-native identity and access governance at scale. |
+| **11/03** | AI Lifecycle Co. | Zscaler | $65 | AI Security | Extends Zscaler’s Zero Trust platform to secure data, training pipelines, and the enterprise AI lifecycle. |
+| **10/30** | Biometrics Co. | Acquirer | ND | IAM | Embeds Zero-Knowledge Biometric authentication, enabling privacy-first, frictionless enterprise MFA. |
+| **10/29** | Jamf | Francisco Partners | $2,500 | Endpoint Security | Gives Jamf the balance sheet and private runway to aggressively expand Apple-device security and MDM. |
+| **10/21** | Securiti | Veeam | $1,725 | Data Security | PE-backed Veeam merges its data resilience platform with Securiti’s DSPM and AI-trust stack. |
+| **10/21** | External Intel Co. | Acquirer | $290 | Security Operations | Fuses external AI-driven threat signals with rich internal telemetry for tailored threat intelligence. |
+| **10/14** | Data Gov Co. | Acquirer | ND | Data Security | Scales its governance platform across global enterprise markets, helping companies protect data estates. |
+| **10/14** | Cybereason | LevelBlue | ND | Endpoint Security | Bolsters LevelBlue’s MSSP leadership by acquiring Cybereason’s XDR and threat intelligence capabilities. |
+| **10/07** | Credas | RegTech Acquirer | $105 | IAM | Strengthens UK RegTech presence, combining automated AML/KYC capabilities with identity verification. |
+
+---
+
+## Cybersecurity M&A Transactions Based on Company Segment
+**Deal activity jumped 22% YoY with larger deals in 2025 leading to more disclosed deal volume**
+
+Across 2024 and 2025, buyers prioritized proven operational categories, with **Security Services** generating the highest volume (126 deals) and a consistent mix across Risk & Compliance, IAM, Digital Channel Security, and SecOps.
+
+Value, however, realigned dramatically in 2025. After SecOps led deal value in 2024, capital moved decisively toward **Cloud Security, IAM, and Network Security**, reflecting a strategic pivot toward modernization and cloud-first enterprise architectures.
+
+![Bar chart showing M&A deal count and total deal value ($M) by sector in 2025, led in volume by Security Services (126) and in value by Cloud Security ($32,510M) and IAM ($26,385M).]
+
+### 2025 Deal Count and Disclosed Deal Value by Sector
+| Sector | M&A Deal Count | Disclosed Deal Value ($M) | Key Deal Drivers / Catalysts |
+| :--- | :---: | :---: | :--- |
+| **Cloud Security** | 10 | $32,510 | Google acquisition of Wiz ($32B) |
+| **Identity & Access Management (IAM)** | 40 | $26,385 | Palo Alto Networks acquisition of CyberArk ($25B), Veza ($1B) |
+| **Network Security** | 18 | $16,580 | HPE acquisition of Juniper Networks ($16B) |
+| **IoT / OT Security** | 9 | $7,850 | ServiceNow acquisition of Armis ($7.75B) |
+| **Data Security** | 29 | $4,050 | Veeam acquisition of Securiti ($1.725B) |
+| **Security Services** | 126 | $3,310 | Red Canary acquisition by Zscaler ($675M) |
+| **Endpoint Security** | 4 | $2,960 | Francisco Partners take-private of Jamf ($2.5B) |
+| **Digital Channel Security** | 40 | $2,500 | Proofpoint acquisition of Hornetsecurity ($1.0B) |
+| **Security Operations** | 38 | $1,262 | Protect AI acquisition by Palo Alto Networks ($700M) |
+| **AI Security** | 10 | $1,221 | Multiple emerging AI platform and runtime transactions |
+| **Risk & Compliance** | 63 | $930 | Vulcan Cyber ($150M), Guardrail and GRC platforms |
+| **Application Security** | 13 | $640 | Emergence of AIDR (AI Detection & Response) |
 
 ---
 
 # VI. Financing Activity
-
-## Cybersecurity Funding Exceeds Pre-COVID Levels
-Q2 2025 witnessed the highest amount of capital deployed since 2021. Total financing value increased 52% in 2025 from $13.6B to $20.7B.
+_Comprehensive analysis of cybersecurity funding rounds, investor participation, and stage-by-stage trends across 2025._
 
 ---
 
 # VII. Public Markets
-
-High growth cyber increased, in line with the Nasdaq and S&P 500 this year, while low growth cyber declined over the past 12 months. Most indexes saw a rough last 6 weeks of the year. High growth security stocks were especially strong in 2025, increasing 10%, while low growth stocks declined 7%, bucking the trend of broader market patterns.
+_Public equity performance, high growth vs. low growth stock indices, valuation multiples, and benchmark tracking across 2025._
 
 ---
 
 # VIII. About Momentum Cyber
-Momentum Cyber is the premier trusted advisor to the cybersecurity industry, providing bespoke strategic advice and M&A services to the world’s leading cybersecurity companies.
+_Momentum Cyber is the premier trusted strategic advisor to the cybersecurity industry, providing bespoke M&A and capital advisory services to enterprise software and security leaders globally._
 
 ---
 
 # IX. Appendix
-*Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.*
+_Detailed transaction logs, methodology notes, criteria for inclusion, and complete deal records for 2025 strategic activity._
 
 ---
 
@@ -3997,4 +4733,4 @@ offer to sell or issue securities of any kind. To learn more about the companies
 subject of this document, contact us at Jake@momentumcyber.com.
 128
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-28", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-11-01", "model": "gemini-3.8-flash"} -->

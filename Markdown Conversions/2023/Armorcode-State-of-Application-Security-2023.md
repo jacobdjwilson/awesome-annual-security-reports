@@ -1,129 +1,176 @@
 # State of Application Security 2023
+*Approaches and results from modern AppSec programs*
+
+**Organization:** Armorcode  
+**Year:** 2023  
+
+---
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
-- [Who took the survey?](#who-took-the-survey)
-- [Who does what?](#who-does-what)
-- [What is your job role?](#what-is-your-job-role)
-- [Let’s talk maturity](#lets-talk-maturity)
-- [Security check - How are we doing?](#security-check---how-are-we-doing)
-- [Are we doing DevSecOps right?](#are-we-doing-devsecops-right)
-- [A stocktaking of best practices](#a-stocktaking-of-best-practices)
-- [Investment into security](#investment-into-security)
-- [Vulnerabilities in production](#vulnerabilities-in-production)
-- [The toolset](#the-toolset)
-- [The vendors and buying approaches](#the-vendors-and-buying-approaches)
-- [Where do we deploy?](#where-do-we-deploy)
-- [AppSec prioritization](#appsec-prioritization)
-- [Challenges in running a successful AppSec program](#challenges-in-running-a-successful-appsec-program)
-- [All about the SBOM](#all-about-the-sbom)
-- [Challenges for AppSec on the ground](#challenges-for-appsec-on-the-ground)
+- [Who Took the Survey?](#who-took-the-survey)
+- [Let’s Talk Maturity](#lets-talk-maturity)
+- [Security Check - How Are We Doing?](#security-check---how-are-we-doing)
+- [A Stocktaking of Best Practices](#a-stocktaking-of-best-practices)
+- [Investment into Security](#investment-into-security)
+- [Vulnerabilities in Production](#vulnerabilities-in-production)
+- [The Toolset](#the-toolset)
+- [The Vendors and Buying Approaches](#the-vendors-and-buying-approaches)
+- [Where Do We Deploy?](#where-do-we-deploy)
+- [AppSec Prioritization](#appsec-prioritization)
+- [Challenges in Running a Successful AppSec Program](#challenges-in-running-a-successful-appsec-program)
+- [All About the SBOM](#all-about-the-sbom)
+- [Challenges for AppSec on the Ground](#challenges-for-appsec-on-the-ground)
 - [Methodology](#methodology)
 
+---
+
 ## Executive Summary
+
+AppSec is slowly maturing.
+
+Prioritization is still a struggle.
+
 > “Too many vulnerabilities, not enough prioritization” is the #1 stumbling block reported by software security teams
+
 > “86% agree that security tools are interchangeable, it’s the process that’s most important”
+
+> SBOM for the software supply chain
+
 > “53% of teams have unmanaged risk in their application portfolio”
 
-AppSec is slowly maturing
-Prioritization is still a struggle
-SBOM for the software supply chain
+---
 
-## Who took the survey?
-![Who took the survey?]
+## Who Took the Survey?
 
-## Who does what?
-![Who does what?]
+### Who does what?
+**What is your job role?**
 
-## What is your job role?
-Answer Choices
-Response Percent
+| Answer Choices | Response Percent |
+| :--- | :--- |
 
-## Let’s talk maturity
+---
+
+## Let’s Talk Maturity
+
 > “14% are leaders in next-gen AppSec maturity, but for 58% there is still a lot of work to be done to get to baseline levels.”
 
-## Security check - How are we doing?
-![Security check - How are we doing?]
+---
 
-## Are we doing DevSecOps right?
-![Are we doing DevSecOps right?]
-53% of teams have unmanaged risk in their software portfolio
-86% agree that security tools are interchangeable, it’s the process that’s most important
-66% say that shipping fast takes priority over shipping secure
+## Security Check - How Are We Doing?
 
-## A stocktaking of best practices
-![A stocktaking of best practices]
+### Are we doing DevSecOps right?
+
+| 53% of teams have unmanaged risk in their software portfolio | 86% agree that security tools are interchangeable, it’s the process that’s most important | 66% say that shipping fast takes priority over shipping secure |
+| :--- | :--- | :--- |
+
+---
+
+## A Stocktaking of Best Practices
+
 > “Industry leaders (31%) use an Application Security Maturity Model and track usage of security tools across teams (30%).”
 
-What initiatives do you leverage as part of your software security program?
-Answer Choices
-Responses
+**What initiatives do you leverage as part of your software security program?**
 
-## Investment into security
+| Answer Choices | Responses |
+| :--- | :--- |
+
+---
+
+## Investment into Security
+
 > “Despite economic downturn globally, over 50% of organizations are increasing their security spend - a telling figure”
 
-## Vulnerabilities in production
-Q: How many vulnerabilities in production is too many?
+---
+
+## Vulnerabilities in Production
+
+**Q: How many vulnerabilities in production is too many?**
 
 > “AppSec leaders - the top 20% of organizations - remediate critical vulnerabilities in less than one day”
 
-## The toolset
-![The toolset]
-What initiatives do you leverage as part of your software security program?
-Answer Choices
-Response Percentage
+---
 
-## The vendors and buying approaches
+## The Toolset
+
+**What initiatives do you leverage as part of your software security program?**
+
+| Answer Choices | Response Percentage |
+| :--- | :--- |
+
+---
+
+## The Vendors and Buying Approaches
+
 The right tools for the job make it easy to spot and fix vulnerabilities, decrease developer workload, speed time-to-production, enhance security posture, and automate and orchestrate for fully integrated security practices.
 
 The majority of respondents take a best-of-breed approach to tool selection, looking for the best vendor for any given tooling category, rather than opting to be a single vendor shop or build tools themselves.
 
 While this list is not exhaustive, it provides a solid baseline for a mature AppSec program.
 
-Which of the following security vendors are you using in your software security program?
-Answer Choices
-Responses
-Answer Choices
-Responses
+**Which of the following security vendors are you using in your software security program?**
 
-## Where do we deploy?
-![Where do we deploy?]
+| Answer Choices | Responses | Answer Choices | Responses |
+| :--- | :--- | :--- | :--- |
+
+---
+
+## Where Do We Deploy?
+
 Shifted to the cloud or running in data centers? In 2023, more organizations than ever are running most of their workloads in the cloud. However, on-premises is still a major force and something organizations can’t ignore from a security perspective.
-
-Where do you deploy applications today?
-Answer Choices
-Responses %
 
 > “More than half of respondents deploy 75% or more of their applications in the cloud, and a quarter run full cloud.”
 
-## AppSec prioritization
-What’s the most important focus of your AppSec program for the 12 months?
+**Where do you deploy applications today?**
+
+| Answer Choices | Responses % |
+| :--- | :--- |
+
+---
+
+## AppSec Prioritization
+
+**What’s the most important focus of your AppSec program for the 12 months?**
 
 For most organizations, visibility of application security posture and automation of critical application security workflows will be the main focus for the year. While securing the software supply chain (SBOM) comes in last, supply chain attacks continue to rise, increasing risk in this key area.
 
-## Challenges in running a successful AppSec program
+---
+
+## Challenges in Running a Successful AppSec Program
+
 You’re working on culling too many AppSec alerts. You’re finally un-siloing systems and data effectively. So what are the new challenges?
 
 Not having enough funding is a standout challenge in running a successful AppSec program among respondents. Other notables are in hiring, broader AppSec awareness and lack of leadership buy-in.
 
-> “More than half of respondents deploy 75% or more of their applications in the cloud, and a quarter run full cloud.”
+---
 
-## All about the SBOM
+## All About the SBOM
+
 While we’re on the topic of software supply chain risk, a Software Bill of Materials goes a long way to understanding the full extent of an application’s threat surface.
-Generating, consuming, and leveraging SBOMs provides a far more comprehensive and fair assessment of and organization’s AppSec posture.
 
 > “Over 20% of respondents had no SBOM usage at all”
 
-How are you currently leveraging SBOMs within your organizations?
-Answer Choices
-Response Percentage
+Generating, consuming, and leveraging SBOMs provides a far more comprehensive and fair assessment of and organization’s AppSec posture.
 
-## Challenges for AppSec on the ground
+**How are you currently leveraging SBOMs within your organizations?**
+
+| Answer Choices | Response Percentage |
+| :--- | :--- |
+
+> “More than half of respondents deploy 75% or more of their applications in the cloud, and a quarter run full cloud.”
+
+---
+
+## Challenges for AppSec on the Ground
+
 For AppSec teams, on the ground, the challenges faced day to day are different.
 
 We’ve learned that teams are still extremely concerned that there are too many vulnerabilities with not enough prioritization. Being able to analyze and triangulate results across a variety of tools and highlight risk priorities - even when they’re constantly shifting - remains difficult.
 
+---
+
 ## Methodology
+
 This survey was run by the Purple Book Community, and was circulated among Purple Book Community members, extended security networks, and across social media.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-22", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-10-17", "model": "gemini-3.8-flash"} -->

@@ -1,13 +1,13 @@
 {
   "schema_version": "2.0",
-  "last_updated": "2026-10-12T21:11:31.597806Z",
-  "last_learner_run": "2026-10-12T21:11:31.597806Z",
-  "total_feedback_events": 19,
+  "last_updated": "2026-11-02T21:38:40.268571Z",
+  "last_learner_run": "2026-11-02T21:38:40.268571Z",
+  "total_feedback_events": 24,
   "outcome_counts": {
     "true_positive": 3,
-    "false_positive": 6,
+    "false_positive": 10,
     "duplicate": 6,
-    "mismatch": 4
+    "mismatch": 5
   },
   "triage_log": [],
   "url_fingerprints": {
@@ -43,8 +43,8 @@
     "score_threshold_delta": 0,
     "validation_threshold": 0.75,
     "gemini_rejection_patterns": [],
-    "summary": "No triage outcomes, false positives, or closure comments were provided in the current dataset. As a result, no scoring adjustments or blocklist additions are necessary at this time.",
-    "last_gemini_analysis": "2026-10-12T21:11:31.597806Z"
+    "summary": "No triage outcomes, false positives, or closure comments were provided in the dataset. Consequently, no scoring adjustments, blocklist additions, or threshold modifications are recommended at this time.",
+    "last_gemini_analysis": "2026-11-02T21:38:40.268571Z"
   },
   "overrides": {
     "domain_blocklist": [],
@@ -242,6 +242,56 @@
       "org": "Proofpoint",
       "url": "https://www.enisa.europa.eu/sites/default/files/publications/ENISA%20Threat%20Landscape%202023.pdf",
       "outcome": "duplicate",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-10-26T13:23:23.321301Z",
+      "issue_number": 1865,
+      "issue_title": "[Report Discovery] Orca 2026 \u2014 State of Public Cloud Security Report",
+      "org": "Orca",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1155/acis/6730072",
+      "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-11-06T13:29:18.056034Z",
+      "issue_number": 1881,
+      "issue_title": "[Report Discovery] NCTech 2026 \u2014 State of Cybersecurity",
+      "org": "NCTech",
+      "url": "https://www.nctech.org/events/event/2026/cybersecurity-q1.html",
+      "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-11-06T13:53:52.780620Z",
+      "issue_number": 1880,
+      "issue_title": "[Report Discovery] Descope 2026 \u2014 State of Customer Identity Report",
+      "org": "Descope",
+      "url": "https://www.globenewswire.com/news-release/2026/10/08/3377313/0/en/descope-named-multifactor-solution-of-the-year-in-2026-cybersecurity-breakthrough-awards-program.html",
+      "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-11-06T14:18:10.957120Z",
+      "issue_number": 1876,
+      "issue_title": "[Report Discovery] WatchGuard 2026 \u2014 Threat Report",
+      "org": "WatchGuard",
+      "url": "https://kuzstu-nf.ru/wp-content/uploads/2026/06/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA-%D0%92%D1%81%D0%B5%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_15-%D0%BC%D0%B0%D1%8F-2026-%D0%B3_%D0%98%D0%A2%D0%9E%D0%93.-2.pdf",
+      "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-11-07T00:56:50.565661Z",
+      "issue_number": 1872,
+      "issue_title": "[Report Discovery] Veeam 2026 \u2014 Ransomware Trends",
+      "org": "Veeam",
+      "url": "https://www.veeam.com/solution-briefs/vdc_vault_v2_solution_brief_wp.pdf",
+      "outcome": "mismatch",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
