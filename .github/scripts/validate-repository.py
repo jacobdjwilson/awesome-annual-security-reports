@@ -86,13 +86,16 @@ class ConfigLoader:
         self.workflow_config = self._load_json("workflow-config.json")
         if not self.workflow_config:
             raise ValueError("workflow-config.json is required")
+        self.readme_updater_config = self._load_json("readme-updater-config.json")
+        if not self.readme_updater_config:
+            raise ValueError("readme-updater-config.json is required")
 
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         path = self.artifacts_dir / filename
         if not path.exists():
             raise FileNotFoundError(f"{filename} not found in {self.artifacts_dir}")
         try:
-            with open(path, "r") as f:
+            with open(path, "r", encoding="utf-8") as f:
                 return json.load(f)
         except json.JSONDecodeError as e:
             raise ValueError(f"Invalid JSON in {filename}: {e}")
@@ -102,6 +105,13 @@ class ConfigLoader:
 
     def get_discovery_config(self) -> Dict[str, Any]:
         return self.workflow_config.get("workflow", {}).get("discovery", {})
+
+    def get_age_threshold_years(self) -> int:
+        proc = self.readme_updater_config.get("processing", {})
+        val = proc.get("age_threshold_years")
+        if val is None:
+            raise KeyError("Missing 'processing.age_threshold_years' in readme-updater-config.json")
+        return int(val)
 
 
 # ==========================
@@ -464,9 +474,19 @@ class RepositoryValidator:
             elif status == "warning":
                 self._add(Finding("warning", CATEGORY_DEAD_LINK, url, f"Link warning: {msg}"))
 
+    @staticmethod
+    def _pdf_series_key(url_or_path: str) -> str:
+        name = Path(urllib.parse.unquote(url_or_path)).name.lower()
+        name = name.replace(".pdf", "")
+        name = re.sub(r"\d{4}", "", name)
+        name = re.sub(r"[-_ ]+$", "", name)
+        name = re.sub(r"^[-_ ]+", "", name)
+        return name.strip()
+
     def _check_missing_readme_entries(self, pdf_files: Dict[str, Path]):
         current_year = datetime.now().year
-        active_years = {current_year, current_year - 1, current_year - 2}
+        age_threshold = self.config.get_age_threshold_years()
+        active_years = set(range(current_year - age_threshold + 1, current_year + 1))
         
         readme_path = Path("README.md")
         if not readme_path.exists():
@@ -474,6 +494,19 @@ class RepositoryValidator:
             
         with open(readme_path, "r", encoding="utf-8") as f:
             content = f.read()
+
+        # Parse existing entries and record the latest year present for each series
+        readme_series_years: Dict[str, int] = {}
+        for line in content.splitlines():
+            line_str = line.strip()
+            if not line_str.startswith("- ["):
+                continue
+            m = re.search(r'\]\((Annual%20Security%20Reports/[^)]+\.pdf|\bAnnual Security Reports/[^)]+\.pdf)\)', line_str)
+            ym = re.search(r'\((\d{4})\)', line_str)
+            if m and ym:
+                key = self._pdf_series_key(m.group(1))
+                year = int(ym.group(1))
+                readme_series_years[key] = max(readme_series_years.get(key, 0), year)
             
         for pdf_rel in pdf_files:
             file_year_match = FILENAME_YEAR_RE.search(pdf_rel)
@@ -489,11 +522,19 @@ class RepositoryValidator:
                 pdf_url_encoded = urllib.parse.quote(pdf_rel.replace('\\', '/'))
                 pdf_posix = pdf_rel.replace('\\', '/')
                 
-                if pdf_url_encoded not in content and pdf_posix not in content:
-                    self._add(Finding(
-                        "error", CATEGORY_MISSING_README, pdf_rel,
-                        f"PDF is within active window ({min(active_years)}-{max(active_years)}) but is missing from README.md"
-                    ))
+                # Directly present in README?
+                if pdf_url_encoded in content or pdf_posix in content:
+                    continue
+
+                # Has a current or newer year for the same series been listed?
+                series_key = self._pdf_series_key(pdf_rel)
+                if series_key and readme_series_years.get(series_key, 0) >= file_year:
+                    continue
+
+                self._add(Finding(
+                    "error", CATEGORY_MISSING_README, pdf_rel,
+                    f"PDF is within active window ({min(active_years)}-{max(active_years)}) but is missing from README.md"
+                ))
 
     def _check_duplicates_hash(self, pdf_files: Dict[str, Path]):
         hashes = {}
