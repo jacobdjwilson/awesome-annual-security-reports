@@ -494,8 +494,8 @@ class ReadmeUpdater:
                 f"Re-run the pipeline or check GEMINI_API_KEY and model availability."
             )
 
-        # 1 — required fields
-        required = ["organization", "title", "year", "summary", "pdf_path", "organization_url"]
+        # 1 — required fields (organization_url is resolved downstream in _sanitize)
+        required = ["organization", "title", "year", "summary", "pdf_path"]
         missing  = [f for f in required if not analysis.get(f)]
         if missing:
             return False, f"missing fields: {', '.join(missing)}"
@@ -532,6 +532,8 @@ class ReadmeUpdater:
 
         # Sanitize summary and resolve org URL before any further work
         self._sanitize(analysis)
+        if not analysis.get("organization_url"):
+            return False, "missing resolved organization_url"
 
         if existing_line is not None:
             return self._update_existing(existing_line, existing_fields, analysis)
