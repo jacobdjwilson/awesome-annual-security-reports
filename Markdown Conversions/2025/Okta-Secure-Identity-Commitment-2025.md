@@ -1,15 +1,24 @@
 # Okta Secure Identity Commitment
 
-Last updated: Dec 31, 2025
+**Last updated:** Dec 31, 2025  
+_Whitepaper_
+
+---
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
 - [Introduction](#introduction)
+  - [Okta Secure Identity Commitment](#okta-secure-identity-commitment-1)
 - [Market-leading identity products and services](#market-leading-identity-products-and-services)
-- [Harden our corporate infrastructure](#harden-our-corporate-infrastructure)
-- [Champion customer best practices](#champion-customer-best-practices)
-- [Elevate our industry](#elevate-our-industry)
-- [Conclusion](#conclusion)
+  - [Key Themes](#key-themes)
+  - [Launched since September 2025 (Overview)](#launched-since-september-2025-overview)
+  - [Launched since May 2024](#launched-since-may-2024)
+  - [Launched since July 2024](#launched-since-july-2024)
+  - [Launched since October 2024](#launched-since-october-2024)
+  - [Launched since January 2025](#launched-since-january-2025)
+  - [Launched since March 2025](#launched-since-march-2025)
+  - [Launched since July 2025](#launched-since-july-2025)
+  - [Launched since September 2025](#launched-since-september-2025)
 
 ---
 
@@ -49,7 +58,7 @@ As a leading independent identity company, Okta is at the forefront of the fight
 
 We are committed to continue leading the industry forward and to protect our customers and their most sensitive assets. As a result, we have launched the Okta Secure Identity Commitment. This commitment is built upon four pillars, shown below. The remainder of this document explains how we are delivering on our commitments.
 
-![Four pillars: Provide market-leading secure identity products and services, Harden our corporate infrastructure, Champion customer best practices, Elevate our industry]
+![Diagram showing the four pillars of the Okta Secure Identity Commitment: 1. Provide market-leading secure identity products and services; 2. Harden our corporate infrastructure; 3. Champion customer best practices to help ensure our customers are best protected; 4. Elevate our industry to be more protected against identity attacks.]
 
 ---
 
@@ -70,39 +79,466 @@ We also back this innovation with operational excellence, including:
 
 At Oktane 2025, we announced a host of customer security boosting advancements, including leading the introduction of how Okta brings the identity security fabric to life.
 
+### Key Themes
+
 Since then, we have been steadily executing on a few key themes to further strengthen our products and services, including:
 
 - **Govern AI agents through a unified control plane** - Okta for AI Agents (Early Access in Q1 CY26) provides an identity layer for the agentic era — to help bring AI agents into your identity security fabric to deliver visibility, control, and governance across your organization.
 - **Trusted Digital Experiences for Okta Customer Identity** - Bring customers and partners into a unified identity security fabric that delivers end-to-end protection for all identities, bringing together phishing-resistant authenticators with real-time threat protection, and automated governance to enable continuous compliance and reduce risk.
 - **Building the future of secure federal identity governance** - Okta recently reached significant compliance milestones. Okta Identity Governance and Workflows are now FedRAMP High authorized for Okta for Government High, and eligible Okta for Government Moderate customers, and DoD IL4 authorized for US Military customers. Identity Threat Protection is FedRAMP High and FedRAMP Moderate authorized and is supported for DoD IL4. (Last updated in February 2026).
-- **Secure production-ready AI Agents** - Auth0 provides the identity foundation to secure AI agents and make your products AI-ready. WIth Auth0 for AI agents, you can get identity right from day one, leverage the full power of identity to scale your AI initiatives and the smart, tailored experiences your customers demand.
+- **Secure production-ready AI Agents** - Auth0 provides the identity foundation to secure AI agents and make your products AI-ready. With Auth0 for AI agents, you can get identity right from day one, leverage the full power of identity to scale your AI initiatives and the smart, tailored experiences your customers demand.
 - **Enhancements to Auth0 for B2B** - A suite of new features to help B2B customers deliver a smoother, faster and secure onboarding experience across the identity lifecycle—from initial setup to secure offboarding. This includes automated inbound user and group provisioning, delegated admin capabilities, and automated session termination.
 
-*(Note: The report continues with detailed lists of product launches categorized by date and platform, including Okta, Auth0, and Okta Customer Identity.)*
+---
+
+### Launched since September 2025 (Overview)
+
+#### Okta
+
+##### Generally Available
+- **Okta Identity Governance**
+  - Security Access Review
+  - Universal Logout for Access Requests
+  - Continuous Access Evaluation (CAE) for Access Requests
+  - Access Requests for AD Groups
+  - Governance Delegates
+  - Entitlement History
+  - Resource Owners
+  - Governance Labels
+  - Approval Escalations
+  - Unified Audit Reports in Access Certification
+  - Redesigned Approver Experience for Access Requests
+  - Export Reports as PDF
+  - Authorized for Okta for Government High (FedRAMP High)
+- **Okta Privileged Access**
+  - Geographic expansion in EMEA
+  - Password Character Exclusions
+  - Access Certifications for Service Accounts
+  - Tripled Coverage of SaaS apps that can be managed in OPA
+  - Coarse-grain permissions for Active Directory and RDP
+- **Identity Security Posture Management (ISPM)**
+  - MFA and SSO analysis - Dashboard and graph
+  - ISPM Visibility of Active Directory
+- **Identity Threat Protection (ITP)**
+  - Custom Admin Roles for ITP
+  - ITP Landing Page
+  - Improved Session Protection Controls
+  - Suspicious Login From An IP Flagged By FastPass
+  - Suspicious Login From an IP Flagged In Credential Based Attack
+  - Breached Credential Detected
+- **Okta Device Access**
+  - Desktop MFA Recovery for Windows
+  - Platform SSO support in macOS Setup Assistant
+- **Adaptive MFA**
+  - Universal Logout support for AMFA customers
+- **Breached Credentials Protection**
+- **Network Restrictions for Token Endpoint**
+
+##### Early Access
+- **Cross-App Access**
+- **Okta Identity Governance**
+  - On-prem apps: JDBC connector (limited EA)
+  - Access Certifications for Service Accounts
+- **Okta Privileged Access**
+  - Active Directory Account RDP Domain Controllers
+- **Okta Account Management Policy support for Password Expiry**
+- **User Enumeration Prevention (UEP) Challenge**
+- **Support for Higher Assurance Certificates in Custom Domains**
+
+#### Auth0
+
+##### Generally Available
+- Auth0 for AI Agents
+- Advanced Filtering in Security Center
+- Enhanced Signup Bot Detection for Stronger Security and Seamless User Experience
+- New Management API Endpoints to Configure Bot Detection Settings
+- FGA Logging API
+- Native to Web SSO
+- Customizable Device Remembrance for Adaptive MFA
+- Advanced Customization for Universal Login
+- Native Passkey Enrollment with My Account
+- Express Configuration
+- Tenant Access Control List
+- Docs & API Explorers
+- Forms - Flows Auth0 Send Email Action
+- New Private Cloud AWS Region in Thailand
+- Private Cloud Performance 30x and 30x Burst (3,000 RPS) offering on Azure
+- Improved Accuracy for Security Center Metrics
+
+##### Early Access
+- Passkey Login for Custom Databases With Import Mode Off
+- Self-Service Provisioning - GA by April 30, 2026
+- Auth for MCP
+- Actions - Transaction Metadata - GA by March 31, 2026
+- Ephemeral Sessions with Actions - GA on January 19, 2026
+- Akamai Supplemental Signals
+
+#### Okta Customer Identity
+
+##### Generally Available
+- Breached Credentials Protection
+- Okta Identity Governance
+- Advanced Directory Management
+- Claims Sharing between Okta and External IdP
+
+##### Early Access
+- Okta Account Management Policy support for Password Expiry
+
+_\*Please note that all roadmap items are subject to change. We will update customers regularly on the status of previously communicated projects._
 
 ---
 
-## Harden our corporate infrastructure
+### Launched since May 2024
 
-*(Content regarding internal infrastructure hardening initiatives would follow here as per the document structure.)*
+#### Okta
+- **Govern Okta admin roles:** Deliver zero standing privileges for your Okta administrator privileges with time-bound, ad-hoc access requests for individual access and access reviews for existing administrators.
+- **Require MFA to access the Okta Admin Console:** Prevent administrators from creating authentication policies that only require a single factor. Opt-in to prevent any single factor access to the admin console.
+- **Require MFA for protected actions in Admin Console:** Provide an additional layer of protection for critical actions in Okta by requiring step-up authentication for admins to perform high-impact actions.
+- **Allow admins to detect and block requests from anonymizing services:** Provide administrators the ability to allow or deny access based on an evaluation of whether a source IP address is associated with anonymizers, to strengthen an organization’s control against unauthorized access through such sources.
+- **Apply IP and ASN binding to Admin Console:** To thwart potential session takeovers of critical (first party) resources, Okta automatically revokes an Okta Admin Console session if the ASN (Autonomous System Number) observed during an API or web request differs from the ASN recorded when the session was established. Customer administrators are also able to automatically revoke an administrative session if the IP address observed at session creation changes during an active session within the following Okta products: Workflows Admin, Okta Access Requests (Inbox), Okta Privileged Access (OPA), Okta Admin Console.
+- **Enforce an Allow-listed Network Zone for APIs:** Restrict attackers and malware from stealing SSWS tokens, and from replaying them outside of the specified IP range in order to gain unauthorized access.
+- **Enforce token binding for M2M application service integrations:** Okta has enhanced the security of automated transactions by enforcing, by default, token binding in machine-to-machine (M2M) integrations using proof of possession to help ensure that only authenticated applications can use tokens to access Okta APIs.
+- **Prevent account lockout for Okta users:** Okta has provided a feature to block suspicious sign-in attempts from unknown devices. When the feature is enabled, it prevents legitimate users (including admins) from being locked out if another device that is unknown to Okta causes a lockout.
+
+#### Auth0
+- **Fine Grained Authorization:** Enables user collaboration and access control with unmatched granularity and easy-to-use APIs, while being fast, scalable, and flexible.
+- **Fourth-generation Bot Detection with Okta AI:** Incorporating third-party risk signals and an updated Machine Learning (ML) model, the new version of Bot Detection will have fine-tuned models specifically designed to protect against fraudulent registrations.
+- **Highly Regulated Identity (HRI):** Elevated security, privacy, and UX controls for sensitive customer interactions beyond login. Navigate security and compliance for high-risk customer scenarios like updating account information, accessing open banking payment, and sending money – while meeting end-users’ experience expectations.
+- **Auth challenge:** Reduce bot activity with Auth Challenge, which uses browser and device signals to make it more challenging for bots compared to traditional CAPTCHAs.
+- **Require MFA for all dashboard admins:** Previously, MFA was an optional requirement for Auth0 administrators; MFA is now mandatory for all admins with a username/password-based login or third-party social login.
+- **Extend OIDC Back-Channel Logout with Initiators:** Adds Account Deleted and Email Changed events to the existing list of logout initiators (Password Changed, Session Expired, and various Logout events), which hook up to session termination events to request applications log out users whenever that session is invalidated.
+- **Enforce ASN binding for Auth0 admin sessions:** Okta will automatically revoke an Okta Admin Console session if the ASN (Autonomous System Number) observed during an API or web request differs from the ASN recorded when the session was established.
+- **Manage session and refresh token management API:** Gives centralized access to the list, management, and revocation of user permissions across applications. In the event that a business suspects a session has been hijacked, they can preemptively revoke the session — protecting their customers and organization.
+- **Define progressive factor enrollment for end-users:** Using a Post-Login Action, businesses can define the secondary factors their end-users must enroll into MFA, enabling customers to exert greater control over authentication policies that align with their security objectives.
 
 ---
 
-## Champion customer best practices
+### Launched since July 2024
 
-*(Content regarding customer-facing security guidance and best practices would follow here.)*
+#### Okta
+
+##### Generally Available
+- **Okta Identity Security Posture Management (ISPM) (GA, North America):** Proactively reduce your identity attack surface by identifying and prioritizing risks like excessive permissions, misconfigurations, and MFA gaps across your identity infrastructure, cloud, and SaaS apps.
+- **Identity Threat Protection with Okta AI:** Enhance your identity's resilience post-authentication by continuously assessing risks on your identities. Leverage integrated signals from first-party and third-party partners to proactively counter emerging threats from any origin post-authentication.
+- **Expand in-product best practice guides:** Okta will provide additional in-product guides to help customers implement best practices to protect their Okta tenants.
+- **Enforce MFA for first-party administrator app access:** The admin console policy is now applied to first-party admin apps across Okta access certifications, Okta entitlement management, Okta Access Requests Admin. Access to these apps will require MFA. This is an opt-in feature.
+- **Secure agent deployment for Active Directory:** Upgrading AD Agent to leverage an OIDC Proof of Possession-based approach to communicate with Okta and prevent unauthorized parties from accessing sensitive information.
+- **Yubico Enterprise Onboarding:** Enhance your organization's security with Okta and Yubico by automating seamless phishing-resistant onboarding and FIDO2 Yubikeys for new and existing employees.
+- **Trusted App Filters for FastPass:** Control which binaries may invoke FastPass in the language expression field within the authentication policy to help protect your org from local attack vectors, which include malicious binaries that invoke the Okta Verify loopback server.
+- **Authentication Method Chain:** When you add an authentication policy rule, you can create an authentication method chain. This requires users to verify with multiple authentication methods in a specified sequence.
+
+#### Auth0
+
+##### Generally Available
+- **Enhance Bot Detection on password recovery:** Introduce the option for customers to enable Bot Detection on password recovery flows (in addition to sign-up and sign-in, which already exist) to add an extra defense against account takeover attempts.
+- **Log Service: Prioritized Logs and SIEM integration:** Enables streaming of important security events without interruption. Stream out security events to third parties with higher confidence and integrate with SIEM tools seamlessly.
+- **Thresholds within Security Center Dashboard:** Baseline trend and anomaly monitoring on existing attack vectors in Security Center.
+- **Enhanced Sign-Up Attack Detection for Bot Detection with Okta AI:** Incorporates third-party risk-scoring to further improve the ability to detect bots. Fine-tuned models are now specifically designed to combat sign-up fraud.
+- **Account Level Audit Logs:** Provide visibility for customers to monitor at the account level for audit purposes rather than just at the tenant level.
+- **Define organization session timeouts:** Customize session timeouts using additional logic, including Organization.
+- **Detect and Mitigate IP Rotation Attack:** Leverage Bot Detection to trigger mitigation when it detects patterns of IP rotation from an attacker.
 
 ---
 
-## Elevate our industry
+### Launched since October 2024
 
-*(Content regarding industry-wide security initiatives and collaboration would follow here.)*
+#### Okta
+
+##### Generally Available
+- **Secure Identity Integrations:** Enhance security and reduce development time with 125+ new SaaS application integrations that bring advanced security to some of the biggest SaaS applications.
+- **Okta ISPM: Improved detections (SSO bypass):** Strengthen security with enhanced detection capabilities to identify and block SSO bypass attempts, reducing unauthorized access risks.
+- **Workflows authorized for Okta for Government High (FedRAMP High):** Okta Workflows is designed to deliver significant value by automating and orchestrating processes to free up time and save costs across your agency.
+
+##### Early Access
+- **Secure SaaS Service Accounts:** Discover, vault, and control service accounts across your SaaS ecosystem to help reduce risk and eliminate standing privileges.
+- **Out-of-the-box integrations for Identity Verification (Persona):** Accurate Identity Verification to minimize risk of social engineering and deepfake attacks.
+- **Governance Analyzer with Okta AI:** Drive better governance outcomes by leveraging signals from across Okta’s unified platform.
+- **Expanding phishing-resistant policies across onboarding and recovery:** Expand the same authentication policies typically applied to applications to the process of factor recovery to protect against phishing attacks.
+
+#### Okta Customer Identity
+
+##### Early Access
+- **Passkey autofill:** Offer users a seamless, one-step login experience with passkeys directly from their autofill prompt—no extra clicks—to combine secure, phishing-resistant authentication with a streamlined user experience.
+
+#### Auth0
+
+##### Generally Available
+- **Customer-Managed Keys:** Provide customers with the ability to securely replace and manage their tenant's top-level encryption keys, including BYOK (Bring Your Own Keys) and CYOK (Control Your Own Keys).
+- **Forms:** Empower developers and marketers with a no-code visual editor to orchestrate, customize, and better secure signup and login flows to meet their unique needs.
+- **Customize sessions with extensibility:** Define custom behaviors based on risk signals to revoke suspicious sessions, and set policies to detect and respond to hacking by leveraging the Session Management API with our Actions Extensibility platform.
+
+##### Early Access
+- **Self-Service SSO:** Provide your business customers with a hosted workflow to configure single sign-on (SSO) access to your SaaS app that works with most major identity providers.
+- **Universal Logout:** Instantly terminate sessions across all devices and supported apps to mitigate session hijacking risks and improve security standing.
+
+#### Okta & Auth0
+
+##### Generally Available
+- **Secure Identity Assessment:** Work directly with Okta experts to take control over your identity debt and close security gaps—like admin sprawl, misconfigured permissions, or shadow IT—before they become a security threat.
 
 ---
 
-## Conclusion
+### Launched since January 2025
 
-*(Concluding remarks regarding the ongoing nature of the Secure Identity Commitment.)*
+#### Okta
+
+##### Generally Available
+- **Okta Personal for Workforce:** Provide free password manager as a perk for employees and maintain security hygiene by separating employees’ personal apps from work apps.
+- **Smart card just-in-time provisioning:** Pre-configure smart card attributes, allowing users to freely join other organizations without admins having to go through additional steps.
+- **Yubico FIDO Pre-reg:** Protect your organization from modern identity attacks by implementing advanced phishing resistance across the organization with pre-enrolled FIDO2 Yubikeys.
+- **Okta Account Management Policy:** Leverage the Authentication Policy (ASoP) to define the assurance requirements a user must meet to perform authenticator enrollment, password reset or unlock account operations.
+- **Okta Identity Security Posture Management (ISPM) Enhancements**
+  - **Enhanced MFA Insights and Graphs:** We've expanded our existing MFA monitoring with new unique, identity-focused insights, including app-level MFA coverage detection, login path analysis between direct and SSO access, enhanced visualization of authentication methods, and context-aware MFA requirement tracking. These additions provide deeper visibility into your authentication security posture and help identify potential MFA gaps more effectively.
+- **Workflows Post-Audit for FedRAMP High:** Authorization expected for Workflows, which offers U.S. public sector organizations low- and no-code ways to build and manage complex functions, maintain compliance standards, and improve experience management.
+- **Identity Threat Protection with Okta AI**
+  - **New Identity Threat Protection Integrations:** Leverage new Shared Signals Framework (SSF) integration with Omnissa (Workspace One UEM). Plus, a new Universal Logout integration with SURF Security.
+  - **Universal logout support for Auth0-powered applications:** Automatically log users out of their Auth0-powered apps when a logout or de-provisioning event occurs in Okta Workforce Identity.
+- **Out-of-the-box integrations for Identity Verification**
+  - **Persona integration:** Trigger Persona identity verification flows at key points in the employee lifecycle—such as onboarding, authentication, and account recovery–to minimize the risk of social engineering and deepfake attacks.
+- **Okta Device Access**
+  - **Just-in-time Local Account Creation for macOS:** Enable users to create local macOS accounts with standard or administrator privileges to facilitate low-touch account management, especially for shared devices.
+  - **FIDO2 Security Keys for Desktop MFA for Windows:** Secure the Windows login experience by allowing end users to use a FIDO2 security key, a high security assurance authenticator, to meet their Desktop MFA challenge.
+
+##### Early Access
+- **Collections with Entitlement Management:** Package multiple apps and groups together, simplify requestor and approver experience, and onboard new partners and special projects in a fraction of the time.
+- **Secure Partner Access:** Enable business partners to securely and seamlessly access shared resources without requiring significant development, customization, and management tasks from IT.
+- **Authentication method chain:** Enhance security and reduce the risk of account compromise by requiring a specific order of authentication methods for application access.
+- **On-prem Connector:** An out-of-the-box connector that allows customers to integrate their on-prem apps with Entitlement Management, enabling the discovery, visibility, and management of fine grained application entitlements within Okta.
+- **Enhanced Group Remediation for Access Certs:** A feature update to Access Certifications that provides OIG customers with the ability to automatically remediate user access to group assigned apps.
+- **Preconfigured Access Certification campaigns:** provides OIG customers with the ability to easily initiate use case specific access review campaigns with just one click. Two preconfigured campaigns are available during EA: Discover and remediate inactive users, and Okta Administrator Review.
+
+#### Auth0
+
+##### Generally Available
+- **Bot Detection upgraded with user agent and tenant-specific signals:** Integrates user agent and tenant-specific signals into Okta’s proprietary ML model, enhancing Bot Detection accuracy and effectiveness without adding friction for legitimate users.
+- **Tenant Logs for Action Failures:** Monitor tenant action failures via audit and provisioning logs.
+- **Credential Guard on Azure:** Detect stolen credentials fast to prevent takeovers now available on Azure Private Cloud.
+- **OTP passwordless authentication for email and SMS:** Enable end users to verify their email account on sign-up using a one-time password (OTP) code, and to reset their password using an email-delivered OTP instead of a link.
+- **Guardian App & SDK — Mobile Enrollment for Push:** Provide ways for end users to register the Guardian App push notification factor without having to scan the QR code with their device.
+- **Auth0 Integration with Okta Universal Logout:** Enable organizations using Okta as their IdP to automatically log users out of their Auth0-powered apps whenever a logout or de-provisioning event occurs in Okta Workforce identity.
+- **Machine-to-Machine Access for Organizations:** Allows B2B SaaS providers to open up their APIs, enabling machine-to-machine (M2M) use cases while allowing access to sensitive data and operations of each Organization to be restricted to authorized parties.
+- **Custom Email Provider:** Configure custom email providers and customize emails so they can have full control of the email delivery process.
+- **Email OTP Verification:** Send users a one-time password via email for secure authentication.
+
+##### Early Access
+- **Tiered Alerting on Anomalies in Security Center:** Set thresholds on important security metrics, and configure when and how to get alerted based on these thresholds, so that you can take action in the event of a potential security anomaly or attack.
+- **Improve onboarding and integrations with Custom Token Exchange External Tokens:** Provides a flexible solution using Actions that allows customers to provide their custom logic to control Token exchange (an Oauth grant-type).
+- **Client Initiated Backchannel Authentication (CIBA):** Provide the means to proactively reach out to users via a notification for them to authenticate and authorize access.
+- **Verify Mobile Driver’s License (mDL):** Present mobile driver’s license (mDL) verification request to end-users and verify mDL within your application.
+
+---
+
+### Launched since March 2025
+
+#### Okta
+
+##### Generally Available
+- **Desktop MFA Recovery for macOS:** Prevent productivity disruption by securely enabling admins to provide end users with time-limited recovery codes to login to their devices in the event of a lost phone or security key.
+- **Identity Security Posture Management**
+  - **Enhanced Non-Human Identity Analytics:** Expands monitoring capabilities with advanced visualizations and insights for non-human identities across your enterprise platforms. This comprehensive view unifies visibility into service accounts from Azure Active Directory and Salesforce, along with AWS API keys, helping security teams quickly identify and remediate potential risks in automated system access.
+  - **Role-Based Access Control Capabilities:** Introduces granular role-based access controls designed specifically for complex, multi-org environments. This enhancement enables large enterprises to efficiently delegate detection management and remediation workflows across business units while maintaining centralized security oversight, aligning with hub-and-spoke governance models.
+  - **Support for risky misconfigurations for AI Agents:** Gain comprehensive visibility into AI agent security posture, enabling secure, large-scale deployment of the digital workforce while maintaining robust identity security controls.
+- **Identity Threat Protection with Okta AI**
+  - **ITP Detections for Adaptive MFA Super Admins:** Instantly detect IP and device context changes for super admin roles, so you can act fast before threats escalate.
+  - **SSF Receiver Integrations for Adaptive MFA SKU:** Leverage event signals from across your tech stack to dynamically adjust authentication requirements.
+  - **Expanded SSF Partner Support:** Okta now supports event signals from SquareX and Widefield Security, enhancing threat detection with broader coverage across third-party security tools.
+- **Compliance Milestones:** Okta Identity Governance, Workflows, and Identity Threat Protection with Okta AI audit-ready for Okta for US Military (DoD Impact Level 4). Identity Threat Protection with Okta AI also audit-ready for Okta for Government High (FedRAMP High) and authorized for Okta for Government Moderate (FedRAMP Moderate).
+
+##### Early Access
+- **Device Assurance**
+  - **Android Device Trust:** Enforce an extensive array of device signals on Android via Device Assurance policies.
+- **Active Directory Accounts in Okta Privileged Access:** Reduce risks associated with undermanaged privileged Active Directory accounts. Okta Privileged Access will discover accounts and manage the passwords, enforce access controls such as RBAC, MFA, Access Requests and Check-Out with time-based-limits, while also providing an audit trail for monitoring and compliance.
+- **Advanced Posture Checks:** Collect and assess the device context that you require—on any Windows or macOS device attribute or security setting—so you can further strengthen Zero Trust security during authentication.
+- **Enhanced Dynamic Network Zones (Residential Proxy / Blockchain Support):** Extended IP Enrichment support for such things as Residential Proxies to prevent unwanted traffic from accessing Okta resources.
+- **Out-of-the-box integrations for Identity Verification**
+  - **Incode & CLEAR integrations:** Trigger identity verification flows at key points in the employee lifecycle—such as onboarding, authentication, and account recovery–to minimize the risk of social engineering and deepfake attacks.
+- **Okta Identity Security Posture Management**
+  - **Self serve add connectors:** Empower security teams to independently expand ISPM coverage across multiple tenants and integrations without vendor assistance, accelerating time-to-value.
+  - **Role Based Access Control - App admin and source integrator:** Delegate targeted remediation capabilities to application owners using role-based access controls that limit visibility to only relevant security findings, improving cross-team collaboration.
+  - **MFA and SSO deep analysis dashboard and org graph:** Consolidate authentication security metrics across your entire identity landscape with granular per-app reporting on MFA adoption, phishing-resistant factors, and SSO validation.
+
+#### Okta Customer Identity
+
+##### Early Access
+- **IdP single logout:** Allow end users to log out of multiple apps and external identity providers simultaneously with one click for a secure and seamless experience.
+- **Network restrictions for OpenID Connect Token Endpoints:** Prevent token stealing and replay attacks by enforcing network restrictions on the token refresh endpoint.
+
+#### Auth0
+
+##### Generally Available
+- **Active Session Management for Dashboard users:** Allows the developer to reject any unknown sessions and have full control over their account and logged-in sessions in both public and private cloud.
+- **Breached Password Detection on Password Reset Flow:** Detect and block compromised passwords during reset to prevent account takeovers.
+- **FAPI 2 Security Profile conformance testing and certification (Financial Grade APIs by the OpenID foundation):** Deliver advanced API protections to protect privacy and prevent transaction tampering.
+- **Teams support for Security Policies with SSO Enforcement in Private Cloud:** Manage security policies and enforce SSO for teams in Private Cloud.
+- **Google Credential Manager support using Google Token Exchange:** Enable seamless authentication with Google Credential Manager using Google Token Exchange for secure access.
+
+##### Early Access
+- **Client Assertion JWT for the OIDC Enterprise Connection:** Enable more secure single sign-on (SSO) for business customers by using asymmetric cryptography (private/public key encryption) in which Auth0 stores the secret as opposed to it being transferred in the authentication request.
+- **Customer-Provided Signature Public Keys:** Facilitate migrating from legacy identity providers to Auth0 by allowing customers to import their legacy public signature keys to their Auth0 tenant.
+- **Self-Service Domain Verification/HRD:** Provides your business customers with a hosted workflow to independently manage their Home Realm Discovery and domain verification process.
+- **Passkey login for custom databases with import mode off:** Customers using external custom databases where identities are not being imported to Auth0 will be able to offer passkey authentication for the digital identities in those custom databases.
+- **Secure Tenant-level Access Control list:** Provide the ability for customers to block traffic from specific IPs, Classless Inter-Domain Routing (CIDR) blocks, and geographies to help combat DDOS attacks by blocking requests at the edge.
+- **Federated logout for OIDC and Okta Connections:** Make use of simplified Federated Logout integrations with Okta Workforce identity Cloud and OpenID Connect identity providers.
+- **Limit M2M Usage Per Client & Organisation:** Applies M2M token quota per App/Client to stop ill-behaving Apps to consume the tenant quota. This will provide more control especially for scenarios where 3rd Party M2M Apps access our customer APIs.
+- **Native to Web SSO:** Streamline the customer experience by eliminating the need to re-login when moving from a mobile app to a web app. Leverage Auth0's built-in security features—including DPoP and App Attestation (for GA)—to enable a more seamless and secure Native to Web SSO experience.
+- **Step-up authentication for sensitive tenant flows:** Get an additional layer of security and control for user’s authentication processes.
+- **Tenant Access Control List:** Create and manage rules that control access to your app. When a request matches a rule, it can allow, block, or redirect the request. Helps reduce risk by blocking or redirecting traffic based on customer-defined, self-serve rules using signals such as IP, CIDR ranges, Geography, User Agent, and TLS fingerprints (JA3/ JA4).
+
+##### Developer Preview
+- **Auth for GenAI:** Build your GenAI applications securely. Auth for GenAI is a suite of features that allows you to ensure that your AI agents can securely call APIs on behalf of your users, both interactively and asynchronously, by requesting for the right and least privileged access to users' sensitive information.
+
+---
+
+### Launched since July 2025
+
+#### Okta
+
+##### Generally Available
+- **Okta Identity Governance**
+  - **Separation of Duties:** Help organizations spot and stop risky combinations of access in critical applications, reducing fraud and risk.
+  - **Resource Collections:** Provide a package of all the resources and access that a user needs to perform a role or project.
+  - **Govern Okta Admin Roles:** Apply the principle of least privilege access to Okta admin roles by requiring a request-and-approval process before granting time-bound admin permissions. Regularly review and certify any standing access to admin roles.
+  - **Authorized for Okta for Government High (FedRAMP High)**
+- **Okta Identity Security Posture Management**
+  - **Geographic Expansion across EMEA and APJ:** Global availability across EMEA and APJ region.
+- **Adaptive MFA**
+  - **Integration with Palo Alto Networks Prisma Access Browser:** The native integration creates a new conditional access method to restrict access to SSO apps by using only the secure browser.
+- **Identity Threat Protection with Okta AI (ITP)**
+  - **Shared Signals Framework (SSF) Transmitter:** Use Okta’s identity signals to trigger automated actions (e.g., session revocation, MFA challenge) in third-party tools, like Apple Business Manager, accelerating incident response workflows.
+  - **ITP Workflows Connector:** Take real time, automated actions in response to ITP detections, with rich context and detailed insights about the event. Responses include, but are not limited to, suspending users or sending detailed notifications to security teams.
+  - **Authorized for Okta for Government Moderate (FedRAMP Moderate):** ITP has achieved FedRAMP Moderate Authorization, marking a significant milestone for the public sector and reinforcing Okta’s commitment to security and compliance.
+- **Okta Access Gateway (OAG)**
+  - **OAG Secure-By-Design Changes:** The OAG admin console is only accessible on the local network by default and requires an admin password change for both the console and Command Line Interface (CLI).
+- **Granular Admin Permissions to Access Identity Providers:** Admins can now assign specific IdPs to other admins using granular permissions, enhancing security by limiting access to IdP configurations for only authorized users.
+- **Policy Updates as Protected Actions:** When App Sign-On, Global Sign-On, ITP, or Account Management policies are updated in the admin console, admins must complete step-up authentication. This prevents unauthorized changes by bad actors with access to an admin session.
+
+##### Early Access
+- **Okta Identity Governance**
+  - **On-prem Connector for Oracle EBS:** On-prem Connector for Oracle EBS connects Oracle EBS on-premises apps with Okta Identity Governance. It helps admins discover, view, and manage Oracle EBS entitlements directly in Okta.
+  - **Unified Requestor Experience:** Unified Requestor Experience for requesting access in Slack, Teams and the end user dashboard catalogue for both Access Request conditions and Request Types.
+- **Okta Privileged Access**
+  - **Support for RDP w/ Active Directory accounts:** Launch RDP sessions using Active Directory accounts without exposing passwords, with built-in policy controls for MFA and access requests.
+  - **On-demand credential rotation:** Allow authorized users to rotate credentials immediately in response to risk, without waiting for scheduled changes.
+- **Identity Threat Protection with Okta AI (ITP)**
+  - **Custom Admin Roles for ITP:** Enforce least-privilege access with precise, scoped admin permissions for managing ITP configurations, such as who can manage user sessions, configure risk policies, or set up Shared Signals Framework (SSF) integrations.
+- **Breached Credentials Protection (Phase 2):** Customizable responses to breached credential events with the ability for admins to validate the breached credential flow using a test account.
+- **Network Restrictions for Token Endpoint:** Enhance security by allowlisting network zones per client to restrict token requests to trusted IPs and defend against replay attacks, token theft, DoS, and rate limit abuse.
+
+#### Okta Customer Identity
+
+##### Early Access
+- **Network Restrictions for Token Endpoint:** Enforce network restrictions thereby enhancing security to protect customers from token relay attacks and theft.
+- **Universal Logout for Okta Customer Identity Apps:** An out-of-the box solution that automatically logs users out without having to build anything additional thus improving security and user experience.
+- **Cascading of the Single Logout Request to External IdP:** Automatically log users out of external identity providers when they log out of an Okta-connected application configured for Single Logout, improving security for shared devices.
+- **Claims Sharing between Okta and External IdP:** Simplify the user login experience by potentially removing the need for users to enroll extra security steps in Okta if those steps have already been completed with their primary identity provider, all while ensuring a secure connection.
+- **Overlapping IdP Signing Certificate:** Allows multiple active signing certificates for each external identity provider, making certificate updates seamless and preventing downtime for federated logins, improving security and reliability.
+- **OIDC Token Encryption:** Safeguards data from unauthorized access during transmission by allowing Okta to encrypt sensitive user information within OIDC tokens using industry-standard methods when communicating with other trusted apps.
+
+#### Auth0
+
+##### Generally Available
+- **Client-Initiated Backchannel Authentication (CIBA):** Also known as a decoupled authentication flow, CIBA enables a client application to initiate the authentication process on behalf of the customer.
+- **Ephemeral Sessions in Actions:** Dynamically configure whether a session should expire when the browser is closed. Define ephemeral sessions per client, organization, connection, or by any custom business logic within Actions.
+- **Session and Refresh Token Metadata:** Attach and persist metadata within a user's session or refresh token. This metadata can be used across authentication flows to provide additional context and flexibility in session management.
+- **Passkey Enhancements: Support on Custom DB Connections with Import Mode Off:** Auth0 customers using custom database connections with import mode set to off will be able to allow end-users to sign up with and log in with passkeys.
+- **Enhanced Bot Detection Accuracy and Reduced Friction:** Enhanced bot detection to reduce false positives for VPN users, improving accuracy and minimizing friction even on shared IPs or anonymized networks.
+- **FAPI v2 Certification:** Provide support for Financial Grade Identity beyond standard OAuth2 and OpenID Connect protocols. Our FAPI v2 certification makes it easier to better secure your APIs to support compliance for Financial Services’ transactions and other sensitive, high-risk scenarios.
+
+##### Early Access
+- **Enhanced Security Incident Management through Auth0 Guide:** Enrich Attack Protection capabilities with “intelligent” security summaries and insights from Auth0 Guide – ask about Security Center data and investigate the cause of alert notifications received.
+- **DPoP (Demonstrate Proof of Possession):** Protect access and refresh tokens by constraining them cryptographically to the application that they are issued to.
+- **Advanced Customization for Universal Login (ACUL):** Customize the sign-up and sign-in experience across every app, device, and digital journey, and leverage application and user information to deliver the best user experience.
+- **Multiple Custom Domains:** Enable multiple B2C brands and white-labeling B2B brands to have different tailored and branded user experiences across channels (UL, email, etc.).
+- **Passkey Enhancements: Enrollment API:** Add support for Native Passkeys to API-driven flows, enabling easy-to-use, phishing-resistant authentication into native mobile experiences. Expands the native passkey signup and login capabilities to include ad hoc enrollment, enables developers to implement enrollment methods, and prompts at different points in their applications.
+- **Non-Unique (Shared) Email Addresses for Identities:** Allow multiple user accounts to share the same email address within a database connection. Instead of using email as a unique identifier, accounts must be distinguished by either a username or phone number.
+- **Native Passkey Management using My Account API:** The enhancements are designed to give you granular control and flexibility over passkey implementation. This enables even more seamless and secure authentication experiences within your custom applications.
+- **Right-to-Left Language Support with additional language translations in UL and Guardian:** End-user authentication interfaces (Universal Login and Guardian) will support right-to-left language support along with several new right-to-left languages including Arabic, Hebrew, and more.
+
+---
+
+### Launched since September 2025
+
+#### Okta
+
+##### Generally Available
+- **Okta Identity Governance**
+  - **Security Access Review:** Examines user access to sensitive resources manually or automatically via admins using the Admin Console or APIs. Prioritizes reviews based on criticality and anomalies to investigate, confirm, or revoke access in response to security incidents.
+  - **Universal Logout for Access Requests:** Supports Universal Logout within the Okta Access Requests web app. Allows admins to automatically sign users out of the application when a Universal Logout event is triggered.
+  - **Continuous Access Evaluation (CAE) for Access Requests:** Refreshes user sessions periodically to invoke sign-on policy evaluations. Prompts users to re-authenticate if the current policy requirements are no longer met.
+  - **Access Requests for AD Groups:** Enables users to request access to AD groups directly through Request Conditions. Uses bi-directional sync to automatically add or remove users, facilitating efficient and time-bound access management.
+  - **Governance Delegates:** Enables super admins and users to assign a delegate to manage tasks like access certification reviews and access request approvals. Provides process continuity for Request Types, Request Conditions, and Access Certifications by assigning future tasks to the delegate when the original approver is unavailable.
+  - **Entitlement History:** Provides a chronological timeline of user entitlement assignments and unassignments for enabled applications. Offers a clear audit trail to track historical access for specific users and timeframes.
+  - **Resource Owners:** Automates Okta Identity Governance (OIG) configuration by assigning owners to apps, groups, and entitlements. Enables the automatic assignment of reviewers for Access Certifications and approvers for Request Conditions based on owner-assigned resources.
+  - **Governance Labels:** Categorizes resources like apps, groups, entitlements, and collections using the Labels API. Uses key-value labels to automate and simplify the management of Access Certifications.
+  - **Approval Escalations:** Allows end users to escalate requests to an approver’s manager if the primary approver is unavailable. Helps ensure users are not blocked from accessing critical resources for Request Types and Request Conditions.
+  - **Unified Audit Reports in Access Certification:** Simplifies the generation of compliance audit data by providing a single location for all reporting needs. Reduces the time required for audit readiness within Access Certifications.
+  - **Redesigned Approver Experience for Access Requests:** Streamlines the approval process by presenting critical information and calls-to-action upfront. Enhances visibility for Request Types and Request Conditions by providing direct access to request details, emails, and integrated Slack messages.
+  - **Export Reports as PDF:** Allows OIG-specific reports to be exported in PDF and CSV formats with customizable columns. Includes a cover page on PDF exports with metadata such as report type, organization name, and timestamps for internal audit stakeholders.
+- **Okta Privileged Access**
+  - **Geographic expansion in EMEA:** A new preview environment powered by the OP2 cell, offering the EMEA region the ability to test implementations and gain confidence before going live.
+  - **Password Character Exclusions:** Gives administrators control to prevent password rotation failures by configuring the system password generator to exclude specific symbols that are not supported by target systems.
+  - **Access Certifications for Service Accounts:** Okta Identity Governance can run certification campaigns for service accounts stored in the OPA vault.
+  - **Tripled coverage of SaaS apps that can be managed in OPA:** There are now 45 validated applications for OPA. Here is the full list of supported apps.
+  - **Coarse-grain permissions for Active Directory + RDP:** Control local server permissions for AD accounts just-in-time when a user is accessing a domain-joined server with RDP.
+- **Identity Security Posture Management (ISPM)**
+  - **MFA and SSO analysis - Dashboard and graph:** Security leaders gain granular MFA and SSO analysis in an exportable dashboard to identify top trends and risks.
+  - **ISPM Visibility of Active Directory:** Security teams gain visibility into Active Directory identities, groups, and their risks to reduce attack surface.
+- **Identity Threat Protection (ITP)**
+  - **Custom Admin Roles for ITP:** Enforce least-privilege access with precise, scoped admin permissions for managing ITP configurations, such as who can manage user sessions, configure risk policies, or set up Shared Signals Framework (SSF) integrations.
+  - **ITP Landing Page:** A converged experience to easily navigate to all features in ITP. Easily discover new features, understand configurations, and tune controls to streamline your deployment and strengthen security posture.
+  - **Improved Session Protection Controls:** Admins can configure which session context changes initiate policy re-evaluation, providing granular control based on organizational risk tolerance.
+  - **Suspicious Login From An IP Flagged By FastPass:** This detection indicates that a sign-in event occurred from an IP address that Okta FastPass flagged in a phishing event.
+  - **Suspicious Login From an IP Flagged In Credential Based Attack:** This detection indicates that a successful sign-in event occurred from an IP address where multiple sign-in failures also occurred.
+  - **Breached Credential Detected:** This detection indicates that a username-password combination in your org appears in a third-party list of public data breaches.
+- **Okta Device Access**
+  - **Desktop MFA Recovery for Windows:** Prevent productivity disruption by securely enabling admins to provide end users with time-limited recovery codes to login to their devices in the event of a lost phone, security key, etc.
+  - **Platform SSO support in macOS Setup Assistant:** Deliver an enhanced device onboarding experience that automatically creates a local macOS account enrolled in Desktop Password Sync, leveraging Okta user profile attributes and credentials.
+- **Adaptive MFA**
+  - **Universal Logout support for AMFA customers:** Universal Logout allows admins to sign users out of all federated apps and devices if suspicious activity is detected.
+- **Breached Credentials Protection:** Customizable responses to breached credential events with the ability for admins to validate the breached credential flow using a test account.
+- **Network Restrictions for Token Endpoint:** Enhance security by allowlisting network zones per client to restrict token requests to trusted IPs and defend against replay attacks, token theft, DoS, and rate limit abuse.
+
+##### Early Access
+- **Cross-App Access:** New, open protocol to securely manage how AI agents and apps connect to each other by shifting access control from the app to the IdP.
+- **Okta Identity Governance**
+  - **On-prem apps: JDBC connector (limited EA):** Out-of-the-box connector for LCM provisioning and Entitlement Management for generic databases via a "JDBC connector."
+  - **Access Certifications for Service Accounts:** Certify whether users should retain access rights to SaaS/Okta/AD service accounts managed in Okta Privileged Access using Okta Access Certifications.
+- **Okta Privileged Access**
+  - **Active Directory Account RDP Domain Controllers:** Officially support the OPA Agent on Domain Controller hosts, so RDP access to Domain Controllers can be protected with OPA.
+- **Okta Account Management Policy support for Password Expiry:** Expanded protection for password expiry flows in the OAMP policy. Enable greater control over assurance requirements when the end-user’s password expires or is compromised.
+- **User Enumeration Prevention (UEP) Challenge:** Admins can now select stronger factors for UEP challenges (e.g. OV push, FastPass) – beyond the password.
+- **Support for Higher Assurance Certificates in Custom Domains:** Use of Custom Domains requires that customers configure a certificate provided via Okta or Certificate Authority - this will allow for SHA-384 and SHA-512 certificates. Gain assurance of authenticity and integrity with enhanced security certificate encryption options.
+
+#### Okta Customer Identity
+
+##### Generally Available
+- **Breached Credentials Protection:** Let admin tailor user experiences and verify workflows using test accounts, improving both security and operational confidence.
+- **Okta Identity Governance:** Enable secure onboarding and governance for customer identities with Okta. Help ensure compliance and audit requirements are met so only the right identities have the right level of access.
+- **Advanced Directory Management:** Securely manage B2B customers' access to shared applications at scale. Extend strong security controls like passwordless authentication to protect customer access and delegate user management and app assignments to optimize IT operations.
+- **Claims Sharing between Okta and External IdP:** Enhance identity federation by enabling secure, seamless access to resources across Okta and third-party IDPs without compromising security.
+
+##### Early Access
+- **Okta Account Management Policy support for Password Expiry:** Provides greater control over your customers' password security. This feature expands the Okta Account Management Policy (OAMP) to include password expiration, allowing you to enforce stronger security requirements when a password expires or is compromised.
+
+#### Auth0
+
+##### Generally Available
+- **Auth0 for AI Agents:** Auth0 for AI Agents provides a single plane to manage user authentication, fine-grained permissions and human-in-the-loop workflows. With Cross-App Access available out of the box, executives can have confidence and security in AI agents.
+- **Advanced Filtering in Security Center:** Anomaly monitoring on expanded attack vectors in the Security Center dashboard through filter categories, list groupings of events by multiple categories for incident analysis. Provides more granularity to existing metrics so customers can better troubleshoot and triage incidents.
+- **Enhanced Signup Bot Detection for Stronger Security and Seamless User Experience:** Improved machine learning (ML) model for signup to deliver stronger protection against automated account creation while keeping friction low for legitimate users. Includes expanded detection signals, smarter traffic classification, and optimized sensitivity settings.
+- **New Management API Endpoints to Configure Bot Detection Settings:** Auth0 now provides Management API endpoints to manage Bot Detection configuration, configure bot detection controls, challenge policies, and CAPTCHA management.
+- **FGA Logging API:** The Auth0 Fine-Grained Authorization (FGA) Logging API enables users to query access logs that capture all operations across five FGA endpoints - Write(), Check(), BatchCheck(), ListUsers() and ListObjects().
+- **Native to Web SSO:** Enables seamless authentication between native mobile apps and web apps, eliminating the need for users to re-enter credentials when switching between them.
+- **Customizable Device Remembrance for Adaptive MFA:** Adaptive MFA now allows administrators to configure device remembrance durations (TTL) for the New Device assessor; the default can be customized to any value between 1–365 days.
+- **Advanced Customization for Universal Login:** Advanced Customization for Universal Login enables you to build custom, client-rendered interfaces for Universal Login screens, allowing you to control all aspects of your Universal Login experience.
+- **Native Passkey Enrollment with My Account:** Native Passkey Enrollment enables users to add a passkey to their account using APIs; applications can fully manage user onboarding of passkeys. This feature is the first of many capabilities being added to My Account.
+- **Express Configuration:** Express Configuration enables enterprise customers to securely configure identity integrations with SaaS applications without the need to copy and paste protocol-specific configuration values.
+- **Tenant Access Control List:** Create and manage rules that control access to your app. When a request matches a rule, it can allow, block, or redirect the request. Helps reduce risk by blocking or redirecting traffic based on customer-defined, self-serve rules using signals such as IP, CIDR ranges, Geography, User Agent, and TLS fingerprints (JA3/ JA4).
+- **Docs & API Explorers:** Refreshed Docs & API explorer experience with a host of new benefits for developers. This feature improves search and discoverability, provides AI native capabilities (e.g. LLMx.txt) and better align code snippets to our SDKs for more specific implementation examples.
+- **Forms - Flows Auth0 Send Email Action:** Allows you to send emails from Flows using the customized Email Provider at your Auth0 Tenant.
+- **New Private Cloud AWS Region in Thailand:** Customers in the region can now leverage this new presence for significantly reduced latency and enhanced performance. It also provides a robust, in-country solution for organizations managing their data governance and sovereignty objectives.
+- **Private Cloud Performance 30x and 30x Burst (3,000 RPS) offering on Azure:** The 3,000 RPS Private Performance and 3,000 RPS Private Performance Burst offerings on Azure enable enterprise organizations to leverage high-scale, dedicated identity infrastructure while maintaining commitment to the Azure ecosystem.
+- **Improved Accuracy for Security Center Metrics:** Refined logic behind how Security Center metrics are calculated to provide more accurate and actionable insights. When an IP address triggers more than 10 relevant
 
 ---
 
@@ -1480,4 +1916,4 @@ integrations. We’re building a world where Identity belongs to you. Learn more
 
 WhitepaperOkta’s Secure Identity Commitment
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-11-12", "model": "gemini-3.8-flash"} -->
