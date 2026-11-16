@@ -274,7 +274,14 @@ def compress_pdf_with_ghostscript(pdf_path: str, threshold_mb: int = 30) -> Tupl
             f"-sOutputFile={tmp_path}",
             str(pdf_path),
         ]
-        res = subprocess.run(cmd, capture_output=True, text=True)
+        try:
+            res = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        except subprocess.TimeoutExpired:
+            print(f"  ⚠ Ghostscript timed out after 120s — skipping downsampling")
+            if Path(tmp_path).exists():
+                Path(tmp_path).unlink(missing_ok=True)
+            return pdf_path, False
+
         if res.returncode != 0:
             print(f"  ⚠ Ghostscript failed (code {res.returncode}): {res.stderr[:120]}")
             if Path(tmp_path).exists():
@@ -525,13 +532,22 @@ class MarkdownPolisher:
                     if USE_NEW_SDK:
                         file_obj = self.client.files.upload(file=str(upload_path))
                         
+                        poll_start = time.time()
+                        max_poll_sec = 180
                         while file_obj.state.name == "PROCESSING":
+                            if time.time() - poll_start > max_poll_sec:
+                                print(f"  ! File processing timed out on Gemini ({max_poll_sec}s).")
+                                break
                             print("  ! Waiting for file processing...")
                             time.sleep(2)
                             file_obj = self.client.files.get(name=file_obj.name)
                             
-                        if file_obj.state.name == "FAILED":
-                            print("  ! File processing failed on Gemini.")
+                        if file_obj.state.name != "ACTIVE":
+                            print(f"  ! File not active on Gemini (state: {file_obj.state.name}).")
+                            try:
+                                self.client.files.delete(name=file_obj.name)
+                            except Exception:
+                                pass
                             continue
                             
                         response = self.client.models.generate_content(
@@ -549,13 +565,22 @@ class MarkdownPolisher:
                     else:
                         file_obj = genai.upload_file(path=str(upload_path))
                         
+                        poll_start = time.time()
+                        max_poll_sec = 180
                         while file_obj.state.name == "PROCESSING":
+                            if time.time() - poll_start > max_poll_sec:
+                                print(f"  ! File processing timed out on Gemini ({max_poll_sec}s).")
+                                break
                             print("  ! Waiting for file processing...")
                             time.sleep(2)
                             file_obj = genai.get_file(file_obj.name)
                             
-                        if file_obj.state.name == "FAILED":
-                            print("  ! File processing failed on Gemini.")
+                        if file_obj.state.name != "ACTIVE":
+                            print(f"  ! File not active on Gemini (state: {file_obj.state.name}).")
+                            try:
+                                genai.delete_file(file_obj.name)
+                            except Exception:
+                                pass
                             continue
                             
                         model = genai.GenerativeModel(model_name)

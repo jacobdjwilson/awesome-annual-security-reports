@@ -35,7 +35,19 @@ if hasattr(sys.stdout, "reconfigure"):
 
 
 def get_env(key: str, default: str = "") -> str:
-    return os.environ.get(key, default)
+    val = os.environ.get(key)
+    if val is None or val.strip() == "":
+        return default
+    return val
+
+
+def safe_int(val: Any, default: int = 0) -> int:
+    try:
+        if val is None or str(val).strip() == "":
+            return default
+        return int(val)
+    except (ValueError, TypeError):
+        return default
 
 
 def parse_json_file(filepath: str) -> Any:
@@ -156,7 +168,7 @@ def write_pipeline_conversion(f):
         f.write("API quota limit reached during conversion.\n\n")
         f.write(f"| Detail | Value |\n|--------|-------|\n")
         f.write(f"| Attempt | {attempt} / 3 |\n")
-        f.write(f"| Retry Delay | {int(delay)//60}m ({delay}s) |\n")
+        f.write(f"| Retry Delay | {safe_int(delay)//60}m ({delay}s) |\n")
         f.write(f"| Status | Quota retry job scheduled |\n\n")
         return
 
@@ -197,7 +209,7 @@ def write_pipeline_analysis(f):
         f.write("API quota limit reached during analysis.\n\n")
         f.write(f"| Detail | Value |\n|--------|-------|\n")
         f.write(f"| Attempt | {attempt} / 3 |\n")
-        f.write(f"| Retry Delay | {int(delay)//60}m ({delay}s) |\n")
+        f.write(f"| Retry Delay | {safe_int(delay)//60}m ({delay}s) |\n")
         f.write(f"| Status | Quota retry job scheduled |\n\n")
         return
 
@@ -320,7 +332,7 @@ def write_validator_cleanup(f):
     f.write(f"| Deleted Branches | {deleted} |\n")
     f.write(f"| Skipped Branches | {skipped} |\n\n")
 
-    if int(deleted) > 0:
+    if safe_int(deleted) > 0:
         f.write(f"✅ Deleted **{deleted}** branch(es) from closed, unmerged PRs.\n")
     else:
         f.write("ℹ️ No stale branches eligible for deletion.\n")
@@ -460,19 +472,6 @@ def write_discovery_summary(f):
     open_issues = get_env("OPEN_ISSUES", "0")
     max_issues = get_env("MAX_ISSUES", "20")
     
-    created = int(get_env("CREATED", "0"))
-    tasks = get_env("TASKS", "0")
-    suppressed = int(get_env("SUPPRESSED", "0"))
-    pdf_f = get_env("PDF_F", "0")
-    land_f = get_env("LAND_F", "0")
-    t_curr = get_env("T_CURR", "0")
-    t_stale = get_env("T_STALE", "0")
-    t_old = get_env("T_OLD", "0")
-    
-    vt_clean = int(get_env("VT_CLEAN", "0"))
-    vt_susp = int(get_env("VT_SUSP", "0"))
-    vt_mal = int(get_env("VT_MAL", "0"))
-    
     run_url = f"https://github.com/{repo}/actions/runs/{run_id}"
     date_used = override_date if override_date else f"{datetime.datetime.now().strftime('%Y-%m-%d')} (today)"
 
@@ -486,6 +485,19 @@ def write_discovery_summary(f):
         f.write("### ⏸️ Issue Cap Reached\n\n")
         f.write(f"**{open_issues} open automated issues** — at or above cap of **{max_issues}**.\n\n")
         return
+
+    created = safe_int(get_env("CREATED", "0"))
+    tasks = get_env("TASKS", "0")
+    suppressed = safe_int(get_env("SUPPRESSED", "0"))
+    pdf_f = get_env("PDF_F", "0")
+    land_f = get_env("LAND_F", "0")
+    t_curr = get_env("T_CURR", "0")
+    t_stale = get_env("T_STALE", "0")
+    t_old = get_env("T_OLD", "0")
+    
+    vt_clean = safe_int(get_env("VT_CLEAN", "0"))
+    vt_susp = safe_int(get_env("VT_SUSP", "0"))
+    vt_mal = safe_int(get_env("VT_MAL", "0"))
 
     f.write("### 🔭 Search Coverage\n\n")
     f.write("| Metric | Value |\n|--------|-------|\n")
