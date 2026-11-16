@@ -71,6 +71,7 @@ env:
 jobs:
   discover-and-scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     outputs:
       has_files: ${{ steps.find-files.outputs.has_files }}
       scan_mode: ${{ steps.find-files.outputs.scan_mode }}
@@ -138,6 +139,7 @@ jobs:
 
   virus-total-scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     needs: discover-and-scan
     if: needs.discover-and-scan.outputs.has_files == 'true'
     outputs:
@@ -207,6 +209,7 @@ jobs:
 
   convert-pdf-to-markdown:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     needs: [discover-and-scan, virus-total-scan]
     if: |
       needs.discover-and-scan.outputs.has_files == 'true' &&
@@ -268,6 +271,7 @@ jobs:
 
   analyze-reports:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     needs: [discover-and-scan, convert-pdf-to-markdown]
     if: needs.discover-and-scan.outputs.has_files == 'true'
     outputs:
@@ -353,6 +357,7 @@ jobs:
       pull-requests: write
       actions: write
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     needs: [discover-and-scan, virus-total-scan, convert-pdf-to-markdown, analyze-reports]
     if: |
       needs.discover-and-scan.outputs.has_files == 'true' &&
@@ -457,7 +462,7 @@ jobs:
   # ============================================================
   retry-on-quota:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     needs: [discover-and-scan, convert-pdf-to-markdown, analyze-reports]
     if: |
       always() &&
