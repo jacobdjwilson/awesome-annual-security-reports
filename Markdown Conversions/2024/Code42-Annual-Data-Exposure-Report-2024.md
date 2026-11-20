@@ -3,15 +3,22 @@
 ## Table of Contents
 - [Foreword: A Note from Code42 President & CEO](#foreword-a-note-from-code42-president--ceo)
 - [TL;DR — Key Findings](#tldr--key-findings)
+  - [KEY FINDING #1](#key-finding-1)
+  - [KEY FINDING #2](#key-finding-2)
+  - [KEY FINDING #3](#key-finding-3)
+  - [KEY FINDING #4](#key-finding-4)
 - [Objective of the Annual Data Exposure Report: 2024](#objective-of-the-annual-data-exposure-report-2024)
 - [Introduction](#introduction)
 - [Current State of Data Loss](#current-state-of-data-loss)
 - [Current State of the Workforce](#current-state-of-the-workforce)
 - [Accelerators of Risk to Data](#accelerators-of-risk-to-data)
+  - [Emerging technology](#emerging-technology)
+  - [Employee Types](#employee-types)
 - [Impact of Insider-driven Data Loss](#impact-of-insider-driven-data-loss)
 - [Conclusion](#conclusion)
 - [Methodology](#methodology)
 - [About Code42](#about-code42)
+- [About Vanson Bourne](#about-vanson-bourne)
 
 ---
 
@@ -25,8 +32,8 @@ Finally, and again no surprise, organizations of all sizes are concerned about t
 
 Our mission at Code42 is to secure the collaboration culture. That means encouraging teams to share data freely, knowing that they have a layer of security around that sharing. The Data Exposure Report helps our organization – and your organization – better understand the risks that come from today’s innovative, data-sharing cultures. I hope you get value from the research we have conducted for you.
 
-Joe Payne
-President & CEO
+**Joe Payne**  
+President & CEO  
 Code42
 
 ---
@@ -38,36 +45,36 @@ Data loss from insiders continues to pose a growing threat to security, with eme
 ### KEY FINDING #1
 **Companies need to improve their visibility and risk posture, as insider-driven data events continue to be a challenge, despite most having a traditional DLP solution in place**
 
-- There has been an increase of 28% in the average number of monthly insider-driven data exposure, loss, leak, and theft events – from 2021 to today.
-- 85% of cybersecurity leaders expect data loss from insider events to increase in the next 12 months.
-- The majority of respondents state they need more visibility into source code sent to repositories (88%), files sent to personal cloud accounts (87%), and customer relationship management [CRM] system data downloads (90%).
-- While most companies (99%) have data protection solutions in place, these solutions are not mitigating data loss from insiders, as 78% of cybersecurity leaders admit they have still had sensitive data breached/leaked/exposed.
+- There has been an increase of 28% in the average number of monthly insider-driven data exposure, loss, leak, and theft events – from 2021 to today
+- 85% of cybersecurity leaders expect data loss from insider events to increase in the next 12 months
+- The majority of respondents state they need more visibility into source code sent to repositories (88%), files sent to personal cloud accounts (87%), and customer relationship management [CRM] system data downloads (90%)
+- While most companies (99%) have data protection solutions in place, these solutions are not mitigating data loss from insiders, as 78% of cybersecurity leaders admit they have still had sensitive data breached/leaked/exposed
 
 ### KEY FINDING #2
 **A shortage of cybersecurity skills creates a black hole for IP loss**
 
-- Over seven in ten surveyed cybersecurity leaders (79%) believe their cybersecurity team has a shortage of skilled workers.
-- Seven in ten (73%) cybersecurity leaders agree that data regulations are too unclear to adhere to, while two-thirds (68%) state they’re not fully confident their company is complying with new data protection laws.
-- The vast majority believe that their company’s data security training requires improvement (98%), with over four in ten (44%) stating it requires a complete overhaul.
-- Cybersecurity leaders are looking to AI (83%) and GenAI (92%) to fill the cybersecurity skills gap.
+- Over seven in ten surveyed cybersecurity leaders (79%) believe their cybersecurity team has a shortage of skilled workers
+- Seven in ten (73%) cybersecurity leaders agree that data regulations are too unclear to adhere to, while two-thirds (68%) state they’re not fully confident their company is complying with new data protection laws
+- The vast majority believe that their company’s data security training requires improvement (98%), with over four in ten (44%) stating it requires a complete overhaul
+- Cybersecurity leaders are looking to AI (83%) and GenAI (92%) to fill the cybersecurity skills gap
 
 ### KEY FINDING #3
 **Emerging technologies and distinct employee types are creating unique risks to data security**
 
-- 85% of cybersecurity leaders are concerned that their company’s sensitive data is increasingly vulnerable to new AI technologies.
-- 86% of cybersecurity leaders worry that employees may put sensitive data into GenAI that will be found by competitors.
-- Risks can also vary by employee type, with companies more concerned about data security breaches from Generation Z and Millennials falling victim to phishing attacks (61%), oversharing company information online (60%), sending company files/data to personal accounts/devices (62%), and putting sensitive data into GenAI tools (58%).
-- Respondents believe senior management (81%) and board members (71%) pose the greatest risk to their company’s data security, likely due to having wide-reaching access to the most sensitive data.
+- 85% of cybersecurity leaders are concerned that their company’s sensitive data is increasingly vulnerable to new AI technologies
+- 86% of cybersecurity leaders worry that employees may put sensitive data into GenAI that will be found by competitors
+- Risks can also vary by employee type, with companies more concerned about data security breaches from Generation Z and Millennials falling victim to phishing attacks (61%), oversharing company information online (60%), sending company files/data to personal accounts/devices (62%), and putting sensitive data into GenAI tools (58%)
+- Respondents believe senior management (81%) and board members (71%) pose the greatest risk to their company’s data security, likely due to having wide-reaching access to the most sensitive data
 
 ### KEY FINDING #4
 **Data loss from insiders drains time, money, and security teams**
 
-- Insider-driven data exposure, loss, leak, and theft events can have vast financial repercussions, with cybersecurity leaders estimating that a single event would cost their company $15 million, on average.
+- Insider-driven data exposure, loss, leak, and theft events can have vast financial repercussions, with cybersecurity leaders estimating that a single event would cost their company $15 million, on average
 - There are also costs to security teams, who are wasting time with limited resources:
-    - An average of 3 hours per day is spent investigating insider-driven data events.
-    - 72% of cybersecurity leaders are worried they could lose their job from an unaddressed insider breach.
-- Companies are planning to consolidate their data protection solutions in 2024 to improve their ability to detect and respond to data exfiltration (49%) and to give them more centralized visibility (47%).
-- To be effective, companies believe that data protection solutions should offer speed and ease of investigation (42%), visibility into file contents and metadata (39%), and should be able to integrate with other tech solutions (38%).
+  - An average of 3 hours per day is spent investigating insider-driven data events
+  - 72% of cybersecurity leaders are worried they could lose their job from an unaddressed insider breach
+- Companies are planning to consolidate their data protection solutions in 2024 to improve their ability to detect and respond to data exfiltration (49%) and to give them more centralized visibility (47%)
+- To be effective, companies believe that data protection solutions should offer speed and ease of investigation (42%), visibility into file contents and metadata (39%), and should be able to integrate with other tech solutions (38%)
 
 ---
 
@@ -95,9 +102,14 @@ In this year’s report, we take a closer look at workforce challenges and threa
 
 ## Current State of Data Loss
 
-![Chart: Top three most valuable types of data: Accounting and financial data (47%), research data (45%), and source code (44%)]
+**Companies need to improve their visibility and risk posture as current data protection solutions are proving ineffective in mitigating data loss**
 
-While most companies (99%) have data protection solutions in place, these solutions are not mitigating data loss from insiders, as 78% of cybersecurity leaders admit they’ve still had sensitive data breached/leaked/exposed.
+### TOP THREE MOST VALUABLE TYPES OF DATA
+_Which of the following data types are the most valuable to your company? [700] Combination of responses ranked first, second and third, showing top three answers only._
+
+![Bar chart showing the top three most valuable types of data: Accounting and financial data (47%), Research data (45%), and Source code (44%).]
+
+> While most companies (99%) have data protection solutions in place, these solutions are not mitigating data loss from insiders, as 78% of cybersecurity leaders admit they’ve still had sensitive data breached/leaked/exposed.
 
 Data is at the core of any company, and in this report, it’s well-evidenced that not only the regulated and classified data is important, but all of a company’s IP needs protecting. A company’s intellectual property and their ability to harness and interpret data enables them to adapt to ever-changing market conditions, enhance innovation, and ultimately drive growth and profitability.
 
@@ -111,7 +123,14 @@ The majority (88%) of respondents believe their company needs more visibility in
 
 This lack of visibility to unknown risks across many types of vectors for file movement is a key contributor to the high number of insider-driven data exposure, loss, leak, and theft events respondents estimate their company experiences each month. Since 2021, there has been a 28% average increase in the number of exfiltration events. This illustrates a persisting issue in effectively addressing insider-driven data loss, regardless of having a traditional data protection solution in place.
 
-![Chart: Proportion of intentional vs unintentional insider-driven data exposure, loss, leak, and theft events experienced in the last 12 months]
+> **24** insider-driven data exposure, loss, leak, and theft events experienced a month, on average
+
+### PROPORTION OF INTENTIONAL VS UNINTENTIONAL INSIDER-DRIVEN DATA EXPOSURE, LOSS, LEAK, AND THEFT EVENTS EXPERIENCED IN THE LAST 12 MONTHS
+_What proportion of insider-driven data exposure, loss, leak, and theft events in the last 12 months do you estimate were intentional vs. unintentional in your company? [700]. Showing the average % only_
+
+![Chart comparing proportion of intentional vs. unintentional insider data events, indicating that intentional events slightly outpace unintentional events.]
+
+> The majority of respondents state they need more visibility into source code sent to repositories (88%), files sent to personal cloud accounts (87%), and customer relationship management [CRM] system data downloads (90%).
 
 Threats can arise from both intentional and unintentional actions by individuals with access to sensitive information, and our research suggests there is a slightly greater amount of intentional events occurring. Considering this spread of unintentional vs. intentional events, it’s even more critical that organizations utilize modern data protection solutions to reduce the burden of lower risk, unintentional events on security teams. In doing so, teams can free up the time and resources needed to investigate intentional events. This makes it very difficult for companies to prioritize and monitor threats, as they come from different directions – an issue that could be better remedied with a holistic approach.
 
@@ -121,9 +140,15 @@ Insider-driven data events are not going away any time soon as 73% of respondent
 
 ## Current State of the Workforce
 
-Around four in five cybersecurity leaders believe their teams have a shortage of skilled workers. 92% agree that “My company is using GenAI to make up for a lack of cybersecurity skills.”
+**A shortage of cybersecurity skills creates a black hole for IP loss**
+
+> Around four in five cybersecurity leaders believe their teams have a shortage of skilled workers.
+
+> 92% agree that “My company is using GenAI to make up for a lack of cybersecurity skills.”
 
 The state of the workforce plays a crucial role in a company’s ability to keep data secure, including the ability to prevent and respond to insider-driven data incidents. Gartner predicts that by 2025, lack of talent or human failure will be responsible for over half of significant cyber incidents.[^1]
+
+[^1]: https://www.gartner.com/en/newsroom/press-releases/2023-02-22-gartner-predicts-nearly-half-of-cybersecurity-leaders-will-change-jobs-by-2025
 
 Our research shows that around four in five (79%) cybersecurity leaders believe their cybersecurity team has a shortage of skilled workers. This opens companies up to gaps in implementing and maintaining robust security measures to protect them from insider threats and could be a catalyst for the continued issue of data loss.
 
@@ -133,49 +158,100 @@ Fortunately, cybersecurity leaders recognize the critical need to alleviate the 
 
 Over seven in ten (73%) of cybersecurity leaders are finding data regulations too unclear to adhere to, which could be why two-thirds (68%) are not fully confident that their company is complying with new data protection laws. Regulations might be influencing technology and platform selection for companies striving to achieve compliance goals, but unclear guidelines make it difficult to know what is appropriate. Auditors and cybersecurity teams need to work together to meet compliance requirements in a way that aligns to the needs of their company.
 
+> 68% cybersecurity leaders are not fully confident that their company is complying with new data protection laws.
+
+### TYPE OF INSIDER-DRIVEN DATA EXPOSURE, LOSS, LEAK, AND THEFT EVENTS BEING INVESTIGATED
+_Approximately, what proportion of the insider-driven data exposure, loss, leak, and theft events that are investigated fit into the following severity types for your company? Showing the average % [700]_
+
+![Pie chart illustrating the breakdown of events investigated by severity: Critical/high-risk (35%), Moderate risk (32%), and Low risk (32%).]
+
 Our analysis of risk severity shows a roughly even spread of insider-driven data events being critical/high-risk (35%), moderate risk (32%), and low risk (32%). These differing levels of severity make detection and response prioritization difficult, as teams are constantly having to pivot from common threats to critical events that demand thorough investigation. This deters security teams from maximizing their focus and efficiency, resulting in significant burden on teams that are already strapped for time and headcount resources.
 
 Targeted, responsive data security training can address lower-level risk events and give teams time back to investigate high-risk events, as employees are often the first line of defense against data loss. Aligned with our 2023 research, data security training is most likely to be conducted weekly (2024: 34%, 2023: 30%). However, there has been a steady increase over time in the proportion of companies conducting it daily, from 11% in 2021 to 15% in 2023, and now 27% in 2024. This increase in frequency could be in response to the urgent need to tackle the problem that has shown no signs of improvement over the last few years.
 
-![Chart: Frequency of employee data security training]
+### FREQUENCY OF EMPLOYEE DATA SECURITY TRAINING
+_How often is employee data security training (training specifically oriented around the handling of data) conducted at your company? Not showing all answer options [700]_
 
-Companies conducting training daily experience fewer insider-driven data events a month than those who conduct it quarterly (23 vs. 28, on average). However, nearly all (98%) companies, regardless of how often they conduct training, believe it requires improvement. In fact, those who conduct it daily are more likely to feel a complete overhaul is needed, compared to those who conduct it quarterly (42% vs. 26%). This suggests that while regular data security training can provide scalability for companies to address the varying severity of insider-driven data events, its effectiveness in thwarting risk hinges on its quality.
+![Bar chart showing the frequency of data security training over time: Weekly (34% in 2024 vs 30% in 2023), Daily (27% in 2024, 15% in 2023, 11% in 2021), and other frequencies.]
+
+Companies conducting training daily experience fewer insider-driven data events a month than those who conduct it quarterly (23 vs. 28, on average). However, nearly all (98%) companies, regardless of how often they conduct training, believe it requires improvement. In fact, those who conduct it daily are more likely to feel a complete overhaul is needed, compared to those who conduct it quarterly (42% vs. 26%). This suggests that while regular data security training can provide scalability for companies to address the varying severity of insider-driven data events, its effectiveness in thwarting risk hinges on its quality. See our 8 essential security awareness training topics to reduce the risk and protect your company from the evolving threat landscape posed by insiders.
 
 ---
 
 ## Accelerators of Risk to Data
 
+**Emerging technologies and varying employee types are creating risks to data security**
+
 ### Emerging technology
+
 Artificial Intelligence (AI) can open new doors for cybersecurity teams, helping them to automate detection and response so that they can focus on higher-level strategic tasks. This optimizes security operations, allowing cybersecurity personnel to work more effectively, and helping to close the skills gap. Still, AI is not a one-to-one replacement for team talent, and if not used appropriately, it can pose serious risks, with 86% of surveyed cybersecurity leaders admitting that AI tools put their company at risk of data exfiltration.
 
 The risk level intensifies when we consider high-value data, with 85% of cybersecurity leaders expressing concern that their company’s sensitive data is increasingly vulnerable to new AI technologies. Confidential data or source code put into an AI tool may train the model and inform future outputs for untrusted users. It may also deliver malicious outputs. This puts compliance obligations and intellectual property at risk, and is a serious concern for cybersecurity leaders, with 86% of those surveyed fearful that employees may put sensitive data into GenAI that will be found by competitors.
+
+> 85% of cybersecurity leaders are concerned that their company’s sensitive data is increasingly vulnerable to new AI technologies.
+
+> 86% of cybersecurity leaders worry that employees may put sensitive data into GenAI that will be found by competitors.
+
+### EMPLOYEES THAT ARE MORE PRONE TO ACCIDENTAL INSIDER-DRIVEN DATA EXPOSURE, LOSS, LEAK, AND THEFT EVENTS
+_Which of the following employees do you think are most prone to accidental insider-driven data exposure, loss, leak, and theft events in your company? [700]_
+
+![Bar chart showing employee demographics most prone to accidental insider data exposure events, comparing Generation Z and Millennials against older generations across phishing, oversharing online, sending files to personal devices, and using GenAI tools.]
 
 Traditional DLP solutions are failing to expose this risk, as 90% of companies using DLP still require more visibility into data being pasted into Generative AI tools. Providing clear guidelines on the use of AI, such as an Acceptable Use Policy, may increase the likelihood that employees will utilize it responsibly, so it’s encouraging that 78% have a policy in place around proper use for GenAI at work – but are their workforces complying?
 
 Our research suggests they’re not, as 87% of respondents express concerns that employees aren’t adhering to the policy their company has in place. Employees are the gateway to AI security threats and failing to comply could result in some of the risks we saw previously around data exfiltration and sensitive data being found by competitors. This necessitates a modern method of exfiltration detection with a wide range of response controls – from blocking unacceptable activity to situational and responsive training.
 
 ### Employee Types
-It’s not just technology that is posing a threat to company data; varying employee demographics also play a part. Surveyed respondents believe Generation Z and Millennials are more likely than Generations X and above to send company files to their personal accounts/devices, fall victim to a phishing attack, overshare company information online, and put sensitive corporate data into GenAI tools. This may be because they are more actively involved in the digital world, seeing it as an extension of their blurred working and personal lives; and with the BLS predicting that the millennial labor force will see the largest increase in size over the next few years,[^2] the risk level these employees bring to companies is only likely to increase further.
+
+It’s not just technology that is posing a threat to company data; varying employee demographics also play a part. Surveyed respondents believe Generation Z and Millennials are more likely than Generations X and above to send company files to their personal accounts/devices, fall victim to a phishing attack, overshare company information online, and put sensitive corporate data into GenAI tools. This may be because they are more actively involved in the digital world, seeing it as an extension of their blurred working and personal lives; and with the BLS predicting that the millennial labor force will see the largest increase in size over the next few years[^2], the risk level these employees bring to companies is only likely to increase further.
+
+[^2]: Bureau of Labor Statistics projections.
 
 Risk is also driven by employee role and level, with senior management (81%) and board members (71%) ranked as the top two most likely groups to risk their company’s data security. This may be because they have access to sensitive information and higher-level permissions, which inherently makes any type of data leak from this demographic much more serious. For these groups, training and education are particularly important to ensure they are acting securely and setting a tone of security and responsibility for the rest of the business.
 
 When it comes to departmental risk, it’s no surprise that IT (82%) and Security (46%) are most likely to be ranked among the top three departments that pose the greatest security risk, given their higher levels of access. However, across other departments the risk level is fairly distributed, suggesting that all employees have the potential to put data in jeopardy.
 
+### DEPARTMENTS POSING THE GREATEST RISK TO DATA SECURITY
+_Which of the following departments pose the greatest risk to data security in your company? Combination of responses ranked first, second, and third [700]_
+
+![Bar chart ranking departments posing the greatest risk to data security: IT (82%), Security (46%), followed by other departments showing a distributed risk across the enterprise.]
+
 ---
 
 ## Impact of Insider-driven Data Loss
+
+**Data loss impacts time, money, and employees**
+
+> Cybersecurity leaders estimate that insider-driven events would cost their company $15 million, on average.
 
 Insider-driven data events have multifaceted repercussions for companies. The financial impact is substantial, with surveyed cybersecurity leaders estimating them to cost their company $15 million, on average. This has grave consequences for fiscal stability, operational resilience, and the overall ability to thrive in an increasingly difficult market.
 
 The impact of data loss from insiders extends far beyond finances, including the loss of talent. The majority (87%) of respondents admit their company has terminated employees within the last 12 months as a result of insider-driven data events, with an average of 9 employees let go.
 
+### IMPACT TO JOB SATISFACTION & JOB LOSS FROM DATA LOSS EVENTS & INSIDER BREACHES
+_To what extent do you agree or disagree with the following statements? Comments show in graph. Showing ‘agree’ only. Split by respondent type [Base sizes in chart]_
+
+![Bar chart showing agreement levels split by cybersecurity leaders, managers, and practitioners regarding job satisfaction impact (75% for leaders) and fear of job loss from insider breaches (72% for leaders).]
+
 Employees are one of the biggest risks to companies, especially when they depart, with eight in ten (80%) cybersecurity leaders admitting that departing employees take valuable IP when they leave. This could be happening even more than they realize, with seven in ten (70%) saying their company is not always aware of when sensitive data is taken by departing employees. The significant gaps in the visibility of employee behaviors puts companies at risk of reputational damage and losing their competitive edge in the market.
 
 Employee morale has taken a knock too, with three quarters (75%) of cybersecurity leaders seeing their job satisfaction negatively impacted by data loss events caused by employees. A similar proportion (72%) are also fearful they could lose their job from an unaddressed insider breach, which is the last thing cybersecurity teams need amidst a skills shortage. Morale and fear are felt more among leaders than among managers and practitioners, which is likely due to their higher level of accountability and responsibility when things go wrong. With insider-driven data events on the rise, leaders need to have data protection tools and strategies they can rely on to mitigate risk, in order to improve morale and reduce fear around job loss.
 
+> Employees are one of the biggest risks to companies, even when they depart, with eight in ten (80%) cybersecurity leaders admitting that departing employees take valuable IP with them when they leave.
+
+### TOP FIVE DRIVERS TO CONSOLIDATING DATA PROTECTION SOLUTIONS
+_Which of the following are drivers to consolidating your company’s data protection into fewer solutions in 2024? Combination of responses ranked first, second, and third. Not showing all answer options. Only shown to those with a data protection solution in place. [693]_
+
+![Bar chart showing the top drivers to consolidating data protection solutions: Improve detection and response to data exfiltration (49%), Centralized visibility (47%), Lack of skills to manage multiple solutions (43%), and Cost reduction (42%).]
+
 Despite nearly all (99%) respondents stating that their company has data protection solution(s) in place, 78% of surveyed cybersecurity leaders admit that they have still had sensitive data breached, leaked, or exposed. This makes it no surprise that 87% of cybersecurity leaders admit that their current solution needs improvement. To make matters worse, around nine in ten (88%) are finding their solution more work than anticipated, possibly due to it being complex and resource intensive.
 
 Clearly, traditional data protection capabilities need to evolve to meet existing cybersecurity landscape demands and alleviate burden on already over-stretched cybersecurity teams. Companies need solutions that provide visibility, context, and controls to prioritize threats and drive a secure workforce.
+
+### TOP FOUR MOST IMPORTANT FACTORS FOR AN EFFECTIVE DATA PROTECTION SOLUTION
+_Which of the following factors do you believe are most important to determine if a Data Protection solution will be effective? Combination of responses ranked first, second, and third_
+
+![Bar chart showing top factors for effective data protection: Speed and ease of investigation (42%), Visibility into file contents and metadata (39%), Integration with other tech solutions (38%), and Ease of deployment (38%).]
 
 As we look more closely into the solutions companies have in place, 87% are using traditional Data Loss Prevention (DLP). However, this policy-based, blocking-first solution isn’t an effective approach to the problem, given the high number of events those using it still experience. Via tagging and endpoint control, DLP can offer benefits in detecting and preventing data exfiltration and, when used and maintained vigorously, can support compliance with standards such as HIPAA, PCI-DSS, and GDPR; but it relies on meticulously identifying, classifying, and blocking all real-time data movement, an impossible task when data is being created and legitimately used and changed every second.
 
@@ -221,9 +297,14 @@ Code42® Incydr™ data protection offers tangible cost benefits for customers, 
 
 The Company has several offices across the United States, and its clients include the most recognizable security, technology, manufacturing, and life sciences organizations, such as CrowdStrike, Okta, Lyft, BAYADA Home Health Care, Rakuten, Sumo Logic, MacDonald-Miller, MACOM, Ping Identity, Shape Technologies, and Snowflake.
 
+## About Vanson Bourne
+
+Vanson Bourne is an independent specialist in market research for the technology sector. Their reputation for robust and credible research-based analysis is founded upon rigorous research principles and their ability to seek the opinions of senior decision makers across technical and business functions, in all business sectors and all major markets.
+
+For more information, visit [www.vansonbourne.com](https://www.vansonbourne.com).
+
 ---
 
-[^1]: https://www.gartner.com/en/newsroom/press-releases/2023-02-22-gartner-predicts-nearly-half-of-cybersecurity-leaders-will-change-jobs-by-2025
-[^2]: Bureau of Labor Statistics (BLS) data referenced in context of workforce trends.
+_© 2024 Code42 Software, Inc. All rights reserved. Code42, Incydr, and Instructor are trademarks or registered trademarks of Code42 Software, Inc. in the United States and other countries. All other marks are properties of their respective owners._
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-11-19", "model": "gemini-3.8-flash"} -->
