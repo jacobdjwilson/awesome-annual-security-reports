@@ -1,50 +1,38 @@
 # Global Risk Manager Survey Report 2024
 
-## Table of Contents
-- [Foreword](#foreword)
-- [Key findings](#key-findings)
-  - [Survey respondents](#survey-respondents)
-  - [Varying threats arising from different temporal perspectives](#varying-threats-arising-from-different-temporal-perspectives)
-  - [Expanding involvement of the Risk Manager throughout the organisation](#expanding-involvement-of-the-risk-manager-throughout-the-organisation)
-  - [The integration of ESG/Sustainability challenges in risk management continues to grow](#the-integration-of-esgsustainability-challenges-in-risk-management-continues-to-grow)
-  - [Ongoing enhancement of ERM and involvement in digital transformation](#ongoing-enhancement-of-erm-and-involvement-in-digital-transformation)
-  - [Tougher insurance market conditions lead to alternative strategies](#tougher-insurance-market-conditions-lead-to-alternative-strategies)
-- [Methodology and survey respondents](#methodology-and-survey-respondents)
-  - [Methodology](#methodology)
-  - [Profile of survey respondents](#profile-of-survey-respondents)
-    - [Age and gender](#age-and-gender)
-    - [The profession remains characterised by experienced individuals and has difficulty in attracting young talent](#the-profession-remains-characterised-by-experienced-individuals-and-has-difficulty-in-attracting-young-talent)
-    - [Professional experience and remuneration](#professional-experience-and-remuneration)
-    - [Organisation and sector](#organisation-and-sector)
-    - [Profiles and responsibilities](#profiles-and-responsibilities)
-    - [Scope of responsibilities per continent](#scope-of-responsibilities-per-continent)
-    - [Focus on Insurance Managers’ other functions](#focus-on-insurance-managers-other-functions)
-    - [Risk Managers’ activities by type of profiles](#risk-managers-activities-by-type-of-profiles)
-    - [Reporting lines](#reporting-lines)
-- [How do Risk Managers see traditional and emerging risks in the new world of constant crisis?](#how-do-risk-managers-see-traditional-and-emerging-risks-in-the-new-world-of-constant-crisis)
-  - [TOP 15 critical threats to the organisation’s growth prospects within the 12 next months](#top-15-critical-threats-to-the-organisations-growth-prospects-within-the-12-next-months)
-  - [TOP 3 critical threats to the organisation’s growth prospects within the next 3 and 10 years](#top-3-critical-threats-to-the-organisations-growth-prospects-within-the-next-3-and-10-years)
-  - [Q26. Select one (or more) risks, if any, that is as of today not adequately treated - Top 10](#q26-select-one-or-more-risks-if-any-that-is-as-of-today-not-adequately-treated---top-10)
-- [Risk Manager: Presence, Strategy and Maturity](#risk-manager-presence-strategy-and-maturity)
-  - [Broadening Risk Manager engagement across the organisation](#broadening-risk-manager-engagement-across-the-organisation)
-  - [Substantially increased focus on corporate strategy](#substantially-increased-focus-on-corporate-strategy)
+**FERMA**  
+*Anticipating changes*  
+*Shaping the future*  
+
+In partnership with PwC
 
 ---
 
-Organization: FERMA
-Report Title: Global Risk Manager Survey Report
-Year: 2024
-
-FERMA
-
-Anticipating changes
-Shaping the future
-
-# Global Risk Manager Survey Report
-
-2024
-
-In partnership with [Partners' logos/names]
+## Table of Contents
+- [Foreword](#foreword)
+- [Original Table of Contents](#original-table-of-contents)
+- [Key Findings](#key-findings)
+  - [Survey Respondents Overview](#survey-respondents-overview)
+  - [Varying Threats Arising from Different Temporal Perspectives](#varying-threats-arising-from-different-temporal-perspectives)
+  - [Expanding Involvement of the Risk Manager Throughout the Organisation](#expanding-involvement-of-the-risk-manager-throughout-the-organisation)
+  - [The Integration of ESG/Sustainability Challenges in Risk Management Continues to Grow](#the-integration-of-esgsustainability-challenges-in-risk-management-continues-to-grow)
+  - [Ongoing Enhancement of ERM and Involvement in Digital Transformation](#ongoing-enhancement-of-erm-and-involvement-in-digital-transformation)
+  - [Tougher Insurance Market Conditions Lead to Alternative Strategies](#tougher-insurance-market-conditions-lead-to-alternative-strategies)
+- [Methodology and Survey Respondents](#methodology-and-survey-respondents)
+  - [Methodology](#methodology)
+- [Profile of Survey Respondents](#profile-of-survey-respondents)
+  - [Age and Gender](#age-and-gender)
+  - [Professional Experience and Remuneration](#professional-experience-and-remuneration)
+  - [Organisation and Sector](#organisation-and-sector)
+  - [Profiles and Responsibilities](#profiles-and-responsibilities)
+  - [Reporting Lines](#reporting-lines)
+- [How Do Risk Managers See Traditional and Emerging Risks in the New World of Constant Crisis?](#how-do-risk-managers-see-traditional-and-emerging-risks-in-the-new-world-of-constant-crisis)
+  - [Top 5 Critical Threats to the Organisation Within the Next 12 Months](#top-5-critical-threats-to-the-organisation-within-the-next-12-months)
+  - [Top 15 Critical Threats to the Organisation’s Growth Prospects Within the Next 12 Months](#top-15-critical-threats-to-the-organisations-growth-prospects-within-the-next-12-months)
+  - [Top 3 Critical Threats to the Organisation’s Growth Prospects Within the Next 3 and 10 Years](#top-3-critical-threats-to-the-organisations-growth-prospects-within-the-next-3-and-10-years)
+  - [Top 10 Risks Considered as Not Adequately Treated](#top-10-risks-considered-as-not-adequately-treated)
+- [Part I: Risk Manager: Presence, Strategy and Maturity](#part-i-risk-manager-presence-strategy-and-maturity)
+  - [Broadening Risk Manager Engagement Across the Organisation](#broadening-risk-manager-engagement-across-the-organisation)
 
 ---
 
@@ -68,158 +56,165 @@ In the current climate of polycrisis and interconnected risk, the role of the Ri
 
 This international survey shows that the Risk Manager is stepping up to the challenge, helping to build resilient organisations that not only mitigate these risks but take advantage of the opportunities of this dynamic environment.
 
-Charlotte Hedemark Hancke,
-President of FERMA
-
-Typhaine Beaupérin,
-CEO of FERMA
-
-Rami Feghali,
-EMEA Lead Partner Risk Services, PwC
-
-Laure Laheurte,
-Director Risk & Regulatory, PwC
+**Charlotte Hedemark Hancke**, President of FERMA  
+**Typhaine Beaupérin**, CEO of FERMA  
+**Rami Feghali**, EMEA Lead Partner Risk Services, PwC  
+**Laure Laheurte**, Director Risk & Regulatory, PwC  
 
 ---
 
-## Key findings
+## Original Table of Contents
 
-### Survey respondents
+- **Key findings** (p. 7)
+- **Methodology** (p. 15)
+- **Profile of survey respondents** (p. 18)
+- **How do Risk Managers see traditional and emerging risks in the new world of constant crisis?** (p. 29)
+- **Part I: Risk Manager: Presence, Strategy and Maturity** (p. 35)
+  - Broadening Risk Manager engagement across the organisation (p. 36)
+  - Substantially increased focus on corporate strategy (p. 39)
+  - The maturity of the Enterprise Risk Management model (p. 42)
+- **Part II: The Risk Manager’s contribution to sustainability** (p. 49)
+  - Risk Managers are playing a growing role in managing ESG risks within their organisations (p. 50)
+  - Climate change adaptation tops critical threats list, driving companies to prioritise risk evaluation and scenario analysis (p. 54)
+  - Risk Managers intensify focus on Social aspects of ESG: supplier due diligence, stakeholder mapping, and Human Rights risk maps on the rise (p. 55)
+  - Sustainability reporting regulations have heightened top management’s focus on ESG risks globally (p. 56)
+- **Part III: The role of the Risk Manager in the digital transformation** (p. 59)
+  - Use of technologies widespread across all risk management activities (p. 60)
+  - Managing risks arising from emerging technologies (p. 63)
+- **Part IV: Insurance Managers exploring alternative risk transfer solutions** (p. 67)
+  - Insurance market conditions remain tough over the past 12 months (p. 68)
+  - Increased adoption of captives in risk management strategies (p. 71)
 
-![Infographic showing survey respondent demographics by region, country count, respondent count, sector, gender, experience, and company type.](image_survey_respondents_demographics.png)
+---
 
-**Regional Distribution of Respondents:**
-- EUROPE: 79%
-- NORTH AMERICA: 11%
-- AFRICA: 4%
-- SOUTH AMERICA: 3%
-- ASIA: 2%
-- OCEANIA: 2%
+## Key Findings
 
-**Overall Statistics:**
-- **77** Countries
-- **1041** Respondents
+### Survey Respondents Overview
 
-**Sector of activity:**
-- 41% Industry
-- 28% Financial services
-- 19% Services
-- 11% Public sector
+![Infographic displaying survey demographics: 1,041 respondents across 77 countries, continent distribution, sector breakdown, and professional profiles]
 
-**Gender and Experience:**
-- **36%** of Risk Managers are women
-- **53%** have more than 10 years’ experience
+- **1,041 Respondents** across **77 Countries**
+- **Geographic Distribution:**
+  - Europe: 79%
+  - North America: 11%
+  - Africa: 4%
+  - South America: 3%
+  - Asia: 2%
+  - Oceania: 2%
+- **Demographics & Experience:**
+  - 36% of Risk Managers are women
+  - 53% have more than 10 years’ experience
+  - 71% work in listed or privately owned organisations; 78% in large companies
+- **Sector of Activity:**
+  - 41% Industry
+  - 28% Financial services
+  - 19% Services
+  - 11% Public sector
+- **Profiles:**
+  - 46% are solely dedicated to Enterprise Risk Management (ERM) activities
+  - 23% are specifically dedicated to Insurance Management (IM) activities
+  - 31% perform both ERM and IM activities
 
-**Company Type and Size:**
-- **71%** work in listed or privately owned organisations;
-- **78%** in large companies
+#### Regional Highlights:
+- **Asia:** 14% are women; 86% work in large companies
+- **Africa:** 68% Financial Services; 51% work in large companies
+- **North America:** 51% are women; ¼ of respondents in each sector of activity
+- **Oceania:** ¼ of respondents in each sector of activity
+- **South America:** 43% work in small companies
 
-**Role Dedication:**
-- **46%** of respondents are solely dedicated to Enterprise Risk Management (ERM) activities
-- **23%** are specifically dedicated to Insurance Management (IM)
-- **31%** perform both ERM and IM activities
+---
 
-**Regional Specifics:**
-- **ASIA**: 14% are women; 86% work in large companies
-- **AFRICA**: 68% Financial Services; 51% work in large companies
-- **NORTH AMERICA**: 51% are women; ¼ of respondents in each sector of activity
-- **OCEANIA**: ¼ of respondents in each sector of activity
-- **SOUTH AMERICA**: 43% work in small companies
-
-### Varying threats arising from different temporal perspectives
+### Varying Threats Arising from Different Temporal Perspectives
 
 The results highlight the importance of managing different timeframes in risk management.
 
-**Top 5 risks within the next 12 months:**
-1. Cyber-attacks
-2. Geopolitical uncertainties
-3. Uncertain economic growth
-4. Talent management
-5. Data breach
+| Top 5 risks within the next 12 months | Top 3 risks within the next 3 years | Top 3 risks within the next 10 years |
+| :--- | :--- | :--- |
+| 1. Cyber-attacks | 1. Regulation | 1. Climate change adaptation |
+| 2. Geopolitical uncertainties | 2. Geopolitical uncertainties | 2. Carbon neutrality transition |
+| 3. Uncertain economic growth | 3. Speed of technological change | 3. Natural disaster |
+| 4. Talent management | | |
+| 5. Data breach | | |
 
-**Top 3 risks within the next 3 years:**
-1. Regulation
-2. Geopolitical uncertainties
-3. Speed of technological change
+- **12 months:** Talent management and data breach have emerged in the Top 5 short-term risks. The three other risks remain in the Top 5 of short-term concerns; however, cyber-attacks and uncertain economic growth have disappeared from the Top 3 medium-term threats.
+- **3 years:** At a three-year horizon, a complete shift was seen, with the entry of two risks previously viewed as short-term: geopolitical uncertainties and regulation.
+- **10 years:** This year marks a significant pivot in long-term risk priorities with only environmental concerns cited within the top long-term risks.
 
-**Top 3 risks within the next 10 years:**
-1. Climate change adaptation
-2. Carbon neutrality transition
-3. Natural disaster
+> Geopolitical uncertainties dominate short- and medium-term concerns, with climate and environmental threats topping the concerns in the long term.
 
-![Timeline graphic showing top risks for 12 months, 3 years, and 10 years.](image_risk_timeline.png)
+The geopolitical landscape has become more unpredictable, with ongoing conflicts like the Ukraine-Russia tensions and the Israel-Palestine situation adding layers of complexity and uncertainty.
 
-Talent management and data breach have emerged in the Top 5 short-term risks. The three other risks remain in the Top 5 of short-term concerns, however, cyber-attacks and uncertain economic growth have disappeared from the Top 3 medium-term threats.
+At the same time, the worsening of climatic conditions, evidenced by the rising frequency and intensity of extreme weather events, presents significant challenges. This shift demands robust project and risk management and strategic planning to mitigate associated risks.
 
-At a three-year horizon, a complete shift was seen, with the entry of two risks previously viewed as short-term: geopolitical uncertainties and regulation.
+These evolving risks require Risk Managers to expand their roles, becoming strategic partners within their organisations. This involves developing more nuanced approaches to risk assessment and mitigation that are attuned to changing geopolitical, environmental, and demographic dynamics.
 
-This year marks a significant pivot in long-term risk priorities with only environmental concerns cited within the top long-term risks.
+---
 
-Geopolitical uncertainties dominate short- and medium-term concerns, with climate and environmental threats topping the concerns in the long term.
-
-The geopolitical landscape has become more unpredictable, with ongoing conflicts like the Ukraine-Russia tensions and the Israel-Palestine situation adding layers of complexity and uncertainty. At the same time, the worsening of climatic conditions, evidenced by the rising frequency and intensity of extreme weather events, presents significant challenges. This shift demands robust project and risk management and strategic planning to mitigate associated risks. These evolving risks require Risk Managers to expand their roles, becoming strategic partners within their organisations. This involves developing more nuanced approaches to risk assessment and mitigation that are attuned to changing geopolitical, environmental, and demographic dynamics.
-
-### Expanding involvement of the Risk Manager throughout the organisation
+### Expanding Involvement of the Risk Manager Throughout the Organisation
 
 The survey illustrated a greater contribution of Risk Managers to:
-- **Risk mapping**: large involvement in global and strategic risk map; little involvement in legal and carbon neutrality risk maps; and moderate involvement for ESG, anti-corruption, cyber, security and supply-chain risk maps.
-- **Strategic committees**: half of Risk Managers are invited to Board and Executive Committees; more than half chair or are members of a Risk Committee.
+- **Risk mapping:** large involvement in global and strategic risk map; little involvement in legal and carbon neutrality risk maps; and moderate involvement for ESG, anti-corruption, cyber, security and supply-chain risk maps.
+- **Strategic committees:** half of Risk Managers are invited to Board and Executive Committees; more than half chair or are members of a Risk Committee.
 - **Collaboration with the lines of defence**, specifically with ESG.
+- **91% of Risk Managers are involved in corporate strategy** (fully, mostly, or partially), stable compared with 2022.
 
-**91%** of Risk Managers are involved in corporate strategy (fully, mostly, or partially), stable compared with 2022.
+#### Which of the following activities are under your responsibility - Focus ERM
 
-**Which of the following activites are under your responsibility - Focus ERM**
-![Bar chart showing ERM activities and level of responsibility.](image_erm_activities_responsibility.png)
+| Responsibility / Level of Involvement | Development of risk maps and reporting | ERM training and culture | Definition of ERM governance, framework, processes, and/or tools | Risk quantification | Alignment and integration of Risk Management as part of strategy | Definition of risk appetite |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **I am fully responsible** | 53% | 47% | 44% | 40% | 37% | 31% |
+| **I validate** | 18% | 10% | 11% | 8% | 11% | 13% |
+| **I contribute** | 26% | 29% | 25% | 26% | 38% | 37% |
+| **I am informed** | 3% | 7% | 3% | 8% | 10% | 13% |
+| **Not done within my company** | 0% | 7% | 17% | 18% | 4% | 6% |
 
-| Activity                                                              | Not done within my company | I am informed | I contribute | I validate | I am fully responsible |
-| :-------------------------------------------------------------------- | :------------------------- | :------------ | :----------- | :--------- | :--------------------- |
-| Development of risk maps                                              | 3%                         | 8%            | 26%          | 10%        | 53%                    |
-| ERM training and culture                                              | 7%                         | 14%           | 25%          | 8%         | 47%                    |
-| Definition of ERM governance, framework, processes, and/or tools      | 3%                         | 16%           | 26%          | 11%        | 44%                    |
-| Risk quantification                                                   | 5%                         | 8%            | 29%          | 18%        | 40%                    |
-| Alignment and integration of Risk Management as part of strategy      | 5%                         | 10%           | 38%          | 11%        | 37%                    |
-| Definition of risk appetite                                           | 6%                         | 13%           | 37%          | 13%        | 31%                    |
+---
 
-### The integration of ESG/Sustainability challenges in risk management continues to grow
+### The Integration of ESG/Sustainability Challenges in Risk Management Continues to Grow
 
 **Are you involved in the assessment of ESG related risk?**
-![Pie chart showing involvement in ESG risk assessment.](image_esg_risk_assessment.png)
-- Yes: 57%
-- No: 43%
+- **Yes: 57%** (in 2022, 35% said they were playing a role and 21% were planning to become involved)
+- **No: 43%**
 
-**57%** of Risk Managers say they are involved in the assessment of ESG-related risks (in 2022, 35% said they were playing a role and 21% were planning to become involved).
+#### Pivotal role of the Risk Manager in ESG activities:
+- Integration between Risk Management and Sustainability / ESG is the main area of investment for both the next 1 to 2 years, and the next 3 to 5 years, showing the will to mature in this area.
+- **81%** of Risk Managers contribute to the analysis and mapping of ESG-related risks.
+- **62%** participate in the definition of an ESG risk framework.
+- *Difficulty quantifying sustainability risks remains the main challenge in 2024.*
 
-#### Pivotal role of the Risk Manager in ESG activities
+#### Climate-change adaptation and the Social aspects of ESG growing in importance:
+- **Climate change:**
+  - **60%** of Risk Managers’ organisations address climate change risks by integrating them into their risk mapping (+6% points).
+  - **70%** perform a dedicated risk mapping exercise on the carbon neutrality transition.
+- **Social:**
+  - **1/3** of respondents are engaged in activities related to social risks.
+  - **3/4** have or are setting up dedicated Human Rights risk maps.
 
-Integration between Risk Management and Sustainability / ESG is the main area of investment for both the next 1 to 2 years, and the next 3 to 5 years, showing the will to mature in this area.
+---
 
-- **81%** of Risk Managers contribute to the analysis and mapping of ESG-related risks
-- **62%** participate in the definition of an ESG risk framework
-
-Difficulty quantifying sustainability risks remains the main challenge in 2024.
-
-#### Climate-change adaptation and the Social aspects of ESG growing in importance
-
-**Climate change**
-- **60%** of Risk Managers’ organisations address climate change risks by integrating them into their risk mapping. + 6% points
-- **70%** perform a dedicated risk mapping exercise on the carbon neutrality transition.
-
-**Social**
-- **1/3** of the respondents are engaged in activities related to social risks.
-- **3/4** have or are setting up dedicated Human Rights risk maps.
-
-### Ongoing enhancement of ERM and involvement in digital transformation
+### Ongoing Enhancement of ERM and Involvement in Digital Transformation
 
 #### Use of technology in risk management activities
-![Bar chart showing technology use across various risk management activities.](image_technology_use_risk_management.png)
 
-The chart "Use of technology in risk management activities" illustrates the percentage of respondents using various technologies for different risk management activities. Key observations include:
-- **Spreadsheet and slides presentations** are the most widely used technology across all activities, consistently above 40%.
-- **Specific integrated Risk Management Information Systems tool** and **Web applications** are also frequently used, often in the 15-20% range for many activities.
-- **Artificial Intelligence technologies** and **Generative AI** show nascent but growing adoption, typically in the low single digits, with slightly higher use for "Predictive risk analysis" and "Risk quantification".
-- **Blockchain** and **Drones** are used by a very small percentage of respondents across all activities.
+![Stacked horizontal bar chart depicting the tools used across risk management activities]
 
-**To perform their activities, Risk Managers mostly use:**
+*Summary of tool usage across functional areas (Spreadsheets and slide presentations, Web applications, RMIS/GRC vendor tools, Process automation, In-house tools, IoT, Advanced visualisation/data analysis, Blockchain, AI, Drones, Generative AI):*
+
+| Risk Activity | Spreadsheets & Presentations | Web Applications | Vendor RMIS / GRC | In-house Tool | Advanced Visualisation | Process Automation | AI | Gen AI | IoT | Blockchain | Drones |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Risk analysis and assessment** | 42% | 15% | 12% | 11% | 3% | 4% | 5% | 2% | 2% | 2% | 2% |
+| **Interactive visualisation of risk mapping** | 43% | 17% | 12% | 11% | 2% | 2% | 6% | 2% | 2% | 1% | 1% |
+| **Risk reporting process** | 47% | 17% | 13% | 11% | 2% | 1% | 5% | 2% | 1% | 1% | 1% |
+| **Action plan monitoring** | 48% | 17% | 14% | 9% | 1% | 1% | 5% | 2% | 1% | 1% | 1% |
+| **Quantification of risk impact** | 49% | 16% | 15% | 11% | 2% | 1% | 4% | 1% | 1% | 0% | 1% |
+| **Risk mitigation** | 49% | 16% | 15% | 9% | 1% | 1% | 4% | 3% | 1% | 1% | 1% |
+| **Key Risk Indicator (KRI) monitoring** | 51% | 15% | 12% | 10% | 1% | 1% | 4% | 2% | 2% | 1% | 1% |
+| **Scenario analysis** | 46% | 11% | 12% | 10% | 3% | 4% | 5% | 3% | 3% | 2% | 1% |
+| **Predictive risk analysis** | 38% | 11% | 14% | 12% | 6% | 4% | 4% | 3% | 4% | 1% | 3% |
+| **Claims process** | 44% | 16% | 14% | 9% | 1% | 1% | 5% | 4% | 2% | 1% | 3% |
+| **Alert feedback** | 40% | 20% | 14% | 12% | 2% | 1% | 5% | 3% | 2% | 1% | 1% |
+
+To perform their activities, Risk Managers mostly use:
 1. Spreadsheet and slides presentations
 2. Risk Management Information System (RMIS) or Governance Risk and Control (GRC) tools from a vendor
 3. RMIS or GRC in-house tool
@@ -228,111 +223,104 @@ The chart "Use of technology in risk management activities" illustrates the perc
 
 Although quantification activities remain a challenge, Risk Managers are investing in new technologies to address this.
 
-**Same challenges remain over time to develop the use of technology for ERM activities:**
+**Persistent challenges to developing technology use for ERM activities:**
 - The heavy investment it represents for the function (50%)
 - The lack of perception of the added value for the function (36%)
 
 #### Risk management related to the digitalisation of the organisation
+- Collaboration between ERM teams and Information Technology (IT) and Information Security (IS) teams remains strong in 2024, as it was in 2022.
+- **89% of Risk Managers work on AI-related risk management**, mainly performing regulatory monitoring, or deploy internal policy concerning AI usage.
 
-Collaboration between ERM teams and Information Technology (IT) and Information Security (IS) teams remains strong in 2024, as it was in 2022.
+---
 
-**89%** of Risk Managers work on AI-related risk management, mainly performing regulatory monitoring, or deploy internal policy concerning AI usage.
+### Tougher Insurance Market Conditions Lead to Alternative Strategies
 
-### Tougher insurance market conditions lead to alternative strategies
-
-#### Over the past 12 months
-
+#### Over the past 12 months:
 **Top 3 trends that impacted the insurance market:**
 1. Increase in premium
 2. Reduction in capacity
 3. Exclusions for specific risks
 
-Consequently, **42%** of Insurance Managers observe a reduction in natural catastrophe coverage, the most affected policy of those asked about in this study.
+Consequently, **42% of Insurance Managers** observe a reduction in natural catastrophe coverage, the most affected policy of those asked about in this study.
 
-**In this context, Insurance Managers adapted their insurance strategy by:**
-- Changing their insurance buying pattern (54%): reviewing needs, limits and sub-limits
-- Strengthening loss prevention activity (44%)
-- Negotiating long-term agreements (30%)
-- Setting up or marking further use of captive facilities (28%)
+In this context, Insurance Managers adapted their insurance strategy by:
+- Changing their insurance buying pattern (**54%**): reviewing needs, limits, and sub-limits
+- Strengthening loss prevention activity (**44%**)
+- Negotiating long-term agreements (**30%**)
+- Setting up or making further use of captive facilities (**28%**)
 
-#### Over the next two years
-
-**Risk financing strategies**
-![Bar chart showing risk financing strategies.](image_risk_financing_strategies.png)
-- Risk retention: 62%
-- Use an existing captive: 35%
-- Use alternative risk transfer vehicles: 28%
-- Parametrics: 19%
-- Create a captive insurance/re-insurance company: 17%
-- Mutualisation: 6%
-- Other: 6%
+#### Over the next two years:
+**Risk financing strategies:**
+- Risk retention: **62%**
+- Use an existing captive: **35%**
+- Use alternative risk transfer vehicles: **28%**
+- Parametrics: **19%**
+- Create a captive insurance / re-insurance company: **17%**
+- Mutualisation: **6%**
+- Other: **6%**
 
 Risk retention remains the primary strategy (62%), closely followed by the use of an existing captive for 35% of Insurance Managers, with another 17% of them inclined to create a captive insurance / re-insurance vehicle.
 
-Parametric insurance enters the top strategies used by respondents in this year’s study, and is cited by 19% of the respondents.
+Parametric insurance enters the top strategies used by respondents in this year’s study, cited by 19% of respondents.
 
-**37%** A stable proportion of respondents report that they have been using a captive or similar vehicle since the study in 2020. However, this year, a further 10% of respondents said they are considering implementing this risk transfer solution.
-
-**53%** of Insurance Managers think some risks, activities, or locations will become uninsurable in the near future.
-![Pie chart showing opinion on uninsurable risks.](image_uninsurable_risks_opinion.png)
-- Yes: 53%
-- No: 47%
+- **37%** of respondents report that they have been using a captive or similar vehicle (stable since 2020). However, this year, a further **10%** of respondents said they are considering implementing this risk transfer solution.
+- **53% of Insurance Managers think some risks, activities, or locations will become uninsurable in the near future** (Yes: 53%, No: 47%).
 
 ---
 
-## Methodology and survey respondents
+## Methodology and Survey Respondents
 
 ### Methodology
 
 The data in this report were collected from an anonymous web-based survey distributed through FERMA’s member associations and other continents’ associations, as well as the PwC global network between January and April 2024.
 
-Until now a European survey, this year the study was extended globally, and responses were gathered from 1041 respondents in 77 countries around the world:
+Until now a European survey, this year the study was extended globally, and responses were gathered from **1,041 respondents in 77 countries** around the world:
 
-| Continent       | Respondents |
-| :-------------- | :---------- |
-| EUROPE          | 821         |
-| NORTH AMERICA   | 111         |
-| AFRICA          | 37          |
-| SOUTH AMERICA   | 28          |
-| ASIA            | 22          |
-| OCEANIA         | 22          |
+| Continent | Number of Respondents |
+| :--- | :--- |
+| **Europe** | 821 |
+| **North America** | 111 |
+| **Africa** | 37 |
+| **South America** | 28 |
+| **Asia** | 22 |
+| **Oceania** | 22 |
+| **Total** | **1,041** |
 
 Although the analysis of the results is conducted on a global scale and ensures a comprehensive understanding of the overall trends and insights, responses remain largely from Europe (79%). The dominance of European responses is acknowledged, and the low number of respondents in Africa, South America, Asia, and Oceania limits the ability to draw conclusions based on geography.
 
 The differences between continents are highlighted in specific inserts to express the differences between the global results, mainly driven by Europe, and the other continents.
 
-Responses were aggregated into the eight clusters below that are representative in terms of number of respondents and geography.
+Responses were aggregated into the eight clusters below that are representative in terms of number of respondents and geography:
 
-**Group of countries:**
-- WESTERN EUROPE: 53%
-- NORTHERN EUROPE: 14%
-- CENTRAL AND EASTERN EUROPE: 12%
-- NORTH AMERICA: 11%
-- AFRICA: 4%
-- SOUTH AMERICA: 3%
-- ASIA: 2%
-- OCEANIA: 2%
+| Group of Countries / Cluster | Percentage | Respondents |
+| :--- | :---: | :---: |
+| Western Europe | 53% | 554 |
+| Northern Europe | 14% | 141 |
+| Central and Eastern Europe | 12% | 126 |
+| North America | 11% | 111 |
+| Africa | 4% | 37 |
+| South America | 3% | 28 |
+| Asia | 2% | 22 |
+| Oceania | 2% | 22 |
 
-The breakdown of countries included within these continents or clusters is as follows:
-
-- **Western Europe** (554 respondents): Italy (167), France (124), Spain (44), Germany (39), Switzerland (36), Greece (33), Belgium (29), Luxembourg (22), Netherlands (20), Malta (12), United Kingdom (10), Austria (7), Portugal (6), Ireland (3) and Cyprus (2)
-- **Northern Europe** (141): Sweden (58), Denmark (32), Lithuania (23), Finland (15), Norway (12) and Estonia (1)
-- **Central and Eastern Europe** (126): Turkey (79), Romania (14), Slovenia (12), Bulgaria (10), Czech Republic, Albania, Azerbaijan and Poland (2), Hungary, Belarus, and Kosovo (1)
-- **North America** (111): United States (72), Canada (34) and Mexico (5)
-- **Africa** (37): South Africa (11), Morocco and Nigeria (4), Ivory Coast and Zimbabwe (3), Algeria and Togo (2), Burkina Faso, Cameroon, Democratic Republic of Congo, Eswatini, Kenya, Namibia, Senegal, and Tunisia (1)
-- **South America** (28): Colombia and Peru (5), Argentina (4), Brazil (3), Dominican Republic and Panama (2), Bolivia, Chile, Costa Rica, Ecuador, Jamaica, Saint Kitts and Nevis, and Venezuela (1)
-- **Asia** (22): UAE (7), India (3), Hong Kong, China, and Singapore (2), Bahrain, Israel, Japan, Malaysia, Pakistan, Philippines, Thailand, and Vietnam (1)
-- **Oceania** (22): Australia (18) and New Zealand (4)
+#### Country breakdown within continents/clusters:
+- **Western Europe (554 respondents):** Italy (167), France (124), Spain (44), Germany (39), Switzerland (36), Greece (33), Belgium (29), Luxembourg (22), Netherlands (20), Malta (12), United Kingdom (10), Austria (7), Portugal (6), Ireland (3), and Cyprus (2).
+- **Northern Europe (141):** Sweden (58), Denmark (32), Lithuania (23), Finland (15), Norway (12), and Estonia (1).
+- **Central and Eastern Europe (126):** Turkey (79), Romania (14), Slovenia (12), Bulgaria (10), Czech Republic (2), Albania (2), Azerbaijan (2), Poland (2), Hungary (1), Belarus (1), and Kosovo (1).
+- **North America (111):** United States (72), Canada (34), and Mexico (5).
+- **Africa (37):** South Africa (11), Morocco (4), Nigeria (4), Ivory Coast (3), Zimbabwe (3), Algeria (2), Togo (2), Burkina Faso (1), Cameroon (1), Democratic Republic of Congo (1), Eswatini (1), Kenya (1), Namibia (1), Senegal (1), and Tunisia (1).
+- **South America (28):** Colombia (5), Peru (5), Argentina (4), Brazil (3), Dominican Republic (2), Panama (2), Bolivia (1), Chile (1), Costa Rica (1), Ecuador (1), Jamaica (1), Saint Kitts and Nevis (1), and Venezuela (1).
+- **Asia (22):** UAE (7), India (3), Hong Kong (2), China (2), Singapore (2), Bahrain (1), Israel (1), Japan (1), Malaysia (1), Pakistan (1), Philippines (1), Thailand (1), and Vietnam (1).
+- **Oceania (22):** Australia (18) and New Zealand (4).
 
 The survey included 56 questions divided into seven categories:
-
-- Your profile (5 questions)
-- Your organisation (9 questions)
-- Risk Management within the organisation (19 questions)
-- Insurance management (6 questions)
-- Environmental, Social and Governance (ESG) (9 questions)
-- Technology risk management (4 questions)
-- Digitalisation of the ERM function (4 questions)
+1. Your profile (5 questions)
+2. Your organisation (9 questions)
+3. Risk Management within the organisation (19 questions)
+4. Insurance management (6 questions)
+5. Environmental, Social and Governance (ESG) (9 questions)
+6. Technology risk management (4 questions)
+7. Digitalisation of the ERM function (4 questions)
 
 Some questions are triggered by the answers to others. Therefore, the number of respondents may vary from one question to another. Additionally, some questions were not mandatory so the number of respondents per question differs.
 
@@ -340,418 +328,322 @@ Specific survey questions targeted each profile (ERM and IM), providing insights
 
 The report comprises: a detailed description of the survey respondents; a summary of how Risk Managers saw risks in 2024 in an uncertain political and economic context; and the analysis of answers to the sets of questions listed above.
 
-To accompany the report, we have produced 12 files summarising the data per country, continent, or group of countries. The repartition of countries within these files is as below:
-
+To accompany the report, 12 files were produced summarising data per country, continent, or group of countries:
 - One file per continent except Europe: North America, South America, Africa, Oceania, Asia
 - Italy (167)
-- Nordic & Baltic countries (141): Sweden (58), Denmark (32), Lithuania (23), Finland (15), Norway (12) and Estonia (1)
-- Central and Eastern Europe (126): Turkey (79), Romania (14), Slovenia (12), Bulgaria (10), Czech Republic, Albania, Azerbaijan and Poland (2), Hungary, Belarus, and Kosovo (1)
+- Nordic & Baltic countries (141)
+- Central and Eastern Europe (126)
 - France (124)
-- Mediterranean countries (97): Spain (44), Greece (33), Malta (12), Portugal (6), Cyprus (2)
-- Western Europe (95): Germany (39), Switzerland (36), United Kingdom (10), Austria (7), Ireland (3)
-- Benelux (71): Belgium (29), Luxembourg (22), Netherlands (20)
+- Mediterranean countries (97)
+- Western Europe (95)
+- Benelux (71)
 
-### Profile of survey respondents
+---
 
-#### Age and gender
+## Profile of Survey Respondents
 
-The gender distribution among Risk Managers has seen minimal change over the years, with the proportion of women increasing slightly to 36% from 32%.
+### Age and Gender
 
-This gender breakdown remains consistent across different sectors, with women being most represented in the industry sector at 39% and least in financial services at 33%.
+![Pie chart illustrating gender distribution: 63.4% Male, 36.3% Female, 0.3% Others]
 
-**Are you?**
-![Pie chart showing gender distribution of respondents.](image_gender_distribution.png)
+The gender distribution among Risk Managers has seen minimal change over the years, with the proportion of women increasing slightly to **36%** from 32%.
+
 - Male: 63.4%
 - Female: 36.3%
 - Others: 0.3%
 
-In certain geographic areas, women are less well represented. For example, in Asia women accounted for only 14% of Risk Managers and in South America 25%. Other continents are more balanced, for instance North America where 51% of Risk Managers were women.
+This gender breakdown remains consistent across different sectors, with women being most represented in the **industry sector at 39%** and least in **financial services at 33%**.
 
-There is a gradual increase in the number of women in the profession, notably in the age range of between 31 and 35 years old, and this continues to be seen in the age range of those less than 30 years old.
+In certain geographic areas, women are less well represented:
+- Asia: 14%
+- South America: 25%
+- North America: 51%
 
-**Gender repartition by age range**
-![Bar chart showing gender distribution by age range.](image_gender_by_age.png)
+There is a gradual increase in the number of women in the profession, notably in the age range between 31 and 35 years old, and this continues to be seen in the age range of those less than 30 years old.
 
-| Age Range            | Male | Female |
-| :------------------- | :--- | :----- |
-| Less than 30 years old | 52%  | 48%    |
-| Between 31 and 35 years old | 63%  | 37%    |
-| Between 36 and 45 years old | 61%  | 39%    |
-| Between 46 and 55 years old | 61%  | 39%    |
-| Between 56 and 60 years old | 69%  | 31%    |
-| More than 60 years   | 80%  | 20%    |
+#### Gender repartition by age range
+
+| Age Range | Male | Female |
+| :--- | :---: | :---: |
+| Less than 30 years old | 48% | 52% |
+| Between 31 and 35 years old | 63% | 37% |
+| Between 36 and 45 years old | 61% | 39% |
+| Between 46 and 55 years old | 61% | 39% |
+| Between 56 and 60 years old | 69% | 31% |
+| More than 60 years old | 80% | 20% |
 
 For the age group between 31 and 35 years, there has been a shift in the last two years: in 2022, 23% were women, whereas in 2024, 37% are women, marking a 14 percentage points increase. This reflects a stark generational difference in gender distribution, with a trend towards greater gender balance among younger age groups.
 
-#### The profession remains characterised by experienced individuals and has difficulty in attracting young talent
-
-![Bar chart showing age distribution of respondents.](image_age_distribution.png)
-
-Most risk management professionals are experienced, with 63% of respondents falling between the ages of 36 and 55 years old. By contrast, Risk Managers under the age of 36 represent just 14% of respondents in 2024, marking a slow progression from 12% in 2022.
-
-- Less than 30 years old: 9%
-- Between 31 and 35 years old: 4%
-- Between 36 and 45 years old: 9%
-- Between 46 and 55 years old: 14%
-- Between 56 and 60 years old: 28%
-- More than 60 years old: 34%
-
-Participants from Africa and Asia tend to be younger overall: 22% of African respondents are under 36 years of age, while 27% from Asia fall into this age bracket. Asia is showcasing a balanced representation across age groups. Most respondents - 41% - fall between the ages of 46 and 55, with 27% falling between 36 and 45 years old and a further 27% between 31 and 35 years old.
-
-#### Professional experience and remuneration
-
-The profession remains currently dominated by experienced profiles.
-
-**Years of experience in Entreprise Risk Management (ERM) / Insurance Management (IM)**
-![Bar chart showing years of experience.](image_years_of_experience.png)
-- Less than 1 year: 3%
-- 1-3 years: 10%
-- 4-6 years: 17%
-- 7-10 years: 17%
-- More than 10 years: 53%
-
-More than half (53%) of respondents possess more than 10 years of experience, and 17% report having between four and six years of experience, mirroring another 17% who indicated having between 7 and 10 years of experience. This ranking is constant no matter whether in Enterprise Risk Management (ERM), or in Insurance Management (IM), or in both.
-
-This high level of experience varies quite significantly in proportion depending on the continents where respondents are based: Africa has a significant 22% of respondents with fewer than three years of experience (compared with 13% globally). Several clusters have a higher proportion of experience of longer than seven years: Asia with 91%; South America with 85%; Oceania with 82%; and North America with 75%.
-
-In terms of total annual remuneration, the distribution among respondents globally reflects a varied landscape, with remuneration levels remaining relatively steady compared with 2022.
-
-Gender disparity is particularly pronounced in higher salary brackets, which is consistent with women being more represented in the under 35 age bracket and less experienced profiles. The notable difference between gender lies in the following categories:
-
-- More than € 200k: 13% of men fall into this category compared with only 8% of women;
-- Between € 151k and € 200k: 14% of men, 12% of women;
-- Between € 40k and € 60k: 12% of men and 17% of women;
-- Less than € 40k: 11% of both genders.
-
-**Total annual remuneration (including bonus and compensation)**
-![Bar chart showing total annual remuneration.](image_annual_remuneration.png)
-- More than € 200k: 11%
-- Between € 151k - € 200k: 13%
-- Between € 101k - € 150k: 23%
-- Between € 60k - € 100k: 28%
-- Between € 40k - € 60k: 13%
-- Less than € 40k: 11%
-
-#### Average remuneration per profile
-
-![Bar chart showing average remuneration per profile type.](image_average_remuneration_profile.png)
-- ERM: € 96k
-- All: € 109k
-- Both: € 120k
-- IM: € 121k
-
-A real added-value is perceived for profiles with dual expertise.
-
-Insurance Managers are more highly valued than ERM profiles, with an average difference of € 25k in compensation.
-
-#### A closer look at regional trends reveals noteworthy patterns
-
-**Total annual remuneration by continent**
-![Stacked bar chart showing total annual remuneration by continent.](image_remuneration_by_continent.png)
-
-- In Africa, 41% earn less than € 40k, whereas only 5% earn more than € 200k.
-- Conversely, in South America, the distribution is more spread in the first three remuneration ranges, while earnings above € 200k represent 7% of respondents.
-- Asia and Oceania show a large proportion of respondents earning more than € 101k (55%).
-- North America, however, shows 43% of respondents earning more than € 151k (and 72% more than € 101k), and only 5% less than € 60k.
-
-#### Organisation and sector
-
-##### High representation of large organisations, listed or privately-owned entities.
-
-**Type of organisations’ distribution**
-![Pie chart showing type of organizations.](image_organization_type_distribution.png)
-- Listed entity: 36%
-- Privately held entity: 35%
-- Public entity: 12%
-- Branch of a listed entity: 7%
-- Not for profit: 5%
-- Entity owned by venture capitalist: 4%
-
-As in previous editions, respondents include mainly Risk or Insurance Managers from large organisations, whereas in small and medium sized companies, risk management responsibilities are often covered in the scope of other functions (such as the CFO or the Legal Officer).
-
-**78%** of respondents work in large companies.
-
-Small organisations are more prevalent in the responses collected from South America (43%), Africa (35%), and Oceania (27%), and are not represented in Asia.
-
-##### A better spread of sector of activity within the respondents.
-
-**Distribution by sector of activity**
-![Bar chart comparing sector of activity distribution in 2022 and 2024.](image_sector_activity_distribution.png)
-
-| Sector of activity | 2022 | 2024 |
-| :----------------- | :--- | :--- |
-| Industry           | 57%  | 41%  |
-| Financial services | 25%  | 29%  |
-| Services           | 14%  | 19%  |
-| Public sector      | 4%   | 11%  |
-
-- The industrial sector was the primary sector to which respondents’ organisations belonged with 41% of responses, decreasing by 16% points since the previous survey in 2022.
-- Financial services followed closely, accounting for 29% of respondents including sectors such as insurance (which represented 13% of the total respondents) and banking (9%). This proportion has increased from 25% since 2022.
-- Services represented 19% of respondents, an increase from 14% in 2022, covering areas like professional and business services, technology, retail, media or healthcare.
-- The public sector accounted for 11% of respondents, encompassing government entities, infrastructure, public services, and regulators and representing an increase from 4% since the last edition of the survey.
-
-This trend is mainly driven by Europe as large differences appear in other geographies: Africa and South America are mainly represented by Financial Services. North America and Oceania are well-balanced between all sectors.
-
-#### Profiles and responsibilities
-
-**Distribution of profiles**
-![Pie chart showing distribution of ERM, IM, and Both profiles.](image_profile_distribution.png)
-- ERM: 46%
-- IM: 23%
-- Both: 31%
-
-This year marks a change of representation between the three profiles with a larger proportion of ERM profile compared with previous editions (+12% points) and a significant decrease of IM profile (-17% points). The proportion of profiles with both titles has increased by 5% points.
-
-- **Enterprise Risk Management (ERM) profile**: oriented towards overall risk management of the organisation. Business risks are identified, analysed, treated, and reduced.
-- **Insurance Management (IM) profile**: oriented towards insurable risks, including loss prevention and risk transfer.
-- **Mixed ERM / IM profiles** work on insurance, loss prevention and wider risk management issues.
-
-Both the ERM/IM profiles’ and ERM profiles’ teams are typically composed of two to three Full Time-Equivalent (FTEs), representing 35% and 34% respectively. IM teams are larger with 31% staffed by four to ten FTEs.
-
-Financial Services teams seem to be larger as 27% have more than 10 FTE in their Risk Management teams, while this ranges from 13% to 16% in other sectors.
-
-In small organisations, 87% of ERM teams consist of fewer than four people, whereas this is true for only 60% of IM departments. The discrepancy persists in medium-sized organisations where 68% of ERM teams are staffed by fewer than four people compared with only 45% of IM teams. However, in large organisations, staffing levels for both IM and ERM departments are more aligned.
-
-**Number of FTE per size of organisation**
-![Stacked bar chart showing number of FTE per size of organization.](image_fte_by_organization_size.png)
-
-| FTE Range          | Small | Medium-sized | Large |
-| :----------------- | :---- | :----------- | :---- |
-| 1 FTE (respondent) | 40%   | 29%          | 23%   |
-| 2 to 3 FTE         | 35%   | 39%          | 33%   |
-| 4 to 10 FTE        | 17%   | 20%          | 28%   |
-| 10 to 50 FTE       | 8%    | 7%           | 10%   |
-| More than 50 FTE   | 2%    | 5%           | 6%    |
-
-- Small: < 50 staff headcount or < € 10m turnover
-- Medium-sized: < 250 staff headcount or < € 50m turnover
-- Large: > 250 staff headcount or > € 50m turnover
-
-#### Scope of responsibilities per continent
-
-![Stacked bar chart showing scope of responsibilities per continent.](image_responsibilities_by_continent.png)
-
-| Continent     | Both | ERM | IM |
-| :------------ | :--- | :-- | :-- |
-| Africa        | 27%  | 57% | 16% |
-| Asia          | 32%  | 59% | 9%  |
-| Europe        | 29%  | 47% | 24% |
-| North America | 47%  | 30% | 23% |
-| South America | 29%  | 36% | 36% |
-| Oceania       | 32%  | 64% | 5%  |
-
-In North America almost half of respondents have both ERM/IM profiles, suggesting seamless integration of insurance management within broader risk management initiatives.
-
-#### Risk Managers’ responsibilities
-
-A large majority - **88%** - of respondents have responsibilities other than ERM/IM compared with 60% in 2022, evidencing a diversity in Risk Managers’ scope and their ability to take on further responsibility and apply a risk-based approach more widely within their organisation.
-
-**Q13. What other activities are in your scope of responsibilities**
-
-**Other functions in Risk Managers’ scope of responsibilities**
-![Bar chart showing other functions in Risk Managers' scope of responsibilities.](image_other_responsibilities.png)
-
-| Function                 | Percentage |
-| :----------------------- | :--------- |
-| Business continuity      | 16%        |
-| Internal Control         | 12%        |
-| Compliance               | 10%        |
-| Strategy                 | 8%         |
-| Internal audit           | 8%         |
-| Operations               | 6%         |
-| Security                 | 6%         |
-| Quality                  | 6%         |
-| Health & Safety          | 5%         |
-| Finance                  | 4%         |
-| Data protection officer  | 4%         |
-| IT                       | 4%         |
-| Legal                    | 4%         |
-| General / Company Secretary | 3%         |
-| Treasury                 | 3%         |
-| Other                    | 2%         |
-| ESG                      | 1%         |
-| Fraud                    | 0%         |
-
-Among the top 5 other functions, business continuity, internal control and compliance responsibilities remain from 2022, although the proportion of compliance decreased by 6% points due to increased specialisation by the dedicated compliance department, and internal control moved from 5th to 2nd position. The percentage share of internal audit increased to 8% from 6% to enter the top 5, along with strategy (newly suggested).
-
-Eight percent of Risk Managers said that their scope includes strategy, reflecting the stronger connection between strategic activities and a risk-based approach. Additionally, ESG (Environmental, Social, and Governance) considerations have begun to come under Risk Managers’ responsibilities. This reflects the growing integration of ESG into risk management frameworks, highlighting the synergy in addressing sustainability and ethical practices alongside traditional risk management activities (refer to part II).
-
-#### Focus on Insurance Managers’ other functions
-
-![Bar chart showing other functions for Insurance Managers.](image_im_other_functions.png)
-
-| Function           | Percentage |
-| :----------------- | :--------- |
-| Business continuity | 14%        |
-| Strategy           | 11%        |
-| Finance            | 10%        |
-| Legal              | 9%         |
-| Operations         | 7%         |
-
-In observing differences between ERM and IM profiles, it appears Finance and Legal responsibilities are predominant for IM profiles rather than internal audit and control.
-
-In North America, there is a greater share of responses from Health & Safety (11%) than in other territories, as US organisations are responsible for managing workers compensation. Asia shows internal control (19%) and internal audit (16%) as the two main other responsibilities in Risk Managers’ scope.
-
-#### Risk Managers’ activities by type of profiles
-
-Risk quantification enters the top 6 activities under both IM and ERM responsibilities.
-
-**Q12. Which of the following activites fall under your responsibility - Focus ERM**
-
-**Activities under the ERM profiles’ responsibility**
-![Stacked bar chart showing ERM activities and level of responsibility.](image_erm_activities_responsibility_detailed.png)
-
-| Activity                                                              | Not done within my company | I am informed | I contribute | I validate | I am fully responsible |
-| :-------------------------------------------------------------------- | :------------------------- | :------------ | :----------- | :--------- | :--------------------- |
-| Development of risk maps and associated reporting                     | 4%                         | 9%            | 23%          | 4%         | 60%                    |
-| ERM training and culture                                              | 4%                         | 7%            | 24%          | 22%        | 45%                    |
-| Risk quantification                                                   | 3%                         | 12%           | 21%          | 8%         | 52%                    |
-| Definition of ERM governance, framework, processes, and/or tools      | 5%                         | 6%            | 36%          | 35%        | 12%                    |
-| Design and implementation of risk controls / prevention               | 5%                         | 24%           | 31%          | 42%        | 31%                    |
-| Alignment and integration of Risk Management as part of strategy      | 6%                         | 12%           | 35%          | 24%        | 31%                    |
-
-Developing risk maps became the most common responsibility in 2024, up from second and swapping position with ERM training and culture, reflecting an increased focus on detailed risk assessment. The proliferation of risk maps within the organisation requires a strengthening of risk culture in organisations and, notably, greater awareness of the first line of defence. Risk training, beyond developing and consolidating the process, is needed to ensure a cohesive and comprehensive approach to risk management. Risk quantification has entered the top three responsibilities as Risk Managers are asked to provide tangible evidence of risks by employing quantification methods. This approach helps to define the ERM governance framework and processes and align risk management more closely with the company’s strategy by enhancing decision-making capabilities for governance (both activities have remained in the top 5 responsibilities since 2022). Design and implementation of controls and prevention closely follows in the ranking, demonstrating that the effectiveness of risk control measures and potential areas for improvement are increasingly demanded of Risk Managers. This involves thorough monitoring of action plans and a well-structured and equipped process.
-
-- In Europe, the multiplication of risk maps is partly driven by regulatory expectations, such as anti-bribery and corruption rules or ESG materiality assessments.
-- By contrast, in Oceania 88% of Risk Managers are fully responsible for ERM culture and training, while 78% are fully responsible for aligning and integrating risk management with business strategy and the same proportion of respondents is responsible for developing risk maps.
-- North America follows the global trend but shows that Risk Managers have a greater degree of responsibility with 76% fully responsible for developing risk maps, 72% for ERM culture, 66% for ERM governance and 50% for aligning ERM and strategy.
-- Responses from the African continent indicate a higher proportion of the ERM respondents is fully responsible for risk quantification (62%).
-
-**Q12. Which of the following activites fall under your responsibility - Focus IM**
-
-**Activities under the IM profiles’ responsibility**
-![Stacked bar chart showing IM activities and level of responsibility.](image_im_activities_responsibility_detailed.png)
-
-| Activity                                                              | Not done within my company | I am informed | I contribute | I validate | I am fully responsible |
-| :-------------------------------------------------------------------- | :------------------------- | :------------ | :----------- | :--------- | :--------------------- |
-| Insurance policy management, claims handling and loss prevention      | 5%                         | 6%            | 11%          | 78%        | 78%                    |
-| Design and implementation of risk financing strategy including insurance and alternative solutions | 5%                         | 12%           | 29%          | 10%        | 44%                    |
-| Assistance to other functional areas in contract negotiation, project management, acquisitions and investments | 3%                         | 13%           | 49%          | 23%        | 12%                    |
-| Elaboration or contribution to the Assurance map                      | 13%                        | 32%           | 4%           | 34%        | 29%                    |
-| Design and implementation of risk controls / prevention               | 9%                         | 18%           | 13%          | 7%         | 53%                    |
-| Risk quantification                                                   | 6%                         | 9%            | 24%          | 8%         | 53%                    |
-
-Since 2022, four areas remain among the main activities for Insurance Managers:
-
-1. Insurance policy management, claims handling, and loss prevention;
-2. Design and implementation of risk financing strategies, including insurance and alternative solutions;
-3. Assistance to other functional areas in contract negotiation, project management, acquisitions and investments;
-4. Design and implementation of risk controls / prevention.
-
-Definition of risk appetite and development of risk maps have dropped out of the top 6 and are replaced by the elaboration of the risk assurance map, newly proposed in 2024, and risk quantification, demonstrating the importance and reliance on such exercises among the risk management activities and broader responsibilities of Insurance Managers.
-
-#### Reporting lines
-
-Insurance Management functions are still largely reporting to CFOs while an equivalent proportion of ERM functions report to governance directly (either the Board or CEO).
-
-![Bar chart showing reporting lines for Risk Managers.](image_reporting_lines.png)
-
-| Reporting Line             | Percentage |
-| :------------------------- | :--------- |
-| CFO                        | 26%        |
-| Board                      | 21%        |
-| CEO                        | 21%        |
-| General Counsel            | 9%         |
-| Other                      | 7%         |
-| Internal Audit and Control | 4%         |
-| Chief Strategy Officer     | 3%         |
-| Internal Audit             | 2%         |
-| Treasury                   | 2%         |
-| Internal Control           | 2%         |
-| Legal                      | 2%         |
-| Chief Sustainability Officer | 1%         |
-| COO                        | 1%         |
-
-This new question in 2024 highlights the reporting lines for Risk Managers and shows a diverse distribution: 26% report to the Chief Financial Officer (CFO); 21% report to the Board; and 21% to the Chief Executive Officer (CEO).
-
-A small percentage report to Internal Audit (2%) or Internal Control (2%) or both (4%), indicating a clearer separation between these departments.
-
-Interestingly, 3% of Risk Managers report to the Chief Strategy Officer, highlighting the increasing importance of the Risk Manager’s role in the execution of the strategy and the alignment of risk management activities with business strategies.
-
-ERM profiles have strong connections with governance, with 25% reporting to the Board, 24% to the CEO, and 17% to the CFO. By contrast, Insurance Managers tend to have a more financial-oriented reporting structure, with 44% reporting to the CFO, reflecting the financial aspect of insurance management, while only 12% report to the CEO and 9% to the Board, indicating less direct access to top management.
+#### Age distribution of the profession
+- Less than 30 years old: **4%**
+- Between 31 and 35 years old: **9%**
+- Between 36 and 45 years old: **28%**
+- Between 46 and 55 years old: **34%**
+- Between 56 and 60 years old: **14%**
+- More than 60 years old: **9%**
+
+Most risk management professionals are experienced, with **63% of respondents falling between the ages of 36 and 55 years old**. By contrast, Risk Managers under the age of 36 represent just 14% of respondents in 2024, marking a slow progression from 12% in 2022.
+
+> **Regional differences:**  
+> - Participants from Africa and Asia tend to be younger overall: 22% of African respondents are under 36 years of age, while 27% from Asia fall into this age bracket.  
+> - Asia showcases a balanced representation across age groups: 41% fall between 46 and 55, 27% between 36 and 45, and 27% between 31 and 35.
 
 ---
 
-## How do Risk Managers see traditional and emerging risks in the new world of constant crisis?
+### Professional Experience and Remuneration
 
-The world has fundamentally changed since 2020; crises are no longer shocks, and organisations have learned to live with them, developing their resilience, and even learning to seize the opportunities hidden behind the crises. A new era of emerging risks has begun, and risk management has become a major concern for leaders. Risks are not only expanding rapidly but also becoming increasingly interconnected.
+The profession remains currently dominated by experienced profiles.
 
-The survey asked Risk Managers to select and rank the major threats to their organisation’s growth prospects at different time horizons (12 months, 3 years, and 10 years). The results are presented as follows:
+#### Years of experience in Enterprise Risk Management (ERM) / Insurance Management (IM)
+- Less than 1 year: **3%**
+- 1–3 years: **10%**
+- 4–6 years: **17%**
+- 7–10 years: **17%**
+- More than 10 years: **53%**
 
-- Top 5 short-term risks, compared below with previous surveys;
-- Top 15 short-term risks, highlighting their evolution from the previous survey and the new risks identified;
-- Two top 3 risks: in a medium term and long-term perspective.
+More than half (53%) of respondents possess more than 10 years of experience. This ranking is constant across ERM, IM, or dual roles.
 
-We observe differences in risks based on varying time horizons, highlighting the need to address different timeframes in risk identification exercises and in defining control measures or action plans. This approach mirrors the methodologies used in ESG-related analyses. The goal is to integrate short-term, medium-term, and long-term views on risks and opportunities into a unified risk management framework.
+> **Regional experience variations:**  
+> - Africa: 22% have fewer than three years of experience (globally 13%).  
+> - Proportions with more than 7 years of experience: Asia (91%), South America (85%), Oceania (82%), North America (75%).
 
-**Top 5 critical threats to the organisation within the next 12 months**
+#### Total annual remuneration (including bonus and compensation)
+- Less than €40k: **11%**
+- Between €40k – €60k: **13%**
+- Between €60k – €100k: **28%**
+- Between €101k – €150k: **23%**
+- Between €151k – €200k: **13%**
+- More than €200k: **11%**
 
-There is broad consistency in the top-ranked critical threats cited by respondents over the past few years. These critical risks dominate the list because of their potentially devastating effects on businesses. Cyber-attacks and data breaches continue to be top threats as digitalisation increases the potential scope for attack. Concerns about geopolitical uncertainties and an uncertain economic environment reflect the ongoing global instability, notably due to the intensification of tension with the Russia-Ukraine war and the Israeli-Palestinian conflict, and their repercussions on business operations. The focus on talent management highlights the strategic importance of human capital in driving business success and resilience.
+Gender disparity is particularly pronounced in higher salary brackets:
+- More than €200k: 13% of men vs. 8% of women
+- Between €151k and €200k: 14% of men vs. 12% of women
+- Between €40k and €60k: 12% of men vs. 17% of women
+- Less than €40k: 11% of both genders
 
-The survey results show a dynamic risk environment where technology, workforce issues, and economic factors play critical roles. Companies must adapt their risk management strategies to address these emerging threats and ensure organisational resilience.
+#### Average remuneration per profile
+Insurance Managers are more highly valued than ERM profiles, with an average difference of €25k in compensation. A real added-value is perceived for profiles with dual expertise:
+- **ERM:** €96k
+- **All:** €109k
+- **Both ERM & IM:** €120k
+- **IM:** €121k
 
-| Top 5 risks in 2020         | Top 5 risks in 2022              | Top 5 risks in 2024         |
-| :-------------------------- | :------------------------------- | :-------------------------- |
-| Cyber threats               | Cyber threats                    | Cyber-attacks               |
-| Uncertain economic growth   | Availability of key skills       | Geopolitical uncertainties  |
-| Over-regulation             | Supply chain or distribution failure | Uncertain economic growth   |
-| Geopolitical uncertainties  | Uncertain economic environment   | Talent management           |
-| Uncertain economic environment | Over-regulation                  | Data breach                 |
+#### Total annual remuneration by continent
 
-The number of cyber-attacks continues to increase, exacerbated by the ongoing reliance on digital connections and the potential vulnerabilities of hybrid working environments. Organisations are facing more sophisticated threats, deriving from new technologies - notably Artificial Intelligence - targeting both remote and on-site employees.
+| Continent | Less than €40k | €40k – €60k | €60k – €100k | €101k – €150k | €151k – €200k | More than €200k |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Africa** | 41% | 19% | 19% | 8% | 8% | 5% |
+| **Asia** | 18% | 9% | 18% | 23% | 9% | 23% |
+| **Europe** | 10% | 15% | 29% | 23% | 13% | 10% |
+| **North America** | 3% | 2% | 24% | 29% | 22% | 21% |
+| **South America** | 25% | 25% | 29% | 11% | 4% | 7% |
+| **Oceania** | 0% | 9% | 36% | 18% | 23% | 14% |
 
-In 2024, the geopolitical landscape is marked by heightened tensions and conflicts that significantly impact global risk management. The ongoing conflict between Ukraine and Russia has led to widespread economic sanctions, supply-chain disruptions and energy crises, affecting industries and markets worldwide. This conflict has not only strained international relations but also exacerbated concerns about cybersecurity, as both state-sponsored and independent cyber-attacks have surged.
+- In Africa, 41% earn less than €40k, whereas only 5% earn more than €200k.
+- In South America, the distribution is spread in the first three remuneration ranges, while earnings above €200k represent 7%.
+- Asia and Oceania show a large proportion earning more than €101k (55%).
+- North America shows 43% of respondents earning more than €151k (72% earning more than €101k), and only 5% earning less than €60k.
 
-The Israeli-Palestinian conflict remains a source of instability in the Middle East, further complicating international diplomatic efforts and creating volatile conditions for businesses operating in or relying on resources from the region. These geopolitical tensions highlight the need for robust risk management strategies to navigate the complexities of global trade, security, and economic stability.
+---
 
-Cyber-attacks and geopolitical uncertainties are present in the top 5 risks for all sectors.
+### Organisation and Sector
 
-Financial Services named regulation in its top 5 replacing talent management, consistent with the ongoing pressure from regulations in this sector.
+#### Distribution by type of organisation
+- **Listed entity:** 36%
+- **Privately held entity:** 35%
+- **Public entity:** 12%
+- **Branch of a listed entity:** 7%
+- **Not for profit:** 5%
+- **Entity owned by venture capitalist:** 4%
 
-Industry is more concerned by supply chain or distribution failure than by data breaches, as this sector remains the most impacted by the supply chain difficulties observed in recent years that have been amplified by the challenges posed by geopolitical tensions, trade restrictions, and natural disasters.
+Large organisations account for **78%** of respondents. In small and medium-sized companies, risk management responsibilities are often covered within the scope of other functions (such as the CFO or Legal Officer). Small organisations are more prevalent in South America (43%), Africa (35%), and Oceania (27%), while absent in the Asian sample.
 
-The public sector highlights HR risks ahead of uncertain economic growth.
+#### Distribution by sector of activity
 
-Services is more aligned with the global results, with three risks closely mirroring the top 5 (5th ex aequo): generative AI use, regulation and fraud or theft.
+| Sector | 2022 | 2024 |
+| :--- | :---: | :---: |
+| **Industry** | 57% | 41% |
+| **Financial services** | 25% | 29% |
+| **Services** | 14% | 19% |
+| **Public sector** | 4% | 11% |
 
-On a continent basis, the top short-term risks are viewed differently:
+- **Industry** remains the primary sector with 41% of responses (-16 percentage points from 2022).
+- **Financial services** accounted for 29% (Insurance 13%, Banking 9%).
+- **Services** represented 19%, covering professional/business services, technology, retail, media, and healthcare.
+- **Public sector** grew to 11% (from 4% in 2022), encompassing government entities, infrastructure, public services, and regulators.
 
-- Africa views the use of technologies and generative AI as two emerging risks of greater concern than geopolitical or talent worries. Africa is experiencing rapid technological advancements and digital transformation. While these technologies offer significant opportunities for growth and development, they also bring risks, such as cybersecurity threats, digital divides, and regulatory challenges. The pace of change can outstrip the ability of governments and businesses to effectively manage these risks.
-- Asia sees supply chain failure and changing customer behaviour in the top 5. Asia is a major centre of global production, with many countries in the region playing a key role in global supply chains. Interruptions in these chains, whether due to pandemics, natural disasters, or geopolitical conflicts, can have serious consequences for companies based in Asia and those that depend on products manufactured in the region. Consumer behaviours are rapidly evolving, influenced by factors such as technology, cultural preferences, environmental concerns, and economic changes. In Asia, where there is a great diversity of markets and cultures, companies must constantly adapt to meet the changing expectations of consumers. As customers begin to ask more questions about environmental and other ESG-related concerns, companies must adapt to new consumer preferences or risk losing relevance.
+---
 
-### TOP 15 critical threats to the organisation’s growth prospects within the 12 next months
+### Profiles and Responsibilities
 
-The evolving risk landscape reflects businesses’ need to adapt to immediate economic pressures, technological disruptions, and workforce challenges, while integrating longer-term societal and environmental risks into their strategic frameworks.
+#### Distribution of profiles
+- **Enterprise Risk Management (ERM): 46%** (+12% points from 2022)  
+  *Oriented towards overall risk management of the organisation; business risks are identified, analysed, treated, and reduced.*
+- **Both ERM and IM: 31%** (+5% points)  
+  *Work on insurance, loss prevention, and wider risk management issues.*
+- **Insurance Management (IM): 23%** (-17% points)  
+  *Oriented towards insurable risks, including loss prevention and risk transfer.*
 
-![Radar chart illustrating the TOP 15 critical threats to an organization's growth prospects within the next 12 months, categorized into Environmental, Technological, Economic and Political, and Social risks.](image_top15_critical_threats.png)
+#### Number of FTE per size of organisation
 
-The chart "TOP 15 critical threats to the organisation’s growth prospects within the 12 next months" categorizes risks into:
-- **Environmental risks**: Natural disaster
-- **Technological risks**: Gen AI use, Use of new technologies, Failure to innovate, Speed of technological change, Data breach, Cyber-attacks
-- **Economic and political risks**: Inflation, Regulation, Fraud or theft, Geopolitical uncertainty, Uncertain economic environment
-- **Social risks**: Talent management, HR risk, Supply chain disruption, Changing customer behaviour
+| Size of Organisation | 1 FTE (Respondent) | 2 to 3 FTE | 4 to 10 FTE | 10 to 50 FTE | More than 50 FTE |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Small** (<50 headcount or <€10m turnover) | 40% | 33% | 20% | 7% | 0% |
+| **Medium-sized** (<250 headcount or <€50m turnover) | 29% | 39% | 28% | 2% | 2% |
+| **Large** (>250 headcount or >€50m turnover) | 23% | 35% | 20% | 17% | 6% |
 
-The survey highlights significant shifts in the risk landscape for the next 12 months.
+- ERM teams typically consist of 2 to 3 FTEs (34% of ERM teams; 35% of dual ERM/IM teams).
+- IM teams are larger: 31% have 4 to 10 FTEs.
+- In Financial Services, 27% have risk management teams with more than 10 FTEs (vs. 13%–16% in other sectors).
+- In small organisations, 87% of ERM teams have fewer than 4 people (compared to 60% of IM departments).
 
-**Six new risks have emerged in the Top 15 for 2024:**
-- Talent management
-- HR risk (culture, values, psychosocial risk, well-being)
-- Failure to innovate
-- Generative AI
-- Data breach
-- Inflation
+#### Scope of profiles per continent
 
-The prominence of talent management and HR risk evidences companies navigating changes in workforce expectations, remote work, and employee well-being, and the increasing focus on retention of employees, as a response to the ongoing challenges in the labour market, with all sectors more or less affected.
+| Continent | Both ERM / IM | ERM | IM |
+| :--- | :---: | :---: | :---: |
+| **Africa** | 27% | 57% | 16% |
+| **Asia** | 32% | 59% | 9% |
+| **Europe** | 29% | 47% | 24% |
+| **North America** | 47% | 30% | 23% |
+| **South America** | 29% | 36% | 36% |
+| **Oceania** | 32% | 64% | 5% |
 
-The inclusion of failure to innovate and generative AI underscores the pressure on companies to keep pace with technological advancements and harness new technologies effectively, in order not only to maintain competitiveness but also to ensure viability.
+In North America, almost half (47%) hold dual ERM/IM profiles, indicating seamless integration of insurance management within broader risk management initiatives.
 
-Data breach is a critical threat, reflecting the heightened awareness and frequency of cyber incidents.
+#### Other functions in Risk Managers’ scope of responsibilities (Q13)
+A large majority (**88%**) of respondents have responsibilities beyond ERM/IM (up from 60% in 2022).
 
-Inflation has become a top concern due to the increased costs of energy, materials and labour, as well as the increase in interest rates.
+- Business continuity: **16%**
+- Internal Control: **12%**
+- Compliance: **10%**
+- Internal audit: **8%**
+- Strategy: **8%**
+- Operations: **6%**
+- Health & Safety: **6%**
+- Information Security: **6%**
+- Quality: **5%**
+- Data protection: **4%**
+- Legal / General Counsel: **4%**
+- Company Secretary: **4%**
+- Treasury: **4%**
+- Other: **3%**
+- ESG: **3%**
+- Fraud: **2%**
+- IT: **1%**
 
-Additionally, the risk of use of new technologies is tied in 15th place with speed of technological change. These underscore a heightened awareness and acknowledgment of the challenges and opportunities presented by new technologies and their impact on organisational growth.
+**Focus on Insurance Managers’ other functions:**  
+Finance (10%) and Legal (9%) responsibilities are predominant for IM profiles compared to Internal Audit and Control.
 
-**Conversely, six risks have dropped out of the top 15:**
+> **Regional nuances:**  
+> - North America: Health & Safety accounts for 11% (due to US workers' compensation management).  
+> - Asia: Internal control (19%) and internal audit (16%) are the primary additional responsibilities.
+
+---
+
+### Risk Managers’ Activities by Type of Profile
+
+#### Activities under the ERM profiles’ responsibility (Q12 - Focus ERM)
+
+| Activity | I am fully responsible | I validate | I contribute | I am informed | Not done within my company |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Development of risk maps and reporting** | 63% | 14% | 21% | 2% | 0% |
+| **ERM training and culture** | 60% | 12% | 23% | 4% | 1% |
+| **Risk quantification** | 45% | 9% | 25% | 8% | 13% |
+| **Definition of ERM governance, framework, processes, tools** | 52% | 22% | 24% | 1% | 1% |
+| **Design and implementation of risk controls / prevention** | 42% | 12% | 36% | 7% | 3% |
+| **Alignment and integration of Risk Management into strategy** | 31% | 24% | 35% | 6% | 4% |
+
+- Developing risk maps became the top responsibility in 2024, swapping places with ERM training and culture.
+- Risk quantification entered the top three responsibilities.
+
+> **Regional differences:**  
+> - Oceania: 88% are fully responsible for ERM culture and training; 78% for aligning ERM with business strategy; 78% for developing risk maps.  
+> - North America: 76% fully responsible for risk maps, 72% for ERM culture, 66% for ERM governance, and 50% for strategy alignment.  
+> - Africa: 62% are fully responsible for risk quantification.
+
+#### Activities under the IM profiles’ responsibility (Q12 - Focus IM)
+
+| Activity | I am fully responsible | I validate | I contribute | I am informed | Not done within my company |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Insurance policy management, claims handling, loss prevention** | 78% | 6% | 11% | 5% | 0% |
+| **Design and implementation of risk financing strategy (insurance & alternatives)** | 44% | 23% | 29% | 4% | 0% |
+| **Assistance to other functional areas (contracts, projects, M&A)** | 18% | 12% | 49% | 13% | 8% |
+| **Elaboration or contribution to the Assurance map** | 13% | 9% | 32% | 34% | 12% |
+| **Design and implementation of risk controls / prevention** | 6% | 7% | 42% | 29% | 16% |
+| **Risk quantification** | 9% | 6% | 53% | 24% | 8% |
+
+---
+
+### Reporting Lines
+
+| Direct Reporting Line | Percentage |
+| :--- | :---: |
+| **Chief Financial Officer (CFO)** | 26% |
+| **Board** | 21% |
+| **Chief Executive Officer (CEO)** | 21% |
+| **General Counsel** | 9% |
+| **Other** | 7% |
+| **Internal Audit and Control** | 4% |
+| **Chief Strategy Officer** | 3% |
+| **Internal Audit** | 2% |
+| **Treasury** | 2% |
+| **Internal Control** | 2% |
+| **Legal** | 2% |
+| **Chief Sustainability Officer** | 1% |
+| **Chief Operating Officer (COO)** | 1% |
+
+- ERM profiles show strong access to governance: **25% report to the Board**, **24% to the CEO**, and **17% to the CFO**.
+- Insurance Managers report primarily into financial structures: **44% report to the CFO**, **12% to the CEO**, and **9% to the Board**.
+
+---
+
+## How Do Risk Managers See Traditional and Emerging Risks in the New World of Constant Crisis?
+
+Crises are no longer shocks; organisations have learned to adapt and build resilience. Emerging risks are expanding rapidly and becoming increasingly interconnected.
+
+### Top 5 Critical Threats to the Organisation Within the Next 12 Months
+
+| Rank | 2020 | 2022 | 2024 |
+| :---: | :--- | :--- | :--- |
+| **1** | Cyber threats | Cyber threats | **Cyber-attacks** |
+| **2** | Uncertain economic growth | Supply chain / distribution failure | **Geopolitical uncertainties** |
+| **3** | Availability of key skills | Geopolitical uncertainties | **Uncertain economic environment** |
+| **4** | Data fraud or theft | Uncertain economic growth | **Talent management** |
+| **5** | Over-regulation | Over-regulation | **Data breach** |
+
+#### Industry & Sector Variances:
+- **Financial Services:** Named *Regulation* in its top 5, replacing talent management.
+- **Industry:** More concerned by *Supply chain or distribution failure* than data breaches.
+- **Public Sector:** Highlights *HR risks* ahead of uncertain economic growth.
+- **Services:** Closely mirrors global results; generative AI use, regulation, and fraud/theft tied for 5th place.
+
+> **Continental Perspectives on Short-Term Risks:**  
+> - **Africa:** Highlights use of technologies and generative AI as greater concerns than geopolitical or talent worries.  
+> - **Asia:** Highlights supply chain failure and changing customer behaviour within the top 5.
+
+---
+
+### Top 15 Critical Threats to the Organisation’s Growth Prospects Within the Next 12 Months
+
+![Conceptual diagram categorising top 15 risks into Technological, Environmental, Economic & Political, and Social risks]
+
+1. **Cyber-attacks**
+2. **Geopolitical uncertainty**
+3. **Uncertain economic environment**
+4. **Talent management** *(New in Top 15)*
+5. **Data breach** *(New in Top 15)*
+6. **Regulation**
+7. **Inflation** *(New in Top 15)*
+8. **HR risk (culture, values, psychosocial risk, well-being)** *(New in Top 15)*
+9. **Supply chain disruption**
+10. **Fraud or theft**
+11. **Natural disaster**
+12. **Failure to innovate** *(New in Top 15)*
+13. **Changing customer behaviour**
+14. **Gen AI use** *(New in Top 15)*
+15. **Speed of technological change / Use of new technologies** *(Tied)*
+
+#### Risks dropping out of the Top 15 in 2024:
 - Increased societal pressure
 - Social instability
 - Pandemic risk / health crisis
@@ -759,1179 +651,707 @@ Additionally, the risk of use of new technologies is tied in 15th place with spe
 - Climate change
 - Environmental damage
 
-Companies are better prepared for various crises, drawing on their experience from the past five years of navigating multiple unforeseen risks.
+---
 
-### TOP 3 critical threats to the organisation’s growth prospects within the next 3 and 10 years
+### Top 3 Critical Threats to the Organisation’s Growth Prospects Within the Next 3 and 10 Years
 
-#### A complete change in the top 3 threats over a 3-year horizon since the last study.
+#### Top 3 Threats over a 3-Year Horizon
+1. **Regulation:** 32%
+2. **Geopolitical uncertainty:** 31%
+3. **Speed of technological change:** 30%
 
-**Top 3 risks within the next 3 years:**
-- Regulation: 32%
-- Geopolitical uncertainty: 31%
-- Speed of technological change: 30%
+#### Top 3 Threats over a 10-Year Horizon
+1. **Climate change adaptation:** 35%
+2. **Carbon neutrality transition:** 29%
+3. **Natural disaster:** 24%
 
-In 2022, the top 3 critical risks within the next three years were: changing customer behaviour; cyber threats; and uncertain economic growth. Over two years, the top concerns have drastically changed and two of these threats are now only observed among the short-term threats.
-
-Regulations have evolved and strengthened in recent years, forcing organisations to adapt and modify their way of working to ensure compliance. Compliance regulations for anti-money laundering, anti-bribery and corruption have been reinforced and large projects to adapt processes within organisations were set in motion. ESG regulations now require organisations to take a step forward with TCFD, CSRD, and Green Deal with even larger projects and the need to adapt business and/or strategic models.
-
-The speed of technological change, and the increased use of artificial intelligence and machine learning, raises significant financial, ethical, and legal questions. The growing dependence on these technologies creates vulnerabilities in the event of technological failure or cyber-attacks. The workforce is challenged to adapt while organisations must use technological advances to maintain their competitiveness.
-
-The current geopolitical uncertainty remains a source of concern over the short and mid-term horizons. The escalation of tensions among major powers, the increasing prevalence of armed conflict, and the persistence of terrorism pose major threats to international peace and security. They also pose risks to companies with potential threats to business operations and supply chains.
-
-#### A total focus on environmental concerns in the long term
-
-**Global risks ranked by severity over 10 years***
-![Bar chart showing global risks ranked by severity over 10 years.](image_global_risks_10_years.png)
-
-| Risk                               | Percentage | Category      |
-| :--------------------------------- | :--------- | :------------ |
-| Climate change adaptation          | 35%        |               |
-| Carbon neutrality transition       | 29%        |               |
-| Natural disaster                   | 24%        |               |
-| Extreme weather events             |            | Environnemental |
-| Critical change to Earth systems   |            | Environnemental |
-| Biodiversity loss and ecosystem collapse |            | Environnemental |
-| Natural resource shortages         |            | Environnemental |
-| Misinformation and disinformation  |            | Technological |
-| Adverse outcomes of AI technologies |            | Technological |
-| Involuntary migration              |            | Societal      |
-| Cyber insecurity                   |            | Societal      |
-| Societal polarisation              |            | Societal      |
-| Pollution                          |            | Environnemental |
-
-In 2020 and 2022, over a long-term horizon of 10 years, climate change and natural disasters were already in the top 3 concerns, alongside changing customer behaviours. This year, only ESG matters are a top 3 focus with carbon neutrality entering the top 3.
-
-The global risk report from 2024 confirms that the main concerns for the next decade are primarily environmental.
-
-Organizations need to invest in these areas and adapt their business and strategic models towards environmental and low-carbon transitions. Risk Managers need to position themselves at a strategic level and work with subject-matter experts to ensure that their organisations have an appropriate strategy to meet stakeholders’ expectations: a sustainable strategy and model, that is socially and environmentally respectful, maintaining the viability of the organisation in a constrained environment.
-
-Climate change adaptation is ranked as a medium-term concern for Africa and North America, and environmental damages and natural disasters are respectively in the top 3 threats within the next three years for Asia and South America. All continents except Asia consider two of their three top risks in the long term to be related to the environment either through climate-change adaptation or the carbon-neutrality transition.
-
-This raises questions about the prioritisation of risks. Operational risks and short-term concerns such as regulatory compliance and supply-chain disruption tend to be more thoroughly considered and managed. Work to accompany organisations with the strategic threats and climate emergency pose significant challenges that are hard to tackle and have been perceived as a threat in the long term for the past five years.
-
-*Source: World Economic Forum Global Risks Perception Survey 2023-2024
-
-### Q26. Select one (or more) risks, if any, that is as of today not adequately treated - Top 10
-
-**Top 10 risks considered as not adequately treated**
-![Bar chart showing top 10 risks not adequately treated.](image_risks_not_adequately_treated.png)
-
-| Risk                           | Percentage |
-| :----------------------------- | :--------- |
-| Artificial Intelligence use    | 43%        |
-| Geopolitical uncertainty       | 27%        |
-| Climate-change adaptation      | 22%        |
-| Talent management              | 21%        |
-| Speed of technological change  | 17%        |
-| Carbon neutrality transition   | 16%        |
-| HR risks                       | 16%        |
-| Regulation                     | 16%        |
-| Use of new technologies        | 16%        |
-| Cyber-attacks                  | 15%        |
-
-Nevertheless, in 2024, climate-change adaptation ranks as the third most inadequately addressed risk, with 22% of respondents expressing concern, down from its top position with 28% of responses in 2022. Generative AI use, an emerging and rapidly advancing risk, has risen up the list of concerns organisations try to cautiously integrate. Cyber-attacks, which were the second highest risk lacking consideration in 2022, have dropped to 10th position with 15% of responses in 2024. Geopolitical uncertainties have risen to second from third place.
-
-There is a need for the Risk Manager, who traditionally focused on operational and short-term risks, to take the lead in guiding the company on the sustainability of its strategic and business models. This involves laying the groundwork for medium and long-term risk management, ensuring the company’s resilience and adaptability in the face of evolving challenges.
+*Comparison with WEF Global Risks Perception Survey 2023–2024 (Severity over 10 years):*
+1. Extreme weather events
+2. Critical change to Earth systems
+3. Biodiversity loss and ecosystem collapse
+4. Natural resource shortages
+5. Misinformation and disinformation
+6. Adverse outcomes of AI technologies
+7. Involuntary migration
+8. Cyber insecurity
+9. Societal polarisation
+10. Pollution
 
 ---
 
-## Risk Manager: Presence, Strategy and Maturity
+### Top 10 Risks Considered as Not Adequately Treated
 
-### Broadening Risk Manager engagement across the organisation
+*(Q26: Select one (or more) risks, if any, that is as of today not adequately treated)*
+
+1. **Artificial Intelligence use:** 43%
+2. **Geopolitical uncertainty:** 27%
+3. **Climate-change adaptation:** 22%
+4. **Talent management:** 21%
+5. **Speed of technological change:** 17%
+6. **Carbon neutrality transition:** 16%
+7. **HR risks:** 16%
+8. **Regulation:** 16%
+9. **Use of new technologies:** 16%
+10. **Cyber-attacks:** 15%
+
+---
+
+## Part I: Risk Manager: Presence, Strategy and Maturity
+
+### Broadening Risk Manager Engagement Across the Organisation
 
 Overall, Risk Managers extend their influence across the organisation by engaging more deeply in various risk maps.
 
-**Types of risk map performed by the Risk Manager combined Q23. What kind of risk map does your organisation perfom and how are you involved? with their level of involvement**
-![Stacked bar chart showing involvement in various risk maps.](image_risk_map_involvement.png)
+#### Types of risk map performed by the Risk Manager combined with their level of involvement (Q23)
 
-The chart "Types of risk map performed by the Risk Manager... with their level of involvement" illustrates the distribution of responsibility across different risk map types. Key observations include:
-- **Global (major risks)** and **Strategic** risk maps show the highest percentage of "I am fully responsible" (34% and 32% respectively).
-- For most risk maps, a significant portion of Risk Managers "coordinate and provide the methodology" (e.g., 54% for Global, 44% for Strategic, 37% for ESG).
-- "Not done within my company" is relatively low for most risk maps, but slightly higher for "Specific to carbon neutrality transition" (17%) and "Legal" (15%).
-- "Done by an independent 3rd party" is consistently low across all categories.
+![Stacked bar chart showing Risk Manager involvement across types of risk maps]
 
-The global risk map and the strategic risk map are those for which Risk Managers are most frequently fully responsible.
-
-For all risk mapping exercises, about one third of respondents validate or coordinate and provide the methodology, and 12% on average are fully responsible for other risk maps as well.
-
-All types of risk maps are at least performed by 75% of respondents’ organisations (70% for the net-zero transition risk map).
-
-- In North America, about half of respondents’ organisations do not perform a series of risk maps: net-zero transition (61%), anti-corruption (58%), supply-chain (48%), ESG (47%), and legal (43%).
-- In Oceania, 45% are not performing any ESG and legal risk maps.
-- In South America, about 45% are not performing any anti-corruption, net-zero transition or supply-chain risk maps.
-
-Almost half of Risk Managers are either a permanent member of or are invited to and participate in Board and Executive Committees (respectively 46% and 45%).
-
-**Involvement of the risk management function in the organisation’s committees Q19. Does the risk management function takes part in the following committees?**
-![Stacked bar chart showing involvement in various organizational committees.](image_committee_involvement.png)
-
-The chart "Involvement of the risk management function in the organisation’s committees" details the level of participation across different committees. Key findings include:
-- **Risk Committee (dedicated)** and **Risk Committee (included in the Audit committee)** show the highest direct involvement, with significant percentages for "I chair this committee" and "I am a permanent member of the committee".
-- For **Board** and **Executive Committee**, "I am invited" is the largest category, indicating advisory or periodic participation.
-- **Audit Committee** also shows strong involvement, with a high percentage for "I am a permanent member of the committee".
-- Committees like **Investments Committee**, **New Products / Innovation Committee**, **ESG Committee**, and **IT Security Committee** have a higher proportion of "I am not invited" or "No such committee in the organisation", suggesting less universal involvement or dedicated structures.
-
-The participation in Board and Executive Committees rose from respectively 32% and 34% in 2022, demonstrating the increasing importance of the risk management function being at the core decision centre. Risk Managers’ presence in strategic committees (newly suggested in answers) has margin of improvement.
-
-Risk Managers’ participation in the audit committee ranks 3rd with 43% either a permanent member or invited and participate on an ad-hoc basis.
-
-Additionally, two third of the respondents’ organisations hold a Risk committee (either dedicated or included in audit committee), with the highest direct involvement either by chairing the committee or by being a permanent member.
-
-Overall, collaboration between Risk Managers and the first and second lines of defence remain stable compared with 2022.
-
-Some 40% of Risk Managers have close, regular collaboration with the first line of defence; 42% with the second line of defence; and 35% with the third line of defence. Just 6% of Risk Managers have first line functions within their scope; 17% for the second line; and 10% for the third line.
-
-![Radar chart illustrating the levels of interaction between Risk Management and various functions across the first, second, and third lines of defense.](image_lines_of_defense_collaboration.png)
-
-The radar chart above shows the lines of defence by levels of interactions:
-
-- **First rank partners** – with whom the risk management function has a regular or close relationship, based on a clear mandate (e.g., IT, Information Security, Ethics Compliance, Crisis Management, Human Resources, Regulations, Operations, CSR Finance, Quality, Safety Security, Strategic Planning business, Sourcing / Procurement, Strategy).
-- **Second rank partners** – with whom the risk management function has a more distant relationship and occasional collaboration (e.g., Internal control, Internal Audit).
-- **Third rank partners** – with whom relationships can be improved, as there is little or no relationship or involvement (e.g., Mergers & Acquisitions, Investments and investor relations, External Audit, Other 3rd parties assurance entities, Legal, Treasury).
-
-The functions from the first line where the relationship or involvement is the most limited are with Merger and Acquisitions and Investments and Investor Relations. The most significant increase in collaboration with the first line relates to ESG, with close collaboration rising by 12 points, following the same trend as two years ago (also an increase of 12 points).
-
-### Substantially increased focus on corporate strategy
-
-Almost all - **91%** - of Risk Managers are being involved in corporate strategy (fully, mostly, or partially), stable compared with 2022.
-
-**Q16. What is your focus within the Corporate Strategy?**
-
-More than half of African Risk Managers are fully integrated compared with 23% globally.
-
-**Focus within the corporate strategy**
-![Bar chart showing Risk Managers' focus within corporate strategy.](image_corporate_strategy_focus.png)
-
-| Focus Area                                    | Percentage |
-| :-------------------------------------------- | :--------- |
-| Strategic risk response                       | 70%        |
-| Sustainability risks and impacts              | 53%        |
-| Disruption risks                              | 50%        |
-| Opportunities related to strategic risks      | 47%        |
-| Geopolitical risks and related business impacts | 44%        |
-| Business impact analysis                      | 38%        |
-| Scenario modelling on the business plan       | 37%        |
-| Digital transformation                        | 32%        |
-| Artificial Intelligence impacts               | 20%        |
-| Carbon neutrality transition                  | 18%        |
-| Other                                         | 4%         |
-
-Analysing the focus of Risk Managers within the corporate strategy, there are notable changes and emerging priorities in 2024:
-
-- **70%** of respondents work on strategic risk response, a 9% points increase from 2022;
-- **53%** analyse sustainability risks and impacts, up from 40% in 2022;
-- The discovery of opportunities related to strategic risks increases from 28% in 2022 to 47%.
-
-This suggests there is better alignment of risk management with the corporate strategy and the interest for strategy functions to work with a fully embedded risk-based approach to reveal opportunity and adapt business strategy.
-
-- The digital stakes are another main focus with **32%** of Risk Managers working on digital transformation (compared with 16% in 2022), and **20%** on Artificial Intelligence impacts.
+| Risk Map Type / Level | Fully Responsible | Contribute | Validate | Informed | Not Done |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Global / Strategic Risk Map** | 54% | 33% | 7% | 3% | 3% |
+| **Cyber Risk Map** | 16% | 44% | 17% | 12% | 11% |
+| **ESG Risk Map** | 15% | 30% | 12% | 17% | 26% |
+| **Supply Chain Risk Map** | 10% | 37% | 23% | 20% | 10% |
+| **Anti-Corruption Risk Map** | 11% | 22% | 14% | 22% | 31% |
+| **Carbon Neutrality Risk Map** | 7% | 25% | 10% | 23% | 35% |
+| **Legal Risk Map** | 10% | 21% | 15% | 25% | 29% |
 
 ---
 
-he Artificial Intelligence impact (newly
-suggested in 2024).
+|     |     | 17% |     |     |     |
+|       | 11% |     |     | 10% |     | 8%  |     | 10% |
+0
+Anti-corruption Cybersecurity /  ESG Global  Legal Security Specific  Strategic Supply chain /
+|     | IT / Data  |     | (major risks) |     |     | to carbon  |     | Purchasing |
+| --- | ---------- | --- | ------------- | --- | --- | ---------- | --- | ---------- |
+neutrality
+transition
+|     |     | I am fully responsible | I validate                       | I coordinate and provide the methodology |     |                            |     |     |
+| --- | --- | ---------------------- | -------------------------------- | ---------------------------------------- | --- | -------------------------- | --- | --- |
+|     |     | I am informed          | Done by an independent 3rd party |                                          |     | Not done within my company |     |     |
+The global risk map and the strategic risk map are those for which Risk Managers are most frequently fully
+responsible.
+For all risk mapping exercises, about one third of respondents validate or coordinate and provide the
+methodology, and 12% on average are fully responsible for other risk maps as well.
+All types of risk maps are at least performed by 75% of respondents’ organisations (70% for the net-zero
+transition risk map).
+In North America, about half of respondents’ organisations do not perform a series of risk
+maps: net-zero transition (61%), anti-corruption (58%), supply-chain (48%), ESG (47%), and
+legal (43%).
+In Oceania, 45% are not performing any ESG and legal risk maps.
+In South America, about 45% are not performing any anti-corruption, net-zero transition
+or supply-chain risk maps.
+ 36 | FERMA Global Risk Manager Survey Report - 2024
 
+Almost half of Risk Managers are either a permanent member of or are invited to and participate in
+Board and Executive Committees (respectively 46% and 45%).
+Involvement of the risk management function in the organisation’s committees
+Q19. Does the risk management function takes part in the following committees?
+100
+| 7%  | 13% |     |     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+22%
+|     |     |     |     | 26% |     | 28% |     |     | 22% |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |     | 31% |     |     | 32% |     | 31% |     |     |
+| 80  |     |     | 36% |     |     |     |     |     |     |
+38%
+32%
+|     |     | 6%  |     |     |     |     |     | 26% |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 60  |     | 5%  |     |     |     |     |     |     |     |
+|     |     |     | 12% |     |     | 27% |     |     | 35% |
+| 8%  | 8%  | 13% |     | 44% |     |     | 35% |     |     |
+|     |     |     | 7%  |     | 37% |     |     | 8%  |     |
+| 40  |     |     |     |     |     | 12% |     |     |     |
+|     |     |     | 16% |     |     |     |     |     | 9%  |
+27%
+| 34% |     |     |     |     |     |     | 9%  | 28% |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     | 31% |     |     |     | 9%  |     |     |     |     |
+|     |     |     |     | 8%  |     | 18% |     |     | 17% |
+20
+14%
+|     |     |     | 24% | 10% | 12% |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     | 14% | 18% |     |     |     | 14% |     | 15% | 15% |
+| 12% |     |     |     | 10% | 9%  |     | 9%  |     |     |
+| 0   |     |     | 5%  |     |     |     |     |     |     |
+Board Executive  Risk  Risk Committee Investments  New  ESG  Strategic  Audit  IT Security
+Committee Committee  (included  Committee Products /  Committee Committee Committee Committee
+|     |                                  | (dedicated) | in the Audit                             |                  | Innovation  |                                       |     |     |     |
+| --- | -------------------------------- | ----------- | ---------------------------------------- | ---------------- | ----------- | ------------------------------------- | --- | --- | --- |
+|     |                                  |             | committee)                               |                  | Committee   |                                       |     |     |     |
+|     | I chair this committee           |             | I am a permanent member of the committee |                  |             | I am invited                          |     |     |     |
+|     | I have access to the information |             |                                          | I am not invited |             | No such committee in the organisation |     |     |     |
+The participation in Board and Executive Committees rose from respectively 32% and 34% in 2022,
+demonstrating the increasing importance of the risk management function being at the core decision centre.
+Risk Managers’ presence in strategic committees (newly suggested in answers) has margin of improvement.
+Risk Managers’ participation in the audit committee ranks 3rd with 43% either a permanent member or
+invited and participate on an ad-hoc basis.
+Additionally, two third of the respondents’ organisations hold a Risk committee (either dedicated or included
+in audit committee), with the highest direct involvement either by chairing the committee or by being a
+permanent member.
+this icon found later in the report indicates the source of data
+comes from the corresponding graph
+FERMA Global Risk Manager Survey Report - 2024 | 37
+
+Overall, collaboration between Risk Managers and the first and second lines of defence remain
+stable compared with 2022.
+Some 40% of Risk Managers have close, regular collaboration with the first line of defence; 42% with the
+second line of defence; and 35% with the third line of defence. Just 6% of Risk Managers have first line
+functions within their scope; 17% for the second line; and 10% for the third line.
+Mergers &
+Acquisitions
+|     | e   |          |          |     |        | S   |      |     |
+| --- | --- | -------- | -------- | --- | ------ | --- | ---- | --- |
+|     | n c |          |          |     |        |     | e    |     |
+|     | e   |          |          |     |        |     | c    |     |
+|     | ef  |          |          |     |        |     | o    |     |
+|     | d   |          |          |     |        |     | n    |     |
+|     | of  |          |          |     |        |     | d    |     |
+|     |     | Strategy | Treasury |     | Safety |     |  lin |     |
+e
+|      | Sourcing /  |     |     |     | Security |         |     | e   |
+| ---- | ----------- | --- | --- | --- | -------- | ------- | --- | --- |
+| n    |             |     |     |     |          |         |     |  o  |
+| t li | Procurement |     |     |     |          | Quality |     | f d |
+s
+| Fi r |            |     |       | IT  |              |     |     | e   |
+| ---- | ---------- | --- | ----- | --- | ------------ | --- | --- | --- |
+|      | Strategic  |     | Legal |     | Information  |     |     | fe  |
+n
+|     | Planning |     |     |     | Security | Ethics     |     | c   |
+| --- | -------- | --- | --- | --- | -------- | ---------- | --- | --- |
+|     | business |     |     |     |          | Compliance |     | e   |
+Operations
+|     | Investments and    |     |     |     | Crisis     |     |     |     |
+| --- | ------------------ | --- | --- | --- | ---------- | --- | --- | --- |
+|     | investor relations |     | CSR |     | Management |     |     |     |
+Finance
+Internal control
+Human
+Internal Audit
+Resources
+Regulations
+External
+Audit
+Other 3rd parties
+ assurance entities
+ecnefed fo enil drihT
+Relations with comparison
+Evolution since 2022
+New
+The radar above shows the lines of defence by levels of interactions:
+  First rank partners – with whom the risk management function has a regular or close relationship,
+based on a clear mandate
+  Second rank partners – with whom the risk management function has a more distant relationship
+and occasional collaboration
+  Third rank partners – with whom relationships can be improved, as there is little or no relationship or
+involvement
+The functions from the first line where the relationship or involvement is the most limited are with Merger and
+Acquisitions and Investments and Investor Relations. The most significant increase in collaboration with the
+first line relates to ESG, with close collaboration rising by 12 points, following the same trend as two years
+ago (also an increase of 12 points).
+ 38 | FERMA Global Risk Manager Survey Report - 2024
+
+Substantially increased focus
+on corporate strategy
+Almost all - 91% - of Risk Managers are being involved in corporate strategy (fully, mostly, or
+partially), stable compared with 2022.
+Q16. What is your focus within the Corporate Strategy?
+More than half of African Risk Managers are fully integrated compared with 23% globally.
+Focus within the corporate strategy
+Strategic risk response 70%
+Sustainability risks and impacts 53%
+Disruption risks 50%
+Opportunities related to strategic risks 47%
+Geopolitical risks and related business impacts 44%
+Business impact analysis 38%
+Scenario modelling on the business plan 37%
+Digital transformation 32%
+Artificial Intelligence impacts 20%
+Carbon neutrality transition 18%
+Other 4%
+Analysing the focus of Risk Managers within the corporate strategy, there are notable changes and
+emerging priorities in 2024:
+• 70% of respondents work on strategic risk response, a 9% points increase from 2022;
+• 53% analyse sustainability risks and impacts, up from 40% in 2022;
+• The discovery of opportunities related to strategic risks increases from 28% in 2022 to 47%.
+This suggests there is better alignment of risk management with the corporate strategy and the interest
+for strategy functions to work with a fully embedded risk-based approach to reveal opportunity and
+adapt business strategy.
+• The digital stakes are another main focus with 32% of Risk Managers working on digital
+transformation (compared with 16% in 2022), and 20% on the Artificial Intelligence impact (newly
+suggested in 2024).
 Regarding the contributions to strategic risks response, 50% of Risk Managers are working on disruption
 risks, 44% consider geopolitical risks and related opportunities, and 37% are performing scenario
 testing on the business plan.
-
 This ranking can vary significantly depending on the respondents’ continents:
 • In South America opportunities related to strategic risks rank first;
 • They are ranked in second position in Africa;
 • In Asia geopolitical risk and related business impacts rank second.
+FERMA Global Risk Manager Survey Report - 2024 | 39
 
-FERMA Global Risk Manager Survey Report - 2024  |  39
-
-The main area where Risk Managers will invest in the following two years and the next three to
+The main area where Risk Managers will invest in the following two years and the next three to
 five years is the integration between Risk Management and Sustainability/ESG to support the
 company’s sustainability goals (refer to part II).
-
 Q27. Choose the 3 main areas of your investment for the following two year and the next 3 to 5 years
-
 Three main areas of investment for the following
 2 years and the next 3 to 5 years
-
-Integration between
+Integration between 46%
 Risk Management
-and Sustainability / ESG
-
-Risk Management tools
-
-Risk culture
-
-Risk governance
-
-Risk mitigation and resilience
-
-Risk assessment
-
-Risk appetite
-
-Risk monitoring
-
-Risk reporting
-
-Risk-based planning to identify
-resource requirements
-
-36%
-
-46%
-
+and Sustainability / ESG 36%
 45%
-
-42%
-
-42%
-
-41%
-
+Risk Management tools
 31%
-
+42%
+Risk culture
 30%
-
-30%
-
-37%
-
-36%
-
-35%
-
-33%
-
-33%
-
-Next 1-2 years
-
-Next 3-5 years
-
+42%
+Risk governance
 20%
-
+41%
+Risk mitigation and resilience
+30%
+37%
+Risk assessment
 13%
-
+36%
+Risk appetite
 17%
-
+35%
+Risk monitoring
 19%
-
+33%
+Risk reporting
 15%
-
-22%
-
+Risk-based planning to identify 22% Next 1-2 years
+resource requirements 33% Next 3-5 years
 Risk management tools and risk culture are also both focuses on the two lines of horizon.
 It demonstrates the will of risk management function to use new technologies, tools and data to improve
- its efficiency, and its fundamental role in strengthening the risk culture in day-to-day operations.
-
+its efficiency, and its fundamental role in strengthening the risk culture in day-to-day operations.
 Risk-based planning to identify resource requirements is the least pressing consideration for the
 next 1 to 2 years, but is the second most important for the next 3 to 5 years. In the immediate term,
 organisations are likely focusing on building resilience capabilities, aligning stakeholders in understanding
 existing and emerging risks. As organisations look towards the medium to long term, risk-based planning
 becomes a critical consideration to allow organisations to align their resources with their strategic
 objectives and risk appetite.
+40 | FERMA Global Risk Manager Survey Report - 2024
 
-  40  |  FERMA Global Risk Manager Survey Report - 2024
-
-•  Respondents from North America exhibit a significant difference for the two timelines:
+• Respondents from North America exhibit a significant difference for the two timelines:
 integration of Risk Management and Sustainability / ESG is the least important area
 of investment for the next 2 years but the major one on a 3 to 5 years horizon.
 In the short-term the focus is on risk mitigation and resilience.
-
-•  Oceania seeks to invest in risk appetite and assessment in the short-term, rather
+• Oceania seeks to invest in risk appetite and assessment in the short-term, rather
 than on integrating ERM and ESG (second to last), and focuses on risk culture at
 a medium-term horizon.
-
-•  South America also is looking at risk assessment and monitoring over the short-term,
+• South America also is looking at risk assessment and monitoring over the short-term,
 with integration of ERM and ESG being third to last for the near future but the main
 priority over the next 3 to 5 years.
+FERMA Global Risk Manager Survey Report - 2024 | 41
 
-FERMA Global Risk Manager Survey Report - 2024  |  41
-
-The maturity of the Enterprise
+The maturity of the Enterprise
 Risk Management model
-
 This year’s survey reveals the level of maturity in managing basic risk management activities.
-
 Half of respondents’ organisations have the highest maturity score for their risk assessment
 approach. They conduct an annual comprehensive risk assessment, including identification of
 emerging risks, and with specific monitoring of key risks.
-
-Q21. Choose the statement that best describes organisation’s approach to risk assessment:
-Choose the statement that best describes the organisation’s approach to risk assessment
-
+CQh2o1o. sCeh othoes es ttahtee msteantetm theantt btheastt bdeesstc driebsecsr itbhees o orrggaannisisaattiioonn’’ss aapppprrooaacchh ttoo rriisskk aasssseessssmmeenntt:
 1. Annual comprehensive risk
 assessment, specific monitoring
 of key risk, identification of
 emerging risks
-
 50%
-
-5. No structured risk
-assessment processes in place
-or limited risk assessment
+5. No structured risk 2. Annual comprehensive
+assessment processes in place risk assessment and specific
+or limited risk assessment monitoring of key risks
 performed
-
-2. Annual comprehensive
-risk assessment and specific
-monitoring of key risks
-
-7%
-
 16%
-
-15%
-
-11%
-
-4. Periodic comprehensive risk
-assessment performed (with
+7%
+15% 11%
+4. Periodic comprehensive risk 3. Annual comprehensive risk
+assessment performed (with assessment performed
 less than yearly frequency)
-
-3. Annual comprehensive risk
-assessment performed
-
 In Africa, North America, and Oceania, conducting periodic comprehensive risk
 assessments emerges as the second most commonly cited approach by respondents,
 which is the next to bottom level of maturity. In South America, 33% of respondents
 declare having no structured risk assessment process in place or only a limited one.
+42 | FERMA Global Risk Manager Survey Report - 2024
 
-  42  |  FERMA Global Risk Manager Survey Report - 2024
-
-Room for improvement in evaluating risks, however, only 11% do not have any quantitative
+Room for improvement in evaluating risks, however, only 11% do not have any quantitative
 approaches.
-
 Some 40% of respondents indicate that their approach to risk assessment includes both qualitative and
 quantitative components, with room for improvement in correlating risks, quantifying a better proportion of
 them, and performing deep-dive quantification for key risks.
-
-Q22. Choose the statement that best reﬂects the organisation’s approach to risk evaluation:
-
+Q22. Choose the statement that best reflects the organisation’s approach to risk evaluation:
 Choose the statement that best reflects the organisation’s approach to risk evaluation
-
 1. All risks are quantified and correlations
 among risks are considered
-
-5. No quantitative
-approaches are in place
-
 20%
-
-12%
-
+5. No quantitative 2. All risks are quantified
+approaches are in place
 15%
-
-2. All risks are quantified
-
+12%
 14%
-
 40%
-
-4. Qualitative and quantitative
-evaluation metrics are used within
+4. Qualitative and quantitative 3. Quantitative deep-dives are
+evaluation metrics are used within performed for key risks
 the risk assessment process
+FERMA Global Risk Manager Survey Report - 2024 | 43
 
-3. Quantitative deep-dives are
-performed for key risks
-
-FERMA Global Risk Manager Survey Report - 2024  |  43
-
-Overall, risk improvement actions are defined and periodically monitored for top risks
+Overall, risk improvement actions are defined and periodically monitored for top risks
 (corresponding to the three first maturity scores, and totalling 90%).
-
 Only 27% of respondents define actions to address emerging risks aimed at increasing the company’s long-
 term resilience.
-
-Q24. Choose the statement that best describes organisation’s approach to risk improvement actions:
-
 Choose the statement that best describes the organisation’s
+Q24. Choose the statement that best describes organisation’s approach to risk improvement actions:
 approach to risk improvement actions
-
 1. Existing risk control and mitigations mapped within annual risk assessment, additional
 actions identified for top risks, dedicated cost-benefit analysis performed, periodic
 monitoring of their implementation, actions to address emerging risks to increase company’s
 long-term resilience proactively defined
-
-5. No dedicated risk control
-and mitigations mapped/
-evaluated within the risk
-assessment activity
-
 27%
-
-5%
-
-5%
-
+5. No dedicated risk control 2. Existing risk control and mitigations
+and mitigations mapped/ mapped within annual risk assessment,
+evaluated within the risk additional actions identified for top
+assessment activity risks, dedicated cost-benefit analysis
 21%
-
-41%
-
-2. Existing risk control and mitigations
-mapped within annual risk assessment,
-additional actions identified for top
-risks, dedicated cost-benefit analysis
 performed, periodic monitoring of their
+5%
 implementation
+5%
+41%
+4. Existing risk control and mitigations 3. Existing risk control and mitigations evaluated within
+evaluated however no additional annual risk assessment, additional actions identified for
+improvement actions identified top risks, periodic monitoring of their implementation
+44 | FERMA Global Risk Manager Survey Report - 2024
 
-4. Existing risk control and mitigations
-evaluated however no additional
-improvement actions identified
-
-3. Existing risk control and mitigations evaluated within
-annual risk assessment, additional actions identified for
-top risks, periodic monitoring of their implementation
-
-  44  |  FERMA Global Risk Manager Survey Report - 2024
-
-The assessment of companies’ maturity in leveraging data to monitor risks reveals the following:
-
-1.  Almost a quarter, 21%, of organisations are mature and use Key Risk Indicators (KRI) based on both
-
+The assessment of companies’ maturity in leveraging data to monitor risks reveals the following:
+1. A lmost a quarter, 21%, of organisations are mature and use Key Risk Indicators (KRI) based on both
 internal and external data to monitor relevant risks and dedicated tools / dashboard;
-
-2.  But some 23% are less mature, relying solely on internal data for KRI to monitor relevant risks and
-
+2. B ut some 23% are less mature, relying solely on internal data for KRI to monitor relevant risks and
 dedicated tools / dashboards;
-
-3.  Another quarter, 25%, use KRI to monitor top risks only.
-
-Choose the statement that best describes the organisation’s approach to risk
-Q55. Choose the statement that best describes organisation’s approach to risk monitoring
-monitoring through leveraging internal and external data
-through leveraging internal and external data:
-
+3. Another quarter, 25%, use KRI to monitor top risks only.
+Q55. CChhoooossee tthhee ssttaatteemmeennt tt hthaat tb beests td desecsrcibriebse so rtghaen oisragtaionnis’sa atipopnr’so aacphp troo aricshk tmo ornisitko ring
+monitothrrinogu gthh rloeuvegrha gleinvge riangteinrnga iln atendrn eaxl taenrnda el xdtaetran:al data
 1. Key Risk Indicators based on internal and external data to monitor
 relevant risks and dedicated tools/ real time dashboards
-
-5. No specific risk monitoring
-through leveraging internal
-data (e.g. no Key Risk
-Indicators defined)
-
-14%
-
-17%
-
 21%
-
+5. No specific risk monitoring 2. Key Risk Indicators based on
+through leveraging internal internal data to monitor relevant
+data (e.g. no Key Risk risks and dedicated tools/
 23%
-
-2. Key Risk Indicators based on
-internal data to monitor relevant
-risks and dedicated tools/
-dashboards
-
+Indicators defined) 14% dashboards
+17%
 25%
-
-4. Limited risk monitoring through leveraging
-internal data (e.g. Key Risk Indicators)
-
-3. Key Risk Indicators to
-monitor top risks
-
+4. Limited risk monitoring through leveraging 3. Key Risk Indicators to
+internal data (e.g. Key Risk Indicators) monitor top risks
 In North America, 22% of respondents use KRI to monitor top risks only, and 44% of them
 declare the lowest levels of maturity:
 • Some 22% state having limited risk monitoring through leveraging internal data;
 • Another 22% perform no specific monitoring by leveraging internal data.
 In Oceania, 40% respondents state being very mature and use KRI based on both internal
 and external data to monitor relevant risks as well as using dedicated tools / dashboards.
+FERMA Global Risk Manager Survey Report - 2024 | 45
 
-FERMA Global Risk Manager Survey Report - 2024  |  45
-
-Risk appetite framework is mature
-
+Risk appetite framework is mature
 More than a third, 35%, of Risk Managers say that their organisations have a comprehensive risk appetite
 framework in place with quantitative and qualitative indicators. However, 13% of respondents say that no
 risk appetite has been defined across their organisation (stable compared with 2022).
-
-Q17. Choose the statement that best reﬂects organisation’s approach to risk appetite
+Q17. Choose the statement that best reflects organisation’s approach to risk appetite
 Choose the statement that best reflects the organisation’s approach to risk appetite
-
 1. The organisation has defined a comprehensive risk appetite framework
 measured through quantitative and qualitative indicators
-
 35%
-
-5. No definition of risk appetite
-
-2. Risk appetite is defined in
+5. No definition of risk appetite 2. Risk appetite is defined in
 financial terms
-
-13%
-
-12%
-
 16%
-
+13%
+12%
 23%
+4. Risk appetite is captured through 3. Risk appetite is captured through qualitative
+a high-level qualitative statement statements developed by risk category
+46 | FERMA Global Risk Manager Survey Report - 2024
 
-4. Risk appetite is captured through
-a high-level qualitative statement
-
-3. Risk appetite is captured through qualitative
-statements developed by risk category
-
-  46  |  FERMA Global Risk Manager Survey Report - 2024
-
-Positive trends in risk culture enhancement initiatives
-
+Positive trends in risk culture enhancement initiatives
 Risk culture is embedded within processes, with structured engagement, and monitoring initiatives for
 26% of respondents. However, Risk Managers lack the strong tone at the top to support the risk culture in
 reaching the highest level of maturity statement.
-
 Choose the statement that best describes risk culture enhancement initiatives
-Q18. Choose the statement that best reﬂects organisation’s approach to risk appetite
+Q18. Choose the statement that best reflects organisation’s approach to risk appetite
 within the organisation
-
 1. There is a strong tone at the top supporting the risk culture,
 which is embedded within the organisation's overall processes
-
-6. High variability of application
-of risk management principles
-across the organisation based
+22%
+6. High variability of application 2. Risk culture is embedded within the
+of risk management principles organisation's processes, structured
+26%
+across the organisation based engagement and monitoring initiatives
 on each manager/ employee’s
 awareness regarding risks
-
-5. Risk management principles
-are covered only through
-mandatory compliance training
-and communications
-
-22%
-
 11%
-
 8%
-
-2. Risk culture is embedded within the
-organisation's processes, structured
-engagement and monitoring initiatives
-
-26%
-
 15%
-
+5. Risk management principles 3. Periodic risk management training is
+are covered only through organised/ available to all employees
 19%
-
-3. Periodic risk management training is
-organised/ available to all employees
-and periodic communication on key risk
-topics is shared
-
+mandatory compliance training and periodic communication on key risk
+and communications topics is shared
 4. Risk culture is mainly enhanced through
 annual risk assessment campaigns
+FERMA Global Risk Manager Survey Report - 2024 | 47
 
-FERMA Global Risk Manager Survey Report - 2024  |  47
+48 | FERMA Global Risk Manager Survey Report - 2024
 
-  48  |  FERMA Global Risk Manager Survey Report - 2024
-
-The Risk Manager’s
+The Risk Manager’s
 contribution to
 sustainability
+FFEERRMMAA GGlloobbaall RRiisskk MMaannaaggeerr SSuurrvveeyy RReeppoorrtt -- 22002244 || 4499
 
-FERMA Global Risk Manager Survey Report - 2024  |  49
-FERMA Global Risk Manager Survey Report - 2024  |  49
-
-Risk Managers are playing a growing role in
+Risk Managers are playing a growing role in
 managing ESG risks within their organisations
-
 More than half, 57%, of Risk Managers are involved in assessing ESG-related risks, a 22% points increase
 since 2022.
-
 Risk Managers are more involved in ESG-related risks in France, Italy and Turkey where
 more than 70% of the respondents are involved in assessing them.
-
 Quantifying ESG-related risks remains a challenge, despite progressively better
-
 integration between risk management and ESG teams
-
 What challenges have you faced (or anticipate facing) in integrating ESG into the ERM process?
-
 Challenges faced or anticipated in integrating ESG into the ERM process
-
-Difficulty quantifying sustainability risks
-
-58%
-
+Difficulty quantifying sustainability risks 58%
 Limited data to support ESG analysis/
-monitoring and therefore quantify risk impact
-
-Limited knowledge of sustainability
-risks within ERM team
-
 49%
-
+monitoring and therefore quantify risk impact
+Limited knowledge of sustainability
 31%
-
-Difficulty qualifying sustainability risks
-
-27%
-
-Management of different time horizons
-
-26%
-
+risks within ERM team
+Difficulty qualifying sustainability risks 27%
+Management of different time horizons 26%
 Lack of budget to develop specific
+17%
 approach for these risks
 Limited collaboration between Sustainability /
-CSR / ESG and ERM specialists
-
-17%
-
 14%
-
-Omission of opportunities related to ESG
-
-12%
-
-Omission of strategic ESG risks
-
-10%
-
+CSR / ESG and ERM specialists
+Omission of opportunities related to ESG 12%
+Omission of strategic ESG risks 10%
 Lack of support from Board
-and Top Management
-
 8%
-
-None of the above
-
-3%
-
-Other
-
-2%
-
+and Top Management
+None of the above 3%
+Other 2%
 Difficulty quantifying sustainability risks remains the main challenge in 2024, and this is directly related
 to the next two most highly ranked challenges. This is a complex process that requires grappling with the
 limited availability of data to enable precise quantification of ESG-related risks, such as internal
 data about the company’s activities and resources. Additionally, quantifying risks requires knowledge of
 sustainability risks within ERM team that is still lacking some organisations.
+50 | FERMA Global Risk Manager Survey Report - 2024
 
-  50  |  FERMA Global Risk Manager Survey Report - 2024
-
-However, significant progress has been made in defining and qualifying sustainability risks. This challenge
+However, significant progress has been made in defining and qualifying sustainability risks. This challenge
 has moved downwards from being the second biggest challenge to the fourth (-7% points) since 2022. This
 improvement aligns with the increased collaboration between Risk Managers and ESG teams: the challenge
 of limited collaboration between Sustainability and ERM teams decreased by 5% points.
-
 Moreover, 44% of respondents have a regular, close collaboration based on a clear mandate (+12% points)
 and 10% have sustainability under their responsibility (+4% points). This trend indicates a convergence
 between the ERM and sustainability approaches.
-
 Risk Manager’s interactions with CSR / ESG / Sustainable development
-
+10%
 Under the Risk Manager’s responsibility
-(now or for an extensive period of time)
-
+(now or for an extensive period of time) 6%
+5%
+44%
 Regular, close collaboration
+32%
 based on a clear mandate
-
-Occasionnal collaboration
-
-No relationship/involvement
-
-10%
-
-6%
-
-5%
-
-44%
-
-32%
-
 20%
-
 32%
-
-44%
-
+Occasionnal collaboration 44%
 46%
-
 14%
-
-18%
-
+No relationship/involvement 18%
 29%
+2024 2022 2020
+FERMA Global Risk Manager Survey Report - 2024 | 51
 
-2024
-
-2022
-
-2020
-
-FERMA Global Risk Manager Survey Report - 2024  |  51
-
-Risk Managers are now pivotal to ESG activities, with a significant rise in their role in risk
-
+Risk Managers are now pivotal to ESG activities, with a significant rise in their role in risk
 analysis, framework definition and reporting, and active participation in ESG committees
-
 Role played by Risk Managers with regards to ESG
-
 Q42. What type of role do you play with regards to ESG
-
+| 4%  | 9%  | 7%  | 6%  | 7%  |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+|     |     |     |     |     | 11% | 14% |
 4%
-
-13%
-
+|     | 5%  |     | 11% |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+| 13% |     | 15% |     |     |     |     |
+|     |     |     |     |     | 13% | 7%  |
+27%
+28%
+|     |     |     | 30% |     |     | 20% |
+| --- | --- | --- | --- | --- | --- | --- |
+35%
+39%
 46%
-
-13%
-
-22%
-
-9%
-
-5%
-
-28%
-
-39%
-
-9%
-
+33%
+|     | 39% |     |     |     |     | 41% |
+| --- | --- | --- | --- | --- | --- | --- |
+33%
+| 13% |     |     |     |     | 27% |     |
+| --- | --- | --- | --- | --- | --- | --- |
 10%
-
-Analysis and
-mapping of
-ESG risks
-
-Climate change
+30%
+|     | 9%  |     | 11% |     |     | 9%  |
+| --- | --- | --- | --- | --- | --- | --- |
+| 22% |     |     |     |     | 6%  |     |
+19%
+|     | 10% | 5%  |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+|     |     |     | 9%  |     | 8%  | 9%  |
+4%
+Analysis and  Climate change  Collaboration  Consideration  Definition  Design and/or  Double
 mitigation and
-adaptation
-measures
-(physical and
+mapping of  with suppliers  of the ESG  of ESG risk  securisation  materiality
+ESG risks adaptation  on ESG risks risks in the  framework of ESG Key  assessment
+|     | measures       |     | development   |     | Performance     |     |
+| --- | -------------- | --- | ------------- | --- | --------------- | --- |
+|     | (physical and  |     | of corporate  |     | Indicator (KPI) |     |
 transition risks)
-
-12%
-
-13%
-
-36%
-
-28%
-
-5%
-6%
-
-7%
-
-12%
-
-37%
-
-32%
-
-6%
-
-6%
-
-7%
-
-15%
-
-39%
-
-30%
-
-5%
-4%
-Collaboration
-with suppliers
-on ESG risks
-
-10%
-
-19%
-
-30%
-
-27%
-
-6%
-
-8%
-
-6%
-
-11%
-
-30%
-
-33%
-
-11%
-
-9%
-
-7%
-4%
-
-27%
-
-33%
-
-10%
-
-19%
-
-11%
-
-13%
-
-35%
-
-27%
-
-6%
-
-8%
-
-14%
-
-7%
-
-20%
-
-41%
-
-9%
-
-9%
-
-Consideration
-of the ESG
-risks in the
-development
-of corporate
 strategy
-
-Definition
-of ESG risk
-framework
-
-Design and/or
-securisation
-of ESG Key
-Performance
-Indicator (KPI)
-
-Double
-materiality
-assessment
-
-11%
-
-14%
-
-23%
-
-34%
-
-9%
-
-9%
-
-6%
-
-10%
-
-34%
-
-7%
-6%
-
-7%
-
-7%
-
-37%
-
-30%
-
-30%
-
-7%
-
+|     | 7%  |     | 6%  | 7%  | 7%  |     |
+| --- | --- | --- | --- | --- | --- | --- |
+| 12% |     | 10% |     |     |     | 11% |
+|     |     |     | 10% | 6%  | 7%  |     |
+12%
+| 13% |     |     |     |     |     | 14% |
+| --- | --- | --- | --- | --- | --- | --- |
 19%
-
-35%
-
-36%
-
+|     |     |     |     | 37% | 30% |     |
+| --- | --- | --- | --- | --- | --- | --- |
+|     |     |     | 34% |     |     | 23% |
+37%
+| 36% |     | 30% |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+30%
+34%
+|     |     |     | 35% | 36% |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+| 28% | 32% | 27% |     |     |     |     |
 7%
-
-8%
-
-8%
-
-6%
-
-Organisation
-and strategy
-transition
-plans and
-roadmap in
+9%
+|     |     | 6%  | 7%  |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+| 5%  | 6%  |     |     | 8%  | 19% |     |
+9%
+| 6%  | 6%  | 8%  | 8%  | 6%  |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+Integration of
+ESG  External  Non-financial  Organisation  Reporting of  Scenario
+ratings and  stakeholders  ESG criterias  / Corporate  and strategy  the ESG risks  definition
+certification engagement and risks into  Sustainability  transition  to the Board,   and analysis
+|     |     | the investment  | reporting | plans and  | or to its  |     |
+| --- | --- | --------------- | --------- | ---------- | ---------- | --- |
+processes
+|     |     |     |     | roadmap in  | Committee(s) |     |
+| --- | --- | --- | --- | ----------- | ------------ | --- |
 response to
 ESG issues
+| I am fully responsible |     | I validate        |     | I contribute               |     |     |
+| ---------------------- | --- | ----------------- | --- | -------------------------- | --- | --- |
+| I am informed          |     | I am not informed |     | Not done within my company |     |     |
+ 52 | FERMA Global Risk Manager Survey Report - 2024
 
-ESG
-ratings and
-certification
-
-External
-stakeholders
-engagement
-
-Integration of
-ESG criterias
-and risks into
-the investment
-processes
-
-Non-financial
-/ Corporate
-Sustainability
-reporting
-
-Reporting of
-the ESG risks
-to the Board,
-or to its
-Committee(s)
-
-Scenario
-definition
-and analysis
-
-I am fully responsible
-
-I validate
-
-I contribute
-
-I am informed
-
-I am not informed
-
-Not done within my company
-
-  52  |  FERMA Global Risk Manager Survey Report - 2024
-
-Risk Managers are now playing a crucial role in ESG-related activities, with a significant decrease in the
+Risk Managers are now playing a crucial role in ESG-related activities, with a significant decrease in the
 percentage of those not informed (from an average of 24% in 2022 to 10% in 2024). The three main areas
 where Risk Managers have full responsibility or provide validation are:
-
 • The analysis and mapping of ESG risk
-
 • The definition of the ESG risk framework
-
 • The reporting of the ESG risks to the Board or its Committees
-
 This emphasises the importance of Risk Manager providing the appropriate methodology and framework
 to ensure a consistent methodology in analysing, mapping and reporting on risks. Additionally, 15% of
 Risk Managers are fully responsible for ESG risk mapping; 37% validate or coordinate and provide the
 methodology; 30% are informed; and 17% report that their organisations do not perform ESG risk mapping
-(refer to part I      ).
-
+(refer to part I ).
 The involvement of the Risk Manager in ESG is evident in their participation in ESG committees: 21% chair
 or are permanent members; 25% are invited; and 16% receive the meeting minutes. Only 37% are not
-involved in any capacity (refer to part I      ).
-
+involved in any capacity (refer to part I ).
 Choose the statement that best describes the level of integration between Risk Management
 and Sustainability / ESG as of today and as a 1 to 3-year objective
-
 1. ESG risk assessment is an integral part of Enterprise Risk Management
 process and is integrated in both Strategy and Sustainability definition and review processes
-
-5. No assessment of
-ESG-related risks
-
-2. ESG risks assessment is an integral
-part of Enterprise Risk Management process
-
 19%
-
 15%
-
+5. No assessment of 2. ESG risks assessment is an integral
+ESG-related risks part of Enterprise Risk Management process
+3% 10% 13%
 3%
-
-10%
-
-13%
-
 3%
-
 6%
-
-3%
-
-8%
-
-19%
-
 Planning to for the next 1-3 years
-
+8%
 Currently
-
-4. ESG-related risks are analysed
-separately by Sustainability designated
-internal stakeholders without the
+19%
+4. ESG-related risks are analysed 3. Risk Management and Sustainability
+separately by Sustainability designated designated internal stakeholders collaborate
+internal stakeholders without the to identify ESG-related risks
 involvement of the Risk Manager
-
-3. Risk Management and Sustainability
-designated internal stakeholders collaborate
-to identify ESG-related risks
-
 Today, Sustainability and ERM teams collaborate to identify and assess ESG-related risks, and ESG risk
 assessment is an integral part of ERM process.
-
 Over the 1 to 3 years horizon, the move is to continue integrating ESG-related risks in ERM processes,
 and in both Strategy and Sustainability definition and review processes.
+FERMA Global Risk Manager Survey Report - 2024 | 53
 
-FERMA Global Risk Manager Survey Report - 2024  |  53
-
-Climate change adaptation tops critical
+Climate change adaptation tops critical
 threats list, driving companies to prioritise
 risk evaluation and scenario analysis
-
 Work performed on climate change risks
-
-Risks are identified in the risk map
-
-60%
-
-Different climate change scenarios are defined
-
-38%
-
-Financial impact of physical climate change risks is quantified
-
-Work on resilience on physical risk
-
-Transition climate change risks are specifically assessed
-
-No work on climate change risks
-
-35%
-
-34%
-
-33%
-
-11%
-
- Other
-
-     3%
-
+Risks are identified in the risk map 60%
+Different climate change scenarios are defined 38%
+Financial impact of physical climate change risks is quantified 35%
+Work on resilience on physical risk 34%
+Transition climate change risks are specifically assessed 33%
+No work on climate change risks 11%
+Other 3%
 Climate change adaptation remains the number one critical threat for organisations within the next 10 years,
 despite being also ranked third among risks that are considered not adequately treated. Consequently,
 evaluating climate risks and impacts remains the top priority for companies. Some 60% of organisations
 identify climate change risks in their risk maps, up from 54% in 2022. The number of Risk Managers working
 on different climate-change scenarios has increased by 5 percentage points and quantifying the financial
 impact of physical climate change risks represents a top 3 activity.
-
 Work on transitional risk seems to be more integrated within corporate strategy and therefore less of a focus
 for Risk Managers than getting a more holistic and strategic approach based on scenario, demonstrating a
 higher level of maturity.
-
 • In Africa, 50% of respondents work on climate change risks, 67% in Oceania.
 • In North America, a majority work on resilience to physical risk.
 • In Northern Europe, 60% also work on different climate-change scenarios.
-
 Interestingly, 70% of respondents’ organisations perform a specific dedicated risk mapping exercise on the
-carbon neutrality transition (refer to part I      ).
+carbon neutrality transition (refer to part I ).
+54 | FERMA Global Risk Manager Survey Report - 2024
 
-  54  |  FERMA Global Risk Manager Survey Report - 2024
-
-Risk Managers intensify focus on social
+Risk Managers intensify focus on social
 aspects of ESG: supplier due diligence,
 stakeholder mapping, and Human Rights
 risk maps on the rise
-
 Q45. How do you identify and assess the Social part of ESG risks,
 including risks related to Human Rights?
-
 Methods to identify and assess the Social part of ESG risks
-
-28%
-
-39%
-
-33%
-
+13% 17%
+28% 27% 27%
+38%
 44%
-
+43%
+43%
+39% 37% 39%
+38%
 32%
-
-24%
-
-27%
-
-37%
-
-36%
-
-13%
-
-43%
-
-44%
-
-38%
-
-38%
-
-24%
-
-27%
-
-39%
-
-34%
-
-17%
-
-43%
-
-40%
-
-Assessment
-at country
-level
-
-Collaboration
-with local
-NGO
-
-Dedicated
-Human
-Rights risks
-mapping
-
-Due dilligence
-for suppliers
-and/or clients
-
-External data
-use to support
-Human Rights
-risks analysis
-
-Specific
-Human
-Rights risk
-approach
-
-Stakeholder
-mapping
-
-Deployed
-
-In progress
-
-Non existent
-
+44% 40%
+33% 36% 34%
+24% 24%
+Assessment Collaboration Dedicated Due dilligence External data Specific Stakeholder
+at country with local Human for suppliers use to support Human mapping
+level NGO Rights risks and/or clients Human Rights Rights risk
+mapping risks analysis approach
+Deployed In progress Non existent
 Results seem to indicate that Risk Managers are more advanced with regards to climate change and
 Environment than on the Social aspects of ESG. More than one-third of the respondents are engaged in
 activities related to social risks. The focus is on conducting supplier and client due diligence with 87%
@@ -1939,74 +1359,43 @@ having deployed this or being in the process of so doing, and on stakeholder map
 deployed this or being in the process of so doing. Almost three-quarters - 73% - have or are setting up
 dedicated Human Rights risk maps. These activities are closely driven by the compliance requirements
 with the CSRD and CSDDD regulations in Europe.
-
-•  Northern Europe seems more advanced here with on average 50% of the respondents
-
+• Northern Europe seems more advanced here with on average 50% of the respondents
 having deployed actions.
-
-•  In North America, half of respondents on average are not performing any of these
-
+• In North America, half of respondents on average are not performing any of these
 activities except due diligence, and about 25% on average are engaged in these activities.
-•  In Africa, more than three-quarters of respondents are not working on these three Human
-
+• In Africa, more than three-quarters of respondents are not working on these three Human
 Rights-related activities.
-
 The financial services sector has the greatest potential for improvement in social matters, with less than
 20% of activities being deployed on average. While other sectors may have faced long-standing challenges
 related to social issues, the financial services industry has been less impacted by Human Rights concerns for
 instance, such as child labour issues with third parties.
+FERMA Global Risk Manager Survey Report - 2024 | 55
 
-FERMA Global Risk Manager Survey Report - 2024  |  55
-
-Sustainability reporting regulations have
+Sustainability reporting regulations have
 heightened top management’s focus on ESG
 risks globally
-
 Impacts of the evolution of Sustainability reporting regulation
 on the ways and means of covering ESG risks
-
 More attention from top management concerning ESG risks and reporting 28%
-
-Strengthening risk identification and assessment of ESG risk
-
-Adoption of the double materiality approach
-
-Quantification and planning of ESG financial effects
-
-Better consideration of the value chain in risk management
-
-Adaptation of the company business model or strategy
-
-19%
-
-17%
-
-13%
-
-11%
-
-9%
-
+Strengthening risk identification and assessment of ESG risk 19%
+Adoption of the double materiality approach 17%
+Quantification and planning of ESG financial effects 13%
+Better consideration of the value chain in risk management 11%
+Adaptation of the company business model or strategy 9%
 The evolution of Sustainability reporting regulations has resulted in a strengthening of the identification and
 assessment of these risks for 19% of respondents. The adoption of double materiality is 3rd, mainly driven
 by Northern and Western Europe that ranked it as their 2nd main evolution from regulatory requirements.
-
 Indeed, the Corporate Sustainability Reporting Directive (CSRD) (refer to adjacent insert) came into force
 in Europe with the aim of encouraging sustainable development in businesses and identifying those that are
 disciplined in this regard. The information expected will be disclosed and allow for a better assessment of
 what is referred to as double materiality:
-
-•  risks and opportunities arising from social and environmental issues that impact the company (financial
-
+• risks and opportunities arising from social and environmental issues that impact the company (financial
 materiality);
-
 • impacts of the company’s activities on people and the environment (impact materiality).
+56 | FERMA Global Risk Manager Survey Report - 2024
 
-  56  |  FERMA Global Risk Manager Survey Report - 2024
-
-Most regions around the world have developed Sustainability reporting regulations to enforce
+Most regions around the world have developed Sustainability reporting regulations to enforce
 companies’ ownership of their sustainability impact and practices.
-
 Europe: The Corporate Sustainability Reporting Directive (CSRD) entered into force in 2023. It modernises
 and strengthens the rules concerning the social and environmental information that companies must
 report. It requires all large companies and all listed companies to disclose information assessed through
@@ -2014,335 +1403,171 @@ the double materiality approach. The new rules will ensure that investors and ot
 access to the information they need to assess the impact of companies on people and the environment and
 for investors to assess financial risks and opportunities arising from climate change and other sustainability
 issues.
-
 United States: ESG disclosure simplification Act (House of Representatives 202) requires public
 companies to disclose more information about their ESG practices. SEC Climate-Related Disclosures/ESG
 Investing (Climate Risk Disclosure Act of 2021), require US publicly traded companies to disclose annually
 how their businesses are assessing, measuring, and managing climate-related risks.
-
 Brazil: Management and Disclosure of Social, Environmental and Climate Risks 2021
-
 China: Guidance for Enterprise ESG Disclosure (China Securities Regulatory Commission 2021)
-
 Singapore: Environmental Risk Management for Asset Managers, Banks and Insurers 2020
-
 Japan: Mandatory Task Force on Climate-related Financial Disclosures (TCFD) reporting for prime segment
 listed companies (in March 2023)
-
 UK: Sustainability Disclosure Requirements (SDR) and Investment Labels in development.
-
 Switzerland: Articles 964a-964c CO – Transparency in nonfinancial matters. Guideline on Sustainability
 Reporting 2022 coming into force in 2024.
-
 United Arab Emirates: Principles for Sustainability Related Disclosures for Reporting Entities (Members of
 the UAE Sustainable Finance Working Group - 2023).
+FERMA Global Risk Manager Survey Report - 2024 | 57
 
-FERMA Global Risk Manager Survey Report - 2024  |  57
-
-Focus on ESG-related risks reporting to external stakeholders
-
+Focus on ESG-related risks reporting to external stakeholders
 Most respondents (40%) said that the financial statements and sustainability reports of their organisations
 include integrated risk disclosure incorporating disclosure on ESG-related risks, reflecting the highest level
 of maturity. Additionally, 59% of respondents fall within the top 2 maturity levels for ESG disclosure, while
 15% report no external ESG risk disclosure, indicating a robust integration of ESG considerations.
-
-Q48. Choose the statement that best reﬂects organisation’s approach
-to ESG-related risk reporting to external stakeholders:
-
+Q48. Choose the statement that best reflects organisation’s approach
 Choose the statement that best reflects the organisation’s
+to ESG-related risk reporting to external stakeholders:
 approach to ESG-related risk reporting to external stakeholders
-
 1. Integrated risk disclosure, also on
 ESG-related risks, in financial statements
 and sustainability reports
-
 40%
-
-5. No external ESG-related
-
-risk disclosure
-
-2. Dedicated external disclosure
-on specific ESG risks like
+5. No external ESG-related 2. Dedicated external disclosure
+risk disclosure on specific ESG risks like
 climate-related risks
-
-15%
-
-16%
-
 19%
-
+15%
 10%
-
-4. Limited ESG-related risk
-disclosure (e.g. on selected risks) in
+16%
+4. Limited ESG-related risk 3. Dedicated ESG-related risk profile
+disclosure (e.g. on selected risks) in section in financial statements
 financial statements/ website
-
-3. Dedicated ESG-related risk profile
-section in financial statements
-
 These results are mainly driven by the high number of European respondents.
 When excluding Europe from the responses, 30% declare they have no external ESG-related
 risk disclosure, closely followed by 27% who rank their organisation at the best level of
 maturity with an integrated risk disclosure in financial statements and sustainability
 reporting. In North America, 55% of respondents make no external ESG-related risk
 disclosures or only limited disclosures, while for 20% of respondents this is integrated.
+58 | FERMA Global Risk Manager Survey Report - 2024
 
-  58  |  FERMA Global Risk Manager Survey Report - 2024
-
-The role of
+The role of
 the Risk Manager
 in the digital
 transformation
+FERMA Global Risk Manager Survey Report - 2024 | 59
 
-FERMA Global Risk Manager Survey Report - 2024  |  59
-
-Use of technologies widespread across
+Use of technologies widespread across
 all risk management activities
-
 In the age of Artificial Intelligence (AI) and the rapid acceleration of technological change, digitalising risk
 management activities is essential to maintain pace and relevance. Investing in digital risk management
-tools is the second most important priority of Risk Managers within the next 1 to 2 years (refer to part I      ).
+tools is the second most important priority of Risk Managers within the next 1 to 2 years (refer to part I ).
 However, despite the clear advantages of digital risk management solutions, persistent barriers to further
 investment continue to hinder their full adoption.
-
 Artificial Intelligence enters the top 5 of technologies used in risk management activities
-
 Spreadsheet and slides presentations are by far the most used applications (by 88% of respondents),
 for performing all ERM activities represented.
-
 Digital technologies most used to perform ERM activities
-
-88%
-
-40%
-
-39%
-
-38%
-
-26%
-
-Spreadsheets
-and slides
-presentation
-
-Use of specific
-integrated Risk
-Management
-Information
-Systems /
+88% 40% 39% 38% 26%
+Spreadsheets Use of specific In-house Advanced Artificial
+and slides integrated Risk tool to tools for Intelligence
+presentation Management perform Risk visualisation technologies
+Information Management and data
+Systems / activity analysis
 GRC digital
 tool
-
-In-house
-tool to
-perform Risk
-Management
-activity
-
-Advanced
-tools for
-visualisation
-and data
-analysis
-
-Artificial
-Intelligence
-technologies
-
 These are followed by Risk Management Information System (RMIS) or Governance Risk and Control
 (GRC) tools, either in-house systems or purchased from vendors, which are equally used (40% and
 39% respectively). Interestingly, in-house tools represent the same proportion as tools from the market,
 probably because they allow users to collaborate on shared internal data. The respondents use a RMIS
 or a GRC tool to perform risk assessment and risk mapping activities, risk monitoring, and action plan
 monitoring.
-
 The use of advanced data-visualisation tools has increased by 4 points since 2022 and these are now
 used across all ERM activities.
-
 The results show an increased use of Artificial Intelligence to perform ERM activities from 9% in 2022 to
 13% in 2024 as well as the use of generative AI (13%) which is a new category this year. In total, 26% of
 the respondents use AI to perform some of their activities.
-
 All the listed technologies are used across all the described activities. Each technology is applied to
 roughly the same extent for each activity.
+60 | FERMA Global Risk Manager Survey Report - 2024
 
-  60  |  FERMA Global Risk Manager Survey Report - 2024
-
-More digitalised risk management and quantification activities
-
+More digitalised risk management and quantification activities
 Risk identification and assessment remains the main technology-backed activity of Risk Managers.
 Interactive visualisation of risk maps has more than doubled from 33% of respondents in 2022 to
 71%, closely followed by action plan monitoring which increased from 27% in 2022 to 70%. The use of
 technology in the risk reporting process slightly increased by 10 points, but now ranks in fourth position
 compared with second in 2022.
-
 Q53. What digital technologies do you use to perform the following ERM activities ?
-
 Technology-backed ERM activities
-
-77%
-
-71%
-
-70%
-
-70%
-
-67%
-
-65%
-
-64%
-
-50%
-
-39%
-
-37%
-
-36%
-
-Action plan monitoring
-Risk analysis and assessment
-Interactive visualisation of risk mapping
-
-Quantification of risk impact
-Risk reporting process
-
-Risk mitigation
-
-Key Risk Indicator (KRI) monitoring
-
-Scenario analysis
-
-Alert feedback
-
-Predictive risk analysis
-Claims process
-
+77% 71% 70% 70% 67% 65% 64% 50% 39% 37% 36%
+Ris
+In
+k
+t
+a
+e
+n ra a c ly ti s v i e s v a i n s d u a a l s is s a e t s io s n m o e f n r t i A s c k t m io a n p p p la in n g m R o is n k it o re r Q i p n u o g a r t n in ti g fic p a r t o io c n e s o s f K ri e s y k R i m is p k a R I c n is t d k ic m at i o tig r a (K ti R o I n ) monit S o c ri e n n g a rio analy A s l i e s rt feedb C ac la k i m P s r e p d r i o c c ti e v s e s risk analysis
 Quantification is newly proposed and enters the top 5 with 67% of respondents citing it as an activity
 using technology and it is the second ranked technology-backed activity for the Services sector (74%).
 Key Risk Indicators (KRI) monitoring is the second activity for the Financial Services (73%), while it is the
 seventh ranked, with 64%, for all other sectors.
-
 The notable rise in the use of technologies for interactive visualisation of risk maps and action plan
 monitoring indicates that Risk Managers are prioritising dynamic and real-time insights to enhance the
 decision-making process. The slight increase in risk reporting and the introduction of quantification in the
 top activities indicate a shift towards more precise data-driven approaches.
-
 Scenario analysis is now performed through technologies by 50% of the respondents, compared with
 31% in 2022. The rise of scenario analysis leveraging technological advancements is driven by the need to
 address complex risks, comply with regulatory requirements, support strategic decision-making, integrate
 ESG considerations and enhance overall risk awareness.
-
 A minority of Risk Managers perform alert feedback and predictive risk analysis, supported by digital
 technologies.
-
 The claims process is more digitalised and went up from 21% to 57% this year when looking at Insurance
 Managers’ results.
+FERMA Global Risk Manager Survey Report - 2024 | 61
 
-FERMA Global Risk Manager Survey Report - 2024  |  61
-
-Using AI technologies to enhance prediction
-
+Using AI technologies to enhance prediction
 AI is mainly used for:
-
-19%
-risk analysis and
-assessment
-
-16%
-predictive risk
-analysis
-
-12%
-scenario
-analysis
-
-10%
-equally for quantification,
-risk reporting, and interactive
+| 19% | 16%  | 12%  | 10% |
+| --- | ---- | ---- | --- |
+risk analysis and  predictive risk   scenario   equally for quantification,
+assessment  analysis analysis  risk reporting, and interactive
 visualisation of risk mapping
-
 Gen AI is following the same trend, used for:
-
-26%
-risk analysis and
-assessment
-
-16%
-scenario
-analysis
-
-13%
-interactive
-visualisation
+| 26% | 16%  | 13%  | 10% |
+| --- | ---- | ---- | --- |
+risk analysis and  scenario   interactive  predictive risk analysis
+| assessment  | analysis  | visualisation   |     |
+| ----------- | --------- | --------------- | --- |
 of risk mapping
-
-10%
-predictive risk analysis
-
 In Africa, generative AI and AI combined represent the second most used technology for
 three of the ERM activities: scenario analysis, predictive analysis and alert feedback.
-
 Challenges remain to develop more data and technology usage for Risk Managers
-
 Despite the advantages in efficiency, automation and gaining capacity for anticipating risk, Risk Managers
 face obstacles to more wide adoption of new technologies:
-
 • The heavy investment it represents for the function (50% in 2024, 45% in 2022, 50% in 2020) ;
-
 • The lack of perception of the added value for the function (36% in 2024, 39% in 2022, 52% in 2020).
-
 These findings align with the results on the corporate strategy focus where the digital transformation of
 the organisation and /or internal function was chosen by 32% of respondents, putting it at eighth position,
 closely followed by the impact of AI on the business model and/or internal functions cited by 20% of
 respondents (refer to part I      ).
-
 Obstacles to new technologies being more widely used
+| Too heavy an investment for the function                | 50% |     |     |
+| ------------------------------------------------------- | --- | --- | --- |
+|  Lack of perception of the added value for the function | 36% |     |     |
+ Low maturity for the organisation 27%
+ Lack of skills within your department 27%
+ Reluctance to internal change 20%
+|     |  Lack of access to data 18% |     |     |
+| --- | --------------------------- | --- | --- |
+|     |  Other (please specify) 4%  |     |     |
+ 62 | FERMA Global Risk Manager Survey Report - 2024
 
-Too heavy an investment for the function
-
-50%
-
- Lack of perception of the added value for the function
-
-36%
-
- Low maturity for the organisation
-
-27%
-
- Lack of skills within your department
-
-27%
-
- Reluctance to internal change
-
-20%
-
- Lack of access to data
-
-18%
-
- Other (please specify)
-
-4%
-
-  62  |  FERMA Global Risk Manager Survey Report - 2024
-
-Managing risks arising from emerging
+Managing risks arising from emerging
 technologies
-
 While Risk Managers are working on their own function’s digitalisation, they contribute to dealing with
 the risks arising from emerging technologies used or likely to be used within the organisation. As new
 technologies emerge at a rapid pace, organisations face a plethora of potential risks and the Risk Manager’s
 role is crucial in safeguarding the organisation’s assets, reputation, and continuity of operations.
-
 A stable close relationship between risk management teams and IT and IS teams
-
 Maintaining a close relationship with the IT and IS functions is imperative to allow Risk Managers to
 gain insights into emerging technologies, understand potential risks, and develop proactive strategies to
 address them effectively. This partnership fosters a culture of risk awareness and resilience within the
@@ -2350,887 +1575,333 @@ organisation, enabling it to adapt and thrive in the face of technological disru
 environment, Risk Managers maintain a high level of collaboration with IT (52% versus 49% in 2022), and
 Information Security teams (53% in 2024 versus 52% in 2022).
 Q20. To what extent does your organisation's Risk / Insurance Manager work with the functions listed below
-
- Level of collaboration between Risk Managers and other functions
-
-IT
-
-7%
-
-5%
-
-Information Security
-
-8%
-
-9%
-
-49%
-
-52%
-
-52%
-
-53%
-
-37%
-
-6%
-
-2022
-
-35%
-
-8%
-
-2024
-
-32%
-
-8%
-
-2022
-
-28%
-
-10%
-
-2024
-
+Level of collaboration between Risk Managers and other functions
+IT Information Security
+7% 5% 8% 9%
 No relationship
-
 Occasional collaboration
-
-Regular, close collaboration
-
+49%
+52% 52%
+53% Regular, close collaboration
 Under the Risk Manager's responsibility
 (or recently moved)
-
+37%
+35%
+32% 28%
+6% 8% 8% 10%
+2022 2024 2022 2024
 In Asia the proportion of close collaboration is up to 57%, and 29% of Information Security
 teams are under the responsibility of Risk Management. A significant majority, 88%, of Risk
 Managers have close collaboration with IT teams.
-
 Additionally, 43% of Risk Managers are involved in IT security committees where they exist (78% of
-respondents’ organisations hold one) (refer to part I      ).
+respondents’ organisations hold one) (refer to part I ).
+FERMA Global Risk Manager Survey Report - 2024 | 63
 
-FERMA Global Risk Manager Survey Report - 2024  |  63
-
-Technological risk mapping requires expertise
-
+Technological risk mapping requires expertise
 Risk Managers are less involved in cybersecurity / IT / data risk mapping than in other areas (such as
 corruption, ESG), and are mainly informed of such risk map (44%). However, almost half of respondents are
 involved: 25% coordinate and provide the methodology; 12% validate; and 11% are fully responsible for
-performing those risk mapping exercises (refer to part 1      ).
-
+performing those risk mapping exercises (refer to part 1 ).
 Q23. What kind of risk map does your organisation perform
 and how are you involved ? - Cybersecurity / IT / Data risk map
-
 Level of Risk Managers’ involvement in cybersecurity / IT / data risk maps
-
-I am fully responsible
-
- I validate
-
- I cooordinate and provide the methodology and a common language
-
- I am informed
-
- Done by an independent 3rd party
-
- Not done within my company
-
 6%
 2%
-
+I am fully responsible
+I validate
 44%
-
+I cooordinate and provide the methodology and a common language
+I am informed
+Done by an independent 3rd party
 25%
-
+Not done within my company
 12%
-
 11%
-
 Consideration of IT, cybersecurity and data security risks
-
-IT, Cyber and Data breach risks are combined
-
-51%
-
-IT and Cyber risks are combined, Data breach risk is separate
-
-19%
-
-IT, Cyber and Data breach risks are individualised
-
-15%
-
-Cyber and Data breach risks are combined, IT risk is separate
-
-9%
-
-IT and Data breach risks are combined, Cyber risk is separate
-
-5%
-
-No such topic covered
-
-3%
-
-Other
-
-1%
-
+IT, Cyber and Data breach risks are combined 51%
+IT and Cyber risks are combined, Data breach risk is separate 19%
+IT, Cyber and Data breach risks are individualised 15%
+Cyber and Data breach risks are combined, IT risk is separate 9%
+IT and Data breach risks are combined, Cyber risk is separate 5%
+No such topic covered 3%
+Other 1%
 Half of organisations combine IT, Cyber and Data breach risks when performing risk management
 activities, while 15% consider these risks individually.
-
 The combination of these three risks in most cases seems to indicate Risk Managers are treating these
-risks at a macro level.  More granular analysis is often delegated to specialist functions as they require
+risks at a macro level. More granular analysis is often delegated to specialist functions as they require
 expertise. Indeed, such risks hide very different related-risks and mitigation actions, for instance for cyber
 risks: ransomware, malware infection, denial of service, or IP/ credential thefts. While Risk Managers are
 key to providing the methodological guidelines, the assessment itself remains with subject-matter experts.
+64 | FERMA Global Risk Manager Survey Report - 2024
 
-  64  |  FERMA Global Risk Manager Survey Report - 2024
-
-Early involvement of Risk Managers in the adoption of new technologies
-
+Early involvement of Risk Managers in the adoption of new technologies
 Cyber-attacks and data breach are in the Top 5 of threats within the next 12 months. It is interesting to
 observe that within 10 years, most technological threats are no longer in the Top 10.
-
 Some 79% of Risk Managers are involved in the risk management of technological and/or digital
 projects, increasing by 9% points since 2022.
-
 Involvement of risk management in technology and digital projects
-
 Identification and assessment of risks prior
-to adoption of new technologies by the business
-
-New systems implementation project
-risk identification and analysis
-
- Analysis and remediation
-of any insurance coverage gaps
-
- Identification and assessment of emerging
-technologies used by the business
-
 32%
-
-30%
-
-24%
-
-22%
-
- No specific action
-
-21%
-
+to adoption of new technologies by the business
 New systems implementation project
-risk assessment and monitoring
-
+30%
+risk identification and analysis
+Analysis and remediation
+24%
+of any insurance coverage gaps
+Identification and assessment of emerging
+22%
+technologies used by the business
+No specific action 21%
+New systems implementation project
 20%
-
- None of the above
-
-8%
-
+risk assessment and monitoring
+None of the above 8%
 Risk Managers’ involvement remains stable on the identification and assessment of risks prior to adoption
 of new technologies by the business, and on the analysis and remediation of any insurance coverage gaps.
-
 Technologies already being used by the business are less of a priority for Risk Managers (decrease by
 10 points since 2022), confirming the trend from previous surveys (-7 points between 2020 and 2022). This
 could highlight a better anticipation and maturity in the risk assessment of technology.
-
 New system implementation project risk identification and analysis is the biggest area of
 involvement for respondents from Africa, Asia, and Oceania.
 Half of respondents analyse and remediate any insurance gaps in North America, while
 only 6% perform such activity in Africa.
+FERMA Global Risk Manager Survey Report - 2024 | 65
 
-FERMA Global Risk Manager Survey Report - 2024  |  65
-
-89% of Risk Managers work on AI-related risk management.
-
+89% of Risk Managers work on AI-related risk management.
 Risk management methods for addressing the new risks arising from Artificial Intelligence
-
-34%
-
-29%
-
-26%
-
-23%
-
-19%
-
-18%
-
-11%
-
-Monitoring
-of regulatory
-developments
-
-Solely
-monitored
-by IT teams
-
-Deployment of
-internal policy
-concerning
-the use of AI
-in day-to-day
-activities
-
-IT and ERM
-teams working
-closely on the
-identification
-of risks and
-mitigation
-actions
-
-Mapping
-current
-use and
-performing
-analysis of
-risks prior to
-using AI
-
-None (company
-not concerned, AI
-tools forbidden,
-company not
-mature enough...)
-
-Working with
-Internal Audit
-on existing
-related risks
-to ensure
-appropriate
-review of the
+34% 29% 26% 23% 19% 18% 11%
+Monitoring Deployment of Solely IT and ERM Mapping None (company Working with
+of regulatory internal policy monitored teams working current not concerned, AI Internal Audit
+developments concerning by IT teams closely on the use and tools forbidden, on existing
+the use of AI identification performing company not related risks
+in day-to-day of risks and analysis of mature enough...) to ensure
+activities mitigation risks prior to appropriate
+actions using AI review of the
 use of AI
-
 Most of respondents perform regulatory watch or deploy internal policy concerning AI usage. Only 26%
 declare AI risks are solely monitored by IT teams and 23% of the respondents said they collaborate with IT
 teams on the identification of risks and mitigation actions.
-
 Growing regulation of Artificial Intelligence.
-
 With the accelerated technological development of Artificial Intelligence and associated risks (access to
 historical data, the creation of unverified information deepfakes, etc.), governments are working towards
 regulating its usage.
-
 Several regions and countries has developed regulations such as:
 • AI Act in Europe
 • Blueprint for an AI Bill of Rights in the United States
 • Algorithmic Accountability Act in the United States
 • Artificial Intelligence and Data Act in Canada
 • Interim Measures for the Management of Generative AI in China
-
 The EU Artificial Intelligence Act was adopted by the European Parliament in June 2023. The proposed
 law on AI follows a risk-based approach, which provides rules tailored to the level of risk generated
 using AI. It has set 4 different levels of risk and associated requirements, from minimal risk with limited
 requirements to unacceptable risk with forbidden usage of certain types of AI.
-
 The objectives are to:
 • Ensure that algorithms protect individuals and their fundamental rights.
 • Enable European actors to gain competitiveness against other actors.
-
 It will apply to all actors using AI-based systems in Europe.
-
 For more information on AI Act, refer to the dedicated website: https://artificialintelligenceact.eu/
+66 | FERMA Global Risk Manager Survey Report - 2024
 
-  66  |  FERMA Global Risk Manager Survey Report - 2024
-
-Insurance
+Insurance
 Managers
 exploring
 alternative risk
 transfer solutions
+FERMA Global Risk Manager Survey Report - 2024 | 67
 
-FERMA Global Risk Manager Survey Report - 2024  |  67
-
-Insurance market conditions remained
+Insurance market conditions remained
 tough over the past 12 months
-
 Overall, the market continues to be influenced by broader economic trends, regulatory changes, and evolving
 risk landscapes, necessitating careful navigation by both insurers and insureds. In this context, Insurance
 Managers must understand market trends and provide appropriate analysis to decision-makers to continue
 adapting strategies and efficiently cover risks.
-
 The most impactful trends in the insurance market from the 12 past months show consistency with the results
 from previous survey: increase in premiums remains the most significant trend; reduction in capacity and
 exclusion of specific risks follow. Wording changes moves up to fourth position, from sixth in 2022.
-
 Africa stands out by ranking “lack of innovative insurance solutions” in second place
 (compared with fifth position globally), highlighting the significant market demand in Africa
 to manage risks in a market that currently lags in insurance development and maturity.
-
 Consequently, Insurance Managers rely on the same insurance strategy changes to their insurance
 programmes as in 2022:
-
 Changes made in insurance strategy over the past 12 months
-
- Changes to the insurance buying pattern
-(review needs, the limits and sub-limits, etc...)
-
+Changes to the insurance buying pattern
 54%
-
- Strengthen loss prevention activity
-
-44%
-
- Negotiate long-term agreement or roll-over
-
-30%
-
- Implementation or further use of captive facilities
-
-28%
-
- Acceleration of claims settlement process
-
-19%
-
-No change made
-
-17%
-
-  Selection of more financially robust insurers
-
-16%
-
- Other
-
-5%
-
-•  Changes to the insurance buying pattern, to reduce premium expenses in a fluctuating insurance
-
+(review needs, the limits and sub-limits, etc...)
+Strengthen loss prevention activity 44%
+Negotiate long-term agreement or roll-over 30%
+Implementation or further use of captive facilities 28%
+Acceleration of claims settlement process 19%
+No change made 17%
+Selection of more financially robust insurers 16%
+Other 5%
+• Changes to the insurance buying pattern, to reduce premium expenses in a fluctuating insurance
 market, and review their coverage with regards to the risks landscape evolution. Additionally, new insurance
 market conditions and solutions emerge and require Insurance Managers’ awareness and assessment.
-
-•  Strengthen loss prevention activity, to anticipate further hardening conditions on the insurance market
-
+• Strengthen loss prevention activity, to anticipate further hardening conditions on the insurance market
 and remain attractive for insurers.
+68 | FERMA Global Risk Manager Survey Report - 2024
 
-  68  |  FERMA Global Risk Manager Survey Report - 2024
-
-Africa and Oceania rank this as their top insurance strategy over the past 12 months.
-
-•  Negotiate long-term agreements, to stabilise costs and coverage and secure favourable terms and
-
+Africa and Oceania rank this as their top insurance strategy over the past 12 months.
+• Negotiate long-term agreements, to stabilise costs and coverage and secure favourable terms and
 conditions, in a context where the insurance market seeks to adapt to constant crisis. Insurance Managers
 are forced to strike a balance between their assessments of risks over a long-term horizon and insurance
 contracts that are still frequently short-term in scope.
-
-•  In addition, implementation or further use of captive facilities may appear beneficial when considering
-
+• In addition, implementation or further use of captive facilities may appear beneficial when considering
 long-term risk.
-
 More than half of respondents think some of their business activities or locations will become
 uninsurable in the future (53% in 2024 versus 41% in 2022).
-
 Risks cited as potentially uninsurable in the future
-
-73%
-
-55%
-
-34%
-
-33%
-
-31%
-
-16%
-
-Climate change
-physical risks /
-natural disaster
-
-Cyber-attacks
-
-Supply chain
-disruption
-(including raw
+73% 55% 34% 33% 31% 16%
+Climate change Cyber-attacks Supply chain Digitalisation Technological Other
+physical risks / disruption risks (including risks
+natural disaster (including raw AI)
 materials)
-
-Digitalisation
-risks (including
-AI)
-
-Technological
-risks
-
-Other
-
 Of this 53% of Insurance Managers, almost three quarters think climate change physical risks and natural
 disasters are the most probable area where insurance capacity will withdraw (73% globally, and up to
 100% in Asia). More than half of respondents estimate that cyber-attacks will become uninsurable, and
 technological and digital risks both are cited by about one third of respondents. The “other” category notably
 included war, terrorism, and political risks.
+FERMA Global Risk Manager Survey Report - 2024 | 69
 
-FERMA Global Risk Manager Survey Report - 2024  |  69
-
-Notable changes in coverage over the past 12 months
-
+Notable changes in coverage over the past 12 months
 In 2024, 25% of respondents noted an increase in cyber risk coverage, from 14% in 2022. Furthermore,
 there was a large reduction in cyber risk coverage only for 8% of respondents in 2024, a considerable
 improvement compared with the 33% reported in 2022. This trend indicates a stabilisation or re-evaluation
 of cyber risk strategies, with fewer companies experiencing drastic changes in their cyber risk coverage.
-
 Changes in coverage for various business lines over the past 12 months
 Q30. In the following business lines, what change in your coverage have you observed over the past 12 months?
-
-8%
-
-4%
-
-8%
-
-11%
-
-7%
-
-62%
-
-18%
-
-11%
-
-5%
-
-48%
-
-14%
-
-17%
-
-14%
-
-6%
-
-61%
-
-8%
-
-18%
-
-10%
-
-32%
-
-43%
-
-25%
-
-15%
-
-12%
-
-8%
-
-10%
-
-17%
-
-18%
-
-8%
-
-61%
-
+|     |     |     | 4%  |     |     | 7%  |
+| --- | --- | --- | --- | --- | --- | --- |
+|     |     | 8%  |     | 8%  | 11% |     |
+|     | 48% | 32% | 43% |     |     |     |
+62% 61%
+|     |     |     |     | 61% |     | 65% |
+| --- | --- | --- | --- | --- | --- | --- |
 63%
-
-65%
-
-6%
-
-13%
-
 10%
-
-3%
-
+25%
+14%
+8% 17%
+|     | 17% |     |     | 6%  |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+| 18% |     | 15% |     |     |     | 6%  |
 7%
-
+18%
 13%
-
-6%
-
-6%
-
-12%
-
-9%
-
-Errors &
-Omissions /
-Professional
-liability
-
-Directors'
-& Officers'
-Liability
-
-Property
-damage
-and/or
-business
+|     |     |     | 18% |     |     | 12% |
+| --- | --- | --- | --- | --- | --- | --- |
+|     |     | 12% |     |     | 13% |     |
+| 11% | 14% |     |     |     |     |     |
+10%
+10% 9%
+| 5%  |     | 8%  | 8%  |     | 6%  |     |
+| --- | --- | --- | --- | --- | --- | --- |
+|     | 6%  |     |     | 3%  |     |     |
+Directors'  Property   Public   Cyber risk   Natural   Product   Environmental  Errors &
+& Officers'  damage  liability coverage catastrophe  liability impairment  Omissions /
+| Liability | and/or    |     | coverage |     | liability | Professional  |
+| --------- | --------- | --- | -------- | --- | --------- | ------------- |
+|           | business  |     |          |     |           | liability     |
 interruption
-
- Public
-liability
-
- Cyber risk
-coverage
-
- Natural
-catastrophe
-coverage
-
- Product
-liability
-
- Environmental
-impairment
-liability
-
-Large reduction in coverage
-
-Reduction in coverage
-
-Small reduction in coverage
-
-Increase in coverage
-
- No change in coverage
-
- No coverage available
-
+Large reduction in coverage Reduction in coverage Small reduction in coverage
+|     | Increase in coverage |  No change in coverage |     |  No coverage available |     |     |
+| --- | -------------------- | ---------------------- | --- | ---------------------- | --- | --- |
 Only 1% of respondents report a large reduction in D&O liability coverage in 2024, compared with 12% in
 2022, suggesting enhanced stability or increased satisfaction with the current levels of D&O coverage.
-
 The situation remained challenging for natural catastrophe coverage, with 42% of respondents reporting
 a reduction in 2024. Natural catastrophe risks continue to be a significant concern for insurers and insureds
 alike, with limited progress in expanding coverage options.
-
 More than two-thirds, 37%, of Insurance Managers report a reduction for property damage and/or
 business interruption.
+ 70 | FERMA Global Risk Manager Survey Report - 2024
 
-  70  |  FERMA Global Risk Manager Survey Report - 2024
-
-Increased adoption of captives in
+Increased adoption of captives in
 risk management strategies
-
 Slight increase in setting up a captive as a strategy for the next two years
-
 In 2022, 73% of respondents indicated a preference for risk retention, compared with 62% in 2024,
 reflecting the importance of risk transfer within risk management solutions. This change indicates a growing
 interest in more structured and alternative approaches.
-
 The use of existing captive remains the second most commonly cited strategy of Insurance Managers,
 while the creation of captive insurance or reinsurance companies rose to 17% of responses in 2024 from
 12% in 2022. This suggests that organisations are seeking more tailored and controlled mechanisms to
 manage their risks.
-
 Strategy in regards to the financing of risks over the next 2 years
-
- Risk retention
-
-62%
-
-Use an existing captive
-
-35%
-
- Use alternative risk transfer vehicles
-
-28%
-
-Parametrics
-
-19%
-
- Create a captive insurance/ re-insurance company
-
-17%
-
-Mutualisation
-
-6%
-
+Risk retention 62%
+Use an existing captive 35%
+Use alternative risk transfer vehicles 28%
+Parametrics 19%
+Create a captive insurance/ re-insurance company 17%
+Mutualisation 6%
 A new strategy emerged with parametric insurance cited by 19% of respondents as a solution to finance
 risks over the next two years. This solution is particularly interesting as a method of financing for natural
+Other 6%
 catastrophe exposures.
+FERMA Global Risk Manager Survey Report - 2024 | 71
 
- Other
-
-6%
-
-FERMA Global Risk Manager Survey Report - 2024  |  71
-
-A stable proportion of respondents use a captive or similar since 2020
-
+A stable proportion of respondents use a captive or similar since 2020
 However, this year, 10% of repondents say they are considering this risk transfer solution.
-
 Does your organisation use a captive or similar?
-
 10%
-
-53%
-
-37%
-
 Yes
-
+37%
 No
-
 Planning to
-
+53%
 In Africa, 30% of respondents’ organisations already use a captive; 40% in Oceania; 33% in
 South America; 50% in Asia use a captive and a further 25% plan to use one; more than a
 quarter - 27% - in North America use a captive and 13% plan to use one.
-
-92%
-
 of respondents do not plan to change the domicile of their captive.
-More than half captives are domiciled outside of the country in which the parent
+92% More than half captives are domiciled outside of the country in which the parent
 company is headquartered.
+72 | FERMA Global Risk Manager Survey Report - 2024
 
-  72  |  FERMA Global Risk Manager Survey Report - 2024
-
-Captive coverage is expected to evolve over the next two years
-
+Captive coverage is expected to evolve over the next two years
 Captives will increasingly be used for four lines of cover in the next two years:
-
-52%
-Property and business
-interruption
-
-45%
-Cyber
-
-35%
-General and
-products liability
-
-31%
-Supply chain / non-damage
-business interruption
-
+52% 45% 35% 31%
+Property and business Cyber General and Supply chain / non-damage
+interruption products liability business interruption
 Involvement of captive by lines of cover over the next 2 years
-
 Q37. How do you estimate the involvement of your captive in the following lines of cover over the next 2 years?
-
-More important
-
-Less important
-
-Identical
-
-Not covered
-
+More important Less important Identical Not covered
 12%
-
-33%
-
-4%
-
-28%
-
-22%
-
-5%
-
-52%
-
-45%
-
 16%
-
-43%
-
-6%
-
-35%
-
-50%
-
-44%
-
-44%
-
-50%
-
-56%
-
-55%
-
-24%
-
-8%
-
-11%
-
-32%
-
-6%
-
-6%
-
-29%
-
-42%
-
-35%
-
-6%
-
-15%
-
+28%
+50% 44% 44% 50%
+33% 56% 55% 59%
+22% 43%
 4%
-
-10%
-
-7%
-
+5%
 13%
-
-13%
-
 6%
-
-31%
-
-59%
-
-22%
-
-8%
-
-11%
-
-Property & business
-interruption
-
-Cyber
-
-General & products liability
-
-Directors & Officers liability
-Fraud & financial crime
-
-Professional indemnity
-Environmental
-
-Supply Chain / Non-damage
-Stock & Transit
-Workers Compensation
- business interruption
-
-52%
-
-51%
-
-50%
-
-48%
-
-67%
-
+29% 42% 35% 6%
+52% 24% 32% 22%
+45%
+35% 8% 6% 7% 31% 8%
+4%
+11% 6% 15% 10% 13% 11%
+6%
+Property & i b n u te s r i r n u e p s t s G io e n neral & C y p b ro er duc F ts ra l u ia d b i & li t fi y D n i a re n c c t i o a r l s c r & i m O e fficers liabilit E y nvir P o r n o m fe e s n s t io a n l al inde mn S S it u y to p c p k ly & C T b h r a u a i s n n i s n / i e t N s o s n i W n -d t o e a r r m k ru e a p r g s ti e o C n o mpensation
+52% 51% 50% 48% 50%
+60% 58%
 69%
+67%
+21% 20%
+21% 24%
+5% 3% 38% 14% 7% 18% 22% 6% 27%
+10% 7%
+22% 19% 6% 24% 8% 24% 8%
+6% 10% 5% 10% 7%
+Construction & Enginee A r c in c g ident & H E e m al p th loyers liability Trade I n C E t r e m e ll d p e i c l t o t y u e a e l P b r e o n p e e fi r t t s M y o in t f o r r in & g e A m ut e o G n m t e o o b p i o le li t li i a c b al i l r it i y sk / Terroris m Product recall
+FERMA Global Risk Manager Survey Report - 2024 | 73
 
-60%
-
-50%
-
-58%
-
-21%
-
-24%
-
-5%
-
-22%
-
-3%
-
-19%
-
-21%
-
-20%
-
-38%
-
-14%
-
-7%
-
-10%
-
-10%
-
-6%
-
-6%
-
-24%
-
-18%
-
-8%
-
-5%
-
-22%
-
-6%
-
-27%
-
-7%
-
-10%
-
-24%
-
-8%
-
-7%
-
-Accident & Health
-
-Employers liability
-
-Construction & Engineering
-
-Geopolitical risk / Terrorism
-Intellectual Property infringement
-Employee benefits
-Motor & Automobile liability
-Product recall
-Trade Credit
-
-FERMA Global Risk Manager Survey Report - 2024  |  73
-
-in partnership with
-
+in partnership with
 FERMA
-
 Anticipating changes
 Shaping the future
-
 Contact us for further information
-
 enquiries@ferma.eu
-
 www.ferma.eu
-
 Copyright © 2024 FERMA, in partnership with PwC
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-11-21", "model": "gemini-3.7-flash"} -->
