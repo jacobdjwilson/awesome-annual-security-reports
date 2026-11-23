@@ -1,75 +1,256 @@
-analysis techniques can make it difficult to understand the full scope of an incident, but reviewing logs and browser history can help you understand the user’s actions and the source of the malware.	ƒImplement application control policies to prevent users from running unauthorized software.	ƒUse endpoint detection and response (EDR) tools to monitor for suspicious activity, such as unusual process execution or network connections.	ƒEducate users on the risks of downloading software from untrusted sources and the dangers of malvertising.	ƒConsider using a browser-based security solution that can block access to malicious websites and prevent the download of malicious files.	ƒRegularly update and patch software to protect against known vulnerabilities.	ƒMaintain a robust backup strategy to ensure that data can be recovered in the event of a ransomware attack or other data loss incident.
+analysis tools often fail to provide complete context, but a manual review of browser history or logs can quickly clarify the root cause.	ƒEducate users on malvertising. Show them what search engine ads look like, and teach them to scroll past the ads to the search results (or, better yet, use an ad blocker).	ƒMonitor download activity. Endpoint telemetry often captures the exact URL where a file was downloaded, which can reveal whether the user clicked an ad or visited a legitimate site.	ƒAdvise employees to be extremely careful with cracked software. Remind them of the risks associated with downloading it—not just to the individual, but to the entire organization.	ƒDeploy EDR and configure it to block execution of files from unusual locations, such as temporary directories or user profile folders.	ƒDeploy an ad blocker across organization-managed devices to prevent users from accidentally clicking on malicious search ads.Annual Threat Report 2024
 
-### Hospitality, travel, tech, and financial services stand out as heavily targeted industries
+File types
 
-Hospitality held onto the top spot for industries targeted by phishing attacks for the second year in a row with the highest volume at 55%. It’s followed—but not closely—by travel (12%), technology (9%), financial services, and healthcare (5% each).
+Among the files our SOC observed in 2023 associated
+with malicious activity, script-based files were heavily
+represented. JavaScript made up the highest volume at 39%,
+followed by executables (EXE—20%), LNK (12%), and VBS
+(7%). See Chart 11 for the complete breakdown.
 
-#### Infostealer campaign targeting hospitality customers since 2022
+JS and VBS are text files that receive less scrutiny from
+automated analysis mechanisms than EXE files. Unlike
+EXE, attackers can hide their functionality among benign
+content or by command obfuscation. By default, the native
+Windows program, `wscript.exe`, will execute these scripts
+when a user double-clicks the files. Attackers use this
+setting to their advantage, so we highly recommend changing
+this default setting, which can be done using a Group Policy
+Object (GPO).
 
-Since 2022, our SOC has observed an infostealing campaign targeting our hospitality customers with the goal of gaining administrative access to sites like Booking.com to commit fraud.
+Chart 11: File types observed by the Expel SOC
 
-The campaign has developed over time, but it generally looks like this: an attacker uses a Gmail account to request information about a booking, ask for help, or to lodge a complaint. Instead of an attachment, the email contains a link to a file storage service such as Dropbox, Google Drive, and Mega.nz.
+Let’s talk about OneNote files: At the very end of 2022, we
+saw the beginning of a new trend toward leveraging OneNote
+files in attacks. In January 2023, Microsoft pushed a patch
+to slow down the exploitation, and ultimately implemented
+much stronger controls in March, virtually killing the
+technique. This not only illustrates how Microsoft can
+eliminate a threat vector, but it also proves that if
+organizations adopt tight controls, they also have the power
+to fully stop a threat vector.
 
-In most situations, the files in the storage service are a file archive (ZIP, RAR, etc.), which is password-protected to prevent the storage provider from scanning its contents. When the user opens the file, the archive typically contains an inflated EXE file which is an infostealer.
+24
 
-Though this campaign targets hospitality companies, understanding it is extremely valuable for organizations in other industries, too. As a common threat vector, infostealing malware can affect any organization.
+File typePercentagePercentage010203040OtherHTM/HTMLZIP/RARVBSLNKINGEXEJSAnnual Threat Report 202425
 
-### Bad actors trended toward script-based files for pre-ransomware initial access
+How to protect your organization from computer-based threats	ƒChange the default file association for script files. By default, Windows opens script files (like JS, VBS, and WSF) using Windows Script Host (`wscript.exe` or `cscript.exe`), which executes the script when double-clicked. You can change this behavior so that these files open in a text editor (like Notepad) instead. This simple change stops many drive-by script attacks dead in their tracks.		Deploy this change using a Group Policy Object (GPO) or mobile device management (MDM) solution across your environment.	ƒMonitor PowerShell execution. Attackers frequently use PowerShell to download payloads, execute commands, or perform discovery. Enable script block logging (`Event ID 4104`) and module logging to capture the full content of PowerShell commands. Monitor for suspicious patterns, such as encoded commands (`-EncodedCommand`), obfuscated strings, or downloads from untrusted URLs.	ƒImplement application control. Use tools like Microsoft Defender Application Control (WDAC) or AppLocker to restrict which applications are allowed to run on endpoints. This prevents unauthorized software—including infostealers and RATs—from executing, even if a user manages to download it.	ƒMaintain a vulnerability management program. Regularly scan your environment for missing patches and known vulnerabilities, prioritizing systems exposed to the Internet (like VPN gateways, email servers, and web applications). Establish a rapid patching cadence for critical vulnerabilities, especially zero-days under active exploitation.	ƒMonitor endpoint telemetry for living-off-the-land binaries (LotLBs). Attackers love using legitimate administrative tools already present on the system (like `rundll32.exe`, `regsvr32.exe`, or `certutil.exe`) to execute malicious payloads or download files. Create detections for anomalous command-line arguments passed to these binaries.	ƒImplement network segmentation. Limit lateral movement by segmenting your network into zones, isolating critical assets (like domain controllers and database servers) from general user workstations. Require strict access controls between segments to prevent an attacker from pivoting easily after compromising a single endpoint.Annual Threat Report 2024Phishing threats
+Trends, qishing, and industry targeting
 
-JavaScript made up the highest volume of files at 39%, but we also saw lots of other scripting types, including executable (EXE—20%), LNK (12%), and VBS (7%) files.
+Phishing remains one of the most reliable and
+cost-effective initial access vectors for threat actors.
+In 2023, we saw phishing incidents triple as a
+percentage of overall alerts investigated by our SOC,
+moving from 2% in 2022 to 6% in 2023.
 
-JS and VBS are text files that receive less scrutiny from automated analysis mechanisms than EXE files. Unlike EXE, attackers can hide their functionality among benign content or by command obfuscation. By default, the native Windows program, wscript.exe, will execute these scripts when a user double-clicks the files. Attackers use this setting to their advantage, so we highly recommend changing this default setting, which can be done using a group policy object (GPO).
+While phishing campaigns often culminate in identity
+compromise or malware execution, we track dedicated
+phishing submissions and email-borne threats to understand
+how adversaries are attempting to trick users.
 
-### Witness the power of secure-by-default to fully stop threat vectors
+Industry targeting
 
-At the very end of 2022, we saw the beginning of a new trend toward leveraging OneNote files in attacks. In January 2023, Microsoft pushed a patch to slow down the exploitation, and ultimately implemented much stronger controls in March, virtually killing the technique.
+Hospitality held onto the top spot for industries targeted by
+phishing attacks for the second year in a row, accounting for
+55% of targeted phishing volume. It was followed by travel
+(12%), technology (9%), financial services (5%), and
+healthcare (5%). See Chart 12 for the breakdown.
 
-This not only illustrates how Microsoft can eliminate a threat vector, but it also proves that if organizations adopt tight controls, they also have the power to fully stop a threat vector.
+Hospitality organizations are uniquely vulnerable because
+their business models rely on open communication channels
+with the public, making it easy for attackers to pose
+as customers, vendors, or partners seeking assistance or
+lodging complaints.
+
+Chart 12: Phishing targets by industry vertical
+
+W H A T   O T H E R   T R E N D S
+D I D   W E   S E E ?
+
+	ƒ **QR code phishing (qishing)** surged in 2023.
+Attackers embedded malicious QR codes in PDF
+attachments or image files within emails, forcing users
+to scan them with personal mobile devices. This
+technique successfully bypassed traditional email
+gateway filters and endpoint security controls.
+
+	ƒ **Business Email Compromise (BEC)** tactics
+continued to evolve. Attackers increasingly leveraged
+compromised accounts to send internal phishing emails
+or reply-chain attacks, making the messages appear
+highly legitimate to recipients.
+
+	ƒ **AI-generated phishing content** became more
+prevalent. Phishing emails featured better grammar,
+more natural phrasing, and convincing context tailored
+to specific roles within an organization, reducing the
+tells that users previously relied upon to spot scams.
+
+26
+
+IndustryPercentagePercentage0102030405060OtherHealthcareFinancial servicesTechnologyTravelHospitalityAnnual Threat Report 202427
+
+How to protect your organization from phishing threats	ƒImplement robust email authentication protocols. Ensure Sender Policy Framework (SPF), DomainKeys Identified Mail (DKIM), and Domain-based Message Authentication, Reporting, and Conformance (DMARC) are fully configured and enforced with strict policies (e.g., `p=reject`) to prevent email spoofing.	ƒDeploy advanced email security solutions. Use AI-driven email security tools that analyze communication patterns, detect anomalies, display warning banners for external or newly registered domains, and automatically neutralize malicious links or attachments.	ƒConduct regular phishing simulations. Train employees to recognize evolving tactics, including qishing, reply-chain attacks, and social engineering lures. Tie training directly to real-world threats observed in your environment.	ƒEncourage a reporting culture. Make it as easy as possible for users to report suspicious emails with a single-click reporting button. Acknowledge and reward users who successfully report malicious emails to reinforce positive security behaviors.	ƒImplement link rewriting and safe links. Use email gateway features that rewrite URLs and scan destination pages in real time when clicked, blocking access if the site is determined to be a credential harvester or malicious payload host.Annual Threat Report 2024Annual spotlight
+Emerging trends and focal points for 2024
+
+Each year, our security operators, researchers, and
+threat hunters take a step back to analyze the broader
+forces shaping the threat landscape. In 2024, several
+emerging themes demand the attention of security
+leaders and practitioners alike.
+
+The weaponization of generative AI
+
+Generative artificial intelligence has transitioned from a novel
+technology to a weaponized toolset for cyber adversaries.
+While security defenders leverage AI to accelerate triage
+and detection engineering, threat actors are using large
+language models (LLMs) to scale their operations.
+
+What we are seeing:
+- **Spearphishing at scale**: Attackers are using LLMs to
+generate highly personalized, grammatically flawless phishing
+emails tailored to specific individuals by scraping their
+public profiles and social media activity.
+- **Vishing and impersonation**: As noted with groups
+like "The Com," attackers are exploring voice synthesis and
+deepfake technologies to mimic executives and IT staff during
+helpdesk phone calls, bypassing verbal verification checks.
+- **Code obfuscation**: Adversaries are leveraging AI to
+rapidly write and refactor malicious scripts, making it harder
+for static analysis tools to signature the code.
+
+Defense recommendations:
+- **Assume zero trust for communications**: Implement strict
+out-of-band verification procedures for high-risk requests,
+such as wire transfers, direct deposit changes, and password
+resets, regardless of how convincing the caller or email appears.
+- **Invest in behavioral analytics**: Focus detections on user
+behavior and transactional anomalies rather than relying solely
+on content inspection, as AI-generated text will continue to
+look and sound legitimate.
+
+Software supply chain risks
+
+The software supply chain remains a fragile foundation for
+modern enterprise technology. The exploitation of zero-days
+in widely used enterprise software—such as MOVEit Transfer
+and Citrix NetScaler—demonstrates that compromising a
+single vendor can grant attackers immediate access to
+hundreds of downstream organizations.
+
+What we are seeing:
+- **Upstream targeting**: Threat actors increasingly
+invest time in auditing commercial software, open-source
+libraries, and IT management tools for undocumented
+vulnerabilities.
+- **Rapid exploitation windows**: The time between a
+vulnerability disclosure and active exploitation has shrunk
+to hours, leaving organizations precious little time to patch.
+
+Defense recommendations:
+- **Software Bill of Materials (SBOM)**: Maintain a comprehensive
+inventory of third-party software components and dependencies
+to quickly identify exposure when a new vulnerability drops.
+- **Pervasive microsegmentation**: Even if an edge device
+or third-party application is compromised, effective internal
+segmentation can prevent lateral movement to core domain
+controllers and sensitive data repositories.
+
+28
+
+Annual Threat Report 2024Looking ahead to 2024…
+Predictions from the Expel leadership team
+
+As we look toward the remainder of 2024 and beyond,
+our leadership team shares their predictions on where the
+cybersecurity landscape is heading.
+
+**Dave Merkel, CEO**
+"We’re going to see identity continue to be the primary battlefield.
+As organizations get better at deploying MFA, attackers will double
+down on bypass techniques like AiTM phishing, session hijacking,
+and social engineering helpdesk attacks. The organizations that
+succeed won't be the ones with the most expensive tools, but
+the ones that master identity hygiene and least-privilege access."
+
+**Daniel Clayton, VP, Security Operations**
+"Automation is no longer optional for security operations centers—
+it's survival. The volume of alerts and the speed at which attackers
+move mean human analysts can't look at everything manually.
+The winning SOCs in 2024 will be those that successfully blend
+human expertise with intelligent automation to drive down dwell
+time and stop attacks before they cause real harm."
+
+**Steve Kelly, VP of Strategy and Threat Intelligence**
+"The line between cybercrime and nation-state activity will
+continue to blur. Financially motivated gangs are adopting the
+sophistication, persistence, and evasion techniques previously
+reserved for advanced persistent threat (APT) groups. At the
+same time, ransomware operators will continue to experiment
+with data exfiltration and extortion without necessarily deploying
+locking ransomware, finding it a cleaner and equally effective
+way to monetize intrusions."
+
+**Dan Beavin, VP of Engineering**
+"We’ll see continued fallout from shadow IT and unmanaged
+devices accessing corporate resources. As remote and hybrid
+workforces continue to rely on personal devices and browser-
+based workflows, attackers will increasingly target the browser
+as the new endpoint. Protecting the browser and securing
+session tokens will become just as critical as managing the
+operating system."
+
+29
+
+Annual Threat Report 20242023 at Expel
+By the numbers
+
+Behind every incident investigated, alert triaged, and
+customer secured is a dedicated team of Expel security
+operators working around the clock. Here is a snapshot
+of our operational scale and impact throughout 2023:
+
+- **64%** of all incidents investigated by our SOC were identity-based.
+- **72%** increase in cloud infrastructure incidents handled year-over-year.
+- **58%** of our customers experienced at least one identity-related threat attempt.
+- **57%** of high-risk malware incidents involved pre-ransomware strains like Gootloader, Qakbot, and SocGholish.
+- **3** major zero-day vulnerabilities dominated our perimeter investigations (MOVEit Transfer, Adobe ColdFusion, and CitrixBleed).
+- **24/7/365** continuous monitoring and protection provided across cloud, endpoint, identity, and network layers.
+
+30
+
+Annual Threat Report 2024Reference highlights
+Key advisories, blogs, and research
+
+Throughout this report, we reference various research pieces,
+advisories, and blog posts published by the Expel threat intel
+and security research teams. Below are key highlights and
+resources to help your organization dive deeper into specific
+threat topics:
+
+- **Expel Blog: "Amazon Cognito: What you need to know about misconfigurations"**
+  Detailed analysis of AWS Cognito misconfigurations, auditing tools, and how threat actors abuse identity pools.
+- **Expel Blog: "Six things to consider before starting a red team exercise"**
+  Strategic guidance on scoping and preparing your organization for realistic adversarial simulations.
+- **CISA Advisories on MOVEit Transfer (CVE-2023-34362)**
+  Official guidance and indicators of compromise (IoCs) related to zero-day exploitation of managed file transfer software.
+- **FBI Internet Crime Complaint Center (IC3) Annual Report**
+  Comprehensive statistics on business email compromise (BEC) financial losses and global cybercrime trends.
 
 ---
 
-## Phishing threats
-
-![Chart showing phishing incident trends]
-
-The recent uptick in QR code phishing—or qishing—is cause for concern because it takes the activity off endpoints and puts it on mobile devices, which may not be managed with tight security controls—allowing the attacker to bypass endpoint security. We found that Microsoft’s threat intelligence can reliably identify phishing pages created with PhaaS platforms. However, Microsoft’s effectiveness in identifying these pages may have inadvertently contributed to an increase in threat actors’ use of QR codes for phishing.
-
-Personal devices typically lack the same level of protection as endpoint devices, meaning threat actors may be able to bypass the usual security barriers more easily. It’s pivotal users become as wary of unexpected QR codes as they are URLs (or at least, as they should be).
-
----
-
-## Annual spotlight
-
-![Image representing the annual spotlight theme]
-
-In this section, we reflect on the broader shifts in the threat landscape. The move toward "Cybercrime-as-a-Service" has lowered the barrier to entry for attackers, making sophisticated campaigns accessible to less skilled actors. We have observed that the speed at which threat actors adapt to new security controls—such as the shift from OneNote to QR codes—is accelerating. Organizations must prioritize agility in their security operations to keep pace with these evolving tactics.
-
----
-
-## Looking ahead to 2024…
-
-As we look toward 2024, our leadership team and industry experts anticipate several key developments:
-
-- **Generative AI in Social Engineering**: We expect attackers to leverage generative AI to create highly convincing, personalized phishing lures and to automate the impersonation of employees during helpdesk calls.
-- **Continued Rise of PhaaS**: The ecosystem for phishing-as-a-service will likely expand, offering more sophisticated templates and evasion techniques.
-- **Focus on Identity**: Identity will remain the primary battleground. Organizations that do not implement phish-resistant MFA will find themselves increasingly vulnerable.
-- **Cloud Misconfigurations**: As cloud adoption continues to grow, so will the exploitation of misconfigured services like Amazon Cognito.
-
----
-
-## 2023 at Expel
-
-2023 was a year of significant growth and learning for our team. We expanded our coverage of cloud environments and deepened our integration with leading security technologies. Our SOC analysts processed millions of events, turning raw data into actionable intelligence for our customers. We remain committed to our mission of making security accessible and effective for everyone.
-
----
-
-## Reference highlights
-
-1.  **FBI Internet Crime Report (2022)**: Statistics on BEC and financial losses.
-2.  **Microsoft Security Intelligence**: Reports on PhaaS and QR code phishing trends.
-3.  **CVE-2023-34362**: Vulnerability details for Progress MOVEit Transfer.
-4.  **CVE-2023-4966**: Technical analysis of CitrixBleed.
-5.  **Expel Blog**: [Understanding Amazon Cognito Misconfigurations](https://expel.com/blog) (Link illustrative).
+### Table of Contents
+- [Executive summary](#executive-summary)
+- [2023 by the numbers](#2023-by-the-numbers)
+- [Identity threats](#identity-threats)
+- [Cloud platform threats](#cloud-platform-threats)
+- [Computer-based threats](#computer-based-threats)
+- [Phishing threats](#phishing-threats)
+- [Annual spotlight](#annual-spotlight)
+- [Looking ahead to 2024…](#looking-ahead-to-2024)
+- [2023 at Expel](#2023-at-expel)
+- [Reference highlights](#reference-highlights)
 
 ---
 
@@ -724,4 +905,4 @@ blog, or follow us on LinkedIn.
 
 expel.com/contact-us
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-11-21", "model": "gemini-3.5-flash-lite"} -->
