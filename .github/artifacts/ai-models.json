@@ -1,25 +1,26 @@
 {
   "models": {
-    "primary": "gemini-3.5-flash-lite",
-    "secondary": "gemini-3.7-flash",
-    "tertiary": "gemini-3.8-flash",
+    "primary": "gemini-4-argon",
+    "secondary": "gemini-3.8-flash",
+    "tertiary": "gemini-3.7-flash",
     "embedding": "text-embedding-2",
-    "comment": "Last updated September 4 2026"
+    "comment": "Last updated November 25 2026"
   },
   "model_hierarchy": [
     "gemini-3.1-flash-lite-preview",
     "gemini-3.1-flash-lite",
     "gemini-3.5-flash-lite",
     "gemini-3.7-flash",
-    "gemini-3.8-flash"
+    "gemini-3.8-flash",
+    "gemini-4-argon"
   ],
   "_model_hierarchy_comment": "Ascending order of model capability and generation tier. Used for stale conversion detection, candidate prioritization, and enforcing model upgrade invariance.",
   "task_models": {
     "conversion": {
-      "primary": "gemini-3.8-flash",
-      "secondary": "gemini-3.7-flash",
-      "tertiary": "gemini-3.5-flash-lite",
-      "comment": "Top-tier Flash model for complex PDF layout parsing, multi-column tables, and long-context Markdown reformatting"
+      "primary": "gemini-4-argon",
+      "secondary": "gemini-3.8-flash",
+      "tertiary": "gemini-3.7-flash",
+      "comment": "Top-tier model for complex PDF layout parsing, multi-column tables, and long-context Markdown reformatting"
     },
     "summarization": {
       "primary": "gemini-3.7-flash",
