@@ -2,10 +2,10 @@
   "schema_version": "2.0",
   "last_updated": "2026-11-23T23:47:42.092734Z",
   "last_learner_run": "2026-11-23T23:47:42.092734Z",
-  "total_feedback_events": 25,
+  "total_feedback_events": 26,
   "outcome_counts": {
     "true_positive": 4,
-    "false_positive": 10,
+    "false_positive": 11,
     "duplicate": 6,
     "mismatch": 5
   },
@@ -302,6 +302,16 @@
       "org": "DigitalAI",
       "url": "https://digital.ai/resource-center/whitepapers/2026-application-security-threat-report/",
       "outcome": "true_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-11-26T02:13:33.045814Z",
+      "issue_number": 1910,
+      "issue_title": "[Report Discovery] Syxsense 2026 \u2014 Vulnerability Report",
+      "org": "Syxsense",
+      "url": "https://www.selecthub.com/p/endpoint-management-software/automox/",
+      "outcome": "false_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
