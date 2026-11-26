@@ -2,12 +2,12 @@
   "schema_version": "2.0",
   "last_updated": "2026-11-23T23:47:42.092734Z",
   "last_learner_run": "2026-11-23T23:47:42.092734Z",
-  "total_feedback_events": 26,
+  "total_feedback_events": 27,
   "outcome_counts": {
     "true_positive": 4,
     "false_positive": 11,
     "duplicate": 6,
-    "mismatch": 5
+    "mismatch": 6
   },
   "triage_log": [],
   "url_fingerprints": {
@@ -312,6 +312,16 @@
       "org": "Syxsense",
       "url": "https://www.selecthub.com/p/endpoint-management-software/automox/",
       "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-11-26T02:21:18.951262Z",
+      "issue_number": 1901,
+      "issue_title": "[Report Discovery] CISA 2026 \u2014 Secure By Design",
+      "org": "CISA",
+      "url": "https://www.ic3.gov/CSA/2026/260407.pdf",
+      "outcome": "mismatch",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
