@@ -1,4 +1,7 @@
-# FIR Risk Annual Report · Edition 03: SIGNALS 2026
+# FIR RISK · ANNUAL REPORT
+### EDITION 03
+
+# SIGNALS 2026
 
 **Five signals that cut through the noise.**
 
@@ -14,20 +17,20 @@ For CEOs and boards · November 2026
 - [Why Signals](#why-signals)
 - [The Whole Picture](#the-whole-picture)
 - [Method](#method)
-- [Signal 01: The Window Is Gone. Expose Less.](#signal-01-the-window-is-gone-expose-less)
-- [Signal 02: Inside, They Look Like You.](#signal-02-inside-they-look-like-you)
-- [Signal 03: Half of Breaches Now Involve a Third Party.](#signal-03-half-of-breaches-now-involve-a-third-party)
-- [Signal 04: Recovery Time Sets the Bill.](#signal-04-recovery-time-sets-the-bill)
-- [Signal 05: Your Own AI Is the Risk You Control.](#signal-05-your-own-ai-is-the-risk-you-control)
-- [The Good News: The Basics Are Working.](#the-good-news-the-basics-are-working)
-- [Filtered Out: The Noise, and What the Data Says](#filtered-out-the-noise-and-what-the-data-says)
-- [Accountability: How Our Past Calls Held Up](#accountability-how-our-past-calls-held-up)
-- [Looking Ahead: Weak Signals to Watch in 2027](#looking-ahead-weak-signals-to-watch-in-2027)
-- [What We Told You: Five Questions for Your Next Board Meeting](#what-we-told-you-five-questions-for-your-next-board-meeting)
+- [Signal 01: The window is gone. Expose less.](#signal-01-the-window-is-gone-expose-less)
+- [Signal 02: Inside, they look like you.](#signal-02-inside-they-look-like-you)
+- [Signal 03: Half of breaches now involve a third party.](#signal-03-half-of-breaches-now-involve-a-third-party)
+- [Signal 04: Recovery time sets the bill.](#signal-04-recovery-time-sets-the-bill)
+- [Signal 05: Your own AI is the risk you control.](#signal-05-your-own-ai-is-the-risk-you-control)
+- [The Good News](#the-good-news)
+- [Filtered Out](#filtered-out)
+- [Accountability](#accountability)
+- [Looking Ahead](#looking-ahead)
+- [What We Told You](#what-we-told-you)
 - [Appendix: The Evidence Behind Each Signal](#appendix-the-evidence-behind-each-signal)
-- [Appendix · For Your Security Team · 1 of 2: The Five Signals in MITRE ATT&CK](#appendix--for-your-security-team--1-of-2-the-five-signals-in-mitre-attck)
-- [Appendix · For Your Security Team · 2 of 2: The Five Signals in MITRE ATT&CK, Continued](#appendix--for-your-security-team--2-of-2-the-five-signals-in-mitre-attck-continued)
-- [Sources: Where Every Number Comes From](#sources-where-every-number-comes-from)
+- [Appendix · For Your Security Team · 1 of 2](#appendix--for-your-security-team--1-of-2)
+- [Appendix · For Your Security Team · 2 of 2](#appendix--for-your-security-team--2-of-2)
+- [Sources](#sources)
 
 ---
 
@@ -39,7 +42,7 @@ Every year the security industry publishes hundreds of reports. Most are careful
 
 Over the past two years, FIR Risk has published 100 editions analyzing the major reports, from Verizon, Microsoft, Mandiant, CrowdStrike, IBM, Anthropic and many others. This year we asked a different question: what survives when you put them all side by side?
 
-**SIGNALS** is the answer: five findings that independent sources agree on, that have held for more than a year, and that matter to the decisions leaders make about priorities, funding and oversight. We went back to the original reports and checked every number. What didn't pass, we left out.
+SIGNALS is the answer: five findings that independent sources agree on, that have held for more than a year, and that matter to the decisions leaders make about priorities, funding and oversight. We went back to the original reports and checked every number. What didn't pass, we left out.
 
 Each signal ends with one question for your next board meeting. They are not mandates. They are the questions we would want answered if it were our company.
 
@@ -50,6 +53,7 @@ Thank you for reading FIR Risk this year.
 **Bruce Bird**  
 FIR Risk Advisory  
 [firrisk.ai](https://firrisk.ai)  
+
 *SIGNALS 2026 · 2*
 
 ---
@@ -60,13 +64,13 @@ FIR Risk Advisory
 
 If you read nothing else: what held up across two years of threat reports, the number that proves it, and the question it puts to the board.
 
-| Signal | Key Metric | Board Question (ASK) |
-| :--- | :--- | :--- |
-| **01 The window is gone. Expose less.** | **31%** of breaches start with an exploited vulnerability, now the #1 way in. Up from 20%. | Do we know every system we expose to the internet and every open-source package we depend on, and is that footprint getting smaller? |
-| **02 Inside, they look like you.** | **82%** of intrusions CrowdStrike detected in 2025 used no malware. 71% in 2022. | If an attacker were logged in as one of our employees today, would we know? |
-| **03 Half of breaches now involve a third party.** | **48%** of breaches involved a third party. 9% three editions ago. | How many vendors do we rely on, and how many of the critical ones have a current risk assessment? |
-| **04 Recovery time sets the bill.** | **~10×** the economic loss when restoring takes almost two weeks instead of under one. | How quickly could we really restore core operations, and have we tested it? |
-| **05 Your own AI is the risk you control.** | **45%** of employees now use AI regularly at work, up from 15% a year earlier. | Which AI tools and agents are in use across our company, approved or not, and who owns each one? |
+| # | Signal | The Key Number | Board Question (**ASK**) |
+|---|---|---|---|
+| **01** | **The window is gone. Expose less.** | **31%** of breaches start with an exploited vulnerability, now the #1 way in. Up from 20%. | Do we know every system we expose to the internet and every open-source package we depend on, and is that footprint getting smaller? |
+| **02** | **Inside, they look like you.** | **82%** of intrusions CrowdStrike detected in 2025 used no malware. 71% in 2022. | If an attacker were logged in as one of our employees today, would we know? |
+| **03** | **Half of breaches now involve a third party.** | **48%** of breaches involved a third party. 9% three editions ago. | How many vendors do we rely on, and how many of the critical ones have a current risk assessment? |
+| **04** | **Recovery time sets the bill.** | **~10×** the economic loss when restoring takes almost two weeks instead of under one. | How quickly could we really restore core operations, and have we tested it? |
+| **05** | **Your own AI is the risk you control.** | **45%** of employees now use AI regularly at work, up from 15% a year earlier. | Which AI tools and agents are in use across our company, approved or not, and who owns each one? |
 
 **Sources:** Verizon DBIR 2023–2026 · CrowdStrike Global Threat Report 2024–2026 · Microsoft/Accenture, *Securing Nations in the Intelligent Economy* (2026). Every figure is checked against the primary report; the full list, with page references, is in the web edition at [firrisk.ai](https://firrisk.ai).
 
@@ -101,7 +105,7 @@ It matters to decisions a CEO or board makes: priorities, funding or oversight.
 
 ---
 
-Every number in this report traces to a page in a primary report and carries the year of its data.
+> Every number in this report traces to a page in a primary report and carries the year of its data.
 
 What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like quantum can't pass a persistence test until it's too late, so we track them on page 13, *Weak signals to watch*.
 
@@ -109,25 +113,26 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 
 ---
 
-## Signal 01: The Window Is Gone. Expose Less.
+## Signal 01: The window is gone. Expose less.
 
 **6 INDEPENDENT SOURCES · 2022–2025 DATA**
 
-> Attackers now move faster than any patch cycle. The lever left to you is how much you expose.
+Attackers now move faster than any patch cycle. The lever left to you is how much you expose.
 
-![Timeline chart showing average breakout time dropping from 84 minutes in 2022 to 29 minutes in 2025, with the fastest recorded in 2025 at 27 seconds]
+### Breakout Time
+*Time from first access to moving through the network, average:*
 
-### Time from first access to moving through the network, average
-- **2022:** 84 min
-- **2023:** 62 min
-- **2024:** 48 min
-- **2025:** 29 min
+- **2022:** 84 min  
+- **2023:** 62 min  
+- **2024:** 48 min  
+- **2025:** 29 min  
 
-**Fastest:** **27 seconds** the fastest breakout seen in 2025 (2m 07s in 2023)  
-*Average eCrime "breakout time." CrowdStrike Global Threat Report, 2024–2026 editions.*
+> **Fastest:** **27 seconds** was the fastest breakout seen in 2025 (2m 07s in 2023).  
+> *Average eCrime "breakout time." CrowdStrike Global Threat Report, 2024–2026 editions.*
 
 ---
 
+### Supporting Data
 - **31%** of breaches now start with an exploited vulnerability, the #1 way in.  
   *(Verizon DBIR 2026)*
 - **29%** of exploited flaws were attacked on or before the day they were published.  
@@ -135,14 +140,16 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 - **26%** of critical known-exploited flaws were fully fixed in 2025, down from 38%.  
   *(Verizon DBIR 2026)*
 
-**ALSO AGREE:**
-- **Mandiant** · exploits #1 way in, 32%
-- **IBM X-Force** · app exploits up 44%
-- **Microsoft** · weaponized in under 24 hours
+### Also Agree
+- **Mandiant:** exploits #1 way in, 32%
+- **IBM X-Force:** app exploits up 44%
+- **Microsoft:** weaponized in under 24 hours
+
+---
 
 > You can't out-patch the window. Shrink what you expose, starting with internet-facing systems and open-source packages.
 
-**ASK:** Do we know every system we expose to the internet and every open-source package we depend on, and is that footprint getting smaller?
+**ASK:** **Do we know every system we expose to the internet and every open-source package we depend on, and is that footprint getting smaller?**
 
 **FIR reading:** INTEL-30 *The Pre-Disclosure Window* · INTEL-32 *When the Sellers Agree* · INTEL-45 *Stop Counting Patches* · E91 · E94
 
@@ -150,27 +157,26 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 
 ---
 
-## Signal 02: Inside, They Look Like You.
+## Signal 02: Inside, they look like you.
 
 **5 INDEPENDENT SOURCES · 2022–2026 DATA**
 
-> Logins are harder to break, so attackers talk their way in, then act like real users.
+Logins are harder to break, so attackers talk their way in, then act like real users.
 
 ### Of every 100 intrusions CrowdStrike detected in 2025:
 - **82** used no malware: stolen logins, real tools, normal-looking activity
 - **18** used malware your tools are built to catch
 
-![Bar graph showing the rising malware-free share of detections: 71% in 2022, 75% in 2023, 79% in 2024, and 82% in 2025]
-
-### RISING EVERY YEAR: Malware-free share of detections
+### Rising Every Year
+*Malware-free share of detections. CrowdStrike Global Threat Report, 2024–2026 editions.*
 - **2022:** 71%
 - **2023:** 75%
 - **2024:** 79%
-- **2025:** 82%  
-*CrowdStrike Global Threat Report, 2024–2026 editions.*
+- **2025:** 82%
 
 ---
 
+### Supporting Data
 - **#2:** Voice phishing is now the second most common way in. Email phishing fell from 14% to 6%.  
   *(Mandiant M-Trends 2026)*
 - **+502%:** malicious voice calls over Microsoft Teams in a year.  
@@ -178,13 +184,15 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 - **83%:** of privilege escalation used no exploit, only permissions that already existed.  
   *(Verizon DBIR 2026)*
 
-**ALSO AGREE:**
-- **Unit 42** · identity a factor in ~90% of cases
-- **Microsoft** · password attacks down 26%
+### Also Agree
+- **Unit 42:** identity a factor in ~90% of cases
+- **Microsoft:** password attacks down 26%
+
+---
 
 > A valid login is the best disguise. Know who has access, and notice when they act out of character.
 
-**ASK:** If an attacker were logged in as one of our employees today, would we know?
+**ASK:** **If an attacker were logged in as one of our employees today, would we know?**
 
 **FIR reading:** INTEL-8 *The Breach Starts With a Phone Call* · INTEL-23 *The Permission Problem* · INTEL-42 *The First Email Asks for Nothing* · E85 · E94
 
@@ -192,23 +200,22 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 
 ---
 
-## Signal 03: Half of Breaches Now Involve a Third Party.
+## Signal 03: Half of breaches now involve a third party.
 
 **5 INDEPENDENT SOURCES · 4 YEARS OF DBIR DATA**
 
-> 48% of breaches involved a vendor, partner or supplier, up from 9% three editions ago.
+48% of breaches involved a vendor, partner or supplier, up from 9% three editions ago.
 
-![Line chart showing breaches involving a third party rising from 9% in DBIR 2023, to 15% in DBIR 2024, 30% in DBIR 2025, and 48% in DBIR 2026]
-
-### Breaches involving a third party, now close to half
+### Breaches Involving a Third Party, Now Close to Half
+*Verizon Data Breach Investigations Report, 2023–2026 editions (each covers the prior year).*
 - **DBIR 2023:** 9%
 - **DBIR 2024:** 15%
 - **DBIR 2025:** 30%
-- **DBIR 2026:** 48%  
-*Verizon Data Breach Investigations Report, 2023–2026 editions (each covers the prior year).*
+- **DBIR 2026:** 48% *(Half of all breaches)*
 
 ---
 
+### Supporting Data
 - **23%** of third parties fully fixed missing MFA on their cloud accounts.  
   *(Verizon DBIR 2026)*
 - **~4×** more major supply-chain and third-party breaches over five years.  
@@ -216,14 +223,16 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 - **~200** customers' data taken after one SaaS provider was breached.  
   *(Anthropic, Sept 2026)*
 
-**ALSO AGREE:**
-- **Anthropic** · one stolen token → cloud admin in ~3 hours
-- **Cyentia** · trusted relationships: 20% of extreme events, 65% of losses
-- **Mandiant** · unmonitored OAuth grants and broad API permissions
+### Also Agree
+- **Anthropic:** one stolen token → cloud admin in ~3 hours
+- **Cyentia:** trusted relationships: 20% of extreme events, 65% of losses
+- **Mandiant:** unmonitored OAuth grants and broad API permissions
+
+---
 
 > That 48% is an average. Your number depends on which vendors hold your keys, so find out.
 
-**ASK:** How many vendors do we rely on, and how many of the critical ones have a current risk assessment?
+**ASK:** **How many vendors do we rely on, and how many of the critical ones have a current risk assessment?**
 
 **FIR reading:** INTEL-25 *The Third-Party Half* · INTEL-31 *Access Is a Product* · INTEL-38 *Three Hours to Admin* · E90 · E93
 
@@ -231,23 +240,22 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 
 ---
 
-## Signal 04: Recovery Time Sets the Bill.
+## Signal 04: Recovery time sets the bill.
 
 **5 INDEPENDENT SOURCES · 2022–2025 DATA**
 
-> Fewer victims pay, so attackers go after your ability to recover. The cost is now set by how long you're down.
+Fewer victims pay, so attackers go after your ability to recover. The cost is now set by how long you're down.
 
-![Bar chart illustrating modeled economic loss as percentage of monthly GDP against downtime duration: 1.4% for restored within a week, 4.6% for disrupted week 1 restored from week 2, and 13.7% (~10x) for about two weeks to restore]
+### Economic Loss Grows Much Faster Than Downtime
+*Modeled loss, % of monthly GDP, for a cyberattack on one critical sector (upstream oil and gas in an oil-dependent economy). Microsoft / Accenture, Securing Nations in the Intelligent Economy, 2026, p. 20.*
 
-### Economic loss grows much faster than downtime
 - **Restored within a week:** 1.4%
 - **Disrupted week 1, restored from week 2:** 4.6%
-- **About two weeks to restore:** 13.7% (~10×)
-
-*Modeled loss, % of monthly GDP, for a cyberattack on one critical sector (upstream oil and gas in an oil-dependent economy). Microsoft / Accenture, Securing Nations in the Intelligent Economy, 2026, p. 20.*
+- **About two weeks to restore:** 13.7% *(~10× increase)*
 
 ---
 
+### Supporting Data
 - **69%** of ransomware victims refused to pay, up from about half in 2022.  
   *(Verizon DBIR 2025 and 2026)*
 - **£1.9B:** Jaguar Land Rover: a five-week stoppage, the UK's costliest cyberattack.  
@@ -255,14 +263,16 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 - **+63%** data-extortion events in 2025. Fewer payments haven't meant fewer attacks.  
   *(Intel 471, 2026 Outlook)*
 
-**ALSO AGREE:**
-- **Mandiant** · backups, identity and hypervisors hit first
-- **DBIR** · ransomware in 48% of breaches
-- **Cyentia** · disruption in 43% of extreme events, 8% of all
+### Also Agree
+- **Mandiant:** backups, identity and hypervisors hit first
+- **DBIR:** ransomware in 48% of breaches
+- **Cyentia:** disruption in 43% of extreme events, 8% of all
+
+---
 
 > Paying is no longer the big decision. Recovery speed is.
 
-**ASK:** How quickly could we really restore core operations, and have we tested it?
+**ASK:** **How quickly could we really restore core operations, and have we tested it?**
 
 **FIR reading:** INTEL-17 *The Ecosystem Is Eating Itself* · INTEL-28 *The Ransom Bluff* · INTEL-33 *The Cost of Week Two* · E85 · E90 · E92
 
@@ -270,45 +280,48 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 
 ---
 
-## Signal 05: Your Own AI Is the Risk You Control.
+## Signal 05: Your own AI is the risk you control.
 
 **6 INDEPENDENT SOURCES · 2025–2026 DATA**
 
-> Attackers' AI makes old attacks cheaper. Your own AI use tripled in a year, much of it on personal accounts. That part you control.
+Attackers' AI makes old attacks cheaper. Your own AI use tripled in a year, much of it on personal accounts. That part you control.
 
-### Two numbers on the same 0–100% scale
+### Two Numbers on the Same 0–100% Scale
 
 #### WHAT GETS THE ATTENTION: ATTACKERS' AI
-- **<1%** of 793 threat actors caught using AI were rated high or critical risk  
+- **<1%** of 793 threat actors caught using AI were rated high or critical risk.  
   *(Verizon DBIR 2026, with Anthropic data)*
 
 #### WHAT YOU CONTROL: YOUR OWN AI
-- **45%** of employees use AI regularly on work devices; 67% of AI users sign in with personal accounts *(15% a year earlier)*  
+- **45%** of employees use AI regularly on work devices (up from **15%** a year earlier); 67% of AI users sign in with personal accounts.  
   *(Verizon DBIR 2026)*
 
 ---
 
-- **What AI really changed: cost and speed.** In one espionage campaign, AI did 80–90% of the work.  
-  *(Anthropic, Nov 2025)*
-- **What it hasn't changed: phishing success.** Attacks got cheaper and faster, not more likely to land.  
-  *(Verizon DBIR 2026)*
+### Reality Check
+- **What AI really changed: cost and speed.** In one espionage campaign, AI did 80–90% of the work. *(Anthropic, Nov 2025)*
+- **What it hasn't changed: phishing success.** Attacks got cheaper and faster, not more likely to land. *(Verizon DBIR 2026)*
 
 ---
 
+### Supporting Data
 - **20,000+** enterprise tenants reached by fake AI browser extensions that harvested chat histories.  
-  *(IBM Cost of a Data Breach 2025)*
-- **+$670K** added to a breach's cost when unsanctioned AI was involved.  
   *(Microsoft Digital Defense Report 2026)*
+- **+$670K** added to a breach's cost when unsanctioned AI was involved.  
+  *(IBM Cost of a Data Breach 2025)*
 - **None** of the three leading AI labs expects prompt injection to be fully solved.  
   *(OpenAI, Anthropic, Google, 2026)*
 
-**ALSO AGREE:**
-- **SEC filings** · Microsoft, Alphabet, Apple now list their own AI agents as a risk (Q3 2026)
+### Also Agree
+- **SEC filings:** Microsoft, Alphabet, Apple now list their own AI agents as a risk (Q3 2026)
+
+---
 
 > Watch the attackers' AI. Govern your own.
 
-**ASK:** Which AI tools and agents are in use across our company, approved or not, and who owns each one?  
-*(A good answer names an owner who can say what each agent can read, and what it is allowed to do.)*
+**ASK:** **Which AI tools and agents are in use across our company, approved or not, and who owns each one?**
+
+*A good answer names an owner who can say what each agent can read, and what it is allowed to do.*
 
 **FIR reading:** INTEL-24 *Breadth, Not Depth* · INTEL-26 *The Convenient Insider* · INTEL-41 · INTEL-46 *Know Your Agents* · E93 · E95
 
@@ -316,21 +329,22 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 
 ---
 
-## The Good News: The Basics Are Working.
+## The Good News
 
 **5 INDEPENDENT SOURCES · 2024–2026 DATA**
 
-> The controls everyone already knows still stop most attacks, and defenders are catching more on their own.
+### The basics are working.
 
-![Bar chart comparing the share of compromises detected internally: 43% in 2024 versus 52% in 2025]
+The controls everyone already knows still stop most attacks, and defenders are catching more on their own.
 
-### Breaches organizations found themselves, rather than being told
-- **2024:** 43%
-- **2025:** 52%  
+### Breaches Organizations Found Themselves, Rather Than Being Told
 *Share of compromises detected internally. Mandiant M-Trends 2026.*
+- **2024:** 43%
+- **2025:** 52%
 
 ---
 
+### Supporting Data
 - **>99%** of unauthorized sign-in attempts are blocked by MFA.  
   *(Microsoft Digital Defense Report 2025)*
 - **−26%** password attacks in a year, as MFA and passkeys force attackers elsewhere.  
@@ -338,12 +352,14 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 - **>90%** of breaches were enabled by gaps that were preventable. The fixes are known.  
   *(Unit 42 Incident Response Report 2026)*
 
-**ALSO AGREE:**
-- **DBIR** · 69% of ransomware victims refused to pay
+### Also Agree
+- **DBIR:** 69% of ransomware victims refused to pay
+
+---
 
 > The fundamentals still decide most outcomes. Keep funding them, consistently.
 
-**BEFORE ALL FIVE:** Which basics are we not funding yet?
+**BEFORE ALL FIVE:** **Which basics are we not funding yet?**
 
 **FIR reading:** INTEL-12 *The Defender's Window* · INTEL-36 *The Alarm Is Yours* · INTEL-44 *The Basics Are Working* · E85 · E94
 
@@ -351,12 +367,14 @@ What failed the tests is on page 11, *Noise we filtered*. Long-fuse risks like q
 
 ---
 
-## Filtered Out: The Noise, and What the Data Says
+## Filtered Out
+
+### The noise, and what the data says
 
 These claims were loud this year. Each one failed at least one of our tests: independent sources didn't agree, it didn't last, or it doesn't matter to the decisions leaders make.
 
 | WHAT YOU HEARD | WHAT THE EVIDENCE SHOWS | SOURCE |
-| :--- | :--- | :--- |
+|---|---|---|
 | **"AI super-attacks are here."** | Fewer than 1% of 793 threat actors caught using AI were rated high or critical risk, and phishing's success hasn't moved. AI made attacks cheaper and faster; it hasn't made them land more often. | Verizon DBIR 2026, with Anthropic data |
 | **"Just patch faster."** | 29% of vulnerabilities known to be exploited in 2025 were attacked on or before the day they were published. Speed can't win that race; reducing what you expose can. | VulnCheck 2026 · Microsoft Digital Defense Report 2026 |
 | **"The leak site lists who paid."** | For a typical ransomware group, only about 9% of the victims it names publicly ever paid. The list is a pressure tactic, not a scoreboard. | Verizon DBIR 2026 |
@@ -370,7 +388,9 @@ These claims were loud this year. Each one failed at least one of our tests: ind
 
 ---
 
-## Accountability: How Our Past Calls Held Up
+## Accountability
+
+### How our past calls held up
 
 We graded the threats we named in our 2024 and 2025 reports against this year's evidence.
 
@@ -378,82 +398,78 @@ We graded the threats we named in our 2024 and 2025 reports against this year's 
 - **1 changed shape**
 - **1 partly right**
 
-| THREAT | STATUS | EVIDENCE |
-| :--- | :--- | :--- |
-| **Business email fraud**<br>*(2024 report)* | **HELD** | 46 million+ business-impersonation attempts in 12 months, and the first message now rarely asks for money. Microsoft 2026 |
-| **Ransomware and extortion**<br>*(2025 report, #1)* | **CHANGED SHAPE** | Payments fell (69% refused) while extortion events rose 63%. Attackers now go after recovery. See Signal 04. DBIR 2026 · Intel 471 |
-| **Infostealers and stolen credentials**<br>*(2025 report, #2)* | **HELD** | Stolen identities remain central once attackers are inside: 82% of intrusions used no malware. See Signal 02. CrowdStrike 2026 |
-| **Cloud compromise**<br>*(2025 report, #3)* | **HELD** | The route now runs through vendors and tokens: one stolen token reached cloud admin in about three hours. See Signal 03. Anthropic 2026 |
-| **AI-powered attacks**<br>*(2025 report, #4)* | **PARTLY RIGHT** | AI made attacks cheaper and faster, but fewer than 1% of AI-using actors rated high-risk. See Signal 05. DBIR 2026 |
-| **Insiders and fake IT workers**<br>*(2025 report, #5)* | **HELD** | Fake remote IT workers drew on an estimated 15,000 stolen identities. DBIR 2026 |
+| Past Call | Status | Evidence This Year |
+|---|---|---|
+| **Business email fraud**<br>*(2024 report)* | **HELD** | 46 million+ business-impersonation attempts in 12 months, and the first message now rarely asks for money. *(Microsoft 2026)* |
+| **Ransomware and extortion**<br>*(2025 report, #1)* | **CHANGED SHAPE** | Payments fell (69% refused) while extortion events rose 63%. Attackers now go after recovery. See Signal 04. *(DBIR 2026 · Intel 471)* |
+| **Infostealers and stolen credentials**<br>*(2025 report, #2)* | **HELD** | Stolen identities remain central once attackers are inside: 82% of intrusions used no malware. See Signal 02. *(CrowdStrike 2026)* |
+| **Cloud compromise**<br>*(2025 report, #3)* | **HELD** | The route now runs through vendors and tokens: one stolen token reached cloud admin in about three hours. See Signal 03. *(Anthropic 2026)* |
+| **AI-powered attacks**<br>*(2025 report, #4)* | **PARTLY RIGHT** | AI made attacks cheaper and faster, but fewer than 1% of AI-using actors rated high-risk. See Signal 05. *(DBIR 2026)* |
+| **Insiders and fake IT workers**<br>*(2025 report, #5)* | **HELD** | Fake remote IT workers drew on an estimated 15,000 stolen identities. *(DBIR 2026)* |
 
 *SIGNALS 2026 · 12*
 
 ---
 
-## Looking Ahead: Weak Signals to Watch in 2027
+## Looking Ahead
+
+### Weak signals to watch in 2027
 
 Real, but not yet proven across sources or years. Any of these could be next year's signal.
 
-### Attacks run by AI agents
-In one espionage campaign, AI did 80–90% of the work, with people stepping in at a handful of decision points.  
-*Not yet a signal: one documented case.*  
-**Anthropic, Nov 2025**
+- **Attacks run by AI agents**  
+  In one espionage campaign, AI did 80–90% of the work, with people stepping in at a handful of decision points.  
+  *Not yet a signal:* one documented case. *(Anthropic, Nov 2025)*
 
-### AI on the defender's side
-AI labs and security vendors have formed coalitions to find and fix vulnerabilities with frontier models.  
-*Not yet a signal: too early to show up in breach data.*  
-**Anthropic Project Glasswing, Apr 2026**
+- **AI on the defender's side**  
+  AI labs and security vendors have formed coalitions to find and fix vulnerabilities with frontier models.  
+  *Not yet a signal:* too early to show up in breach data. *(Anthropic Project Glasswing, Apr 2026)*
 
-### Post-quantum deadlines
-US federal systems are to move to post-quantum encryption by 2035; EU and UK critical infrastructure by 2030.  
-*Not yet a signal: the deadlines are set; the threat date isn't.*  
-**Microsoft / Accenture, 2026**
+- **Post-quantum deadlines**  
+  US federal systems are to move to post-quantum encryption by 2035; EU and UK critical infrastructure by 2030.  
+  *Not yet a signal:* the deadlines are set; the threat date isn't. *(Microsoft / Accenture, 2026)*
 
-### Intruders staying unseen longer
-Median time to detection rose from 11 to 14 days. Microsoft reports the same direction.  
-*Not yet a signal: partly driven by long-running espionage cases.*  
-**Mandiant M-Trends 2026 · Microsoft 2026**
+- **Intruders staying unseen longer**  
+  Median time to detection rose from 11 to 14 days. Microsoft reports the same direction.  
+  *Not yet a signal:* partly driven by long-running espionage cases. *(Mandiant M-Trends 2026 · Microsoft 2026)*
 
-### Prompt injection
-Practitioners rank it the top risk for AI applications, and none of the three leading AI labs expects it to be fully solved.  
-*Not yet a signal: it barely appears in incident data so far.*  
-**OWASP · CrowdStrike 2026 · Microsoft Digital Defense Report 2026**
+- **Prompt injection**  
+  Practitioners rank it the top risk for AI applications, and none of the three leading AI labs expects it to be fully solved.  
+  *Not yet a signal:* it barely appears in incident data so far. *(OWASP · CrowdStrike 2026 · Microsoft Digital Defense Report 2026)*
 
----
-
-> Every signal starts as one report. We'll tell you when these cross the line.
-
-Follow along weekly in FIR Risk Tuesday and FIR Risk INTEL at [firrisk.ai](https://firrisk.ai).
+> Every signal starts as one report. We'll tell you when these cross the line.  
+> Follow along weekly in *FIR Risk Tuesday* and *FIR Risk INTEL* at [firrisk.ai](https://firrisk.ai).
 
 *SIGNALS 2026 · 13*
 
 ---
 
-## What We Told You: Five Questions for Your Next Board Meeting
+## What We Told You
+
+### Five questions for your next board meeting
 
 Five signals held up across two years of independent evidence. Each one comes down to a single question.
 
-- **01 The window is gone. Expose less.**  
-  **ASK:** Do we know every system we expose to the internet and every open-source package we depend on, and is that footprint getting smaller?
+1. **The window is gone. Expose less.**  
+   Do we know every system we expose to the internet and every open-source package we depend on, and is that footprint getting smaller?
 
-- **02 Inside, they look like you.**  
-  **ASK:** If an attacker were logged in as one of our employees today, would we know?
+2. **Inside, they look like you.**  
+   If an attacker were logged in as one of our employees today, would we know?
 
-- **03 Half of breaches now involve a third party.**  
-  **ASK:** How many vendors do we rely on, and how many of the critical ones have a current risk assessment?
+3. **Half of breaches now involve a third party.**  
+   How many vendors do we rely on, and how many of the critical ones have a current risk assessment?
 
-- **04 Recovery time sets the bill.**  
-  **ASK:** How quickly could we really restore core operations, and have we tested it?
+4. **Recovery time sets the bill.**  
+   How quickly could we really restore core operations, and have we tested it?
 
-- **05 Your own AI is the risk you control.**  
-  **ASK:** Which AI tools and agents are in use across our company, approved or not, and who owns each one?
+5. **Your own AI is the risk you control.**  
+   Which AI tools and agents are in use across our company, approved or not, and who owns each one?
 
 ---
 
 > And the basics still work. MFA blocks more than 99% of unauthorized sign-ins.
 
-**BEFORE ALL FIVE:** Which basics are we not funding yet?
+**BEFORE ALL FIVE:** **Which basics are we not funding yet?**
 
 *MFA figure: Microsoft Digital Defense Report 2025.*
 
@@ -465,35 +481,41 @@ Five signals held up across two years of independent evidence. Each one comes do
 
 Which independent sources reached each finding, and how each signal scored on the four tests.
 
-| SIGNAL | SOURCES | PRIMARY SOURCES INVOLVED |
-| :--- | :---: | :--- |
+### Source Matrix
+
+![Matrix of independent sources validating each signal](attachment-matrix-placeholder)
+
+| Signal | Sources Count | Validating Sources |
+|---|---|---|
 | **01 The window is gone** | 6 | Verizon DBIR, CrowdStrike, Mandiant, Microsoft, IBM, VulnCheck |
 | **02 Inside, they look like you** | 5 | Verizon DBIR, CrowdStrike, Mandiant, Microsoft, Unit 42 |
-| **03 Third parties** | 5 | Verizon DBIR, Mandiant, IBM, Anthropic, Cyentia |
+| **03 Third parties** | 5 | Verizon DBIR, IBM, Anthropic, Cyentia, Mandiant |
 | **04 Recovery time** | 5 | Verizon DBIR, Mandiant, Microsoft, Intel 471, Cyentia |
-| **05 AI** | 6 | Verizon DBIR, Microsoft, IBM, Anthropic, OpenAI, Google |
+| **05 AI** | 6 | Verizon DBIR, Anthropic, IBM, Microsoft, OpenAI, Google |
 
-*Microsoft includes the Microsoft / Accenture economic model. IBM includes X-Force and Cost of a Data Breach. Signal 05 counts OpenAI and Google separately. Signals 03 and 04 also count Cyentia IRIS Xtreme 2026.*
+*Notes on Sources:* Microsoft includes the Microsoft / Accenture economic model. IBM includes X-Force and Cost of a Data Breach. Signal 05 counts OpenAI and Google separately. Signals 03 and 04 also count Cyentia IRIS Xtreme 2026.
 
 ---
 
-### Test Evaluation Details
+### Evaluation Criteria
 
-| SIGNAL | PERSISTENCE | DIRECTION | DECISION IT INFORMS |
-| :--- | :--- | :--- | :--- |
+| Signal | Persistence | Direction | Decision It Informs |
+|---|---|---|---|
 | **01 The window is gone** | 2022–2025 | Faster every year: breakout 84 → 29 minutes | Shrinking the internet-facing and open-source footprint |
 | **02 Inside, they look like you** | 2022–2025 | Rising: malware-free 71% → 82% | Identity, access and user-behavior monitoring |
 | **03 Third parties** | 4 DBIR editions | Rising every year: 9% → 48% | Vendor risk assessment coverage |
 | **04 Recovery time** | 2022–2025 | Non-payment ~50% → 69%; extortion still up | Funding tested recovery |
 | **05 AI** | 2025–2026 | Rising: AI use at work 15% → 45% | Ownership of AI tools and agents |
 
-Every signal passed all four tests. One sits near the bar, and we say so: Signal 05 is the youngest, with two years of data. Signal 03 started at the minimum three sources; Mandiant and Cyentia have since reached the same finding. Sources are on page 18; every figure, with its source page, is in the web edition at [firrisk.ai](https://firrisk.ai).
+> Every signal passed all four tests. One sits near the bar, and we say so: Signal 05 is the youngest, with two years of data. Signal 03 started at the minimum three sources; Mandiant and Cyentia have since reached the same finding. Sources are on page 18; every figure, with its source page, is in the web edition at [firrisk.ai](https://firrisk.ai).
 
 *SIGNALS 2026 · 15*
 
 ---
 
-## Appendix · For Your Security Team · 1 of 2: The Five Signals in MITRE ATT&CK
+## Appendix · For Your Security Team · 1 of 2
+
+### The five signals in MITRE ATT&CK
 
 Hand these two pages to your security leader. Each signal is translated into ATT&CK, the framework most security teams work in: the techniques behind it, how often Mandiant saw them, the mitigations MITRE lists for them, and one question about coverage.
 
@@ -506,13 +528,13 @@ Attackers exploit internet-facing applications and remote-access services, often
 - **T1190 Exploit Public-Facing Application:** 27.7%
 - **T1133 External Remote Services:** 23.8%
 
-#### MITRE MITIGATIONS
+**MITRE MITIGATIONS:**
 - M1035 Limit Access to Resource Over Network
 - M1042 Disable or Remove Feature or Program
 - M1030 Network Segmentation
 - M1016 Vulnerability Scanning
 
-**COVERAGE QUESTION:** Which internet-facing systems would we know were exploited within hours, not days?
+> **Question:** Which internet-facing systems would we know were exploited within hours, not days?
 
 ---
 
@@ -524,13 +546,13 @@ A convincing call or a stolen login, then activity that looks like a normal user
 - **T1566.004 Spearphishing Voice:** 6.1%
 - **T1684.001 Impersonation (T1656 in M-Trends):** 1.7%
 
-#### MITRE MITIGATIONS
+**MITRE MITIGATIONS:**
 - M1032 Multi-factor Authentication
 - M1036 Account Use Policies
 - M1026 Privileged Account Management
 - M1017 User Training
 
-**COVERAGE QUESTION:** How much valid-account activity can we tell apart from the real user?
+> **Question:** How much valid-account activity can we tell apart from the real user?
 
 ---
 
@@ -544,13 +566,13 @@ A vendor’s access, software or token used to reach you. One SaaS breach reache
 
 *Rare as techniques in Mandiant’s cases, yet present in 48% of DBIR breaches: Mandiant counts techniques, Verizon counts breaches.*
 
-#### MITRE MITIGATIONS
+**MITRE MITIGATIONS:**
 - M1018 User Account Management
 - M1032 Multi-factor Authentication
 - M1036 Account Use Policies
 - M1021 Restrict Web-Based Content
 
-**COVERAGE QUESTION:** Would we see a vendor’s token used from somewhere new, and could we cut it off?
+> **Question:** Would we see a vendor’s token used from somewhere new, and could we cut it off?
 
 ---
 
@@ -560,7 +582,11 @@ A vendor’s access, software or token used to reach you. One SaaS breach reache
 
 ---
 
-## Appendix · For Your Security Team · 2 of 2: The Five Signals in MITRE ATT&CK, Continued
+## Appendix · For Your Security Team · 2 of 2
+
+### The five signals in MITRE ATT&CK, continued
+
+---
 
 ### 04 Recovery time
 **Impact**  
@@ -572,13 +598,13 @@ Backups and recovery tools are disabled first, then data is encrypted, stolen, o
 
 *Encryption dropped out of Mandiant’s top 10 as Data Staged (T1074, 39.6%) rose: a shift from locking data to stealing it.*
 
-#### MITRE MITIGATIONS
+**MITRE MITIGATIONS:**
 - M1053 Data Backup
 - M1028 Operating System Configuration
 - M1018 User Account Management
 - M1040 Behavior Prevention on Endpoint
 
-**COVERAGE QUESTION:** Would we detect backups or recovery tools being disabled before encryption starts?
+> **Question:** Would we detect backups or recovery tools being disabled before encryption starts?
 
 ---
 
@@ -590,10 +616,10 @@ Attackers use AI to work faster on familiar techniques. Fewer than 2.5% of the A
 
 *MITRE: this “cannot be easily mitigated with preventive controls.” The defense is the controls on Signals 01 to 03, which AI speeds up.*
 
-#### MITRE MITIGATIONS
+**MITRE MITIGATIONS:**
 - M1056 Pre-compromise
 
-**COVERAGE QUESTION:** Which of our existing controls get weaker if attacks get cheaper and faster?
+> **Question:** Which of our existing controls get weaker if attacks get cheaper and faster?
 
 ---
 
@@ -603,13 +629,13 @@ Your own AI tools and agents can be steered by text they read. MITRE ATLAS catal
 
 - **AML.T0051 LLM Prompt Injection**
 
-#### ATLAS MITIGATIONS
+**ATLAS MITIGATIONS:**
 - AML.M0019 Control Access to AI Models and Data in Production
 - AML.M0020 Generative AI Guardrails
 - AML.M0033 Input and Output Validation for AI Agent Components
 - AML.M0024 AI Telemetry Logging
 
-**COVERAGE QUESTION:** Which of our AI tools and agents are in our threat model, and who owns each one?
+> **Question:** Which of our AI tools and agents are in our threat model, and who owns each one?
 
 ---
 
@@ -619,58 +645,50 @@ Your own AI tools and agents can be steered by text they read. MITRE ATLAS catal
 
 ---
 
-## Sources: Where Every Number Comes From
+## Sources
+
+### Where every number comes from
 
 **100 FIR Risk editions → 26 primary reports re-read → 19 cited → 43 figures checked → 5 signals**
 
-| SOURCE · REPORT | 01 | 02 | 03 | 04 | 05 | 2027 |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Anthropic** · AI-orchestrated espionage campaign (Nov 2025) · Detecting and countering misuse of AI (Sept 2026) · Project Glasswing (Apr 2026) | | | ✓ | | ✓ | ✓ |
-| **CrowdStrike** · Global Threat Report, 2024–2026 editions | ✓ | ✓ | | | | ✓ |
-| **Cyentia Institute** · IRIS Xtreme 2026 | | | ✓ | ✓ | | |
-| **IBM** · Cost of a Data Breach Report 2025 | | | | | ✓ | |
-| **IBM X-Force** · Threat Intelligence Index 2026 | ✓ | | ✓ | | | |
-| **Intel 471** · Cyber Threat Trends & Outlook 2026 | | | | ✓ | | |
-| **Mandiant (Google Cloud)** · M-Trends 2025 and 2026 | ✓ | ✓ | ✓ | ✓ | | ✓ |
-| **Microsoft** · Digital Defense Report 2025 and 2026 | ✓ | ✓ | | | ✓ | ✓ |
-| **Microsoft & Accenture** · Securing Nations in the Intelligent Economy (2026) | | | | ✓ | | ✓ |
-| **Microsoft, Alphabet, Apple** · Q3 2026 10-Q and 10-K filings (SEC) | | | | | ✓ | |
-| **OpenAI, Anthropic, Google** · AI agent security guidance (2026) | | | | | ✓ | |
-| **OWASP** · Top 10 for LLM Applications 2026 · Top 10 for Agentic Applications | | | | | | ✓ |
-| **Palo Alto Networks Unit 42** · Global Incident Response Report 2026 | | ✓ | | | | |
-| **Verizon** · Data Breach Investigations Report, 2024–2026 editions | ✓ | ✓ | ✓ | ✓ | ✓ | |
-| **VulnCheck** · Exploit Intelligence Report 2026 | ✓ | | | | | |
+| Source · Report | 01 | 02 | 03 | 04 | 05 | 2027 |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Anthropic** · *AI-orchestrated espionage campaign (Nov 2025) · Detecting and countering misuse of AI (Sept 2026) · Project Glasswing (Apr 2026)* | | | ✓ | | ✓ | ✓ |
+| **CrowdStrike** · *Global Threat Report, 2024–2026 editions* | ✓ | ✓ | | | | ✓ |
+| **Cyentia Institute** · *IRIS Xtreme 2026* | | | ✓ | ✓ | | |
+| **IBM** · *Cost of a Data Breach Report 2025* | | | | | ✓ | |
+| **IBM X-Force** · *Threat Intelligence Index 2026* | ✓ | | ✓ | | | |
+| **Intel 471** · *Cyber Threat Trends & Outlook 2026* | | | | ✓ | | |
+| **Mandiant (Google Cloud)** · *M-Trends 2025 and 2026* | ✓ | ✓ | ✓ | ✓ | | ✓ |
+| **Microsoft** · *Digital Defense Report 2025 and 2026* | ✓ | ✓ | | | ✓ | ✓ |
+| **Microsoft & Accenture** · *Securing Nations in the Intelligent Economy (2026)* | | | | ✓ | | ✓ |
+| **Microsoft, Alphabet, Apple** · *Q3 2026 10-Q and 10-K filings (SEC)* | | | | | ✓ | |
+| **OpenAI, Anthropic, Google** · *AI agent security guidance (2026)* | | | | | ✓ | |
+| **OWASP** · *Top 10 for LLM Applications 2026 · Top 10 for Agentic Applications* | | | | | | ✓ |
+| **Palo Alto Networks Unit 42** · *Global Incident Response Report 2026* | | ✓ | | | | |
+| **Verizon** · *Data Breach Investigations Report, 2024–2026 editions* | ✓ | ✓ | ✓ | ✓ | ✓ | |
+| **VulnCheck** · *Exploit Intelligence Report 2026* | ✓ | | | | | |
 
 *01–05: the signal pages each source supports. 2027: the watch list on page 13. Unit 42, OWASP, Project Glasswing and the AI labs' guidance were checked against the publishers' web pages.*
 
 ---
 
-### Also re-read
-- Red Canary Threat Detection Report 2026
-- Rapid7 Global Threat Landscape Report 2026
-- Picus Red Report 2026
-- GuidePoint GRIT 2026 Ransomware and Cyber Threat Report
-- Zscaler ThreatLabz 2026 AI Security Report
-- Anthropic 2026 Agentic Coding Trends Report and 2026 State of AI Agents Report
+### Additional Context & Framework
 
-*Useful context; no figure in this report depends on them.*
+**Also re-read:** Red Canary *Threat Detection Report 2026* · Rapid7 *Global Threat Landscape Report 2026* · Picus *Red Report 2026* · GuidePoint GRIT *2026 Ransomware and Cyber Threat Report* · Zscaler ThreatLabz *2026 AI Security Report* · Anthropic *2026 Agentic Coding Trends Report* and *2026 State of AI Agents Report*. Useful context; no figure in this report depends on them.
 
----
+**The FIR library:** 100 FIR Risk editions, and counting. The web edition at [firrisk.ai](https://firrisk.ai) lists the editions behind each signal, and every figure with its source page.
 
-### The FIR library
-100 FIR Risk editions, and counting. The web edition at [firrisk.ai](https://firrisk.ai) lists the editions behind each signal, and every figure with its source page.
+**How to read the numbers:** Each figure is quoted as its source reports it, for the year its data covers. Sources use different datasets and definitions, so figures from different reports are not added or compared directly.
 
-### How to read the numbers
-Each figure is quoted as its source reports it, for the year its data covers. Sources use different datasets and definitions, so figures from different reports are not added or compared directly.
-
-### About this report
-SIGNALS is general risk intelligence for leaders. It is not legal, compliance or security advice for a specific organization.
+**About this report:** SIGNALS is general risk intelligence for leaders. It is not legal, compliance or security advice for a specific organization.
 
 ---
 
 **FIR Risk Advisory**  
-Verified risk intelligence for CEOs and boards.  
+*Verified risk intelligence for CEOs and boards.*  
 [firrisk.ai](https://firrisk.ai)  
+
 *SIGNALS 2026 · 18*
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-11-21", "model": "gemini-3.7-flash"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-11-24", "model": "gemini-3.8-flash"} -->
